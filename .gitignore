@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# heavy pipeline artifacts — regenerable from source audio
+separated/
+midi_out/
+*.wav
+*.mp3
+*.mp4
