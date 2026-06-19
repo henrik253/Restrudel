@@ -5,6 +5,7 @@ __pycache__/
 # heavy pipeline artifacts — regenerable from source audio
 separated/
 midi_out/
+experiments/
 *.wav
 *.mp3
 *.mp4
