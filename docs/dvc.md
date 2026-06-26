@@ -13,8 +13,11 @@ Drive.
 
 ### 0. Install
 
+Use a dedicated virtualenv (see `requirements.txt`):
+
 ```bash
-pip install "dvc[gdrive]"
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt        # installs dvc[gdrive]
 ```
 
 `dvc init` has already been run in this repo (`.dvc/` is committed).
