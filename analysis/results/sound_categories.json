@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "n_patterns": 855,
+  "n_sources": 8,
+  "schema": "sound_categories.v1",
+  "items": [
+    {
+      "category": "drum-sample",
+      "occurrences": 1218,
+      "weight": 0.619217
+    },
+    {
+      "category": "waveform-synth",
+      "occurrences": 309,
+      "weight": 0.157092
+    },
+    {
+      "category": "other-sample",
+      "occurrences": 258,
+      "weight": 0.131164
+    },
+    {
+      "category": "soundfont(gm)",
+      "occurrences": 162,
+      "weight": 0.082359
+    },
+    {
+      "category": "noise",
+      "occurrences": 16,
+      "weight": 0.008134
+    },
+    {
+      "category": "zzfx-synth",
+      "occurrences": 4,
+      "weight": 0.002034
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "n_patterns": 855,
+  "n_sources": 8,
+  "schema": "mini_notation.v1",
+  "items": [
+    {
+      "feature": "sequence [ ]",
+      "patterns": 646,
+      "fraction": 0.755556
+    },
+    {
+      "feature": "alternation < >",
+      "patterns": 178,
+      "fraction": 0.208187
+    },
+    {
+      "feature": "polymeter { }",
+      "patterns": 25,
+      "fraction": 0.02924
+    },
+    {
+      "feature": "euclid (n,k)",
+      "patterns": 46,
+      "fraction": 0.053801
+    },
+    {
+      "feature": "replicate !",
+      "patterns": 75,
+      "fraction": 0.087719
+    },
+    {
+      "feature": "elongate @",
+      "patterns": 117,
+      "fraction": 0.136842
+    },
+    {
+      "feature": "speed up *",
+      "patterns": 185,
+      "fraction": 0.216374
+    },
+    {
+      "feature": "slow down /",
+      "patterns": 107,
+      "fraction": 0.125146
+    },
+    {
+      "feature": "rest ~",
+      "patterns": 641,
+      "fraction": 0.749708
+    },
+    {
+      "feature": "random ?",
+      "patterns": 7,
+      "fraction": 0.008187
+    },
+    {
+      "feature": "range ..",
+      "patterns": 6,
+      "fraction": 0.007018
+    },
+    {
+      "feature": "parallel ,",
+      "patterns": 121,
+      "fraction": 0.14152
+    }
+  ]
+}
