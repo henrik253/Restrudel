@@ -75,16 +75,17 @@ songs use — the evidence that drives generation.
 
 - [x] **Fetch all available Strudel songs** into `corpus/sources/` (9 repos +
       Codeberg monorepo docs; ~100 MB, < 2 GB budget). → 855 unique snippets.
-- [x] **Parse** each file and extract usage of (`analysis/analyze_corpus.py`):
+- [x] **Parse** each file and extract usage of (`notebooks/01_corpus_analysis.ipynb`):
   - sound sources: `s("...")` / `sound("...")` values, `n(...)`, synth waveforms
     (`sawtooth/square/triangle/sine/fm/...`) vs sample names
   - effects/params: `lpf`, `cutoff`, `resonance`, `room`, `delay`, `gain`,
     `adsr`/`attack/decay/sustain/release`, `vowel`, `crush`, etc.
   - structure: `stack` depth (polyphony), tempo/`cps`, scales/keys, mini-notation
     complexity
-- [x] **Compute & PLOT distributions** → `analysis/out/` (top_sounds, synth-only,
-      category_mix, top_functions, banks; CSV tables + summary.json).
-- [x] Write `analysis/REPORT.md` summarizing findings → feeds Phase 4 weights.
+- [x] **Compute & PLOT distributions** → executed notebook + `analysis/out/`
+      (sources, category_mix, top_synths, top_functions by category, banks,
+      mini-notation, complexity).
+- [x] Document findings in the notebook's markdown → feeds Phase 4 weights.
 
 > **Decision gate:** review the distributions together before building generators,
 > so templates target the real sound palette (e.g. if `sawtooth`+`lpf` dominates

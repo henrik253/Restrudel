@@ -1,0 +1,5798 @@
+{
+  "schema_version": 1,
+  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "n_patterns": 855,
+  "n_sources": 8,
+  "schema": "functions.v1",
+  "items": [
+    {
+      "name": "s",
+      "occurrences": 1576,
+      "patterns": 740,
+      "category": "sound source",
+      "weight": 0.122646
+    },
+    {
+      "name": "stack",
+      "occurrences": 744,
+      "patterns": 630,
+      "category": "combinators / layering",
+      "weight": 0.057899
+    },
+    {
+      "name": "slow",
+      "occurrences": 811,
+      "patterns": 580,
+      "category": "time & structure",
+      "weight": 0.063113
+    },
+    {
+      "name": "note",
+      "occurrences": 558,
+      "patterns": 202,
+      "category": "sound source",
+      "weight": 0.043424
+    },
+    {
+      "name": "gain",
+      "occurrences": 827,
+      "patterns": 169,
+      "category": "audio fx & params",
+      "weight": 0.064358
+    },
+    {
+      "name": "room",
+      "occurrences": 359,
+      "patterns": 124,
+      "category": "audio fx & params",
+      "weight": 0.027938
+    },
+    {
+      "name": "lpf",
+      "occurrences": 347,
+      "patterns": 101,
+      "category": "audio fx & params",
+      "weight": 0.027004
+    },
+    {
+      "name": "n",
+      "occurrences": 198,
+      "patterns": 91,
+      "category": "sound source",
+      "weight": 0.015409
+    },
+    {
+      "name": "scale",
+      "occurrences": 158,
+      "patterns": 89,
+      "category": "note / harmony",
+      "weight": 0.012296
+    },
+    {
+      "name": "add",
+      "occurrences": 187,
+      "patterns": 87,
+      "category": "note / harmony",
+      "weight": 0.014553
+    },
+    {
+      "name": "clip",
+      "occurrences": 137,
+      "patterns": 84,
+      "category": "audio fx & params",
+      "weight": 0.010661
+    },
+    {
+      "name": "fast",
+      "occurrences": 128,
+      "patterns": 71,
+      "category": "time & structure",
+      "weight": 0.009961
+    },
+    {
+      "name": "range",
+      "occurrences": 180,
+      "patterns": 65,
+      "category": "time & structure",
+      "weight": 0.014008
+    },
+    {
+      "name": "release",
+      "occurrences": 189,
+      "patterns": 65,
+      "category": "audio fx & params",
+      "weight": 0.014708
+    },
+    {
+      "name": "sound",
+      "occurrences": 249,
+      "patterns": 62,
+      "category": "sound source",
+      "weight": 0.019377
+    },
+    {
+      "name": "struct",
+      "occurrences": 99,
+      "patterns": 61,
+      "category": "time & structure",
+      "weight": 0.007704
+    },
+    {
+      "name": "voicing",
+      "occurrences": 86,
+      "patterns": 58,
+      "category": "note / harmony",
+      "weight": 0.006693
+    },
+    {
+      "name": "chord",
+      "occurrences": 85,
+      "patterns": 57,
+      "category": "note / harmony",
+      "weight": 0.006615
+    },
+    {
+      "name": "delay",
+      "occurrences": 138,
+      "patterns": 57,
+      "category": "audio fx & params",
+      "weight": 0.010739
+    },
+    {
+      "name": "bank",
+      "occurrences": 75,
+      "patterns": 49,
+      "category": "other",
+      "weight": 0.005837
+    },
+    {
+      "name": "speed",
+      "occurrences": 79,
+      "patterns": 48,
+      "category": "audio fx & params",
+      "weight": 0.006148
+    },
+    {
+      "name": "samples",
+      "occurrences": 82,
+      "patterns": 46,
+      "category": "other",
+      "weight": 0.006381
+    },
+    {
+      "name": "pickRestart",
+      "occurrences": 147,
+      "patterns": 44,
+      "category": "randomness / variation",
+      "weight": 0.01144
+    },
+    {
+      "name": "setcps",
+      "occurrences": 45,
+      "patterns": 43,
+      "category": "meta / control",
+      "weight": 0.003502
+    },
+    {
+      "name": "color",
+      "occurrences": 110,
+      "patterns": 40,
+      "category": "meta / control",
+      "weight": 0.00856
+    },
+    {
+      "name": "pianoroll",
+      "occurrences": 40,
+      "patterns": 40,
+      "category": "meta / control",
+      "weight": 0.003113
+    },
+    {
+      "name": "anchor",
+      "occurrences": 63,
+      "patterns": 39,
+      "category": "note / harmony",
+      "weight": 0.004903
+    },
+    {
+      "name": "hpf",
+      "occurrences": 100,
+      "patterns": 38,
+      "category": "audio fx & params",
+      "weight": 0.007782
+    },
+    {
+      "name": "setcpm",
+      "occurrences": 43,
+      "patterns": 36,
+      "category": "meta / control",
+      "weight": 0.003346
+    },
+    {
+      "name": "velocity",
+      "occurrences": 127,
+      "patterns": 35,
+      "category": "audio fx & params",
+      "weight": 0.009883
+    },
+    {
+      "name": "transpose",
+      "occurrences": 78,
+      "patterns": 34,
+      "category": "note / harmony",
+      "weight": 0.00607
+    },
+    {
+      "name": "pan",
+      "occurrences": 85,
+      "patterns": 33,
+      "category": "audio fx & params",
+      "weight": 0.006615
+    },
+    {
+      "name": "sometimes",
+      "occurrences": 38,
+      "patterns": 31,
+      "category": "randomness / variation",
+      "weight": 0.002957
+    },
+    {
+      "name": "all",
+      "occurrences": 31,
+      "patterns": 30,
+      "category": "meta / control",
+      "weight": 0.002412
+    },
+    {
+      "name": "late",
+      "occurrences": 54,
+      "patterns": 29,
+      "category": "time & structure",
+      "weight": 0.004202
+    },
+    {
+      "name": "layer",
+      "occurrences": 37,
+      "patterns": 28,
+      "category": "combinators / layering",
+      "weight": 0.002879
+    },
+    {
+      "name": "cutoff",
+      "occurrences": 38,
+      "patterns": 28,
+      "category": "audio fx & params",
+      "weight": 0.002957
+    },
+    {
+      "name": "attack",
+      "occurrences": 63,
+      "patterns": 27,
+      "category": "audio fx & params",
+      "weight": 0.004903
+    },
+    {
+      "name": "fmap",
+      "occurrences": 39,
+      "patterns": 27,
+      "category": "other",
+      "weight": 0.003035
+    },
+    {
+      "name": "isArray",
+      "occurrences": 29,
+      "patterns": 24,
+      "category": "other",
+      "weight": 0.002257
+    },
+    {
+      "name": "mask",
+      "occurrences": 52,
+      "patterns": 23,
+      "category": "time & structure",
+      "weight": 0.004047
+    },
+    {
+      "name": "sustain",
+      "occurrences": 36,
+      "patterns": 23,
+      "category": "audio fx & params",
+      "weight": 0.002802
+    },
+    {
+      "name": "decay",
+      "occurrences": 37,
+      "patterns": 23,
+      "category": "audio fx & params",
+      "weight": 0.002879
+    },
+    {
+      "name": "pickOut",
+      "occurrences": 74,
+      "patterns": 23,
+      "category": "other",
+      "weight": 0.005759
+    },
+    {
+      "name": "off",
+      "occurrences": 31,
+      "patterns": 22,
+      "category": "time & structure",
+      "weight": 0.002412
+    },
+    {
+      "name": "cpm",
+      "occurrences": 22,
+      "patterns": 22,
+      "category": "meta / control",
+      "weight": 0.001712
+    },
+    {
+      "name": "piano",
+      "occurrences": 26,
+      "patterns": 22,
+      "category": "other",
+      "weight": 0.002023
+    },
+    {
+      "name": "sub",
+      "occurrences": 24,
+      "patterns": 21,
+      "category": "note / harmony",
+      "weight": 0.001868
+    },
+    {
+      "name": "mul",
+      "occurrences": 37,
+      "patterns": 20,
+      "category": "note / harmony",
+      "weight": 0.002879
+    },
+    {
+      "name": "setDefaultVoicings",
+      "occurrences": 22,
+      "patterns": 20,
+      "category": "other",
+      "weight": 0.001712
+    },
+    {
+      "name": "superimpose",
+      "occurrences": 28,
+      "patterns": 20,
+      "category": "combinators / layering",
+      "weight": 0.002179
+    },
+    {
+      "name": "jux",
+      "occurrences": 26,
+      "patterns": 20,
+      "category": "combinators / layering",
+      "weight": 0.002023
+    },
+    {
+      "name": "x",
+      "occurrences": 29,
+      "patterns": 20,
+      "category": "other",
+      "weight": 0.002257
+    },
+    {
+      "name": "rev",
+      "occurrences": 29,
+      "patterns": 19,
+      "category": "time & structure",
+      "weight": 0.002257
+    },
+    {
+      "name": "degradeBy",
+      "occurrences": 27,
+      "patterns": 19,
+      "category": "randomness / variation",
+      "weight": 0.002101
+    },
+    {
+      "name": "mode",
+      "occurrences": 28,
+      "patterns": 19,
+      "category": "note / harmony",
+      "weight": 0.002179
+    },
+    {
+      "name": "set",
+      "occurrences": 32,
+      "patterns": 18,
+      "category": "other",
+      "weight": 0.00249
+    },
+    {
+      "name": "lpenv",
+      "occurrences": 20,
+      "patterns": 18,
+      "category": "audio fx & params",
+      "weight": 0.001556
+    },
+    {
+      "name": "every",
+      "occurrences": 27,
+      "patterns": 18,
+      "category": "time & structure",
+      "weight": 0.002101
+    },
+    {
+      "name": "dict",
+      "occurrences": 19,
+      "patterns": 17,
+      "category": "other",
+      "weight": 0.001479
+    },
+    {
+      "name": "segment",
+      "occurrences": 21,
+      "patterns": 17,
+      "category": "time & structure",
+      "weight": 0.001634
+    },
+    {
+      "name": "split",
+      "occurrences": 23,
+      "patterns": 17,
+      "category": "other",
+      "weight": 0.00179
+    },
+    {
+      "name": "pick",
+      "occurrences": 40,
+      "patterns": 16,
+      "category": "randomness / variation",
+      "weight": 0.003113
+    },
+    {
+      "name": "lpa",
+      "occurrences": 17,
+      "patterns": 16,
+      "category": "other",
+      "weight": 0.001323
+    },
+    {
+      "name": "ribbon",
+      "occurrences": 16,
+      "patterns": 16,
+      "category": "time & structure",
+      "weight": 0.001245
+    },
+    {
+      "name": "Copyright",
+      "occurrences": 15,
+      "patterns": 15,
+      "category": "other",
+      "weight": 0.001167
+    },
+    {
+      "name": "or",
+      "occurrences": 15,
+      "patterns": 15,
+      "category": "other",
+      "weight": 0.001167
+    },
+    {
+      "name": "resonance",
+      "occurrences": 27,
+      "patterns": 15,
+      "category": "audio fx & params",
+      "weight": 0.002101
+    },
+    {
+      "name": "start",
+      "occurrences": 18,
+      "patterns": 14,
+      "category": "other",
+      "weight": 0.001401
+    },
+    {
+      "name": "setCps",
+      "occurrences": 14,
+      "patterns": 14,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "delaytime",
+      "occurrences": 18,
+      "patterns": 14,
+      "category": "audio fx & params",
+      "weight": 0.001401
+    },
+    {
+      "name": "early",
+      "occurrences": 27,
+      "patterns": 14,
+      "category": "time & structure",
+      "weight": 0.002101
+    },
+    {
+      "name": "catch",
+      "occurrences": 24,
+      "patterns": 13,
+      "category": "other",
+      "weight": 0.001868
+    },
+    {
+      "name": "connect",
+      "occurrences": 46,
+      "patterns": 13,
+      "category": "other",
+      "weight": 0.00358
+    },
+    {
+      "name": "echo",
+      "occurrences": 12,
+      "patterns": 12,
+      "category": "time & structure",
+      "weight": 0.000934
+    },
+    {
+      "name": "apply",
+      "occurrences": 54,
+      "patterns": 12,
+      "category": "other",
+      "weight": 0.004202
+    },
+    {
+      "name": "midi",
+      "occurrences": 18,
+      "patterns": 12,
+      "category": "other",
+      "weight": 0.001401
+    },
+    {
+      "name": "slice",
+      "occurrences": 14,
+      "patterns": 12,
+      "category": "audio fx & params",
+      "weight": 0.001089
+    },
+    {
+      "name": "callback",
+      "occurrences": 12,
+      "patterns": 12,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "adsr",
+      "occurrences": 25,
+      "patterns": 12,
+      "category": "audio fx & params",
+      "weight": 0.001946
+    },
+    {
+      "name": "get",
+      "occurrences": 30,
+      "patterns": 12,
+      "category": "other",
+      "weight": 0.002335
+    },
+    {
+      "name": "addEventListener",
+      "occurrences": 18,
+      "patterns": 11,
+      "category": "other",
+      "weight": 0.001401
+    },
+    {
+      "name": "min",
+      "occurrences": 11,
+      "patterns": 11,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "round",
+      "occurrences": 16,
+      "patterns": 11,
+      "category": "other",
+      "weight": 0.001245
+    },
+    {
+      "name": "rootNotes",
+      "occurrences": 12,
+      "patterns": 11,
+      "category": "note / harmony",
+      "weight": 0.000934
+    },
+    {
+      "name": "evaluate",
+      "occurrences": 27,
+      "patterns": 11,
+      "category": "other",
+      "weight": 0.002101
+    },
+    {
+      "name": "substring",
+      "occurrences": 16,
+      "patterns": 11,
+      "category": "other",
+      "weight": 0.001245
+    },
+    {
+      "name": "vib",
+      "occurrences": 10,
+      "patterns": 10,
+      "category": "audio fx & params",
+      "weight": 0.000778
+    },
+    {
+      "name": "lpq",
+      "occurrences": 12,
+      "patterns": 10,
+      "category": "audio fx & params",
+      "weight": 0.000934
+    },
+    {
+      "name": "useRNG",
+      "occurrences": 10,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "stop",
+      "occurrences": 32,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.00249
+    },
+    {
+      "name": "scaleTranspose",
+      "occurrences": 24,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.001868
+    },
+    {
+      "name": "innerJoin",
+      "occurrences": 12,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "prebake",
+      "occurrences": 12,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "voicings",
+      "occurrences": 12,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "end",
+      "occurrences": 10,
+      "patterns": 10,
+      "category": "audio fx & params",
+      "weight": 0.000778
+    },
+    {
+      "name": "constructor",
+      "occurrences": 12,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "keys",
+      "occurrences": 13,
+      "patterns": 10,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "rel",
+      "occurrences": 17,
+      "patterns": 10,
+      "category": "audio fx & params",
+      "weight": 0.001323
+    },
+    {
+      "name": "bd",
+      "occurrences": 15,
+      "patterns": 9,
+      "category": "other",
+      "weight": 0.001167
+    },
+    {
+      "name": "div",
+      "occurrences": 16,
+      "patterns": 9,
+      "category": "note / harmony",
+      "weight": 0.001245
+    },
+    {
+      "name": "Error",
+      "occurrences": 54,
+      "patterns": 9,
+      "category": "other",
+      "weight": 0.004202
+    },
+    {
+      "name": "patt",
+      "occurrences": 12,
+      "patterns": 9,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "outerJoin",
+      "occurrences": 13,
+      "patterns": 9,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "noteToMidi",
+      "occurrences": 10,
+      "patterns": 9,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "shape",
+      "occurrences": 11,
+      "patterns": 9,
+      "category": "audio fx & params",
+      "weight": 0.000856
+    },
+    {
+      "name": "delayfeedback",
+      "occurrences": 9,
+      "patterns": 8,
+      "category": "audio fx & params",
+      "weight": 0.0007
+    },
+    {
+      "name": "hush",
+      "occurrences": 14,
+      "patterns": 8,
+      "category": "meta / control",
+      "weight": 0.001089
+    },
+    {
+      "name": "seq",
+      "occurrences": 32,
+      "patterns": 8,
+      "category": "combinators / layering",
+      "weight": 0.00249
+    },
+    {
+      "name": "then",
+      "occurrences": 8,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "as",
+      "occurrences": 8,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "timeCat",
+      "occurrences": 45,
+      "patterns": 8,
+      "category": "combinators / layering",
+      "weight": 0.003502
+    },
+    {
+      "name": "att",
+      "occurrences": 11,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "out",
+      "occurrences": 32,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.00249
+    },
+    {
+      "name": "chain",
+      "occurrences": 32,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.00249
+    },
+    {
+      "name": "dfb",
+      "occurrences": 12,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "penv",
+      "occurrences": 11,
+      "patterns": 8,
+      "category": "audio fx & params",
+      "weight": 0.000856
+    },
+    {
+      "name": "getElementById",
+      "occurrences": 13,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "gString",
+      "occurrences": 48,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.003735
+    },
+    {
+      "name": "guitar",
+      "occurrences": 9,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "abs",
+      "occurrences": 10,
+      "patterns": 8,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "queryArc",
+      "occurrences": 7,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "euclid",
+      "occurrences": 46,
+      "patterns": 7,
+      "category": "time & structure",
+      "weight": 0.00358
+    },
+    {
+      "name": "clamp",
+      "occurrences": 10,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "echoWith",
+      "occurrences": 7,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "rarely",
+      "occurrences": 12,
+      "patterns": 7,
+      "category": "randomness / variation",
+      "weight": 0.000934
+    },
+    {
+      "name": "evalScope",
+      "occurrences": 7,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "withHap",
+      "occurrences": 11,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "ply",
+      "occurrences": 11,
+      "patterns": 7,
+      "category": "time & structure",
+      "weight": 0.000856
+    },
+    {
+      "name": "iter",
+      "occurrences": 9,
+      "patterns": 7,
+      "category": "time & structure",
+      "weight": 0.0007
+    },
+    {
+      "name": "values",
+      "occurrences": 9,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "toString",
+      "occurrences": 12,
+      "patterns": 7,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "dt",
+      "occurrences": 11,
+      "patterns": 7,
+      "category": "audio fx & params",
+      "weight": 0.000856
+    },
+    {
+      "name": "cat",
+      "occurrences": 7,
+      "patterns": 7,
+      "category": "combinators / layering",
+      "weight": 0.000545
+    },
+    {
+      "name": "_pianoroll",
+      "occurrences": 7,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "dec",
+      "occurrences": 11,
+      "patterns": 6,
+      "category": "audio fx & params",
+      "weight": 0.000856
+    },
+    {
+      "name": "join",
+      "occurrences": 7,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "setContext",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "includes",
+      "occurrences": 46,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.00358
+    },
+    {
+      "name": "pure",
+      "occurrences": 16,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.001245
+    },
+    {
+      "name": "floor",
+      "occurrences": 8,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "isActive",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "euclidLegato",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "time & structure",
+      "weight": 0.000467
+    },
+    {
+      "name": "begin",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "audio fx & params",
+      "weight": 0.000467
+    },
+    {
+      "name": "run",
+      "occurrences": 7,
+      "patterns": 6,
+      "category": "time & structure",
+      "weight": 0.000545
+    },
+    {
+      "name": "error",
+      "occurrences": 10,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "fill",
+      "occurrences": 11,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "valueToMidi",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "panwidth",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "reset",
+      "occurrences": 8,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "logger",
+      "occurrences": 9,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "crush",
+      "occurrences": 10,
+      "patterns": 6,
+      "category": "audio fx & params",
+      "weight": 0.000778
+    },
+    {
+      "name": "noise",
+      "occurrences": 7,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "fm",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "audio fx & params",
+      "weight": 0.000467
+    },
+    {
+      "name": "osc",
+      "occurrences": 13,
+      "patterns": 6,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "chop",
+      "occurrences": 6,
+      "patterns": 6,
+      "category": "audio fx & params",
+      "weight": 0.000467
+    },
+    {
+      "name": "irand",
+      "occurrences": 8,
+      "patterns": 5,
+      "category": "randomness / variation",
+      "weight": 0.000623
+    },
+    {
+      "name": "aliasBank",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "endsWith",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "fromEntries",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "hh",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "registerSynthSounds",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "registerZZFXSounds",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "registerSoundfonts",
+      "occurrences": 10,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "reify",
+      "occurrences": 13,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "lpe",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "arp",
+      "occurrences": 12,
+      "patterns": 5,
+      "category": "note / harmony",
+      "weight": 0.000934
+    },
+    {
+      "name": "tone",
+      "occurrences": 27,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.002101
+    },
+    {
+      "name": "rsize",
+      "occurrences": 8,
+      "patterns": 5,
+      "category": "audio fx & params",
+      "weight": 0.000623
+    },
+    {
+      "name": "warn",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "initStrudel",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "dist",
+      "occurrences": 6,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "vibmod",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "audio fx & params",
+      "weight": 0.000389
+    },
+    {
+      "name": "sometimesBy",
+      "occurrences": 6,
+      "patterns": 5,
+      "category": "randomness / variation",
+      "weight": 0.000467
+    },
+    {
+      "name": "clearRect",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "show",
+      "occurrences": 13,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "indexOf",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "postgain",
+      "occurrences": 7,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "roomsize",
+      "occurrences": 7,
+      "patterns": 5,
+      "category": "audio fx & params",
+      "weight": 0.000545
+    },
+    {
+      "name": "lpd",
+      "occurrences": 7,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "isNote",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "getTheme",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "phaser",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "stringify",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "hasTag",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "draw",
+      "occurrences": 5,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "concat",
+      "occurrences": 9,
+      "patterns": 5,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "squeeze",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "combinators / layering",
+      "weight": 0.000311
+    },
+    {
+      "name": "dispatch",
+      "occurrences": 12,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "reconfigure",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "entries",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "vmod",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "slowcat",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "combinators / layering",
+      "weight": 0.000467
+    },
+    {
+      "name": "activateTheme",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "setFontFamily",
+      "occurrences": 15,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.001167
+    },
+    {
+      "name": "vol",
+      "occurrences": 22,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.001712
+    },
+    {
+      "name": "GainNode",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "updateSettings",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "getAudioContext",
+      "occurrences": 14,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "setCode",
+      "occurrences": 8,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "_mod",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "getCursorLocation",
+      "occurrences": 8,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "reconfigureExtension",
+      "occurrences": 30,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.002335
+    },
+    {
+      "name": "replaceAll",
+      "occurrences": 8,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "setFontSize",
+      "occurrences": 15,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.001167
+    },
+    {
+      "name": "highlightMiniLocations",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "now",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "toDestination",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "FeedbackDelay",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "flash",
+      "occurrences": 12,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000934
+    },
+    {
+      "name": "setCursorLocation",
+      "occurrences": 8,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "Fraction",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "sortHapsByPart",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "persistentAtom",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "initEditor",
+      "occurrences": 7,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "parseBooleans",
+      "occurrences": 11,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "repl",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "updateMiniLocations",
+      "occurrences": 7,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "querySelector",
+      "occurrences": 7,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "appendCode",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "flat",
+      "occurrences": 7,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "sd",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "w",
+      "occurrences": 10,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "orbit",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "audio fx & params",
+      "weight": 0.000467
+    },
+    {
+      "name": "distort",
+      "occurrences": 6,
+      "patterns": 4,
+      "category": "audio fx & params",
+      "weight": 0.000467
+    },
+    {
+      "name": "pow",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "freq",
+      "occurrences": 11,
+      "patterns": 4,
+      "category": "sound source",
+      "weight": 0.000856
+    },
+    {
+      "name": "sequence",
+      "occurrences": 5,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "h",
+      "occurrences": 10,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "animate",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "euclidLegatoRot",
+      "occurrences": 4,
+      "patterns": 4,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "modulation",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "random",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "createGain",
+      "occurrences": 13,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "DBp75NUfSxIn",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "clear",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "changeSetting",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "loopAt",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setAutocompletionEnabled",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setTheme",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setBracketClosingEnabled",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setBracketMatchingEnabled",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setLineWrappingEnabled",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "removeEventListener",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "zoom",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "time & structure",
+      "weight": 0.000233
+    },
+    {
+      "name": "registerControl",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "toggle",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "painter",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "detune",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "invalidate",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "setDrawTime",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "getPainters",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "moment",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "updateWidgets",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "updateSliderWidgets",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "cleanupDraw",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "CustomEvent",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "dispatchEvent",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "restart",
+      "occurrences": 4,
+      "patterns": 3,
+      "category": "time & structure",
+      "weight": 0.000311
+    },
+    {
+      "name": "drawFirstFrame",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "markcss",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "_spectrum",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Bass",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "pickmod",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "node",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "sin",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "cos",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "patterns",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "find",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "pickF",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "webAudioTimeout",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Map",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "max",
+      "occurrences": 9,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "assign",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "setValueAtTime",
+      "occurrences": 8,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "replace",
+      "occurrences": 7,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "getWorklet",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "test",
+      "occurrences": 37,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.002879
+    },
+    {
+      "name": "combineContext",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "offset",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "beginPath",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "moveTo",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "hasOnset",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "Hap",
+      "occurrences": 9,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "withSpan",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "wholeOrPart",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "lineTo",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "stroke",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "chorus",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "cut",
+      "occurrences": 14,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "createOscillator",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "onPaint",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "MockedNode",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "getDrawContext",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "highlight",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "onDraw",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setLineNumbersDisplayed",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "startsWith",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Compartment",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "highlightActiveLineGutter",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "highlightActiveLine",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "lineNumbers",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "closeBrackets",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "bracketMatching",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "exit",
+      "occurrences": 7,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "registerSamplesFromDB",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "hats",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "duration",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "write",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "addVoicings",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "Drawer",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "func",
+      "occurrences": 9,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "lowpass",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "toFixed",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "tablature",
+      "occurrences": 13,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "polysynth",
+      "occurrences": 8,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "parse",
+      "occurrences": 5,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "play",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "membrane",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "scope",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "meta / control",
+      "weight": 0.000233
+    },
+    {
+      "name": "arrange",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "pattern",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "bpf",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "audio fx & params",
+      "weight": 0.000233
+    },
+    {
+      "name": "y",
+      "occurrences": 7,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "setTimeout",
+      "occurrences": 14,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "onPanic",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "semicolon",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "repeat",
+      "occurrences": 8,
+      "patterns": 3,
+      "category": "time & structure",
+      "weight": 0.000623
+    },
+    {
+      "name": "search",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "highlightSelectionMatches",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "onReEvaluate",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "create",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "highest",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "javascript",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "drawSelection",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "indentOnInput",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "EditorView",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "syntaxHighlighting",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "swing",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "time & structure",
+      "weight": 0.000233
+    },
+    {
+      "name": "initTheme",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "onChange",
+      "occurrences": 3,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Promise",
+      "occurrences": 14,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "s4",
+      "occurrences": 6,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "of",
+      "occurrences": 13,
+      "patterns": 3,
+      "category": "other",
+      "weight": 0.001012
+    },
+    {
+      "name": "drywet",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "wetfade",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "getPitchEnvelope",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getVibratoOscillator",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "once",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "doughsamples",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Pattern",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "createConstantSource",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "applyFM",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "miniAllStrings",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "mod",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "onComplete",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getParamADSR",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "label",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "errorLogger",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "lpr",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "createBiquadFilter",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "gainNode",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "stepInNamedScale",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "createElement",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "setAttribute",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "rhythm",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "append",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "combinators / layering",
+      "weight": 0.000156
+    },
+    {
+      "name": "control",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "ccn",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "ccv",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "midicmd",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "AudioWorkletNode",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getADSRValues",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "modulations",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "nanFallback",
+      "occurrences": 14,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "getSlope",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "cps",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "meta / control",
+      "weight": 0.000156
+    },
+    {
+      "name": "envValAtTime",
+      "occurrences": 10,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "getCompressor",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "DynamicsCompressorNode",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "execAsync",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "createFilter",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fromPolar",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "processHaps",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "promisify",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "spawn",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "analyze",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "drawSpectrum",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "arpeggio",
+      "occurrences": 5,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "resolve",
+      "occurrences": 5,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "getAnalyzerData",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getImageData",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "on",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "putImageData",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fillRect",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "startServer",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "Dough",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "midichan",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "close",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "reverb",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "mykeys",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "sweep",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "slider",
+      "occurrences": 11,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000856
+    },
+    {
+      "name": "euclidean",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "BPM",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "chords",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "sendRequest",
+      "occurrences": 53,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.004125
+    },
+    {
+      "name": "db",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "px",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fmh",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "audio fx & params",
+      "weight": 0.000156
+    },
+    {
+      "name": "spiralSegment",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "main",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "query",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "whenmod",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "time & structure",
+      "weight": 0.000311
+    },
+    {
+      "name": "kill",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "cleanup",
+      "occurrences": 5,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "xyOnSpiral",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "major",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "runTests",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "reject",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "filterValues",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "toscale",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "note / harmony",
+      "weight": 0.000233
+    },
+    {
+      "name": "drawSpiral",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "seg",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "butt",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "trim",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "_spiral",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "addeg",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "_pitchwheel",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "type",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "starts",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "compose",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isWithinTime",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "loadScale",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "tonicize",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "ftype",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "audio fx & params",
+      "weight": 0.000156
+    },
+    {
+      "name": "MetalSynth",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "history",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "NoiseSynth",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "MembraneSynth",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "splitAt",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "zipWith",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "left",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "right",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "flatten",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "euclidRot",
+      "occurrences": 10,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "Bendir",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "rotate",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "_euclidRot",
+      "occurrences": 7,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "ref",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "_euclidLegato",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "assert",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "endClipped",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isInPast",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isInNearPast",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isInFuture",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isValidScale",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Tune",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "when",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "size",
+      "occurrences": 3,
+      "patterns": 2,
+      "category": "audio fx & params",
+      "weight": 0.000233
+    },
+    {
+      "name": "v",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "echos",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "hh27",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "a1",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "InspectorJ",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Swimming",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "setVoicingRange",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "eb3",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "palindrome",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "time & structure",
+      "weight": 0.000156
+    },
+    {
+      "name": "lastOf",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "time & structure",
+      "weight": 0.000156
+    },
+    {
+      "name": "tune",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "Chorus",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "angle",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "mix",
+      "occurrences": 7,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "r",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "nest",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "rescale",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "move",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "midiport",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "metal",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "disconnect",
+      "occurrences": 14,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.001089
+    },
+    {
+      "name": "m",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "isInNearFuture",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "update",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "equals",
+      "occurrences": 16,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.001245
+    },
+    {
+      "name": "voicingAlias",
+      "occurrences": 10,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000778
+    },
+    {
+      "name": "_pick",
+      "occurrences": 20,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.001556
+    },
+    {
+      "name": "restartJoin",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "resetVoicings",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "resolveState",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "resetJoin",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "target",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "registerVoicings",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "squeezeJoin",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "describe",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "table",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "renderVoicing",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "bench",
+      "occurrences": 8,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "scaleOffset",
+      "occurrences": 8,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "firstCycle",
+      "occurrences": 8,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000623
+    },
+    {
+      "name": "dictionaryVoicing",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "instead",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getVoicing",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "match",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "__pick",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "inhabit",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "octavesInterval",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "spanEquals",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "isNaN",
+      "occurrences": 6,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "objectMap",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "ensureObjectValue",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "showWhole",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "ceil",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fromSemitones",
+      "occurrences": 5,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "pm",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "scaleStep",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "list",
+      "occurrences": 4,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "sign",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "semitones",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "sn",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Framer",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "bind",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "evalBlock",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "it",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "kick",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hash2code",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "arpeggios",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "code2hash",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "unison",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "spread",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "fit",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "time & structure",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "DoughRepl",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "names",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "synonym",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getFreq",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "chooseCycles",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "randomness / variation",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "c2",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "logValues",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "silence",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "frequencies",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "vi",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "i",
+      "occurrences": 4,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "time",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "signals / lfo",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "lps",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "writeFileSync",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "valueOf",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Pads",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "chunk",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "time & structure",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "init",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "settings",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "encode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "layers",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pad",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "break",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "accelerate",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "open",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "metronome",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "DROP",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "snare",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "roll",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "drop",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "build",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "tension",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Lead",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Clap",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Kick",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "percussion",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Breakdown",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "waveforms",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "webdirt",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "energy",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "density",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "times",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "chains",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "bass",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "pumping",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "groove",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "bassline",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "beat",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "progressions",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "animations",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "changes",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "effects",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "movement",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "progression",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "drops",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "elements",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "lengths",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "increase",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "automation",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "jumpToCharacter",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getSliderWidgets",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "cleanupDrawContext",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "global",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "createReverb",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getReverb",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "createFeedbackDelay",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "fmi",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getDelay",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getDjf",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getStereoNode",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "removeUndefineds",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "generate",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "case",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "withHaps",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "spaces",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "nearestNumberIndex",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "_getNearestScaleNote",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fmdecay",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getAccidentalsOffset",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hasChanged",
+      "occurrences": 6,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000467
+    },
+    {
+      "name": "sendReverb",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "number",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "connectToOutput",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Orbit",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getOrbit",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "SuperdoughOutput",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "ChannelSplitterNode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "StereoPannerNode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "ChannelMergerNode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "initializeAudio",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "exponentialRampToValueAtTime",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "effectSend",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "sqrt",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "connectToDestination",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getBus",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "cancelScheduledValues",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "duck",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "sendDelay",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "press",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "exec",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "_convertStepToNumberAndOffset",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "requests",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getActiveWidgets",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "EdoScale",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "tokenizeNote",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "has",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "fmenv",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "edoScale",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "octave",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "note / harmony",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getMiniLocations",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "insertCode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Pitches",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "replaceCode",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "setBlockBasedEvalEnabled",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hpq",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 0.000156
+    },
+    {
+      "name": "scheduleSpawn",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Float32Array",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "toggleLineComment",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Vim",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Intervals",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "isInteger",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "transposeFn",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "reset_timelines",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getScale",
+      "occurrences": 4,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "calculateSteps",
+      "occurrences": 5,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "setSpan",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "midpoint",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "tones",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "lt",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "timeline",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "stringifyValues",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "octdeg",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "setSteps",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "_morph",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "euclidish",
+      "occurrences": 4,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "bjorklund",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "_bjorklund",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "octdegmidi",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "octdegfreq",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "notes",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pkr",
+      "occurrences": 9,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.0007
+    },
+    {
+      "name": "section",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "juxBy",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "combinators / layering",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "BrowserTester",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getInfixOperators",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getSymbol",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "synth",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "PolySynth",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "testFn",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "p",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Synth",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "only",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getDestination",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "transpiler",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "mini",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "withMiniLocation",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Summary",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "character",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "nActual",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "btoa",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "setMaxListeners",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "jvbass",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "removeListener",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "OscillatorNode",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Reverb",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Panning",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "onended",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "zero",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "stackme",
+      "occurrences": 5,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "loadParser",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "atob",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "crushing",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "drive",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Party",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "ring",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "filename",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "StrudelIntegrationTest",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "fn",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "nExpected",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "normalize",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "flipY",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "checkSequence",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pr",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "choose",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "randomness / variation",
+      "weight": 0.000156
+    },
+    {
+      "name": "enableMotion",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "legato",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "calculateTactus",
+      "occurrences": 5,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "amen",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Enter",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "buttons",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Gain",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "miditouch",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "midibend",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "sysexdata",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "sysexid",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "sysex",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "progNum",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "tokenize",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "midiToFreq",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "log2",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pitchwheel",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "arc",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "callTool",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Client",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "StdioClientTransport",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "runTest",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "setPattern",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "initAudioOnFirstClick",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "_bjork",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "compress",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "time & structure",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "bjork",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "tag",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "sort",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "getFrequency",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "circlePos",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "freq2angle",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "from",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "registerSound",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "grain",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Harmony",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "onTrigger",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "timeconv",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "markov",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "getContext",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "rem",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "at",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "rebaser",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "addmytempo",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "requestMIDIAccess",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Ship",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "H",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "solid",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "initHydra",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "eq",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "env",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "_scope",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "simplify",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hpa",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hpd",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hpe",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "trem",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Melody",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Pad",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "IV",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "melody",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "Air",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Claps",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "fanchor",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Delay",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "LFO",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hcutoff",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "step",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "pause",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "clearStepperMode",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "clearOsc",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "setSoundfontUrl",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "McCartney",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Line",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pieces",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "warp",
+      "occurrences": 7,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "pdec",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "mode2",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "mode1",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Up",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "xen",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "Heaven",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "instr",
+      "occurrences": 7,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000545
+    },
+    {
+      "name": "deepimpose",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000156
+    },
+    {
+      "name": "fmwave",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "enumerate",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "splitQueries",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "intersection",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "wholeCycle",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "pluck",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Ideal",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "smear",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "highpass",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "backgroundImage",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "collect",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "vowel",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Ecstasy",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Estate",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Mondo",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "Song",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "arr",
+      "occurrences": 4,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000311
+    },
+    {
+      "name": "sus",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 0.000233
+    },
+    {
+      "name": "loopEnd",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "loopBegin",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "loop",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "audio fx & params",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "loadOrc",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "csound",
+      "occurrences": 3,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000233
+    },
+    {
+      "name": "ati",
+      "occurrences": 5,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "fvi",
+      "occurrences": 5,
+      "patterns": 1,
+      "category": "other",
+      "weight": 0.000389
+    },
+    {
+      "name": "Silence",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "speak",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    },
+    {
+      "name": "hat",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other",
+      "weight": 7.8e-05
+    }
+  ]
+}
