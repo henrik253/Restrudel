@@ -14,9 +14,9 @@ their own roadmap once data exists.
   yielding perfectly-aligned **(audio WAV, MIDI/events, Strudel code)**.
 - **Large data off this machine — but only the large data.** Code, the fetched
   corpus (~MB of `.js`), analysis plots, and MIDI/events are small → they live in
-  **git**. Only the **GB-scale WAV audio** goes to **Google Drive**, pushed with
-  **`rclone`** (no full local copy, no browser). This avoids Drive/Colab auth for
-  all early work.
+  **git**. Only the **GB-scale WAV audio** goes to **Google Drive**, versioned
+  with **DVC** (only tiny `.dvc` pointers are committed; the audio state is pinned
+  to the git commit). Setup + workflow: [docs/dvc.md](docs/dvc.md).
 
 ## Environment decisions (locked)
 - **Compute (Phase 1–2):** run **locally** (Node + Python), artifacts committed to
@@ -24,7 +24,7 @@ their own roadmap once data exists.
 - **Compute (Phase 3–4, heavy):** local or a VM; Colab optional. The authored
   `notebooks/00_setup.ipynb` (Drive mount + Node) is kept for that stage.
 - **Storage:** git for code + small artifacts (corpus, analysis, MIDI);
-  **`rclone` → Google Drive** for the WAV dataset only.
+  **DVC → Google Drive** for the WAV dataset only ([docs/dvc.md](docs/dvc.md)).
 - **Audio render (Part B):** `OfflineAudioContext` (faster-than-realtime) first;
   headless browser as proven fallback. Validated by a spike before we depend on it.
 
@@ -61,9 +61,11 @@ Turning a Strudel pattern into a WAV has two modes:
     code/{id}.js     # the source pattern
     manifest.jsonl   # one row per sample → all artifacts + params + split
   ```
-- [ ] **Drive layout** (heavy audio only, via `rclone`, set up in Phase 3):
+- [x] **DVC → Drive** for heavy audio: `dvc init` done, `scripts/setup_dvc_remote.sh`
+      + [docs/dvc.md](docs/dvc.md) added. `dataset/audio/` is DVC-tracked; the WAVs
+      land in Drive and only `dataset/audio.dvc` is committed. Drive layout:
   ```
-  Restrudel/audio/{id}.wav   # 16 kHz mono renders; referenced by manifest.jsonl
+  <drive_folder>/...        # DVC-managed content (16 kHz mono WAV renders)
   ```
 - [ ] Decide reproducibility basics: pin Strudel package versions, seed RNG.
 
