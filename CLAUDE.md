@@ -42,10 +42,13 @@ transcription needed to get labels.
 - `project_plan.md` — goals, YourMT3+ analysis, data strategy.
 - `roadmap.md` — phased plan; **the source of truth for next steps**.
 - `corpus/sources/*` — Strudel song/pattern submodules (input to analysis).
-- `analysis/` — corpus parser (`analyze_corpus.py`) + outputs (`out/`, `REPORT.md`).
+- `analysis/` — outputs of the corpus analysis: plots in `out/`, machine-readable
+  stats in `results/*.json` (with sampling weights/probs, for `data_gen/`).
 - `data_gen/` — (Phase 2+) Node tooling: pattern→MIDI labels, audio render, generators.
-- `notebooks/` — Colab orchestration (`00_setup.ipynb`); Drive used only for the
-  heavy WAV dataset (via DVC, see `docs/dvc.md`). Small artifacts live in git.
+- `notebooks/` — `00_setup.ipynb` (Colab/Drive); `01_corpus_analysis.ipynb` is the
+  corpus analysis (sounds, functions, transitions → `analysis/results/`). Drive
+  used only for the heavy WAV dataset (via DVC, see `docs/dvc.md`); small
+  artifacts live in git.
 
 ## Conventions
 - **Storage:** code + small artifacts (corpus submodules, analysis, MIDI) in git;
@@ -56,8 +59,9 @@ transcription needed to get labels.
 - **Strudel engine is pure JS** → label extraction runs in Node
   (`@strudel/transpiler` + `@strudel/mini`, `pattern.queryArc(...)`). No browser
   needed for labels.
-- Python analysis uses matplotlib/pandas; re-run with
-  `python3 analysis/analyze_corpus.py`.
+- Corpus analysis is the notebook `notebooks/01_corpus_analysis.ipynb`
+  (matplotlib/pandas); re-run it top-to-bottom to refresh `analysis/out/` and
+  `analysis/results/`.
 
 ## Workflow for new features (REQUIRED)
 
