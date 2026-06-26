@@ -65,20 +65,32 @@ transcription needed to get labels.
 
 ## Workflow for new features (REQUIRED)
 
-When the user prompts for a **new feature or change**, do not work on `master`:
+When the user prompts for a **new feature or change**, do not work on `master`.
 
-1. **Create a dedicated branch and an isolated git worktree for it** (use the
-   worktree tooling so `master` stays untouched). Branch name should describe the
-   feature, e.g. `phase2-midi-labeler`.
-2. **Do all the work inside that worktree**, committing as you go.
+**Branch vs. worktree — keep these straight.** The *branch* holds the commits
+(the actual changes); the *worktree* is just a throwaway directory under
+`.claude/worktrees/` where you edit files on that branch. What ends up in
+`master` is the **branch's changes**, merged in — **never the worktree directory
+itself**. After the merge, the worktree is disposable and must be removed.
+
+1. **Create a feature branch in an isolated worktree** (use the worktree tooling
+   so `master` stays untouched). The branch name should describe the feature,
+   e.g. `phase2-midi-labeler`. Note the tooling may prefix it (e.g.
+   `worktree-phase2-midi-labeler`) — that prefix is just part of the branch name,
+   not a sign the worktree is being merged.
+2. **Do all the work inside that worktree**, committing to the branch as you go.
 3. **Hand the changes back to the user to review** — summarize what changed and
    where. The user reads the diff and **decides** whether to merge.
-4. **Only merge into `master` when the user approves.** Merge with `--no-ff`,
-   push, and confirm all branches are merged. Do not auto-merge or push to
-   `master` without that approval.
+4. **Only when the user approves, merge the BRANCH into `master`** with `--no-ff`.
+   Push only if the user asks. Do not auto-merge or push without approval. The
+   result: `master` contains the changes — and nothing worktree-related.
+5. **Clean up after merging:** remove the worktree directory and delete the now
+   merged branch (`git worktree remove …` + `git branch -d …`), so no worktree or
+   stray feature branch lingers. Confirm `master` is the only worktree and the
+   branch shows as merged.
 
 This keeps `master` always-reviewed: every feature is an isolated, reviewable
-unit the user opts into.
+unit the user opts into — with no leftover worktrees or branches behind it.
 
 ## Pointers
 - Next steps: always check [roadmap.md](roadmap.md) — work proceeds phase by phase.
