@@ -166,20 +166,25 @@ Markov chains of what-follows-what).
 
 **(3) Generation — the new build.** `data_gen/generate.mjs` samples from those
 JSONs to emit new `.js` pattern files:
-- [ ] **Sampler core:** weighted choice over `sounds.json` / `banks.json`;
-      chain-building by walking `transitions.json` (start at a head like
-      `note`/`s`/`stack`, repeatedly draw the next call from `depth1[current]`,
-      depth-2 for lookahead); argument values (lpf cutoff, ADSR, tempo, scale)
-      drawn from realistic ranges per function.
-- [ ] **Structure:** number of voices from `complexity.json`; mini-notation
-      constructs (`[]`, `<>`, `~`, `*`, euclid) used at the frequencies in
-      `mini_notation.json`; templates (bassline/arp/lead/chords/drums) as
-      skeletons the sampler fills in.
+- [x] **Sampler core** (`data_gen/generate.mjs`): chain-building by walking
+      `transitions.json` — draw the head from `heads`, then repeat
+      P(next | current) over `depth1[current].successors` until `__END__`;
+      argument content per function from `arguments.json` (numeric: observed
+      common values or quantile interpolation; string: weighted observed
+      strings). Guards: head/successor whitelists (JS noise, code-arg
+      functions), one sound/pitch assignment per chain.
+- [x] **Analysis upgraded for the sampler** (notebook §8b): chain **heads**,
+      chain **ends** (`__END__`), and **per-function argument distributions** →
+      `transitions.v2` + `arguments.json`.
+- [ ] **Structure, beyond empirical:** voices from `complexity.json` ✅;
+      mini-notation currently *re-samples observed strings* — later: synthesize
+      novel mini-notation from `mini_notation.json` feature frequencies;
+      optional templates (bassline/arp/lead/drums) as skeletons.
 - [ ] **Validity gate:** every generated pattern must evaluate in the Strudel
       engine (Phase 2 evaluator) — reject/resample on error, so only playable
-      code enters the dataset.
-- [ ] **Reproducibility:** seeded RNG; store the seed + generator version per
-      sample in the manifest.
+      code enters the dataset. *(needs Phase 2)*
+- [x] **Reproducibility:** seeded RNG (mulberry32), seed recorded per song;
+      - [ ] still to do: manifest row with seed + generator version per sample.
 
 **(4) Render & label — reuse Phases 2–3.** For each generated code string:
 labels via `queryArc` → MIDI/events (Phase 2), audio via the offline renderer →

@@ -30,14 +30,17 @@ conditional probability. Both are ready for direct weighted sampling.
 | `mini_notation.json` | `items[]`: `{feature, patterns, fraction}` | how often to use `[]`,`<>`,euclid,… |
 | `sound_categories.json` | `items[]`: `{category, occurrences, weight}` | synth vs sample mix |
 | `complexity.json` | `voices`, `functions_per_pattern` (describe stats), `patterns_with_tempo` | target realistic size/polyphony |
-| `transitions.json` | `n_chains`, `top_bigrams[]`, `depth1{}`, `depth2{}` | **Markov chain** for method order |
+| `transitions.json` | `heads{}`, `n_chains`, `top_bigrams[]`, `depth1{}`, `depth2{}` | **Markov chain**: start, next, stop |
+| `arguments.json` | `functions{}`: per-function content stats | **P(content \| function)** — fill the parentheses |
 
-### transitions.json
+### transitions.json (v2)
 ```json
 {
+  "heads": { "total": 5447, "items": [ {"name": "s", "count": 730, "prob": 0.134}, ... ] },
   "depth1": {
-    "s": { "total": 1383,
-           "successors": [ {"name": "gain", "count": 329, "prob": 0.238}, ... ] }
+    "s": { "total": 1526,
+           "successors": [ {"name": "slow", "prob": 0.312}, {"name": "gain", "prob": 0.216},
+                           {"name": "__END__", "prob": 0.094}, ... ] }
   },
   "depth2": {
     "s": { "total": 521,
@@ -45,7 +48,26 @@ conditional probability. Both are ready for direct weighted sampling.
   }
 }
 ```
-To build a chain: start from a head (`s`/`note`/`n`/`stack`), then repeatedly
-sample the next call from `depth1[current].successors` by `prob` (use `depth2`
-for 2-step lookahead). This reproduces idiomatic chains like
-`note → s → lpf → room → gain`.
+- `heads` = P(a chain **starts** with fn) — the generator's first draw.
+- `__END__` successors = P(the chain **stops** after fn) — so "next or stop" is
+  one weighted draw over `depth1[current].successors`.
+- `depth2` = two-step paths for lookahead.
+
+### arguments.json
+Per function, what goes **inside** the parentheses, split by kind:
+```json
+{ "functions": { "gain": {
+    "total": 827, "p_numeric": 0.81, "p_string": 0.07, "p_other": 0.12,
+    "numeric": { "min": 0, "max": 4, "quantiles": [q05,q25,q50,q75,q95],
+                 "common": [ {"value": 0.5, "prob": 0.17}, ... ] },
+    "strings": [ {"value": "[1 0.6]*2", "prob": 0.05}, ... ] } } }
+```
+`p_other` counts non-literal args (arrow functions, nested patterns) that the
+generator currently skips.
+
+### How the generator uses these
+`data_gen/generate.mjs`: draw a head from `heads` → fill its content from
+`arguments.json` (numeric branch: common values or quantile interpolation;
+string branch: weighted observed strings) → draw the next function from
+`depth1[current]` until `__END__` → repeat per voice, with voice count from
+`complexity.json`. Seeded, so every song is reproducible.
