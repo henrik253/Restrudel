@@ -14,7 +14,14 @@ Node tooling that turns Strudel pattern strings into training samples.
   node data_gen/generate.mjs --n 500 --seed 1 --out tmp/           # {seed}_{i}.js files
   node data_gen/generate.mjs --n 500 --seed 1 --yaml out.yaml      # one YAML file
   node data_gen/generate.mjs --n 10 --temp 0.5                     # more volatile content
+  node data_gen/generate.mjs --n 10 --min-voices 3 --max-voices 5 --min-len 4  # denser/longer
   ```
+  **Hyperparameters** (all optional, recorded in the YAML `params`):
+  `--temp` (content volatility), `--min-voices`/`--max-voices` (voices per song),
+  `--min-len`/`--max-len` (tokens per note/sample sequence). `--min-len 2` (the
+  default) avoids the "single sound that just repeats" songs; raise the voice/len
+  floors for richer patterns.
+
   `--yaml` writes `generator`, `params`, `count`, and `songs: [{id, seed, voices,
   code}]`, where each `code` is a YAML literal block scalar (`|`) — real newlines,
   no quote-escaping, no blank-line placeholders.

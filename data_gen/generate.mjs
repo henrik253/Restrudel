@@ -27,9 +27,14 @@ const contentModels = load('content_models').functions;   // raw sequences per s
 // Temperature for content sampling: weight_i = p_i^TEMP (then renormalize).
 // TEMP=1 → empirical distribution; TEMP<1 → flatter/more volatile (breaks
 // dominant-token alternation); TEMP→0 → uniform. Tunable via --temp.
-let TEMP = 0.2;           // content-sampling temperature (CLI --temp overrides)
+// --- generation hyperparameters (CLI-overridable) ---------------------------
+let TEMP = 0.2;           // content-sampling temperature
+let MIN_VOICES = 2;       // voices per song: floor (raise for denser songs)
+let MAX_VOICES = 4;       // voices per song: cap
+let MIN_LEN = 2;          // tokens per content sequence: floor (>1 kills the
+                          //   "single sound that just repeats" songs)
+let MAX_LEN = 32;         // tokens per content sequence: cap
 const MAX_ORDER = 6;      // longest prefix context to condition on
-const MAX_SEQ_LEN = 32;   // guard against runaway lengths
 
 // ---------- seeded RNG (mulberry32) ----------------------------------------
 function mulberry32(seed) {
@@ -117,7 +122,7 @@ function tempPick(rng, pairs, temp) {
 function synthSequence(rng, fn) {
   const model = seqModels[fn];
   if (!model) return null;
-  const L = Math.min(MAX_SEQ_LEN, Math.max(1, sampleLength(rng, model.length)));
+  const L = Math.min(MAX_LEN, Math.max(MIN_LEN, sampleLength(rng, model.length)));
   const out = [tempPick(rng, model.start.map((s) => [s.token, s.prob]), TEMP)];
   while (out.length < L) {
     let candidates = null;
@@ -201,11 +206,13 @@ function sampleChain(rng, { maxLen = 8 } = {}) {
 
 // ---------- song: voices from complexity ------------------------------------
 function sampleVoices(rng) {
-  // empirical quartiles of $:/stack voice counts; clamp to a sane range
+  // base draw from corpus $:/stack quartiles (≈2–3), then spread toward MAX_VOICES
+  // so a raised cap yields denser songs with variety rather than a hard clamp.
   const { '25%': q1, '50%': q2, '75%': q3 } = complexity.voices;
   const r = rng();
-  const v = r < 0.25 ? q1 : r < 0.5 ? q2 : r < 0.75 ? q3 : q3 + 1;
-  return Math.max(1, Math.min(5, Math.round(v)));
+  let v = Math.round(r < 0.25 ? q1 : r < 0.5 ? q2 : r < 0.75 ? q3 : q3 + 1);
+  while (v < MAX_VOICES && rng() < 0.35) v++;
+  return Math.max(MIN_VOICES, Math.min(MAX_VOICES, v));
 }
 
 export function generateSong(seed) {
@@ -248,6 +255,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const out = arg('out', null);          // dir of individual .js files
   const yamlPath = arg('yaml', null);    // single YAML file with all songs
   TEMP = parseFloat(arg('temp', String(TEMP)));
+  MIN_VOICES = parseInt(arg('min-voices', String(MIN_VOICES)), 10);
+  MAX_VOICES = parseInt(arg('max-voices', String(MAX_VOICES)), 10);
+  MIN_LEN = parseInt(arg('min-len', String(MIN_LEN)), 10);
+  MAX_LEN = parseInt(arg('max-len', String(MAX_LEN)), 10);
 
   if (out) mkdirSync(out, { recursive: true });
   const collected = [];
@@ -263,7 +274,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     mkdirSync(dirname(yamlPath), { recursive: true });
     writeFileSync(yamlPath, toYaml({
       generator: 'data_gen/generate.mjs',
-      params: { n, seed, temp: TEMP, max_order: MAX_ORDER },
+      params: { n, seed, temp: TEMP, min_voices: MIN_VOICES, max_voices: MAX_VOICES,
+                min_len: MIN_LEN, max_len: MAX_LEN, max_order: MAX_ORDER },
       count: collected.length, songs: collected,
     }));
     console.log(`wrote ${collected.length} songs to ${yamlPath}`);
