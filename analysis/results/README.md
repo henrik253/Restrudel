@@ -31,7 +31,8 @@ conditional probability. Both are ready for direct weighted sampling.
 | `sound_categories.json` | `items[]`: `{category, occurrences, weight}` | synth vs sample mix |
 | `complexity.json` | `voices`, `functions_per_pattern` (describe stats), `patterns_with_tempo` | target realistic size/polyphony |
 | `transitions.json` | `heads{}`, `n_chains`, `top_bigrams[]`, `depth1{}`, `depth2{}` | **Markov chain**: start, next, stop |
-| `arguments.json` | `functions{}`: per-function content stats | **P(content \| function)** — fill the parentheses |
+| `arguments.json` | `functions{}`: numeric + categorical arg stats | **P(content \| function)** — numeric values, categorical whole-value strings |
+| `content_models.json` | `functions{}`: token-Markov per sequence fn | **generate NEW note/sample sequences** (length + note→note) |
 
 ### transitions.json (v2)
 ```json
@@ -63,7 +64,24 @@ Per function, what goes **inside** the parentheses, split by kind:
     "strings": [ {"value": "[1 0.6]*2", "prob": 0.05}, ... ] } } }
 ```
 `p_other` counts non-literal args (arrow functions, nested patterns) that the
-generator currently skips.
+generator currently skips. Numeric args and *categorical* string args
+(`bank`, `scale`, `vowel`) are sampled from here; **sequence** string content
+(`note`/`n`/`s`/`sound`) is instead generated from `content_models.json`.
+
+### content_models.json
+The inside of a `note`/`n`/`s`/`sound` string is modelled as a **token
+sequence**, so the generator invents new strings instead of copying whole ones:
+```json
+{ "functions": { "note": {
+    "n_strings": 325, "vocab_size": 215,
+    "length": { "counts": {"1": 100, "4": 83, "16": 18, ...}, "mean": 5.48 },
+    "start": [ {"token": "c3", "prob": 0.197}, ... ],
+    "transitions": { "c3": [ {"token": "e3", "prob": 0.53}, {"token": "eb3", "prob": 0.18} ], ... } } } }
+```
+Generate a string: draw a token count from `length`, draw the first token from
+`start`, then walk `transitions` token-by-token (`c3 → e3 → g3 …`). This captures
+**P(note follows note)** and **P(string length)** — new melodies/rhythms that
+follow the corpus grammar without reproducing it.
 
 ### How the generator uses these
 `data_gen/generate.mjs`: draw a head from `heads` → fill its content from

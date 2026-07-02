@@ -1,0 +1,5882 @@
+{
+  "schema_version": 1,
+  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "n_patterns": 855,
+  "n_sources": 8,
+  "schema": "content_models.v1",
+  "note": "sequence content for note/n/s/sound: generate NEW strings via length + first-order token Markov; do not sample whole strings",
+  "functions": {
+    "s": {
+      "n_strings": 1077,
+      "vocab_size": 320,
+      "length": {
+        "counts": {
+          "1": 754,
+          "2": 78,
+          "3": 38,
+          "4": 136,
+          "5": 25,
+          "6": 7,
+          "7": 4,
+          "8": 12,
+          "9": 8,
+          "10": 5,
+          "12": 2,
+          "14": 1,
+          "16": 1,
+          "17": 3,
+          "23": 1,
+          "30": 1,
+          "41": 1
+        },
+        "min": 1,
+        "max": 41,
+        "mean": 2.02
+      },
+      "start": [
+        {
+          "token": "bd",
+          "count": 156,
+          "prob": 0.16508
+        },
+        {
+          "token": "~",
+          "count": 97,
+          "prob": 0.10265
+        },
+        {
+          "token": "bd*4",
+          "count": 84,
+          "prob": 0.08889
+        },
+        {
+          "token": "sawtooth",
+          "count": 55,
+          "prob": 0.0582
+        },
+        {
+          "token": "hh*16",
+          "count": 46,
+          "prob": 0.04868
+        },
+        {
+          "token": "hh",
+          "count": 29,
+          "prob": 0.03069
+        },
+        {
+          "token": "hh*8",
+          "count": 28,
+          "prob": 0.02963
+        },
+        {
+          "token": "piano",
+          "count": 24,
+          "prob": 0.0254
+        },
+        {
+          "token": "triangle",
+          "count": 21,
+          "prob": 0.02222
+        },
+        {
+          "token": "bd*2",
+          "count": 18,
+          "prob": 0.01905
+        },
+        {
+          "token": "cr",
+          "count": 17,
+          "prob": 0.01799
+        },
+        {
+          "token": "sd",
+          "count": 15,
+          "prob": 0.01587
+        },
+        {
+          "token": "square",
+          "count": 15,
+          "prob": 0.01587
+        },
+        {
+          "token": "bass",
+          "count": 14,
+          "prob": 0.01481
+        },
+        {
+          "token": "supersaw",
+          "count": 14,
+          "prob": 0.01481
+        },
+        {
+          "token": "lead",
+          "count": 12,
+          "prob": 0.0127
+        },
+        {
+          "token": "gm_electric_bass_finger",
+          "count": 12,
+          "prob": 0.0127
+        },
+        {
+          "token": "cp",
+          "count": 11,
+          "prob": 0.01164
+        },
+        {
+          "token": "hh*4",
+          "count": 11,
+          "prob": 0.01164
+        },
+        {
+          "token": "vocal",
+          "count": 9,
+          "prob": 0.00952
+        },
+        {
+          "token": "sine",
+          "count": 9,
+          "prob": 0.00952
+        },
+        {
+          "token": "rd",
+          "count": 8,
+          "prob": 0.00847
+        },
+        {
+          "token": "gm_electric_guitar_jazz",
+          "count": 8,
+          "prob": 0.00847
+        },
+        {
+          "token": "oh",
+          "count": 7,
+          "prob": 0.00741
+        },
+        {
+          "token": "mt",
+          "count": 7,
+          "prob": 0.00741
+        },
+        {
+          "token": "gm_oboe",
+          "count": 7,
+          "prob": 0.00741
+        },
+        {
+          "token": "gm_lead_6_voice",
+          "count": 6,
+          "prob": 0.00635
+        },
+        {
+          "token": "gm_electric_guitar_clean:2",
+          "count": 6,
+          "prob": 0.00635
+        },
+        {
+          "token": "lt",
+          "count": 6,
+          "prob": 0.00635
+        },
+        {
+          "token": "hh*2",
+          "count": 5,
+          "prob": 0.00529
+        },
+        {
+          "token": "gm_drawbar_organ",
+          "count": 5,
+          "prob": 0.00529
+        },
+        {
+          "token": "gm_electric_bass_finger:2",
+          "count": 5,
+          "prob": 0.00529
+        },
+        {
+          "token": "gm_piccolo",
+          "count": 5,
+          "prob": 0.00529
+        },
+        {
+          "token": "drums",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "bell",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "saw",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "gm_electric_bass_pick",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "linndrum_bd",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "linndrum_sd",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "gm_synth_strings_1",
+          "count": 4,
+          "prob": 0.00423
+        },
+        {
+          "token": "kick",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "snare",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "perc*3",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "amen",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "psaltery_pluck",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "hh:1*4",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "amencutup",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "breath",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "east",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "rect",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "gtr",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "gm_harmonica",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "linndrum_hh",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "linndrum_oh",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "gm_ocarina",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "gm_acoustic_guitar_steel:2",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "z_sawtooth",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "bd!2",
+          "count": 3,
+          "prob": 0.00317
+        },
+        {
+          "token": "kick*4",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "cymbal",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "pad",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "cowbell",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_epiano1:1",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_acoustic_bass",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "bd:5",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "misc:2",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "dino",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "woodblock:1",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "clavisynth",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "ocarina_vib",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "ellipse",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_bassoon",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "recorder_tenor_sus",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "sax",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "ocarina",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "recorder_bass_sus",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "rd*3",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_church_organ",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_acoustic_guitar_nylon",
+          "count": 2,
+          "prob": 0.00212
+        },
+        {
+          "token": "gm_tuba",
+          "count": 2,
+          "prob": 0.00212
+        }
+      ],
+      "transitions": {
+        "bd": [
+          {
+            "token": "sd",
+            "count": 88,
+            "prob": 0.42308
+          },
+          {
+            "token": "~",
+            "count": 58,
+            "prob": 0.27885
+          },
+          {
+            "token": "bd",
+            "count": 19,
+            "prob": 0.09135
+          },
+          {
+            "token": "hh",
+            "count": 11,
+            "prob": 0.05288
+          },
+          {
+            "token": "cp",
+            "count": 8,
+            "prob": 0.03846
+          },
+          {
+            "token": "4",
+            "count": 6,
+            "prob": 0.02885
+          },
+          {
+            "token": "1",
+            "count": 4,
+            "prob": 0.01923
+          },
+          {
+            "token": "cr",
+            "count": 3,
+            "prob": 0.01442
+          },
+          {
+            "token": "sd*2",
+            "count": 2,
+            "prob": 0.00962
+          },
+          {
+            "token": "sn",
+            "count": 2,
+            "prob": 0.00962
+          },
+          {
+            "token": "rim",
+            "count": 2,
+            "prob": 0.00962
+          },
+          {
+            "token": "lt",
+            "count": 2,
+            "prob": 0.00962
+          }
+        ],
+        "hh": [
+          {
+            "token": "~",
+            "count": 12,
+            "prob": 0.2449
+          },
+          {
+            "token": "cp",
+            "count": 9,
+            "prob": 0.18367
+          },
+          {
+            "token": "hh",
+            "count": 9,
+            "prob": 0.18367
+          },
+          {
+            "token": "sd",
+            "count": 6,
+            "prob": 0.12245
+          },
+          {
+            "token": "8",
+            "count": 4,
+            "prob": 0.08163
+          },
+          {
+            "token": "bd",
+            "count": 3,
+            "prob": 0.06122
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "hh*2",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "oh",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "2",
+            "count": 1,
+            "prob": 0.02041
+          }
+        ],
+        "sd": [
+          {
+            "token": "~",
+            "count": 56,
+            "prob": 0.45161
+          },
+          {
+            "token": "bd",
+            "count": 31,
+            "prob": 0.25
+          },
+          {
+            "token": "hh",
+            "count": 15,
+            "prob": 0.12097
+          },
+          {
+            "token": "sd",
+            "count": 6,
+            "prob": 0.04839
+          },
+          {
+            "token": "cp",
+            "count": 5,
+            "prob": 0.04032
+          },
+          {
+            "token": "hh*2",
+            "count": 3,
+            "prob": 0.02419
+          },
+          {
+            "token": "2",
+            "count": 2,
+            "prob": 0.01613
+          },
+          {
+            "token": "hh*4",
+            "count": 2,
+            "prob": 0.01613
+          },
+          {
+            "token": "bd*2",
+            "count": 1,
+            "prob": 0.00806
+          },
+          {
+            "token": "hh*3",
+            "count": 1,
+            "prob": 0.00806
+          },
+          {
+            "token": "ht",
+            "count": 1,
+            "prob": 0.00806
+          },
+          {
+            "token": "sd*4",
+            "count": 1,
+            "prob": 0.00806
+          }
+        ],
+        "~": [
+          {
+            "token": "cp",
+            "count": 82,
+            "prob": 0.24699
+          },
+          {
+            "token": "sd",
+            "count": 69,
+            "prob": 0.20783
+          },
+          {
+            "token": "~",
+            "count": 67,
+            "prob": 0.20181
+          },
+          {
+            "token": "bd",
+            "count": 31,
+            "prob": 0.09337
+          },
+          {
+            "token": "oh",
+            "count": 18,
+            "prob": 0.05422
+          },
+          {
+            "token": "hh",
+            "count": 14,
+            "prob": 0.04217
+          },
+          {
+            "token": "rim",
+            "count": 8,
+            "prob": 0.0241
+          },
+          {
+            "token": "3",
+            "count": 8,
+            "prob": 0.0241
+          },
+          {
+            "token": "2",
+            "count": 6,
+            "prob": 0.01807
+          },
+          {
+            "token": "5",
+            "count": 3,
+            "prob": 0.00904
+          },
+          {
+            "token": "snare",
+            "count": 2,
+            "prob": 0.00602
+          },
+          {
+            "token": "hh*2",
+            "count": 2,
+            "prob": 0.00602
+          }
+        ],
+        "bd*2": [
+          {
+            "token": "~",
+            "count": 15,
+            "prob": 0.78947
+          },
+          {
+            "token": "sd",
+            "count": 2,
+            "prob": 0.10526
+          },
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.05263
+          },
+          {
+            "token": "sd*4",
+            "count": 1,
+            "prob": 0.05263
+          }
+        ],
+        "cp": [
+          {
+            "token": "~",
+            "count": 45,
+            "prob": 0.77586
+          },
+          {
+            "token": "sd",
+            "count": 8,
+            "prob": 0.13793
+          },
+          {
+            "token": "hh",
+            "count": 2,
+            "prob": 0.03448
+          },
+          {
+            "token": "4",
+            "count": 2,
+            "prob": 0.03448
+          },
+          {
+            "token": "16",
+            "count": 1,
+            "prob": 0.01724
+          }
+        ],
+        "1": [
+          {
+            "token": "2",
+            "count": 7,
+            "prob": 0.77778
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "2": [
+          {
+            "token": "bd",
+            "count": 4,
+            "prob": 0.30769
+          },
+          {
+            "token": "4",
+            "count": 2,
+            "prob": 0.15385
+          },
+          {
+            "token": "0",
+            "count": 2,
+            "prob": 0.15385
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.07692
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.07692
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.07692
+          },
+          {
+            "token": "bd!2",
+            "count": 1,
+            "prob": 0.07692
+          },
+          {
+            "token": "16",
+            "count": 1,
+            "prob": 0.07692
+          }
+        ],
+        "4": [
+          {
+            "token": "4",
+            "count": 8,
+            "prob": 0.36364
+          },
+          {
+            "token": "8",
+            "count": 7,
+            "prob": 0.31818
+          },
+          {
+            "token": "0",
+            "count": 3,
+            "prob": 0.13636
+          },
+          {
+            "token": "2",
+            "count": 3,
+            "prob": 0.13636
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.04545
+          }
+        ],
+        "8": [
+          {
+            "token": "16",
+            "count": 9,
+            "prob": 0.69231
+          },
+          {
+            "token": "brakedrum:1",
+            "count": 2,
+            "prob": 0.15385
+          },
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 0.07692
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.07692
+          }
+        ],
+        "hh*2": [
+          {
+            "token": "sd",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "cp",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "hh*3",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "hh",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "bd*4": [
+          {
+            "token": "~",
+            "count": 4,
+            "prob": 0.57143
+          },
+          {
+            "token": "sd*2",
+            "count": 2,
+            "prob": 0.28571
+          },
+          {
+            "token": "bd!4",
+            "count": 1,
+            "prob": 0.14286
+          }
+        ],
+        "kick": [
+          {
+            "token": "snare",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "bd:1": [
+          {
+            "token": "bd:2",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "rim",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "0": [
+          {
+            "token": "0",
+            "count": 8,
+            "prob": 0.57143
+          },
+          {
+            "token": "4",
+            "count": 4,
+            "prob": 0.28571
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "8",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "sd*2": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "snare": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "oh": [
+          {
+            "token": "~",
+            "count": 12,
+            "prob": 0.85714
+          },
+          {
+            "token": "2",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "3": [
+          {
+            "token": "sd",
+            "count": 3,
+            "prob": 0.42857
+          },
+          {
+            "token": "cowbell:3",
+            "count": 2,
+            "prob": 0.28571
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.14286
+          },
+          {
+            "token": "crow",
+            "count": 1,
+            "prob": 0.14286
+          }
+        ],
+        "5": [
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "perc",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "crow",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "sd",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "sawtooth": [
+          {
+            "token": "square",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "rim": [
+          {
+            "token": "hh",
+            "count": 2,
+            "prob": 0.4
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.4
+          },
+          {
+            "token": "sd",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "sn": [
+          {
+            "token": "hh",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "bd:5": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "sd:1!3": [
+          {
+            "token": "sd:1",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "sd:1": [
+          {
+            "token": "hh27",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "bd!3": [
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "bd*2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "hh*3": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "mt": [
+          {
+            "token": "lt",
+            "count": 4,
+            "prob": 0.66667
+          },
+          {
+            "token": "mt*2",
+            "count": 1,
+            "prob": 0.16667
+          },
+          {
+            "token": "mt",
+            "count": 1,
+            "prob": 0.16667
+          }
+        ],
+        "lt": [
+          {
+            "token": "mt*2",
+            "count": 4,
+            "prob": 0.25
+          },
+          {
+            "token": "cr",
+            "count": 3,
+            "prob": 0.1875
+          },
+          {
+            "token": "lt",
+            "count": 3,
+            "prob": 0.1875
+          },
+          {
+            "token": "ht",
+            "count": 2,
+            "prob": 0.125
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.125
+          },
+          {
+            "token": "hh",
+            "count": 1,
+            "prob": 0.0625
+          },
+          {
+            "token": "mt",
+            "count": 1,
+            "prob": 0.0625
+          }
+        ],
+        "woodblock:1": [
+          {
+            "token": "woodblock:2*2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "woodblock:2*2": [
+          {
+            "token": "snare_rim:0",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "snare_rim:0": [
+          {
+            "token": "gong",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "gong": [
+          {
+            "token": "8",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "brakedrum:1": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "sd:2": [
+          {
+            "token": "bd",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "sn:3": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "cr": [
+          {
+            "token": "lt",
+            "count": 10,
+            "prob": 0.71429
+          },
+          {
+            "token": "sd",
+            "count": 2,
+            "prob": 0.14286
+          },
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "crow": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.6
+          },
+          {
+            "token": "crow",
+            "count": 2,
+            "prob": 0.4
+          }
+        ],
+        "mt*2": [
+          {
+            "token": "lt*2",
+            "count": 4,
+            "prob": 0.66667
+          },
+          {
+            "token": "mt*2",
+            "count": 1,
+            "prob": 0.16667
+          },
+          {
+            "token": "cr",
+            "count": 1,
+            "prob": 0.16667
+          }
+        ],
+        "lt*2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "bd!2": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.75
+          },
+          {
+            "token": "bd*4",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "sd!3": [
+          {
+            "token": "sd*4",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "15": [
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "white",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "16": [
+          {
+            "token": "32",
+            "count": 4,
+            "prob": 0.28571
+          },
+          {
+            "token": "16",
+            "count": 4,
+            "prob": 0.28571
+          },
+          {
+            "token": "24",
+            "count": 3,
+            "prob": 0.21429
+          },
+          {
+            "token": "4",
+            "count": 2,
+            "prob": 0.14286
+          },
+          {
+            "token": "0",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "24": [
+          {
+            "token": "32",
+            "count": 2,
+            "prob": 1.0
+          }
+        ]
+      }
+    },
+    "n": {
+      "n_strings": 129,
+      "vocab_size": 146,
+      "length": {
+        "counts": {
+          "1": 6,
+          "2": 14,
+          "3": 5,
+          "4": 19,
+          "5": 13,
+          "6": 22,
+          "7": 5,
+          "8": 9,
+          "9": 2,
+          "10": 2,
+          "12": 3,
+          "14": 4,
+          "15": 1,
+          "16": 2,
+          "17": 2,
+          "18": 2,
+          "20": 1,
+          "21": 1,
+          "22": 2,
+          "25": 1,
+          "28": 3,
+          "30": 1,
+          "32": 2,
+          "34": 1,
+          "45": 1,
+          "67": 1,
+          "72": 1,
+          "81": 1,
+          "118": 1,
+          "467": 1
+        },
+        "min": 1,
+        "max": 467,
+        "mean": 14.33
+      },
+      "start": [
+        {
+          "token": "0",
+          "count": 67,
+          "prob": 0.55372
+        },
+        {
+          "token": "~",
+          "count": 13,
+          "prob": 0.10744
+        },
+        {
+          "token": "2",
+          "count": 8,
+          "prob": 0.06612
+        },
+        {
+          "token": "4",
+          "count": 4,
+          "prob": 0.03306
+        },
+        {
+          "token": "5",
+          "count": 3,
+          "prob": 0.02479
+        },
+        {
+          "token": "0@2",
+          "count": 3,
+          "prob": 0.02479
+        },
+        {
+          "token": "c2",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "-7*3",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "22",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "3",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "1",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "6",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "-7",
+          "count": 2,
+          "prob": 0.01653
+        },
+        {
+          "token": "F4",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "G3",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "9*2",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "-3",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "9",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "7",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "2@2",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "-2",
+          "count": 1,
+          "prob": 0.00826
+        },
+        {
+          "token": "2@3",
+          "count": 1,
+          "prob": 0.00826
+        }
+      ],
+      "transitions": {
+        "0": [
+          {
+            "token": "1",
+            "count": 46,
+            "prob": 0.37097
+          },
+          {
+            "token": "2",
+            "count": 18,
+            "prob": 0.14516
+          },
+          {
+            "token": "~",
+            "count": 15,
+            "prob": 0.12097
+          },
+          {
+            "token": "0",
+            "count": 11,
+            "prob": 0.08871
+          },
+          {
+            "token": "4",
+            "count": 9,
+            "prob": 0.07258
+          },
+          {
+            "token": "7",
+            "count": 7,
+            "prob": 0.05645
+          },
+          {
+            "token": "-1",
+            "count": 6,
+            "prob": 0.04839
+          },
+          {
+            "token": "-3",
+            "count": 4,
+            "prob": 0.03226
+          },
+          {
+            "token": "3",
+            "count": 3,
+            "prob": 0.02419
+          },
+          {
+            "token": "-7",
+            "count": 2,
+            "prob": 0.01613
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.00806
+          },
+          {
+            "token": "-7@3",
+            "count": 1,
+            "prob": 0.00806
+          }
+        ],
+        "2": [
+          {
+            "token": "3",
+            "count": 38,
+            "prob": 0.30894
+          },
+          {
+            "token": "1",
+            "count": 20,
+            "prob": 0.1626
+          },
+          {
+            "token": "0",
+            "count": 15,
+            "prob": 0.12195
+          },
+          {
+            "token": "4",
+            "count": 13,
+            "prob": 0.10569
+          },
+          {
+            "token": "~",
+            "count": 12,
+            "prob": 0.09756
+          },
+          {
+            "token": "7",
+            "count": 4,
+            "prob": 0.03252
+          },
+          {
+            "token": "5",
+            "count": 4,
+            "prob": 0.03252
+          },
+          {
+            "token": "2",
+            "count": 3,
+            "prob": 0.02439
+          },
+          {
+            "token": "6",
+            "count": 2,
+            "prob": 0.01626
+          },
+          {
+            "token": "2@3",
+            "count": 2,
+            "prob": 0.01626
+          },
+          {
+            "token": "1@2",
+            "count": 2,
+            "prob": 0.01626
+          },
+          {
+            "token": "11",
+            "count": 1,
+            "prob": 0.00813
+          }
+        ],
+        "4": [
+          {
+            "token": "5",
+            "count": 23,
+            "prob": 0.21905
+          },
+          {
+            "token": "2",
+            "count": 18,
+            "prob": 0.17143
+          },
+          {
+            "token": "3",
+            "count": 14,
+            "prob": 0.13333
+          },
+          {
+            "token": "6",
+            "count": 11,
+            "prob": 0.10476
+          },
+          {
+            "token": "~",
+            "count": 9,
+            "prob": 0.08571
+          },
+          {
+            "token": "7",
+            "count": 7,
+            "prob": 0.06667
+          },
+          {
+            "token": "0",
+            "count": 6,
+            "prob": 0.05714
+          },
+          {
+            "token": "b",
+            "count": 4,
+            "prob": 0.0381
+          },
+          {
+            "token": "4",
+            "count": 3,
+            "prob": 0.02857
+          },
+          {
+            "token": "-2",
+            "count": 2,
+            "prob": 0.01905
+          },
+          {
+            "token": "7@2",
+            "count": 2,
+            "prob": 0.01905
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.00952
+          }
+        ],
+        "1": [
+          {
+            "token": "2",
+            "count": 45,
+            "prob": 0.56962
+          },
+          {
+            "token": "0",
+            "count": 11,
+            "prob": 0.13924
+          },
+          {
+            "token": "~",
+            "count": 6,
+            "prob": 0.07595
+          },
+          {
+            "token": "3",
+            "count": 5,
+            "prob": 0.06329
+          },
+          {
+            "token": "1",
+            "count": 3,
+            "prob": 0.03797
+          },
+          {
+            "token": "5",
+            "count": 2,
+            "prob": 0.02532
+          },
+          {
+            "token": "b@2",
+            "count": 2,
+            "prob": 0.02532
+          },
+          {
+            "token": "2@0.5",
+            "count": 1,
+            "prob": 0.01266
+          },
+          {
+            "token": "2*3",
+            "count": 1,
+            "prob": 0.01266
+          },
+          {
+            "token": "-4",
+            "count": 1,
+            "prob": 0.01266
+          },
+          {
+            "token": "b",
+            "count": 1,
+            "prob": 0.01266
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.01266
+          }
+        ],
+        "7": [
+          {
+            "token": "4",
+            "count": 8,
+            "prob": 0.19048
+          },
+          {
+            "token": "8",
+            "count": 7,
+            "prob": 0.16667
+          },
+          {
+            "token": "9",
+            "count": 6,
+            "prob": 0.14286
+          },
+          {
+            "token": "~",
+            "count": 4,
+            "prob": 0.09524
+          },
+          {
+            "token": "6",
+            "count": 3,
+            "prob": 0.07143
+          },
+          {
+            "token": "3",
+            "count": 2,
+            "prob": 0.04762
+          },
+          {
+            "token": "11*2",
+            "count": 1,
+            "prob": 0.02381
+          },
+          {
+            "token": "11",
+            "count": 1,
+            "prob": 0.02381
+          },
+          {
+            "token": "10!2",
+            "count": 1,
+            "prob": 0.02381
+          },
+          {
+            "token": "11!2",
+            "count": 1,
+            "prob": 0.02381
+          },
+          {
+            "token": "10",
+            "count": 1,
+            "prob": 0.02381
+          },
+          {
+            "token": "2",
+            "count": 1,
+            "prob": 0.02381
+          }
+        ],
+        "c2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "f2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "~": [
+          {
+            "token": "F3",
+            "count": 42,
+            "prob": 0.20792
+          },
+          {
+            "token": "4",
+            "count": 19,
+            "prob": 0.09406
+          },
+          {
+            "token": "2",
+            "count": 17,
+            "prob": 0.08416
+          },
+          {
+            "token": "3",
+            "count": 16,
+            "prob": 0.07921
+          },
+          {
+            "token": "~",
+            "count": 10,
+            "prob": 0.0495
+          },
+          {
+            "token": "1",
+            "count": 9,
+            "prob": 0.04455
+          },
+          {
+            "token": "0",
+            "count": 9,
+            "prob": 0.04455
+          },
+          {
+            "token": "7",
+            "count": 8,
+            "prob": 0.0396
+          },
+          {
+            "token": "6",
+            "count": 8,
+            "prob": 0.0396
+          },
+          {
+            "token": "5",
+            "count": 7,
+            "prob": 0.03465
+          },
+          {
+            "token": "A3",
+            "count": 6,
+            "prob": 0.0297
+          },
+          {
+            "token": "Ab3",
+            "count": 6,
+            "prob": 0.0297
+          }
+        ],
+        "f2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "5": [
+          {
+            "token": "4",
+            "count": 12,
+            "prob": 0.26087
+          },
+          {
+            "token": "6",
+            "count": 11,
+            "prob": 0.23913
+          },
+          {
+            "token": "~",
+            "count": 6,
+            "prob": 0.13043
+          },
+          {
+            "token": "3",
+            "count": 4,
+            "prob": 0.08696
+          },
+          {
+            "token": "8",
+            "count": 3,
+            "prob": 0.06522
+          },
+          {
+            "token": "7",
+            "count": 3,
+            "prob": 0.06522
+          },
+          {
+            "token": "6@3",
+            "count": 3,
+            "prob": 0.06522
+          },
+          {
+            "token": "2",
+            "count": 2,
+            "prob": 0.04348
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.02174
+          },
+          {
+            "token": "1",
+            "count": 1,
+            "prob": 0.02174
+          }
+        ],
+        "6": [
+          {
+            "token": "~",
+            "count": 11,
+            "prob": 0.25581
+          },
+          {
+            "token": "7",
+            "count": 10,
+            "prob": 0.23256
+          },
+          {
+            "token": "4",
+            "count": 6,
+            "prob": 0.13953
+          },
+          {
+            "token": "8",
+            "count": 4,
+            "prob": 0.09302
+          },
+          {
+            "token": "5",
+            "count": 4,
+            "prob": 0.09302
+          },
+          {
+            "token": "0",
+            "count": 2,
+            "prob": 0.04651
+          },
+          {
+            "token": "9",
+            "count": 1,
+            "prob": 0.02326
+          },
+          {
+            "token": "-3",
+            "count": 1,
+            "prob": 0.02326
+          },
+          {
+            "token": "4@3",
+            "count": 1,
+            "prob": 0.02326
+          },
+          {
+            "token": "7@2",
+            "count": 1,
+            "prob": 0.02326
+          },
+          {
+            "token": "-1@3",
+            "count": 1,
+            "prob": 0.02326
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.02326
+          }
+        ],
+        "A5": [
+          {
+            "token": "F5@2",
+            "count": 7,
+            "prob": 0.5
+          },
+          {
+            "token": "G5",
+            "count": 5,
+            "prob": 0.35714
+          },
+          {
+            "token": "F5",
+            "count": 2,
+            "prob": 0.14286
+          }
+        ],
+        "F5@2": [
+          {
+            "token": "C5",
+            "count": 8,
+            "prob": 0.61538
+          },
+          {
+            "token": "C6",
+            "count": 2,
+            "prob": 0.15385
+          },
+          {
+            "token": "A5",
+            "count": 2,
+            "prob": 0.15385
+          },
+          {
+            "token": "Ab5",
+            "count": 1,
+            "prob": 0.07692
+          }
+        ],
+        "C5": [
+          {
+            "token": "D5@2",
+            "count": 5,
+            "prob": 0.71429
+          },
+          {
+            "token": "A5",
+            "count": 2,
+            "prob": 0.28571
+          }
+        ],
+        "D5@2": [
+          {
+            "token": "F5",
+            "count": 5,
+            "prob": 1.0
+          }
+        ],
+        "F5": [
+          {
+            "token": "F5",
+            "count": 5,
+            "prob": 0.29412
+          },
+          {
+            "token": "C5@2",
+            "count": 5,
+            "prob": 0.29412
+          },
+          {
+            "token": "Bb5",
+            "count": 3,
+            "prob": 0.17647
+          },
+          {
+            "token": "F5@2",
+            "count": 2,
+            "prob": 0.11765
+          },
+          {
+            "token": "Ab5",
+            "count": 2,
+            "prob": 0.11765
+          }
+        ],
+        "C5@2": [
+          {
+            "token": "F5",
+            "count": 5,
+            "prob": 1.0
+          }
+        ],
+        "C6": [
+          {
+            "token": "A5",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "G5": [
+          {
+            "token": "F5@2",
+            "count": 3,
+            "prob": 0.6
+          },
+          {
+            "token": "A5",
+            "count": 2,
+            "prob": 0.4
+          }
+        ],
+        "Bb5": [
+          {
+            "token": "A5",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "Ab5": [
+          {
+            "token": "F5@2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "F4": [
+          {
+            "token": "~",
+            "count": 14,
+            "prob": 0.45161
+          },
+          {
+            "token": "A3",
+            "count": 5,
+            "prob": 0.16129
+          },
+          {
+            "token": "Bb3",
+            "count": 4,
+            "prob": 0.12903
+          },
+          {
+            "token": "Ab3",
+            "count": 4,
+            "prob": 0.12903
+          },
+          {
+            "token": "G3",
+            "count": 3,
+            "prob": 0.09677
+          },
+          {
+            "token": "Bb4",
+            "count": 1,
+            "prob": 0.03226
+          }
+        ],
+        "Bb4": [
+          {
+            "token": "Bb3",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "D4": [
+          {
+            "token": "F3",
+            "count": 3,
+            "prob": 0.375
+          },
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.375
+          },
+          {
+            "token": "G4",
+            "count": 1,
+            "prob": 0.125
+          },
+          {
+            "token": "F4",
+            "count": 1,
+            "prob": 0.125
+          }
+        ],
+        "G4": [
+          {
+            "token": "Bb4",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "Bb3": [
+          {
+            "token": "D3",
+            "count": 26,
+            "prob": 0.52
+          },
+          {
+            "token": "D4",
+            "count": 7,
+            "prob": 0.14
+          },
+          {
+            "token": "C4",
+            "count": 6,
+            "prob": 0.12
+          },
+          {
+            "token": "E4",
+            "count": 5,
+            "prob": 0.1
+          },
+          {
+            "token": "F4",
+            "count": 4,
+            "prob": 0.08
+          },
+          {
+            "token": "Db3",
+            "count": 2,
+            "prob": 0.04
+          }
+        ],
+        "G3": [
+          {
+            "token": "Bb3",
+            "count": 8,
+            "prob": 0.53333
+          },
+          {
+            "token": "C4",
+            "count": 5,
+            "prob": 0.33333
+          },
+          {
+            "token": "G3",
+            "count": 1,
+            "prob": 0.06667
+          },
+          {
+            "token": "C3",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "C4": [
+          {
+            "token": "F3",
+            "count": 11,
+            "prob": 0.2619
+          },
+          {
+            "token": "~",
+            "count": 10,
+            "prob": 0.2381
+          },
+          {
+            "token": "E4",
+            "count": 9,
+            "prob": 0.21429
+          },
+          {
+            "token": "F4",
+            "count": 8,
+            "prob": 0.19048
+          },
+          {
+            "token": "Eb4",
+            "count": 4,
+            "prob": 0.09524
+          }
+        ],
+        "E4": [
+          {
+            "token": "~",
+            "count": 6,
+            "prob": 0.42857
+          },
+          {
+            "token": "G3",
+            "count": 4,
+            "prob": 0.28571
+          },
+          {
+            "token": "A3",
+            "count": 2,
+            "prob": 0.14286
+          },
+          {
+            "token": "Ab3",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "G4",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "Ab3": [
+          {
+            "token": "B3",
+            "count": 8,
+            "prob": 0.61538
+          },
+          {
+            "token": "C4",
+            "count": 4,
+            "prob": 0.30769
+          },
+          {
+            "token": "F4",
+            "count": 1,
+            "prob": 0.07692
+          }
+        ],
+        "A3": [
+          {
+            "token": "C4",
+            "count": 28,
+            "prob": 0.53846
+          },
+          {
+            "token": "C3",
+            "count": 24,
+            "prob": 0.46154
+          }
+        ],
+        "F3": [
+          {
+            "token": "A3",
+            "count": 40,
+            "prob": 0.47619
+          },
+          {
+            "token": "Bb3",
+            "count": 32,
+            "prob": 0.38095
+          },
+          {
+            "token": "B3",
+            "count": 12,
+            "prob": 0.14286
+          }
+        ],
+        "C3": [
+          {
+            "token": "F3",
+            "count": 12,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 12,
+            "prob": 0.5
+          }
+        ],
+        "D3": [
+          {
+            "token": "F3",
+            "count": 15,
+            "prob": 0.39474
+          },
+          {
+            "token": "~",
+            "count": 15,
+            "prob": 0.39474
+          },
+          {
+            "token": "F4",
+            "count": 8,
+            "prob": 0.21053
+          }
+        ],
+        "Db3": [
+          {
+            "token": "F3",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "B3": [
+          {
+            "token": "D3",
+            "count": 12,
+            "prob": 0.6
+          },
+          {
+            "token": "F4",
+            "count": 8,
+            "prob": 0.4
+          }
+        ],
+        "Eb4": [
+          {
+            "token": "Ab3",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "F2": [
+          {
+            "token": "A2",
+            "count": 5,
+            "prob": 0.41667
+          },
+          {
+            "token": "F2",
+            "count": 4,
+            "prob": 0.33333
+          },
+          {
+            "token": "D2",
+            "count": 2,
+            "prob": 0.16667
+          },
+          {
+            "token": "Bb2",
+            "count": 1,
+            "prob": 0.08333
+          }
+        ],
+        "D2": [
+          {
+            "token": "G2",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "E2",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "G2": [
+          {
+            "token": "C2",
+            "count": 9,
+            "prob": 1.0
+          }
+        ],
+        "C2": [
+          {
+            "token": "F2",
+            "count": 7,
+            "prob": 0.77778
+          },
+          {
+            "token": "D2",
+            "count": 2,
+            "prob": 0.22222
+          }
+        ],
+        "A2": [
+          {
+            "token": "Bb2",
+            "count": 5,
+            "prob": 0.45455
+          },
+          {
+            "token": "Ab2",
+            "count": 4,
+            "prob": 0.36364
+          },
+          {
+            "token": "A2",
+            "count": 2,
+            "prob": 0.18182
+          }
+        ],
+        "Bb2": [
+          {
+            "token": "B2",
+            "count": 5,
+            "prob": 0.55556
+          },
+          {
+            "token": "Bb2",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "A2",
+            "count": 2,
+            "prob": 0.22222
+          }
+        ],
+        "B2": [
+          {
+            "token": "G2",
+            "count": 3,
+            "prob": 0.6
+          },
+          {
+            "token": "A2",
+            "count": 2,
+            "prob": 0.4
+          }
+        ],
+        "Ab2": [
+          {
+            "token": "G2",
+            "count": 4,
+            "prob": 0.66667
+          },
+          {
+            "token": "Ab2",
+            "count": 2,
+            "prob": 0.33333
+          }
+        ],
+        "E2": [
+          {
+            "token": "Bb2",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "F2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "3": [
+          {
+            "token": "4",
+            "count": 35,
+            "prob": 0.39326
+          },
+          {
+            "token": "2",
+            "count": 18,
+            "prob": 0.20225
+          },
+          {
+            "token": "~",
+            "count": 13,
+            "prob": 0.14607
+          },
+          {
+            "token": "1",
+            "count": 7,
+            "prob": 0.07865
+          },
+          {
+            "token": "3",
+            "count": 7,
+            "prob": 0.07865
+          },
+          {
+            "token": "-4",
+            "count": 3,
+            "prob": 0.03371
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.01124
+          },
+          {
+            "token": "8*2",
+            "count": 1,
+            "prob": 0.01124
+          },
+          {
+            "token": "0@3",
+            "count": 1,
+            "prob": 0.01124
+          },
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 0.01124
+          },
+          {
+            "token": "-1",
+            "count": 1,
+            "prob": 0.01124
+          },
+          {
+            "token": "b",
+            "count": 1,
+            "prob": 0.01124
+          }
+        ],
+        "8": [
+          {
+            "token": "6",
+            "count": 6,
+            "prob": 0.23077
+          },
+          {
+            "token": "~",
+            "count": 6,
+            "prob": 0.23077
+          },
+          {
+            "token": "7",
+            "count": 4,
+            "prob": 0.15385
+          },
+          {
+            "token": "9",
+            "count": 3,
+            "prob": 0.11538
+          },
+          {
+            "token": "-1",
+            "count": 2,
+            "prob": 0.07692
+          },
+          {
+            "token": "13",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "10",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "9*2",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.03846
+          }
+        ],
+        "-7*3": [
+          {
+            "token": "0",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "22": [
+          {
+            "token": "25",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "-3": [
+          {
+            "token": "0",
+            "count": 5,
+            "prob": 0.26316
+          },
+          {
+            "token": "-2",
+            "count": 4,
+            "prob": 0.21053
+          },
+          {
+            "token": "-1",
+            "count": 4,
+            "prob": 0.21053
+          },
+          {
+            "token": "-3",
+            "count": 2,
+            "prob": 0.10526
+          },
+          {
+            "token": "-4",
+            "count": 2,
+            "prob": 0.10526
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.05263
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.05263
+          }
+        ],
+        "-4": [
+          {
+            "token": "-3",
+            "count": 4,
+            "prob": 0.26667
+          },
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.2
+          },
+          {
+            "token": "-2",
+            "count": 3,
+            "prob": 0.2
+          },
+          {
+            "token": "-1",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "-4",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "b",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "-2": [
+          {
+            "token": "-1",
+            "count": 4,
+            "prob": 0.26667
+          },
+          {
+            "token": "0",
+            "count": 3,
+            "prob": 0.2
+          },
+          {
+            "token": "b",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "-3",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "7",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "-2",
+            "count": 1,
+            "prob": 0.06667
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "-1": [
+          {
+            "token": "0",
+            "count": 8,
+            "prob": 0.33333
+          },
+          {
+            "token": "1",
+            "count": 4,
+            "prob": 0.16667
+          },
+          {
+            "token": "-1",
+            "count": 3,
+            "prob": 0.125
+          },
+          {
+            "token": "-4",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "-2",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "0@3",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "-3",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "-5",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.04167
+          }
+        ],
+        "7!2": [
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "9": [
+          {
+            "token": "~",
+            "count": 5,
+            "prob": 0.20833
+          },
+          {
+            "token": "10",
+            "count": 4,
+            "prob": 0.16667
+          },
+          {
+            "token": "12",
+            "count": 4,
+            "prob": 0.16667
+          },
+          {
+            "token": "8",
+            "count": 3,
+            "prob": 0.125
+          },
+          {
+            "token": "4",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "13",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "11*2",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "10!2",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "7",
+            "count": 1,
+            "prob": 0.04167
+          }
+        ],
+        "11*2": [
+          {
+            "token": "11!2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "11!2": [
+          {
+            "token": "10",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "9*2": [
+          {
+            "token": "8",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "9!2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "9!2": [
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "7",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "11": [
+          {
+            "token": "12",
+            "count": 2,
+            "prob": 0.33333
+          },
+          {
+            "token": "9",
+            "count": 2,
+            "prob": 0.33333
+          },
+          {
+            "token": "8",
+            "count": 2,
+            "prob": 0.33333
+          }
+        ],
+        "12": [
+          {
+            "token": "13",
+            "count": 6,
+            "prob": 0.6
+          },
+          {
+            "token": "9",
+            "count": 2,
+            "prob": 0.2
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.1
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.1
+          }
+        ],
+        "13": [
+          {
+            "token": "9",
+            "count": 3,
+            "prob": 0.42857
+          },
+          {
+            "token": "14",
+            "count": 2,
+            "prob": 0.28571
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.14286
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.14286
+          }
+        ],
+        "10!2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "7!2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "10": [
+          {
+            "token": "4",
+            "count": 3,
+            "prob": 0.33333
+          },
+          {
+            "token": "8",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "9",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "12",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "11",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "0@3": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "2@3": [
+          {
+            "token": "3",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "6@3": [
+          {
+            "token": "7",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "4@3": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "3@3": [
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "6@2": [
+          {
+            "token": "4@5",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "4@3",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "4@5": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "7@2": [
+          {
+            "token": "6",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "2*3": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "6*3": [
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "5!2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "15": [
+          {
+            "token": "9*2",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "14": [
+          {
+            "token": "8*2",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "15",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "8*2": [
+          {
+            "token": "6",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "0@2": [
+          {
+            "token": "2",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "1@3": [
+          {
+            "token": "0@3",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "-1@3": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "-5": [
+          {
+            "token": "-3",
+            "count": 2,
+            "prob": 0.4
+          },
+          {
+            "token": "-4",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "-7@3",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "-7@3": [
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "-7": [
+          {
+            "token": "0",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "-1",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "-6",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "-6": [
+          {
+            "token": "-5",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "b",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "b": [
+          {
+            "token": "-2",
+            "count": 3,
+            "prob": 0.33333
+          },
+          {
+            "token": "5",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "-5",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "-4",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "2@2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "4",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "1@2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "1@2",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "9@3",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "4@2": [
+          {
+            "token": "9@3",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "9@3": [
+          {
+            "token": "8",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "b@2": [
+          {
+            "token": "3",
+            "count": 2,
+            "prob": 1.0
+          }
+        ]
+      }
+    },
+    "note": {
+      "n_strings": 325,
+      "vocab_size": 215,
+      "length": {
+        "counts": {
+          "1": 101,
+          "2": 19,
+          "3": 25,
+          "4": 101,
+          "5": 2,
+          "6": 6,
+          "7": 8,
+          "8": 17,
+          "9": 2,
+          "10": 2,
+          "12": 9,
+          "13": 2,
+          "15": 1,
+          "16": 15,
+          "17": 2,
+          "18": 1,
+          "20": 1,
+          "26": 1,
+          "30": 1,
+          "32": 3,
+          "39": 2,
+          "43": 2,
+          "50": 1,
+          "60": 1
+        },
+        "min": 1,
+        "max": 60,
+        "mean": 5.48
+      },
+      "start": [
+        {
+          "token": "c3",
+          "count": 61,
+          "prob": 0.19677
+        },
+        {
+          "token": "c2",
+          "count": 28,
+          "prob": 0.09032
+        },
+        {
+          "token": "a2*8",
+          "count": 27,
+          "prob": 0.0871
+        },
+        {
+          "token": "a3",
+          "count": 25,
+          "prob": 0.08065
+        },
+        {
+          "token": "c",
+          "count": 23,
+          "prob": 0.07419
+        },
+        {
+          "token": "a4",
+          "count": 18,
+          "prob": 0.05806
+        },
+        {
+          "token": "c4",
+          "count": 17,
+          "prob": 0.05484
+        },
+        {
+          "token": "~",
+          "count": 16,
+          "prob": 0.05161
+        },
+        {
+          "token": "e5",
+          "count": 14,
+          "prob": 0.04516
+        },
+        {
+          "token": "12",
+          "count": 10,
+          "prob": 0.03226
+        },
+        {
+          "token": "a2",
+          "count": 7,
+          "prob": 0.02258
+        },
+        {
+          "token": "c1",
+          "count": 4,
+          "prob": 0.0129
+        },
+        {
+          "token": "0",
+          "count": 4,
+          "prob": 0.0129
+        },
+        {
+          "token": "c5",
+          "count": 4,
+          "prob": 0.0129
+        },
+        {
+          "token": "d5",
+          "count": 4,
+          "prob": 0.0129
+        },
+        {
+          "token": "d2*8",
+          "count": 3,
+          "prob": 0.00968
+        },
+        {
+          "token": "d4",
+          "count": 3,
+          "prob": 0.00968
+        },
+        {
+          "token": "C3",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "C2",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "D2",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "b4",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "G4",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "7",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "Gm7",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "g2",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "a1",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "a#5",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "c2*8",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "e4",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "g5",
+          "count": 2,
+          "prob": 0.00645
+        },
+        {
+          "token": "C1",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "g1",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "B2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "e1",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "f6",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "c4*2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "g#4@2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "d2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "c4@2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "d#5@2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "b@2",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "a5",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "e3",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "g4",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "f4",
+          "count": 1,
+          "prob": 0.00323
+        },
+        {
+          "token": "d",
+          "count": 1,
+          "prob": 0.00323
+        }
+      ],
+      "transitions": {
+        "G1": [
+          {
+            "token": "C1",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "G2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "c2": [
+          {
+            "token": "g2",
+            "count": 15,
+            "prob": 0.40541
+          },
+          {
+            "token": "c2",
+            "count": 7,
+            "prob": 0.18919
+          },
+          {
+            "token": "f2",
+            "count": 3,
+            "prob": 0.08108
+          },
+          {
+            "token": "d2",
+            "count": 3,
+            "prob": 0.08108
+          },
+          {
+            "token": "eb2",
+            "count": 3,
+            "prob": 0.08108
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.05405
+          },
+          {
+            "token": "a2",
+            "count": 2,
+            "prob": 0.05405
+          },
+          {
+            "token": "g1",
+            "count": 1,
+            "prob": 0.02703
+          },
+          {
+            "token": "f1",
+            "count": 1,
+            "prob": 0.02703
+          }
+        ],
+        "c4": [
+          {
+            "token": "e4",
+            "count": 33,
+            "prob": 0.375
+          },
+          {
+            "token": "g3",
+            "count": 17,
+            "prob": 0.19318
+          },
+          {
+            "token": "f4",
+            "count": 7,
+            "prob": 0.07955
+          },
+          {
+            "token": "~",
+            "count": 5,
+            "prob": 0.05682
+          },
+          {
+            "token": "g4",
+            "count": 5,
+            "prob": 0.05682
+          },
+          {
+            "token": "c#4",
+            "count": 4,
+            "prob": 0.04545
+          },
+          {
+            "token": "a3",
+            "count": 4,
+            "prob": 0.04545
+          },
+          {
+            "token": "d4",
+            "count": 3,
+            "prob": 0.03409
+          },
+          {
+            "token": "c4@2",
+            "count": 2,
+            "prob": 0.02273
+          },
+          {
+            "token": "c4",
+            "count": 2,
+            "prob": 0.02273
+          },
+          {
+            "token": "a#3",
+            "count": 1,
+            "prob": 0.01136
+          },
+          {
+            "token": "g#4",
+            "count": 1,
+            "prob": 0.01136
+          }
+        ],
+        "e4": [
+          {
+            "token": "g4",
+            "count": 19,
+            "prob": 0.32203
+          },
+          {
+            "token": "a4",
+            "count": 9,
+            "prob": 0.15254
+          },
+          {
+            "token": "c4",
+            "count": 8,
+            "prob": 0.13559
+          },
+          {
+            "token": "f3",
+            "count": 7,
+            "prob": 0.11864
+          },
+          {
+            "token": "~",
+            "count": 4,
+            "prob": 0.0678
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.0339
+          },
+          {
+            "token": "b3",
+            "count": 2,
+            "prob": 0.0339
+          },
+          {
+            "token": "b4",
+            "count": 2,
+            "prob": 0.0339
+          },
+          {
+            "token": "d#4",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "f#4",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "d4",
+            "count": 1,
+            "prob": 0.01695
+          }
+        ],
+        "c1": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.75
+          },
+          {
+            "token": "f1",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "~": [
+          {
+            "token": "~",
+            "count": 50,
+            "prob": 0.25
+          },
+          {
+            "token": "e5",
+            "count": 14,
+            "prob": 0.07
+          },
+          {
+            "token": "f5",
+            "count": 14,
+            "prob": 0.07
+          },
+          {
+            "token": "d5",
+            "count": 10,
+            "prob": 0.05
+          },
+          {
+            "token": "a4",
+            "count": 9,
+            "prob": 0.045
+          },
+          {
+            "token": "c5",
+            "count": 8,
+            "prob": 0.04
+          },
+          {
+            "token": "e4",
+            "count": 7,
+            "prob": 0.035
+          },
+          {
+            "token": "d#4",
+            "count": 7,
+            "prob": 0.035
+          },
+          {
+            "token": "a3",
+            "count": 6,
+            "prob": 0.03
+          },
+          {
+            "token": "c4",
+            "count": 5,
+            "prob": 0.025
+          },
+          {
+            "token": "a5",
+            "count": 5,
+            "prob": 0.025
+          },
+          {
+            "token": "g5",
+            "count": 5,
+            "prob": 0.025
+          }
+        ],
+        "f1": [
+          {
+            "token": "g1",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "3",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "c2",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "g1": [
+          {
+            "token": "f1",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "C3": [
+          {
+            "token": "D3",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "c3": [
+          {
+            "token": "e3",
+            "count": 9,
+            "prob": 0.52941
+          },
+          {
+            "token": "eb3",
+            "count": 3,
+            "prob": 0.17647
+          },
+          {
+            "token": "f3",
+            "count": 2,
+            "prob": 0.11765
+          },
+          {
+            "token": "g2",
+            "count": 2,
+            "prob": 0.11765
+          },
+          {
+            "token": "a#2",
+            "count": 1,
+            "prob": 0.05882
+          }
+        ],
+        "e3": [
+          {
+            "token": "g3",
+            "count": 7,
+            "prob": 0.77778
+          },
+          {
+            "token": "c3@2",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "eb": [
+          {
+            "token": "g",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "g": [
+          {
+            "token": "bb",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "bb": [
+          {
+            "token": "d",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "3": [
+          {
+            "token": "5",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "c3",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "5": [
+          {
+            "token": "8",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "f#5",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "B2": [
+          {
+            "token": "F#2",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "D2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "D2": [
+          {
+            "token": "G2",
+            "count": 3,
+            "prob": 0.42857
+          },
+          {
+            "token": "A2",
+            "count": 2,
+            "prob": 0.28571
+          },
+          {
+            "token": "C#2",
+            "count": 1,
+            "prob": 0.14286
+          },
+          {
+            "token": "F2",
+            "count": 1,
+            "prob": 0.14286
+          }
+        ],
+        "G2": [
+          {
+            "token": "Bb2",
+            "count": 3,
+            "prob": 0.42857
+          },
+          {
+            "token": "F2",
+            "count": 2,
+            "prob": 0.28571
+          },
+          {
+            "token": "D2",
+            "count": 1,
+            "prob": 0.14286
+          },
+          {
+            "token": "G1",
+            "count": 1,
+            "prob": 0.14286
+          }
+        ],
+        "Bb2": [
+          {
+            "token": "Eb2",
+            "count": 4,
+            "prob": 0.8
+          },
+          {
+            "token": "A2",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "Eb2": [
+          {
+            "token": "Bb3",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "F#2",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "Bb2",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "Bb3": [
+          {
+            "token": "D3",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "A2",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "C#2",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "A2": [
+          {
+            "token": "D2",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "G2",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "F#2": [
+          {
+            "token": "B2",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "F2",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "F2": [
+          {
+            "token": "Bb2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "C#2": [
+          {
+            "token": "F#2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "C2": [],
+        "bb2": [
+          {
+            "token": "ab2",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "ab2": [
+          {
+            "token": "bb2",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "0": [
+          {
+            "token": "04",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "1",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "b4": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.27273
+          },
+          {
+            "token": "eb4",
+            "count": 2,
+            "prob": 0.18182
+          },
+          {
+            "token": "d5",
+            "count": 2,
+            "prob": 0.18182
+          },
+          {
+            "token": "d#5",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "f#5",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "c5",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "a4",
+            "count": 1,
+            "prob": 0.09091
+          }
+        ],
+        "G4": [
+          {
+            "token": "A4",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "A4": [
+          {
+            "token": "Bb4",
+            "count": 2,
+            "prob": 0.5
+          },
+          {
+            "token": "Bb3",
+            "count": 2,
+            "prob": 0.5
+          }
+        ],
+        "Bb4": [
+          {
+            "token": "A4",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "eb3": [
+          {
+            "token": "g3",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "g3": [
+          {
+            "token": "b3",
+            "count": 11,
+            "prob": 0.55
+          },
+          {
+            "token": "bb3",
+            "count": 2,
+            "prob": 0.1
+          },
+          {
+            "token": "a3",
+            "count": 2,
+            "prob": 0.1
+          },
+          {
+            "token": "f3",
+            "count": 2,
+            "prob": 0.1
+          },
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.05
+          },
+          {
+            "token": "a4",
+            "count": 1,
+            "prob": 0.05
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.05
+          }
+        ],
+        "a3": [
+          {
+            "token": "c4",
+            "count": 27,
+            "prob": 0.44262
+          },
+          {
+            "token": "f3",
+            "count": 18,
+            "prob": 0.29508
+          },
+          {
+            "token": "~",
+            "count": 5,
+            "prob": 0.08197
+          },
+          {
+            "token": "c#4",
+            "count": 3,
+            "prob": 0.04918
+          },
+          {
+            "token": "b3",
+            "count": 2,
+            "prob": 0.03279
+          },
+          {
+            "token": "g4",
+            "count": 1,
+            "prob": 0.01639
+          },
+          {
+            "token": "d5",
+            "count": 1,
+            "prob": 0.01639
+          },
+          {
+            "token": "d4",
+            "count": 1,
+            "prob": 0.01639
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.01639
+          },
+          {
+            "token": "a2",
+            "count": 1,
+            "prob": 0.01639
+          },
+          {
+            "token": "f4",
+            "count": 1,
+            "prob": 0.01639
+          }
+        ],
+        "c#4": [
+          {
+            "token": "e4",
+            "count": 4,
+            "prob": 0.23529
+          },
+          {
+            "token": "d#4",
+            "count": 4,
+            "prob": 0.23529
+          },
+          {
+            "token": "c4",
+            "count": 2,
+            "prob": 0.11765
+          },
+          {
+            "token": "a#3",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "g#3",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "e5",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "d#4@2",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.05882
+          },
+          {
+            "token": "d4",
+            "count": 1,
+            "prob": 0.05882
+          }
+        ],
+        "c": [
+          {
+            "token": "a",
+            "count": 14,
+            "prob": 0.6087
+          },
+          {
+            "token": "d",
+            "count": 8,
+            "prob": 0.34783
+          },
+          {
+            "token": "eb",
+            "count": 1,
+            "prob": 0.04348
+          }
+        ],
+        "a": [
+          {
+            "token": "f",
+            "count": 14,
+            "prob": 0.93333
+          },
+          {
+            "token": "d3",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "f": [
+          {
+            "token": "e",
+            "count": 18,
+            "prob": 0.94737
+          },
+          {
+            "token": "a",
+            "count": 1,
+            "prob": 0.05263
+          }
+        ],
+        "d": [
+          {
+            "token": "e",
+            "count": 8,
+            "prob": 0.61538
+          },
+          {
+            "token": "c",
+            "count": 4,
+            "prob": 0.30769
+          },
+          {
+            "token": "f",
+            "count": 1,
+            "prob": 0.07692
+          }
+        ],
+        "e": [
+          {
+            "token": "f",
+            "count": 8,
+            "prob": 0.66667
+          },
+          {
+            "token": "d",
+            "count": 4,
+            "prob": 0.33333
+          }
+        ],
+        "a2": [
+          {
+            "token": "f2",
+            "count": 15,
+            "prob": 0.625
+          },
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.125
+          },
+          {
+            "token": "eb2",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "c3",
+            "count": 2,
+            "prob": 0.08333
+          },
+          {
+            "token": "a2",
+            "count": 1,
+            "prob": 0.04167
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.04167
+          }
+        ],
+        "g2": [
+          {
+            "token": "a2",
+            "count": 13,
+            "prob": 0.72222
+          },
+          {
+            "token": "f2",
+            "count": 2,
+            "prob": 0.11111
+          },
+          {
+            "token": "c2",
+            "count": 2,
+            "prob": 0.11111
+          },
+          {
+            "token": "a#2",
+            "count": 1,
+            "prob": 0.05556
+          }
+        ],
+        "g4": [
+          {
+            "token": "c5",
+            "count": 8,
+            "prob": 0.19512
+          },
+          {
+            "token": "a4",
+            "count": 6,
+            "prob": 0.14634
+          },
+          {
+            "token": "g3",
+            "count": 6,
+            "prob": 0.14634
+          },
+          {
+            "token": "~",
+            "count": 4,
+            "prob": 0.09756
+          },
+          {
+            "token": "e4",
+            "count": 3,
+            "prob": 0.07317
+          },
+          {
+            "token": "d4",
+            "count": 3,
+            "prob": 0.07317
+          },
+          {
+            "token": "f#4",
+            "count": 2,
+            "prob": 0.04878
+          },
+          {
+            "token": "g4",
+            "count": 2,
+            "prob": 0.04878
+          },
+          {
+            "token": "b4",
+            "count": 2,
+            "prob": 0.04878
+          },
+          {
+            "token": "a3",
+            "count": 2,
+            "prob": 0.04878
+          },
+          {
+            "token": "f4",
+            "count": 1,
+            "prob": 0.02439
+          },
+          {
+            "token": "g2",
+            "count": 1,
+            "prob": 0.02439
+          }
+        ],
+        "eb2": [
+          {
+            "token": "c2",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "g1",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "e1": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "e2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "Gm7": [
+          {
+            "token": "C7",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "C7": [
+          {
+            "token": "Fmaj7",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "f6": [
+          {
+            "token": "d6",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "d6": [
+          {
+            "token": "b5",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "b5": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "g5",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "c4*2": [
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "d#4",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "a#3": [
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "c4@2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "d#4": [
+          {
+            "token": "f4",
+            "count": 9,
+            "prob": 0.34615
+          },
+          {
+            "token": "f4@2",
+            "count": 6,
+            "prob": 0.23077
+          },
+          {
+            "token": "d4",
+            "count": 3,
+            "prob": 0.11538
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.07692
+          },
+          {
+            "token": "d#4@2",
+            "count": 2,
+            "prob": 0.07692
+          },
+          {
+            "token": "c4",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.03846
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.03846
+          }
+        ],
+        "f4": [
+          {
+            "token": "d#4",
+            "count": 6,
+            "prob": 0.22222
+          },
+          {
+            "token": "c4",
+            "count": 6,
+            "prob": 0.22222
+          },
+          {
+            "token": "a4",
+            "count": 6,
+            "prob": 0.22222
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.07407
+          },
+          {
+            "token": "c#4@2",
+            "count": 2,
+            "prob": 0.07407
+          },
+          {
+            "token": "f#4",
+            "count": 2,
+            "prob": 0.07407
+          },
+          {
+            "token": "f4@2",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "d#4@2",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "g#4",
+            "count": 1,
+            "prob": 0.03704
+          }
+        ],
+        "g#4": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "e4",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "f#4",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "c5",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "f#4": [
+          {
+            "token": "f4",
+            "count": 3,
+            "prob": 0.33333
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "g#4@2",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "f#4@2",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "g#4",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "g#4@2": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.4
+          },
+          {
+            "token": "a#4@2",
+            "count": 2,
+            "prob": 0.4
+          },
+          {
+            "token": "g#4",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "f#4@2": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "g#4@2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "f4@2": [
+          {
+            "token": "d#4@2",
+            "count": 4,
+            "prob": 0.44444
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "f4",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "g4",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "g4@2",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "d#4",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "d#4@2": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.33333
+          },
+          {
+            "token": "f4@2",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "c#4@2",
+            "count": 2,
+            "prob": 0.22222
+          },
+          {
+            "token": "d4",
+            "count": 2,
+            "prob": 0.22222
+          }
+        ],
+        "d4": [
+          {
+            "token": "a3",
+            "count": 7,
+            "prob": 0.25926
+          },
+          {
+            "token": "g4",
+            "count": 6,
+            "prob": 0.22222
+          },
+          {
+            "token": "d#4",
+            "count": 4,
+            "prob": 0.14815
+          },
+          {
+            "token": "f4",
+            "count": 3,
+            "prob": 0.11111
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.07407
+          },
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "a2",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "b3",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.03704
+          },
+          {
+            "token": "eb4",
+            "count": 1,
+            "prob": 0.03704
+          }
+        ],
+        "g1*2": [
+          {
+            "token": "g1",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "a1": [
+          {
+            "token": "g1*2",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "6",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "f1",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "b3": [
+          {
+            "token": "d4",
+            "count": 11,
+            "prob": 0.55
+          },
+          {
+            "token": "c4",
+            "count": 3,
+            "prob": 0.15
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.1
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.1
+          },
+          {
+            "token": "a3",
+            "count": 1,
+            "prob": 0.05
+          },
+          {
+            "token": "g3",
+            "count": 1,
+            "prob": 0.05
+          }
+        ],
+        "c4!2": [
+          {
+            "token": "c4!2",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "c4@2",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "d#4@2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "b4@2": [
+          {
+            "token": "g#4@2",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "d#5",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "a#4@2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "a#4@2": [
+          {
+            "token": "f#4",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "b4@2",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "g4@2",
+            "count": 1,
+            "prob": 0.2
+          },
+          {
+            "token": "f#4@2",
+            "count": 1,
+            "prob": 0.2
+          }
+        ],
+        "d#5": [
+          {
+            "token": "d5",
+            "count": 6,
+            "prob": 0.54545
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.18182
+          },
+          {
+            "token": "a#4",
+            "count": 2,
+            "prob": 0.18182
+          },
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.09091
+          }
+        ],
+        "c#5@2": [
+          {
+            "token": "b4@2",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "d5@2",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "d5",
+            "count": 1,
+            "prob": 0.25
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "g4@2": [
+          {
+            "token": "d#4@3",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "d5@2": [
+          {
+            "token": "c#5@2",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "a4": [
+          {
+            "token": "c5",
+            "count": 19,
+            "prob": 0.38776
+          },
+          {
+            "token": "g4",
+            "count": 4,
+            "prob": 0.08163
+          },
+          {
+            "token": "d#5",
+            "count": 4,
+            "prob": 0.08163
+          },
+          {
+            "token": "f4",
+            "count": 4,
+            "prob": 0.08163
+          },
+          {
+            "token": "d5",
+            "count": 3,
+            "prob": 0.06122
+          },
+          {
+            "token": "f3",
+            "count": 3,
+            "prob": 0.06122
+          },
+          {
+            "token": "d#4",
+            "count": 2,
+            "prob": 0.04082
+          },
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 0.04082
+          },
+          {
+            "token": "b4",
+            "count": 2,
+            "prob": 0.04082
+          },
+          {
+            "token": "e4",
+            "count": 2,
+            "prob": 0.04082
+          },
+          {
+            "token": "c#5@6",
+            "count": 1,
+            "prob": 0.02041
+          },
+          {
+            "token": "c#5@2",
+            "count": 1,
+            "prob": 0.02041
+          }
+        ],
+        "f3": [
+          {
+            "token": "c4",
+            "count": 16,
+            "prob": 0.55172
+          },
+          {
+            "token": "a3",
+            "count": 11,
+            "prob": 0.37931
+          },
+          {
+            "token": "e3",
+            "count": 1,
+            "prob": 0.03448
+          },
+          {
+            "token": "a#2",
+            "count": 1,
+            "prob": 0.03448
+          }
+        ],
+        "c3@2": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "g#3": [
+          {
+            "token": "g#3",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "g3",
+            "count": 1,
+            "prob": 0.33333
+          },
+          {
+            "token": "b4",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "a#2": [
+          {
+            "token": "f2@3",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "g2",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "f2@3": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "f2": [
+          {
+            "token": "c3",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "a2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "a#5": [
+          {
+            "token": "g#5",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "g#5": [
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "e5",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "f#5": [
+          {
+            "token": "e5",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "e5": [
+          {
+            "token": "c5",
+            "count": 28,
+            "prob": 0.45161
+          },
+          {
+            "token": "~",
+            "count": 16,
+            "prob": 0.25806
+          },
+          {
+            "token": "g5",
+            "count": 7,
+            "prob": 0.1129
+          },
+          {
+            "token": "d#5",
+            "count": 2,
+            "prob": 0.03226
+          },
+          {
+            "token": "a5",
+            "count": 2,
+            "prob": 0.03226
+          },
+          {
+            "token": "f4",
+            "count": 2,
+            "prob": 0.03226
+          },
+          {
+            "token": "e5",
+            "count": 2,
+            "prob": 0.03226
+          },
+          {
+            "token": "c#4",
+            "count": 1,
+            "prob": 0.01613
+          },
+          {
+            "token": "c#5",
+            "count": 1,
+            "prob": 0.01613
+          },
+          {
+            "token": "d5",
+            "count": 1,
+            "prob": 0.01613
+          }
+        ],
+        "a#4": [
+          {
+            "token": "d#4",
+            "count": 1,
+            "prob": 0.5
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.5
+          }
+        ],
+        "c#5": [
+          {
+            "token": "d5",
+            "count": 5,
+            "prob": 0.45455
+          },
+          {
+            "token": "c5",
+            "count": 2,
+            "prob": 0.18182
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "d#5",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "a4",
+            "count": 1,
+            "prob": 0.09091
+          },
+          {
+            "token": "a4@3",
+            "count": 1,
+            "prob": 0.09091
+          }
+        ],
+        "c#4@2": [
+          {
+            "token": "c4",
+            "count": 2,
+            "prob": 0.66667
+          },
+          {
+            "token": "d#4@2",
+            "count": 1,
+            "prob": 0.33333
+          }
+        ],
+        "d#4@3": [
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "c5": [
+          {
+            "token": "e5",
+            "count": 17,
+            "prob": 0.28814
+          },
+          {
+            "token": "d5",
+            "count": 16,
+            "prob": 0.27119
+          },
+          {
+            "token": "~",
+            "count": 9,
+            "prob": 0.15254
+          },
+          {
+            "token": "a4",
+            "count": 5,
+            "prob": 0.08475
+          },
+          {
+            "token": "g3",
+            "count": 3,
+            "prob": 0.05085
+          },
+          {
+            "token": "c4",
+            "count": 2,
+            "prob": 0.0339
+          },
+          {
+            "token": "g4",
+            "count": 2,
+            "prob": 0.0339
+          },
+          {
+            "token": "c#5",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "f5",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "b4",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "b3",
+            "count": 1,
+            "prob": 0.01695
+          },
+          {
+            "token": "g5",
+            "count": 1,
+            "prob": 0.01695
+          }
+        ],
+        "d5": [
+          {
+            "token": "e5",
+            "count": 17,
+            "prob": 0.35417
+          },
+          {
+            "token": "~",
+            "count": 15,
+            "prob": 0.3125
+          },
+          {
+            "token": "c#5",
+            "count": 8,
+            "prob": 0.16667
+          },
+          {
+            "token": "a4",
+            "count": 2,
+            "prob": 0.04167
+          },
+          {
+            "token": "c#5@2",
+            "count": 2,
+            "prob": 0.04167
+          },
+          {
+            "token": "d#5",
+            "count": 1,
+            "prob": 0.02083
+          },
+          {
+            "token": "c#5@6",
+            "count": 1,
+            "prob": 0.02083
+          },
+          {
+            "token": "g5",
+            "count": 1,
+            "prob": 0.02083
+          },
+          {
+            "token": "c5",
+            "count": 1,
+            "prob": 0.02083
+          }
+        ],
+        "d#5@2": [
+          {
+            "token": "d5@2",
+            "count": 3,
+            "prob": 0.75
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "8": [
+          {
+            "token": "a3@4",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "a3@4": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "c#5@6": [
+          {
+            "token": "~",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "b@2": [
+          {
+            "token": "f@2",
+            "count": 3,
+            "prob": 0.75
+          },
+          {
+            "token": "b",
+            "count": 1,
+            "prob": 0.25
+          }
+        ],
+        "f@2": [
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 1.0
+          }
+        ],
+        "b": [
+          {
+            "token": "b@2",
+            "count": 3,
+            "prob": 0.5
+          },
+          {
+            "token": "b",
+            "count": 2,
+            "prob": 0.33333
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.16667
+          }
+        ],
+        "a5": [
+          {
+            "token": "~",
+            "count": 5,
+            "prob": 0.55556
+          },
+          {
+            "token": "c6",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "e5",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "f5",
+            "count": 1,
+            "prob": 0.11111
+          },
+          {
+            "token": "g5",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "c6": [
+          {
+            "token": "g5",
+            "count": 1,
+            "prob": 1.0
+          }
+        ],
+        "g5": [
+          {
+            "token": "~",
+            "count": 5,
+            "prob": 0.35714
+          },
+          {
+            "token": "e5",
+            "count": 3,
+            "prob": 0.21429
+          },
+          {
+            "token": "d5",
+            "count": 3,
+            "prob": 0.21429
+          },
+          {
+            "token": "c6",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "b5",
+            "count": 1,
+            "prob": 0.07143
+          },
+          {
+            "token": "c5",
+            "count": 1,
+            "prob": 0.07143
+          }
+        ],
+        "f5": [
+          {
+            "token": "~",
+            "count": 14,
+            "prob": 0.93333
+          },
+          {
+            "token": "a5",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "a2*8": [
+          {
+            "token": "a2*8",
+            "count": 8,
+            "prob": 0.88889
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ]
+      }
+    },
+    "sound": {
+      "n_strings": 235,
+      "vocab_size": 25,
+      "length": {
+        "counts": {
+          "1": 199,
+          "2": 13,
+          "3": 6,
+          "4": 11,
+          "5": 1,
+          "6": 1,
+          "8": 4
+        },
+        "min": 1,
+        "max": 8,
+        "mean": 1.4
+      },
+      "start": [
+        {
+          "token": "sawtooth",
+          "count": 122,
+          "prob": 0.53043
+        },
+        {
+          "token": "bd",
+          "count": 32,
+          "prob": 0.13913
+        },
+        {
+          "token": "square",
+          "count": 21,
+          "prob": 0.0913
+        },
+        {
+          "token": "supersaw",
+          "count": 18,
+          "prob": 0.07826
+        },
+        {
+          "token": "triangle",
+          "count": 13,
+          "prob": 0.05652
+        },
+        {
+          "token": "sine",
+          "count": 7,
+          "prob": 0.03043
+        },
+        {
+          "token": "piano",
+          "count": 3,
+          "prob": 0.01304
+        },
+        {
+          "token": "drums",
+          "count": 3,
+          "prob": 0.01304
+        },
+        {
+          "token": "hh",
+          "count": 3,
+          "prob": 0.01304
+        },
+        {
+          "token": "kick",
+          "count": 3,
+          "prob": 0.01304
+        },
+        {
+          "token": "drum",
+          "count": 2,
+          "prob": 0.0087
+        },
+        {
+          "token": "~",
+          "count": 2,
+          "prob": 0.0087
+        },
+        {
+          "token": "bd*2",
+          "count": 1,
+          "prob": 0.00435
+        }
+      ],
+      "transitions": {
+        "bd": [
+          {
+            "token": "sd",
+            "count": 13,
+            "prob": 0.325
+          },
+          {
+            "token": "hh",
+            "count": 9,
+            "prob": 0.225
+          },
+          {
+            "token": "~",
+            "count": 8,
+            "prob": 0.2
+          },
+          {
+            "token": "bd",
+            "count": 8,
+            "prob": 0.2
+          },
+          {
+            "token": "rim",
+            "count": 2,
+            "prob": 0.05
+          }
+        ],
+        "~": [
+          {
+            "token": "bd",
+            "count": 5,
+            "prob": 0.33333
+          },
+          {
+            "token": "sd",
+            "count": 4,
+            "prob": 0.26667
+          },
+          {
+            "token": "~",
+            "count": 3,
+            "prob": 0.2
+          },
+          {
+            "token": "hh",
+            "count": 2,
+            "prob": 0.13333
+          },
+          {
+            "token": "bd*2",
+            "count": 1,
+            "prob": 0.06667
+          }
+        ],
+        "sd": [
+          {
+            "token": "cp",
+            "count": 4,
+            "prob": 0.66667
+          },
+          {
+            "token": "bd",
+            "count": 1,
+            "prob": 0.16667
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.16667
+          }
+        ],
+        "hh": [
+          {
+            "token": "bd",
+            "count": 5,
+            "prob": 0.55556
+          },
+          {
+            "token": "hh",
+            "count": 3,
+            "prob": 0.33333
+          },
+          {
+            "token": "~",
+            "count": 1,
+            "prob": 0.11111
+          }
+        ],
+        "drums": [
+          {
+            "token": "kick",
+            "count": 4,
+            "prob": 0.5
+          },
+          {
+            "token": "snare",
+            "count": 3,
+            "prob": 0.375
+          },
+          {
+            "token": "hat",
+            "count": 1,
+            "prob": 0.125
+          }
+        ],
+        "kick": [
+          {
+            "token": "drums",
+            "count": 3,
+            "prob": 0.5
+          },
+          {
+            "token": "snare",
+            "count": 3,
+            "prob": 0.5
+          }
+        ],
+        "rim": [
+          {
+            "token": "bd",
+            "count": 2,
+            "prob": 1.0
+          }
+        ],
+        "snare": [
+          {
+            "token": "hat",
+            "count": 3,
+            "prob": 0.75
+          },
+          {
+            "token": "drums",
+            "count": 1,
+            "prob": 0.25
+          }
+        ]
+      }
+    }
+  }
+}

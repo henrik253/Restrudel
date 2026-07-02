@@ -176,10 +176,16 @@ JSONs to emit new `.js` pattern files:
 - [x] **Analysis upgraded for the sampler** (notebook §8b): chain **heads**,
       chain **ends** (`__END__`), and **per-function argument distributions** →
       `transitions.v2` + `arguments.json`.
-- [ ] **Structure, beyond empirical:** voices from `complexity.json` ✅;
-      mini-notation currently *re-samples observed strings* — later: synthesize
-      novel mini-notation from `mini_notation.json` feature frequencies;
-      optional templates (bassline/arp/lead/drums) as skeletons.
+- [x] **Content synthesis, not sampling** (notebook §8c → `content_models.json`):
+      note/sample sequences inside `note`/`n`/`s`/`sound` are generated
+      token-by-token — draw a length from P(count), then walk a first-order token
+      Markov chain (P(note→note)) — so strings are *new*, not copied. Measured
+      ~59% of generated sequence strings are novel (multi-token melodies ≈ all
+      novel; single-token strings coincide by nature).
+- [ ] **Structure, still to do:** voices from `complexity.json` ✅; mini-notation
+      *structure* (`[]`, `<>`, euclid, `*`) is not yet synthesized around the
+      tokens (flat sequences for now); optional templates
+      (bassline/arp/lead/drums) as skeletons; higher-order (depth-2) token model.
 - [ ] **Validity gate:** every generated pattern must evaluate in the Strudel
       engine (Phase 2 evaluator) — reject/resample on error, so only playable
       code enters the dataset. *(needs Phase 2)*
