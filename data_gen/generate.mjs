@@ -229,15 +229,28 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   };
   const n = parseInt(arg('n', '5'), 10);
   const seed = parseInt(arg('seed', '42'), 10);
-  const out = arg('out', null);
+  const out = arg('out', null);        // dir of individual .js files
+  const jsonPath = arg('json', null);  // single JSON file with all songs
   TEMP = parseFloat(arg('temp', String(TEMP)));
 
   if (out) mkdirSync(out, { recursive: true });
+  const collected = [];
   for (let i = 0; i < n; i++) {
     const song = generateSong(seed + i);
     const header = `// synthetic strudel pattern — seed ${song.seed}, ${song.voices} voice(s)\n// generator: data_gen/generate.mjs (sampled from analysis/results/)\n\n`;
+    collected.push({ id: `${seed}_${i}`, seed: song.seed, voices: song.voices, code: song.code });
     if (out) writeFileSync(join(out, `${seed}_${i}.js`), header + song.code);
-    else console.log(`${'='.repeat(60)}\n${header}${song.code}`);
+    else if (!jsonPath) console.log(`${'='.repeat(60)}\n${header}${song.code}`);
   }
-  if (out) console.log(`wrote ${n} songs to ${out}`);
+  if (jsonPath) {
+    mkdirSync(dirname(jsonPath), { recursive: true });
+    writeFileSync(jsonPath, JSON.stringify({
+      generator: 'data_gen/generate.mjs',
+      params: { n, seed, temp: TEMP, max_order: MAX_ORDER },
+      count: collected.length, songs: collected,
+    }, null, 2));
+    console.log(`wrote ${collected.length} songs to ${jsonPath}`);
+  } else if (out) {
+    console.log(`wrote ${n} songs to ${out}`);
+  }
 }
