@@ -68,24 +68,30 @@ generator currently skips. Numeric args and *categorical* string args
 (`bank`, `scale`, `vowel`) are sampled from here; **sequence** string content
 (`note`/`n`/`s`/`sound`) is instead generated from `content_models.json`.
 
-### content_models.json
+### content_models.json (v2)
 The inside of a `note`/`n`/`s`/`sound` string is modelled as a **token
-sequence**, so the generator invents new strings instead of copying whole ones:
+sequence**. We export the raw tokenized `sequences` so the generator can build a
+**variable-order back-off Markov model** at runtime (not just fixed bigrams):
 ```json
 { "functions": { "note": {
     "n_strings": 325, "vocab_size": 215,
     "length": { "counts": {"1": 100, "4": 83, "16": 18, ...}, "mean": 5.48 },
     "start": [ {"token": "c3", "prob": 0.197}, ... ],
-    "transitions": { "c3": [ {"token": "e3", "prob": 0.53}, {"token": "eb3", "prob": 0.18} ], ... } } } }
+    "sequences": [ ["c4","e4","g4"], ["c2","f2"], ... ] } } }
 ```
 Generate a string: draw a token count from `length`, draw the first token from
-`start`, then walk `transitions` token-by-token (`c3 → e3 → g3 …`). This captures
-**P(note follows note)** and **P(string length)** — new melodies/rhythms that
-follow the corpus grammar without reproducing it.
+`start`, then for each next token **condition on the longest suffix of the
+sequence so far that was seen in the corpus** (order ≤ 6), backing off to shorter
+contexts and finally the unigram. This fixes dominant-token *alternation*
+(`c3 e3 c3 e3 …`): after `c3 e3`, the order-2 context predicts the real phrase
+continuation (`g3`) rather than bouncing back to `c3`. Sampling uses a
+**temperature** `t` (`weightᵢ = pᵢ^t`; `t=1` empirical, `t<1` more volatile,
+default `0.2`) for exploration/novelty.
 
 ### How the generator uses these
-`data_gen/generate.mjs`: draw a head from `heads` → fill its content from
-`arguments.json` (numeric branch: common values or quantile interpolation;
-string branch: weighted observed strings) → draw the next function from
-`depth1[current]` until `__END__` → repeat per voice, with voice count from
-`complexity.json`. Seeded, so every song is reproducible.
+`data_gen/generate.mjs`: draw a head from `heads` → fill its content
+(numeric/categorical from `arguments.json`; note/sample **sequences** from
+`content_models.json` via the variable-order back-off model above) → draw the
+next function from `depth1[current]` until `__END__` → repeat per voice, with
+voice count from `complexity.json`. Seeded + `--temp` tunable, so every song is
+reproducible.

@@ -22,7 +22,14 @@ const load = (name) => JSON.parse(readFileSync(join(RESULTS, `${name}.json`), 'u
 const transitions = load('transitions');
 const argStats = load('arguments').functions;
 const complexity = load('complexity');
-const contentModels = load('content_models').functions;   // token-Markov per seq fn
+const contentModels = load('content_models').functions;   // raw sequences per seq fn
+
+// Temperature for content sampling: weight_i = p_i^TEMP (then renormalize).
+// TEMP=1 → empirical distribution; TEMP<1 → flatter/more volatile (breaks
+// dominant-token alternation); TEMP→0 → uniform. Tunable via --temp.
+let TEMP = 0.2;           // content-sampling temperature (CLI --temp overrides)
+const MAX_ORDER = 6;      // longest prefix context to condition on
+const MAX_SEQ_LEN = 32;   // guard against runaway lengths
 
 // ---------- seeded RNG (mulberry32) ----------------------------------------
 function mulberry32(seed) {
@@ -61,10 +68,34 @@ const CHAINABLE = new Set([
 
 const fmtNum = (v) => Number.isInteger(v) ? String(v) : String(+v.toFixed(4)).replace(/^0\./, '.');
 
-// ---------- sequence content: synthesize a NEW mini-notation string ----------
-// Draw a token count from the length distribution, then walk the first-order
-// token Markov chain (start → next → …). Produces strings that never appeared
-// verbatim in the corpus but follow its local grammar (c3→e3, bd→sd, …).
+// ---------- sequence content: variable-order back-off Markov + temperature ----
+// Build, per function, context→next-token counts for every order 1..MAX_ORDER,
+// plus a unigram fallback. At each step condition on the LONGEST suffix of the
+// generated prefix that was seen in the corpus (so after "c3 e3" we follow the
+// real phrase to "g3" instead of alternating back to "c3"); back off to shorter
+// contexts, then unigram. Sampling uses temperature TEMP for volatility.
+function buildSeqModel(m) {
+  const orders = new Map();                       // order → Map(ctxStr → Map(tok→count))
+  for (let o = 1; o <= MAX_ORDER; o++) orders.set(o, new Map());
+  const unigram = new Map();
+  for (const seq of m.sequences) {
+    for (let i = 0; i < seq.length; i++) {
+      const tok = seq[i];
+      unigram.set(tok, (unigram.get(tok) || 0) + 1);
+      for (let o = 1; o <= MAX_ORDER && o <= i; o++) {
+        const ctx = seq.slice(i - o, i).join(' ');
+        const tbl = orders.get(o);
+        let counts = tbl.get(ctx);
+        if (!counts) { counts = new Map(); tbl.set(ctx, counts); }
+        counts.set(tok, (counts.get(tok) || 0) + 1);
+      }
+    }
+  }
+  return { orders, unigram, length: m.length, start: m.start };
+}
+const seqModels = Object.fromEntries(
+  Object.entries(contentModels).map(([fn, m]) => [fn, buildSeqModel(m)]));
+
 function sampleLength(rng, lengthModel) {
   const entries = Object.entries(lengthModel.counts);   // [["1",100],["4",83],…]
   const total = entries.reduce((s, [, v]) => s + v, 0);
@@ -73,20 +104,31 @@ function sampleLength(rng, lengthModel) {
   return parseInt(entries[entries.length - 1][0], 10);
 }
 
+// temperature pick over [token, weight] pairs: p_i = (w_i/Σw)^TEMP, renormalized.
+function tempPick(rng, pairs, temp) {
+  const total = pairs.reduce((s, [, w]) => s + w, 0) || 1;
+  const powed = pairs.map(([tok, w]) => [tok, Math.pow(w / total, temp)]);
+  const ptot = powed.reduce((s, [, w]) => s + w, 0);
+  let r = rng() * ptot;
+  for (const [tok, w] of powed) { r -= w; if (r <= 0) return tok; }
+  return powed[powed.length - 1][0];
+}
+
 function synthSequence(rng, fn) {
-  const m = contentModels[fn];
-  if (!m) return null;
-  const L = Math.max(1, sampleLength(rng, m.length));
-  const out = [];
-  let cur = weightedPick(rng, m.start, (t) => t.prob).token;
-  for (let i = 0; i < L; i++) {
-    out.push(cur);
-    const succ = m.transitions[cur];
-    if (!succ || !succ.length) {                 // dead end → restart the walk
-      cur = weightedPick(rng, m.start, (t) => t.prob).token;
-    } else {
-      cur = weightedPick(rng, succ, (t) => t.prob).token;
+  const model = seqModels[fn];
+  if (!model) return null;
+  const L = Math.min(MAX_SEQ_LEN, Math.max(1, sampleLength(rng, model.length)));
+  const out = [tempPick(rng, model.start.map((s) => [s.token, s.prob]), TEMP)];
+  while (out.length < L) {
+    let candidates = null;
+    // longest matching suffix context first, then back off
+    for (let o = Math.min(out.length, MAX_ORDER); o >= 1 && !candidates; o--) {
+      const ctx = out.slice(out.length - o).join(' ');
+      const counts = model.orders.get(o).get(ctx);
+      if (counts && counts.size) candidates = [...counts.entries()];
     }
+    if (!candidates) candidates = [...model.unigram.entries()];   // unigram fallback
+    out.push(tempPick(rng, candidates, TEMP));
   }
   return JSON.stringify(out.join(' '));
 }
@@ -111,7 +153,7 @@ function sampleContent(rng, fn) {
     return fmtNum(allInt ? Math.round(v) : v);
   }
   // sequence functions (note/n/s/sound): synthesize a new token sequence
-  if (contentModels[fn]) {
+  if (seqModels[fn]) {
     const seq = synthSequence(rng, fn);
     if (seq) return seq;
   }
@@ -188,6 +230,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const n = parseInt(arg('n', '5'), 10);
   const seed = parseInt(arg('seed', '42'), 10);
   const out = arg('out', null);
+  TEMP = parseFloat(arg('temp', String(TEMP)));
 
   if (out) mkdirSync(out, { recursive: true });
   for (let i = 0; i < n; i++) {

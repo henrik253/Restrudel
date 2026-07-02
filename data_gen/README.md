@@ -3,13 +3,16 @@
 Node tooling that turns Strudel pattern strings into training samples.
 
 - **Generation (Phase 4): `generate.mjs`** — synthesizes new Strudel code by
-  sampling the corpus distributions in `analysis/results/`:
-  P(head) → P(content | function) → P(next | current) until `__END__`, voices
-  from the corpus polyphony stats. Seeded (reproducible).
+  sampling the corpus distributions in `analysis/results/`: function chains via
+  P(head) → P(next | current) until `__END__`; call **content** via numeric/
+  categorical stats (`arguments.json`) and, for note/sample sequences, a
+  **variable-order back-off token Markov model** with temperature
+  (`content_models.json`). Voices from corpus polyphony. Seeded (reproducible).
 
   ```bash
-  node data_gen/generate.mjs --n 10 --seed 42            # print to stdout
-  node data_gen/generate.mjs --n 500 --seed 1 --out tmp/ # write {seed}_{i}.js
+  node data_gen/generate.mjs --n 10 --seed 42             # print to stdout
+  node data_gen/generate.mjs --n 500 --seed 1 --out tmp/  # write {seed}_{i}.js
+  node data_gen/generate.mjs --n 10 --temp 0.5            # more volatile content
   ```
 
 - **Labels (Part A):** evaluate a pattern → `queryArc` → haps → MIDI/events JSON.

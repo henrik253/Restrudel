@@ -178,10 +178,11 @@ JSONs to emit new `.js` pattern files:
       `transitions.v2` + `arguments.json`.
 - [x] **Content synthesis, not sampling** (notebook §8c → `content_models.json`):
       note/sample sequences inside `note`/`n`/`s`/`sound` are generated
-      token-by-token — draw a length from P(count), then walk a first-order token
-      Markov chain (P(note→note)) — so strings are *new*, not copied. Measured
-      ~59% of generated sequence strings are novel (multi-token melodies ≈ all
-      novel; single-token strings coincide by nature).
+      token-by-token — draw a length from P(count), then a **variable-order
+      back-off Markov model** (condition on the longest seen prefix, back off to
+      shorter contexts, then unigram) with **temperature** `t` (default 0.2) for
+      volatility. Back-off fixes dominant-token alternation (`note` adjacent-repeat
+      0.11→0.08, ≈ corpus 0.05); ~73% of sequence strings are novel.
 - [ ] **Structure, still to do:** voices from `complexity.json` ✅; mini-notation
       *structure* (`[]`, `<>`, euclid, `*`) is not yet synthesized around the
       tokens (flat sequences for now); optional templates
