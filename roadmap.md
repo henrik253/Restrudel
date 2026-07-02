@@ -1,9 +1,15 @@
 # Restrudel — Roadmap (Draft v1)
 
-Step-by-step workflow. **Scope of this document: Goal 1 — gather and create the
-training data.** Later goals (train the AMT model, build the MIDI→Strudel stage,
-end-to-end demo) are tracked in [project_plan.md](project_plan.md) and will get
-their own roadmap once data exists.
+Step-by-step workflow for the **current master plan**:
+1. **Generate synthetic training data** — aligned (audio WAV, MIDI/events, Strudel
+   code) triples — and store the heavy audio on **Google Drive**.
+2. **Fine-tune the existing YourMT3+ checkpoint** on it to improve transcription of
+   synth/electronic timbres.
+
+Phases 0–5 build the data (**Goal 1**); Phase 6 does the fine-tune (**Goal 2**).
+The later MIDI→Strudel stage and end-to-end demo remain in
+[project_plan.md](project_plan.md) until this works. **AWS is out of scope for now**
+(a possible scale fallback later, not the plan).
 
 ## Guiding principles
 - **Data-driven, not random.** We do *not* generate uniform-random notes. We
@@ -27,6 +33,10 @@ their own roadmap once data exists.
   **DVC → Google Drive** for the WAV dataset only ([docs/dvc.md](docs/dvc.md)).
 - **Audio render (Part B):** `OfflineAudioContext` (faster-than-realtime) first;
   headless browser as proven fallback. Validated by a spike before we depend on it.
+- **Training (Goal 2):** **fine-tune** the released YourMT3+ checkpoint — *not* train
+  from scratch. Venue: **Colab primary** (native Drive mount, free/cheap GPU; the
+  ~60M-param model fine-tunes on a single 16–24 GB GPU). **AWS deferred** — only a
+  scale fallback if we outgrow Colab session limits.
 
 ---
 
@@ -134,14 +144,35 @@ songs use — the evidence that drives generation.
 - [ ] Reserve a tiny **real** eval set (hand-labeled real electronic clips).
 - [ ] Document format so the AMT stage can consume it directly.
 
+## Phase 6 — Fine-tune YourMT3+ (Goal 2)
+**Outcome:** a YourMT3+ checkpoint that beats the released baseline on synth/
+electronic timbres.
+
+*Why fine-tune, not train from scratch:* the paper trained on **2× A100 for 300K
+steps** across 10 datasets, but the model is **small (~60M params, <2.5% over MT3)**.
+Fine-tuning the released checkpoint on our synth data tests the thesis in
+**hours of GPU, not days**, and our dataset (≤2 GB) + this model fit one GPU.
+
+- [ ] Get the released checkpoint + training code (`mimbres/YourMT3`); run its
+      inference on a few of our electronic clips to fix the **baseline to beat**.
+- [ ] Adapt our dataset to YourMT3+'s I/O: 16 kHz audio → its spectrogram front-end;
+      our MIDI/events → its MIDI-like event-token targets (`MT3_FULL_PLUS` vocab).
+      Reuse the Phase 2 labels.
+- [ ] Fine-tune on **Colab** (mount Drive, pull dataset): short run (≪300K steps),
+      1 GPU, bf16; checkpoint back to Drive.
+- [ ] Evaluate note-level F1 (onset / onset+offset / multi-instrument) on the held-out
+      **real** electronic set vs. baseline — the number that proves the thesis.
+- [ ] Escalate to AWS Spot only if Colab session limits become the bottleneck.
+
 ---
 
-## Milestones (Goal 1)
+## Milestones
 1. **M1 — Infra:** Colab mounts Drive; repo skeleton; Drive layout exists. (Ph 0)
 2. **M2 — Analysis:** distributions of real Strudel sounds plotted & reviewed. (Ph 1) ⭐
 3. **M3 — Labels:** pattern → MIDI/events working & verified. (Ph 2)
 4. **M4 — Audio:** scalable WAV render validated (offline or fallback). (Ph 3)
 5. **M5 — Dataset:** first weighted batch of aligned triples in Drive. (Ph 4–5)
+6. **M6 — Fine-tune:** YourMT3+ beats its own baseline on electronic clips. (Ph 6) 🎯
 
 ## Open questions / risks
 - [ ] SuperDough on `node-web-audio-api` — unproven (Phase 3 spike de-risks).
@@ -150,3 +181,6 @@ songs use — the evidence that drives generation.
 - [ ] Node-in-Colab ergonomics (installing/running Node from a Python notebook).
 - [ ] How much timbre/FX to encode as labels vs. notes-only (affects events JSON).
 - [ ] Licensing of fetched corpus songs — for analysis only vs. redistribution.
+- [ ] Fine-tune (Goal 2): does `mimbres/YourMT3` cleanly support loading its
+      checkpoint + resuming training on a new dataset? Matching our labels to its
+      exact event-token format is the main integration risk.
