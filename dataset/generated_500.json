@@ -12,3001 +12,5233 @@
       "id": "1_0",
       "seed": 1,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_guitar_nylon\").attack(.3).release(.01)\n\n$: s(\"gm_oboe\").slow(2)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_nylon\").attack(.3).release(.01)",
+        "",
+        "$: s(\"gm_oboe\").slow(2)"
+      ]
     },
     {
       "id": "1_1",
       "seed": 2,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick\").speed(.7).pan(.1697).gain(.7)\n\n$: sound(\"~\").lpf(3000).resonance(5).decay(.05).sustain(0).delay(.5002).slow(7)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").speed(.7).pan(.1697).gain(.7)",
+        "",
+        "$: sound(\"~\").lpf(3000).resonance(5).decay(.05).sustain(0).delay(.5002).slow(7)"
+      ]
     },
     {
       "id": "1_2",
       "seed": 3,
       "voices": 2,
-      "code": "$: s(\"sawtooth\").room(.8)\n\n$: note(\"g5\").s(\"clavisynth lt lt\").slow(2)\n"
+      "code": [
+        "$: s(\"sawtooth\").room(.8)",
+        "",
+        "$: note(\"g5\").s(\"clavisynth lt lt\").slow(2)"
+      ]
     },
     {
       "id": "1_3",
       "seed": 4,
       "voices": 3,
-      "code": "$: s(\"sawtooth\").slow(2).scale(\"C:ritusen\").transpose(\"[-24 0]*2\").velocity(.65)\n\n$: s(\"sax 127\").gain(.4628)\n\n$: s(\"bd\").gain(.3134)\n"
+      "code": [
+        "$: s(\"sawtooth\").slow(2).scale(\"C:ritusen\").transpose(\"[-24 0]*2\").velocity(.65)",
+        "",
+        "$: s(\"sax 127\").gain(.4628)",
+        "",
+        "$: s(\"bd\").gain(.3134)"
+      ]
     },
     {
       "id": "1_4",
       "seed": 5,
       "voices": 2,
-      "code": "$: note(\"a2*8 ~ ~ a2*8\").gain(.6982)\n\n$: s(\"ocarina_vib\").slow(3)\n"
+      "code": [
+        "$: note(\"a2*8 ~ ~ a2*8\").gain(.6982)",
+        "",
+        "$: s(\"ocarina_vib\").slow(3)"
+      ]
     },
     {
       "id": "1_5",
       "seed": 6,
       "voices": 2,
-      "code": "$: s(\"cr\").gain(0).slow(16)\n\n$: s(\"hh*2\").room(.2)\n"
+      "code": [
+        "$: s(\"cr\").gain(0).slow(16)",
+        "",
+        "$: s(\"hh*2\").room(.2)"
+      ]
     },
     {
       "id": "1_6",
       "seed": 7,
       "voices": 2,
-      "code": "$: s(\"gtr gm_tuba gm_electric_guitar_jazz gm_electric_bass_finger:3 Bass Bass Bass Bass\").slow(2)\n\n$: s(\"cp\")\n"
+      "code": [
+        "$: s(\"gtr gm_tuba gm_electric_guitar_jazz gm_electric_bass_finger:3 Bass Bass Bass Bass\").slow(2)",
+        "",
+        "$: s(\"cp\")"
+      ]
     },
     {
       "id": "1_7",
       "seed": 8,
       "voices": 2,
-      "code": "$: note(\"7 12 a4@10 Ab1\").s(\"bell\").slow(2)\n\n$: n(\"~ ~\")\n"
+      "code": [
+        "$: note(\"7 12 a4@10 Ab1\").s(\"bell\").slow(2)",
+        "",
+        "$: n(\"~ ~\")"
+      ]
     },
     {
       "id": "1_8",
       "seed": 9,
       "voices": 2,
-      "code": "$: n(\"G3 G3 C3 E3 F2 D2 G2 C2 F2 D2 G2 C2 F2 A2 Bb2 B2\").gain(.2887)\n\n$: s(\"sd 2 3 5\").velocity(.3)\n"
+      "code": [
+        "$: n(\"G3 G3 C3 E3 F2 D2 G2 C2 F2 D2 G2 C2 F2 A2 Bb2 B2\").gain(.2887)",
+        "",
+        "$: s(\"sd 2 3 5\").velocity(.3)"
+      ]
     },
     {
       "id": "1_9",
       "seed": 10,
       "voices": 2,
-      "code": "$: n(\"22 25 C6 A5 G5 A5 F5@2 C5 D5@2 F5 F5 C5@2 F5 Bb5\").lpf(650).room(1).gain(.4)\n\n$: s(\"piano\").slow(8)\n"
+      "code": [
+        "$: n(\"22 25 C6 A5 G5 A5 F5@2 C5 D5@2 F5 F5 C5@2 F5 Bb5\").lpf(650).room(1).gain(.4)",
+        "",
+        "$: s(\"piano\").slow(8)"
+      ]
     },
     {
       "id": "1_10",
       "seed": 11,
       "voices": 2,
-      "code": "$: s(\"kick\").velocity(.55)\n\n$: s(\"bd:5\").gain(.5)\n"
+      "code": [
+        "$: s(\"kick\").velocity(.55)",
+        "",
+        "$: s(\"bd:5\").gain(.5)"
+      ]
     },
     {
       "id": "1_11",
       "seed": 12,
       "voices": 2,
-      "code": "$: s(\"ocarina\").slow(8)\n\n$: note(\"a5\").sound(\"hh\").lpf(3482).gain(.3)\n"
+      "code": [
+        "$: s(\"ocarina\").slow(8)",
+        "",
+        "$: note(\"a5\").sound(\"hh\").lpf(3482).gain(.3)"
+      ]
     },
     {
       "id": "1_12",
       "seed": 13,
       "voices": 2,
-      "code": "$: s(\"bd*4\").slow(2)\n\n$: note(\"g1 f1 3 5\").sound(\"piano\").lpf(3500).room(.4179)\n"
+      "code": [
+        "$: s(\"bd*4\").slow(2)",
+        "",
+        "$: note(\"g1 f1 3 5\").sound(\"piano\").lpf(3500).room(.4179)"
+      ]
     },
     {
       "id": "1_13",
       "seed": 14,
       "voices": 2,
-      "code": "$: s(\"rd\").slow(2)\n\n$: n(\"0 3 ~ 0 2\")\n"
+      "code": [
+        "$: s(\"rd\").slow(2)",
+        "",
+        "$: n(\"0 3 ~ 0 2\")"
+      ]
     },
     {
       "id": "1_14",
       "seed": 15,
       "voices": 2,
-      "code": "$: s(\"lt\").slow(16)\n\n$: s(\"gm_electric_guitar_jazz\").slow(8)\n"
+      "code": [
+        "$: s(\"lt\").slow(16)",
+        "",
+        "$: s(\"gm_electric_guitar_jazz\").slow(8)"
+      ]
     },
     {
       "id": "1_15",
       "seed": 16,
       "voices": 2,
-      "code": "$: s(\"mt lt\").slow(2)\n\n$: s(\"lead\").gain(.4124).clip(.9652).note(\"f6 d6 b5 ~\").transpose(9)\n"
+      "code": [
+        "$: s(\"mt lt\").slow(2)",
+        "",
+        "$: s(\"lead\").gain(.4124).clip(.9652).note(\"f6 d6 b5 ~\").transpose(9)"
+      ]
     },
     {
       "id": "1_16",
       "seed": 17,
       "voices": 2,
-      "code": "$: s(\"triangle\").slow(2)\n\n$: note(\"~\").sound(\"hh\").lpf(650).room(.2)\n"
+      "code": [
+        "$: s(\"triangle\").slow(2)",
+        "",
+        "$: note(\"~\").sound(\"hh\").lpf(650).room(.2)"
+      ]
     },
     {
       "id": "1_17",
       "seed": 18,
       "voices": 2,
-      "code": "$: note(\"f6\").s(\"sd ~\").gain(.8)\n\n$: note(\"e4 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4\").sound(\"drum\").lpf(300).room(.9).gain(.35).cutoff(761).resonance(10)\n"
+      "code": [
+        "$: note(\"f6\").s(\"sd ~\").gain(.8)",
+        "",
+        "$: note(\"e4 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4\").sound(\"drum\").lpf(300).room(.9).gain(.35).cutoff(761).resonance(10)"
+      ]
     },
     {
       "id": "1_18",
       "seed": 19,
       "voices": 2,
-      "code": "$: s(\"z_sawtooth\").decay(.16).sustain(.8).delay(.6)\n\n$: s(\"drums\").lpf(2000).gain(.8)\n"
+      "code": [
+        "$: s(\"z_sawtooth\").decay(.16).sustain(.8).delay(.6)",
+        "",
+        "$: s(\"drums\").lpf(2000).gain(.8)"
+      ]
     },
     {
       "id": "1_19",
       "seed": 20,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_finger\").gain(.8832).transpose(-12).release(.1).distort(\"10:.17\").room(1).velocity(1.4685)\n\n$: s(\"square\").gain(.5).room(1.1617).delay(.2004)\n\n$: s(\"bass\").slow(2)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger\").gain(.8832).transpose(-12).release(.1).distort(\"10:.17\").room(1).velocity(1.4685)",
+        "",
+        "$: s(\"square\").gain(.5).room(1.1617).delay(.2004)",
+        "",
+        "$: s(\"bass\").slow(2)"
+      ]
     },
     {
       "id": "1_20",
       "seed": 21,
       "voices": 2,
-      "code": "$: s(\"oh\").gain(.4164).room(.6)\n\n$: s(\"sd 2 1 ~\").gain(.3)\n"
+      "code": [
+        "$: s(\"oh\").gain(.4164).room(.6)",
+        "",
+        "$: s(\"sd 2 1 ~\").gain(.3)"
+      ]
     },
     {
       "id": "1_21",
       "seed": 22,
       "voices": 2,
-      "code": "$: s(\"sd\").gain(.7).release(.1)\n\n$: s(\"piano\").gain(.9).release(.0765)\n"
+      "code": [
+        "$: s(\"sd\").gain(.7).release(.1)",
+        "",
+        "$: s(\"piano\").gain(.9).release(.0765)"
+      ]
     },
     {
       "id": "1_22",
       "seed": 23,
       "voices": 2,
-      "code": "$: s(\"cp\").slow(2)\n\n$: note(0).ply(\"2\")\n"
+      "code": [
+        "$: s(\"cp\").slow(2)",
+        "",
+        "$: note(0).ply(\"2\")"
+      ]
     },
     {
       "id": "1_23",
       "seed": 24,
       "voices": 2,
-      "code": "$: n(\"3 2\").scale(\"g2 minor pentatonic\").velocity(0)\n\n$: s(\"rd\").fast(2)\n"
+      "code": [
+        "$: n(\"3 2\").scale(\"g2 minor pentatonic\").velocity(0)",
+        "",
+        "$: s(\"rd\").fast(2)"
+      ]
     },
     {
       "id": "1_24",
       "seed": 25,
       "voices": 2,
-      "code": "$: note(\"e5 d#5 a#4 d#4\").sound(\"square\").lpf(5000).gain(.3).delay(.7749)\n\n$: s(\"linndrum_sd\").slow(2)\n"
+      "code": [
+        "$: note(\"e5 d#5 a#4 d#4\").sound(\"square\").lpf(5000).gain(.3).delay(.7749)",
+        "",
+        "$: s(\"linndrum_sd\").slow(2)"
+      ]
     },
     {
       "id": "1_25",
       "seed": 26,
       "voices": 2,
-      "code": "$: note(\"c4*2\").s(\"gm_acoustic_guitar_steel:2 gm_recorder gm_lead_8_bass_lead gm_epiano1:1 4 2 0 0 0 4\")\n\n$: note(\"e5 g5 c6 g5\").sound(\"hh\").lpf(700).gain(.5).release(.1081)\n"
+      "code": [
+        "$: note(\"c4*2\").s(\"gm_acoustic_guitar_steel:2 gm_recorder gm_lead_8_bass_lead gm_epiano1:1 4 2 0 0 0 4\")",
+        "",
+        "$: note(\"e5 g5 c6 g5\").sound(\"hh\").lpf(700).gain(.5).release(.1081)"
+      ]
     },
     {
       "id": "1_26",
       "seed": 27,
       "voices": 2,
-      "code": "$: s(\"triangle\").velocity(.3)\n\n$: s(\"bell\").gain(.5)\n"
+      "code": [
+        "$: s(\"triangle\").velocity(.3)",
+        "",
+        "$: s(\"bell\").gain(.5)"
+      ]
     },
     {
       "id": "1_27",
       "seed": 28,
       "voices": 2,
-      "code": "$: note(\"e5 ~ f5 ~\").slow(16)\n\n$: n(\"2@2 4 b 5\").pan(.6)\n"
+      "code": [
+        "$: note(\"e5 ~ f5 ~\").slow(16)",
+        "",
+        "$: n(\"2@2 4 b 5\").pan(.6)"
+      ]
     },
     {
       "id": "1_28",
       "seed": 29,
       "voices": 2,
-      "code": "$: s(\"supersaw\").gain(.8)\n\n$: s(\"bd\")\n"
+      "code": [
+        "$: s(\"supersaw\").gain(.8)",
+        "",
+        "$: s(\"bd\")"
+      ]
     },
     {
       "id": "1_29",
       "seed": 30,
       "voices": 3,
-      "code": "$: n(\"2 0 4\")\n\n$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7\").gain(.55).release(2.1617)\n\n$: s(\"linndrum_bd hats*8 bd@3 ~\").slow(2)\n"
+      "code": [
+        "$: n(\"2 0 4\")",
+        "",
+        "$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7\").gain(.55).release(2.1617)",
+        "",
+        "$: s(\"linndrum_bd hats*8 bd@3 ~\").slow(2)"
+      ]
     },
     {
       "id": "1_30",
       "seed": 31,
       "voices": 2,
-      "code": "$: note(\"d5\").sound(\"~\")\n\n$: note(\"7 12 g#5 c#4\")\n"
+      "code": [
+        "$: note(\"d5\").sound(\"~\")",
+        "",
+        "$: note(\"7 12 g#5 c#4\")"
+      ]
     },
     {
       "id": "1_31",
       "seed": 32,
       "voices": 2,
-      "code": "$: note(\"G4 A4 Bb4 A4 Bb3 D3 E3 F3 A2\")\n\n$: s(\"supersaw\").slow(2)\n"
+      "code": [
+        "$: note(\"G4 A4 Bb4 A4 Bb3 D3 E3 F3 A2\")",
+        "",
+        "$: s(\"supersaw\").slow(2)"
+      ]
     },
     {
       "id": "1_32",
       "seed": 33,
       "voices": 2,
-      "code": "$: note(\"d2*8\").clip(2).vib(4.8194).gain(.5)\n\n$: s(\"square folkharp cr lt\")\n"
+      "code": [
+        "$: note(\"d2*8\").clip(2).vib(4.8194).gain(.5)",
+        "",
+        "$: s(\"square folkharp cr lt\")"
+      ]
     },
     {
       "id": "1_33",
       "seed": 34,
       "voices": 2,
-      "code": "$: note(\"a3 c4 f4\")\n\n$: s(\"cp sd hh*2 sd cp ~ cp ~ cp\").slow(16)\n"
+      "code": [
+        "$: note(\"a3 c4 f4\")",
+        "",
+        "$: s(\"cp sd hh*2 sd cp ~ cp ~ cp\").slow(16)"
+      ]
     },
     {
       "id": "1_34",
       "seed": 35,
       "voices": 2,
-      "code": "$: s(\"clavisynth gm_lead_6_voice\").slow(8)\n\n$: s(\"dino\")\n"
+      "code": [
+        "$: s(\"clavisynth gm_lead_6_voice\").slow(8)",
+        "",
+        "$: s(\"dino\")"
+      ]
     },
     {
       "id": "1_35",
       "seed": 36,
       "voices": 3,
-      "code": "$: n(\"9 12 ~\").pan(.45)\n\n$: s(\"sawtooth square gm_electric_guitar_muted gm_applause:3 hh27\").struct(\"1 1 1 1 1 1 1 1\")\n\n$: s(\"supersaw\").speed(1.2)\n"
+      "code": [
+        "$: n(\"9 12 ~\").pan(.45)",
+        "",
+        "$: s(\"sawtooth square gm_electric_guitar_muted gm_applause:3 hh27\").struct(\"1 1 1 1 1 1 1 1\")",
+        "",
+        "$: s(\"supersaw\").speed(1.2)"
+      ]
     },
     {
       "id": "1_36",
       "seed": 37,
       "voices": 2,
-      "code": "$: note(\"a4 a3 c4 f4\")\n\n$: note(\"a5 g5 eb5 bb5\")\n"
+      "code": [
+        "$: note(\"a4 a3 c4 f4\")",
+        "",
+        "$: note(\"a5 g5 eb5 bb5\")"
+      ]
     },
     {
       "id": "1_37",
       "seed": 38,
       "voices": 2,
-      "code": "$: n(\"9 ~ 6 13!2 4@10 4@2 9@3 8 9@8 E2 Bb2 Bb2 A2 A2\").pan(.4263)\n\n$: s(\"cp\").lpf(4170).lpq(8.7185)\n"
+      "code": [
+        "$: n(\"9 ~ 6 13!2 4@10 4@2 9@3 8 9@8 E2 Bb2 Bb2 A2 A2\").pan(.4263)",
+        "",
+        "$: s(\"cp\").lpf(4170).lpq(8.7185)"
+      ]
     },
     {
       "id": "1_38",
       "seed": 39,
       "voices": 2,
-      "code": "$: note(\"d2\")\n\n$: s(\"ocarina\").room(1.0599)\n"
+      "code": [
+        "$: note(\"d2\")",
+        "",
+        "$: s(\"ocarina\").room(1.0599)"
+      ]
     },
     {
       "id": "1_39",
       "seed": 40,
       "voices": 2,
-      "code": "$: note(0)\n\n$: s(\"gm_acoustic_bass\").slow(2)\n"
+      "code": [
+        "$: note(0)",
+        "",
+        "$: s(\"gm_acoustic_bass\").slow(2)"
+      ]
     },
     {
       "id": "1_40",
       "seed": 41,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_pick\").velocity(.3144).pan(.4).clip(1)\n\n$: note(\"b4\").sound(\"bd\").lpf(300).gain(.4)\n\n$: note(\"d4 f4 a4 c5\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").velocity(.3144).pan(.4).clip(1)",
+        "",
+        "$: note(\"b4\").sound(\"bd\").lpf(300).gain(.4)",
+        "",
+        "$: note(\"d4 f4 a4 c5\")"
+      ]
     },
     {
       "id": "1_41",
       "seed": 42,
       "voices": 2,
-      "code": "$: s(\"east sawtooth square sn\")\n\n$: n(\"7 6@3 ~ 3@3\")\n"
+      "code": [
+        "$: s(\"east sawtooth square sn\")",
+        "",
+        "$: n(\"7 6@3 ~ 3@3\")"
+      ]
     },
     {
       "id": "1_42",
       "seed": 43,
       "voices": 3,
-      "code": "$: s(\"bd*4\").slow(2)\n\n$: s(\"misc:2\").fast(2)\n\n$: note(\"~ ~ g3 ~ b3 ~ a3 c4 ~ e4 f3 a3 c4 f4 c4 e4\").s(\"z_sawtooth rd*6 hh:8 gm_electric_bass_pick:7\").lpf(400).gain(.2).room(.3902).velocity(.402)\n"
+      "code": [
+        "$: s(\"bd*4\").slow(2)",
+        "",
+        "$: s(\"misc:2\").fast(2)",
+        "",
+        "$: note(\"~ ~ g3 ~ b3 ~ a3 c4 ~ e4 f3 a3 c4 f4 c4 e4\").s(\"z_sawtooth rd*6 hh:8 gm_electric_bass_pick:7\").lpf(400).gain(.2).room(.3902).velocity(.402)"
+      ]
     },
     {
       "id": "1_43",
       "seed": 44,
       "voices": 3,
-      "code": "$: s(\"pad\")\n\n$: s(\"oh\")\n\n$: note(\"f4\").struct(\"[[x ~]!2 x x@0.5 [x ~]!2 x@0.5 [x ~]!2]\")\n"
+      "code": [
+        "$: s(\"pad\")",
+        "",
+        "$: s(\"oh\")",
+        "",
+        "$: note(\"f4\").struct(\"[[x ~]!2 x x@0.5 [x ~]!2 x@0.5 [x ~]!2]\")"
+      ]
     },
     {
       "id": "1_44",
       "seed": 45,
       "voices": 2,
-      "code": "$: n(\"22 25 4 0 7\").s(\"recorder_tenor_sus\").slow(2).room(.5817).gain(.8705)\n\n$: n(\"2 5 ~ 2 ~ 5\").scale(\"G4 minor\").struct(\"<x!4 ~!2 x!9 x@3 x!6>\").fast(2)\n"
+      "code": [
+        "$: n(\"22 25 4 0 7\").s(\"recorder_tenor_sus\").slow(2).room(.5817).gain(.8705)",
+        "",
+        "$: n(\"2 5 ~ 2 ~ 5\").scale(\"G4 minor\").struct(\"<x!4 ~!2 x!9 x@3 x!6>\").fast(2)"
+      ]
     },
     {
       "id": "1_45",
       "seed": 46,
       "voices": 2,
-      "code": "$: n(\"4 6 7@2 8@2 6@2 4@3 ~ 7 ~ 6 ~ 8 9*2 8\").scale(\"C:<major minor>/2\").s(\"amen ht hh bd lt hh sd ht hh bd\")\n\n$: n(\"2@3 3 4 5\").s(\"gm_oboe\").gain(.4866)\n"
+      "code": [
+        "$: n(\"4 6 7@2 8@2 6@2 4@3 ~ 7 ~ 6 ~ 8 9*2 8\").scale(\"C:<major minor>/2\").s(\"amen ht hh bd lt hh sd ht hh bd\")",
+        "",
+        "$: n(\"2@3 3 4 5\").s(\"gm_oboe\").gain(.4866)"
+      ]
     },
     {
       "id": "1_46",
       "seed": 47,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick\").gain(.6)\n\n$: note(\"c1\").sound(\"triangle\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").gain(.6)",
+        "",
+        "$: note(\"c1\").sound(\"triangle\")"
+      ]
     },
     {
       "id": "1_47",
       "seed": 48,
       "voices": 3,
-      "code": "$: s(\"sawtooth\").gain(.3).room(.8).delay(.5).lpf(2000).hpf(1000).clip(.5624).release(.2)\n\n$: s(\"psaltery_pluck sine gm_acoustic_guitar_nylon ~\")\n\n$: s(\"snare\").speed(1.5).room(.5).gain(.8)\n"
+      "code": [
+        "$: s(\"sawtooth\").gain(.3).room(.8).delay(.5).lpf(2000).hpf(1000).clip(.5624).release(.2)",
+        "",
+        "$: s(\"psaltery_pluck sine gm_acoustic_guitar_nylon ~\")",
+        "",
+        "$: s(\"snare\").speed(1.5).room(.5).gain(.8)"
+      ]
     },
     {
       "id": "1_48",
       "seed": 49,
       "voices": 2,
-      "code": "$: note(\"C2\").sound(\"drum\").lpf(3500).room(.7).gain(1)\n\n$: n(\"1 4 2 1 3*2 1@20\")\n"
+      "code": [
+        "$: note(\"C2\").sound(\"drum\").lpf(3500).room(.7).gain(1)",
+        "",
+        "$: n(\"1 4 2 1 3*2 1@20\")"
+      ]
     },
     {
       "id": "1_49",
       "seed": 50,
       "voices": 2,
-      "code": "$: s(\"sawtooth\").slow(2)\n\n$: s(\"hh*8\").slow(2)\n"
+      "code": [
+        "$: s(\"sawtooth\").slow(2)",
+        "",
+        "$: s(\"hh*8\").slow(2)"
+      ]
     },
     {
       "id": "1_50",
       "seed": 51,
       "voices": 2,
-      "code": "$: s(\"hh*16\").slow(2)\n\n$: n(\"2@3 3 4 5\").scale(\"d3:whole:tone\").s(\"dino\")\n"
+      "code": [
+        "$: s(\"hh*16\").slow(2)",
+        "",
+        "$: n(\"2@3 3 4 5\").scale(\"d3:whole:tone\").s(\"dino\")"
+      ]
     },
     {
       "id": "1_51",
       "seed": 52,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_bass\").gain(.8).room(.8344)\n\n$: s(\"bd hh*4\").slow(1)\n"
+      "code": [
+        "$: s(\"gm_acoustic_bass\").gain(.8).room(.8344)",
+        "",
+        "$: s(\"bd hh*4\").slow(1)"
+      ]
     },
     {
       "id": "1_52",
       "seed": 53,
       "voices": 2,
-      "code": "$: note(0).sound(\"sine\")\n\n$: n(\"2@3 3 4 5 6@3 ~ 4 4 b 3 1 2 1 0 4 5 2\").scale(\"c2:major\").s(\"misc:2 bd:2 bd:3\").fast(2)\n"
+      "code": [
+        "$: note(0).sound(\"sine\")",
+        "",
+        "$: n(\"2@3 3 4 5 6@3 ~ 4 4 b 3 1 2 1 0 4 5 2\").scale(\"c2:major\").s(\"misc:2 bd:2 bd:3\").fast(2)"
+      ]
     },
     {
       "id": "1_53",
       "seed": 54,
       "voices": 2,
-      "code": "$: note(\"12 f2@3 ~ 3\").segment(16)\n\n$: note(\"b@2\")\n"
+      "code": [
+        "$: note(\"12 f2@3 ~ 3\").segment(16)",
+        "",
+        "$: note(\"b@2\")"
+      ]
     },
     {
       "id": "1_54",
       "seed": 55,
       "voices": 2,
-      "code": "$: n(\"0 4 2 3 1 2 0 1 ~ 6\")\n\n$: s(\"sawtooth\").slow(2)\n"
+      "code": [
+        "$: n(\"0 4 2 3 1 2 0 1 ~ 6\")",
+        "",
+        "$: s(\"sawtooth\").slow(2)"
+      ]
     },
     {
       "id": "1_55",
       "seed": 56,
       "voices": 2,
-      "code": "$: s(\"cp ~\")\n\n$: n(\"22 25 Ab3 C4 Eb4 Ab3 C4 Eb4 ~ F3 Bb3 D3 F3 Bb3\").s(\"supersaw\")\n"
+      "code": [
+        "$: s(\"cp ~\")",
+        "",
+        "$: n(\"22 25 Ab3 C4 Eb4 Ab3 C4 Eb4 ~ F3 Bb3 D3 F3 Bb3\").s(\"supersaw\")"
+      ]
     },
     {
       "id": "1_56",
       "seed": 57,
       "voices": 2,
-      "code": "$: s(\"psaltery_pluck\").gain(.4)\n\n$: s(\"psaltery_pluck\").gain(.8686)\n"
+      "code": [
+        "$: s(\"psaltery_pluck\").gain(.4)",
+        "",
+        "$: s(\"psaltery_pluck\").gain(.8686)"
+      ]
     },
     {
       "id": "1_57",
       "seed": 58,
       "voices": 2,
-      "code": "$: note(\"d2\").s(\"ellipse\").room(.6523)\n\n$: s(\"bd*4\").bank(\"RolandTR909\").gain(\"[1 0.3]*8\")\n"
+      "code": [
+        "$: note(\"d2\").s(\"ellipse\").room(.6523)",
+        "",
+        "$: s(\"bd*4\").bank(\"RolandTR909\").gain(\"[1 0.3]*8\")"
+      ]
     },
     {
       "id": "1_58",
       "seed": 59,
       "voices": 2,
-      "code": "$: note(\"a3\")\n\n$: s(\"rd*3\").slow(8)\n"
+      "code": [
+        "$: note(\"a3\")",
+        "",
+        "$: s(\"rd*3\").slow(8)"
+      ]
     },
     {
       "id": "1_59",
       "seed": 60,
       "voices": 2,
-      "code": "$: s(\"amen\")\n\n$: note(\"g#4@2 a#4@2 f#4 ~ g#4@2 a#4@2 b4@2 d#5 ~ f#5@2 a#4@2 e5@2 d#5 ~ c#5@2 b4@2\").sound(\"bd\").lpf(3666).gain(.25).velocity(.7)\n"
+      "code": [
+        "$: s(\"amen\")",
+        "",
+        "$: note(\"g#4@2 a#4@2 f#4 ~ g#4@2 a#4@2 b4@2 d#5 ~ f#5@2 a#4@2 e5@2 d#5 ~ c#5@2 b4@2\").sound(\"bd\").lpf(3666).gain(.25).velocity(.7)"
+      ]
     },
     {
       "id": "1_60",
       "seed": 61,
       "voices": 2,
-      "code": "$: note(\"c2 ~ c1 ~\").s(\"cymbal\")\n\n$: note(\"d5 g5 b5 g5\").struct(\"x*2\").add(\"0,.12\")\n"
+      "code": [
+        "$: note(\"c2 ~ c1 ~\").s(\"cymbal\")",
+        "",
+        "$: note(\"d5 g5 b5 g5\").struct(\"x*2\").add(\"0,.12\")"
+      ]
     },
     {
       "id": "1_61",
       "seed": 62,
       "voices": 2,
-      "code": "$: s(\"gm_lead_6_voice\").slow(4).add(\"<0,5>\")\n\n$: s(\"bd*2\").gain(1)\n"
+      "code": [
+        "$: s(\"gm_lead_6_voice\").slow(4).add(\"<0,5>\")",
+        "",
+        "$: s(\"bd*2\").gain(1)"
+      ]
     },
     {
       "id": "1_62",
       "seed": 63,
       "voices": 2,
-      "code": "$: s(\"bd*4\").gain(.6).release(.1)\n\n$: s(\"hh*2 cp hh bd\").slow(32)\n"
+      "code": [
+        "$: s(\"bd*4\").gain(.6).release(.1)",
+        "",
+        "$: s(\"hh*2 cp hh bd\").slow(32)"
+      ]
     },
     {
       "id": "1_63",
       "seed": 64,
       "voices": 3,
-      "code": "$: s(\"cp\").hpf(\"<2000!3 <4000 8000>>*4\")\n\n$: n(\"7 8 9 10 11 12 13\").clip(1).gain(\"<.5 .8>*16\").room(.3028)\n\n$: s(\"hh*4\").add(12)\n"
+      "code": [
+        "$: s(\"cp\").hpf(\"<2000!3 <4000 8000>>*4\")",
+        "",
+        "$: n(\"7 8 9 10 11 12 13\").clip(1).gain(\"<.5 .8>*16\").room(.3028)",
+        "",
+        "$: s(\"hh*4\").add(12)"
+      ]
     },
     {
       "id": "1_64",
       "seed": 65,
       "voices": 2,
-      "code": "$: s(\"linndrum_oh\").slow(15)\n\n$: note(\"a5\").velocity(2.443).hpf(467)\n"
+      "code": [
+        "$: s(\"linndrum_oh\").slow(15)",
+        "",
+        "$: note(\"a5\").velocity(2.443).hpf(467)"
+      ]
     },
     {
       "id": "1_65",
       "seed": 66,
       "voices": 2,
-      "code": "$: s(\"linndrum_oh\")\n\n$: n(\"1\").scale(\"G4 minor\").s(\"snare ~ snare ~ snare ~ snare\").slow(8)\n"
+      "code": [
+        "$: s(\"linndrum_oh\")",
+        "",
+        "$: n(\"1\").scale(\"G4 minor\").s(\"snare ~ snare ~ snare ~ snare\").slow(8)"
+      ]
     },
     {
       "id": "1_66",
       "seed": 67,
       "voices": 3,
-      "code": "$: s(\"hh*2\").slow(3)\n\n$: s(\"rd\").bank(\"Linn9000\")\n\n$: s(\"bd*4\").slow(2)\n"
+      "code": [
+        "$: s(\"hh*2\").slow(3)",
+        "",
+        "$: s(\"rd\").bank(\"Linn9000\")",
+        "",
+        "$: s(\"bd*4\").slow(2)"
+      ]
     },
     {
       "id": "1_67",
       "seed": 68,
       "voices": 2,
-      "code": "$: s(\"gm_church_organ\").slow(2).bank(\"AlesisHR16\").room(.3).gain(.3)\n\n$: s(\"gtr gm_lead_6_voice numbers:8 numbers:9\").slow(3)\n"
+      "code": [
+        "$: s(\"gm_church_organ\").slow(2).bank(\"AlesisHR16\").room(.3).gain(.3)",
+        "",
+        "$: s(\"gtr gm_lead_6_voice numbers:8 numbers:9\").slow(3)"
+      ]
     },
     {
       "id": "1_68",
       "seed": 69,
       "voices": 3,
-      "code": "$: s(\"gm_epiano1:1 cajon:12 supersaw\")\n\n$: s(\"ocarina a recorder_bass_sus EmuDrumulator_lt\").gain(.5)\n\n$: note(\"g5 eb5 bb5 a\")\n"
+      "code": [
+        "$: s(\"gm_epiano1:1 cajon:12 supersaw\")",
+        "",
+        "$: s(\"ocarina a recorder_bass_sus EmuDrumulator_lt\").gain(.5)",
+        "",
+        "$: note(\"g5 eb5 bb5 a\")"
+      ]
     },
     {
       "id": "1_69",
       "seed": 70,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_finger:2\").degradeBy(.4)\n\n$: sound(\"~ hh ~\").lpf(2500).gain(.5).room(.2498).delay(\".5\").slow(16)\n\n$: note(\"a1 g1*2 a1*2\").gain(.8729)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger:2\").degradeBy(.4)",
+        "",
+        "$: sound(\"~ hh ~\").lpf(2500).gain(.5).room(.2498).delay(\".5\").slow(16)",
+        "",
+        "$: note(\"a1 g1*2 a1*2\").gain(.8729)"
+      ]
     },
     {
       "id": "1_70",
       "seed": 71,
       "voices": 3,
-      "code": "$: s(\"east\").gain(.7)\n\n$: s(\"gtr linndrum_sd gm_pad_bowed gm_recorder gm_harmonica\").struct(\"x\").scale(\"D1 hirajoshi\").transpose(12)\n\n$: s(\"rect\").slow(2)\n"
+      "code": [
+        "$: s(\"east\").gain(.7)",
+        "",
+        "$: s(\"gtr linndrum_sd gm_pad_bowed gm_recorder gm_harmonica\").struct(\"x\").scale(\"D1 hirajoshi\").transpose(12)",
+        "",
+        "$: s(\"rect\").slow(2)"
+      ]
     },
     {
       "id": "1_71",
       "seed": 72,
       "voices": 2,
-      "code": "$: s(\"hh\").slow(4)\n\n$: note(\"c4 e4 f3 a3\").s(\"linndrum_oh\")\n"
+      "code": [
+        "$: s(\"hh\").slow(4)",
+        "",
+        "$: note(\"c4 e4 f3 a3\").s(\"linndrum_oh\")"
+      ]
     },
     {
       "id": "1_72",
       "seed": 73,
       "voices": 2,
-      "code": "$: n(\"7 9 ~\").scale(\"c4 whole tone\").s(\"bell\").gain(.3)\n\n$: s(\"triangle\").pan(1)\n"
+      "code": [
+        "$: n(\"7 9 ~\").scale(\"c4 whole tone\").s(\"bell\").gain(.3)",
+        "",
+        "$: s(\"triangle\").pan(1)"
+      ]
     },
     {
       "id": "1_73",
       "seed": 74,
       "voices": 2,
-      "code": "$: note(\"g2 c2 f2 g#2!3\")\n\n$: note(\"~ a4 g4\").sound(\"piano hh bd\").lpf(4000).gain(.3)\n"
+      "code": [
+        "$: note(\"g2 c2 f2 g#2!3\")",
+        "",
+        "$: note(\"~ a4 g4\").sound(\"piano hh bd\").lpf(4000).gain(.3)"
+      ]
     },
     {
       "id": "1_74",
       "seed": 75,
       "voices": 2,
-      "code": "$: s(\"bd 1 2 4\").fast(2)\n\n$: note(\"d2*8 a3@4 ~ 8 a3@4 ~ 16 a3@8 A4 Bb4 A4 Bb3 D3 E3 F3 c2\").sound(\"sawtooth\").lpf(4000).room(\"0 .1\")\n"
+      "code": [
+        "$: s(\"bd 1 2 4\").fast(2)",
+        "",
+        "$: note(\"d2*8 a3@4 ~ 8 a3@4 ~ 16 a3@8 A4 Bb4 A4 Bb3 D3 E3 F3 c2\").sound(\"sawtooth\").lpf(4000).room(\"0 .1\")"
+      ]
     },
     {
       "id": "1_75",
       "seed": 76,
       "voices": 2,
-      "code": "$: note(\"f4\").s(\"recorder_bass_sus\").gain(.3)\n\n$: note(\"e3 c3@2 ~ g#3\").s(\"dino\").slow(2)\n"
+      "code": [
+        "$: note(\"f4\").s(\"recorder_bass_sus\").gain(.3)",
+        "",
+        "$: note(\"e3 c3@2 ~ g#3\").s(\"dino\").slow(2)"
+      ]
     },
     {
       "id": "1_76",
       "seed": 77,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_finger:2\").slow(13)\n\n$: s(\"kick snare 2 5\").slow(2)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger:2\").slow(13)",
+        "",
+        "$: s(\"kick snare 2 5\").slow(2)"
+      ]
     },
     {
       "id": "1_77",
       "seed": 78,
       "voices": 2,
-      "code": "$: s(\"amen\").transpose(\"<0 2 3 4>\")\n\n$: s(\"rd 1!3 2 16\").lpf(800).room(.4).gain(.4138)\n"
+      "code": [
+        "$: s(\"amen\").transpose(\"<0 2 3 4>\")",
+        "",
+        "$: s(\"rd 1!3 2 16\").lpf(800).room(.4).gain(.4138)"
+      ]
     },
     {
       "id": "1_78",
       "seed": 79,
       "voices": 2,
-      "code": "$: sound(\"supersaw\").gain(.8)\n\n$: s(\"square\").gain(.6873)\n"
+      "code": [
+        "$: sound(\"supersaw\").gain(.8)",
+        "",
+        "$: s(\"square\").gain(.6873)"
+      ]
     },
     {
       "id": "1_79",
       "seed": 80,
       "voices": 3,
-      "code": "$: note(\"g1\").lpf(3000).gain(.6)\n\n$: s(\"oh\").slow(2)\n\n$: s(\"gm_electric_bass_pick\").clip(1).gain(.5)\n"
+      "code": [
+        "$: note(\"g1\").lpf(3000).gain(.6)",
+        "",
+        "$: s(\"oh\").slow(2)",
+        "",
+        "$: s(\"gm_electric_bass_pick\").clip(1).gain(.5)"
+      ]
     },
     {
       "id": "1_80",
       "seed": 81,
       "voices": 3,
-      "code": "$: s(\"linndrum_bd\").slow(1)\n\n$: s(\"~\").slow(16)\n\n$: note(\"c2\").sound(\"bd\").lpf(2461).gain(.2734)\n"
+      "code": [
+        "$: s(\"linndrum_bd\").slow(1)",
+        "",
+        "$: s(\"~\").slow(16)",
+        "",
+        "$: note(\"c2\").sound(\"bd\").lpf(2461).gain(.2734)"
+      ]
     },
     {
       "id": "1_81",
       "seed": 82,
       "voices": 3,
-      "code": "$: note(\"C2 Bb1 Ab1 G1\").sound(\"triangle\").gain(.2835)\n\n$: note(\"f4\").s(\"vocal 1 2 4\").gain(.8).room(1)\n\n$: n(\"3 ~ 0 2 4 0\").scale(\"G3 minor pentatonic\").s(\"breath\").velocity(.1472)\n"
+      "code": [
+        "$: note(\"C2 Bb1 Ab1 G1\").sound(\"triangle\").gain(.2835)",
+        "",
+        "$: note(\"f4\").s(\"vocal 1 2 4\").gain(.8).room(1)",
+        "",
+        "$: n(\"3 ~ 0 2 4 0\").scale(\"G3 minor pentatonic\").s(\"breath\").velocity(.1472)"
+      ]
     },
     {
       "id": "1_82",
       "seed": 83,
       "voices": 2,
-      "code": "$: s(\"kick\")\n\n$: s(\"rd\").slow(4)\n"
+      "code": [
+        "$: s(\"kick\")",
+        "",
+        "$: s(\"rd\").slow(4)"
+      ]
     },
     {
       "id": "1_83",
       "seed": 84,
       "voices": 2,
-      "code": "$: note(\"e1 ~ ~ e2\")\n\n$: s(\"recorder_bass_sus gm_percussive_organ\")\n"
+      "code": [
+        "$: note(\"e1 ~ ~ e2\")",
+        "",
+        "$: s(\"recorder_bass_sus gm_percussive_organ\")"
+      ]
     },
     {
       "id": "1_84",
       "seed": 85,
       "voices": 2,
-      "code": "$: s(\"sd hh*4\").gain(.6).room(.7153)\n\n$: n(\"9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ -1 -1 0\").s(\"gm_tuba\")\n"
+      "code": [
+        "$: s(\"sd hh*4\").gain(.6).room(.7153)",
+        "",
+        "$: n(\"9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ -1 -1 0\").s(\"gm_tuba\")"
+      ]
     },
     {
       "id": "1_85",
       "seed": 86,
       "voices": 2,
-      "code": "$: n(\"22 25 D2 E2 F2 A2 Bb2 B2 G2 C2 F2 F2 Bb2 Bb2 A2 A2\").scale(\"a2:minor\").transpose(12)\n\n$: note(\"a5\").s(\"linndrum_oh\").room(.8).gain(.3).clip(1)\n"
+      "code": [
+        "$: n(\"22 25 D2 E2 F2 A2 Bb2 B2 G2 C2 F2 F2 Bb2 Bb2 A2 A2\").scale(\"a2:minor\").transpose(12)",
+        "",
+        "$: note(\"a5\").s(\"linndrum_oh\").room(.8).gain(.3).clip(1)"
+      ]
     },
     {
       "id": "1_86",
       "seed": 87,
       "voices": 2,
-      "code": "$: s(\"breath\").slow(2)\n\n$: s(\"hh*4\").gain(.2667).release(.2).room(.3)\n"
+      "code": [
+        "$: s(\"breath\").slow(2)",
+        "",
+        "$: s(\"hh*4\").gain(.2667).release(.2).room(.3)"
+      ]
     },
     {
       "id": "1_87",
       "seed": 88,
       "voices": 3,
-      "code": "$: note(\"0 04 a4@3\").sound(\"square\").lpf(700)\n\n$: note(\"c3 eb3 g3 bb3\").sound(\"drum\").lpf(\"<800@2 1200@2 2400>\").gain(.4874)\n\n$: s(\"gm_drawbar_organ ocarina kalimba rim\").slow(9)\n"
+      "code": [
+        "$: note(\"0 04 a4@3\").sound(\"square\").lpf(700)",
+        "",
+        "$: note(\"c3 eb3 g3 bb3\").sound(\"drum\").lpf(\"<800@2 1200@2 2400>\").gain(.4874)",
+        "",
+        "$: s(\"gm_drawbar_organ ocarina kalimba rim\").slow(9)"
+      ]
     },
     {
       "id": "1_88",
       "seed": 89,
       "voices": 3,
-      "code": "$: s(\"gm_acoustic_guitar_steel:2 5 4 2\").room(.4).gain(.3848)\n\n$: n(\"0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0\").scale(\"G4 minor\").velocity(.3)\n\n$: s(\"gm_oboe\").speed(\".5\").hpf(198)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_steel:2 5 4 2\").room(.4).gain(.3848)",
+        "",
+        "$: n(\"0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0\").scale(\"G4 minor\").velocity(.3)",
+        "",
+        "$: s(\"gm_oboe\").speed(\".5\").hpf(198)"
+      ]
     },
     {
       "id": "1_89",
       "seed": 90,
       "voices": 2,
-      "code": "$: s(\"rd\").clip(1).note(\"g4 f#4 e4\").ply(\"2\")\n\n$: note(\"D2\")\n"
+      "code": [
+        "$: s(\"rd\").clip(1).note(\"g4 f#4 e4\").ply(\"2\")",
+        "",
+        "$: note(\"D2\")"
+      ]
     },
     {
       "id": "1_90",
       "seed": 91,
       "voices": 2,
-      "code": "$: s(\"gm_electric_guitar_clean:2 bd:5 ~ sd:1!3 sd:1 hh27 bell white@3\").slow(2)\n\n$: note(38).clip(.9).gain(.3371).segment(4)\n"
+      "code": [
+        "$: s(\"gm_electric_guitar_clean:2 bd:5 ~ sd:1!3 sd:1 hh27 bell white@3\").slow(2)",
+        "",
+        "$: note(38).clip(.9).gain(.3371).segment(4)"
+      ]
     },
     {
       "id": "1_91",
       "seed": 92,
       "voices": 2,
-      "code": "$: note(\"c3 g#2 c3 f3\").s(\"ocarina_vib\").room(1.093)\n\n$: s(\"misc:2\").slow(10)\n"
+      "code": [
+        "$: note(\"c3 g#2 c3 f3\").s(\"ocarina_vib\").room(1.093)",
+        "",
+        "$: s(\"misc:2\").slow(10)"
+      ]
     },
     {
       "id": "1_92",
       "seed": 93,
       "voices": 2,
-      "code": "$: s(\"cowbell\").lpf(2600).velocity(.7)\n\n$: s(\"gm_oboe snare_rim:0 gong 8 brakedrum:1\").slow(8)\n"
+      "code": [
+        "$: s(\"cowbell\").lpf(2600).velocity(.7)",
+        "",
+        "$: s(\"gm_oboe snare_rim:0 gong 8 brakedrum:1\").slow(8)"
+      ]
     },
     {
       "id": "1_93",
       "seed": 94,
       "voices": 2,
-      "code": "$: s(\"amen EmuDrumulator_lt numbers:1 numbers:2\")\n\n$: s(\"gm_lead_6_voice\").gain(.3)\n"
+      "code": [
+        "$: s(\"amen EmuDrumulator_lt numbers:1 numbers:2\")",
+        "",
+        "$: s(\"gm_lead_6_voice\").gain(.3)"
+      ]
     },
     {
       "id": "1_94",
       "seed": 95,
       "voices": 2,
-      "code": "$: note(\"e5 e5 c5 d5 e5 e5 ~ ~ ~ ~ ~ e5 e5 c5 d5 e5 e5 ~ ~ ~ ~ ~ e5 e5 c5 d5 e5 g5 e5 a5\").sound(\"drum\").lpf(3500).gain(.548)\n\n$: s(\"sawtooth\").gain(.3)\n"
+      "code": [
+        "$: note(\"e5 e5 c5 d5 e5 e5 ~ ~ ~ ~ ~ e5 e5 c5 d5 e5 e5 ~ ~ ~ ~ ~ e5 e5 c5 d5 e5 g5 e5 a5\").sound(\"drum\").lpf(3500).gain(.548)",
+        "",
+        "$: s(\"sawtooth\").gain(.3)"
+      ]
     },
     {
       "id": "1_95",
       "seed": 96,
       "voices": 2,
-      "code": "$: s(\"gm_epiano1:1\").bank(\"tr909\").room(1).gain(.7321).release(.1)\n\n$: s(\"cowbell\").slow(14)\n"
+      "code": [
+        "$: s(\"gm_epiano1:1\").bank(\"tr909\").room(1).gain(.7321).release(.1)",
+        "",
+        "$: s(\"cowbell\").slow(14)"
+      ]
     },
     {
       "id": "1_96",
       "seed": 97,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick lt cr lt\").gain(.9).release(.0953)\n\n$: note(\"g5 d5 g5 b5\").sound(\"~\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick lt cr lt\").gain(.9).release(.0953)",
+        "",
+        "$: note(\"g5 d5 g5 b5\").sound(\"~\")"
+      ]
     },
     {
       "id": "1_97",
       "seed": 98,
       "voices": 2,
-      "code": "$: s(\"piano\").slow(2)\n\n$: s(\"linndrum_oh\").slow(4)\n"
+      "code": [
+        "$: s(\"piano\").slow(2)",
+        "",
+        "$: s(\"linndrum_oh\").slow(4)"
+      ]
     },
     {
       "id": "1_98",
       "seed": 99,
       "voices": 2,
-      "code": "$: note(\"c3 f3 a#2 g2\").s(\"gm_electric_guitar_jazz\").slow(8)\n\n$: s(\"z_sawtooth\").gain(.2)\n"
+      "code": [
+        "$: note(\"c3 f3 a#2 g2\").s(\"gm_electric_guitar_jazz\").slow(8)",
+        "",
+        "$: s(\"z_sawtooth\").gain(.2)"
+      ]
     },
     {
       "id": "1_99",
       "seed": 100,
       "voices": 2,
-      "code": "$: s(\"clavisynth\").gain(.4)\n\n$: s(\"cr\").slow(2)\n"
+      "code": [
+        "$: s(\"clavisynth\").gain(.4)",
+        "",
+        "$: s(\"cr\").slow(2)"
+      ]
     },
     {
       "id": "1_100",
       "seed": 101,
       "voices": 2,
-      "code": "$: note(\"0 1 4!3 12\").sound(\"supersaw\")\n\n$: s(\"gm_electric_bass_finger:2 bd:2 bd:3 sn:3\").slow(8)\n"
+      "code": [
+        "$: note(\"0 1 4!3 12\").sound(\"supersaw\")",
+        "",
+        "$: s(\"gm_electric_bass_finger:2 bd:2 bd:3 sn:3\").slow(8)"
+      ]
     },
     {
       "id": "1_101",
       "seed": 102,
       "voices": 2,
-      "code": "$: note(\"a5 ~ ~ ~ f5 ~ ~ ~ g5 ~ ~ ~ d5 ~ ~ ~ c5 ~ ~ ~ f5 ~ ~ ~ g5 ~ ~ ~ d5 ~ ~ ~\").s(\"hh 3 5 4\").slow(2)\n\n$: s(\"gm_electric_guitar_clean:2 24 32 64\").note(\"g5\")\n"
+      "code": [
+        "$: note(\"a5 ~ ~ ~ f5 ~ ~ ~ g5 ~ ~ ~ d5 ~ ~ ~ c5 ~ ~ ~ f5 ~ ~ ~ g5 ~ ~ ~ d5 ~ ~ ~\").s(\"hh 3 5 4\").slow(2)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2 24 32 64\").note(\"g5\")"
+      ]
     },
     {
       "id": "1_102",
       "seed": 103,
       "voices": 2,
-      "code": "$: n(\"0@2 ~ ~ 1 2 3 ~ 4 ~ 3 2 0 ~ 3 ~ 5!2 6!2 2 ~ 6 ~ 4\").scale(\"<C:major C:mixolydian F:lydian [F:minor <Db:major Db:mixolydian>]>\").s(\"gm_drawbar_organ supersaw hats*8 Linn9000_cr\").gain(.5).clip(1).release(.1)\n\n$: s(\"clavisynth\").room(.2).gain(.8)\n"
+      "code": [
+        "$: n(\"0@2 ~ ~ 1 2 3 ~ 4 ~ 3 2 0 ~ 3 ~ 5!2 6!2 2 ~ 6 ~ 4\").scale(\"<C:major C:mixolydian F:lydian [F:minor <Db:major Db:mixolydian>]>\").s(\"gm_drawbar_organ supersaw hats*8 Linn9000_cr\").gain(.5).clip(1).release(.1)",
+        "",
+        "$: s(\"clavisynth\").room(.2).gain(.8)"
+      ]
     },
     {
       "id": "1_103",
       "seed": 104,
       "voices": 3,
-      "code": "$: n(\"-7*3 0 2 6\").scale(\"G4 minor\")\n\n$: note(\"a5 f5 ~ d5\")\n\n$: note(0)\n"
+      "code": [
+        "$: n(\"-7*3 0 2 6\").scale(\"G4 minor\")",
+        "",
+        "$: note(\"a5 f5 ~ d5\")",
+        "",
+        "$: note(0)"
+      ]
     },
     {
       "id": "1_104",
       "seed": 105,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_guitar_steel:2 linndrum_oh sd:0 ~ hh:0\")\n\n$: s(\"hh*2 ~ hh hh\").cutoff(1976).gain(.6)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_steel:2 linndrum_oh sd:0 ~ hh:0\")",
+        "",
+        "$: s(\"hh*2 ~ hh hh\").cutoff(1976).gain(.6)"
+      ]
     },
     {
       "id": "1_105",
       "seed": 106,
       "voices": 2,
-      "code": "$: note(\"~ 3 72 f4@8 ~ c#4 ~\").ply(2)\n\n$: s(\"gm_church_organ oh*4\").slow(2)\n"
+      "code": [
+        "$: note(\"~ 3 72 f4@8 ~ c#4 ~\").ply(2)",
+        "",
+        "$: s(\"gm_church_organ oh*4\").slow(2)"
+      ]
     },
     {
       "id": "1_106",
       "seed": 107,
       "voices": 3,
-      "code": "$: s(\"drums\").crush(6)\n\n$: s(\"linndrum_sd\").hpf(500).gain(.8)\n\n$: note(\"b4 eb4 g4 bb4\").add(\"<~ -2 2>*3\").late(\"[0 .01]*2\").attack(.01).decay(.15).sustain(0).room(1)\n"
+      "code": [
+        "$: s(\"drums\").crush(6)",
+        "",
+        "$: s(\"linndrum_sd\").hpf(500).gain(.8)",
+        "",
+        "$: note(\"b4 eb4 g4 bb4\").add(\"<~ -2 2>*3\").late(\"[0 .01]*2\").attack(.01).decay(.15).sustain(0).room(1)"
+      ]
     },
     {
       "id": "1_107",
       "seed": 108,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_bass gm_tuba\").slow(2)\n\n$: note(\"e5 ~ e5 d#5 a#4 ~ ~ b4 ~ a#4@2 f#4@2 g#4@2\").sound(\"sine\").lpf(3000)\n"
+      "code": [
+        "$: s(\"gm_acoustic_bass gm_tuba\").slow(2)",
+        "",
+        "$: note(\"e5 ~ e5 d#5 a#4 ~ ~ b4 ~ a#4@2 f#4@2 g#4@2\").sound(\"sine\").lpf(3000)"
+      ]
     },
     {
       "id": "1_108",
       "seed": 109,
       "voices": 3,
-      "code": "$: note(\"a2\").s(\"hh\").gain(.5)\n\n$: s(\"bell\").struct(\"x(5,8,-1)\")\n\n$: note(\"g1 ~ a4 c#5@6\").velocity(.7479).slow(8)\n"
+      "code": [
+        "$: note(\"a2\").s(\"hh\").gain(.5)",
+        "",
+        "$: s(\"bell\").struct(\"x(5,8,-1)\")",
+        "",
+        "$: note(\"g1 ~ a4 c#5@6\").velocity(.7479).slow(8)"
+      ]
     },
     {
       "id": "1_109",
       "seed": 110,
       "voices": 2,
-      "code": "$: note(\"~ a#4@2 f#4@2 g#4@2\")\n\n$: s(\"lead gm_lead_1_square pink white 0\").slow(2)\n"
+      "code": [
+        "$: note(\"~ a#4@2 f#4@2 g#4@2\")",
+        "",
+        "$: s(\"lead gm_lead_1_square pink white 0\").slow(2)"
+      ]
     },
     {
       "id": "1_110",
       "seed": 111,
       "voices": 3,
-      "code": "$: note(\"d f a a#\").sound(\"hh\").lpf(358)\n\n$: s(\"gm_epiano1:1 linndrum_cr 4 4\").slow(2)\n\n$: s(\"gm_ocarina\").slow(2)\n"
+      "code": [
+        "$: note(\"d f a a#\").sound(\"hh\").lpf(358)",
+        "",
+        "$: s(\"gm_epiano1:1 linndrum_cr 4 4\").slow(2)",
+        "",
+        "$: s(\"gm_ocarina\").slow(2)"
+      ]
     },
     {
       "id": "1_111",
       "seed": 112,
       "voices": 2,
-      "code": "$: note(\"c d\").s(\"east 63 crash ~ ~\").slow(2)\n\n$: n(\"2 1 1 b@2 3\").scale(\"C:<major minor>/2\").transpose(\"<0 0 1 0>/8\")\n"
+      "code": [
+        "$: note(\"c d\").s(\"east 63 crash ~ ~\").slow(2)",
+        "",
+        "$: n(\"2 1 1 b@2 3\").scale(\"C:<major minor>/2\").transpose(\"<0 0 1 0>/8\")"
+      ]
     },
     {
       "id": "1_112",
       "seed": 113,
       "voices": 2,
-      "code": "$: note(\"d2*8 eb\").s(\"pad numbers:1\").bank(\"AkaiLinn\").clip(1).gain(\"<.5 .8>*16\")\n\n$: note(\"f6 d6 b5 ~\").sound(\"sine\").lpf(3500).speed(.7).pan(.5857)\n"
+      "code": [
+        "$: note(\"d2*8 eb\").s(\"pad numbers:1\").bank(\"AkaiLinn\").clip(1).gain(\"<.5 .8>*16\")",
+        "",
+        "$: note(\"f6 d6 b5 ~\").sound(\"sine\").lpf(3500).speed(.7).pan(.5857)"
+      ]
     },
     {
       "id": "1_113",
       "seed": 114,
       "voices": 2,
-      "code": "$: s(\"gm_epiano1:1 linn9000_mt gm_electric_bass_finger:2\").bank(\"BossDR110\").room(1.5).gain(.4)\n\n$: n(\"~ 59\").s(\"gm_church_organ gtr hh*8 crow ~ 6 sd ~ 5 sd\").gain(.3617).release(.5)\n"
+      "code": [
+        "$: s(\"gm_epiano1:1 linn9000_mt gm_electric_bass_finger:2\").bank(\"BossDR110\").room(1.5).gain(.4)",
+        "",
+        "$: n(\"~ 59\").s(\"gm_church_organ gtr hh*8 crow ~ 6 sd ~ 5 sd\").gain(.3617).release(.5)"
+      ]
     },
     {
       "id": "1_114",
       "seed": 115,
       "voices": 2,
-      "code": "$: sound(\"square kick snare\").lpf(4109)\n\n$: note(\"C2 Bb1 Ab1 G1\").s(\"bd:5\").room(.3125).gain(.8).delay(.4).delaytime(.12).delayfeedback(.5985)\n"
+      "code": [
+        "$: sound(\"square kick snare\").lpf(4109)",
+        "",
+        "$: note(\"C2 Bb1 Ab1 G1\").s(\"bd:5\").room(.3125).gain(.8).delay(.4).delaytime(.12).delayfeedback(.5985)"
+      ]
     },
     {
       "id": "1_115",
       "seed": 116,
       "voices": 3,
-      "code": "$: n(\"-2 -1 0 -7 -1 -3 ~ -4 ~\").s(\"triangle\").lpf(2000).hpf(7000).room(1)\n\n$: s(\"hh*16 hh*16 hh*16 hh*16 hh*16\")\n\n$: note(\"d2*8 b2@11 ~ 6 g2 f2 c3 g2 b2 d3 g3 b3 d4 g4 d4 a2 c3\").add(\"<0 1>\").s(\"hh oh\").slow(4)\n"
+      "code": [
+        "$: n(\"-2 -1 0 -7 -1 -3 ~ -4 ~\").s(\"triangle\").lpf(2000).hpf(7000).room(1)",
+        "",
+        "$: s(\"hh*16 hh*16 hh*16 hh*16 hh*16\")",
+        "",
+        "$: note(\"d2*8 b2@11 ~ 6 g2 f2 c3 g2 b2 d3 g3 b3 d4 g4 d4 a2 c3\").add(\"<0 1>\").s(\"hh oh\").slow(4)"
+      ]
     },
     {
       "id": "1_116",
       "seed": 117,
       "voices": 2,
-      "code": "$: note(\"a1\").gain(\"<.8@7 .55@5>/16\").release(.3).s(\"saw perc perc*3 bass\").lpf(600).hpf(8000)\n\n$: s(\"triangle lt*3 lt mt*2\").gain(\"<.7@9 .8>/10\")\n"
+      "code": [
+        "$: note(\"a1\").gain(\"<.8@7 .55@5>/16\").release(.3).s(\"saw perc perc*3 bass\").lpf(600).hpf(8000)",
+        "",
+        "$: s(\"triangle lt*3 lt mt*2\").gain(\"<.7@9 .8>/10\")"
+      ]
     },
     {
       "id": "1_117",
       "seed": 118,
       "voices": 2,
-      "code": "$: s(\"clavisynth\").slow(8)\n\n$: s(\"cp\").slow(2)\n"
+      "code": [
+        "$: s(\"clavisynth\").slow(8)",
+        "",
+        "$: s(\"cp\").slow(2)"
+      ]
     },
     {
       "id": "1_118",
       "seed": 119,
       "voices": 3,
-      "code": "$: note(\"0 1 4!3 12 a4@3 ~ d4 g4 ~ d4 ~ ~ c4 ~ e4 a4 ~ e4 ~ ~ a3 ~ c4 f4 ~ c4 ~ e4 a4 ~ e4 ~\")\n\n$: n(\"-2 -2 ~ 59\").gain(.4)\n\n$: note(\"a#5 g#5 e5 c#5 ~ 5 f#5 e5\")\n"
+      "code": [
+        "$: note(\"0 1 4!3 12 a4@3 ~ d4 g4 ~ d4 ~ ~ c4 ~ e4 a4 ~ e4 ~ ~ a3 ~ c4 f4 ~ c4 ~ e4 a4 ~ e4 ~\")",
+        "",
+        "$: n(\"-2 -2 ~ 59\").gain(.4)",
+        "",
+        "$: note(\"a#5 g#5 e5 c#5 ~ 5 f#5 e5\")"
+      ]
     },
     {
       "id": "1_119",
       "seed": 120,
       "voices": 3,
-      "code": "$: s(\"bd*2\").cutoff(800).attack(.1152).release(.1).note(\"a4\")\n\n$: note(\"12\").sound(\"sine\").lpf(2480).gain(.2413).release(.1).room(.3)\n\n$: note(\"a3 a3!2 c4!2\").hpf(684).gain(.6)\n"
+      "code": [
+        "$: s(\"bd*2\").cutoff(800).attack(.1152).release(.1).note(\"a4\")",
+        "",
+        "$: note(\"12\").sound(\"sine\").lpf(2480).gain(.2413).release(.1).room(.3)",
+        "",
+        "$: note(\"a3 a3!2 c4!2\").hpf(684).gain(.6)"
+      ]
     },
     {
       "id": "1_120",
       "seed": 121,
       "voices": 2,
-      "code": "$: n(\"5 6 7 8\").scale(\"C:major\").s(\"sawtooth square\").struct(\"x\")\n\n$: n(\"4 3 2 1 3\")\n"
+      "code": [
+        "$: n(\"5 6 7 8\").scale(\"C:major\").s(\"sawtooth square\").struct(\"x\")",
+        "",
+        "$: n(\"4 3 2 1 3\")"
+      ]
     },
     {
       "id": "1_121",
       "seed": 122,
       "voices": 2,
-      "code": "$: s(\"bell 12\").gain(.8)\n\n$: note(\"a2*8\")\n"
+      "code": [
+        "$: s(\"bell 12\").gain(.8)",
+        "",
+        "$: note(\"a2*8\")"
+      ]
     },
     {
       "id": "1_122",
       "seed": 123,
       "voices": 3,
-      "code": "$: s(\"square\").gain(.9569)\n\n$: note(\"c3\")\n\n$: s(\"kick\").slow(2)\n"
+      "code": [
+        "$: s(\"square\").gain(.9569)",
+        "",
+        "$: note(\"c3\")",
+        "",
+        "$: s(\"kick\").slow(2)"
+      ]
     },
     {
       "id": "1_123",
       "seed": 124,
       "voices": 3,
-      "code": "$: s(\"breath\").gain(.8274)\n\n$: s(\"cr\")\n\n$: note(\"c3\")\n"
+      "code": [
+        "$: s(\"breath\").gain(.8274)",
+        "",
+        "$: s(\"cr\")",
+        "",
+        "$: note(\"c3\")"
+      ]
     },
     {
       "id": "1_124",
       "seed": 125,
       "voices": 3,
-      "code": "$: n(\"9*2 9!2 6\")\n\n$: note(\"d4 c#4 d4 a3 d4 d#4\")\n\n$: n(\"7 11*2\").scale(\"a2:major\").transpose(12).release(.035)\n"
+      "code": [
+        "$: n(\"9*2 9!2 6\")",
+        "",
+        "$: note(\"d4 c#4 d4 a3 d4 d#4\")",
+        "",
+        "$: n(\"7 11*2\").scale(\"a2:major\").transpose(12).release(.035)"
+      ]
     },
     {
       "id": "1_125",
       "seed": 126,
       "voices": 2,
-      "code": "$: note(\"0\")\n\n$: n(\"F4 Bb4 D5 D4\").scale(\"c3:minor\").s(\"misc:2 linn9000_sd\").slow(4).room(1).gain(.215)\n"
+      "code": [
+        "$: note(\"0\")",
+        "",
+        "$: n(\"F4 Bb4 D5 D4\").scale(\"c3:minor\").s(\"misc:2 linn9000_sd\").slow(4).room(1).gain(.215)"
+      ]
     },
     {
       "id": "1_126",
       "seed": 127,
       "voices": 2,
-      "code": "$: sound(\"sine square\").lpf(1000).clip(.4)\n\n$: s(\"linndrum_bd\").gain(.2006).room(.4699)\n"
+      "code": [
+        "$: sound(\"sine square\").lpf(1000).clip(.4)",
+        "",
+        "$: s(\"linndrum_bd\").gain(.2006).room(.4699)"
+      ]
     },
     {
       "id": "1_127",
       "seed": 128,
       "voices": 2,
-      "code": "$: s(\"gm_electric_guitar_jazz perc*4 triangle saw\").gain(.5).lpf(2252).room(\"0 .1\")\n\n$: note(33)\n"
+      "code": [
+        "$: s(\"gm_electric_guitar_jazz perc*4 triangle saw\").gain(.5).lpf(2252).room(\"0 .1\")",
+        "",
+        "$: note(33)"
+      ]
     },
     {
       "id": "1_128",
       "seed": 129,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick\").gain(.7)\n\n$: note(\"e4\").s(\"amencutup\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").gain(.7)",
+        "",
+        "$: note(\"e4\").s(\"amencutup\")"
+      ]
     },
     {
       "id": "1_129",
       "seed": 130,
       "voices": 2,
-      "code": "$: sound(\"sawtooth\").lpf(1481).gain(\"0.2 0.4 0.3 0.5\")\n\n$: s(\"cp\").lpf(2000)\n"
+      "code": [
+        "$: sound(\"sawtooth\").lpf(1481).gain(\"0.2 0.4 0.3 0.5\")",
+        "",
+        "$: s(\"cp\").lpf(2000)"
+      ]
     },
     {
       "id": "1_130",
       "seed": 131,
       "voices": 2,
-      "code": "$: sound(\"sawtooth\").lpf(4000).gain(.6).release(.05).attack(.1)\n\n$: note(12).sound(\"hh\").lpf(300).hpf(1500).gain(.3572).release(.1).attack(.05).decay(.1)\n"
+      "code": [
+        "$: sound(\"sawtooth\").lpf(4000).gain(.6).release(.05).attack(.1)",
+        "",
+        "$: note(12).sound(\"hh\").lpf(300).hpf(1500).gain(.3572).release(.1).attack(.05).decay(.1)"
+      ]
     },
     {
       "id": "1_131",
       "seed": 132,
       "voices": 2,
-      "code": "$: s(\"pad\").clip(.95).release(.3382).bank(\"AlesisHR16\")\n\n$: s(\"kick 1 3 7\").slow(2)\n"
+      "code": [
+        "$: s(\"pad\").clip(.95).release(.3382).bank(\"AlesisHR16\")",
+        "",
+        "$: s(\"kick 1 3 7\").slow(2)"
+      ]
     },
     {
       "id": "1_132",
       "seed": 133,
       "voices": 2,
-      "code": "$: n(\"7 ~ 8 ~ 15 9*2 8 ~ 14 8*2 6 ~ 10 4*3 ~ 6 ~\")\n\n$: s(\"lt\").attack(.1).decay(.086).sustain(0).delay(.6).delaytime(\".33 | .6 | .166 | .25\").room(.5).gain(.9)\n"
+      "code": [
+        "$: n(\"7 ~ 8 ~ 15 9*2 8 ~ 14 8*2 6 ~ 10 4*3 ~ 6 ~\")",
+        "",
+        "$: s(\"lt\").attack(.1).decay(.086).sustain(0).delay(.6).delaytime(\".33 | .6 | .166 | .25\").room(.5).gain(.9)"
+      ]
     },
     {
       "id": "1_133",
       "seed": 134,
       "voices": 2,
-      "code": "$: note(\"c3 f3 a#2 g2 d#2 f2@3 ~ 3\").sound(\"sawtooth\").lpf(4000).gain(.9187).fast(2).add(\"<0 1>/16\")\n\n$: note(\"c5\").sound(\"~\").room(.6258).gain(.2719)\n"
+      "code": [
+        "$: note(\"c3 f3 a#2 g2 d#2 f2@3 ~ 3\").sound(\"sawtooth\").lpf(4000).gain(.9187).fast(2).add(\"<0 1>/16\")",
+        "",
+        "$: note(\"c5\").sound(\"~\").room(.6258).gain(.2719)"
+      ]
     },
     {
       "id": "1_134",
       "seed": 135,
       "voices": 2,
-      "code": "$: note(\"c3 g2 f2 a2\").fm(2)\n\n$: note(\"c2 a2 eb2 c2 g2 f2\").sound(\"supersaw\").lpf(2000)\n"
+      "code": [
+        "$: note(\"c3 g2 f2 a2\").fm(2)",
+        "",
+        "$: note(\"c2 a2 eb2 c2 g2 f2\").sound(\"supersaw\").lpf(2000)"
+      ]
     },
     {
       "id": "1_135",
       "seed": 136,
       "voices": 2,
-      "code": "$: note(\"g4 g3 b3\").gain(.35).decay(.0978).sustain(0)\n\n$: s(\"saw gm_pad_bowed:1 amencutup hh:1*4 breath gm_church_organ:2 ballwhistle:1 numbers:8 numbers:9 ~ 666 4 5 1\").hpf(9000).lpf(4000).room(.5127)\n"
+      "code": [
+        "$: note(\"g4 g3 b3\").gain(.35).decay(.0978).sustain(0)",
+        "",
+        "$: s(\"saw gm_pad_bowed:1 amencutup hh:1*4 breath gm_church_organ:2 ballwhistle:1 numbers:8 numbers:9 ~ 666 4 5 1\").hpf(9000).lpf(4000).room(.5127)"
+      ]
     },
     {
       "id": "1_136",
       "seed": 137,
       "voices": 2,
-      "code": "$: s(\"triangle\")\n\n$: s(\"gm_electric_bass_finger:2\").gain(.4873)\n"
+      "code": [
+        "$: s(\"triangle\")",
+        "",
+        "$: s(\"gm_electric_bass_finger:2\").gain(.4873)"
+      ]
     },
     {
       "id": "1_137",
       "seed": 138,
       "voices": 2,
-      "code": "$: note(\"f4 f#4 f4 g#4\")\n\n$: s(\"sax\").gain(.6)\n"
+      "code": [
+        "$: note(\"f4 f#4 f4 g#4\")",
+        "",
+        "$: s(\"sax\").gain(.6)"
+      ]
     },
     {
       "id": "1_138",
       "seed": 139,
       "voices": 2,
-      "code": "$: s(\"square mt*2 cr\")\n\n$: s(\"gm_acoustic_guitar_steel:2 flbass 0 1\").gain(.4).room(1).clip(1).sustain(0).degradeBy(.5)\n"
+      "code": [
+        "$: s(\"square mt*2 cr\")",
+        "",
+        "$: s(\"gm_acoustic_guitar_steel:2 flbass 0 1\").gain(.4).room(1).clip(1).sustain(0).degradeBy(.5)"
+      ]
     },
     {
       "id": "1_139",
       "seed": 140,
       "voices": 2,
-      "code": "$: s(\"woodblock:1\").gain(\"0.25 0.35 0.3 0.4\")\n\n$: s(\"bd!2 ~ 2 bd ~\").lpf(1000).hpf(6000)\n"
+      "code": [
+        "$: s(\"woodblock:1\").gain(\"0.25 0.35 0.3 0.4\")",
+        "",
+        "$: s(\"bd!2 ~ 2 bd ~\").lpf(1000).hpf(6000)"
+      ]
     },
     {
       "id": "1_140",
       "seed": 141,
       "voices": 3,
-      "code": "$: s(\"saw\").bank(\"Linn9000\").gain(.9).release(2)\n\n$: s(\"bd\").late(.1)\n\n$: s(\"bell\").room(1.3).gain(1.5)\n"
+      "code": [
+        "$: s(\"saw\").bank(\"Linn9000\").gain(.9).release(2)",
+        "",
+        "$: s(\"bd\").late(.1)",
+        "",
+        "$: s(\"bell\").room(1.3).gain(1.5)"
+      ]
     },
     {
       "id": "1_141",
       "seed": 142,
       "voices": 2,
-      "code": "$: note(\"g#4@2 g#4 f#4 f4 d#4 f4 d#4 a3\").sound(\"kick drums snare drums\").lpf(3000).gain(1.5).hpf(2000).fm(.5457)\n\n$: n(\"0 4@5 3 2 1@2 1@2 9@3 8 4@10 4@2 9@3 8 9@8 -7!8 0@8\")\n"
+      "code": [
+        "$: note(\"g#4@2 g#4 f#4 f4 d#4 f4 d#4 a3\").sound(\"kick drums snare drums\").lpf(3000).gain(1.5).hpf(2000).fm(.5457)",
+        "",
+        "$: n(\"0 4@5 3 2 1@2 1@2 9@3 8 4@10 4@2 9@3 8 9@8 -7!8 0@8\")"
+      ]
     },
     {
       "id": "1_142",
       "seed": 143,
       "voices": 3,
-      "code": "$: s(\"linndrum_sd\").gain(.35)\n\n$: s(\"z_sawtooth gm_clarinet bd!4 ~\")\n\n$: s(\"lead noise*4 gm_acoustic_guitar_steel:2 rim hh 3 5 4 0 0\").slow(2)\n"
+      "code": [
+        "$: s(\"linndrum_sd\").gain(.35)",
+        "",
+        "$: s(\"z_sawtooth gm_clarinet bd!4 ~\")",
+        "",
+        "$: s(\"lead noise*4 gm_acoustic_guitar_steel:2 rim hh 3 5 4 0 0\").slow(2)"
+      ]
     },
     {
       "id": "1_143",
       "seed": 144,
       "voices": 2,
-      "code": "$: s(\"triangle\").pan(.6).gain(.5949).release(.1)\n\n$: note(\"g5 b5\").sound(\"sawtooth\").lpf(2500)\n"
+      "code": [
+        "$: s(\"triangle\").pan(.6).gain(.5949).release(.1)",
+        "",
+        "$: note(\"g5 b5\").sound(\"sawtooth\").lpf(2500)"
+      ]
     },
     {
       "id": "1_144",
       "seed": 145,
       "voices": 2,
-      "code": "$: note(\"C2 A1 D2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2 F#2 F2\").s(\"cr 12 16 24\").gain(.6).pan(.5186)\n\n$: s(\"misc:2\").gain(1)\n"
+      "code": [
+        "$: note(\"C2 A1 D2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2 F#2 F2\").s(\"cr 12 16 24\").gain(.6).pan(.5186)",
+        "",
+        "$: s(\"misc:2\").gain(1)"
+      ]
     },
     {
       "id": "1_145",
       "seed": 146,
       "voices": 2,
-      "code": "$: s(\"recorder_bass_sus\").crush(8)\n\n$: n(\"22 25 3@3 4 3\").scale(\"C:<major minor>/2\").clip(.4812).release(.0757).room(.2054).pan(.55)\n"
+      "code": [
+        "$: s(\"recorder_bass_sus\").crush(8)",
+        "",
+        "$: n(\"22 25 3@3 4 3\").scale(\"C:<major minor>/2\").clip(.4812).release(.0757).room(.2054).pan(.55)"
+      ]
     },
     {
       "id": "1_146",
       "seed": 147,
       "voices": 2,
-      "code": "$: s(\"gm_drawbar_organ\").speed(1.2).gain(.6).release(.12).attack(.001)\n\n$: s(\"gtr\")\n"
+      "code": [
+        "$: s(\"gm_drawbar_organ\").speed(1.2).gain(.6).release(.12).attack(.001)",
+        "",
+        "$: s(\"gtr\")"
+      ]
     },
     {
       "id": "1_147",
       "seed": 148,
       "voices": 2,
-      "code": "$: n(\"~\")\n\n$: n(\"5 4\").clip(.95).release(.1115)\n"
+      "code": [
+        "$: n(\"~\")",
+        "",
+        "$: n(\"5 4\").clip(.95).release(.1115)"
+      ]
     },
     {
       "id": "1_148",
       "seed": 149,
       "voices": 2,
-      "code": "$: s(\"ocarina_vib linn9000_sd 16 24\").cutoff(800).gain(.6)\n\n$: s(\"gm_tuba\")\n"
+      "code": [
+        "$: s(\"ocarina_vib linn9000_sd 16 24\").cutoff(800).gain(.6)",
+        "",
+        "$: s(\"gm_tuba\")"
+      ]
     },
     {
       "id": "1_149",
       "seed": 150,
       "voices": 2,
-      "code": "$: s(\"kick*4 p clavisynth bd*2\").note(\"g1\")\n\n$: s(\"bd!2\").velocity(.4).hpf(1500).gain(.562)\n"
+      "code": [
+        "$: s(\"kick*4 p clavisynth bd*2\").note(\"g1\")",
+        "",
+        "$: s(\"bd!2\").velocity(.4).hpf(1500).gain(.562)"
+      ]
     },
     {
       "id": "1_150",
       "seed": 151,
       "voices": 2,
-      "code": "$: s(\"gm_oboe\").velocity(.8)\n\n$: n(\"5 8 -1 0@3\").sound(\"supersaw\")\n"
+      "code": [
+        "$: s(\"gm_oboe\").velocity(.8)",
+        "",
+        "$: n(\"5 8 -1 0@3\").sound(\"supersaw\")"
+      ]
     },
     {
       "id": "1_151",
       "seed": 152,
       "voices": 2,
-      "code": "$: s(\"triangle\").gain(.55).cutoff(254).decay(.05).sustain(0).bank(\"RolandTR909\").speed(\"<1 2 0.5>\").delay(.2355)\n\n$: s(\"linndrum_hh\").slow(4)\n"
+      "code": [
+        "$: s(\"triangle\").gain(.55).cutoff(254).decay(.05).sustain(0).bank(\"RolandTR909\").speed(\"<1 2 0.5>\").delay(.2355)",
+        "",
+        "$: s(\"linndrum_hh\").slow(4)"
+      ]
     },
     {
       "id": "1_152",
       "seed": 153,
       "voices": 2,
-      "code": "$: n(\"6 4@3\").sound(\"kick\").lpf(3200).gain(.3)\n\n$: s(\"cr lt\")\n"
+      "code": [
+        "$: n(\"6 4@3\").sound(\"kick\").lpf(3200).gain(.3)",
+        "",
+        "$: s(\"cr lt\")"
+      ]
     },
     {
       "id": "1_153",
       "seed": 154,
       "voices": 2,
-      "code": "$: n(\"c2 ~\").scale(\"G4 minor\")\n\n$: s(\"bd\").gain(.8)\n"
+      "code": [
+        "$: n(\"c2 ~\").scale(\"G4 minor\")",
+        "",
+        "$: s(\"bd\").gain(.8)"
+      ]
     },
     {
       "id": "1_154",
       "seed": 155,
       "voices": 2,
-      "code": "$: s(\"cowbell ~ ~ cowbell\").speed(.5).velocity(.3082).hpf(4000)\n\n$: s(\"bd\").slow(2)\n"
+      "code": [
+        "$: s(\"cowbell ~ ~ cowbell\").speed(.5).velocity(.3082).hpf(4000)",
+        "",
+        "$: s(\"bd\").slow(2)"
+      ]
     },
     {
       "id": "1_155",
       "seed": 156,
       "voices": 2,
-      "code": "$: note(\"c d e f e d c a f e d c a f e d c\").sound(\"kick snare\")\n\n$: note(\"c5 e5 a5 e5\").struct(\"1 ~ 1 ~ 1 1 ~ 1\")\n"
+      "code": [
+        "$: note(\"c d e f e d c a f e d c a f e d c\").sound(\"kick snare\")",
+        "",
+        "$: note(\"c5 e5 a5 e5\").struct(\"1 ~ 1 ~ 1 1 ~ 1\")"
+      ]
     },
     {
       "id": "1_156",
       "seed": 157,
       "voices": 2,
-      "code": "$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3\").clip(1).release(.4).attack(.001)\n\n$: sound(\"bd*2\").lpf(2000).gain(.6).transpose(-1)\n"
+      "code": [
+        "$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3\").clip(1).release(.4).attack(.001)",
+        "",
+        "$: sound(\"bd*2\").lpf(2000).gain(.6).transpose(-1)"
+      ]
     },
     {
       "id": "1_157",
       "seed": 158,
       "voices": 2,
-      "code": "$: s(\"gm_synth_strings_1 EmuDrumulator_oh conga*3 ~\")\n\n$: s(\"vocal\").gain(.7).release(.1171).attack(1.0498)\n"
+      "code": [
+        "$: s(\"gm_synth_strings_1 EmuDrumulator_oh conga*3 ~\")",
+        "",
+        "$: s(\"vocal\").gain(.7).release(.1171).attack(1.0498)"
+      ]
     },
     {
       "id": "1_158",
       "seed": 159,
       "voices": 2,
-      "code": "$: s(\"linndrum_bd\").bank(\"Linn9000\")\n\n$: note(\"g4 a4 f4 c4\").sound(\"bd\").lpf(382).room(.9)\n"
+      "code": [
+        "$: s(\"linndrum_bd\").bank(\"Linn9000\")",
+        "",
+        "$: note(\"g4 a4 f4 c4\").sound(\"bd\").lpf(382).room(.9)"
+      ]
     },
     {
       "id": "1_159",
       "seed": 160,
       "voices": 3,
-      "code": "$: s(\"gm_tuba white*16 gm_reed_organ snare_rim:0 gong 8\").slow(2)\n\n$: note(\"c4*2\").gain(.6)\n\n$: s(\"linndrum_bd\").lpf(600).gain(.7)\n"
+      "code": [
+        "$: s(\"gm_tuba white*16 gm_reed_organ snare_rim:0 gong 8\").slow(2)",
+        "",
+        "$: note(\"c4*2\").gain(.6)",
+        "",
+        "$: s(\"linndrum_bd\").lpf(600).gain(.7)"
+      ]
     },
     {
       "id": "1_160",
       "seed": 161,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick gm_cello:1\").bank(\"AlesisHR16\").clip(.7).release(.1).note(\"a2*8 a2*4 ~ ~\")\n\n$: s(\"rd*3\").speed(\"1 2\").gain(.8)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick gm_cello:1\").bank(\"AlesisHR16\").clip(.7).release(.1).note(\"a2*8 a2*4 ~ ~\")",
+        "",
+        "$: s(\"rd*3\").speed(\"1 2\").gain(.8)"
+      ]
     },
     {
       "id": "1_161",
       "seed": 162,
       "voices": 3,
-      "code": "$: n(\"~ 3 3 -1 ~ -1\")\n\n$: s(\"cymbal ~ ~ ~ ~\").gain(.08)\n\n$: s(\"gm_acoustic_guitar_steel:2 hh*8 gm_trombone:1 gm_trombone:4\").bank(\"RolandMT32\").room(.3527).gain(.8)\n"
+      "code": [
+        "$: n(\"~ 3 3 -1 ~ -1\")",
+        "",
+        "$: s(\"cymbal ~ ~ ~ ~\").gain(.08)",
+        "",
+        "$: s(\"gm_acoustic_guitar_steel:2 hh*8 gm_trombone:1 gm_trombone:4\").bank(\"RolandMT32\").room(.3527).gain(.8)"
+      ]
     },
     {
       "id": "1_162",
       "seed": 163,
       "voices": 2,
-      "code": "$: note(\"a4 d#5@6 ~ a4\").sound(\"bd*2\").lpf(2000).resonance(6).gain(.4989).room(.8)\n\n$: s(\"cr\").gain(.5909).release(.5)\n"
+      "code": [
+        "$: note(\"a4 d#5@6 ~ a4\").sound(\"bd*2\").lpf(2000).resonance(6).gain(.4989).room(.8)",
+        "",
+        "$: s(\"cr\").gain(.5909).release(.5)"
+      ]
     },
     {
       "id": "1_163",
       "seed": 164,
       "voices": 2,
-      "code": "$: sound(\"piano\").lpf(2000).room(.5)\n\n$: n(6)\n"
+      "code": [
+        "$: sound(\"piano\").lpf(2000).room(.5)",
+        "",
+        "$: n(6)"
+      ]
     },
     {
       "id": "1_164",
       "seed": 165,
       "voices": 2,
-      "code": "$: s(\"breath\")\n\n$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5\").scale(\"D dorian\").s(\"cp\").gain(\"[1 0.6]*4\")\n"
+      "code": [
+        "$: s(\"breath\")",
+        "",
+        "$: n(\"-7*3 0 2 6 8 7 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5\").scale(\"D dorian\").s(\"cp\").gain(\"[1 0.6]*4\")"
+      ]
     },
     {
       "id": "1_165",
       "seed": 166,
       "voices": 2,
-      "code": "$: s(\"sawtooth\").room(.6)\n\n$: s(\"ocarina\").gain(.8).release(1.4379).room(.8403).velocity(.7).hpf(800)\n"
+      "code": [
+        "$: s(\"sawtooth\").room(.6)",
+        "",
+        "$: s(\"ocarina\").gain(.8).release(1.4379).room(.8403).velocity(.7).hpf(800)"
+      ]
     },
     {
       "id": "1_166",
       "seed": 167,
       "voices": 3,
-      "code": "$: sound(\"drums\").lpf(600).gain(.85)\n\n$: note(\"f4 c4 c4@2 a#3@2\").sound(\"sawtooth\").lpf(3000).transpose(\"<0 1 2 1>/8\")\n\n$: s(\"bd*2\").slow(8)\n"
+      "code": [
+        "$: sound(\"drums\").lpf(600).gain(.85)",
+        "",
+        "$: note(\"f4 c4 c4@2 a#3@2\").sound(\"sawtooth\").lpf(3000).transpose(\"<0 1 2 1>/8\")",
+        "",
+        "$: s(\"bd*2\").slow(8)"
+      ]
     },
     {
       "id": "1_167",
       "seed": 168,
       "voices": 2,
-      "code": "$: note(\"C3 Eb3 G2 Bb2\").sound(\"bd*2 ~ bd*2 ~\").lpf(867).room(.6)\n\n$: note(\"a2*8\")\n"
+      "code": [
+        "$: note(\"C3 Eb3 G2 Bb2\").sound(\"bd*2 ~ bd*2 ~\").lpf(867).room(.6)",
+        "",
+        "$: note(\"a2*8\")"
+      ]
     },
     {
       "id": "1_168",
       "seed": 169,
       "voices": 2,
-      "code": "$: s(\"hh\").velocity(.8)\n\n$: note(\"a2\").sound(\"hh\").lpf(2000).hpf(5398).room(.6945).gain(.15).release(.4).attack(.06)\n"
+      "code": [
+        "$: s(\"hh\").velocity(.8)",
+        "",
+        "$: note(\"a2\").sound(\"hh\").lpf(2000).hpf(5398).room(.6945).gain(.15).release(.4).attack(.06)"
+      ]
     },
     {
       "id": "1_169",
       "seed": 170,
       "voices": 3,
-      "code": "$: note(\"f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6\").sound(\"drums\").lpf(650).resonance(10).gain(.9).room(.4).delay(.6).degradeBy(.8)\n\n$: s(\"hh\").slow(2).fast(2)\n\n$: s(\"linndrum_bd\")\n"
+      "code": [
+        "$: note(\"f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6\").sound(\"drums\").lpf(650).resonance(10).gain(.9).room(.4).delay(.6).degradeBy(.8)",
+        "",
+        "$: s(\"hh\").slow(2).fast(2)",
+        "",
+        "$: s(\"linndrum_bd\")"
+      ]
     },
     {
       "id": "1_170",
       "seed": 171,
       "voices": 2,
-      "code": "$: note(49).s(\"linndrum_bd\").hpf(\"<1000@2 2000 500>*8\").lpf(2500).velocity(.0382)\n\n$: note(\"f4 c4 e4 g4\").struct(\"x(5,8,-1)\").s(\"bd*4\").lpf(602)\n"
+      "code": [
+        "$: note(49).s(\"linndrum_bd\").hpf(\"<1000@2 2000 500>*8\").lpf(2500).velocity(.0382)",
+        "",
+        "$: note(\"f4 c4 e4 g4\").struct(\"x(5,8,-1)\").s(\"bd*4\").lpf(602)"
+      ]
     },
     {
       "id": "1_171",
       "seed": 172,
       "voices": 2,
-      "code": "$: s(\"gm_drawbar_organ hh*16 hh*16 hh*16\").slow(8)\n\n$: s(\"linndrum_oh\")\n"
+      "code": [
+        "$: s(\"gm_drawbar_organ hh*16 hh*16 hh*16\").slow(8)",
+        "",
+        "$: s(\"linndrum_oh\")"
+      ]
     },
     {
       "id": "1_172",
       "seed": 173,
       "voices": 2,
-      "code": "$: n(\"0 4@5 3 2 1@2 1@2 9@3 8\").clip(.85).gain(.8422)\n\n$: sound(\"supersaw\").lpf(3347).hpf(200).pan(.3075)\n"
+      "code": [
+        "$: n(\"0 4@5 3 2 1@2 1@2 9@3 8\").clip(.85).gain(.8422)",
+        "",
+        "$: sound(\"supersaw\").lpf(3347).hpf(200).pan(.3075)"
+      ]
     },
     {
       "id": "1_173",
       "seed": 174,
       "voices": 2,
-      "code": "$: note(\"e3\").s(\"sd\").gain(.2356)\n\n$: s(\"ocarina\")\n"
+      "code": [
+        "$: note(\"e3\").s(\"sd\").gain(.2356)",
+        "",
+        "$: s(\"ocarina\")"
+      ]
     },
     {
       "id": "1_174",
       "seed": 175,
       "voices": 2,
-      "code": "$: sound(\"sawtooth\").lpf(3000).room(2)\n\n$: note(\"e4 d4\")\n"
+      "code": [
+        "$: sound(\"sawtooth\").lpf(3000).room(2)",
+        "",
+        "$: note(\"e4 d4\")"
+      ]
     },
     {
       "id": "1_175",
       "seed": 176,
       "voices": 2,
-      "code": "$: note(\"g2\").s(\"gm_electric_bass_pick\").slow(2)\n\n$: s(\"hh*4\").gain(.3).release(.0588)\n"
+      "code": [
+        "$: note(\"g2\").s(\"gm_electric_bass_pick\").slow(2)",
+        "",
+        "$: s(\"hh*4\").gain(.3).release(.0588)"
+      ]
     },
     {
       "id": "1_176",
       "seed": 177,
       "voices": 2,
-      "code": "$: s(\"gtr\").bank(\"AkaiLinn\")\n\n$: s(\"gm_drawbar_organ\")\n"
+      "code": [
+        "$: s(\"gtr\").bank(\"AkaiLinn\")",
+        "",
+        "$: s(\"gm_drawbar_organ\")"
+      ]
     },
     {
       "id": "1_177",
       "seed": 178,
       "voices": 3,
-      "code": "$: s(\"ocarina linndrum_bd 3 5 4 4 2 0 0 0\")\n\n$: s(\"triangle\")\n\n$: s(\"sax\").gain(.5)\n"
+      "code": [
+        "$: s(\"ocarina linndrum_bd 3 5 4 4 2 0 0 0\")",
+        "",
+        "$: s(\"triangle\")",
+        "",
+        "$: s(\"sax\").gain(.5)"
+      ]
     },
     {
       "id": "1_178",
       "seed": 179,
       "voices": 2,
-      "code": "$: n(\"c2 ~ f2 ~ 32 9 12 13\").scale(\"C:major\").s(\"bell\").gain(\"[0.8 0.4]*4\").room(.9).delay(.5525).delaytime(.125)\n\n$: note(\"a2 f2 c3 g2\")\n"
+      "code": [
+        "$: n(\"c2 ~ f2 ~ 32 9 12 13\").scale(\"C:major\").s(\"bell\").gain(\"[0.8 0.4]*4\").room(.9).delay(.5525).delaytime(.125)",
+        "",
+        "$: note(\"a2 f2 c3 g2\")"
+      ]
     },
     {
       "id": "1_179",
       "seed": 180,
       "voices": 3,
-      "code": "$: note(\"C2 A1 D2 F2\").s(\"psaltery_pluck\").gain(.8736).room(.3).lpf(1674).hpf(243).speed(1.5)\n\n$: s(\"woodblock:1\").room(.7274).gain(.8)\n\n$: s(\"bd:5\")\n"
+      "code": [
+        "$: note(\"C2 A1 D2 F2\").s(\"psaltery_pluck\").gain(.8736).room(.3).lpf(1674).hpf(243).speed(1.5)",
+        "",
+        "$: s(\"woodblock:1\").room(.7274).gain(.8)",
+        "",
+        "$: s(\"bd:5\")"
+      ]
     },
     {
       "id": "1_180",
       "seed": 181,
       "voices": 2,
-      "code": "$: note(\"c3 f3@2 f3!2 g3\").slow(11)\n\n$: sound(\"bd*2 ~ bd*2 ~ bd*2 ~ bd*2 ~\").lpf(1182).room(1)\n"
+      "code": [
+        "$: note(\"c3 f3@2 f3!2 g3\").slow(11)",
+        "",
+        "$: sound(\"bd*2 ~ bd*2 ~ bd*2 ~ bd*2 ~\").lpf(1182).room(1)"
+      ]
     },
     {
       "id": "1_181",
       "seed": 182,
       "voices": 3,
-      "code": "$: s(\"hh:1*4\").clip(.85).note(\"Gm7 C7 Fmaj7 Bbmaj7 5 8 a3@4 ~ 8 a3@4 ~ 16 a3@8 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88\").struct(\"<~@3 [~ x]>\").velocity(.2286).attack(4).gain(.8)\n\n$: s(\"amen\").slow(4)\n\n$: s(\"hh ~ hh*2 ~\").cutoff(1983).attack(.3)\n"
+      "code": [
+        "$: s(\"hh:1*4\").clip(.85).note(\"Gm7 C7 Fmaj7 Bbmaj7 5 8 a3@4 ~ 8 a3@4 ~ 16 a3@8 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88\").struct(\"<~@3 [~ x]>\").velocity(.2286).attack(4).gain(.8)",
+        "",
+        "$: s(\"amen\").slow(4)",
+        "",
+        "$: s(\"hh ~ hh*2 ~\").cutoff(1983).attack(.3)"
+      ]
     },
     {
       "id": "1_182",
       "seed": 183,
       "voices": 2,
-      "code": "$: note(\"f4 c4 e4 g4\").sound(\"bd*2\").gain(.6754).room(.6).delay(.5).delaytime(.12).delayfeedback(.4)\n\n$: note(\"a#5\")\n"
+      "code": [
+        "$: note(\"f4 c4 e4 g4\").sound(\"bd*2\").gain(.6754).room(.6).delay(.5).delaytime(.12).delayfeedback(.4)",
+        "",
+        "$: note(\"a#5\")"
+      ]
     },
     {
       "id": "1_183",
       "seed": 184,
       "voices": 2,
-      "code": "$: n(\"F4\").scale(\"C:<major minor>/2\")\n\n$: note(\"d5 c5 d5\").s(\"mt\").slow(2)\n"
+      "code": [
+        "$: n(\"F4\").scale(\"C:<major minor>/2\")",
+        "",
+        "$: note(\"d5 c5 d5\").s(\"mt\").slow(2)"
+      ]
     },
     {
       "id": "1_184",
       "seed": 185,
       "voices": 3,
-      "code": "$: s(\"perc*3 sd\").room(.6).gain(\"<.5 .8>*16\")\n\n$: n(\"2@3 3 4 5 6@3 7 8 6 ~ 4@3 ~ 9 4 3@3 4 3\").s(\"mt\").slow(2)\n\n$: note(\"c1\")\n"
+      "code": [
+        "$: s(\"perc*3 sd\").room(.6).gain(\"<.5 .8>*16\")",
+        "",
+        "$: n(\"2@3 3 4 5 6@3 7 8 6 ~ 4@3 ~ 9 4 3@3 4 3\").s(\"mt\").slow(2)",
+        "",
+        "$: note(\"c1\")"
+      ]
     },
     {
       "id": "1_185",
       "seed": 186,
       "voices": 2,
-      "code": "$: s(\"sawtooth square EmuDrumulator_sd gm_ocarina\").slow(2)\n\n$: note(\"e3 g3 b3 d4 a3 c4 e4 f3 a3 c4 c4 e4 g4 g3 b3 d4\")\n"
+      "code": [
+        "$: s(\"sawtooth square EmuDrumulator_sd gm_ocarina\").slow(2)",
+        "",
+        "$: note(\"e3 g3 b3 d4 a3 c4 e4 f3 a3 c4 c4 e4 g4 g3 b3 d4\")"
+      ]
     },
     {
       "id": "1_186",
       "seed": 187,
       "voices": 3,
-      "code": "$: s(\"hh*8 lt@3 gm_violin\").gain(.2824)\n\n$: note(\"f6 d6 b5 ~\").sound(\"bd*2\")\n\n$: note(\"Gm7 C7 Fmaj7 eb4\").s(\"gm_ocarina crow ~ 3\").velocity(.75)\n"
+      "code": [
+        "$: s(\"hh*8 lt@3 gm_violin\").gain(.2824)",
+        "",
+        "$: note(\"f6 d6 b5 ~\").sound(\"bd*2\")",
+        "",
+        "$: note(\"Gm7 C7 Fmaj7 eb4\").s(\"gm_ocarina crow ~ 3\").velocity(.75)"
+      ]
     },
     {
       "id": "1_187",
       "seed": 188,
       "voices": 2,
-      "code": "$: s(\"hh*2 hh*3\").struct(\"x*8\").decay(.05).sustain(.4).bank(\"Linn9000\").gain(.6)\n\n$: s(\"oh 2 16\").gain(.7193)\n"
+      "code": [
+        "$: s(\"hh*2 hh*3\").struct(\"x*8\").decay(.05).sustain(.4).bank(\"Linn9000\").gain(.6)",
+        "",
+        "$: s(\"oh 2 16\").gain(.7193)"
+      ]
     },
     {
       "id": "1_188",
       "seed": 189,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_finger white 0 0\").gain(.8).release(.02)\n\n$: s(\"hh:1*4\").slow(64)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger white 0 0\").gain(.8).release(.02)",
+        "",
+        "$: s(\"hh:1*4\").slow(64)"
+      ]
     },
     {
       "id": "1_189",
       "seed": 190,
       "voices": 2,
-      "code": "$: note(\"a4 ~ c5\").clip(\"<1@3 [.3 1]>/2\").gain(\"<.8@7 .55@5>/16\")\n\n$: s(\"lead\").degradeBy(.5)\n"
+      "code": [
+        "$: note(\"a4 ~ c5\").clip(\"<1@3 [.3 1]>/2\").gain(\"<.8@7 .55@5>/16\")",
+        "",
+        "$: s(\"lead\").degradeBy(.5)"
+      ]
     },
     {
       "id": "1_190",
       "seed": 191,
       "voices": 2,
-      "code": "$: note(\"b4 ~ a#4@2 f#4@2\").sound(\"triangle\").lpf(200).gain(.25).delay(.3)\n\n$: s(\"lead\").room(.6)\n"
+      "code": [
+        "$: note(\"b4 ~ a#4@2 f#4@2\").sound(\"triangle\").lpf(200).gain(.25).delay(.3)",
+        "",
+        "$: s(\"lead\").room(.6)"
+      ]
     },
     {
       "id": "1_191",
       "seed": 192,
       "voices": 2,
-      "code": "$: s(\"dino\").speed(2).pan(.4)\n\n$: s(\"supersaw\").gain(.4)\n"
+      "code": [
+        "$: s(\"dino\").speed(2).pan(.4)",
+        "",
+        "$: s(\"supersaw\").gain(.4)"
+      ]
     },
     {
       "id": "1_192",
       "seed": 193,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_guitar_nylon\").gain(1)\n\n$: note(35).s(\"cr\").slow(4)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_nylon\").gain(1)",
+        "",
+        "$: note(35).s(\"cr\").slow(4)"
+      ]
     },
     {
       "id": "1_193",
       "seed": 194,
       "voices": 3,
-      "code": "$: s(\"sax bd*4\")\n\n$: s(\"bd!2\")\n\n$: s(\"lead cowbell:3 gm_electric_guitar_clean:2 ~\").slow(2)\n"
+      "code": [
+        "$: s(\"sax bd*4\")",
+        "",
+        "$: s(\"bd!2\")",
+        "",
+        "$: s(\"lead cowbell:3 gm_electric_guitar_clean:2 ~\").slow(2)"
+      ]
     },
     {
       "id": "1_194",
       "seed": 195,
       "voices": 3,
-      "code": "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1\")\n\n$: note(\"Gm7 C7 Fmaj7 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\").s(\"sawtooth square ocarina\").gain(.3)\n\n$: n(\"9*2 9!2\")\n"
+      "code": [
+        "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1\")",
+        "",
+        "$: note(\"Gm7 C7 Fmaj7 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\").s(\"sawtooth square ocarina\").gain(.3)",
+        "",
+        "$: n(\"9*2 9!2\")"
+      ]
     },
     {
       "id": "1_195",
       "seed": 196,
       "voices": 2,
-      "code": "$: s(\"rect woodblock:2*2\").slow(16)\n\n$: s(\"gm_acoustic_guitar_nylon\").slow(2)\n"
+      "code": [
+        "$: s(\"rect woodblock:2*2\").slow(16)",
+        "",
+        "$: s(\"gm_acoustic_guitar_nylon\").slow(2)"
+      ]
     },
     {
       "id": "1_196",
       "seed": 197,
       "voices": 2,
-      "code": "$: s(\"recorder_bass_sus 127 bd cp\").slow(2)\n\n$: s(\"ellipse\").lpf(4883).velocity(.5777)\n"
+      "code": [
+        "$: s(\"recorder_bass_sus 127 bd cp\").slow(2)",
+        "",
+        "$: s(\"ellipse\").lpf(4883).velocity(.5777)"
+      ]
     },
     {
       "id": "1_197",
       "seed": 198,
       "voices": 3,
-      "code": "$: note(\"Gm7\").s(\"snare\").slow(7)\n\n$: s(\"mt\").gain(.55)\n\n$: s(\"vocal\").pan(.4125).late(2).lpf(4884).hpf(500).velocity(.75)\n"
+      "code": [
+        "$: note(\"Gm7\").s(\"snare\").slow(7)",
+        "",
+        "$: s(\"mt\").gain(.55)",
+        "",
+        "$: s(\"vocal\").pan(.4125).late(2).lpf(4884).hpf(500).velocity(.75)"
+      ]
     },
     {
       "id": "1_198",
       "seed": 199,
       "voices": 3,
-      "code": "$: s(\"lead\").delay(.5).gain(.15).release(.12).attack(.1)\n\n$: note(\"e5 c#4 e5 d#5\")\n\n$: s(\"triangle\").gain(.5165)\n"
+      "code": [
+        "$: s(\"lead\").delay(.5).gain(.15).release(.12).attack(.1)",
+        "",
+        "$: note(\"e5 c#4 e5 d#5\")",
+        "",
+        "$: s(\"triangle\").gain(.5165)"
+      ]
     },
     {
       "id": "1_199",
       "seed": 200,
       "voices": 2,
-      "code": "$: note(\"f6 d6 b5 ~\").gain(.974)\n\n$: sound(\"hh bd rim bd\").lpf(2630).room(.8).release(2).hpf(7127).velocity(.6963).pan(.6624)\n"
+      "code": [
+        "$: note(\"f6 d6 b5 ~\").gain(.974)",
+        "",
+        "$: sound(\"hh bd rim bd\").lpf(2630).room(.8).release(2).hpf(7127).velocity(.6963).pan(.6624)"
+      ]
     },
     {
       "id": "1_200",
       "seed": 201,
       "voices": 2,
-      "code": "$: s(\"bd:5\").slow(2)\n\n$: s(\"gm_bassoon gm_dulcimer EmuDrumulator_mt Acoustic\").slow(2)\n"
+      "code": [
+        "$: s(\"bd:5\").slow(2)",
+        "",
+        "$: s(\"gm_bassoon gm_dulcimer EmuDrumulator_mt Acoustic\").slow(2)"
+      ]
     },
     {
       "id": "1_201",
       "seed": 202,
       "voices": 2,
-      "code": "$: n(\"c2 ~ f2 ~ 2 11\").scale(\"d3:minor:pentatonic\")\n\n$: note(\"a3 f4 c4 a3\")\n"
+      "code": [
+        "$: n(\"c2 ~ f2 ~ 2 11\").scale(\"d3:minor:pentatonic\")",
+        "",
+        "$: note(\"a3 f4 c4 a3\")"
+      ]
     },
     {
       "id": "1_202",
       "seed": 203,
       "voices": 3,
-      "code": "$: s(\"bd*4\")\n\n$: n(\"2@3 3 3 3 4 7@2 6 5 3 3 4 7@2 6 5 3 3 1 0@8 -2@2 4 b ~ 2@2 4 b 5 4 3\").gain(.9972)\n\n$: note(\"a4\").s(\"supersaw 127 bd cp sd ~ hh!2 hh*2 cp\")\n"
+      "code": [
+        "$: s(\"bd*4\")",
+        "",
+        "$: n(\"2@3 3 3 3 4 7@2 6 5 3 3 4 7@2 6 5 3 3 1 0@8 -2@2 4 b ~ 2@2 4 b 5 4 3\").gain(.9972)",
+        "",
+        "$: note(\"a4\").s(\"supersaw 127 bd cp sd ~ hh!2 hh*2 cp\")"
+      ]
     },
     {
       "id": "1_203",
       "seed": 204,
       "voices": 2,
-      "code": "$: s(\"bass\").slow(2)\n\n$: s(\"kick\").gain(.5367)\n"
+      "code": [
+        "$: s(\"bass\").slow(2)",
+        "",
+        "$: s(\"kick\").gain(.5367)"
+      ]
     },
     {
       "id": "1_204",
       "seed": 205,
       "voices": 2,
-      "code": "$: n(\"-7*3 0 2 6 8 7\").late(2)\n\n$: note(\"c2*8 c#3 c3 a#2 f2@3 ~ ~ f2\").sound(\"bd\").lpf(295).room(.9582).delay(.7581).delaytime(.125)\n"
+      "code": [
+        "$: n(\"-7*3 0 2 6 8 7\").late(2)",
+        "",
+        "$: note(\"c2*8 c#3 c3 a#2 f2@3 ~ ~ f2\").sound(\"bd\").lpf(295).room(.9582).delay(.7581).delaytime(.125)"
+      ]
     },
     {
       "id": "1_205",
       "seed": 206,
       "voices": 2,
-      "code": "$: n(\"6 3 2 1\")\n\n$: n(\"9*2 8 ~\").scale(\"C4 bebop major\").s(\"supersaw\").clip(.95).release(.2166)\n"
+      "code": [
+        "$: n(\"6 3 2 1\")",
+        "",
+        "$: n(\"9*2 8 ~\").scale(\"C4 bebop major\").s(\"supersaw\").clip(.95).release(.2166)"
+      ]
     },
     {
       "id": "1_206",
       "seed": 207,
       "voices": 2,
-      "code": "$: n(\"~ -6 -5 -7@3 ~ 0 1 2 3 -4\").scale(\"g2 minor pentatonic\").s(\"amen\").slow(2)\n\n$: s(\"bd!2\").gain(.8)\n"
+      "code": [
+        "$: n(\"~ -6 -5 -7@3 ~ 0 1 2 3 -4\").scale(\"g2 minor pentatonic\").s(\"amen\").slow(2)",
+        "",
+        "$: s(\"bd!2\").gain(.8)"
+      ]
     },
     {
       "id": "1_207",
       "seed": 208,
       "voices": 2,
-      "code": "$: note(\"d e f e d c eb g\").s(\"perc*3\").gain(.9).cutoff(400)\n\n$: s(\"ellipse\").gain(.6492).hpf(300).lpf(\"<2000 1000 500>/2\").room(1.1811).velocity(.7)\n"
+      "code": [
+        "$: note(\"d e f e d c eb g\").s(\"perc*3\").gain(.9).cutoff(400)",
+        "",
+        "$: s(\"ellipse\").gain(.6492).hpf(300).lpf(\"<2000 1000 500>/2\").room(1.1811).velocity(.7)"
+      ]
     },
     {
       "id": "1_208",
       "seed": 209,
       "voices": 2,
-      "code": "$: sound(\"sawtooth\").lpf(600)\n\n$: s(\"gm_harmonica gm_synth_bass_1 mt lt\").gain(.8).attack(.001)\n"
+      "code": [
+        "$: sound(\"sawtooth\").lpf(600)",
+        "",
+        "$: s(\"gm_harmonica gm_synth_bass_1 mt lt\").gain(.8).attack(.001)"
+      ]
     },
     {
       "id": "1_209",
       "seed": 210,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_finger:2\").clip(1).gain(.3537)\n\n$: s(\"gm_acoustic_guitar_nylon sine bd*3 sd*2\").slow(2)\n\n$: note(\"0 1 4!3 12 c3@3 c3 d#3@2 c#3\").s(\"cowbell\").slow(24)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger:2\").clip(1).gain(.3537)",
+        "",
+        "$: s(\"gm_acoustic_guitar_nylon sine bd*3 sd*2\").slow(2)",
+        "",
+        "$: note(\"0 1 4!3 12 c3@3 c3 d#3@2 c#3\").s(\"cowbell\").slow(24)"
+      ]
     },
     {
       "id": "1_210",
       "seed": 211,
       "voices": 2,
-      "code": "$: s(\"bd*2\")\n\n$: s(\"amen 12 16 24\").gain(.35).delay(.5).degradeBy(.8)\n"
+      "code": [
+        "$: s(\"bd*2\")",
+        "",
+        "$: s(\"amen 12 16 24\").gain(.35).delay(.5).degradeBy(.8)"
+      ]
     },
     {
       "id": "1_211",
       "seed": 212,
       "voices": 2,
-      "code": "$: sound(\"sine\").lpf(226).gain(.5)\n\n$: s(\"triangle\").gain(.3)\n"
+      "code": [
+        "$: sound(\"sine\").lpf(226).gain(.5)",
+        "",
+        "$: s(\"triangle\").gain(.3)"
+      ]
     },
     {
       "id": "1_212",
       "seed": 213,
       "voices": 2,
-      "code": "$: note(\"c3 f3@2 f3!2 g3\").s(\"bass\").bank(\"RolandTR909\").clip(1).gain(.3).room(.2).delay(.6).delayfeedback(\".6 | .8\")\n\n$: note(\"c1\").sound(\"supersaw supersaw bd sd\").lpf(800).room(1)\n"
+      "code": [
+        "$: note(\"c3 f3@2 f3!2 g3\").s(\"bass\").bank(\"RolandTR909\").clip(1).gain(.3).room(.2).delay(.6).delayfeedback(\".6 | .8\")",
+        "",
+        "$: note(\"c1\").sound(\"supersaw supersaw bd sd\").lpf(800).room(1)"
+      ]
     },
     {
       "id": "1_213",
       "seed": 214,
       "voices": 2,
-      "code": "$: s(\"gm_church_organ hh*8 bd:3 sd:1 hh27 bell linn9000_cr gm_string_ensemble_2 sine\")\n\n$: s(\"ocarina_vib\").gain(.7225)\n"
+      "code": [
+        "$: s(\"gm_church_organ hh*8 bd:3 sd:1 hh27 bell linn9000_cr gm_string_ensemble_2 sine\")",
+        "",
+        "$: s(\"ocarina_vib\").gain(.7225)"
+      ]
     },
     {
       "id": "1_214",
       "seed": 215,
       "voices": 2,
-      "code": "$: note(\"a3 a2 f2 c3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2\")\n\n$: s(\"piano\")\n"
+      "code": [
+        "$: note(\"a3 a2 f2 c3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2\")",
+        "",
+        "$: s(\"piano\")"
+      ]
     },
     {
       "id": "1_215",
       "seed": 216,
       "voices": 2,
-      "code": "$: s(\"hh\").slow(2)\n\n$: note(38)\n"
+      "code": [
+        "$: s(\"hh\").slow(2)",
+        "",
+        "$: note(38)"
+      ]
     },
     {
       "id": "1_216",
       "seed": 217,
       "voices": 2,
-      "code": "$: s(\"gm_electric_guitar_clean:2\").room(.2452).gain(.5)\n\n$: s(\"linndrum_oh gm_harmonica anvil lt*2\").transpose(18).release(.04).room(1.0571).delay(.5382)\n"
+      "code": [
+        "$: s(\"gm_electric_guitar_clean:2\").room(.2452).gain(.5)",
+        "",
+        "$: s(\"linndrum_oh gm_harmonica anvil lt*2\").transpose(18).release(.04).room(1.0571).delay(.5382)"
+      ]
     },
     {
       "id": "1_217",
       "seed": 218,
       "voices": 2,
-      "code": "$: note(\"c4@2 c4 d#4 d#4@2\").sound(\"sawtooth\").delay(.6).gain(.5).speed(1.3).velocity(.0733)\n\n$: s(\"psaltery_pluck\").slow(2)\n"
+      "code": [
+        "$: note(\"c4@2 c4 d#4 d#4@2\").sound(\"sawtooth\").delay(.6).gain(.5).speed(1.3).velocity(.0733)",
+        "",
+        "$: s(\"psaltery_pluck\").slow(2)"
+      ]
     },
     {
       "id": "1_218",
       "seed": 219,
       "voices": 2,
-      "code": "$: s(\"sine\").slow(2)\n\n$: s(\"snare\").degradeBy(\"0 0.1 .5 .1\")\n"
+      "code": [
+        "$: s(\"sine\").slow(2)",
+        "",
+        "$: s(\"snare\").degradeBy(\"0 0.1 .5 .1\")"
+      ]
     },
     {
       "id": "1_219",
       "seed": 220,
       "voices": 2,
-      "code": "$: sound(\"kick\").lpf(2000).resonance(6).gain(.5)\n\n$: s(\"gm_electric_guitar_clean:2\").gain(.8).release(.0742)\n"
+      "code": [
+        "$: sound(\"kick\").lpf(2000).resonance(6).gain(.5)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2\").gain(.8).release(.0742)"
+      ]
     },
     {
       "id": "1_220",
       "seed": 221,
       "voices": 2,
-      "code": "$: s(\"hh\").slow(8)\n\n$: note(\"d2 d2*2 g1*2 g1\").sound(\"sine\").lpf(564).room(.3).delay(.5).slow(7)\n"
+      "code": [
+        "$: s(\"hh\").slow(8)",
+        "",
+        "$: note(\"d2 d2*2 g1*2 g1\").sound(\"sine\").lpf(564).room(.3).delay(.5).slow(7)"
+      ]
     },
     {
       "id": "1_221",
       "seed": 222,
       "voices": 2,
-      "code": "$: note(\"b4\").transpose(-12)\n\n$: s(\"bd!2\")\n"
+      "code": [
+        "$: note(\"b4\").transpose(-12)",
+        "",
+        "$: s(\"bd!2\")"
+      ]
     },
     {
       "id": "1_222",
       "seed": 223,
       "voices": 2,
-      "code": "$: n(\"5 ~ 8 ~ 7 ~ 6 ~ 8 9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ 2*3 ~\").sound(\"square\").lpf(300).gain(.3917).room(.8)\n\n$: n(\"5 7 10 4 7 9\").scale(\"C:major\").clip(2)\n"
+      "code": [
+        "$: n(\"5 ~ 8 ~ 7 ~ 6 ~ 8 9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ 2*3 ~\").sound(\"square\").lpf(300).gain(.3917).room(.8)",
+        "",
+        "$: n(\"5 7 10 4 7 9\").scale(\"C:major\").clip(2)"
+      ]
     },
     {
       "id": "1_223",
       "seed": 224,
       "voices": 2,
-      "code": "$: s(\"woodblock:1\").clip(.95).cutoff(410).resonance(10).decay(.1).sustain(.1355).delay(.5).delaytime(.2869)\n\n$: s(\"hh*4\").release(.5).attack(.05)\n"
+      "code": [
+        "$: s(\"woodblock:1\").clip(.95).cutoff(410).resonance(10).decay(.1).sustain(.1355).delay(.5).delaytime(.2869)",
+        "",
+        "$: s(\"hh*4\").release(.5).attack(.05)"
+      ]
     },
     {
       "id": "1_224",
       "seed": 225,
       "voices": 2,
-      "code": "$: s(\"gm_ocarina\").slow(2)\n\n$: n(\"-7*3 0 2 6 8 7 9!2 7 8\").gain(.5)\n"
+      "code": [
+        "$: s(\"gm_ocarina\").slow(2)",
+        "",
+        "$: n(\"-7*3 0 2 6 8 7 9!2 7 8\").gain(.5)"
+      ]
     },
     {
       "id": "1_225",
       "seed": 226,
       "voices": 2,
-      "code": "$: note(\"a2*8 a2*4 ~ ~\").velocity(.9125)\n\n$: n(\"-3 -4 -3 -2 -3 -4 -3 -2\")\n"
+      "code": [
+        "$: note(\"a2*8 a2*4 ~ ~\").velocity(.9125)",
+        "",
+        "$: n(\"-3 -4 -3 -2 -3 -4 -3 -2\")"
+      ]
     },
     {
       "id": "1_226",
       "seed": 227,
       "voices": 2,
-      "code": "$: note(\"f6 d6 b5 ~\").sound(\"drums\").lpf(400).hpf(200).speed(1.03)\n\n$: note(\"g4 b4 d5 c5\").sound(\"bd*2\").lpf(650).resonance(6)\n"
+      "code": [
+        "$: note(\"f6 d6 b5 ~\").sound(\"drums\").lpf(400).hpf(200).speed(1.03)",
+        "",
+        "$: note(\"g4 b4 d5 c5\").sound(\"bd*2\").lpf(650).resonance(6)"
+      ]
     },
     {
       "id": "1_227",
       "seed": 228,
       "voices": 3,
-      "code": "$: n(\"9 8 6 ~ 100 -2@2 4 b ~ 2@2 4 b 5 4 3 4 5 4 3 2 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 -14@5 4 7\").late(.1988)\n\n$: s(\"gm_acoustic_bass\").gain(.8)\n\n$: note(\"a2 a3 a2 a3 a2 ~ ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ ~ a2\").sound(\"drum\").lpf(2800).room(.2).gain(.4194).release(.05)\n"
+      "code": [
+        "$: n(\"9 8 6 ~ 100 -2@2 4 b ~ 2@2 4 b 5 4 3 4 5 4 3 2 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 -14@5 4 7\").late(.1988)",
+        "",
+        "$: s(\"gm_acoustic_bass\").gain(.8)",
+        "",
+        "$: note(\"a2 a3 a2 a3 a2 ~ ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ ~ a2 ~ a2 ~ ~ a2 ~ ~ a2\").sound(\"drum\").lpf(2800).room(.2).gain(.4194).release(.05)"
+      ]
     },
     {
       "id": "1_228",
       "seed": 229,
       "voices": 2,
-      "code": "$: n(\"2@3 3 3 3\").scale(\"C:major\").transpose(3)\n\n$: note(\"c4@2 c4 d#4 d#4@2\")\n"
+      "code": [
+        "$: n(\"2@3 3 3 3\").scale(\"C:major\").transpose(3)",
+        "",
+        "$: note(\"c4@2 c4 d#4 d#4@2\")"
+      ]
     },
     {
       "id": "1_229",
       "seed": 230,
       "voices": 2,
-      "code": "$: s(\"bd*2 bd\")\n\n$: note(4).lpf(503).room(.3046).gain(.2).release(.2)\n"
+      "code": [
+        "$: s(\"bd*2 bd\")",
+        "",
+        "$: note(4).lpf(503).room(.3046).gain(.2).release(.2)"
+      ]
     },
     {
       "id": "1_230",
       "seed": 231,
       "voices": 3,
-      "code": "$: s(\"kick*4\").gain(.4)\n\n$: note(\"~ g#3 g#3\").sound(\"square\").lpf(600)\n\n$: s(\"cowbell\").cutoff(180).decay(.0892).sustain(0).delay(.5).delaytime(.33).delayfeedback(.4)\n"
+      "code": [
+        "$: s(\"kick*4\").gain(.4)",
+        "",
+        "$: note(\"~ g#3 g#3\").sound(\"square\").lpf(600)",
+        "",
+        "$: s(\"cowbell\").cutoff(180).decay(.0892).sustain(0).delay(.5).delaytime(.33).delayfeedback(.4)"
+      ]
     },
     {
       "id": "1_231",
       "seed": 232,
       "voices": 3,
-      "code": "$: s(\"hh\").velocity(.9)\n\n$: note(\"b4 a4 b4 c5\").velocity(.0246)\n\n$: s(\"sine\").slow(2)\n"
+      "code": [
+        "$: s(\"hh\").velocity(.9)",
+        "",
+        "$: note(\"b4 a4 b4 c5\").velocity(.0246)",
+        "",
+        "$: s(\"sine\").slow(2)"
+      ]
     },
     {
       "id": "1_232",
       "seed": 233,
       "voices": 2,
-      "code": "$: s(\"misc:2 hh*16\")\n\n$: s(\"bd bd*2\").gain(.4)\n"
+      "code": [
+        "$: s(\"misc:2 hh*16\")",
+        "",
+        "$: s(\"bd bd*2\").gain(.4)"
+      ]
     },
     {
       "id": "1_233",
       "seed": 234,
       "voices": 2,
-      "code": "$: s(\"clavisynth\").slow(2)\n\n$: s(\"~\").hpf(1000).room(.2).gain(.3463)\n"
+      "code": [
+        "$: s(\"clavisynth\").slow(2)",
+        "",
+        "$: s(\"~\").hpf(1000).room(.2).gain(.3463)"
+      ]
     },
     {
       "id": "1_234",
       "seed": 235,
       "voices": 2,
-      "code": "$: s(\"linndrum_bd gm_baritone_sax gm_electric_bass_finger:2 gm_piano\").gain(1).release(.15)\n\n$: note(\"g5 c6 g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 a5 f5\")\n"
+      "code": [
+        "$: s(\"linndrum_bd gm_baritone_sax gm_electric_bass_finger:2 gm_piano\").gain(1).release(.15)",
+        "",
+        "$: note(\"g5 c6 g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 a5 f5\")"
+      ]
     },
     {
       "id": "1_235",
       "seed": 236,
       "voices": 2,
-      "code": "$: s(\"vocal 1\")\n\n$: note(\"c3\")\n"
+      "code": [
+        "$: s(\"vocal 1\")",
+        "",
+        "$: note(\"c3\")"
+      ]
     },
     {
       "id": "1_236",
       "seed": 237,
       "voices": 2,
-      "code": "$: s(\"cymbal\").slow(2)\n\n$: s(\"recorder_tenor_sus gm_trombone:4 conga*3 ~\")\n"
+      "code": [
+        "$: s(\"cymbal\").slow(2)",
+        "",
+        "$: s(\"recorder_tenor_sus gm_trombone:4 conga*3 ~\")"
+      ]
     },
     {
       "id": "1_237",
       "seed": 238,
       "voices": 3,
-      "code": "$: n(\"6 9!3 6 9 11*2 11!2 10 4*3\").scale(\"C3 major\").s(\"woodblock:1 woodblock:2*2 snare_rim:0 gong\").slow(2)\n\n$: n(\"2 -1 0 ~\").scale(\"C:major\").transpose(4).s(\"east\").slow(2)\n\n$: s(\"amen gm_epiano1:1 vibraslap numbers:8\")\n"
+      "code": [
+        "$: n(\"6 9!3 6 9 11*2 11!2 10 4*3\").scale(\"C3 major\").s(\"woodblock:1 woodblock:2*2 snare_rim:0 gong\").slow(2)",
+        "",
+        "$: n(\"2 -1 0 ~\").scale(\"C:major\").transpose(4).s(\"east\").slow(2)",
+        "",
+        "$: s(\"amen gm_epiano1:1 vibraslap numbers:8\")"
+      ]
     },
     {
       "id": "1_238",
       "seed": 239,
       "voices": 2,
-      "code": "$: s(\"oh\").gain(.3).release(.1068)\n\n$: s(\"breath\").gain(.6)\n"
+      "code": [
+        "$: s(\"oh\").gain(.3).release(.1068)",
+        "",
+        "$: s(\"breath\").gain(.6)"
+      ]
     },
     {
       "id": "1_239",
       "seed": 240,
       "voices": 2,
-      "code": "$: note(\"12 bb3 5 8 a3@4 ~ 8 a3@4 ~\").s(\"linndrum_hh bd:1*2 ~ sd:0 ~ hh:0 gm_distortion_guitar hh!3 oh ~ 4 4 2 0 0 0 4 4 4 4 4 0 0\").gain(.3).delay(.6)\n\n$: s(\"lead\").pan(.5)\n"
+      "code": [
+        "$: note(\"12 bb3 5 8 a3@4 ~ 8 a3@4 ~\").s(\"linndrum_hh bd:1*2 ~ sd:0 ~ hh:0 gm_distortion_guitar hh!3 oh ~ 4 4 2 0 0 0 4 4 4 4 4 0 0\").gain(.3).delay(.6)",
+        "",
+        "$: s(\"lead\").pan(.5)"
+      ]
     },
     {
       "id": "1_240",
       "seed": 241,
       "voices": 2,
-      "code": "$: s(\"bd*4 ~ hh hh\").bank(\"AkaiLinn\").gain(.2714)\n\n$: note(15).segment(8).gain(.3)\n"
+      "code": [
+        "$: s(\"bd*4 ~ hh hh\").bank(\"AkaiLinn\").gain(.2714)",
+        "",
+        "$: note(15).segment(8).gain(.3)"
+      ]
     },
     {
       "id": "1_241",
       "seed": 242,
       "voices": 3,
-      "code": "$: note(\"c3\").sound(\"sawtooth\").lpf(800).room(\".8\")\n\n$: s(\"kick 1 3 7\").bank(\"linn9000\").gain(.6)\n\n$: n(\"2 4@2\").scale(\"C:chromatic\")\n"
+      "code": [
+        "$: note(\"c3\").sound(\"sawtooth\").lpf(800).room(\".8\")",
+        "",
+        "$: s(\"kick 1 3 7\").bank(\"linn9000\").gain(.6)",
+        "",
+        "$: n(\"2 4@2\").scale(\"C:chromatic\")"
+      ]
     },
     {
       "id": "1_242",
       "seed": 243,
       "voices": 2,
-      "code": "$: s(\"supersaw sd*2 hh*5 snare_rim:0\").slow(2)\n\n$: n(\"22 25 1*3\")\n"
+      "code": [
+        "$: s(\"supersaw sd*2 hh*5 snare_rim:0\").slow(2)",
+        "",
+        "$: n(\"22 25 1*3\")"
+      ]
     },
     {
       "id": "1_243",
       "seed": 244,
       "voices": 3,
-      "code": "$: s(\"vocal 1 2 4\").slow(4)\n\n$: s(\"supersaw\").slow(2)\n\n$: sound(\"square\").lpf(306).hpf(500)\n"
+      "code": [
+        "$: s(\"vocal 1 2 4\").slow(4)",
+        "",
+        "$: s(\"supersaw\").slow(2)",
+        "",
+        "$: sound(\"square\").lpf(306).hpf(500)"
+      ]
     },
     {
       "id": "1_244",
       "seed": 245,
       "voices": 3,
-      "code": "$: s(\"supersaw\").slow(4)\n\n$: note(\"c5 e5 g5 e5\")\n\n$: note(\"c4@2\").sound(\"drum\")\n"
+      "code": [
+        "$: s(\"supersaw\").slow(4)",
+        "",
+        "$: note(\"c5 e5 g5 e5\")",
+        "",
+        "$: note(\"c4@2\").sound(\"drum\")"
+      ]
     },
     {
       "id": "1_245",
       "seed": 246,
       "voices": 2,
-      "code": "$: note(\"a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8\").sound(\"~\").lpf(4000).hpf(293).gain(.8)\n\n$: sound(\"bd\").lpf(2000).gain(1.2).release(.1)\n"
+      "code": [
+        "$: note(\"a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8\").sound(\"~\").lpf(4000).hpf(293).gain(.8)",
+        "",
+        "$: sound(\"bd\").lpf(2000).gain(1.2).release(.1)"
+      ]
     },
     {
       "id": "1_246",
       "seed": 247,
       "voices": 2,
-      "code": "$: note(\"d2 d2*2 g1*2 g1\").sound(\"bd\").lpf(4000).room(1.5).release(.0446)\n\n$: s(\"saw\")\n"
+      "code": [
+        "$: note(\"d2 d2*2 g1*2 g1\").sound(\"bd\").lpf(4000).room(1.5).release(.0446)",
+        "",
+        "$: s(\"saw\")"
+      ]
     },
     {
       "id": "1_247",
       "seed": 248,
       "voices": 3,
-      "code": "$: note(\"c eb g bb c4 d4 eb4 g4 bb4 c5 d5 e5 g5 e5 d5 c5\").s(\"kick*4\").gain(.4).release(.1).room(.8).orbit(1).delay(.5)\n\n$: sound(\"piano sine supersaw\")\n\n$: note(0)\n"
+      "code": [
+        "$: note(\"c eb g bb c4 d4 eb4 g4 bb4 c5 d5 e5 g5 e5 d5 c5\").s(\"kick*4\").gain(.4).release(.1).room(.8).orbit(1).delay(.5)",
+        "",
+        "$: sound(\"piano sine supersaw\")",
+        "",
+        "$: note(0)"
+      ]
     },
     {
       "id": "1_248",
       "seed": 249,
       "voices": 2,
-      "code": "$: s(\"gm_piccolo\").gain(.8)\n\n$: sound(\"square hh ~\").lpf(3000).room(1).pan(\"0.2 -0.2\")\n"
+      "code": [
+        "$: s(\"gm_piccolo\").gain(.8)",
+        "",
+        "$: sound(\"square hh ~\").lpf(3000).room(1).pan(\"0.2 -0.2\")"
+      ]
     },
     {
       "id": "1_249",
       "seed": 250,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_finger gm_electric_bass_finger:3 gm_synth_bass_1 sd:1!3\").slow(2)\n\n$: note(\"12 g#3@8 ~ d#4 f4@2\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger gm_electric_bass_finger:3 gm_synth_bass_1 sd:1!3\").slow(2)",
+        "",
+        "$: note(\"12 g#3@8 ~ d#4 f4@2\")"
+      ]
     },
     {
       "id": "1_250",
       "seed": 251,
       "voices": 2,
-      "code": "$: n(\"~ 6 13!2 4 1 2 7 9 5 7 10 4 7 9 4 7 8 4 6 5\").s(\"kick snare ~ snare\").gain(\"[1 0.6]*4\").release(.694).distort(\"5:.3\").room(.8)\n\n$: note(\"c4 ~ g3 a3 ~ a4\").struct(\"<~@3 [~ x]>\").s(\"gm_harmonica\")\n"
+      "code": [
+        "$: n(\"~ 6 13!2 4 1 2 7 9 5 7 10 4 7 9 4 7 8 4 6 5\").s(\"kick snare ~ snare\").gain(\"[1 0.6]*4\").release(.694).distort(\"5:.3\").room(.8)",
+        "",
+        "$: note(\"c4 ~ g3 a3 ~ a4\").struct(\"<~@3 [~ x]>\").s(\"gm_harmonica\")"
+      ]
     },
     {
       "id": "1_251",
       "seed": 252,
       "voices": 2,
-      "code": "$: note(\"b4 c5 e5 c5 b4 a4 b4 c5 e5\")\n\n$: s(\"gm_drawbar_organ\").lpf(4000).gain(\"<0@89 .7@4>\").fast(4)\n"
+      "code": [
+        "$: note(\"b4 c5 e5 c5 b4 a4 b4 c5 e5\")",
+        "",
+        "$: s(\"gm_drawbar_organ\").lpf(4000).gain(\"<0@89 .7@4>\").fast(4)"
+      ]
     },
     {
       "id": "1_252",
       "seed": 253,
       "voices": 2,
-      "code": "$: s(\"lt\").gain(.5).release(.05)\n\n$: s(\"gm_synth_strings_1\").slow(9)\n"
+      "code": [
+        "$: s(\"lt\").gain(.5).release(.05)",
+        "",
+        "$: s(\"gm_synth_strings_1\").slow(9)"
+      ]
     },
     {
       "id": "1_253",
       "seed": 254,
       "voices": 3,
-      "code": "$: note(\"g4\")\n\n$: note(\"a4 c#5@2 ~ a4\").clip(.25).release(6)\n\n$: s(\"hh*2\").slow(4)\n"
+      "code": [
+        "$: note(\"g4\")",
+        "",
+        "$: note(\"a4 c#5@2 ~ a4\").clip(.25).release(6)",
+        "",
+        "$: s(\"hh*2\").slow(4)"
+      ]
     },
     {
       "id": "1_254",
       "seed": 255,
       "voices": 2,
-      "code": "$: n(\"0@2 2\").gain(.3)\n\n$: s(\"cymbal\").fast(2)\n"
+      "code": [
+        "$: n(\"0@2 2\").gain(.3)",
+        "",
+        "$: s(\"cymbal\").fast(2)"
+      ]
     },
     {
       "id": "1_255",
       "seed": 256,
       "voices": 3,
-      "code": "$: s(\"hh*2 hh*3 ~ 5 perc perc*3 numbers:7 numbers:8\")\n\n$: n(\"0 1\")\n\n$: n(\"-2 -2 ~ 59 Bb5 A5 G5 F5@2 A5 F5@2 C5 A5 F5 Ab5 F5@2 Ab5 G5@2 A5 F5@2 C5 A5 F5 Ab5 F5@2 C5 C6@2 A5 F5@2 C5 D5@2 F5 F5\").scale(\"C:<major minor>/2\").s(\"gm_electric_bass_finger:2\").slow(2)\n"
+      "code": [
+        "$: s(\"hh*2 hh*3 ~ 5 perc perc*3 numbers:7 numbers:8\")",
+        "",
+        "$: n(\"0 1\")",
+        "",
+        "$: n(\"-2 -2 ~ 59 Bb5 A5 G5 F5@2 A5 F5@2 C5 A5 F5 Ab5 F5@2 Ab5 G5@2 A5 F5@2 C5 A5 F5 Ab5 F5@2 C5 C6@2 A5 F5@2 C5 D5@2 F5 F5\").scale(\"C:<major minor>/2\").s(\"gm_electric_bass_finger:2\").slow(2)"
+      ]
     },
     {
       "id": "1_256",
       "seed": 257,
       "voices": 2,
-      "code": "$: s(\"hh*16\").slow(2)\n\n$: s(\"bd!2 ~\").attack(1).decay(.05).sustain(.1281).cutoff(800).degradeBy(.2).orbit(2).delay(.716)\n"
+      "code": [
+        "$: s(\"hh*16\").slow(2)",
+        "",
+        "$: s(\"bd!2 ~\").attack(1).decay(.05).sustain(.1281).cutoff(800).degradeBy(.2).orbit(2).delay(.716)"
+      ]
     },
     {
       "id": "1_257",
       "seed": 258,
       "voices": 3,
-      "code": "$: s(\"gm_acoustic_bass 12\").gain(.8)\n\n$: s(\"hh*16\").slow(2)\n\n$: note(\"c2*8\").struct(\"x(5,8,-1)\").clip(1).vib(5).gain(.5)\n"
+      "code": [
+        "$: s(\"gm_acoustic_bass 12\").gain(.8)",
+        "",
+        "$: s(\"hh*16\").slow(2)",
+        "",
+        "$: note(\"c2*8\").struct(\"x(5,8,-1)\").clip(1).vib(5).gain(.5)"
+      ]
     },
     {
       "id": "1_258",
       "seed": 259,
       "voices": 2,
-      "code": "$: s(\"cp\")\n\n$: s(\"gm_lead_6_voice breath\").slow(2)\n"
+      "code": [
+        "$: s(\"cp\")",
+        "",
+        "$: s(\"gm_lead_6_voice breath\").slow(2)"
+      ]
     },
     {
       "id": "1_259",
       "seed": 260,
       "voices": 3,
-      "code": "$: note(\"e5 a5 e5 c5\").segment(8).slow(2)\n\n$: note(\"c d e f\").sound(\"sawtooth\").lpf(650).gain(.9)\n\n$: s(\"gm_oboe gm_tenor_sax:1\").speed(1.1).gain(.6).delay(.5184).degradeBy(.5)\n"
+      "code": [
+        "$: note(\"e5 a5 e5 c5\").segment(8).slow(2)",
+        "",
+        "$: note(\"c d e f\").sound(\"sawtooth\").lpf(650).gain(.9)",
+        "",
+        "$: s(\"gm_oboe gm_tenor_sax:1\").speed(1.1).gain(.6).delay(.5184).degradeBy(.5)"
+      ]
     },
     {
       "id": "1_260",
       "seed": 261,
       "voices": 2,
-      "code": "$: s(\"gm_lead_6_voice\").slow(4)\n\n$: s(\"gm_ocarina\").speed(\"<1 2 0.5>\")\n"
+      "code": [
+        "$: s(\"gm_lead_6_voice\").slow(4)",
+        "",
+        "$: s(\"gm_ocarina\").speed(\"<1 2 0.5>\")"
+      ]
     },
     {
       "id": "1_261",
       "seed": 262,
       "voices": 2,
-      "code": "$: s(\"linndrum_sd\").gain(.5)\n\n$: s(\"cymbal\").pan(\"0.2 -0.2\")\n"
+      "code": [
+        "$: s(\"linndrum_sd\").gain(.5)",
+        "",
+        "$: s(\"cymbal\").pan(\"0.2 -0.2\")"
+      ]
     },
     {
       "id": "1_262",
       "seed": 263,
       "voices": 2,
-      "code": "$: s(\"rd 1!3 2 1\").gain(.9).clip(.9).release(2)\n\n$: sound(\"square\").lpf(3000).hpf(4000).gain(.7).speed(\"[1 0.5 2]*3\").pan(.45)\n"
+      "code": [
+        "$: s(\"rd 1!3 2 1\").gain(.9).clip(.9).release(2)",
+        "",
+        "$: sound(\"square\").lpf(3000).hpf(4000).gain(.7).speed(\"[1 0.5 2]*3\").pan(.45)"
+      ]
     },
     {
       "id": "1_263",
       "seed": 264,
       "voices": 2,
-      "code": "$: note(\"c3\").sound(\"kick\").lpf(200)\n\n$: s(\"woodblock:1\").gain(.4).room(.8).delay(.25).hpf(200).lpf(2000).velocity(.7)\n"
+      "code": [
+        "$: note(\"c3\").sound(\"kick\").lpf(200)",
+        "",
+        "$: s(\"woodblock:1\").gain(.4).room(.8).delay(.25).hpf(200).lpf(2000).velocity(.7)"
+      ]
     },
     {
       "id": "1_264",
       "seed": 265,
       "voices": 2,
-      "code": "$: s(\"saw gm_bassoon:2 gm_dulcimer 15\").slow(2)\n\n$: s(\"gm_electric_bass_pick\").gain(.9745).hpf(400).lpf(800)\n"
+      "code": [
+        "$: s(\"saw gm_bassoon:2 gm_dulcimer 15\").slow(2)",
+        "",
+        "$: s(\"gm_electric_bass_pick\").gain(.9745).hpf(400).lpf(800)"
+      ]
     },
     {
       "id": "1_265",
       "seed": 266,
       "voices": 3,
-      "code": "$: n(0).scale(\"G0 minor\").s(\"hh\")\n\n$: s(\"amen\").clip(1).gain(\"[1 0.7 0.8 0.5]*2\")\n\n$: note(0).sound(\"sawtooth\").lpf(700)\n"
+      "code": [
+        "$: n(0).scale(\"G0 minor\").s(\"hh\")",
+        "",
+        "$: s(\"amen\").clip(1).gain(\"[1 0.7 0.8 0.5]*2\")",
+        "",
+        "$: note(0).sound(\"sawtooth\").lpf(700)"
+      ]
     },
     {
       "id": "1_266",
       "seed": 267,
       "voices": 2,
-      "code": "$: s(\"snare ~ snare\")\n\n$: s(\"mt mt lt lt\").slow(2)\n"
+      "code": [
+        "$: s(\"snare ~ snare\")",
+        "",
+        "$: s(\"mt mt lt lt\").slow(2)"
+      ]
     },
     {
       "id": "1_267",
       "seed": 268,
       "voices": 3,
-      "code": "$: s(\"perc*3 harmonica_soft\").hpf(500).lpf(5000).room(.3568)\n\n$: s(\"lt\").gain(.3)\n\n$: s(\"cr\").slow(2)\n"
+      "code": [
+        "$: s(\"perc*3 harmonica_soft\").hpf(500).lpf(5000).room(.3568)",
+        "",
+        "$: s(\"lt\").gain(.3)",
+        "",
+        "$: s(\"cr\").slow(2)"
+      ]
     },
     {
       "id": "1_268",
       "seed": 269,
       "voices": 2,
-      "code": "$: s(\"cymbal\")\n\n$: s(\"piano\").hpf(500).speed(1.3).gain(.5)\n"
+      "code": [
+        "$: s(\"cymbal\")",
+        "",
+        "$: s(\"piano\").hpf(500).speed(1.3).gain(.5)"
+      ]
     },
     {
       "id": "1_269",
       "seed": 270,
       "voices": 3,
-      "code": "$: s(\"bd sn hh hh*2\").gain(.7)\n\n$: s(\"mt\").speed(2)\n\n$: note(\"b4\").clip(.8438).release(.1034)\n"
+      "code": [
+        "$: s(\"bd sn hh hh*2\").gain(.7)",
+        "",
+        "$: s(\"mt\").speed(2)",
+        "",
+        "$: note(\"b4\").clip(.8438).release(.1034)"
+      ]
     },
     {
       "id": "1_270",
       "seed": 271,
       "voices": 2,
-      "code": "$: n(\"~ 2*3 ~ 5 6\").scale(\"C:ritusen\").transpose(-1).pan(.6932).room(.5)\n\n$: note(0).sound(\"~\")\n"
+      "code": [
+        "$: n(\"~ 2*3 ~ 5 6\").scale(\"C:ritusen\").transpose(-1).pan(.6932).room(.5)",
+        "",
+        "$: note(0).sound(\"~\")"
+      ]
     },
     {
       "id": "1_271",
       "seed": 272,
       "voices": 2,
-      "code": "$: note(\"d5 c#5 c5 a4\").sound(\"piano\").delay(.25)\n\n$: n(7)\n"
+      "code": [
+        "$: note(\"d5 c#5 c5 a4\").sound(\"piano\").delay(.25)",
+        "",
+        "$: n(7)"
+      ]
     },
     {
       "id": "1_272",
       "seed": 273,
       "voices": 2,
-      "code": "$: s(\"~\").velocity(0)\n\n$: s(\"vocal\").pan(.4).gain(.25)\n"
+      "code": [
+        "$: s(\"~\").velocity(0)",
+        "",
+        "$: s(\"vocal\").pan(.4).gain(.25)"
+      ]
     },
     {
       "id": "1_273",
       "seed": 274,
       "voices": 2,
-      "code": "$: note(\"d4 d#4@4\").sound(\"sawtooth\").lpf(1800).gain(.5965)\n\n$: s(\"cp\").gain(.4).release(1.2527)\n"
+      "code": [
+        "$: note(\"d4 d#4@4\").sound(\"sawtooth\").lpf(1800).gain(.5965)",
+        "",
+        "$: s(\"cp\").gain(.4).release(1.2527)"
+      ]
     },
     {
       "id": "1_274",
       "seed": 275,
       "voices": 2,
-      "code": "$: s(\"pad gm_lead_2_sawtooth gm_pad_bowed:1 bd!4\")\n\n$: note(\"c2 eb2\").sound(\"piano\").lpf(\"<200@15 400@15 1000@13 1500@2>\").hpf(250).speed(1.1).velocity(.55)\n"
+      "code": [
+        "$: s(\"pad gm_lead_2_sawtooth gm_pad_bowed:1 bd!4\")",
+        "",
+        "$: note(\"c2 eb2\").sound(\"piano\").lpf(\"<200@15 400@15 1000@13 1500@2>\").hpf(250).speed(1.1).velocity(.55)"
+      ]
     },
     {
       "id": "1_275",
       "seed": 276,
       "voices": 2,
-      "code": "$: note(\"g#4@2 ~ f#4 f#4@2\")\n\n$: s(\"linndrum_sd\").slow(2).scale(\"c4:minor\").note(\"c3 eb3 g3 bb3 gb2@1.4 ab2 bb2 gb2 Gm7 C7 Fmaj7 d5 c5 d5 e5 g5 e5\").decay(.1514).sustain(0).room(.5312)\n"
+      "code": [
+        "$: note(\"g#4@2 ~ f#4 f#4@2\")",
+        "",
+        "$: s(\"linndrum_sd\").slow(2).scale(\"c4:minor\").note(\"c3 eb3 g3 bb3 gb2@1.4 ab2 bb2 gb2 Gm7 C7 Fmaj7 d5 c5 d5 e5 g5 e5\").decay(.1514).sustain(0).room(.5312)"
+      ]
     },
     {
       "id": "1_276",
       "seed": 277,
       "voices": 2,
-      "code": "$: note(\"C3\")\n\n$: note(\"a4 d#5\").s(\"cymbal ~\").gain(.2497)\n"
+      "code": [
+        "$: note(\"C3\")",
+        "",
+        "$: note(\"a4 d#5\").s(\"cymbal ~\").gain(.2497)"
+      ]
     },
     {
       "id": "1_277",
       "seed": 278,
       "voices": 2,
-      "code": "$: s(\"dino\").gain(.3)\n\n$: n(\"9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ ~ 2 1 ~\").gain(.6099).release(.05).attack(.0287)\n"
+      "code": [
+        "$: s(\"dino\").gain(.3)",
+        "",
+        "$: n(\"9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4 5*5 ~ ~ 2 1 ~\").gain(.6099).release(.05).attack(.0287)"
+      ]
     },
     {
       "id": "1_278",
       "seed": 279,
       "voices": 2,
-      "code": "$: s(\"lt ht hh bd lt\").gain(.4).pan(.55)\n\n$: s(\"gm_church_organ\").slow(15)\n"
+      "code": [
+        "$: s(\"lt ht hh bd lt\").gain(.4).pan(.55)",
+        "",
+        "$: s(\"gm_church_organ\").slow(15)"
+      ]
     },
     {
       "id": "1_279",
       "seed": 280,
       "voices": 2,
-      "code": "$: s(\"bd:5 ~ sd:1!3\").slow(2)\n\n$: note(\"a1 f1 c2 g1 ~ c1 ~ ~ c2 ~ c1 ~ ~ c2 ~\").sound(\"supersaw\").lpf(3000)\n"
+      "code": [
+        "$: s(\"bd:5 ~ sd:1!3\").slow(2)",
+        "",
+        "$: note(\"a1 f1 c2 g1 ~ c1 ~ ~ c2 ~ c1 ~ ~ c2 ~\").sound(\"supersaw\").lpf(3000)"
+      ]
     },
     {
       "id": "1_280",
       "seed": 281,
       "voices": 2,
-      "code": "$: s(\"mt\").clip(1).gain(.8)\n\n$: n(\"0@2 ~ ~ 1 2\")\n"
+      "code": [
+        "$: s(\"mt\").clip(1).gain(.8)",
+        "",
+        "$: n(\"0@2 ~ ~ 1 2\")"
+      ]
     },
     {
       "id": "1_281",
       "seed": 282,
       "voices": 2,
-      "code": "$: s(\"hh oh ~ ~\").slow(8)\n\n$: note(\"c3\").sound(\"piano\")\n"
+      "code": [
+        "$: s(\"hh oh ~ ~\").slow(8)",
+        "",
+        "$: note(\"c3\").sound(\"piano\")"
+      ]
     },
     {
       "id": "1_282",
       "seed": 283,
       "voices": 3,
-      "code": "$: s(\"hh*16\").gain(.8)\n\n$: s(\"gm_electric_guitar_clean:2\").slow(16)\n\n$: note(\"c3 f3@2 f3!2 g3\").sound(\"triangle\").lpf(500)\n"
+      "code": [
+        "$: s(\"hh*16\").gain(.8)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2\").slow(16)",
+        "",
+        "$: note(\"c3 f3@2 f3!2 g3\").sound(\"triangle\").lpf(500)"
+      ]
     },
     {
       "id": "1_283",
       "seed": 284,
       "voices": 2,
-      "code": "$: note(\"D2\").sound(\"square drum\")\n\n$: note(\"B2\").sound(\"drum\").lpf(3500).room(1).delay(.5).gain(.2948).pan(\"0.2 -0.2\")\n"
+      "code": [
+        "$: note(\"D2\").sound(\"square drum\")",
+        "",
+        "$: note(\"B2\").sound(\"drum\").lpf(3500).room(1).delay(.5).gain(.2948).pan(\"0.2 -0.2\")"
+      ]
     },
     {
       "id": "1_284",
       "seed": 285,
       "voices": 2,
-      "code": "$: n(\"-3 -1 1 -4\").lpf(274).hpf(100).gain(1)\n\n$: note(\"e1 ~ ~ e2 ~ e1 ~ ~ e2 ~ e1 ~ ~\").sound(\"triangle\").lpf(700).room(.9262)\n"
+      "code": [
+        "$: n(\"-3 -1 1 -4\").lpf(274).hpf(100).gain(1)",
+        "",
+        "$: note(\"e1 ~ ~ e2 ~ e1 ~ ~ e2 ~ e1 ~ ~\").sound(\"triangle\").lpf(700).room(.9262)"
+      ]
     },
     {
       "id": "1_285",
       "seed": 286,
       "voices": 3,
-      "code": "$: s(\"gm_lead_6_voice\").pan(.4).gain(.8696).lpf(\"<9000@7 5000@5>/16\").hpf(200)\n\n$: s(\"amencutup\").gain(.2)\n\n$: note(\"Gm7 C7 Fmaj7 c4!3 b3 b3@2 b3\")\n"
+      "code": [
+        "$: s(\"gm_lead_6_voice\").pan(.4).gain(.8696).lpf(\"<9000@7 5000@5>/16\").hpf(200)",
+        "",
+        "$: s(\"amencutup\").gain(.2)",
+        "",
+        "$: note(\"Gm7 C7 Fmaj7 c4!3 b3 b3@2 b3\")"
+      ]
     },
     {
       "id": "1_286",
       "seed": 287,
       "voices": 2,
-      "code": "$: note(\"7 12 G2 D2 C#2 F#2\").sound(\"hh\").cutoff(1200).resonance(12)\n\n$: note(\"e5\")\n"
+      "code": [
+        "$: note(\"7 12 G2 D2 C#2 F#2\").sound(\"hh\").cutoff(1200).resonance(12)",
+        "",
+        "$: note(\"e5\")"
+      ]
     },
     {
       "id": "1_287",
       "seed": 288,
       "voices": 2,
-      "code": "$: n(\"4 7@2 6 5 3 3\")\n\n$: note(\"Gm7\").sound(\"triangle triangle\")\n"
+      "code": [
+        "$: n(\"4 7@2 6 5 3 3\")",
+        "",
+        "$: note(\"Gm7\").sound(\"triangle triangle\")"
+      ]
     },
     {
       "id": "1_288",
       "seed": 289,
       "voices": 2,
-      "code": "$: note(\"D2\")\n\n$: s(\"vocal\").gain(.674)\n"
+      "code": [
+        "$: note(\"D2\")",
+        "",
+        "$: s(\"vocal\").gain(.674)"
+      ]
     },
     {
       "id": "1_289",
       "seed": 290,
       "voices": 2,
-      "code": "$: n(\"2 3 3 ~\").scale(\"G0 minor\").s(\"hh*8\").transpose(\"<0 2 3 4>\")\n\n$: s(\"gm_synth_strings_1\").clip(.8).release(.1727).room(.4572)\n"
+      "code": [
+        "$: n(\"2 3 3 ~\").scale(\"G0 minor\").s(\"hh*8\").transpose(\"<0 2 3 4>\")",
+        "",
+        "$: s(\"gm_synth_strings_1\").clip(.8).release(.1727).room(.4572)"
+      ]
     },
     {
       "id": "1_290",
       "seed": 291,
       "voices": 2,
-      "code": "$: s(\"bell\").gain(.5).room(.3).delay(.5)\n\n$: s(\"hh*16\").gain(.3)\n"
+      "code": [
+        "$: s(\"bell\").gain(.5).room(.3).delay(.5)",
+        "",
+        "$: s(\"hh*16\").gain(.3)"
+      ]
     },
     {
       "id": "1_291",
       "seed": 292,
       "voices": 2,
-      "code": "$: s(\"cymbal\").gain(.08).pan(.3634).hpf(200).lpf(1000).room(.3)\n\n$: note(\"C3\").clip(\"[.5 1]*2\").release(1.0063).attack(.3)\n"
+      "code": [
+        "$: s(\"cymbal\").gain(.08).pan(.3634).hpf(200).lpf(1000).room(.3)",
+        "",
+        "$: note(\"C3\").clip(\"[.5 1]*2\").release(1.0063).attack(.3)"
+      ]
     },
     {
       "id": "1_292",
       "seed": 293,
       "voices": 2,
-      "code": "$: s(\"supersaw\")\n\n$: s(\"square\").slow(16)\n"
+      "code": [
+        "$: s(\"supersaw\")",
+        "",
+        "$: s(\"square\").slow(16)"
+      ]
     },
     {
       "id": "1_293",
       "seed": 294,
       "voices": 3,
-      "code": "$: s(\"piano gm_recorder perc*4 numbers:6\").slow(8)\n\n$: s(\"linndrum_bd\").bank(\"AkaiLinn\").gain(.25).hpf(386).speed(\"-1\")\n\n$: s(\"linndrum_oh cowbell:3 sd:2 bd rim hh hh hh ~ sd\").gain(.8).release(.7604)\n"
+      "code": [
+        "$: s(\"piano gm_recorder perc*4 numbers:6\").slow(8)",
+        "",
+        "$: s(\"linndrum_bd\").bank(\"AkaiLinn\").gain(.25).hpf(386).speed(\"-1\")",
+        "",
+        "$: s(\"linndrum_oh cowbell:3 sd:2 bd rim hh hh hh ~ sd\").gain(.8).release(.7604)"
+      ]
     },
     {
       "id": "1_294",
       "seed": 295,
       "voices": 3,
-      "code": "$: note(\"12 d2*8 f3 a#2 g2 d#2 f2@3 ~ 3 72 b b@2 b b b b@2 f@2\").sound(\"bd\").lpf(\"[400 800 1200 800]*2\").gain(.2).release(.4)\n\n$: s(\"sd\").gain(.3)\n\n$: s(\"perc*3\").slow(8)\n"
+      "code": [
+        "$: note(\"12 d2*8 f3 a#2 g2 d#2 f2@3 ~ 3 72 b b@2 b b b b@2 f@2\").sound(\"bd\").lpf(\"[400 800 1200 800]*2\").gain(.2).release(.4)",
+        "",
+        "$: s(\"sd\").gain(.3)",
+        "",
+        "$: s(\"perc*3\").slow(8)"
+      ]
     },
     {
       "id": "1_295",
       "seed": 296,
       "voices": 2,
-      "code": "$: note(\"c2*8 c2*8 a#4 ~\").velocity(\"<.8 .3 .6>*8\").attack(.001)\n\n$: s(\"mt mt lt lt\").slow(2)\n"
+      "code": [
+        "$: note(\"c2*8 c2*8 a#4 ~\").velocity(\"<.8 .3 .6>*8\").attack(.001)",
+        "",
+        "$: s(\"mt mt lt lt\").slow(2)"
+      ]
     },
     {
       "id": "1_296",
       "seed": 297,
       "voices": 2,
-      "code": "$: s(\"breath\").slow(2)\n\n$: s(\"kick\")\n"
+      "code": [
+        "$: s(\"breath\").slow(2)",
+        "",
+        "$: s(\"kick\")"
+      ]
     },
     {
       "id": "1_297",
       "seed": 298,
       "voices": 2,
-      "code": "$: s(\"rect\").clip(1).release(6)\n\n$: s(\"linndrum_hh\").speed(1.3).delay(.5).room(.5).gain(.25).lpf(600)\n"
+      "code": [
+        "$: s(\"rect\").clip(1).release(6)",
+        "",
+        "$: s(\"linndrum_hh\").speed(1.3).delay(.5).room(.5).gain(.25).lpf(600)"
+      ]
     },
     {
       "id": "1_298",
       "seed": 299,
       "voices": 3,
-      "code": "$: note(0).struct(\"<x*4>\")\n\n$: s(\"kick\").slow(13)\n\n$: note(\"~\").sound(\"bd\").gain(.6)\n"
+      "code": [
+        "$: note(0).struct(\"<x*4>\")",
+        "",
+        "$: s(\"kick\").slow(13)",
+        "",
+        "$: note(\"~\").sound(\"bd\").gain(.6)"
+      ]
     },
     {
       "id": "1_299",
       "seed": 300,
       "voices": 3,
-      "code": "$: s(\"snare ~\").crush(6)\n\n$: note(\"C2\").s(\"gm_electric_guitar_jazz\").delay(.6).room(1)\n\n$: s(\"triangle gm_drawbar_organ hh*3 ~\").gain(.9)\n"
+      "code": [
+        "$: s(\"snare ~\").crush(6)",
+        "",
+        "$: note(\"C2\").s(\"gm_electric_guitar_jazz\").delay(.6).room(1)",
+        "",
+        "$: s(\"triangle gm_drawbar_organ hh*3 ~\").gain(.9)"
+      ]
     },
     {
       "id": "1_300",
       "seed": 301,
       "voices": 2,
-      "code": "$: s(\"gm_tuba anvil gm_choir_aahs:0\").slow(2)\n\n$: note(\"a2*8\")\n"
+      "code": [
+        "$: s(\"gm_tuba anvil gm_choir_aahs:0\").slow(2)",
+        "",
+        "$: note(\"a2*8\")"
+      ]
     },
     {
       "id": "1_301",
       "seed": 302,
       "voices": 3,
-      "code": "$: sound(\"bd\").lpf(500).resonance(7)\n\n$: s(\"gm_acoustic_guitar_steel:2 gm_trombone:4\").speed(.7).delay(.8).gain(.3768)\n\n$: note(\"g5 c5 e5 a5\").bank(\"RolandTR707\").speed(1.0727).velocity(2.4702)\n"
+      "code": [
+        "$: sound(\"bd\").lpf(500).resonance(7)",
+        "",
+        "$: s(\"gm_acoustic_guitar_steel:2 gm_trombone:4\").speed(.7).delay(.8).gain(.3768)",
+        "",
+        "$: note(\"g5 c5 e5 a5\").bank(\"RolandTR707\").speed(1.0727).velocity(2.4702)"
+      ]
     },
     {
       "id": "1_302",
       "seed": 303,
       "voices": 3,
-      "code": "$: note(\"c1 f1 g1 a#1\").sound(\"piano\").lpf(2000).resonance(12).room(.4).gain(\"0.4,0.4(5,8,-1)\")\n\n$: note(\"c2\").s(\"linndrum_oh pink\")\n\n$: s(\"gm_electric_bass_finger:2\").fast(2)\n"
+      "code": [
+        "$: note(\"c1 f1 g1 a#1\").sound(\"piano\").lpf(2000).resonance(12).room(.4).gain(\"0.4,0.4(5,8,-1)\")",
+        "",
+        "$: note(\"c2\").s(\"linndrum_oh pink\")",
+        "",
+        "$: s(\"gm_electric_bass_finger:2\").fast(2)"
+      ]
     },
     {
       "id": "1_303",
       "seed": 304,
       "voices": 2,
-      "code": "$: s(\"gm_synth_strings_1 shaker_small:0\")\n\n$: s(\"triangle\").gain(.8)\n"
+      "code": [
+        "$: s(\"gm_synth_strings_1 shaker_small:0\")",
+        "",
+        "$: s(\"triangle\").gain(.8)"
+      ]
     },
     {
       "id": "1_304",
       "seed": 305,
       "voices": 2,
-      "code": "$: s(\"drums\").gain(.3)\n\n$: note(\"g2 c2 f2 a2\").velocity(0)\n"
+      "code": [
+        "$: s(\"drums\").gain(.3)",
+        "",
+        "$: note(\"g2 c2 f2 a2\").velocity(0)"
+      ]
     },
     {
       "id": "1_305",
       "seed": 306,
       "voices": 2,
-      "code": "$: s(\"bd*2\").gain(.9317).room(.3366).delay(.5)\n\n$: s(\"sd\").gain(.3).release(.5).attack(.0353)\n"
+      "code": [
+        "$: s(\"bd*2\").gain(.9317).room(.3366).delay(.5)",
+        "",
+        "$: s(\"sd\").gain(.3).release(.5).attack(.0353)"
+      ]
     },
     {
       "id": "1_306",
       "seed": 307,
       "voices": 2,
-      "code": "$: n(\"7 6@3 ~ 3@3 -4@3 ~\").clip(1).gain(.25).release(.12).room(.5484).delay(.5).delaytime(\".33 | .6 | .166 | .25\")\n\n$: note(\"e4 b3 c4 a3 f3 c4 g3 a3 f3 c4 g3 a3 f3 c4 g3 a3\")\n"
+      "code": [
+        "$: n(\"7 6@3 ~ 3@3 -4@3 ~\").clip(1).gain(.25).release(.12).room(.5484).delay(.5).delaytime(\".33 | .6 | .166 | .25\")",
+        "",
+        "$: note(\"e4 b3 c4 a3 f3 c4 g3 a3 f3 c4 g3 a3 f3 c4 g3 a3\")"
+      ]
     },
     {
       "id": "1_307",
       "seed": 308,
       "voices": 3,
-      "code": "$: note(0).s(\"pad\")\n\n$: note(\"a#5\").s(\"psaltery_pluck gm_choir_aahs:3 rect tambourine\").slow(2)\n\n$: note(\"c5 g5 eb5 bb5 c3@2 ~ 3 c3 g#2\").sound(\"sine ~\")\n"
+      "code": [
+        "$: note(0).s(\"pad\")",
+        "",
+        "$: note(\"a#5\").s(\"psaltery_pluck gm_choir_aahs:3 rect tambourine\").slow(2)",
+        "",
+        "$: note(\"c5 g5 eb5 bb5 c3@2 ~ 3 c3 g#2\").sound(\"sine ~\")"
+      ]
     },
     {
       "id": "1_308",
       "seed": 309,
       "voices": 2,
-      "code": "$: n(\"7 ~ 11 8 ~ ~ 9 10 9 7 ~ 11\").scale(\"g4 dorian\").transpose(\"<0 2 3 4>\")\n\n$: n(\"4 0 2 4 -2 0 3 ~ -4\").scale(\"G0 minor\").s(\"perc*3\").lpf(299).hpf(700).gain(.5)\n"
+      "code": [
+        "$: n(\"7 ~ 11 8 ~ ~ 9 10 9 7 ~ 11\").scale(\"g4 dorian\").transpose(\"<0 2 3 4>\")",
+        "",
+        "$: n(\"4 0 2 4 -2 0 3 ~ -4\").scale(\"G0 minor\").s(\"perc*3\").lpf(299).hpf(700).gain(.5)"
+      ]
     },
     {
       "id": "1_309",
       "seed": 310,
       "voices": 3,
-      "code": "$: s(\"~\").bank(\"YamahaRY30\")\n\n$: s(\"gm_electric_bass_finger:2\").slow(2)\n\n$: note(\"a#5 g#5 c#4 e4\").sound(\"kick\").gain(.8025)\n"
+      "code": [
+        "$: s(\"~\").bank(\"YamahaRY30\")",
+        "",
+        "$: s(\"gm_electric_bass_finger:2\").slow(2)",
+        "",
+        "$: note(\"a#5 g#5 c#4 e4\").sound(\"kick\").gain(.8025)"
+      ]
     },
     {
       "id": "1_310",
       "seed": 311,
       "voices": 2,
-      "code": "$: note(\"c2 ~ eb g\").gain(.5)\n\n$: s(\"bd\").slow(11)\n"
+      "code": [
+        "$: note(\"c2 ~ eb g\").gain(.5)",
+        "",
+        "$: s(\"bd\").slow(11)"
+      ]
     },
     {
       "id": "1_311",
       "seed": 312,
       "voices": 2,
-      "code": "$: s(\"gm_bassoon\").slow(2)\n\n$: s(\"rd 1!3 2\").gain(.8).release(.3)\n"
+      "code": [
+        "$: s(\"gm_bassoon\").slow(2)",
+        "",
+        "$: s(\"rd 1!3 2\").gain(.8).release(.3)"
+      ]
     },
     {
       "id": "1_312",
       "seed": 313,
       "voices": 2,
-      "code": "$: sound(\"kick\").lpf(2290).gain(.3).release(.1151)\n\n$: s(\"triangle\").gain(.35)\n"
+      "code": [
+        "$: sound(\"kick\").lpf(2290).gain(.3).release(.1151)",
+        "",
+        "$: s(\"triangle\").gain(.35)"
+      ]
     },
     {
       "id": "1_313",
       "seed": 314,
       "voices": 2,
-      "code": "$: note(\"Gm7 C7 Fmaj7 a#4 ~ ~ b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4\").sound(\"sine\").lpf(5000).resonance(11).room(2).delay(.3571).degradeBy(\"0 0.1 .5 .1\")\n\n$: note(\"Gm7 C7 Fmaj7 a4@4 ~ c#5 a4@6 ~ c#5 a4@2 ~ c#5\").sound(\"drum\").room(.6416)\n"
+      "code": [
+        "$: note(\"Gm7 C7 Fmaj7 a#4 ~ ~ b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4\").sound(\"sine\").lpf(5000).resonance(11).room(2).delay(.3571).degradeBy(\"0 0.1 .5 .1\")",
+        "",
+        "$: note(\"Gm7 C7 Fmaj7 a4@4 ~ c#5 a4@6 ~ c#5 a4@2 ~ c#5\").sound(\"drum\").room(.6416)"
+      ]
     },
     {
       "id": "1_314",
       "seed": 315,
       "voices": 3,
-      "code": "$: note(\"g#4@2\").ply(\"2\")\n\n$: s(\"rect\").gain(.5)\n\n$: sound(\"bd\").lpf(2000).gain(.6839).release(0).bank(\"Linn9000\")\n"
+      "code": [
+        "$: note(\"g#4@2\").ply(\"2\")",
+        "",
+        "$: s(\"rect\").gain(.5)",
+        "",
+        "$: sound(\"bd\").lpf(2000).gain(.6839).release(0).bank(\"Linn9000\")"
+      ]
     },
     {
       "id": "1_315",
       "seed": 316,
       "voices": 2,
-      "code": "$: s(\"psaltery_pluck\")\n\n$: note(\"e3\").sound(\"piano\")\n"
+      "code": [
+        "$: s(\"psaltery_pluck\")",
+        "",
+        "$: note(\"e3\").sound(\"piano\")"
+      ]
     },
     {
       "id": "1_316",
       "seed": 317,
       "voices": 2,
-      "code": "$: s(\"pad gm_trombone:4 white*4 bongo*2\").slow(2)\n\n$: note(\"d#5@2\").sound(\"sine\")\n"
+      "code": [
+        "$: s(\"pad gm_trombone:4 white*4 bongo*2\").slow(2)",
+        "",
+        "$: note(\"d#5@2\").sound(\"sine\")"
+      ]
     },
     {
       "id": "1_317",
       "seed": 318,
       "voices": 2,
-      "code": "$: s(\"bd:5 ~\").clip(1).release(.3)\n\n$: note(\"b@2 b b\").sound(\"bd*2\").gain(.3).slow(4)\n"
+      "code": [
+        "$: s(\"bd:5 ~\").clip(1).release(.3)",
+        "",
+        "$: note(\"b@2 b b\").sound(\"bd*2\").gain(.3).slow(4)"
+      ]
     },
     {
       "id": "1_318",
       "seed": 319,
       "voices": 2,
-      "code": "$: sound(\"supersaw\").lpf(2000).room(1).gain(.6).speed(\".5\").velocity(.6)\n\n$: note(\"f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6\").sound(\"triangle supersaw num\").lpf(700).room(.9).gain(.2).decay(.05).sustain(.7).release(2.6564)\n"
+      "code": [
+        "$: sound(\"supersaw\").lpf(2000).room(1).gain(.6).speed(\".5\").velocity(.6)",
+        "",
+        "$: note(\"f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6\").sound(\"triangle supersaw num\").lpf(700).room(.9).gain(.2).decay(.05).sustain(.7).release(2.6564)"
+      ]
     },
     {
       "id": "1_319",
       "seed": 320,
       "voices": 2,
-      "code": "$: s(\"hh*2\").slow(2)\n\n$: s(\"gm_electric_guitar_clean:2\").lpf(4000).gain(\"<.5 .8>*16\")\n"
+      "code": [
+        "$: s(\"hh*2\").slow(2)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2\").lpf(4000).gain(\"<.5 .8>*16\")"
+      ]
     },
     {
       "id": "1_320",
       "seed": 321,
       "voices": 2,
-      "code": "$: note(\"g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2 ~ c4 c4 a4@3 ~ a3 ~ ~ a3 ~ ~ a3 ~ ~ a3 ~ ~ a3 ~\")\n\n$: s(\"gm_drawbar_organ Acoustic\").slow(2)\n"
+      "code": [
+        "$: note(\"g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2 ~ c4 c4 a4@3 ~ a3 ~ ~ a3 ~ ~ a3 ~ ~ a3 ~ ~ a3 ~\")",
+        "",
+        "$: s(\"gm_drawbar_organ Acoustic\").slow(2)"
+      ]
     },
     {
       "id": "1_321",
       "seed": 322,
       "voices": 3,
-      "code": "$: s(\"gm_oboe sd:0\").slow(2)\n\n$: n(\"9*2 9!2 6 7\")\n\n$: s(\"oh\").speed(1.7839).gain(.2223).room(.3)\n"
+      "code": [
+        "$: s(\"gm_oboe sd:0\").slow(2)",
+        "",
+        "$: n(\"9*2 9!2 6 7\")",
+        "",
+        "$: s(\"oh\").speed(1.7839).gain(.2223).room(.3)"
+      ]
     },
     {
       "id": "1_322",
       "seed": 323,
       "voices": 3,
-      "code": "$: s(\"kick*4\")\n\n$: n(\"0@2 2 1 1 b@2\")\n\n$: note(\"a#5\").s(\"recorder_bass_sus\").slow(2)\n"
+      "code": [
+        "$: s(\"kick*4\")",
+        "",
+        "$: n(\"0@2 2 1 1 b@2\")",
+        "",
+        "$: note(\"a#5\").s(\"recorder_bass_sus\").slow(2)"
+      ]
     },
     {
       "id": "1_323",
       "seed": 324,
       "voices": 2,
-      "code": "$: s(\"cp\").slow(2)\n\n$: s(\"hh*8\").gain(.2815)\n"
+      "code": [
+        "$: s(\"cp\").slow(2)",
+        "",
+        "$: s(\"hh*8\").gain(.2815)"
+      ]
     },
     {
       "id": "1_324",
       "seed": 325,
       "voices": 2,
-      "code": "$: sound(\"square\").lpf(2676)\n\n$: n(\"-7 ~ 2 0@3 ~ 3 ~\").scale(\"C:<major minor>/2\").s(\"hh*4 ~ sd ~\").slow(13)\n"
+      "code": [
+        "$: sound(\"square\").lpf(2676)",
+        "",
+        "$: n(\"-7 ~ 2 0@3 ~ 3 ~\").scale(\"C:<major minor>/2\").s(\"hh*4 ~ sd ~\").slow(13)"
+      ]
     },
     {
       "id": "1_325",
       "seed": 326,
       "voices": 3,
-      "code": "$: n(\"~ 5 7 ~ 8 ~ 15 9*2 8 ~ 14 8*2 6 ~ 10 4*3 ~\").s(\"z_sawtooth gm_choir_aahs:4 brakedrum:1 ~\").velocity(.9)\n\n$: s(\"psaltery_pluck\").gain(.8413).room(.5124).delay(\".6:<.12 .22>:.8\")\n\n$: sound(\"triangle\").lpf(4638)\n"
+      "code": [
+        "$: n(\"~ 5 7 ~ 8 ~ 15 9*2 8 ~ 14 8*2 6 ~ 10 4*3 ~\").s(\"z_sawtooth gm_choir_aahs:4 brakedrum:1 ~\").velocity(.9)",
+        "",
+        "$: s(\"psaltery_pluck\").gain(.8413).room(.5124).delay(\".6:<.12 .22>:.8\")",
+        "",
+        "$: sound(\"triangle\").lpf(4638)"
+      ]
     },
     {
       "id": "1_326",
       "seed": 327,
       "voices": 2,
-      "code": "$: note(\"a5 g5 e5 c5\").sound(\"drums\").lpf(2099).lpq(.2).delay(.2471).gain(.5).shape(.3).decay(.05)\n\n$: sound(\"kick\").lpf(493)\n"
+      "code": [
+        "$: note(\"a5 g5 e5 c5\").sound(\"drums\").lpf(2099).lpq(.2).delay(.2471).gain(.5).shape(.3).decay(.05)",
+        "",
+        "$: sound(\"kick\").lpf(493)"
+      ]
     },
     {
       "id": "1_327",
       "seed": 328,
       "voices": 3,
-      "code": "$: s(\"piano bd!2 ~\").delay(.5).lpf(2000).gain(.85).clip(1).cutoff(1200)\n\n$: s(\"cr\").gain(.3)\n\n$: s(\"bd\").lpf(5000)\n"
+      "code": [
+        "$: s(\"piano bd!2 ~\").delay(.5).lpf(2000).gain(.85).clip(1).cutoff(1200)",
+        "",
+        "$: s(\"cr\").gain(.3)",
+        "",
+        "$: s(\"bd\").lpf(5000)"
+      ]
     },
     {
       "id": "1_328",
       "seed": 329,
       "voices": 3,
-      "code": "$: s(\"linndrum_bd\").late(.1)\n\n$: n(\"0\").scale(\"G4 minor\").s(\"rd\").slow(2)\n\n$: s(\"hh:1*4 numbers:5 numbers:6 numbers:7\").velocity(.6078)\n"
+      "code": [
+        "$: s(\"linndrum_bd\").late(.1)",
+        "",
+        "$: n(\"0\").scale(\"G4 minor\").s(\"rd\").slow(2)",
+        "",
+        "$: s(\"hh:1*4 numbers:5 numbers:6 numbers:7\").velocity(.6078)"
+      ]
     },
     {
       "id": "1_329",
       "seed": 330,
       "voices": 2,
-      "code": "$: s(\"rd\").lpf(2000).gain(.3)\n\n$: s(\"hh*4 ~ sd\").room(.85).gain(.08)\n"
+      "code": [
+        "$: s(\"rd\").lpf(2000).gain(.3)",
+        "",
+        "$: s(\"hh*4 ~ sd\").room(.85).gain(.08)"
+      ]
     },
     {
       "id": "1_330",
       "seed": 331,
       "voices": 2,
-      "code": "$: s(\"amen bd*2 sd bd*2\").room(.4)\n\n$: s(\"lt\").slow(3)\n"
+      "code": [
+        "$: s(\"amen bd*2 sd bd*2\").room(.4)",
+        "",
+        "$: s(\"lt\").slow(3)"
+      ]
     },
     {
       "id": "1_331",
       "seed": 332,
       "voices": 2,
-      "code": "$: s(\"oh\").slow(4)\n\n$: s(\"misc:2 20 cr!3\").room(.3649).delay(.2147).gain(.2).release(.12).bank(\"RolandMT32\")\n"
+      "code": [
+        "$: s(\"oh\").slow(4)",
+        "",
+        "$: s(\"misc:2 20 cr!3\").room(.3649).delay(.2147).gain(.2).release(.12).bank(\"RolandMT32\")"
+      ]
     },
     {
       "id": "1_332",
       "seed": 333,
       "voices": 2,
-      "code": "$: note(\"~ 6 a a#\").sound(\"piano\").lpf(3500).room(.9)\n\n$: s(\"bell anvil triangle conga*3\").gain(.7)\n"
+      "code": [
+        "$: note(\"~ 6 a a#\").sound(\"piano\").lpf(3500).room(.9)",
+        "",
+        "$: s(\"bell anvil triangle conga*3\").gain(.7)"
+      ]
     },
     {
       "id": "1_333",
       "seed": 334,
       "voices": 2,
-      "code": "$: n(\"9*2 9!2 6 7 11*2 11!2 6\").scale(\"c2:major\")\n\n$: s(\"hh*8\").slow(2)\n"
+      "code": [
+        "$: n(\"9*2 9!2 6 7 11*2 11!2 6\").scale(\"c2:major\")",
+        "",
+        "$: s(\"hh*8\").slow(2)"
+      ]
     },
     {
       "id": "1_334",
       "seed": 335,
       "voices": 2,
-      "code": "$: s(\"gm_bassoon\")\n\n$: n(\"-7 -1\")\n"
+      "code": [
+        "$: s(\"gm_bassoon\")",
+        "",
+        "$: n(\"-7 -1\")"
+      ]
     },
     {
       "id": "1_335",
       "seed": 336,
       "voices": 2,
-      "code": "$: note(\"g5 eb5 bb5 g2 c2 f2 c3 g2\").s(\"amencutup\").velocity(1)\n\n$: note(\"G4\").s(\"oh\").slow(4)\n"
+      "code": [
+        "$: note(\"g5 eb5 bb5 g2 c2 f2 c3 g2\").s(\"amencutup\").velocity(1)",
+        "",
+        "$: note(\"G4\").s(\"oh\").slow(4)"
+      ]
     },
     {
       "id": "1_336",
       "seed": 337,
       "voices": 2,
-      "code": "$: s(\"rd\").slow(2)\n\n$: s(\"psaltery_pluck\").slow(9)\n"
+      "code": [
+        "$: s(\"rd\").slow(2)",
+        "",
+        "$: s(\"psaltery_pluck\").slow(9)"
+      ]
     },
     {
       "id": "1_337",
       "seed": 338,
       "voices": 2,
-      "code": "$: note(0).slow(2)\n\n$: note(\"c4@2\")\n"
+      "code": [
+        "$: note(0).slow(2)",
+        "",
+        "$: note(\"c4@2\")"
+      ]
     },
     {
       "id": "1_338",
       "seed": 339,
       "voices": 2,
-      "code": "$: s(\"rd*3 rd:3*4 brakedrum:1\").gain(.4918).release(.1).note(\"c3 f3 a#2 g2 d#2 f2@3 ~\").lpf(5000).room(.8).velocity(.3).pan(.2988)\n\n$: s(\"ocarina\").clip(1).scale(\"C:chromatic\")\n"
+      "code": [
+        "$: s(\"rd*3 rd:3*4 brakedrum:1\").gain(.4918).release(.1).note(\"c3 f3 a#2 g2 d#2 f2@3 ~\").lpf(5000).room(.8).velocity(.3).pan(.2988)",
+        "",
+        "$: s(\"ocarina\").clip(1).scale(\"C:chromatic\")"
+      ]
     },
     {
       "id": "1_339",
       "seed": 340,
       "voices": 2,
-      "code": "$: s(\"gm_synth_strings_1\").attack(.001).release(.5).gain(.1923)\n\n$: s(\"rd\").add(\"<0 [0 2]>/2\")\n"
+      "code": [
+        "$: s(\"gm_synth_strings_1\").attack(.001).release(.5).gain(.1923)",
+        "",
+        "$: s(\"rd\").add(\"<0 [0 2]>/2\")"
+      ]
     },
     {
       "id": "1_340",
       "seed": 341,
       "voices": 2,
-      "code": "$: n(\"-3 0 2 -3 -1 1 -4 -1 -1 -5 -3 -3 -3 -1 -1 -4 -2 b\")\n\n$: note(\"g#4@2\").sound(\"supersaw\")\n"
+      "code": [
+        "$: n(\"-3 0 2 -3 -1 1 -4 -1 -1 -5 -3 -3 -3 -1 -1 -4 -2 b\")",
+        "",
+        "$: note(\"g#4@2\").sound(\"supersaw\")"
+      ]
     },
     {
       "id": "1_341",
       "seed": 342,
       "voices": 2,
-      "code": "$: s(\"gm_acoustic_guitar_nylon\").hpf(4731).gain(.2836).release(.0931)\n\n$: note(\"e5 a5 e5 c5 f5 a5 f5 ~ e5\").sound(\"supersaw\").lpf(1480).gain(.7883)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_nylon\").hpf(4731).gain(.2836).release(.0931)",
+        "",
+        "$: note(\"e5 a5 e5 c5 f5 a5 f5 ~ e5\").sound(\"supersaw\").lpf(1480).gain(.7883)"
+      ]
     },
     {
       "id": "1_342",
       "seed": 343,
       "voices": 2,
-      "code": "$: s(\"recorder_tenor_sus\").hpf(195).gain(1)\n\n$: s(\"perc*3\").pan(.53)\n"
+      "code": [
+        "$: s(\"recorder_tenor_sus\").hpf(195).gain(1)",
+        "",
+        "$: s(\"perc*3\").pan(.53)"
+      ]
     },
     {
       "id": "1_343",
       "seed": 344,
       "voices": 3,
-      "code": "$: sound(\"supersaw supersaw\")\n\n$: s(\"hh:1*4 recorder_bass_sus\").fast(8)\n\n$: note(\"C3 D3 E3\")\n"
+      "code": [
+        "$: sound(\"supersaw supersaw\")",
+        "",
+        "$: s(\"hh:1*4 recorder_bass_sus\").fast(8)",
+        "",
+        "$: note(\"C3 D3 E3\")"
+      ]
     },
     {
       "id": "1_344",
       "seed": 345,
       "voices": 2,
-      "code": "$: note(\"d5 c#5 c5\")\n\n$: s(\"sd hh!7 oh bd sd sd*4 lt*4 hh!3 oh ~ 4 2\").velocity(.4)\n"
+      "code": [
+        "$: note(\"d5 c#5 c5\")",
+        "",
+        "$: s(\"sd hh!7 oh bd sd sd*4 lt*4 hh!3 oh ~ 4 2\").velocity(.4)"
+      ]
     },
     {
       "id": "1_345",
       "seed": 346,
       "voices": 2,
-      "code": "$: note(\"7 12 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\")\n\n$: s(\"amencutup\").bank(\"SequentialCircuitsDrumtracks\").late(44.5336).gain(.5)\n"
+      "code": [
+        "$: note(\"7 12 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\")",
+        "",
+        "$: s(\"amencutup\").bank(\"SequentialCircuitsDrumtracks\").late(44.5336).gain(.5)"
+      ]
     },
     {
       "id": "1_346",
       "seed": 347,
       "voices": 2,
-      "code": "$: sound(\"sine\").lpf(3000).velocity(2.5022)\n\n$: n(\"~ 1@20 ~ 2 2@20 ~ 3 3@20 ~ 4 4@20 9*5 6*3 6*4 5*5 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2 3 -4 -3\").scale(\"a2:minor\")\n"
+      "code": [
+        "$: sound(\"sine\").lpf(3000).velocity(2.5022)",
+        "",
+        "$: n(\"~ 1@20 ~ 2 2@20 ~ 3 3@20 ~ 4 4@20 9*5 6*3 6*4 5*5 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2 3 -4 -3\").scale(\"a2:minor\")"
+      ]
     },
     {
       "id": "1_347",
       "seed": 348,
       "voices": 3,
-      "code": "$: s(\"gm_lead_6_voice\").slow(2)\n\n$: n(\"0@2 2 1 1 b@2\").s(\"gm_electric_bass_finger:2\").slow(2)\n\n$: s(\"triangle sine gm_reed_organ gm_pad_bowed\")\n"
+      "code": [
+        "$: s(\"gm_lead_6_voice\").slow(2)",
+        "",
+        "$: n(\"0@2 2 1 1 b@2\").s(\"gm_electric_bass_finger:2\").slow(2)",
+        "",
+        "$: s(\"triangle sine gm_reed_organ gm_pad_bowed\")"
+      ]
     },
     {
       "id": "1_348",
       "seed": 349,
       "voices": 3,
-      "code": "$: s(\"linndrum_sd\").hpf(2000).room(.2).lpf(650).gain(.6)\n\n$: s(\"bd*4\").lpf(3000).room(.3).attack(.001).velocity(.55)\n\n$: s(\"gm_electric_guitar_clean:2 square\").clip(1).release(.1).attack(.0235)\n"
+      "code": [
+        "$: s(\"linndrum_sd\").hpf(2000).room(.2).lpf(650).gain(.6)",
+        "",
+        "$: s(\"bd*4\").lpf(3000).room(.3).attack(.001).velocity(.55)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2 square\").clip(1).release(.1).attack(.0235)"
+      ]
     },
     {
       "id": "1_349",
       "seed": 350,
       "voices": 2,
-      "code": "$: note(\"d5 c#5@2 a4@4\").sound(\"kick snare hat snare\").lpf(600).gain(.8751)\n\n$: note(\"g1 a#1\").struct(\"<~ x x>*3\").s(\"gm_electric_bass_finger:2\").lpf(600)\n"
+      "code": [
+        "$: note(\"d5 c#5@2 a4@4\").sound(\"kick snare hat snare\").lpf(600).gain(.8751)",
+        "",
+        "$: note(\"g1 a#1\").struct(\"<~ x x>*3\").s(\"gm_electric_bass_finger:2\").lpf(600)"
+      ]
     },
     {
       "id": "1_350",
       "seed": 351,
       "voices": 2,
-      "code": "$: s(\"square\")\n\n$: s(\"bass\").decay(.12).attack(.0073).delay(.5).gain(\"[0.8 0.9 0.7 0.9]*2\").lpf(800).resonance(13)\n"
+      "code": [
+        "$: s(\"square\")",
+        "",
+        "$: s(\"bass\").decay(.12).attack(.0073).delay(.5).gain(\"[0.8 0.9 0.7 0.9]*2\").lpf(800).resonance(13)"
+      ]
     },
     {
       "id": "1_351",
       "seed": 352,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_pick\").note(\"c3 f3@2 f3!2 g3\").room(.4549)\n\n$: note(\"C2\").velocity(.3).lpf(2966).struct(\"[x]*3\")\n\n$: note(\"c4 b3@5 g#3@2 e3@4\").sound(\"bd\").lpf(3000).gain(.5).hpf(250).room(.9212)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").note(\"c3 f3@2 f3!2 g3\").room(.4549)",
+        "",
+        "$: note(\"C2\").velocity(.3).lpf(2966).struct(\"[x]*3\")",
+        "",
+        "$: note(\"c4 b3@5 g#3@2 e3@4\").sound(\"bd\").lpf(3000).gain(.5).hpf(250).room(.9212)"
+      ]
     },
     {
       "id": "1_352",
       "seed": 353,
       "voices": 2,
-      "code": "$: s(\"lead gm_lead_6_voice bongo*2 ~ 3\").bank(\"BossDR550\")\n\n$: s(\"sawtooth square sn:3 ~\").gain(.4).lpf(358)\n"
+      "code": [
+        "$: s(\"lead gm_lead_6_voice bongo*2 ~ 3\").bank(\"BossDR550\")",
+        "",
+        "$: s(\"sawtooth square sn:3 ~\").gain(.4).lpf(358)"
+      ]
     },
     {
       "id": "1_353",
       "seed": 354,
       "voices": 3,
-      "code": "$: s(\"gm_acoustic_guitar_nylon\").slow(2)\n\n$: note(\"f4 f#4 f4 g#4 f#4 f4 d#4 f4 d#4 a3 b3 c4 d4 d#4 f4 f#4\")\n\n$: s(\"gm_epiano1:1\").slow(4)\n"
+      "code": [
+        "$: s(\"gm_acoustic_guitar_nylon\").slow(2)",
+        "",
+        "$: note(\"f4 f#4 f4 g#4 f#4 f4 d#4 f4 d#4 a3 b3 c4 d4 d#4 f4 f#4\")",
+        "",
+        "$: s(\"gm_epiano1:1\").slow(4)"
+      ]
     },
     {
       "id": "1_354",
       "seed": 355,
       "voices": 2,
-      "code": "$: s(\"psaltery_pluck\").gain(1)\n\n$: note(\"c5 ~ g4 ~\")\n"
+      "code": [
+        "$: s(\"psaltery_pluck\").gain(1)",
+        "",
+        "$: note(\"c5 ~ g4 ~\")"
+      ]
     },
     {
       "id": "1_355",
       "seed": 356,
       "voices": 2,
-      "code": "$: s(\"lead\").gain(.4868).lpf(2343).late(.1273)\n\n$: note(\"~ c#4 d#4@2 c#4@2 c4 c#4 d#4 f4 c#4@2 d#4@6 ~ c#4 c4 c#4 d#4 f4 d#4 g#3@8 ~ d#4 f4@2 d#4@2 d4 d#4@4 ~ d#4 f4@2 g4@2 d#4@3 ~ d#4 f4@2\").clip(.8051).lpf(2282).gain(.2)\n"
+      "code": [
+        "$: s(\"lead\").gain(.4868).lpf(2343).late(.1273)",
+        "",
+        "$: note(\"~ c#4 d#4@2 c#4@2 c4 c#4 d#4 f4 c#4@2 d#4@6 ~ c#4 c4 c#4 d#4 f4 d#4 g#3@8 ~ d#4 f4@2 d#4@2 d4 d#4@4 ~ d#4 f4@2 g4@2 d#4@3 ~ d#4 f4@2\").clip(.8051).lpf(2282).gain(.2)"
+      ]
     },
     {
       "id": "1_356",
       "seed": 357,
       "voices": 2,
-      "code": "$: note(\"c3\").sound(\"bd\").lpf(1800).pan(.4903)\n\n$: s(\"gm_electric_bass_finger ellipse bell numbers:4\").gain(.3)\n"
+      "code": [
+        "$: note(\"c3\").sound(\"bd\").lpf(1800).pan(.4903)",
+        "",
+        "$: s(\"gm_electric_bass_finger ellipse bell numbers:4\").gain(.3)"
+      ]
     },
     {
       "id": "1_357",
       "seed": 358,
       "voices": 2,
-      "code": "$: s(\"dino oh:2*8 gm_synth_strings_1 shaker*16\")\n\n$: n(\"4 b 5 4 3 4 5 4 3\").scale(\"G0 minor\")\n"
+      "code": [
+        "$: s(\"dino oh:2*8 gm_synth_strings_1 shaker*16\")",
+        "",
+        "$: n(\"4 b 5 4 3 4 5 4 3\").scale(\"G0 minor\")"
+      ]
     },
     {
       "id": "1_358",
       "seed": 359,
       "voices": 2,
-      "code": "$: note(\"0 04 bb3 f6\").s(\"gm_synth_strings_1 anvil 63 crash\").slow(2)\n\n$: note(\"a3 a3!2 c4!2 c4!2\").gain(.2612)\n"
+      "code": [
+        "$: note(\"0 04 bb3 f6\").s(\"gm_synth_strings_1 anvil 63 crash\").slow(2)",
+        "",
+        "$: note(\"a3 a3!2 c4!2 c4!2\").gain(.2612)"
+      ]
     },
     {
       "id": "1_359",
       "seed": 360,
       "voices": 2,
-      "code": "$: s(\"hh*8\").bank(\"RolandTR707\").room(.9465)\n\n$: s(\"drums\").velocity(.2672)\n"
+      "code": [
+        "$: s(\"hh*8\").bank(\"RolandTR707\").room(.9465)",
+        "",
+        "$: s(\"drums\").velocity(.2672)"
+      ]
     },
     {
       "id": "1_360",
       "seed": 361,
       "voices": 2,
-      "code": "$: note(\"c1 ~ ~ c2 ~\").sound(\"triangle\").lpf(2214).room(.2472).gain(.8)\n\n$: s(\"bd*4\").slow(2)\n"
+      "code": [
+        "$: note(\"c1 ~ ~ c2 ~\").sound(\"triangle\").lpf(2214).room(.2472).gain(.8)",
+        "",
+        "$: s(\"bd*4\").slow(2)"
+      ]
     },
     {
       "id": "1_361",
       "seed": 362,
       "voices": 3,
-      "code": "$: note(\"c2 g2 a2\").sound(\"hh\").lpf(800).gain(.3).room(1.151).delay(.5).delaytime(\".33 | .6 | .166 | .25\")\n\n$: s(\"bell\").slow(8)\n\n$: s(\"square snare 2 5\").gain(.3).release(.1).hpf(6580).lpf(2973)\n"
+      "code": [
+        "$: note(\"c2 g2 a2\").sound(\"hh\").lpf(800).gain(.3).room(1.151).delay(.5).delaytime(\".33 | .6 | .166 | .25\")",
+        "",
+        "$: s(\"bell\").slow(8)",
+        "",
+        "$: s(\"square snare 2 5\").gain(.3).release(.1).hpf(6580).lpf(2973)"
+      ]
     },
     {
       "id": "1_362",
       "seed": 363,
       "voices": 2,
-      "code": "$: sound(\"bd\").lpf(3361).hpf(700)\n\n$: s(\"gm_tuba\").gain(.7).release(.08)\n"
+      "code": [
+        "$: sound(\"bd\").lpf(3361).hpf(700)",
+        "",
+        "$: s(\"gm_tuba\").gain(.7).release(.08)"
+      ]
     },
     {
       "id": "1_363",
       "seed": 364,
       "voices": 2,
-      "code": "$: s(\"sawtooth square\").release(.0652).pan(.3).room(.7542)\n\n$: s(\"piano mt*2 lt*2 lt@3 gm_pad_bowed:1 gm_pizzicato_strings:1 gm_bassoon:2 bd@3 ~ bd ~ bd ~ 2 bd ~ 2 bd ~ bd ~ bd ~\")\n"
+      "code": [
+        "$: s(\"sawtooth square\").release(.0652).pan(.3).room(.7542)",
+        "",
+        "$: s(\"piano mt*2 lt*2 lt@3 gm_pad_bowed:1 gm_pizzicato_strings:1 gm_bassoon:2 bd@3 ~ bd ~ bd ~ 2 bd ~ 2 bd ~ bd ~ bd ~\")"
+      ]
     },
     {
       "id": "1_364",
       "seed": 365,
       "voices": 2,
-      "code": "$: note(\"a#5 g#5 e5 c#5\").s(\"bd!2\").slow(2)\n\n$: n(\"F4 ~ G3 Bb3 E4 G3 Bb3 E4 ~ Bb3 D3 F4 Bb3 D3 F4 ~\").s(\"dino\").slow(2)\n"
+      "code": [
+        "$: note(\"a#5 g#5 e5 c#5\").s(\"bd!2\").slow(2)",
+        "",
+        "$: n(\"F4 ~ G3 Bb3 E4 G3 Bb3 E4 ~ Bb3 D3 F4 Bb3 D3 F4 ~\").s(\"dino\").slow(2)"
+      ]
     },
     {
       "id": "1_365",
       "seed": 366,
       "voices": 3,
-      "code": "$: note(\"e5\").attack(.3).release(.1).gain(.2)\n\n$: s(\"piano\").slow(2)\n\n$: s(\"gm_electric_guitar_jazz\").slow(8)\n"
+      "code": [
+        "$: note(\"e5\").attack(.3).release(.1).gain(.2)",
+        "",
+        "$: s(\"piano\").slow(2)",
+        "",
+        "$: s(\"gm_electric_guitar_jazz\").slow(8)"
+      ]
     },
     {
       "id": "1_366",
       "seed": 367,
       "voices": 2,
-      "code": "$: s(\"supersaw\").bank(\"RolandTR909\").speed(1.03)\n\n$: note(\"7\").sound(\"sawtooth\").lpf(2000)\n"
+      "code": [
+        "$: s(\"supersaw\").bank(\"RolandTR909\").speed(1.03)",
+        "",
+        "$: note(\"7\").sound(\"sawtooth\").lpf(2000)"
+      ]
     },
     {
       "id": "1_367",
       "seed": 368,
       "voices": 3,
-      "code": "$: s(\"hh*2 sd\").attack(2).release(.1093).room(.2).gain(.4644)\n\n$: s(\"~\").velocity(2.8127)\n\n$: note(\"d5 e5 g5 e5 a5 g5 e5 a5 g5 ~ c5 ~\")\n"
+      "code": [
+        "$: s(\"hh*2 sd\").attack(2).release(.1093).room(.2).gain(.4644)",
+        "",
+        "$: s(\"~\").velocity(2.8127)",
+        "",
+        "$: note(\"d5 e5 g5 e5 a5 g5 e5 a5 g5 ~ c5 ~\")"
+      ]
     },
     {
       "id": "1_368",
       "seed": 369,
       "voices": 3,
-      "code": "$: note(\"c2*8 f3!2 g3 f3 e3 c3@2 ~ g#3 g#3 g3 f3 c3@3 c3 d#3@2 c#3 c3 a#2 f2@3 ~ ~\").sound(\"bd\").lpf(2798).room(.3).speed(\"2 | -2\").gain(.7273)\n\n$: s(\"gm_ocarina 4 4 0 0\").slow(2)\n\n$: note(\"g2 f2 g#2!3\")\n"
+      "code": [
+        "$: note(\"c2*8 f3!2 g3 f3 e3 c3@2 ~ g#3 g#3 g3 f3 c3@3 c3 d#3@2 c#3 c3 a#2 f2@3 ~ ~\").sound(\"bd\").lpf(2798).room(.3).speed(\"2 | -2\").gain(.7273)",
+        "",
+        "$: s(\"gm_ocarina 4 4 0 0\").slow(2)",
+        "",
+        "$: note(\"g2 f2 g#2!3\")"
+      ]
     },
     {
       "id": "1_369",
       "seed": 370,
       "voices": 2,
-      "code": "$: note(\"a5 e5 c5\").sound(\"hh\").lpf(800).resonance(8).gain(.3612).release(0).room(.7).delay(.3)\n\n$: n(\"7 8 7 6 5 4\")\n"
+      "code": [
+        "$: note(\"a5 e5 c5\").sound(\"hh\").lpf(800).resonance(8).gain(.3612).release(0).room(.7).delay(.3)",
+        "",
+        "$: n(\"7 8 7 6 5 4\")"
+      ]
     },
     {
       "id": "1_370",
       "seed": 371,
       "voices": 3,
-      "code": "$: note(\"12 g#2!3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 a#3 ~ e4 d#4 e4 e4 f#4 g#4@2 g#4 f#4 f4\").s(\"gm_electric_guitar_clean:2 gm_drawbar_organ:4 rd*6\").velocity(.8)\n\n$: n(\"22 25 g2 f2 ~ A3\").s(\"bd*2\").delay(.2041)\n\n$: n(\"F4 Bb3\")\n"
+      "code": [
+        "$: note(\"12 g#2!3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 a#3 ~ e4 d#4 e4 e4 f#4 g#4@2 g#4 f#4 f4\").s(\"gm_electric_guitar_clean:2 gm_drawbar_organ:4 rd*6\").velocity(.8)",
+        "",
+        "$: n(\"22 25 g2 f2 ~ A3\").s(\"bd*2\").delay(.2041)",
+        "",
+        "$: n(\"F4 Bb3\")"
+      ]
     },
     {
       "id": "1_371",
       "seed": 372,
       "voices": 2,
-      "code": "$: s(\"rd 1!3 2 0\").gain(.08).release(.4).attack(.15)\n\n$: note(\"c4 g4\").sound(\"hh\").lpf(1000).gain(.5)\n"
+      "code": [
+        "$: s(\"rd 1!3 2 0\").gain(.08).release(.4).attack(.15)",
+        "",
+        "$: note(\"c4 g4\").sound(\"hh\").lpf(1000).gain(.5)"
+      ]
     },
     {
       "id": "1_372",
       "seed": 373,
       "voices": 3,
-      "code": "$: sound(\"kick\")\n\n$: s(\"linndrum_sd\").slow(3)\n\n$: s(\"gtr\").slow(2)\n"
+      "code": [
+        "$: sound(\"kick\")",
+        "",
+        "$: s(\"linndrum_sd\").slow(3)",
+        "",
+        "$: s(\"gtr\").slow(2)"
+      ]
     },
     {
       "id": "1_373",
       "seed": 374,
       "voices": 2,
-      "code": "$: s(\"gm_ocarina gm_dulcimer\").speed(\"<1 0.5>\")\n\n$: note(\"7 12 d6 b5 ~ 88 f6\").s(\"gm_electric_bass_finger recorder_bass_sus gm_electric_bass_finger:3 gong 8\").slow(32)\n"
+      "code": [
+        "$: s(\"gm_ocarina gm_dulcimer\").speed(\"<1 0.5>\")",
+        "",
+        "$: note(\"7 12 d6 b5 ~ 88 f6\").s(\"gm_electric_bass_finger recorder_bass_sus gm_electric_bass_finger:3 gong 8\").slow(32)"
+      ]
     },
     {
       "id": "1_374",
       "seed": 375,
       "voices": 2,
-      "code": "$: s(\"hh*4\").bank(\"RolandTR808\")\n\n$: s(\"bd*2\").slow(51)\n"
+      "code": [
+        "$: s(\"hh*4\").bank(\"RolandTR808\")",
+        "",
+        "$: s(\"bd*2\").slow(51)"
+      ]
     },
     {
       "id": "1_375",
       "seed": 376,
       "voices": 2,
-      "code": "$: s(\"mt\").gain(.8)\n\n$: sound(\"kick\").lpf(3000).gain(.55)\n"
+      "code": [
+        "$: s(\"mt\").gain(.8)",
+        "",
+        "$: sound(\"kick\").lpf(3000).gain(.55)"
+      ]
     },
     {
       "id": "1_376",
       "seed": 377,
       "voices": 2,
-      "code": "$: n(\"9 10!2 ~ 7\")\n\n$: note(\"c4*2\").sound(\"piano\").lpf(2000).lpq(8).distort(\"10:.17\").room(.6987)\n"
+      "code": [
+        "$: n(\"9 10!2 ~ 7\")",
+        "",
+        "$: note(\"c4*2\").sound(\"piano\").lpf(2000).lpq(8).distort(\"10:.17\").room(.6987)"
+      ]
     },
     {
       "id": "1_377",
       "seed": 378,
       "voices": 3,
-      "code": "$: s(\"bd 0 1 2\").gain(.8).release(.0667)\n\n$: s(\"bd:5\").gain(.7).release(6).room(.536).roomsize(.3)\n\n$: note(\"c3 f3@2 f3!2 g3 f3 e3 c3@2 ~\").sound(\"drums\").lpf(517).gain(.9).release(.1)\n"
+      "code": [
+        "$: s(\"bd 0 1 2\").gain(.8).release(.0667)",
+        "",
+        "$: s(\"bd:5\").gain(.7).release(6).room(.536).roomsize(.3)",
+        "",
+        "$: note(\"c3 f3@2 f3!2 g3 f3 e3 c3@2 ~\").sound(\"drums\").lpf(517).gain(.9).release(.1)"
+      ]
     },
     {
       "id": "1_378",
       "seed": 379,
       "voices": 2,
-      "code": "$: s(\"gm_tuba\").gain(\"[1 0.6 0.8]*3\")\n\n$: s(\"ellipse\")\n"
+      "code": [
+        "$: s(\"gm_tuba\").gain(\"[1 0.6 0.8]*3\")",
+        "",
+        "$: s(\"ellipse\")"
+      ]
     },
     {
       "id": "1_379",
       "seed": 380,
       "voices": 2,
-      "code": "$: s(\"triangle gm_overdriven_guitar:6 gm_bandoneon 16\").gain(.3915)\n\n$: s(\"rect\").gain(.8).release(.2)\n"
+      "code": [
+        "$: s(\"triangle gm_overdriven_guitar:6 gm_bandoneon 16\").gain(.3915)",
+        "",
+        "$: s(\"rect\").gain(.8).release(.2)"
+      ]
     },
     {
       "id": "1_380",
       "seed": 381,
       "voices": 2,
-      "code": "$: s(\"supersaw 127\").gain(.65)\n\n$: s(\"cr bd sd\").slow(2)\n"
+      "code": [
+        "$: s(\"supersaw 127\").gain(.65)",
+        "",
+        "$: s(\"cr bd sd\").slow(2)"
+      ]
     },
     {
       "id": "1_381",
       "seed": 382,
       "voices": 3,
-      "code": "$: s(\"gm_tuba supersaw lt*2\").velocity(.5)\n\n$: note(\"c4 d4 eb4 g4\").lpf(1800).room(.4251).gain(.6)\n\n$: s(\"sax gm_synth_strings_1 gm_piccolo sine:2\").velocity(\"<.9@28 1.2@2>\")\n"
+      "code": [
+        "$: s(\"gm_tuba supersaw lt*2\").velocity(.5)",
+        "",
+        "$: note(\"c4 d4 eb4 g4\").lpf(1800).room(.4251).gain(.6)",
+        "",
+        "$: s(\"sax gm_synth_strings_1 gm_piccolo sine:2\").velocity(\"<.9@28 1.2@2>\")"
+      ]
     },
     {
       "id": "1_382",
       "seed": 383,
       "voices": 2,
-      "code": "$: s(\"lt hh sd\").clip(.806).gain(.6).release(.7914).room(.5).delay(.5903)\n\n$: note(\"b@2\").struct(\"~ x*2\")\n"
+      "code": [
+        "$: s(\"lt hh sd\").clip(.806).gain(.6).release(.7914).room(.5).delay(.5903)",
+        "",
+        "$: note(\"b@2\").struct(\"~ x*2\")"
+      ]
     },
     {
       "id": "1_383",
       "seed": 384,
       "voices": 2,
-      "code": "$: sound(\"square\")\n\n$: sound(\"sawtooth\").lpf(1500).hpf(500).speed(1.01).velocity(.9).pan(.2461).gain(.3).room(1)\n"
+      "code": [
+        "$: sound(\"square\")",
+        "",
+        "$: sound(\"sawtooth\").lpf(1500).hpf(500).speed(1.01).velocity(.9).pan(.2461).gain(.3).room(1)"
+      ]
     },
     {
       "id": "1_384",
       "seed": 385,
       "voices": 2,
-      "code": "$: s(\"gm_lead_6_voice\")\n\n$: s(\"recorder_tenor_sus\")\n"
+      "code": [
+        "$: s(\"gm_lead_6_voice\")",
+        "",
+        "$: s(\"recorder_tenor_sus\")"
+      ]
     },
     {
       "id": "1_385",
       "seed": 386,
       "voices": 2,
-      "code": "$: note(12).sound(\"sawtooth\").lpf(1454).resonance(20).gain(.4).release(.02)\n\n$: s(\"gm_acoustic_guitar_steel:2\").gain(.5).release(.1187).attack(.5).decay(.0681).sustain(0).degradeBy(.8)\n"
+      "code": [
+        "$: note(12).sound(\"sawtooth\").lpf(1454).resonance(20).gain(.4).release(.02)",
+        "",
+        "$: s(\"gm_acoustic_guitar_steel:2\").gain(.5).release(.1187).attack(.5).decay(.0681).sustain(0).degradeBy(.8)"
+      ]
     },
     {
       "id": "1_386",
       "seed": 387,
       "voices": 2,
-      "code": "$: s(\"gm_ocarina\").gain(.3)\n\n$: s(\"gm_acoustic_bass\").sustain(.5).delay(.6).delaytime(.12)\n"
+      "code": [
+        "$: s(\"gm_ocarina\").gain(.3)",
+        "",
+        "$: s(\"gm_acoustic_bass\").sustain(.5).delay(.6).delaytime(.12)"
+      ]
     },
     {
       "id": "1_387",
       "seed": 388,
       "voices": 2,
-      "code": "$: note(\"G4 A4 Bb4 A4\").sound(\"drum\")\n\n$: s(\"east\").slow(3)\n"
+      "code": [
+        "$: note(\"G4 A4 Bb4 A4\").sound(\"drum\")",
+        "",
+        "$: s(\"east\").slow(3)"
+      ]
     },
     {
       "id": "1_388",
       "seed": 389,
       "voices": 2,
-      "code": "$: n(\"2@3 3 3 3 4 7@2 6 5 3 3\").gain(.3)\n\n$: note(\"a1\").decay(.05).sustain(.1615).release(.1)\n"
+      "code": [
+        "$: n(\"2@3 3 3 3 4 7@2 6 5 3 3\").gain(.3)",
+        "",
+        "$: note(\"a1\").decay(.05).sustain(.1615).release(.1)"
+      ]
     },
     {
       "id": "1_389",
       "seed": 390,
       "voices": 2,
-      "code": "$: s(\"hh\").lpf(4000).gain(.202).pan(0)\n\n$: s(\"sd mt@57 cp:12 gm_gunshot:3 sd:1!3\").room(1.0323).delay(.6).gain(.5)\n"
+      "code": [
+        "$: s(\"hh\").lpf(4000).gain(.202).pan(0)",
+        "",
+        "$: s(\"sd mt@57 cp:12 gm_gunshot:3 sd:1!3\").room(1.0323).delay(.6).gain(.5)"
+      ]
     },
     {
       "id": "1_390",
       "seed": 391,
       "voices": 2,
-      "code": "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1\").sound(\"drums\").fast(3)\n\n$: s(\"supersaw\")\n"
+      "code": [
+        "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1\").sound(\"drums\").fast(3)",
+        "",
+        "$: s(\"supersaw\")"
+      ]
     },
     {
       "id": "1_391",
       "seed": 392,
       "voices": 3,
-      "code": "$: s(\"gm_synth_strings_1\").slow(4)\n\n$: s(\"bd ~ ~ ~\").slow(8)\n\n$: s(\"vocal\").lpf(700).late(\"0 0.02\")\n"
+      "code": [
+        "$: s(\"gm_synth_strings_1\").slow(4)",
+        "",
+        "$: s(\"bd ~ ~ ~\").slow(8)",
+        "",
+        "$: s(\"vocal\").lpf(700).late(\"0 0.02\")"
+      ]
     },
     {
       "id": "1_392",
       "seed": 393,
       "voices": 2,
-      "code": "$: note(\"~\")\n\n$: s(\"gm_oboe 1 ~ hh\").gain(.5)\n"
+      "code": [
+        "$: note(\"~\")",
+        "",
+        "$: s(\"gm_oboe 1 ~ hh\").gain(.5)"
+      ]
     },
     {
       "id": "1_393",
       "seed": 394,
       "voices": 2,
-      "code": "$: s(\"gm_epiano1:1\").gain(.526)\n\n$: n(\"-3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2 3 -4 -3 -2 -1 0 -7 ~ 2\").lpf(1328).room(.8)\n"
+      "code": [
+        "$: s(\"gm_epiano1:1\").gain(.526)",
+        "",
+        "$: n(\"-3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2 3 -4 -3 -2 -1 0 -7 ~ 2\").lpf(1328).room(.8)"
+      ]
     },
     {
       "id": "1_394",
       "seed": 395,
       "voices": 2,
-      "code": "$: n(\"-2 b\").scale(\"a3:minor\").clip(1).release(.1).gain(.5914).lpf(800).room(.5).delay(.4151)\n\n$: s(\"gm_electric_bass_finger:2\").gain(.8)\n"
+      "code": [
+        "$: n(\"-2 b\").scale(\"a3:minor\").clip(1).release(.1).gain(.5914).lpf(800).room(.5).delay(.4151)",
+        "",
+        "$: s(\"gm_electric_bass_finger:2\").gain(.8)"
+      ]
     },
     {
       "id": "1_395",
       "seed": 396,
       "voices": 2,
-      "code": "$: sound(\"bd\")\n\n$: s(\"piano\").gain(.3343)\n"
+      "code": [
+        "$: sound(\"bd\")",
+        "",
+        "$: s(\"piano\").gain(.3343)"
+      ]
     },
     {
       "id": "1_396",
       "seed": 397,
       "voices": 2,
-      "code": "$: s(\"east\").hpf(8000).gain(1).clip(.9).release(.3)\n\n$: s(\"amencutup\").speed(.8).bank(\"BossDR550\").lpf(800)\n"
+      "code": [
+        "$: s(\"east\").hpf(8000).gain(1).clip(.9).release(.3)",
+        "",
+        "$: s(\"amencutup\").speed(.8).bank(\"BossDR550\").lpf(800)"
+      ]
     },
     {
       "id": "1_397",
       "seed": 398,
       "voices": 3,
-      "code": "$: s(\"hh*2 sd\")\n\n$: s(\"linndrum_sd linn9000_sd kawai piano\").gain(.6)\n\n$: note(\"D2\").sound(\"piano\")\n"
+      "code": [
+        "$: s(\"hh*2 sd\")",
+        "",
+        "$: s(\"linndrum_sd linn9000_sd kawai piano\").gain(.6)",
+        "",
+        "$: note(\"D2\").sound(\"piano\")"
+      ]
     },
     {
       "id": "1_398",
       "seed": 399,
       "voices": 2,
-      "code": "$: s(\"hh*16 hh*16\").slow(8)\n\n$: s(\"gm_acoustic_guitar_steel:2\")\n"
+      "code": [
+        "$: s(\"hh*16 hh*16\").slow(8)",
+        "",
+        "$: s(\"gm_acoustic_guitar_steel:2\")"
+      ]
     },
     {
       "id": "1_399",
       "seed": 400,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick\").velocity(.782)\n\n$: n(\"-7*3 0\").scale(\"G1 minor\").transpose(-12)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").velocity(.782)",
+        "",
+        "$: n(\"-7*3 0\").scale(\"G1 minor\").transpose(-12)"
+      ]
     },
     {
       "id": "1_400",
       "seed": 401,
       "voices": 2,
-      "code": "$: note(\"a3 f3 c4 g3 a3 f3 c4 g3 a3 f3 c4 g3\").gain(.6)\n\n$: s(\"gtr\").slow(2)\n"
+      "code": [
+        "$: note(\"a3 f3 c4 g3 a3 f3 c4 g3 a3 f3 c4 g3\").gain(.6)",
+        "",
+        "$: s(\"gtr\").slow(2)"
+      ]
     },
     {
       "id": "1_401",
       "seed": 402,
       "voices": 2,
-      "code": "$: note(\"g4 c5 ~ g4 ~ ~ b3 ~ d4 g4 ~ d4 ~ ~ c4 ~ e4 a4 ~ e4 ~ ~ a3 ~ c4 f4 ~ c4 ~ e4 a4 ~\")\n\n$: note(\"C1 F1 G1\")\n"
+      "code": [
+        "$: note(\"g4 c5 ~ g4 ~ ~ b3 ~ d4 g4 ~ d4 ~ ~ c4 ~ e4 a4 ~ e4 ~ ~ a3 ~ c4 f4 ~ c4 ~ e4 a4 ~\")",
+        "",
+        "$: note(\"C1 F1 G1\")"
+      ]
     },
     {
       "id": "1_402",
       "seed": 403,
       "voices": 2,
-      "code": "$: s(\"triangle\")\n\n$: s(\"sine\").speed(1.5)\n"
+      "code": [
+        "$: s(\"triangle\")",
+        "",
+        "$: s(\"sine\").speed(1.5)"
+      ]
     },
     {
       "id": "1_403",
       "seed": 404,
       "voices": 2,
-      "code": "$: n(\"3 -4\").s(\"supersaw\").slow(2)\n\n$: s(\"gm_ocarina tambourine\")\n"
+      "code": [
+        "$: n(\"3 -4\").s(\"supersaw\").slow(2)",
+        "",
+        "$: s(\"gm_ocarina tambourine\")"
+      ]
     },
     {
       "id": "1_404",
       "seed": 405,
       "voices": 3,
-      "code": "$: s(\"gm_oboe ~ rd 1!3\").slow(2)\n\n$: note(\"a2 f2\").s(\"perc*3\").slow(5)\n\n$: s(\"bd*2\").slow(2)\n"
+      "code": [
+        "$: s(\"gm_oboe ~ rd 1!3\").slow(2)",
+        "",
+        "$: note(\"a2 f2\").s(\"perc*3\").slow(5)",
+        "",
+        "$: s(\"bd*2\").slow(2)"
+      ]
     },
     {
       "id": "1_405",
       "seed": 406,
       "voices": 2,
-      "code": "$: s(\"z_sawtooth\").slow(2)\n\n$: s(\"hh*4\").gain(.4192)\n"
+      "code": [
+        "$: s(\"z_sawtooth\").slow(2)",
+        "",
+        "$: s(\"hh*4\").gain(.4192)"
+      ]
     },
     {
       "id": "1_406",
       "seed": 407,
       "voices": 3,
-      "code": "$: s(\"bass\").slow(2)\n\n$: s(\"rd*3\").slow(2)\n\n$: s(\"hh\").gain(.6)\n"
+      "code": [
+        "$: s(\"bass\").slow(2)",
+        "",
+        "$: s(\"rd*3\").slow(2)",
+        "",
+        "$: s(\"hh\").gain(.6)"
+      ]
     },
     {
       "id": "1_407",
       "seed": 408,
       "voices": 2,
-      "code": "$: s(\"drums\").slow(8)\n\n$: s(\"psaltery_pluck numbers:9 ~ 666\").slow(32)\n"
+      "code": [
+        "$: s(\"drums\").slow(8)",
+        "",
+        "$: s(\"psaltery_pluck numbers:9 ~ 666\").slow(32)"
+      ]
     },
     {
       "id": "1_408",
       "seed": 409,
       "voices": 2,
-      "code": "$: note(\"g#4@2 a#4@2 b4@2 d#5\").sound(\"bd*2\").lpf(\"<600 800 1000 1200!3>/12\").gain(.7983)\n\n$: s(\"amen\").room(.2).gain(.4671).release(6).attack(1.3765)\n"
+      "code": [
+        "$: note(\"g#4@2 a#4@2 b4@2 d#5\").sound(\"bd*2\").lpf(\"<600 800 1000 1200!3>/12\").gain(.7983)",
+        "",
+        "$: s(\"amen\").room(.2).gain(.4671).release(6).attack(1.3765)"
+      ]
     },
     {
       "id": "1_409",
       "seed": 410,
       "voices": 3,
-      "code": "$: s(\"mt\").slow(2)\n\n$: note(\"a4 d#5@2 ~ a4\").s(\"gm_acoustic_guitar_nylon\")\n\n$: s(\"amen\").transpose(\"<0 1>/8\").orbit(2)\n"
+      "code": [
+        "$: s(\"mt\").slow(2)",
+        "",
+        "$: note(\"a4 d#5@2 ~ a4\").s(\"gm_acoustic_guitar_nylon\")",
+        "",
+        "$: s(\"amen\").transpose(\"<0 1>/8\").orbit(2)"
+      ]
     },
     {
       "id": "1_410",
       "seed": 411,
       "voices": 3,
-      "code": "$: n(\"6 7@2 8@2 6@2 4@3 ~ 7 10!2 7!2 14!2 ~ 7 11!2 6\")\n\n$: n(7).s(\"hh*2\").room(.3)\n\n$: s(\"gm_harmonica\").lpf(1000).lpq(8.0975).cutoff(\"<400 1200>\").gain(.9).hpf(600)\n"
+      "code": [
+        "$: n(\"6 7@2 8@2 6@2 4@3 ~ 7 10!2 7!2 14!2 ~ 7 11!2 6\")",
+        "",
+        "$: n(7).s(\"hh*2\").room(.3)",
+        "",
+        "$: s(\"gm_harmonica\").lpf(1000).lpq(8.0975).cutoff(\"<400 1200>\").gain(.9).hpf(600)"
+      ]
     },
     {
       "id": "1_411",
       "seed": 412,
       "voices": 2,
-      "code": "$: s(\"amencutup pulse gm_cello:1\").slow(2)\n\n$: note(0).sound(\"sawtooth\").lpf(700).room(.5863)\n"
+      "code": [
+        "$: s(\"amencutup pulse gm_cello:1\").slow(2)",
+        "",
+        "$: note(0).sound(\"sawtooth\").lpf(700).room(.5863)"
+      ]
     },
     {
       "id": "1_412",
       "seed": 413,
       "voices": 2,
-      "code": "$: s(\"sax\").slow(2)\n\n$: s(\"lead\")\n"
+      "code": [
+        "$: s(\"sax\").slow(2)",
+        "",
+        "$: s(\"lead\")"
+      ]
     },
     {
       "id": "1_413",
       "seed": 414,
       "voices": 3,
-      "code": "$: s(\"sd\").slow(2)\n\n$: s(\"gm_acoustic_guitar_nylon\").slow(8)\n\n$: n(\"0@2 2 1 1\").scale(\"a4:minor\")\n"
+      "code": [
+        "$: s(\"sd\").slow(2)",
+        "",
+        "$: s(\"gm_acoustic_guitar_nylon\").slow(8)",
+        "",
+        "$: n(\"0@2 2 1 1\").scale(\"a4:minor\")"
+      ]
     },
     {
       "id": "1_414",
       "seed": 415,
       "voices": 3,
-      "code": "$: note(\"c4*2 d#4 f4 ~\").sound(\"sawtooth\").lpf(3815)\n\n$: n(\"-3 -3 -1\").room(.5484)\n\n$: n(\"~ 1@3 2 -5 -4 ~ 2 0 -7@3 3 4 2 3 -4 ~ 4 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3\")\n"
+      "code": [
+        "$: note(\"c4*2 d#4 f4 ~\").sound(\"sawtooth\").lpf(3815)",
+        "",
+        "$: n(\"-3 -3 -1\").room(.5484)",
+        "",
+        "$: n(\"~ 1@3 2 -5 -4 ~ 2 0 -7@3 3 4 2 3 -4 ~ 4 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3\")"
+      ]
     },
     {
       "id": "1_415",
       "seed": 416,
       "voices": 2,
-      "code": "$: s(\"gm_piccolo\").slow(4)\n\n$: note(\"b4\").hpf(250)\n"
+      "code": [
+        "$: s(\"gm_piccolo\").slow(4)",
+        "",
+        "$: note(\"b4\").hpf(250)"
+      ]
     },
     {
       "id": "1_416",
       "seed": 417,
       "voices": 2,
-      "code": "$: s(\"rd 1!3 2 4\").velocity(.9).pan(.5)\n\n$: s(\"rd*3\").clip(.7).gain(.8).release(.0786)\n"
+      "code": [
+        "$: s(\"rd 1!3 2 4\").velocity(.9).pan(.5)",
+        "",
+        "$: s(\"rd*3\").clip(.7).gain(.8).release(.0786)"
+      ]
     },
     {
       "id": "1_417",
       "seed": 418,
       "voices": 2,
-      "code": "$: s(\"recorder_bass_sus\").slow(4)\n\n$: note(\"a3 f3 c4 g3 a3 f3 c4\").sound(\"bd\").lpf(2000).gain(.199)\n"
+      "code": [
+        "$: s(\"recorder_bass_sus\").slow(4)",
+        "",
+        "$: note(\"a3 f3 c4 g3 a3 f3 c4\").sound(\"bd\").lpf(2000).gain(.199)"
+      ]
     },
     {
       "id": "1_418",
       "seed": 419,
       "voices": 2,
-      "code": "$: note(\"a3 c#4 e4 a4 f3 a3 c4 f4 c4 e4 g4 c5\")\n\n$: note(\"a5\").clip(.9).s(\"square dino gm_harmonica EmuDrumulator_mt\").slow(2)\n"
+      "code": [
+        "$: note(\"a3 c#4 e4 a4 f3 a3 c4 f4 c4 e4 g4 c5\")",
+        "",
+        "$: note(\"a5\").clip(.9).s(\"square dino gm_harmonica EmuDrumulator_mt\").slow(2)"
+      ]
     },
     {
       "id": "1_419",
       "seed": 420,
       "voices": 3,
-      "code": "$: note(\"f4\").sound(\"sawtooth\").lpf(618).hpf(500).gain(.15)\n\n$: note(\"a3 a3!2\").transpose(19).gain(1.4)\n\n$: note(\"e4\").s(\"bd*2\").slow(2)\n"
+      "code": [
+        "$: note(\"f4\").sound(\"sawtooth\").lpf(618).hpf(500).gain(.15)",
+        "",
+        "$: note(\"a3 a3!2\").transpose(19).gain(1.4)",
+        "",
+        "$: note(\"e4\").s(\"bd*2\").slow(2)"
+      ]
     },
     {
       "id": "1_420",
       "seed": 421,
       "voices": 3,
-      "code": "$: note(\"a2 ~ a2\")\n\n$: note(\"g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2 ~ c4 c4\").hpf(1000).room(.8).gain(.76)\n\n$: s(\"hh:1*4\").gain(.4362)\n"
+      "code": [
+        "$: note(\"a2 ~ a2\")",
+        "",
+        "$: note(\"g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2 ~ c4 c4\").hpf(1000).room(.8).gain(.76)",
+        "",
+        "$: s(\"hh:1*4\").gain(.4362)"
+      ]
     },
     {
       "id": "1_421",
       "seed": 422,
       "voices": 2,
-      "code": "$: s(\"hh*4\").gain(.5).release(.4)\n\n$: note(\"G4 A4 Bb4 A4\")\n"
+      "code": [
+        "$: s(\"hh*4\").gain(.5).release(.4)",
+        "",
+        "$: note(\"G4 A4 Bb4 A4\")"
+      ]
     },
     {
       "id": "1_422",
       "seed": 423,
       "voices": 3,
-      "code": "$: note(42).s(\"misc:2\")\n\n$: s(\"gm_electric_guitar_jazz\").slow(2).room(.8).gain(.4).release(.05)\n\n$: s(\"pad\").gain(.7).room(1).delay(.5).degradeBy(\"0 0.1 .5 .1\").orbit(2)\n"
+      "code": [
+        "$: note(42).s(\"misc:2\")",
+        "",
+        "$: s(\"gm_electric_guitar_jazz\").slow(2).room(.8).gain(.4).release(.05)",
+        "",
+        "$: s(\"pad\").gain(.7).room(1).delay(.5).degradeBy(\"0 0.1 .5 .1\").orbit(2)"
+      ]
     },
     {
       "id": "1_423",
       "seed": 424,
       "voices": 2,
-      "code": "$: s(\"recorder_tenor_sus\").delay(.5).gain(.8).release(.4548)\n\n$: note(49)\n"
+      "code": [
+        "$: s(\"recorder_tenor_sus\").delay(.5).gain(.8).release(.4548)",
+        "",
+        "$: note(49)"
+      ]
     },
     {
       "id": "1_424",
       "seed": 425,
       "voices": 2,
-      "code": "$: note(\"B2\").sound(\"supersaw\").lpf(2000)\n\n$: s(\"z_sawtooth\").slow(2)\n"
+      "code": [
+        "$: note(\"B2\").sound(\"supersaw\").lpf(2000)",
+        "",
+        "$: s(\"z_sawtooth\").slow(2)"
+      ]
     },
     {
       "id": "1_425",
       "seed": 426,
       "voices": 2,
-      "code": "$: note(\"g#4@2\")\n\n$: s(\"gm_synth_strings_1 3 sd ~\").slow(51)\n"
+      "code": [
+        "$: note(\"g#4@2\")",
+        "",
+        "$: s(\"gm_synth_strings_1 3 sd ~\").slow(51)"
+      ]
     },
     {
       "id": "1_426",
       "seed": 427,
       "voices": 2,
-      "code": "$: s(\"supersaw cr!2 gm_gunshot:3 hh:1*4 sleighbells gm_lead_2_sawtooth ellipse numbers:1\").slow(2)\n\n$: s(\"bd\").slow(4)\n"
+      "code": [
+        "$: s(\"supersaw cr!2 gm_gunshot:3 hh:1*4 sleighbells gm_lead_2_sawtooth ellipse numbers:1\").slow(2)",
+        "",
+        "$: s(\"bd\").slow(4)"
+      ]
     },
     {
       "id": "1_427",
       "seed": 428,
       "voices": 2,
-      "code": "$: s(\"perc*3\").slow(2)\n\n$: s(\"hh*8 sd:1 hh27 numbers:4\").slow(2)\n"
+      "code": [
+        "$: s(\"perc*3\").slow(2)",
+        "",
+        "$: s(\"hh*8 sd:1 hh27 numbers:4\").slow(2)"
+      ]
     },
     {
       "id": "1_428",
       "seed": 429,
       "voices": 2,
-      "code": "$: s(\"sine\").gain(\"[1 0.7 1 0.5]*2\").pan(.55)\n\n$: s(\"recorder_tenor_sus snare 2\")\n"
+      "code": [
+        "$: s(\"sine\").gain(\"[1 0.7 1 0.5]*2\").pan(.55)",
+        "",
+        "$: s(\"recorder_tenor_sus snare 2\")"
+      ]
     },
     {
       "id": "1_429",
       "seed": 430,
       "voices": 3,
-      "code": "$: s(\"hh*2\").slow(16)\n\n$: s(\"gm_drawbar_organ gm_lead_6_voice 20 cr!3\").note(\"C3 Eb3 G2\").decay(.05)\n\n$: note(\"g1 bb1 c#5@6 ~\")\n"
+      "code": [
+        "$: s(\"hh*2\").slow(16)",
+        "",
+        "$: s(\"gm_drawbar_organ gm_lead_6_voice 20 cr!3\").note(\"C3 Eb3 G2\").decay(.05)",
+        "",
+        "$: note(\"g1 bb1 c#5@6 ~\")"
+      ]
     },
     {
       "id": "1_430",
       "seed": 431,
       "voices": 3,
-      "code": "$: note(\"c3 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4\").sound(\"drum\").lpf(594).hpf(6425).room(.4391).fast(2)\n\n$: note(\"B2\").sound(\"drum\").lpf(3000)\n\n$: s(\"supersaw\").slow(8)\n"
+      "code": [
+        "$: note(\"c3 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4\").sound(\"drum\").lpf(594).hpf(6425).room(.4391).fast(2)",
+        "",
+        "$: note(\"B2\").sound(\"drum\").lpf(3000)",
+        "",
+        "$: s(\"supersaw\").slow(8)"
+      ]
     },
     {
       "id": "1_431",
       "seed": 432,
       "voices": 3,
-      "code": "$: note(49)\n\n$: s(\"lead\").velocity(.7306).hpf(\"<1000@2 2000 500>*8\").room(1.1119).gain(.7157)\n\n$: s(\"hh*4\").gain(.3)\n"
+      "code": [
+        "$: note(49)",
+        "",
+        "$: s(\"lead\").velocity(.7306).hpf(\"<1000@2 2000 500>*8\").room(1.1119).gain(.7157)",
+        "",
+        "$: s(\"hh*4\").gain(.3)"
+      ]
     },
     {
       "id": "1_432",
       "seed": 433,
       "voices": 2,
-      "code": "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\")\n\n$: s(\"gm_electric_guitar_clean:2\")\n"
+      "code": [
+        "$: note(\"C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1\")",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2\")"
+      ]
     },
     {
       "id": "1_433",
       "seed": 434,
       "voices": 2,
-      "code": "$: s(\"bd\").room(.6597).delay(.5)\n\n$: s(\"linndrum_sd\").slow(2)\n"
+      "code": [
+        "$: s(\"bd\").room(.6597).delay(.5)",
+        "",
+        "$: s(\"linndrum_sd\").slow(2)"
+      ]
     },
     {
       "id": "1_434",
       "seed": 435,
       "voices": 3,
-      "code": "$: n(\"4 7@2\").scale(\"d3:minor:pentatonic\").s(\"piano r8_rd:1 hh27\").gain(.641)\n\n$: s(\"hh*4 ~ sd hh*4\").slow(2)\n\n$: note(\"c a f e\").late(.1)\n"
+      "code": [
+        "$: n(\"4 7@2\").scale(\"d3:minor:pentatonic\").s(\"piano r8_rd:1 hh27\").gain(.641)",
+        "",
+        "$: s(\"hh*4 ~ sd hh*4\").slow(2)",
+        "",
+        "$: note(\"c a f e\").late(.1)"
+      ]
     },
     {
       "id": "1_435",
       "seed": 436,
       "voices": 2,
-      "code": "$: s(\"breath\")\n\n$: note(\"b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4\").add(\"<[0,-2]>/15\")\n"
+      "code": [
+        "$: s(\"breath\")",
+        "",
+        "$: note(\"b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4\").add(\"<[0,-2]>/15\")"
+      ]
     },
     {
       "id": "1_436",
       "seed": 437,
       "voices": 2,
-      "code": "$: s(\"hh\").fast(2)\n\n$: n(\"0 -7!8 59 Ab5 F5@2 C5 C6@2 A5\").s(\"bd:5\").room(.8).gain(.15)\n"
+      "code": [
+        "$: s(\"hh\").fast(2)",
+        "",
+        "$: n(\"0 -7!8 59 Ab5 F5@2 C5 C6@2 A5\").s(\"bd:5\").room(.8).gain(.15)"
+      ]
     },
     {
       "id": "1_437",
       "seed": 438,
       "voices": 2,
-      "code": "$: s(\"rd*3\").lpf(1500).gain(.8)\n\n$: s(\"gm_epiano1:1\").slow(2)\n"
+      "code": [
+        "$: s(\"rd*3\").lpf(1500).gain(.8)",
+        "",
+        "$: s(\"gm_epiano1:1\").slow(2)"
+      ]
     },
     {
       "id": "1_438",
       "seed": 439,
       "voices": 2,
-      "code": "$: s(\"bell oh*4 bd!3 bd*2 ~ ~ sd sd bd cr\").gain(.25)\n\n$: note(\"d5 ~ f5 ~ a5 ~ f5 ~ d5 ~ e5 ~ f5 ~ e5 ~\").sound(\"drum\").lpf(2000).room(1).gain(.4)\n"
+      "code": [
+        "$: s(\"bell oh*4 bd!3 bd*2 ~ ~ sd sd bd cr\").gain(.25)",
+        "",
+        "$: note(\"d5 ~ f5 ~ a5 ~ f5 ~ d5 ~ e5 ~ f5 ~ e5 ~\").sound(\"drum\").lpf(2000).room(1).gain(.4)"
+      ]
     },
     {
       "id": "1_439",
       "seed": 440,
       "voices": 2,
-      "code": "$: note(\"c5\").sound(\"bd ~\")\n\n$: s(\"kick*4\").speed(\"2 | -2\").hpf(4000).room(.7).delay(.4546).delaytime(.125).gain(.5)\n"
+      "code": [
+        "$: note(\"c5\").sound(\"bd ~\")",
+        "",
+        "$: s(\"kick*4\").speed(\"2 | -2\").hpf(4000).room(.7).delay(.4546).delaytime(.125).gain(.5)"
+      ]
     },
     {
       "id": "1_440",
       "seed": 441,
       "voices": 2,
-      "code": "$: note(\"f6 d6 b5\").sound(\"bd sd bd sd cp cp supersaw sine\").lpf(\"<300>/12\").hpf(4000).resonance(15)\n\n$: s(\"hh\")\n"
+      "code": [
+        "$: note(\"f6 d6 b5\").sound(\"bd sd bd sd cp cp supersaw sine\").lpf(\"<300>/12\").hpf(4000).resonance(15)",
+        "",
+        "$: s(\"hh\")"
+      ]
     },
     {
       "id": "1_441",
       "seed": 442,
       "voices": 2,
-      "code": "$: s(\"drums\")\n\n$: s(\"hh*2\").slow(16)\n"
+      "code": [
+        "$: s(\"drums\")",
+        "",
+        "$: s(\"hh*2\").slow(16)"
+      ]
     },
     {
       "id": "1_442",
       "seed": 443,
       "voices": 2,
-      "code": "$: n(\"-7*3\").s(\"triangle amen gm_church_organ:1@4\")\n\n$: note(\"12 8\")\n"
+      "code": [
+        "$: n(\"-7*3\").s(\"triangle amen gm_church_organ:1@4\")",
+        "",
+        "$: note(\"12 8\")"
+      ]
     },
     {
       "id": "1_443",
       "seed": 444,
       "voices": 2,
-      "code": "$: sound(\"sawtooth\").lpf(600).hpf(6775).gain(.5315).room(.3).pan(.7)\n\n$: s(\"east rhodes gm_piano bd*3\").gain(.3)\n"
+      "code": [
+        "$: sound(\"sawtooth\").lpf(600).hpf(6775).gain(.5315).room(.3).pan(.7)",
+        "",
+        "$: s(\"east rhodes gm_piano bd*3\").gain(.3)"
+      ]
     },
     {
       "id": "1_444",
       "seed": 445,
       "voices": 2,
-      "code": "$: s(\"sawtooth\").room(.4).gain(.3669)\n\n$: s(\"gm_electric_bass_finger\").gain(.4)\n"
+      "code": [
+        "$: s(\"sawtooth\").room(.4).gain(.3669)",
+        "",
+        "$: s(\"gm_electric_bass_finger\").gain(.4)"
+      ]
     },
     {
       "id": "1_445",
       "seed": 446,
       "voices": 2,
-      "code": "$: s(\"~ rim ~ rim sd\").slow(16)\n\n$: note(\"a4\").s(\"hh*8\").lpf(899).gain(\"0.25 0.35 0.3 0.4\").release(.1174)\n"
+      "code": [
+        "$: s(\"~ rim ~ rim sd\").slow(16)",
+        "",
+        "$: note(\"a4\").s(\"hh*8\").lpf(899).gain(\"0.25 0.35 0.3 0.4\").release(.1174)"
+      ]
     },
     {
       "id": "1_446",
       "seed": 447,
       "voices": 2,
-      "code": "$: note(\"a2*8\")\n\n$: s(\"amen\")\n"
+      "code": [
+        "$: note(\"a2*8\")",
+        "",
+        "$: s(\"amen\")"
+      ]
     },
     {
       "id": "1_447",
       "seed": 448,
       "voices": 2,
-      "code": "$: sound(\"piano\")\n\n$: note(\"e4\").sound(\"hh\").lpf(3500).hpf(200).gain(.2).clip(.18).decay(.0713).sustain(0)\n"
+      "code": [
+        "$: sound(\"piano\")",
+        "",
+        "$: note(\"e4\").sound(\"hh\").lpf(3500).hpf(200).gain(.2).clip(.18).decay(.0713).sustain(0)"
+      ]
     },
     {
       "id": "1_448",
       "seed": 449,
       "voices": 2,
-      "code": "$: s(\"hh*8 ~ cp\").gain(.8604).release(2).attack(.001)\n\n$: s(\"pad numbers:9 ~ 666 bd\").pan(\"0.2\")\n"
+      "code": [
+        "$: s(\"hh*8 ~ cp\").gain(.8604).release(2).attack(.001)",
+        "",
+        "$: s(\"pad numbers:9 ~ 666 bd\").pan(\"0.2\")"
+      ]
     },
     {
       "id": "1_449",
       "seed": 450,
       "voices": 2,
-      "code": "$: note(\"B2 F#2 F2 Bb2\").sound(\"piano\").lpf(300).room(.1).delay(.5).gain(.5353).release(.5)\n\n$: s(\"supersaw\").gain(.3).room(1).pan(.6496).speed(2)\n"
+      "code": [
+        "$: note(\"B2 F#2 F2 Bb2\").sound(\"piano\").lpf(300).room(.1).delay(.5).gain(.5353).release(.5)",
+        "",
+        "$: s(\"supersaw\").gain(.3).room(1).pan(.6496).speed(2)"
+      ]
     },
     {
       "id": "1_450",
       "seed": 451,
       "voices": 2,
-      "code": "$: n(\"22 25 0@3 3@3.5 4 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 2@20 ~ 3 3@20 ~ 4 4@20 4@5 3 2 1@2\").clip(.7269).gain(.5315).pan(.6755)\n\n$: note(\"7 12 c#5@8 ~\").slow(2)\n"
+      "code": [
+        "$: n(\"22 25 0@3 3@3.5 4 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 2@20 ~ 3 3@20 ~ 4 4@20 4@5 3 2 1@2\").clip(.7269).gain(.5315).pan(.6755)",
+        "",
+        "$: note(\"7 12 c#5@8 ~\").slow(2)"
+      ]
     },
     {
       "id": "1_451",
       "seed": 452,
       "voices": 2,
-      "code": "$: s(\"lead\").velocity(1)\n\n$: note(\"0 1 4!3 12\").s(\"bd!2 bd*4 bd!4 ~\").slow(2)\n"
+      "code": [
+        "$: s(\"lead\").velocity(1)",
+        "",
+        "$: note(\"0 1 4!3 12\").s(\"bd!2 bd*4 bd!4 ~\").slow(2)"
+      ]
     },
     {
       "id": "1_452",
       "seed": 453,
       "voices": 2,
-      "code": "$: note(\"c1 f1 g1 a#1\").sound(\"square\").lpf(2800).gain(.7)\n\n$: note(\"c2\")\n"
+      "code": [
+        "$: note(\"c1 f1 g1 a#1\").sound(\"square\").lpf(2800).gain(.7)",
+        "",
+        "$: note(\"c2\")"
+      ]
     },
     {
       "id": "1_453",
       "seed": 454,
       "voices": 3,
-      "code": "$: note(0).sound(\"sawtooth\")\n\n$: s(\"clavisynth\").gain(.6).release(.3).room(.2)\n\n$: s(\"cr 12 16 24\").speed(.998).delay(.5).lpf(700)\n"
+      "code": [
+        "$: note(0).sound(\"sawtooth\")",
+        "",
+        "$: s(\"clavisynth\").gain(.6).release(.3).room(.2)",
+        "",
+        "$: s(\"cr 12 16 24\").speed(.998).delay(.5).lpf(700)"
+      ]
     },
     {
       "id": "1_454",
       "seed": 455,
       "voices": 2,
-      "code": "$: n(\"3 6 0 2 5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~ 5 6 ~ 2*3 ~\").scale(\"c4:minor\").struct(\"1 1 1 1 1 1 1 1\").velocity(.5)\n\n$: note(\"d4 a3 d5 c#5 c5 a4 d#5\").sound(\"sine\").lpf(800).room(1.0006).gain(.5)\n"
+      "code": [
+        "$: n(\"3 6 0 2 5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~ 5 6 ~ 2*3 ~\").scale(\"c4:minor\").struct(\"1 1 1 1 1 1 1 1\").velocity(.5)",
+        "",
+        "$: note(\"d4 a3 d5 c#5 c5 a4 d#5\").sound(\"sine\").lpf(800).room(1.0006).gain(.5)"
+      ]
     },
     {
       "id": "1_455",
       "seed": 456,
       "voices": 3,
-      "code": "$: note(\"e3 g3\")\n\n$: n(\"-2\")\n\n$: s(\"saw\").late(\"[0 .01]*2\")\n"
+      "code": [
+        "$: note(\"e3 g3\")",
+        "",
+        "$: n(\"-2\")",
+        "",
+        "$: s(\"saw\").late(\"[0 .01]*2\")"
+      ]
     },
     {
       "id": "1_456",
       "seed": 457,
       "voices": 3,
-      "code": "$: s(\"z_sawtooth z_sawtooth gm_electric_bass_finger:2\").slow(2)\n\n$: sound(\"bd*2\").lpf(3000).gain(.2).release(2)\n\n$: n(3).clip(1).release(3).gain(.4)\n"
+      "code": [
+        "$: s(\"z_sawtooth z_sawtooth gm_electric_bass_finger:2\").slow(2)",
+        "",
+        "$: sound(\"bd*2\").lpf(3000).gain(.2).release(2)",
+        "",
+        "$: n(3).clip(1).release(3).gain(.4)"
+      ]
     },
     {
       "id": "1_457",
       "seed": 458,
       "voices": 3,
-      "code": "$: s(\"~\").pan(.45).late(.0659)\n\n$: s(\"saw\").slow(2)\n\n$: s(\"perc*3\").velocity(\"<.9@28 1.2@2>\")\n"
+      "code": [
+        "$: s(\"~\").pan(.45).late(.0659)",
+        "",
+        "$: s(\"saw\").slow(2)",
+        "",
+        "$: s(\"perc*3\").velocity(\"<.9@28 1.2@2>\")"
+      ]
     },
     {
       "id": "1_458",
       "seed": 459,
       "voices": 2,
-      "code": "$: s(\"mt\")\n\n$: s(\"pad gm_overdriven_guitar lt*4 hh!3\")\n"
+      "code": [
+        "$: s(\"mt\")",
+        "",
+        "$: s(\"pad gm_overdriven_guitar lt*4 hh!3\")"
+      ]
     },
     {
       "id": "1_459",
       "seed": 460,
       "voices": 3,
-      "code": "$: s(\"oh\").cutoff(500).decay(.1226).sustain(.3).delay(.25).gain(.8).release(.0949)\n\n$: s(\"gm_acoustic_bass\").gain(.25)\n\n$: s(\"cp\").gain(\"0.25 0.35 0.3 0.4\")\n"
+      "code": [
+        "$: s(\"oh\").cutoff(500).decay(.1226).sustain(.3).delay(.25).gain(.8).release(.0949)",
+        "",
+        "$: s(\"gm_acoustic_bass\").gain(.25)",
+        "",
+        "$: s(\"cp\").gain(\"0.25 0.35 0.3 0.4\")"
+      ]
     },
     {
       "id": "1_460",
       "seed": 461,
       "voices": 2,
-      "code": "$: note(\"c4 g3 a3 f3 c4 g3 a3 f3\").sound(\"kick\").lpf(4000).room(.521).gain(.55)\n\n$: s(\"mt\").gain(.246).release(.05).hpf(8000).clip(.9074)\n"
+      "code": [
+        "$: note(\"c4 g3 a3 f3 c4 g3 a3 f3\").sound(\"kick\").lpf(4000).room(.521).gain(.55)",
+        "",
+        "$: s(\"mt\").gain(.246).release(.05).hpf(8000).clip(.9074)"
+      ]
     },
     {
       "id": "1_461",
       "seed": 462,
       "voices": 2,
-      "code": "$: s(\"gm_electric_bass_pick\").cutoff(500)\n\n$: note(\"0 04 a4 d#5@3 ~ a4 d#5 d5 c#5\")\n"
+      "code": [
+        "$: s(\"gm_electric_bass_pick\").cutoff(500)",
+        "",
+        "$: note(\"0 04 a4 d#5@3 ~ a4 d#5 d5 c#5\")"
+      ]
     },
     {
       "id": "1_462",
       "seed": 463,
       "voices": 2,
-      "code": "$: s(\"oh\").slow(2)\n\n$: sound(\"supersaw\").lpf(3709).room(.85).gain(0)\n"
+      "code": [
+        "$: s(\"oh\").slow(2)",
+        "",
+        "$: sound(\"supersaw\").lpf(3709).room(.85).gain(0)"
+      ]
     },
     {
       "id": "1_463",
       "seed": 464,
       "voices": 3,
-      "code": "$: s(\"supersaw\")\n\n$: note(\"a2*8 a2*8 a2*4 ~\").sound(\"square\")\n\n$: s(\"gm_electric_bass_finger\")\n"
+      "code": [
+        "$: s(\"supersaw\")",
+        "",
+        "$: note(\"a2*8 a2*8 a2*4 ~\").sound(\"square\")",
+        "",
+        "$: s(\"gm_electric_bass_finger\")"
+      ]
     },
     {
       "id": "1_464",
       "seed": 465,
       "voices": 2,
-      "code": "$: s(\"gtr\").gain(.8987)\n\n$: s(\"rect drums bell gm_overdriven_guitar:6 brown kick*4 attack amencutup gm_electric_bass_pick gm_choir_aahs:0\").gain(.3606)\n"
+      "code": [
+        "$: s(\"gtr\").gain(.8987)",
+        "",
+        "$: s(\"rect drums bell gm_overdriven_guitar:6 brown kick*4 attack amencutup gm_electric_bass_pick gm_choir_aahs:0\").gain(.3606)"
+      ]
     },
     {
       "id": "1_465",
       "seed": 466,
       "voices": 2,
-      "code": "$: n(\"3 3 b -5 -3 -1\").scale(\"c3:major\")\n\n$: s(\"bd\").pan(.45).gain(.5)\n"
+      "code": [
+        "$: n(\"3 3 b -5 -3 -1\").scale(\"c3:major\")",
+        "",
+        "$: s(\"bd\").pan(.45).gain(.5)"
+      ]
     },
     {
       "id": "1_466",
       "seed": 467,
       "voices": 2,
-      "code": "$: sound(\"sine\").gain(.7226)\n\n$: note(\"b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4\").sound(\"drum ~ sd\").lpf(3000).hpf(7000).gain(.35)\n"
+      "code": [
+        "$: sound(\"sine\").gain(.7226)",
+        "",
+        "$: note(\"b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4\").sound(\"drum ~ sd\").lpf(3000).hpf(7000).gain(.35)"
+      ]
     },
     {
       "id": "1_467",
       "seed": 468,
       "voices": 2,
-      "code": "$: note(\"d5 a4 d5 c#5\")\n\n$: s(\"bass\").slow(16)\n"
+      "code": [
+        "$: note(\"d5 a4 d5 c#5\")",
+        "",
+        "$: s(\"bass\").slow(16)"
+      ]
     },
     {
       "id": "1_468",
       "seed": 469,
       "voices": 2,
-      "code": "$: s(\"breath\").gain(.3).release(.5).pan(.3)\n\n$: s(\"gm_piccolo\").slow(2)\n"
+      "code": [
+        "$: s(\"breath\").gain(.3).release(.5).pan(.3)",
+        "",
+        "$: s(\"gm_piccolo\").slow(2)"
+      ]
     },
     {
       "id": "1_469",
       "seed": 470,
       "voices": 3,
-      "code": "$: note(\"d5 c5 d5 e5\").sound(\"triangle\").lpf(200).gain(\"[1 0.7 1 0.5]*2\")\n\n$: n(\"2@2\").lpf(400).s(\"misc:2\").slow(2)\n\n$: s(\"gm_electric_guitar_clean:2 a numbers:1 numbers:2\").slow(6)\n"
+      "code": [
+        "$: note(\"d5 c5 d5 e5\").sound(\"triangle\").lpf(200).gain(\"[1 0.7 1 0.5]*2\")",
+        "",
+        "$: n(\"2@2\").lpf(400).s(\"misc:2\").slow(2)",
+        "",
+        "$: s(\"gm_electric_guitar_clean:2 a numbers:1 numbers:2\").slow(6)"
+      ]
     },
     {
       "id": "1_470",
       "seed": 471,
       "voices": 3,
-      "code": "$: s(\"gm_electric_bass_finger:2 EmuDrumulator_sd gm_church_organ:2 cowbell ~ ~ cowbell\").delay(.8).gain(.25)\n\n$: note(\"C1\").sound(\"bd\").lpf(1000).room(.3512)\n\n$: note(\"7 12 c3 eb3\").s(\"gm_lead_6_voice\").pan(.3)\n"
+      "code": [
+        "$: s(\"gm_electric_bass_finger:2 EmuDrumulator_sd gm_church_organ:2 cowbell ~ ~ cowbell\").delay(.8).gain(.25)",
+        "",
+        "$: note(\"C1\").sound(\"bd\").lpf(1000).room(.3512)",
+        "",
+        "$: note(\"7 12 c3 eb3\").s(\"gm_lead_6_voice\").pan(.3)"
+      ]
     },
     {
       "id": "1_471",
       "seed": 472,
       "voices": 2,
-      "code": "$: note(\"Gm7 C7 Fmaj7 F3\").sound(\"sine\").lpf(3000).room(.5146)\n\n$: n(7).scale(\"D minor\").s(\"ocarina\").gain(.5166).hpf(8000).pan(\"0.2\")\n"
+      "code": [
+        "$: note(\"Gm7 C7 Fmaj7 F3\").sound(\"sine\").lpf(3000).room(.5146)",
+        "",
+        "$: n(7).scale(\"D minor\").s(\"ocarina\").gain(.5166).hpf(8000).pan(\"0.2\")"
+      ]
     },
     {
       "id": "1_472",
       "seed": 473,
       "voices": 2,
-      "code": "$: note(\"g2 f2 c3 g2\").sound(\"sawtooth\").attack(.001).release(2)\n\n$: s(\"ellipse\").distort(\"5:.3\").room(.2)\n"
+      "code": [
+        "$: note(\"g2 f2 c3 g2\").sound(\"sawtooth\").attack(.001).release(2)",
+        "",
+        "$: s(\"ellipse\").distort(\"5:.3\").room(.2)"
+      ]
     },
     {
       "id": "1_473",
       "seed": 474,
       "voices": 3,
-      "code": "$: s(\"oh\").velocity(.4497)\n\n$: n(\"c2 f2 g2 f2 ~ 2@2\")\n\n$: n(\"c2 ~ f2 ~ -1 -1 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~\")\n"
+      "code": [
+        "$: s(\"oh\").velocity(.4497)",
+        "",
+        "$: n(\"c2 f2 g2 f2 ~ 2@2\")",
+        "",
+        "$: n(\"c2 ~ f2 ~ -1 -1 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~\")"
+      ]
     },
     {
       "id": "1_474",
       "seed": 475,
       "voices": 2,
-      "code": "$: s(\"bd\").fast(1.2)\n\n$: s(\"vocal 1 2 4 8\")\n"
+      "code": [
+        "$: s(\"bd\").fast(1.2)",
+        "",
+        "$: s(\"vocal 1 2 4 8\")"
+      ]
     },
     {
       "id": "1_475",
       "seed": 476,
       "voices": 2,
-      "code": "$: note(\"c2*8\").sound(\"triangle\").lpf(2979).hpf(400).velocity(.78)\n\n$: s(\"gm_epiano1:1 mysaw gm_bandoneon mt\").lpf(2500).room(.1).gain(.2205)\n"
+      "code": [
+        "$: note(\"c2*8\").sound(\"triangle\").lpf(2979).hpf(400).velocity(.78)",
+        "",
+        "$: s(\"gm_epiano1:1 mysaw gm_bandoneon mt\").lpf(2500).room(.1).gain(.2205)"
+      ]
     },
     {
       "id": "1_476",
       "seed": 477,
       "voices": 2,
-      "code": "$: note(\"e4 g#4 e4 ~ b3 e4 e4 c4 b3@5 g#3@2 e3@4 b2@3 ~ b2@11 ~ 6\").sound(\"sawtooth\")\n\n$: s(\"sax\").gain(.5196).room(.4)\n"
+      "code": [
+        "$: note(\"e4 g#4 e4 ~ b3 e4 e4 c4 b3@5 g#3@2 e3@4 b2@3 ~ b2@11 ~ 6\").sound(\"sawtooth\")",
+        "",
+        "$: s(\"sax\").gain(.5196).room(.4)"
+      ]
     },
     {
       "id": "1_477",
       "seed": 478,
       "voices": 2,
-      "code": "$: note(\"d5\").s(\"gm_synth_strings_1 linn9000_bd gm_acoustic_guitar_steel:1 gm_pad_warm\").slow(2)\n\n$: n(\"1 0 -1 1 ~ 1 2 1 ~ 1 2 1 0 -1 -2 0 -1 0\").lpf(4000).speed(1).pan(\"0.2 -0.2\")\n"
+      "code": [
+        "$: note(\"d5\").s(\"gm_synth_strings_1 linn9000_bd gm_acoustic_guitar_steel:1 gm_pad_warm\").slow(2)",
+        "",
+        "$: n(\"1 0 -1 1 ~ 1 2 1 ~ 1 2 1 0 -1 -2 0 -1 0\").lpf(4000).speed(1).pan(\"0.2 -0.2\")"
+      ]
     },
     {
       "id": "1_478",
       "seed": 479,
       "voices": 3,
-      "code": "$: s(\"oh ~ ~ ~\").room(.8)\n\n$: note(\"e4 c4 b3@5\").sound(\"bd*2 ~\").lpf(2800).room(1.1923)\n\n$: s(\"piano\").gain(.448).release(.5)\n"
+      "code": [
+        "$: s(\"oh ~ ~ ~\").room(.8)",
+        "",
+        "$: note(\"e4 c4 b3@5\").sound(\"bd*2 ~\").lpf(2800).room(1.1923)",
+        "",
+        "$: s(\"piano\").gain(.448).release(.5)"
+      ]
     },
     {
       "id": "1_479",
       "seed": 480,
       "voices": 2,
-      "code": "$: s(\"bd:5\").slow(8)\n\n$: note(\"f4 c4 e4 g4\").sound(\"drum\").lpf(400)\n"
+      "code": [
+        "$: s(\"bd:5\").slow(8)",
+        "",
+        "$: note(\"f4 c4 e4 g4\").sound(\"drum\").lpf(400)"
+      ]
     },
     {
       "id": "1_480",
       "seed": 481,
       "voices": 2,
-      "code": "$: note(\"a1\").sound(\"drum\")\n\n$: s(\"rd\").fast(2)\n"
+      "code": [
+        "$: note(\"a1\").sound(\"drum\")",
+        "",
+        "$: s(\"rd\").fast(2)"
+      ]
     },
     {
       "id": "1_481",
       "seed": 482,
       "voices": 2,
-      "code": "$: s(\"square\").slow(2)\n\n$: note(\"e3\")\n"
+      "code": [
+        "$: s(\"square\").slow(2)",
+        "",
+        "$: note(\"e3\")"
+      ]
     },
     {
       "id": "1_482",
       "seed": 483,
       "voices": 2,
-      "code": "$: note(\"f6 d6 b5 ~\").sound(\"triangle\").lpf(2500).room(.4)\n\n$: note(\"~ a#4@2 f#4@2 g#4@2\")\n"
+      "code": [
+        "$: note(\"f6 d6 b5 ~\").sound(\"triangle\").lpf(2500).room(.4)",
+        "",
+        "$: note(\"~ a#4@2 f#4@2 g#4@2\")"
+      ]
     },
     {
       "id": "1_483",
       "seed": 484,
       "voices": 2,
-      "code": "$: s(\"sd\").slow(7)\n\n$: note(\"C2\")\n"
+      "code": [
+        "$: s(\"sd\").slow(7)",
+        "",
+        "$: note(\"C2\")"
+      ]
     },
     {
       "id": "1_484",
       "seed": 485,
       "voices": 2,
-      "code": "$: note(\"C1 F1 G1 C1\").sound(\"supersaw\")\n\n$: s(\"snare\").gain(.748)\n"
+      "code": [
+        "$: note(\"C1 F1 G1 C1\").sound(\"supersaw\")",
+        "",
+        "$: s(\"snare\").gain(.748)"
+      ]
     },
     {
       "id": "1_485",
       "seed": 486,
       "voices": 2,
-      "code": "$: n(\"-2 b\").scale(\"d3:minor:pentatonic\").transpose(8).orbit(3)\n\n$: s(\"gm_harmonica\").struct(\"x*4\").scale(\"c4:minor\").slow(2)\n"
+      "code": [
+        "$: n(\"-2 b\").scale(\"d3:minor:pentatonic\").transpose(8).orbit(3)",
+        "",
+        "$: s(\"gm_harmonica\").struct(\"x*4\").scale(\"c4:minor\").slow(2)"
+      ]
     },
     {
       "id": "1_486",
       "seed": 487,
       "voices": 2,
-      "code": "$: s(\"rd*3\")\n\n$: note(0)\n"
+      "code": [
+        "$: s(\"rd*3\")",
+        "",
+        "$: note(0)"
+      ]
     },
     {
       "id": "1_487",
       "seed": 488,
       "voices": 2,
-      "code": "$: note(\"g1 a#1 f#2 ~ g5 ~ c5 ~ e5 ~ c5 ~ f5 ~ d5 ~ e5 ~\")\n\n$: s(\"rd*3\").gain(\"0.2 0.4 0.3 0.5\")\n"
+      "code": [
+        "$: note(\"g1 a#1 f#2 ~ g5 ~ c5 ~ e5 ~ c5 ~ f5 ~ d5 ~ e5 ~\")",
+        "",
+        "$: s(\"rd*3\").gain(\"0.2 0.4 0.3 0.5\")"
+      ]
     },
     {
       "id": "1_488",
       "seed": 489,
       "voices": 2,
-      "code": "$: n(\"1 2*3 ~ 2 5 5 6 ~\").s(\"cp\").clip(.9978).release(.1)\n\n$: note(\"7 12 g#3@2 e3@4\").sound(\"square\").lpf(2800).gain(.7).room(.3532)\n"
+      "code": [
+        "$: n(\"1 2*3 ~ 2 5 5 6 ~\").s(\"cp\").clip(.9978).release(.1)",
+        "",
+        "$: note(\"7 12 g#3@2 e3@4\").sound(\"square\").lpf(2800).gain(.7).room(.3532)"
+      ]
     },
     {
       "id": "1_489",
       "seed": 490,
       "voices": 2,
-      "code": "$: note(\"D2\")\n\n$: s(\"gm_church_organ\").release(.1)\n"
+      "code": [
+        "$: note(\"D2\")",
+        "",
+        "$: s(\"gm_church_organ\").release(.1)"
+      ]
     },
     {
       "id": "1_490",
       "seed": 491,
       "voices": 2,
-      "code": "$: s(\"amencutup white*16 ballwhistle:1 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16\").gain(.4555)\n\n$: s(\"dino\").velocity(.7375).hpf(2000)\n"
+      "code": [
+        "$: s(\"amencutup white*16 ballwhistle:1 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16\").gain(.4555)",
+        "",
+        "$: s(\"dino\").velocity(.7375).hpf(2000)"
+      ]
     },
     {
       "id": "1_491",
       "seed": 492,
       "voices": 2,
-      "code": "$: s(\"gm_bassoon gm_fretless_bass\").lpf(3000).room(.4).delay(.5).gain(.15)\n\n$: n(\"G3 C4 E4 Ab3\")\n"
+      "code": [
+        "$: s(\"gm_bassoon gm_fretless_bass\").lpf(3000).room(.4).delay(.5).gain(.15)",
+        "",
+        "$: n(\"G3 C4 E4 Ab3\")"
+      ]
     },
     {
       "id": "1_492",
       "seed": 493,
       "voices": 2,
-      "code": "$: s(\"sine\").lpf(500).gain(.4).release(.06).attack(.1)\n\n$: n(\"4 3 4 5\").scale(\"C:major\").s(\"bd*4\").lpf(\"<[10 10 100]>\").gain(.35)\n"
+      "code": [
+        "$: s(\"sine\").lpf(500).gain(.4).release(.06).attack(.1)",
+        "",
+        "$: n(\"4 3 4 5\").scale(\"C:major\").s(\"bd*4\").lpf(\"<[10 10 100]>\").gain(.35)"
+      ]
     },
     {
       "id": "1_493",
       "seed": 494,
       "voices": 3,
-      "code": "$: note(\"d#5@2 ~ a4 d#5@3 ~ a4\")\n\n$: s(\"lead\").slow(4)\n\n$: n(\"~ 2@2 4 b 5 4 3 4 5 4 3 2 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 4@11 2 1 0 -1 0 4@5 3 2 1@2 1@2\").scale(\"D1 hirajoshi\").slow(8)\n"
+      "code": [
+        "$: note(\"d#5@2 ~ a4 d#5@3 ~ a4\")",
+        "",
+        "$: s(\"lead\").slow(4)",
+        "",
+        "$: n(\"~ 2@2 4 b 5 4 3 4 5 4 3 2 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 4@11 2 1 0 -1 0 4@5 3 2 1@2 1@2\").scale(\"D1 hirajoshi\").slow(8)"
+      ]
     },
     {
       "id": "1_494",
       "seed": 495,
       "voices": 3,
-      "code": "$: note(\"c4 c4@2 ~ c4*2\")\n\n$: sound(\"~\").lpf(600).gain(.8)\n\n$: s(\"recorder_tenor_sus bd@3\").slow(2)\n"
+      "code": [
+        "$: note(\"c4 c4@2 ~ c4*2\")",
+        "",
+        "$: sound(\"~\").lpf(600).gain(.8)",
+        "",
+        "$: s(\"recorder_tenor_sus bd@3\").slow(2)"
+      ]
     },
     {
       "id": "1_495",
       "seed": 496,
       "voices": 2,
-      "code": "$: s(\"hh*2\").clip(.9).scale(\"c3:major\")\n\n$: s(\"ocarina_vib\").delay(.4).gain(.3494)\n"
+      "code": [
+        "$: s(\"hh*2\").clip(.9).scale(\"c3:major\")",
+        "",
+        "$: s(\"ocarina_vib\").delay(.4).gain(.3494)"
+      ]
     },
     {
       "id": "1_496",
       "seed": 497,
       "voices": 2,
-      "code": "$: s(\"amen\")\n\n$: s(\"linndrum_oh\").gain(.5)\n"
+      "code": [
+        "$: s(\"amen\")",
+        "",
+        "$: s(\"linndrum_oh\").gain(.5)"
+      ]
     },
     {
       "id": "1_497",
       "seed": 498,
       "voices": 2,
-      "code": "$: s(\"psaltery_pluck\").slow(2)\n\n$: s(\"gm_electric_bass_finger 64 whirl attack\").velocity(1.9255)\n"
+      "code": [
+        "$: s(\"psaltery_pluck\").slow(2)",
+        "",
+        "$: s(\"gm_electric_bass_finger 64 whirl attack\").velocity(1.9255)"
+      ]
     },
     {
       "id": "1_498",
       "seed": 499,
       "voices": 2,
-      "code": "$: s(\"sax sd*4 lt*4 hh!3\").gain(.2).clip(1)\n\n$: s(\"gm_acoustic_bass\")\n"
+      "code": [
+        "$: s(\"sax sd*4 lt*4 hh!3\").gain(.2).clip(1)",
+        "",
+        "$: s(\"gm_acoustic_bass\")"
+      ]
     },
     {
       "id": "1_499",
       "seed": 500,
       "voices": 2,
-      "code": "$: note(\"e3 g3 b3 d4 g4 a3 c4 e4 a4 f3 a3 c4\").sound(\"sawtooth\").lpf(300).hpf(400).room(.9625)\n\n$: s(\"supersaw\").slow(12)\n"
+      "code": [
+        "$: note(\"e3 g3 b3 d4 g4 a3 c4 e4 a4 f3 a3 c4\").sound(\"sawtooth\").lpf(300).hpf(400).room(.9625)",
+        "",
+        "$: s(\"supersaw\").slow(12)"
+      ]
     }
   ]
 }

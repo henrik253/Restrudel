@@ -238,7 +238,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   for (let i = 0; i < n; i++) {
     const song = generateSong(seed + i);
     const header = `// synthetic strudel pattern — seed ${song.seed}, ${song.voices} voice(s)\n// generator: data_gen/generate.mjs (sampled from analysis/results/)\n\n`;
-    collected.push({ id: `${seed}_${i}`, seed: song.seed, voices: song.voices, code: song.code });
+    // code as an array of lines (renders as real newlines in the JSON, not "\n")
+    collected.push({ id: `${seed}_${i}`, seed: song.seed, voices: song.voices,
+      code: song.code.replace(/\n+$/, '').split('\n') });
     if (out) writeFileSync(join(out, `${seed}_${i}.js`), header + song.code);
     else if (!jsonPath) console.log(`${'='.repeat(60)}\n${header}${song.code}`);
   }
