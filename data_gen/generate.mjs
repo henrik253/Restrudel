@@ -221,6 +221,22 @@ export function generateSong(seed) {
   return { code: lines.join('\n\n') + '\n', voices: lines.length, seed };
 }
 
+// ---------- YAML output ------------------------------------------------------
+// Hand-rolled (no deps). `code` uses a literal block scalar `|` so the pattern
+// keeps real newlines with no quote-escaping and no blank-line placeholders.
+function toYaml({ generator, params, count, songs }) {
+  const L = [`generator: ${generator}`, 'params:'];
+  for (const [k, v] of Object.entries(params)) L.push(`  ${k}: ${v}`);
+  L.push(`count: ${count}`, 'songs:');
+  for (const s of songs) {
+    L.push(`  - id: ${s.id}`, `    seed: ${s.seed}`, `    voices: ${s.voices}`);
+    if (!s.code) { L.push('    code: ""'); continue; }
+    L.push('    code: |');
+    for (const line of s.code.split('\n')) L.push(line === '' ? '' : `      ${line}`);
+  }
+  return L.join('\n') + '\n';
+}
+
 // ---------- CLI --------------------------------------------------------------
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const arg = (name, dflt) => {
@@ -229,8 +245,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   };
   const n = parseInt(arg('n', '5'), 10);
   const seed = parseInt(arg('seed', '42'), 10);
-  const out = arg('out', null);        // dir of individual .js files
-  const jsonPath = arg('json', null);  // single JSON file with all songs
+  const out = arg('out', null);          // dir of individual .js files
+  const yamlPath = arg('yaml', null);    // single YAML file with all songs
   TEMP = parseFloat(arg('temp', String(TEMP)));
 
   if (out) mkdirSync(out, { recursive: true });
@@ -238,20 +254,19 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   for (let i = 0; i < n; i++) {
     const song = generateSong(seed + i);
     const header = `// synthetic strudel pattern — seed ${song.seed}, ${song.voices} voice(s)\n// generator: data_gen/generate.mjs (sampled from analysis/results/)\n\n`;
-    // code as an array of lines (renders as real newlines in the JSON, not "\n")
     collected.push({ id: `${seed}_${i}`, seed: song.seed, voices: song.voices,
-      code: song.code.replace(/\n+$/, '').split('\n') });
+      code: song.code.replace(/\n+$/, '') });
     if (out) writeFileSync(join(out, `${seed}_${i}.js`), header + song.code);
-    else if (!jsonPath) console.log(`${'='.repeat(60)}\n${header}${song.code}`);
+    else if (!yamlPath) console.log(`${'='.repeat(60)}\n${header}${song.code}`);
   }
-  if (jsonPath) {
-    mkdirSync(dirname(jsonPath), { recursive: true });
-    writeFileSync(jsonPath, JSON.stringify({
+  if (yamlPath) {
+    mkdirSync(dirname(yamlPath), { recursive: true });
+    writeFileSync(yamlPath, toYaml({
       generator: 'data_gen/generate.mjs',
       params: { n, seed, temp: TEMP, max_order: MAX_ORDER },
       count: collected.length, songs: collected,
-    }, null, 2));
-    console.log(`wrote ${collected.length} songs to ${jsonPath}`);
+    }));
+    console.log(`wrote ${collected.length} songs to ${yamlPath}`);
   } else if (out) {
     console.log(`wrote ${n} songs to ${out}`);
   }

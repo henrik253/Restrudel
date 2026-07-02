@@ -12,11 +12,12 @@ Node tooling that turns Strudel pattern strings into training samples.
   ```bash
   node data_gen/generate.mjs --n 10 --seed 42                       # print to stdout
   node data_gen/generate.mjs --n 500 --seed 1 --out tmp/           # {seed}_{i}.js files
-  node data_gen/generate.mjs --n 500 --seed 1 --json out.json      # one JSON file
+  node data_gen/generate.mjs --n 500 --seed 1 --yaml out.yaml      # one YAML file
   node data_gen/generate.mjs --n 10 --temp 0.5                     # more volatile content
   ```
-  `--json` writes `{ generator, params, count, songs:[{id, seed, voices, code}] }`
-  where each `code` is an **array of lines** (real newlines in the file, not `\n`).
+  `--yaml` writes `generator`, `params`, `count`, and `songs: [{id, seed, voices,
+  code}]`, where each `code` is a YAML literal block scalar (`|`) — real newlines,
+  no quote-escaping, no blank-line placeholders.
 
 - **Labels (Part A):** evaluate a pattern → `queryArc` → haps → MIDI/events JSON.
   Deterministic, exact, no audio. *(Phase 2 — next; also the validity gate for
