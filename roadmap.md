@@ -11,6 +11,10 @@ The later MIDI→Strudel stage and end-to-end demo remain in
 [project_plan.md](project_plan.md) until this works. **AWS is out of scope for now**
 (a possible scale fallback later, not the plan).
 
+> **🔥 Current priority: the data-generation pipeline (Phase 4, with Phases 2–3
+> as its prerequisites).** Sources → analysis → sample new Strudel code from the
+> measured distributions → render to WAV + labels → fine-tuning dataset.
+
 ## Guiding principles
 - **Data-driven, not random.** We do *not* generate uniform-random notes. We
   first measure which **sounds/synths/effects real Strudel songs actually use**,
@@ -123,18 +127,87 @@ songs use — the evidence that drives generation.
 - [ ] Render from the **same pattern string** used for labels (guarantees alignment).
 - [ ] Standardize output: 16 kHz mono WAV (matches AMT front end in project_plan).
 
-## Phase 4 — Synthetic data generation (distribution-weighted)
-**Outcome:** the actual training corpus of aligned triples, in Drive.
+## Phase 4 — Synthetic data generation 🔥 (HIGHEST PRIORITY)
+**Outcome:** the actual training corpus of aligned triples, in Drive — the data
+YourMT3+ gets fine-tuned on. **This is the job right now.**
 
-- [ ] Parametric templates in `data_gen/templates/`: bassline, arp, chord stab,
-      lead, drum loop, pad.
-- [ ] **Weight randomization by Phase 1 distributions** (sound choice, effect use,
-      tempo, polyphony) — not uniform. Add controlled timbral diversity
-      (oscillator, `lpf`/resonance, ADSR, FX) for coverage YourMT3+ lacks.
-- [ ] Orchestrate in `notebooks/10_generate.ipynb`: for each sample → pattern
-      string → (labels + audio) → write all artifacts to Drive + append manifest.
-- [ ] Start with a small batch (e.g. 500) → sanity-check audio/MIDI alignment →
-      scale up.
+### The pipeline, end to end
+
+```
+        (1) SOURCES              (2) ANALYSIS                (3) GENERATION
+  corpus/sources/*  ──────▶  01_corpus_analysis.ipynb ──▶  sample new Strudel code
+  (git submodules today;      → analysis/results/*.json      from the measured
+   websites/scrapes later)      (weights, probs, Markov)     distributions
+                                                                   │
+        (5) FINE-TUNE DATA           (4) RENDER & LABEL            ▼
+  dataset/ + manifest.jsonl  ◀──  same code string → WAV      synthetic .js
+  audio → Drive (DVC),            (Phase 3 renderer) and      pattern files
+  rest → git                      → MIDI/events (Phase 2)
+```
+
+The defining property: **we re-create Strudel code from the corpus's measured
+probability distributions** — not uniform-random notes. Every generated song is
+statistically shaped like real Strudel music, but synthetic, unlimited in
+quantity, and perfectly labeled (the code *is* the ground truth).
+
+### Stage by stage
+
+**(1) Sources — pluggable.** Today: the 8 corpus submodules. Later: more repos,
+strudel.cc shared links, forum scrapes. Adding a source only means re-running the
+analysis; nothing downstream changes. Keep the source list in one place so the
+pipeline stays extensible.
+
+**(2) Analysis — already built.** `notebooks/01_corpus_analysis.ipynb` distills
+the corpus into machine-readable distributions in `analysis/results/*.json`
+(consistent envelope, `weight`/`prob` fields ready for sampling):
+`sounds.json`, `functions.json`, `banks.json`, `mini_notation.json`,
+`sound_categories.json`, `complexity.json`, `transitions.json` (depth-1/depth-2
+Markov chains of what-follows-what).
+
+**(3) Generation — the new build.** `data_gen/generate.mjs` samples from those
+JSONs to emit new `.js` pattern files:
+- [x] **Sampler core** (`data_gen/generate.mjs`): chain-building by walking
+      `transitions.json` — draw the head from `heads`, then repeat
+      P(next | current) over `depth1[current].successors` until `__END__`;
+      argument content per function from `arguments.json` (numeric: observed
+      common values or quantile interpolation; string: weighted observed
+      strings). Guards: head/successor whitelists (JS noise, code-arg
+      functions), one sound/pitch assignment per chain.
+- [x] **Analysis upgraded for the sampler** (notebook §8b): chain **heads**,
+      chain **ends** (`__END__`), and **per-function argument distributions** →
+      `transitions.v2` + `arguments.json`.
+- [x] **Content synthesis, not sampling** (notebook §8c → `content_models.json`):
+      note/sample sequences inside `note`/`n`/`s`/`sound` are generated
+      token-by-token — draw a length from P(count), then a **variable-order
+      back-off Markov model** (condition on the longest seen prefix, back off to
+      shorter contexts, then unigram) with **temperature** `t` (default 0.2) for
+      volatility. Back-off fixes dominant-token alternation (`note` adjacent-repeat
+      0.11→0.08, ≈ corpus 0.05); ~73% of sequence strings are novel.
+- [ ] **Structure, still to do:** voices from `complexity.json` ✅; mini-notation
+      *structure* (`[]`, `<>`, euclid, `*`) is not yet synthesized around the
+      tokens (flat sequences for now); optional templates
+      (bassline/arp/lead/drums) as skeletons; higher-order (depth-2) token model.
+- [ ] **Validity gate:** every generated pattern must evaluate in the Strudel
+      engine (Phase 2 evaluator) — reject/resample on error, so only playable
+      code enters the dataset. *(needs Phase 2)*
+- [x] **Reproducibility:** seeded RNG (mulberry32), seed recorded per song;
+      - [ ] still to do: manifest row with seed + generator version per sample.
+
+**(4) Render & label — reuse Phases 2–3.** For each generated code string:
+labels via `queryArc` → MIDI/events (Phase 2), audio via the offline renderer →
+16 kHz mono WAV (Phase 3). Same string in, so audio/labels can't drift.
+
+**(5) Package for fine-tuning.** Write `dataset/{code,midi,events}/{id}.*` to
+git, `dataset/audio/{id}.wav` to Drive via DVC, one manifest row per sample
+(id, seed, template, sounds used, params, split). This is exactly what Phase 6
+consumes.
+
+### Order of work (since Phases 2–3 are prerequisites)
+1. [ ] **Phase 2 labeler** (`labels.mjs`) — also serves as the validity gate.
+2. [ ] **Phase 3 renderer spike** (`render.mjs`) — the main technical risk.
+3. [ ] **Generator** (`generate.mjs`) — sampler core → structure → gate.
+4. [ ] **Pilot batch (~500 samples)** → listen, check MIDI alignment, inspect
+       distribution of generated vs. corpus stats → then scale up.
 
 ## Phase 5 — Dataset packaging
 **Outcome:** training-ready dataset.
@@ -171,7 +244,8 @@ Fine-tuning the released checkpoint on our synth data tests the thesis in
 2. **M2 — Analysis:** distributions of real Strudel sounds plotted & reviewed. (Ph 1) ⭐
 3. **M3 — Labels:** pattern → MIDI/events working & verified. (Ph 2)
 4. **M4 — Audio:** scalable WAV render validated (offline or fallback). (Ph 3)
-5. **M5 — Dataset:** first weighted batch of aligned triples in Drive. (Ph 4–5)
+5. **M5 — Dataset:** pilot batch of distribution-sampled songs rendered, labeled,
+   and in Drive; generated stats match corpus stats. (Ph 4–5) 🔥
 6. **M6 — Fine-tune:** YourMT3+ beats its own baseline on electronic clips. (Ph 6) 🎯
 
 ## Open questions / risks

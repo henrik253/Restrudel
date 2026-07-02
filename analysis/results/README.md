@@ -30,14 +30,18 @@ conditional probability. Both are ready for direct weighted sampling.
 | `mini_notation.json` | `items[]`: `{feature, patterns, fraction}` | how often to use `[]`,`<>`,euclid,… |
 | `sound_categories.json` | `items[]`: `{category, occurrences, weight}` | synth vs sample mix |
 | `complexity.json` | `voices`, `functions_per_pattern` (describe stats), `patterns_with_tempo` | target realistic size/polyphony |
-| `transitions.json` | `n_chains`, `top_bigrams[]`, `depth1{}`, `depth2{}` | **Markov chain** for method order |
+| `transitions.json` | `heads{}`, `n_chains`, `top_bigrams[]`, `depth1{}`, `depth2{}` | **Markov chain**: start, next, stop |
+| `arguments.json` | `functions{}`: numeric + categorical arg stats | **P(content \| function)** — numeric values, categorical whole-value strings |
+| `content_models.json` | `functions{}`: token-Markov per sequence fn | **generate NEW note/sample sequences** (length + note→note) |
 
-### transitions.json
+### transitions.json (v2)
 ```json
 {
+  "heads": { "total": 5447, "items": [ {"name": "s", "count": 730, "prob": 0.134}, ... ] },
   "depth1": {
-    "s": { "total": 1383,
-           "successors": [ {"name": "gain", "count": 329, "prob": 0.238}, ... ] }
+    "s": { "total": 1526,
+           "successors": [ {"name": "slow", "prob": 0.312}, {"name": "gain", "prob": 0.216},
+                           {"name": "__END__", "prob": 0.094}, ... ] }
   },
   "depth2": {
     "s": { "total": 521,
@@ -45,7 +49,49 @@ conditional probability. Both are ready for direct weighted sampling.
   }
 }
 ```
-To build a chain: start from a head (`s`/`note`/`n`/`stack`), then repeatedly
-sample the next call from `depth1[current].successors` by `prob` (use `depth2`
-for 2-step lookahead). This reproduces idiomatic chains like
-`note → s → lpf → room → gain`.
+- `heads` = P(a chain **starts** with fn) — the generator's first draw.
+- `__END__` successors = P(the chain **stops** after fn) — so "next or stop" is
+  one weighted draw over `depth1[current].successors`.
+- `depth2` = two-step paths for lookahead.
+
+### arguments.json
+Per function, what goes **inside** the parentheses, split by kind:
+```json
+{ "functions": { "gain": {
+    "total": 827, "p_numeric": 0.81, "p_string": 0.07, "p_other": 0.12,
+    "numeric": { "min": 0, "max": 4, "quantiles": [q05,q25,q50,q75,q95],
+                 "common": [ {"value": 0.5, "prob": 0.17}, ... ] },
+    "strings": [ {"value": "[1 0.6]*2", "prob": 0.05}, ... ] } } }
+```
+`p_other` counts non-literal args (arrow functions, nested patterns) that the
+generator currently skips. Numeric args and *categorical* string args
+(`bank`, `scale`, `vowel`) are sampled from here; **sequence** string content
+(`note`/`n`/`s`/`sound`) is instead generated from `content_models.json`.
+
+### content_models.json (v2)
+The inside of a `note`/`n`/`s`/`sound` string is modelled as a **token
+sequence**. We export the raw tokenized `sequences` so the generator can build a
+**variable-order back-off Markov model** at runtime (not just fixed bigrams):
+```json
+{ "functions": { "note": {
+    "n_strings": 325, "vocab_size": 215,
+    "length": { "counts": {"1": 100, "4": 83, "16": 18, ...}, "mean": 5.48 },
+    "start": [ {"token": "c3", "prob": 0.197}, ... ],
+    "sequences": [ ["c4","e4","g4"], ["c2","f2"], ... ] } } }
+```
+Generate a string: draw a token count from `length`, draw the first token from
+`start`, then for each next token **condition on the longest suffix of the
+sequence so far that was seen in the corpus** (order ≤ 6), backing off to shorter
+contexts and finally the unigram. This fixes dominant-token *alternation*
+(`c3 e3 c3 e3 …`): after `c3 e3`, the order-2 context predicts the real phrase
+continuation (`g3`) rather than bouncing back to `c3`. Sampling uses a
+**temperature** `t` (`weightᵢ = pᵢ^t`; `t=1` empirical, `t<1` more volatile,
+default `0.2`) for exploration/novelty.
+
+### How the generator uses these
+`data_gen/generate.mjs`: draw a head from `heads` → fill its content
+(numeric/categorical from `arguments.json`; note/sample **sequences** from
+`content_models.json` via the variable-order back-off model above) → draw the
+next function from `depth1[current]` until `__END__` → repeat per voice, with
+voice count from `complexity.json`. Seeded + `--temp` tunable, so every song is
+reproducible.
