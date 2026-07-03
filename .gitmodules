@@ -1,32 +1,32 @@
-[submodule "corpus/sources/strudel-songs-collection"]
-	path = corpus/sources/strudel-songs-collection
+[submodule "corpus/github/strudel-songs-collection"]
+	path = corpus/github/strudel-songs-collection
 	url = https://github.com/eefano/strudel-songs-collection.git
 	shallow = true
-[submodule "corpus/sources/strudel-mcp-server"]
-	path = corpus/sources/strudel-mcp-server
+[submodule "corpus/github/strudel-mcp-server"]
+	path = corpus/github/strudel-mcp-server
 	url = https://github.com/williamzujkowski/strudel-mcp-server.git
 	shallow = true
-[submodule "corpus/sources/strudel_trance"]
-	path = corpus/sources/strudel_trance
+[submodule "corpus/github/strudel_trance"]
+	path = corpus/github/strudel_trance
 	url = https://github.com/honcoops/strudel_trance.git
 	shallow = true
-[submodule "corpus/sources/strudel-sampler-mixes"]
-	path = corpus/sources/strudel-sampler-mixes
+[submodule "corpus/github/strudel-sampler-mixes"]
+	path = corpus/github/strudel-sampler-mixes
 	url = https://github.com/yakuzadave/strudel-sampler-mixes.git
 	shallow = true
-[submodule "corpus/sources/strudel-coding-music"]
-	path = corpus/sources/strudel-coding-music
+[submodule "corpus/github/strudel-coding-music"]
+	path = corpus/github/strudel-coding-music
 	url = https://github.com/craii/strudel-coding-music.git
 	shallow = true
-[submodule "corpus/sources/strudel-using-local-samples"]
-	path = corpus/sources/strudel-using-local-samples
+[submodule "corpus/github/strudel-using-local-samples"]
+	path = corpus/github/strudel-using-local-samples
 	url = https://github.com/ideamonad/strudel-using-local-samples.git
 	shallow = true
-[submodule "corpus/sources/strudelplay"]
-	path = corpus/sources/strudelplay
+[submodule "corpus/github/strudelplay"]
+	path = corpus/github/strudelplay
 	url = https://github.com/therebelrobot/strudelplay.git
 	shallow = true
-[submodule "corpus/sources/uzu-strudel"]
-	path = corpus/sources/uzu-strudel
+[submodule "corpus/github/uzu-strudel"]
+	path = corpus/github/uzu-strudel
 	url = https://codeberg.org/uzu/strudel.git
 	shallow = true

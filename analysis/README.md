@@ -4,7 +4,7 @@ Corpus sound-distribution analysis (roadmap Phase 1).
 
 The analysis lives in the notebook
 [`../notebooks/01_corpus_analysis.ipynb`](../notebooks/01_corpus_analysis.ipynb):
-it loads the Strudel pattern corpus from `corpus/sources/` (git submodules),
+it loads the Strudel pattern corpus from `corpus/github/` (git submodules),
 extracts 855+ unique pattern snippets, and produces statistics + plots for every
 kind of Strudel element — synths, drums/samples, drum-machine banks,
 transformations/functions (categorized), mini-notation features, and pattern

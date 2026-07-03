@@ -30,7 +30,7 @@ transcription needed to get labels.
 ## Current state (what exists)
 - **Phase 0–1 done.** Phase 2+ not started; see roadmap.
 - **Corpus** of 8 third-party Strudel repos as **shallow git submodules** under
-  `corpus/sources/` (GPL code referenced, not vendored). Re-install with
+  `corpus/github/` (GPL code referenced, not vendored). Re-install with
   `git clone --recursive` or `git submodule update --init --recursive`.
 - **Analysis** (`analysis/analyze_corpus.py`) extracted 855 unique patterns and
   ranked sound/synth/effect usage → `analysis/out/` + `analysis/REPORT.md`.
@@ -41,7 +41,7 @@ transcription needed to get labels.
 ## Repo layout
 - `project_plan.md` — goals, YourMT3+ analysis, data strategy.
 - `roadmap.md` — phased plan; **the source of truth for next steps**.
-- `corpus/sources/*` — Strudel song/pattern submodules (input to analysis).
+- `corpus/github/*` — Strudel song/pattern submodules (input to analysis).
 - `analysis/` — outputs of the corpus analysis: plots in `out/`, machine-readable
   stats in `results/*.json` (with sampling weights/probs, for `data_gen/`).
 - `data_gen/` — (Phase 2+) Node tooling: pattern→MIDI labels, audio render, generators.

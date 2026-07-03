@@ -87,7 +87,7 @@ Turning a Strudel pattern into a WAV has two modes:
 **Outcome:** ranked distributions of which sounds/synths/effects real Strudel
 songs use — the evidence that drives generation.
 
-- [x] **Fetch all available Strudel songs** into `corpus/sources/` (9 repos +
+- [x] **Fetch all available Strudel songs** into `corpus/github/` (9 repos +
       Codeberg monorepo docs; ~100 MB, < 2 GB budget). → 855 unique snippets.
 - [x] **Parse** each file and extract usage of (`notebooks/01_corpus_analysis.ipynb`):
   - sound sources: `s("...")` / `sound("...")` values, `n(...)`, synth waveforms
@@ -135,7 +135,7 @@ YourMT3+ gets fine-tuned on. **This is the job right now.**
 
 ```
         (1) SOURCES              (2) ANALYSIS                (3) GENERATION
-  corpus/sources/*  ──────▶  01_corpus_analysis.ipynb ──▶  sample new Strudel code
+  corpus/github/*  ──────▶  01_corpus_analysis.ipynb ──▶  sample new Strudel code
   (git submodules today;      → analysis/results/*.json      from the measured
    websites/scrapes later)      (weights, probs, Markov)     distributions
                                                                    │
