@@ -15,3 +15,5 @@ models/
 node_modules/
 # demo notebook outputs
 notebooks/out/
+# per-run pipeline output folders (scripts/run_pipeline.py)
+runs/
