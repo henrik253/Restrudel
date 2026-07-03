@@ -19,15 +19,15 @@ from pathlib import Path
 import mido
 import numpy as np
 
-SR = 44100
+SR = 44100  # default; render_midi_to_wav(sr=...) overrides (e.g. 16000 for training data)
 TAIL = 0.5  # seconds of silence after the last note-off
 
 
-def _adsr(n: int, attack=0.005, release=0.06) -> np.ndarray:
+def _adsr(n: int, sr: int, attack=0.005, release=0.06) -> np.ndarray:
     """Pluck envelope: quick attack, exponential body, short release."""
     env = np.ones(n)
-    a = min(int(attack * SR), n)
-    r = min(int(release * SR), n)
+    a = min(int(attack * sr), n)
+    r = min(int(release * sr), n)
     if a:
         env[:a] = np.linspace(0, 1, a)
     body = np.exp(-np.linspace(0, 3, n))  # gentle decay across the note
@@ -37,15 +37,15 @@ def _adsr(n: int, attack=0.005, release=0.06) -> np.ndarray:
     return env
 
 
-def _pitched(freq: float, dur: float, amp: float) -> np.ndarray:
-    n = int(dur * SR)
+def _pitched(freq: float, dur: float, amp: float, sr: int) -> np.ndarray:
+    n = int(dur * sr)
     if n <= 0:
         return np.zeros(0)
-    t = np.arange(n) / SR
+    t = np.arange(n) / sr
     wave = np.zeros(n)
     for k, gain in enumerate((1.0, 0.5, 0.25), start=1):  # first 3 harmonics
         wave += gain * np.sin(2 * np.pi * freq * k * t)
-    return amp * wave / 1.75 * _adsr(n)
+    return amp * wave / 1.75 * _adsr(n, sr)
 
 
 # GM percussion note -> (decay seconds, optional body-sine Hz)
@@ -59,10 +59,10 @@ _DRUM_VOICE = {
 }
 
 
-def _drum(note: int, amp: float) -> np.ndarray:
+def _drum(note: int, amp: float, sr: int) -> np.ndarray:
     decay, body_hz = _DRUM_VOICE.get(note, (0.15, None))
-    n = int(decay * SR)
-    t = np.arange(n) / SR
+    n = int(decay * sr)
+    t = np.arange(n) / sr
     env = np.exp(-t / (decay / 4))
     sig = np.random.default_rng(note).uniform(-1, 1, n) * env
     if body_hz:  # kick gets a pitched thump under the noise
@@ -92,16 +92,16 @@ def _notes(path: Path):
                            msg.note, msg.channel == 9, vel)
 
 
-def render_midi_to_wav(midi_path: Path, wav_path: Path) -> Path:
+def render_midi_to_wav(midi_path: Path, wav_path: Path, sr: int = SR) -> Path:
     midi_path, wav_path = Path(midi_path), Path(wav_path)
     notes = list(_notes(midi_path))
     total = max((s + d for s, d, *_ in notes), default=1.0) + TAIL
-    buf = np.zeros(int(total * SR) + SR)
+    buf = np.zeros(int(total * sr) + sr)
     for start, dur, note, is_drum, vel in notes:
         amp = 0.3 * (vel / 127)
-        seg = _drum(note, amp) if is_drum else _pitched(
-            440 * 2 ** ((note - 69) / 12), min(dur, 1.5) + 0.1, amp)
-        i = int(start * SR)
+        seg = _drum(note, amp, sr) if is_drum else _pitched(
+            440 * 2 ** ((note - 69) / 12), min(dur, 1.5) + 0.1, amp, sr)
+        i = int(start * sr)
         buf[i:i + len(seg)] += seg
 
     peak = np.max(np.abs(buf)) or 1.0
@@ -111,7 +111,7 @@ def render_midi_to_wav(midi_path: Path, wav_path: Path) -> Path:
         f.write(b"RIFF")
         f.write(struct.pack("<I", 36 + len(data)))
         f.write(b"WAVEfmt ")
-        f.write(struct.pack("<IHHIIHH", 16, 1, 1, SR, SR * 2, 2, 16))
+        f.write(struct.pack("<IHHIIHH", 16, 1, 1, sr, sr * 2, 2, 16))
         f.write(b"data")
         f.write(struct.pack("<I", len(data)))
         f.write(data)

@@ -17,3 +17,6 @@ node_modules/
 notebooks/out/
 # per-run pipeline output folders (scripts/run_pipeline.py)
 runs/
+# training datasets: built by scripts/dataset/*, synced to Google Drive via
+# scripts/dataset/sync_drive.sh — never committed
+datasets/
