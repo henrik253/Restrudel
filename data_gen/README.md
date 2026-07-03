@@ -29,7 +29,19 @@ Node tooling that turns Strudel pattern strings into training samples.
 - **Labels (Part A):** evaluate a pattern → `queryArc` → haps → MIDI/events JSON.
   Deterministic, exact, no audio. *(Phase 2 — next; also the validity gate for
   generated code)*
-- **Audio (Part B):** render the same pattern → WAV via `OfflineAudioContext`
-  (faster-than-realtime); headless-browser fallback. *(Phase 3)*
+- **Audio (Part B, spike passed): `render_offline.mjs`** — Strudel pattern
+  string → WAV with SuperDough driven by `node-web-audio-api`'s
+  `OfflineAudioContext`: headless, faster-than-realtime, synths *and* remote
+  sample banks (e.g. `.bank("RolandTR909")`). Demo:
+  [`../notebooks/03_yourmt3_demo.ipynb`](../notebooks/03_yourmt3_demo.ipynb).
+
+  ```bash
+  node render_offline.mjs --code 'note("c2 eb2").s("sawtooth")' --out out.wav
+  node render_offline.mjs --file song.js --cycles 8 --sr 16000 --out song.wav
+  ```
+  Known limits: AudioWorklet FX (`crush`, `distort`, `coarse`, `djf`, …) don't
+  load under node-web-audio-api yet (native-node FX like `lpf`/`room`/`delay`
+  are fine). Requires `npm install` in `data_gen/` (a `postinstall` hook fixes
+  `@kabelsalat/web`'s broken entry point for Node).
 
 See [../roadmap.md](../roadmap.md). Pure JS so it runs in Node (incl. Colab).

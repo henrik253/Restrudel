@@ -119,8 +119,13 @@ songs use — the evidence that drives generation.
 ## Phase 3 — Audio renderer (Part B: pattern → WAV), scalable
 **Outcome:** batch WAV rendering, faster-than-realtime, aligned with Phase 2 labels.
 
-- [ ] **Spike:** run SuperDough under `node-web-audio-api` + `OfflineAudioContext`;
+- [x] **Spike:** run SuperDough under `node-web-audio-api` + `OfflineAudioContext`;
       render one known pattern; verify it sounds correct vs strudel.cc.
+      → **passed**: `data_gen/render_offline.mjs` renders synths *and* sample
+      banks (TR-909) offline; demoed end-to-end (Strudel → WAV → YourMT3+ →
+      MIDI) in `notebooks/03_yourmt3_demo.ipynb`. Caveats: AudioWorklet-based
+      FX (crush/distort/coarse) don't load under node-web-audio-api yet;
+      `stop()` idempotence shim needed (see script header).
 - [ ] If spike passes → `data_gen/render.mjs` batch renderer (offline, parallel).
 - [ ] If spike fails → fallback `render_browser.mjs` (Puppeteer drives a local
       `@strudel/web` page + WAV export); accept near-real-time.

@@ -7,3 +7,11 @@ separated/
 midi_out/
 *.wav
 *.mp4
+
+# YourMT3+ code + checkpoint (re-fetch: scripts/fetch_yourmt3.py)
+models/
+# python venv + node deps
+.venv/
+node_modules/
+# demo notebook outputs
+notebooks/out/
