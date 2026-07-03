@@ -44,4 +44,4 @@ Node tooling that turns Strudel pattern strings into training samples.
   are fine). Requires `npm install` in `data_gen/` (a `postinstall` hook fixes
   `@kabelsalat/web`'s broken entry point for Node).
 
-See [../roadmap.md](../roadmap.md). Pure JS so it runs in Node (incl. Colab).
+See [../docs/roadmap.md](../docs/roadmap.md). Pure JS so it runs in Node (incl. Colab).

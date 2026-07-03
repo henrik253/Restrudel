@@ -24,9 +24,9 @@ The later MIDI→Strudel stage and end-to-end demo remain in
   yielding perfectly-aligned **(audio WAV, MIDI/events, Strudel code)**.
 - **Large data off this machine — but only the large data.** Code, the fetched
   corpus (~MB of `.js`), analysis plots, and MIDI/events are small → they live in
-  **git**. Only the **GB-scale WAV audio** goes to **Google Drive**, versioned
-  with **DVC** (only tiny `.dvc` pointers are committed; the audio state is pinned
-  to the git commit). Setup + workflow: [docs/dvc.md](docs/dvc.md).
+  **git**. Only the **GB-scale WAV audio** goes to **Google Drive** (sync
+  mechanism TBD when the audio phase lands — DVC was scaffolded then removed as
+  unused).
 
 ## Environment decisions (locked)
 - **Compute (Phase 1–2):** run **locally** (Node + Python), artifacts committed to
@@ -34,7 +34,7 @@ The later MIDI→Strudel stage and end-to-end demo remain in
 - **Compute (Phase 3–4, heavy):** local or a VM; Colab optional. The authored
   `notebooks/00_setup.ipynb` (Drive mount + Node) is kept for that stage.
 - **Storage:** git for code + small artifacts (corpus, analysis, MIDI);
-  **DVC → Google Drive** for the WAV dataset only ([docs/dvc.md](docs/dvc.md)).
+  **Google Drive** for the WAV dataset only (sync mechanism TBD).
 - **Audio render (Part B):** `OfflineAudioContext` (faster-than-realtime) first;
   headless browser as proven fallback. Validated by a spike before we depend on it.
 - **Training (Goal 2):** **fine-tune** the released YourMT3+ checkpoint — *not* train
@@ -75,11 +75,11 @@ Turning a Strudel pattern into a WAV has two modes:
     code/{id}.js     # the source pattern
     manifest.jsonl   # one row per sample → all artifacts + params + split
   ```
-- [x] **DVC → Drive** for heavy audio: `dvc init` done, `scripts/setup_dvc_remote.sh`
-      + [docs/dvc.md](docs/dvc.md) added. `dataset/audio/` is DVC-tracked; the WAVs
-      land in Drive and only `dataset/audio.dvc` is committed. Drive layout:
+- [ ] **Heavy audio → Google Drive:** decide the sync mechanism (DVC was set up
+      then removed as unused). `dataset/audio/` (16 kHz mono WAV renders) lives in
+      Drive; git keeps only the small artifacts. Drive layout:
   ```
-  <drive_folder>/...        # DVC-managed content (16 kHz mono WAV renders)
+  <drive_folder>/...        # 16 kHz mono WAV renders
   ```
 - [ ] Decide reproducibility basics: pin Strudel package versions, seed RNG.
 
@@ -146,7 +146,7 @@ YourMT3+ gets fine-tuned on. **This is the job right now.**
                                                                    │
         (5) FINE-TUNE DATA           (4) RENDER & LABEL            ▼
   dataset/ + manifest.jsonl  ◀──  same code string → WAV      synthetic .js
-  audio → Drive (DVC),            (Phase 3 renderer) and      pattern files
+  audio → Drive,                  (Phase 3 renderer) and      pattern files
   rest → git                      → MIDI/events (Phase 2)
 ```
 
@@ -203,7 +203,7 @@ labels via `queryArc` → MIDI/events (Phase 2), audio via the offline renderer 
 16 kHz mono WAV (Phase 3). Same string in, so audio/labels can't drift.
 
 **(5) Package for fine-tuning.** Write `dataset/{code,midi,events}/{id}.*` to
-git, `dataset/audio/{id}.wav` to Drive via DVC, one manifest row per sample
+git, `dataset/audio/{id}.wav` to Drive, one manifest row per sample
 (id, seed, template, sounds used, params, split). This is exactly what Phase 6
 consumes.
 

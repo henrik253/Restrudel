@@ -9,23 +9,8 @@ Each sample is an aligned triple produced from one source Strudel pattern:
 | `midi/{id}.mid`        | **git**    | rendered MIDI                                     |
 | `events/{id}.json`     | **git**    | haps + synth params used                          |
 | `manifest.jsonl`       | **git**    | one row per sample → all artifacts + params + split |
-| `audio/{id}.wav`       | **DVC**    | 16 kHz mono renders → Google Drive (GB-scale)    |
+| `audio/{id}.wav`       | **Google Drive** | 16 kHz mono renders (GB-scale), synced separately |
 
 Small symbolic artifacts live directly in git. The **heavy WAV audio** is stored
-in Google Drive via **DVC** — only the `dataset/audio.dvc` pointer file is
-committed. See [../docs/dvc.md](../docs/dvc.md) for setup and the
-push/pull workflow.
-
-## Quick reference
-
-```bash
-# after WAV renders exist (Phase 3+):
-dvc add dataset/audio                      # creates dataset/audio.dvc + .gitignore entry
-git add dataset/audio.dvc dataset/.gitignore
-git commit -m "Track audio renders with DVC"
-dvc push                                   # upload WAVs to Drive
-
-# on another machine / in Colab:
-git clone --recursive <repo> && cd <repo>
-dvc pull                                   # download WAVs from Drive
-```
+in Google Drive and kept out of git; the exact sync mechanism is still to be
+decided (DVC was scaffolded then removed as unused).

@@ -1,8 +1,8 @@
 # CLAUDE.md
 
 Guidance for agents working in this repo. Read this first, then
-[project_plan.md](project_plan.md) (the "why") and [roadmap.md](roadmap.md)
-(the step-by-step "what next").
+[docs/project_plan.md](docs/project_plan.md) (the "why") and
+[docs/roadmap.md](docs/roadmap.md) (the step-by-step "what next").
 
 ## What this project is
 
@@ -39,21 +39,20 @@ transcription needed to get labels.
   generation must be **weighted by these distributions, not uniform-random**.
 
 ## Repo layout
-- `project_plan.md` — goals, YourMT3+ analysis, data strategy.
-- `roadmap.md` — phased plan; **the source of truth for next steps**.
+- `docs/project_plan.md` — goals, YourMT3+ analysis, data strategy.
+- `docs/roadmap.md` — phased plan; **the source of truth for next steps**.
 - `corpus/github/*` — Strudel song/pattern submodules (input to analysis).
 - `analysis/` — outputs of the corpus analysis: plots in `out/`, machine-readable
   stats in `results/*.json` (with sampling weights/probs, for `data_gen/`).
 - `data_gen/` — (Phase 2+) Node tooling: pattern→MIDI labels, audio render, generators.
 - `notebooks/` — `00_setup.ipynb` (Colab/Drive); `01_corpus_analysis.ipynb` is the
   corpus analysis (sounds, functions, transitions → `analysis/results/`). Drive
-  used only for the heavy WAV dataset (via DVC, see `docs/dvc.md`); small
-  artifacts live in git.
+  used only for the heavy WAV dataset (sync mechanism TBD); small artifacts live
+  in git.
 
 ## Conventions
 - **Storage:** code + small artifacts (corpus submodules, analysis, MIDI) in git;
-  GB-scale WAV audio → Google Drive via **DVC** (`gdrive://` remote; only `.dvc`
-  pointers committed), not committed directly. Setup/workflow: `docs/dvc.md`.
+  GB-scale WAV audio → Google Drive (sync mechanism TBD), not committed directly.
 - **Audio render (Part B):** prefer scalable `OfflineAudioContext`
   (faster-than-realtime); headless-browser is the proven fallback.
 - **Strudel engine is pure JS** → label extraction runs in Node
@@ -93,5 +92,5 @@ This keeps `master` always-reviewed: every feature is an isolated, reviewable
 unit the user opts into — with no leftover worktrees or branches behind it.
 
 ## Pointers
-- Next steps: always check [roadmap.md](roadmap.md) — work proceeds phase by phase.
+- Next steps: always check [docs/roadmap.md](docs/roadmap.md) — work proceeds phase by phase.
 - End git commit messages with the `Co-Authored-By: Claude` trailer.

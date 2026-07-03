@@ -12,4 +12,4 @@ complexity. Markdown cells document the method and the takeaways for generation.
 
 Run it top-to-bottom in Jupyter/Colab. Figures are also saved to `out/` for use
 in docs/PRs. The findings drive distribution-weighted generation in `data_gen/`.
-See [../roadmap.md](../roadmap.md).
+See [../docs/roadmap.md](../docs/roadmap.md).
