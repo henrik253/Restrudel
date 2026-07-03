@@ -31,3 +31,6 @@ einops
 deprecated
 mir_eval
 huggingface_hub
+
+# MIDI -> Strudel back-transformation (scripts/midi_to_strudel.py, Haiku 4.5)
+anthropic
