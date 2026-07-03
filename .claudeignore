@@ -1,0 +1,15 @@
+# Ignore third-party Strudel corpus repositories.
+# They are large git submodules used as analysis inputs, not active project code.
+
+corpus/github/strudel-coding-music/
+corpus/github/strudel-mcp-server/
+corpus/github/strudel-sampler-mixes/
+corpus/github/strudel-songs-collection/
+corpus/github/strudel-using-local-samples/
+corpus/github/strudel_trance/
+corpus/github/strudelplay/
+corpus/github/uzu-strudel/
+
+
+# Ignore the generated dataset unless you are told to give it a look. 
+dataset/* 
