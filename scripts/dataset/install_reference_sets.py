@@ -8,7 +8,8 @@ in the exact training format — no conversion needed, just download + their own
 preprocessing. This wraps their interactive install_dataset.py so it runs
 non-interactively into our --data-home.
 
-Approx. download sizes: slakh ~30 GB, maestro ~19 GB, egmd ~22 GB.
+Approx. archive sizes (verified via Zenodo): slakh ~30 GB, maestro ~19 GB,
+egmd ~36 GB. Extraction needs ~2x the archive size free on --data-home's disk.
 
 Usage:
   .venv/bin/python scripts/dataset/install_reference_sets.py --sets egmd
