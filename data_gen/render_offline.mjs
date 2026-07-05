@@ -8,6 +8,10 @@
 // Usage:
 //   node render_offline.mjs --file song.js --out song.wav [--cycles 8] [--sr 44100] [--cps 0.5]
 //   node render_offline.mjs --code 'note("c3 e3").s("sawtooth")' --out out.wav
+//
+// Tempo: the song's own setcpm()/setcps() is honored when present (else 0.5
+// cps); pass --cps to force one. Evaluation (incl. `$:` voices and
+// @strudel/tonal scales) is shared with extract_labels.mjs via strudel_eval.mjs.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
@@ -34,11 +38,17 @@ for (const cls of [webaudio.AudioScheduledSourceNode, webaudio.OscillatorNode, w
   }
 }
 
+// superdough's reverb generator does `window.filterNode = filter` (debug
+// leftover) and dspworklet registers a window message listener — without a
+// window, every .room() event is silently skipped. Minimal stubs suffice;
+// @strudel/core also touches `document` once it sees a window.
+globalThis.window ??= { addEventListener() {}, removeEventListener() {}, postMessage() {} };
+globalThis.document ??= { addEventListener() {}, removeEventListener() {}, dispatchEvent() {} };
+
 const { setAudioContext, registerSynthSounds, registerZZFXSounds, samples, superdough, loadWorklets } = await import(
   'superdough'
 );
-const { evalScope } = await import('@strudel/core');
-const { evaluate } = await import('@strudel/transpiler');
+const { evalStrudel } = await import('./strudel_eval.mjs');
 
 const { values: args } = parseArgs({
   options: {
@@ -47,7 +57,8 @@ const { values: args } = parseArgs({
     out: { type: 'string', default: 'out.wav' },
     cycles: { type: 'string', default: '8' },
     sr: { type: 'string', default: '44100' },
-    cps: { type: 'string', default: '0.5' },
+    ch: { type: 'string', default: '2' }, // 1 = mono mixdown (e.g. training data)
+    cps: { type: 'string' }, // force a tempo; default: song's setcpm/setcps, else 0.5
     tail: { type: 'string', default: '2' }, // seconds of release/reverb tail
   },
 });
@@ -55,14 +66,16 @@ const { values: args } = parseArgs({
 const code = args.code ?? readFileSync(args.file, 'utf8');
 const cycles = Number(args.cycles);
 const sampleRate = Number(args.sr);
-const cps = Number(args.cps);
+const channels = Number(args.ch);
 const tail = Number(args.tail);
+
+// Evaluate first (shared with extract_labels.mjs): we need the song tempo to
+// size the offline context.
+const { pattern, cps: songCps, cpsSource } = await evalStrudel(code);
+const cps = args.cps !== undefined ? Number(args.cps) : songCps;
 const duration = cycles / cps + tail;
 
-// Strudel functions (note, s, stack, ...) must be in the eval scope.
-await evalScope(import('@strudel/core'), import('@strudel/mini'));
-
-const ctx = new webaudio.OfflineAudioContext(2, Math.ceil(duration * sampleRate), sampleRate);
+const ctx = new webaudio.OfflineAudioContext(channels, Math.ceil(duration * sampleRate), sampleRate);
 setAudioContext(ctx);
 
 // Sounds: synths (sawtooth, square, ...) + the sample banks the corpus uses.
@@ -76,9 +89,10 @@ try {
 await samples('github:tidalcycles/dirt-samples'); // bd/sd/hh/cp defaults
 await samples('https://raw.githubusercontent.com/felixroos/dough-samples/main/tidal-drum-machines.json'); // .bank("RolandTR909") etc.
 
-const { pattern } = await evaluate(code);
 const haps = pattern.queryArc(0, cycles).filter((h) => h.hasOnset());
-console.log(`pattern ok: ${haps.length} events over ${cycles} cycles (${duration - tail}s + ${tail}s tail)`);
+console.log(
+  `pattern ok: ${haps.length} events over ${cycles} cycles (${(duration - tail).toFixed(1)}s + ${tail}s tail) @ cps=${cps} (${args.cps !== undefined ? 'cli' : cpsSource})`,
+);
 
 for (const hap of haps) {
   const t = hap.whole.begin.valueOf() / cps;
