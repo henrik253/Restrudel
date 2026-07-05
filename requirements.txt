@@ -29,5 +29,10 @@ deprecated
 mir_eval
 huggingface_hub
 
+# Reference-dataset installers (scripts/dataset/install_reference_sets.py):
+# mirdata pinned — 0.3.9+ removed jams_utils, which YourMT3's slakh16k loader imports
+mirdata==0.3.8
+pretty_midi
+
 # MIDI -> Strudel back-transformation (scripts/midi_to_strudel.py, Haiku 4.5)
 anthropic
