@@ -18,7 +18,8 @@ Per song (under <data-home>/strudel_yourmt3_16k/<id>/):
   *.mid             the labels as MIDI (their note_event2midi; listenable)
 
 plus <data-home>/yourmt3_indexes/strudel_{train,validation,test}_file_list.json
-(90/5/5, hash-split) in the exact shape their loaders expect.
+(train/validation 95/5, hash-split; NO test — see split_of) in the exact
+shape their loaders expect.
 
 Fine-tuning gotchas handled here:
   - audio is 16 kHz MONO (the model frontend's format);
@@ -217,6 +218,11 @@ def build_song(song, out_dir: Path, cycles: int, amt, stats):
         return None
     labels = json.loads(labels_json.read_text())
     usable = [e for e in labels["events"] if e["kind"] in ("pitched", "drum")]
+    # MIDI/tokenizer pitch range is 0-127; generated patterns can exceed it
+    # (fundamentals up there are beyond the 16 kHz render's Nyquist anyway).
+    in_range = [e for e in usable if e["kind"] == "drum" or 0 <= e["pitch"] <= 127]
+    stats["pitch_out_of_range"] += len(usable) - len(in_range)
+    usable = in_range
     if not usable:
         stats["no_events"].append(sid)
         return None
@@ -293,9 +299,16 @@ def build_song(song, out_dir: Path, cycles: int, amt, stats):
 
 
 def split_of(song_hash: str) -> str:
-    """90/5/5 by an independent hash bit-range (stable forever)."""
+    """train/validation 95/5 by an independent hash bit-range (stable forever).
+
+    Strudel data is NEVER assigned to test: testing happens on the reference
+    sets' canonical test splits, the withheld corpus holdout, and real
+    recordings — synthetic/self-made data in the test set would flatter the
+    numbers. (Hash thresholds keep every song's assignment stable; the old
+    5% test bucket folds into train.)
+    """
     v = int(song_hash[8:16], 16) / 0xFFFFFFFF
-    return "train" if v < 0.9 else ("validation" if v < 0.95 else "test")
+    return "validation" if 0.9 <= v < 0.95 else "train"
 
 
 # ------------------------------------------------------------------- main ---
@@ -342,7 +355,8 @@ def main():
         songs = songs[: args.limit]
 
     stats = {"failed_eval": [], "failed_render": [], "no_events": [],
-             "sample_events_dropped": 0, "unknown_sounds": set(), "unknown_drums": set(),
+             "sample_events_dropped": 0, "pitch_out_of_range": 0,
+             "unknown_sounds": set(), "unknown_drums": set(),
              "onset_deltas": []}
     entries = {}
 
@@ -350,7 +364,8 @@ def main():
         for song in songs:
             d = out_dir / song["id"]
             nf = d / f"{song['id']}_notes.npy"
-            if not nf.exists():
+            required = [nf, d / f"{song['id']}_note_events.npy", d / f"{song['id']}.mid", d / "mix.wav"]
+            if not all(f.exists() for f in required):
                 continue
             meta = np.load(nf, allow_pickle=True).item()
             with wave.open(str(d / "mix.wav")) as w:
@@ -407,9 +422,10 @@ def main():
             print(f"{key}: {len(stats[key])}")
             for item in stats[key][:8]:
                 print(f"   {item}")
-    (args.data_home / "strudel_build_report.json").write_text(json.dumps(
-        {k: (sorted(v) if isinstance(v, set) else v) for k, v in stats.items()},
-        indent=2, default=str) + "\n")
+    if not args.index_only:  # index-only runs have empty stats; keep the build's report
+        (args.data_home / "strudel_build_report.json").write_text(json.dumps(
+            {k: (sorted(v) if isinstance(v, set) else v) for k, v in stats.items()},
+            indent=2, default=str) + "\n")
 
 
 if __name__ == "__main__":
