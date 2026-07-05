@@ -76,3 +76,8 @@ JSONs without re-rendering).
 - **Registering the datasets in their training config** — add a `"strudel"`
   preset to `amt/src/config/data_presets.py` pointing at these file lists
   when the fine-tuning run is set up.
+
+## Colab notebook
+
+For the Drive-first workflow (download reference sets into Drive, format docs,
+dataset analysis, split-integrity checks): [notebooks/04_finetune_data.ipynb](../../notebooks/04_finetune_data.ipynb).
