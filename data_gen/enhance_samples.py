@@ -128,7 +128,8 @@ def validate(code: str) -> tuple[bool, str]:
                       err[-1] if err else "unknown eval error")
         return False, detail[:200]
     try:
-        n = json.loads(r.stdout)["n_events"]
+        # stdout carries strudel log lines before the JSON — parse from the first "{"
+        n = json.loads(r.stdout[r.stdout.index("{"):])["n_events"]
     except Exception:
         return False, "no parseable label output"
     if n < 4:

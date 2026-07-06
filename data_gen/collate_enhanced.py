@@ -32,7 +32,8 @@ def validate(code: str) -> tuple[bool, str]:
         err = (r.stderr or r.stdout).strip().splitlines()
         return False, (err[-1] if err else "eval error")[:160]
     try:
-        n = json.loads(r.stdout)["n_events"]
+        # stdout carries strudel log lines before the JSON — parse from the first "{"
+        n = json.loads(r.stdout[r.stdout.index("{"):])["n_events"]
     except Exception:
         return False, "no label output"
     return True, str(n)
