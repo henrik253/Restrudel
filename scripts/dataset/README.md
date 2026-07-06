@@ -6,11 +6,11 @@ code loads** (16 kHz mono WAV + `Note`/`NoteEvent` `.npy` + `yourmt3_indexes/
 
 ```
 datasets/                          (gitignored; Drive-synced)
-├── strudel_yourmt3_16k/<id>/      preprocess_strudel.py   corpus 50% + inspired
+├── strudel_yourmt3_16k/<id>/      preprocess_strudel.py   corpus 80% + LLM-enhanced
 ├── lakh_yourmt3_16k/<id>/         prepare_lakh.py         electronic Lakh subset
 ├── slakh/ maestro_yourmt3_16k/ …  install_reference_sets.py   (their hosted sets)
 ├── yourmt3_indexes/*.json         the file lists their loaders read
-├── strudel_holdout.json           withheld corpus 50% — EVAL ONLY, never train
+├── strudel_corpus_test.json       held-out corpus 20% — the Strudel TEST set
 └── strudel_build_report.json      skip reasons, unknown sounds, alignment stats
 ```
 

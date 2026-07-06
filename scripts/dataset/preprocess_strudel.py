@@ -84,9 +84,17 @@ def extract_snippets(path: str, text: str):
     return [s for s in found if PLAY_IDIOM.search(s) and 15 < len(s) < 20000]
 
 
-def collect_corpus(corpus_dir: Path, keep_fraction: float):
-    """Deterministic split: md5(code) decides train-pool vs holdout, forever."""
-    kept, holdout, seen = [], [], set()
+def collect_corpus(corpus_dir: Path, test_fraction: float):
+    """Deterministic 80/20 split by md5(code), stable forever.
+
+    Returns (train_pool, test), BOTH with full entries (incl. code) because the
+    20% test snippets are RENDERED as the Strudel test set. The same hash and
+    threshold drive the analysis notebook's leakage split (notebooks/
+    01_corpus_analysis.ipynb, corpus_split), so the analysis train-pool and this
+    train-pool are the identical 80%, and the test snippets never touch either
+    the distributions or the train/validation indexes.
+    """
+    train_pool, test, seen = [], [], set()
     for dirpath, _, files in os.walk(corpus_dir):
         if "/.git" in dirpath:
             continue
@@ -107,12 +115,12 @@ def collect_corpus(corpus_dir: Path, keep_fraction: float):
                     continue
                 seen.add(h)
                 entry = {"id": f"corpus_{h[:10]}", "hash": h, "path": rel, "code": snip}
-                # hash -> [0,1): stable independent of file order
-                if int(h[:8], 16) / 0xFFFFFFFF < keep_fraction:
-                    kept.append(entry)
+                # hash -> [0,1): top `test_fraction` is the held-out test set
+                if int(h[:8], 16) / 0xFFFFFFFF >= (1 - test_fraction):
+                    test.append(entry)
                 else:
-                    holdout.append({k: entry[k] for k in ("id", "hash", "path")})
-    return kept, holdout
+                    train_pool.append(entry)
+    return train_pool, test
 
 
 def collect_inspired(yaml_path: Path):
@@ -301,11 +309,13 @@ def build_song(song, out_dir: Path, cycles: int, amt, stats):
 def split_of(song_hash: str) -> str:
     """train/validation 95/5 by an independent hash bit-range (stable forever).
 
-    Strudel data is NEVER assigned to test: testing happens on the reference
-    sets' canonical test splits, the withheld corpus holdout, and real
-    recordings — synthetic/self-made data in the test set would flatter the
-    numbers. (Hash thresholds keep every song's assignment stable; the old
-    5% test bucket folds into train.)
+    Applies to the TRAIN-ELIGIBLE songs only: the 80% corpus train-pool and the
+    synthetic inspired songs. None of them may enter test — scoring on our own
+    synthetic/enhanced data, or on corpus snippets whose statistics shaped the
+    generator, would flatter the numbers. The Strudel test split is filled
+    exclusively by the 20% held-out corpus snippets (see main / test_hashes);
+    the rest of testing uses the reference sets' canonical test splits and real
+    recordings.
     """
     v = int(song_hash[8:16], 16) / 0xFFFFFFFF
     return "validation" if 0.9 <= v < 0.95 else "train"
@@ -318,7 +328,9 @@ def main():
     ap.add_argument("--amt-src", type=Path, default=REPO / "models" / "YourMT3" / "amt" / "src")
     ap.add_argument("--corpus-dir", type=Path, default=REPO / "corpus" / "github",
                     help="corpus root (submodules must be initialized)")
-    ap.add_argument("--corpus-fraction", type=float, default=0.5)
+    ap.add_argument("--test-fraction", type=float, default=0.2,
+                    help="fraction of corpus snippets held out as the test set "
+                         "(must match the analysis notebook's TEST_FRACTION)")
     ap.add_argument("--cycles", type=int, default=8)
     ap.add_argument("--limit", type=int, help="stop after N songs (smoke test)")
     ap.add_argument("--sources", default="corpus,inspired")
@@ -336,17 +348,24 @@ def main():
     index_dir.mkdir(parents=True, exist_ok=True)
 
     songs = []
+    test_hashes = set()  # corpus-test snippet hashes -> forced into the test split
     sources = args.sources.split(",")
     if "corpus" in sources:
         if not any(args.corpus_dir.glob("*/*")):
             sys.exit(f"{args.corpus_dir} is empty — run: git submodule update --init --recursive")
-        kept, holdout = collect_corpus(args.corpus_dir, args.corpus_fraction)
-        (args.data_home / "strudel_holdout.json").write_text(json.dumps({
-            "note": "corpus snippets WITHHELD from training (eval only)",
-            "fraction_kept_for_training": args.corpus_fraction,
-            "holdout": holdout}, indent=2) + "\n")
-        print(f"corpus: {len(kept)} snippets kept for training, {len(holdout)} withheld -> strudel_holdout.json")
-        songs += kept
+        train_pool, corpus_test = collect_corpus(args.corpus_dir, args.test_fraction)
+        test_hashes = {s["hash"] for s in corpus_test}
+        (args.data_home / "strudel_corpus_test.json").write_text(json.dumps({
+            "note": "20% of corpus snippets held out from the analysis "
+                    "distributions AND from train/validation; rendered here as "
+                    "the Strudel TEST set (real held-out human patterns).",
+            "test_fraction": args.test_fraction,
+            "n_test": len(corpus_test), "n_train_pool": len(train_pool),
+            "test": [{k: s[k] for k in ("id", "hash", "path")} for s in corpus_test]},
+            indent=2) + "\n")
+        print(f"corpus: {len(train_pool)} train-pool + {len(corpus_test)} held-out test "
+              f"-> strudel_corpus_test.json")
+        songs += train_pool + corpus_test
     if "inspired" in sources:
         inspired = collect_inspired(REPO / "dataset" / "generated_500_inspired.yaml")
         print(f"inspired: {len(inspired)} songs")
@@ -393,10 +412,11 @@ def main():
                       f"eval_fail={len(stats['failed_eval'])} render_fail={len(stats['failed_render'])} "
                       f"empty={len(stats['no_events'])}")
 
-    # index files, split by hash
+    # index files: corpus-test snippets -> test; everything else -> train/val
     splits = {"train": {}, "validation": {}, "test": {}}
     for h, entry in entries.items():
-        s = splits[split_of(h)]
+        split = "test" if h in test_hashes else split_of(h)
+        s = splits[split]
         s[str(len(s))] = entry
     for split, file_list in splits.items():
         out = index_dir / f"strudel_{split}_file_list.json"
