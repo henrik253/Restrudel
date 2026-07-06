@@ -1,30 +1,29 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 855,
+  "n_patterns": 697,
   "n_sources": 8,
   "schema": "content_models.v2",
   "note": "sequence content for note/n/s/sound: generator builds a variable-order back-off Markov model from `sequences` (condition on the longest seen prefix, back off to shorter contexts, then unigram) and samples with a temperature. Generates NEW strings, not copies.",
   "functions": {
     "s": {
-      "n_strings": 1077,
-      "vocab_size": 320,
+      "n_strings": 954,
+      "vocab_size": 288,
       "length": {
         "counts": {
-          "1": 754,
-          "2": 78,
-          "3": 38,
-          "4": 136,
-          "5": 25,
-          "6": 7,
-          "7": 4,
-          "8": 12,
+          "1": 669,
+          "2": 66,
+          "3": 31,
+          "4": 128,
+          "5": 21,
+          "6": 6,
+          "7": 1,
+          "8": 11,
           "9": 8,
           "10": 5,
           "12": 2,
           "14": 1,
-          "16": 1,
-          "17": 3,
+          "17": 2,
           "23": 1,
           "30": 1,
           "41": 1
@@ -36,403 +35,403 @@
       "start": [
         {
           "token": "bd",
-          "count": 156,
-          "prob": 0.16508
+          "count": 133,
+          "prob": 0.1616
         },
         {
           "token": "~",
-          "count": 97,
-          "prob": 0.10265
+          "count": 92,
+          "prob": 0.11179
         },
         {
           "token": "bd*4",
-          "count": 84,
-          "prob": 0.08889
-        },
-        {
-          "token": "sawtooth",
-          "count": 55,
-          "prob": 0.0582
+          "count": 77,
+          "prob": 0.09356
         },
         {
           "token": "hh*16",
-          "count": 46,
-          "prob": 0.04868
+          "count": 45,
+          "prob": 0.05468
         },
         {
-          "token": "hh",
-          "count": 29,
-          "prob": 0.03069
+          "token": "sawtooth",
+          "count": 42,
+          "prob": 0.05103
         },
         {
           "token": "hh*8",
           "count": 28,
-          "prob": 0.02963
+          "prob": 0.03402
+        },
+        {
+          "token": "hh",
+          "count": 28,
+          "prob": 0.03402
         },
         {
           "token": "piano",
-          "count": 24,
-          "prob": 0.0254
+          "count": 20,
+          "prob": 0.0243
         },
         {
           "token": "triangle",
-          "count": 21,
-          "prob": 0.02222
-        },
-        {
-          "token": "bd*2",
-          "count": 18,
-          "prob": 0.01905
-        },
-        {
-          "token": "cr",
-          "count": 17,
-          "prob": 0.01799
+          "count": 19,
+          "prob": 0.02309
         },
         {
           "token": "sd",
-          "count": 15,
-          "prob": 0.01587
+          "count": 14,
+          "prob": 0.01701
         },
         {
-          "token": "square",
-          "count": 15,
-          "prob": 0.01587
+          "token": "cr",
+          "count": 14,
+          "prob": 0.01701
         },
         {
           "token": "bass",
-          "count": 14,
-          "prob": 0.01481
+          "count": 13,
+          "prob": 0.0158
         },
         {
-          "token": "supersaw",
-          "count": 14,
-          "prob": 0.01481
+          "token": "bd*2",
+          "count": 12,
+          "prob": 0.01458
         },
         {
           "token": "lead",
           "count": 12,
-          "prob": 0.0127
+          "prob": 0.01458
         },
         {
           "token": "gm_electric_bass_finger",
-          "count": 12,
-          "prob": 0.0127
+          "count": 11,
+          "prob": 0.01337
         },
         {
           "token": "cp",
-          "count": 11,
-          "prob": 0.01164
-        },
-        {
-          "token": "hh*4",
-          "count": 11,
-          "prob": 0.01164
+          "count": 9,
+          "prob": 0.01094
         },
         {
           "token": "vocal",
           "count": 9,
-          "prob": 0.00952
+          "prob": 0.01094
         },
         {
           "token": "sine",
           "count": 9,
-          "prob": 0.00952
+          "prob": 0.01094
         },
         {
-          "token": "rd",
+          "token": "supersaw",
+          "count": 9,
+          "prob": 0.01094
+        },
+        {
+          "token": "hh*4",
           "count": 8,
-          "prob": 0.00847
+          "prob": 0.00972
+        },
+        {
+          "token": "square",
+          "count": 8,
+          "prob": 0.00972
         },
         {
           "token": "gm_electric_guitar_jazz",
           "count": 8,
-          "prob": 0.00847
+          "prob": 0.00972
         },
         {
           "token": "oh",
           "count": 7,
-          "prob": 0.00741
+          "prob": 0.00851
         },
         {
-          "token": "mt",
+          "token": "rd",
           "count": 7,
-          "prob": 0.00741
+          "prob": 0.00851
         },
         {
           "token": "gm_oboe",
           "count": 7,
-          "prob": 0.00741
+          "prob": 0.00851
         },
         {
-          "token": "gm_lead_6_voice",
+          "token": "mt",
           "count": 6,
-          "prob": 0.00635
+          "prob": 0.00729
         },
         {
           "token": "gm_electric_guitar_clean:2",
           "count": 6,
-          "prob": 0.00635
-        },
-        {
-          "token": "lt",
-          "count": 6,
-          "prob": 0.00635
+          "prob": 0.00729
         },
         {
           "token": "hh*2",
           "count": 5,
-          "prob": 0.00529
+          "prob": 0.00608
+        },
+        {
+          "token": "gm_lead_6_voice",
+          "count": 5,
+          "prob": 0.00608
         },
         {
           "token": "gm_drawbar_organ",
           "count": 5,
-          "prob": 0.00529
+          "prob": 0.00608
         },
         {
           "token": "gm_electric_bass_finger:2",
           "count": 5,
-          "prob": 0.00529
+          "prob": 0.00608
+        },
+        {
+          "token": "lt",
+          "count": 5,
+          "prob": 0.00608
         },
         {
           "token": "gm_piccolo",
           "count": 5,
-          "prob": 0.00529
+          "prob": 0.00608
         },
         {
           "token": "drums",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "bell",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "saw",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "gm_electric_bass_pick",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "linndrum_bd",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "linndrum_sd",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "gm_synth_strings_1",
           "count": 4,
-          "prob": 0.00423
+          "prob": 0.00486
         },
         {
           "token": "kick",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "snare",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "perc*3",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "amen",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "psaltery_pluck",
           "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "hh:1*4",
-          "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "amencutup",
-          "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "breath",
-          "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "east",
-          "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "rect",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "gtr",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "gm_harmonica",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "linndrum_hh",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "linndrum_oh",
           "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "gm_ocarina",
-          "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "gm_acoustic_guitar_steel:2",
           "count": 3,
-          "prob": 0.00317
-        },
-        {
-          "token": "z_sawtooth",
-          "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "bd!2",
           "count": 3,
-          "prob": 0.00317
+          "prob": 0.00365
         },
         {
           "token": "kick*4",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "cymbal",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "pad",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "cowbell",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "gm_epiano1:1",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "gm_acoustic_bass",
           "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "bd:5",
-          "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "misc:2",
           "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "dino",
-          "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "woodblock:1",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "clavisynth",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "ocarina_vib",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "ellipse",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "gm_bassoon",
           "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "recorder_tenor_sus",
-          "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "sax",
-          "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "ocarina",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "recorder_bass_sus",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "rd*3",
           "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "gm_church_organ",
-          "count": 2,
-          "prob": 0.00212
-        },
-        {
-          "token": "gm_acoustic_guitar_nylon",
-          "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
         },
         {
           "token": "gm_tuba",
           "count": 2,
-          "prob": 0.00212
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_pad_warm",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "pulse",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_baritone_sax",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "clave",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_distortion_guitar",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "oh*4",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "sleighbells",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_ocarina",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_overdriven_guitar:6",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_piano",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "gm_overdriven_guitar:3",
+          "count": 2,
+          "prob": 0.00243
+        },
+        {
+          "token": "hh!4",
+          "count": 2,
+          "prob": 0.00243
         }
       ],
       "sequences": [
@@ -478,40 +477,6 @@
           "sd",
           "~",
           "bd"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd",
-          "~",
-          "sd",
-          "~"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "bd",
-          "cp",
-          "sd"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd",
-          "sd"
         ],
         [
           "bd",
@@ -690,11 +655,6 @@
         ],
         [
           "bd",
-          "cp",
-          "sd"
-        ],
-        [
-          "bd",
           "sd"
         ],
         [
@@ -798,21 +758,6 @@
           "bd",
           "sd",
           "hh",
-          "cp"
-        ],
-        [
-          "bd",
-          "~",
-          "sd",
-          "~",
-          "bd",
-          "cp",
-          "sd",
-          "~"
-        ],
-        [
-          "bd",
-          "sd",
           "cp"
         ],
         [
@@ -1607,15 +1552,6 @@
           "kalimba"
         ],
         [
-          "bd*2",
-          "bd",
-          "sn",
-          "hh"
-        ],
-        [
-          "square"
-        ],
-        [
           "mad"
         ],
         [
@@ -1623,22 +1559,6 @@
         ],
         [
           "bass"
-        ],
-        [
-          "bd:5",
-          "~",
-          "sd:1!3",
-          "sd:1",
-          "hh27"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
         ],
         [
           "gm_epiano1:1"
@@ -1744,36 +1664,6 @@
           "ocarina_vib"
         ],
         [
-          "bd*2",
-          "~",
-          "cp",
-          "sd"
-        ],
-        [
-          "hh:1*4"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "amencutup"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "breath"
-        ],
-        [
-          "east"
-        ],
-        [
           "sawtooth"
         ],
         [
@@ -1781,13 +1671,6 @@
         ],
         [
           "triangle"
-        ],
-        [
-          "bd*2",
-          "~",
-          "hh",
-          "~",
-          "cp"
         ],
         [
           "piano"
@@ -1830,9 +1713,6 @@
         ],
         [
           "my_sound"
-        ],
-        [
-          "mysaw"
         ],
         [
           "sawtooth"
@@ -1883,17 +1763,6 @@
           "rim*4"
         ],
         [
-          "bd*2",
-          "~",
-          "sd"
-        ],
-        [
-          "hh*4"
-        ],
-        [
-          "shaker_small"
-        ],
-        [
           "amencutup"
         ],
         [
@@ -1907,24 +1776,6 @@
         ],
         [
           "east"
-        ],
-        [
-          "bd",
-          "rim",
-          "hh"
-        ],
-        [
-          "square"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "cp",
-          "sd"
         ],
         [
           "piano"
@@ -1958,16 +1809,7 @@
           "gm_lead_6_voice"
         ],
         [
-          "gm_lead_6_voice"
-        ],
-        [
           "piano"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
         ],
         [
           "sine"
@@ -2037,23 +1879,11 @@
           "sine"
         ],
         [
-          "bd*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
           "bd*4",
           "~",
           "cp",
           "~",
           "cp"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "piano"
         ],
         [
           "gm_electric_guitar_jazz"
@@ -2075,15 +1905,6 @@
         ],
         [
           "hh"
-        ],
-        [
-          "recorder_tenor_sus"
-        ],
-        [
-          "sax"
-        ],
-        [
-          "triangle"
         ],
         [
           "ocarina"
@@ -2179,21 +2000,6 @@
         ],
         [
           "rd*3"
-        ],
-        [
-          "gm_reed_organ"
-        ],
-        [
-          "gm_church_organ"
-        ],
-        [
-          "gm_acoustic_guitar_nylon"
-        ],
-        [
-          "gm_choir_aahs:5"
-        ],
-        [
-          "hh"
         ],
         [
           "gm_clarinet"
@@ -2724,49 +2530,6 @@
           "cr"
         ],
         [
-          "z_sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "z_sawtooth"
-        ],
-        [
-          "z_sawtooth"
-        ],
-        [
-          "z_square"
-        ],
-        [
-          "oh*16"
-        ],
-        [
-          "hh*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "cp"
-        ],
-        [
-          "~",
-          "rd"
-        ],
-        [
-          "~",
-          "sd!3",
-          "sd*4"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "bd"
-        ],
-        [
           "gm_harmonica"
         ],
         [
@@ -2880,12 +2643,6 @@
           "sd"
         ],
         [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
           "cajon"
         ],
         [
@@ -2920,28 +2677,6 @@
         ],
         [
           "oh:2*8"
-        ],
-        [
-          "cr",
-          "12"
-        ],
-        [
-          "RolandTR707_cr",
-          "RolandS50_cr",
-          "SequentialCircuitsDrumtracks_cr",
-          "Linn9000_cr",
-          "numbers:0",
-          "numbers:1",
-          "numbers:2",
-          "numbers:3",
-          "numbers:4",
-          "numbers:5",
-          "numbers:6",
-          "numbers:7",
-          "numbers:8",
-          "numbers:9",
-          "~",
-          "666"
         ],
         [
           "gtr"
@@ -3315,42 +3050,6 @@
           "bd"
         ],
         [
-          "gm_overdriven_guitar"
-        ],
-        [
-          "gm_tenor_sax"
-        ],
-        [
-          "gm_ocarina"
-        ],
-        [
-          "gm_reed_organ@10",
-          "gm_church_organ:1@4",
-          "~",
-          "2"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "mt"
-        ],
-        [
-          "lt"
-        ],
-        [
           "gm_violin"
         ],
         [
@@ -3410,16 +3109,6 @@
         ],
         [
           "gm_overdriven_guitar:3"
-        ],
-        [
-          "gm_lead_2_sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle@17",
-          "sawtooth@8"
         ],
         [
           "supersaw"
@@ -3526,44 +3215,6 @@
           "cr"
         ],
         [
-          "supersaw"
-        ],
-        [
-          "hh*4"
-        ],
-        [
-          "hh:1*4"
-        ],
-        [
-          "kawai"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "gm_fretless_bass"
-        ],
-        [
-          "white*16"
-        ],
-        [
-          "bd",
-          "bd*2",
-          "~",
-          "14",
-          "~",
-          "15",
-          "bd"
-        ],
-        [
-          "clap",
-          "clap*2",
-          "0",
-          "4",
-          "5",
-          "1"
-        ],
-        [
           "~",
           "crow",
           "~",
@@ -3585,28 +3236,6 @@
         ],
         [
           "piano"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd",
-          "hh",
-          "cp",
-          "~"
-        ],
-        [
-          "bd*2",
-          "sd*4"
-        ],
-        [
-          "bd",
-          "hh",
-          "hh",
-          "sd",
-          "hh",
-          "bd",
-          "cp"
         ],
         [
           "bd"
@@ -3651,22 +3280,6 @@
           "8",
           "16",
           "32"
-        ],
-        [
-          "bd",
-          "hh",
-          "hh",
-          "cp",
-          "hh",
-          "bd",
-          "cp"
-        ],
-        [
-          "bd",
-          "hh",
-          "hh",
-          "hh",
-          "hh"
         ],
         [
           "bd*4"
@@ -3756,24 +3369,6 @@
         ],
         [
           "bd*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
         ],
         [
           "bd*4"
@@ -4440,21 +4035,6 @@
           "bell"
         ],
         [
-          "bass"
-        ],
-        [
-          "bd*2",
-          "~",
-          "sd",
-          "hh*4"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "dino"
-        ],
-        [
           "woodblock:1",
           "woodblock:2*2",
           "snare_rim:0",
@@ -4490,21 +4070,6 @@
           "square"
         ],
         [
-          "amencutup"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "breath"
-        ],
-        [
-          "east"
-        ],
-        [
           "piano"
         ],
         [
@@ -4524,9 +4089,6 @@
         ],
         [
           "piano"
-        ],
-        [
-          "supersaw"
         ],
         [
           "sawtooth"
@@ -4587,27 +4149,6 @@
           "num"
         ],
         [
-          "bd",
-          "rim",
-          "hh"
-        ],
-        [
-          "square"
-        ],
-        [
-          "square"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "cp",
-          "sd"
-        ],
-        [
           "piano"
         ],
         [
@@ -4615,9 +4156,6 @@
         ],
         [
           "piano"
-        ],
-        [
-          "bd*4"
         ],
         [
           "piano"
@@ -4672,31 +4210,6 @@
           "sine"
         ],
         [
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "~",
-          "~",
-          "~",
-          "cp",
-          "~",
-          "~",
-          "cp",
-          "~",
-          "~"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
           "sine"
         ],
         [
@@ -4731,9 +4244,6 @@
           "triangle"
         ],
         [
-          "sawtooth"
-        ],
-        [
           "bd"
         ],
         [
@@ -4762,44 +4272,36 @@
         ],
         [
           "bd*4"
-        ],
-        [
-          "bd*4",
-          "~",
-          "cp",
-          "~",
-          "cp"
         ]
       ]
     },
     "n": {
-      "n_strings": 129,
-      "vocab_size": 146,
+      "n_strings": 94,
+      "vocab_size": 135,
       "length": {
         "counts": {
-          "1": 6,
-          "2": 14,
-          "3": 5,
-          "4": 19,
-          "5": 13,
-          "6": 22,
-          "7": 5,
-          "8": 9,
+          "1": 4,
+          "2": 9,
+          "3": 3,
+          "4": 12,
+          "5": 12,
+          "6": 17,
+          "7": 2,
+          "8": 4,
           "9": 2,
-          "10": 2,
-          "12": 3,
+          "12": 2,
           "14": 4,
           "15": 1,
           "16": 2,
           "17": 2,
-          "18": 2,
+          "18": 1,
           "20": 1,
           "21": 1,
           "22": 2,
           "25": 1,
           "28": 3,
           "30": 1,
-          "32": 2,
+          "32": 1,
           "34": 1,
           "45": 1,
           "67": 1,
@@ -4810,118 +4312,88 @@
         },
         "min": 1,
         "max": 467,
-        "mean": 14.33
+        "mean": 17.28
       },
       "start": [
         {
           "token": "0",
-          "count": 67,
-          "prob": 0.55372
+          "count": 49,
+          "prob": 0.56977
         },
         {
           "token": "~",
           "count": 13,
-          "prob": 0.10744
+          "prob": 0.15116
         },
         {
           "token": "2",
-          "count": 8,
-          "prob": 0.06612
-        },
-        {
-          "token": "4",
-          "count": 4,
-          "prob": 0.03306
+          "count": 5,
+          "prob": 0.05814
         },
         {
           "token": "5",
           "count": 3,
-          "prob": 0.02479
-        },
-        {
-          "token": "0@2",
-          "count": 3,
-          "prob": 0.02479
+          "prob": 0.03488
         },
         {
           "token": "c2",
           "count": 2,
-          "prob": 0.01653
-        },
-        {
-          "token": "-7*3",
-          "count": 2,
-          "prob": 0.01653
-        },
-        {
-          "token": "22",
-          "count": 2,
-          "prob": 0.01653
+          "prob": 0.02326
         },
         {
           "token": "3",
           "count": 2,
-          "prob": 0.01653
+          "prob": 0.02326
+        },
+        {
+          "token": "4",
+          "count": 2,
+          "prob": 0.02326
         },
         {
           "token": "1",
           "count": 2,
-          "prob": 0.01653
-        },
-        {
-          "token": "6",
-          "count": 2,
-          "prob": 0.01653
-        },
-        {
-          "token": "-7",
-          "count": 2,
-          "prob": 0.01653
+          "prob": 0.02326
         },
         {
           "token": "F4",
           "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         },
         {
           "token": "G3",
           "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         },
         {
           "token": "9*2",
           "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         },
         {
           "token": "-3",
           "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
+        },
+        {
+          "token": "6",
+          "count": 1,
+          "prob": 0.01163
         },
         {
           "token": "9",
           "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         },
         {
           "token": "7",
           "count": 1,
-          "prob": 0.00826
-        },
-        {
-          "token": "2@2",
-          "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         },
         {
           "token": "-2",
           "count": 1,
-          "prob": 0.00826
-        },
-        {
-          "token": "2@3",
-          "count": 1,
-          "prob": 0.00826
+          "prob": 0.01163
         }
       ],
       "sequences": [
@@ -5630,18 +5102,6 @@
           "0"
         ],
         [
-          "-7*3",
-          "0",
-          "2",
-          "6",
-          "8",
-          "7"
-        ],
-        [
-          "22",
-          "25"
-        ],
-        [
           "0@6",
           "1",
           "2",
@@ -5654,20 +5114,6 @@
           "1",
           "2",
           "3",
-          "4",
-          "5",
-          "6",
-          "7"
-        ],
-        [
-          "0",
-          "1"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "3",
           "4"
         ],
         [
@@ -5690,32 +5136,6 @@
         [
           "0",
           "1"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "0"
-        ],
-        [
-          "2",
-          "3",
-          "4",
-          "~"
-        ],
-        [
-          "4",
-          "5",
-          "4",
-          "3",
-          "2",
-          "0"
-        ],
-        [
-          "0",
-          "-3",
-          "0",
-          "~"
         ],
         [
           "0",
@@ -5763,21 +5183,10 @@
         [
           "0",
           "1",
-          "2",
-          "3",
-          "4"
-        ],
-        [
-          "0",
-          "1",
           "3",
           "1",
           "5",
           "4"
-        ],
-        [
-          "0",
-          "12"
         ],
         [
           "0",
@@ -5794,21 +5203,6 @@
         ],
         [
           "0",
-          "2",
-          "4"
-        ],
-        [
-          "-5@0.5",
-          "-4",
-          "-3",
-          "-2",
-          "-1",
-          "0",
-          "1",
-          "2@0.5"
-        ],
-        [
-          "0",
           "-1",
           "4",
           "5"
@@ -5818,28 +5212,6 @@
           "4",
           "5",
           "~"
-        ],
-        [
-          "0!32",
-          "0",
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        [
-          "0",
-          "~",
-          "1@20",
-          "~",
-          "2",
-          "2@20",
-          "~",
-          "3",
-          "3@20",
-          "~",
-          "4",
-          "4@20"
         ],
         [
           "7!3",
@@ -6488,16 +5860,6 @@
         ],
         [
           "0",
-          "2",
-          "4",
-          "6",
-          "7",
-          "6",
-          "4",
-          "2"
-        ],
-        [
-          "0",
           "1",
           "2",
           "3",
@@ -6689,124 +6051,6 @@
           "1"
         ],
         [
-          "0"
-        ],
-        [
-          "-7"
-        ],
-        [
-          "-14@5",
-          "4",
-          "7",
-          "4@2"
-        ],
-        [
-          "0@2",
-          "2",
-          "1",
-          "1",
-          "b@2",
-          "3",
-          "2"
-        ],
-        [
-          "0",
-          "1",
-          "b",
-          "5",
-          "4",
-          "3",
-          "4",
-          "5",
-          "4",
-          "3"
-        ],
-        [
-          "0@2",
-          "2",
-          "1",
-          "1",
-          "b@2",
-          "3",
-          "2"
-        ],
-        [
-          "-7",
-          "-6",
-          "b",
-          "-2",
-          "-3",
-          "-4",
-          "-3",
-          "-2",
-          "-3",
-          "-4"
-        ],
-        [
-          "0",
-          "~",
-          "0",
-          "1",
-          "0",
-          "~",
-          "0",
-          "1",
-          "0",
-          "~",
-          "0",
-          "1",
-          "2",
-          "1",
-          "0",
-          "-1",
-          "1",
-          "~",
-          "1",
-          "2",
-          "1",
-          "~",
-          "1",
-          "2",
-          "1",
-          "~",
-          "1",
-          "2",
-          "1",
-          "0",
-          "-1",
-          "-2"
-        ],
-        [
-          "-2@2",
-          "4",
-          "b",
-          "~",
-          "2@2",
-          "4",
-          "b",
-          "5"
-        ],
-        [
-          "2@3",
-          "3",
-          "3",
-          "3",
-          "4",
-          "7@2",
-          "6",
-          "5",
-          "3",
-          "3",
-          "4",
-          "7@2",
-          "6",
-          "5",
-          "3",
-          "3",
-          "1",
-          "0@8"
-        ],
-        [
           "0",
           "4"
         ],
@@ -6853,32 +6097,6 @@
           "0",
           "0",
           "~",
-          "0",
-          "0"
-        ],
-        [
-          "0",
-          "1",
-          "1",
-          "2",
-          "3",
-          "3",
-          "b"
-        ],
-        [
-          "6",
-          "3",
-          "2",
-          "1",
-          "0",
-          "0*2"
-        ],
-        [
-          "2",
-          "0"
-        ],
-        [
-          "0",
           "0",
           "0"
         ],
@@ -6907,20 +6125,6 @@
         ],
         [
           "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7"
-        ],
-        [
-          "0",
-          "1"
-        ],
-        [
-          "0",
           "2",
           "4",
           "6",
@@ -6946,32 +6150,6 @@
           "1",
           "2",
           "3"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "0"
-        ],
-        [
-          "2",
-          "3",
-          "4",
-          "~"
-        ],
-        [
-          "4",
-          "5",
-          "4",
-          "3",
-          "2",
-          "0"
-        ],
-        [
-          "0",
-          "-3",
-          "0",
-          "~"
         ],
         [
           "0",
@@ -7034,18 +6212,18 @@
       ]
     },
     "note": {
-      "n_strings": 325,
-      "vocab_size": 215,
+      "n_strings": 244,
+      "vocab_size": 210,
       "length": {
         "counts": {
-          "1": 101,
-          "2": 19,
-          "3": 25,
-          "4": 101,
+          "1": 46,
+          "2": 13,
+          "3": 22,
+          "4": 90,
           "5": 2,
-          "6": 6,
-          "7": 8,
-          "8": 17,
+          "6": 4,
+          "7": 6,
+          "8": 15,
           "9": 2,
           "10": 2,
           "12": 9,
@@ -7065,238 +6243,213 @@
         },
         "min": 1,
         "max": 60,
-        "mean": 5.48
+        "mean": 6.64
       },
       "start": [
         {
-          "token": "c3",
-          "count": 61,
-          "prob": 0.19677
-        },
-        {
-          "token": "c2",
-          "count": 28,
-          "prob": 0.09032
-        },
-        {
           "token": "a2*8",
-          "count": 27,
-          "prob": 0.0871
+          "count": 26,
+          "prob": 0.11504
         },
         {
           "token": "a3",
           "count": 25,
-          "prob": 0.08065
+          "prob": 0.11062
         },
         {
-          "token": "c",
-          "count": 23,
-          "prob": 0.07419
-        },
-        {
-          "token": "a4",
-          "count": 18,
-          "prob": 0.05806
+          "token": "c2",
+          "count": 24,
+          "prob": 0.10619
         },
         {
           "token": "c4",
-          "count": 17,
-          "prob": 0.05484
+          "count": 16,
+          "prob": 0.0708
+        },
+        {
+          "token": "c",
+          "count": 16,
+          "prob": 0.0708
         },
         {
           "token": "~",
           "count": 16,
-          "prob": 0.05161
+          "prob": 0.0708
+        },
+        {
+          "token": "a4",
+          "count": 14,
+          "prob": 0.06195
         },
         {
           "token": "e5",
           "count": 14,
-          "prob": 0.04516
+          "prob": 0.06195
+        },
+        {
+          "token": "c3",
+          "count": 9,
+          "prob": 0.03982
         },
         {
           "token": "12",
-          "count": 10,
-          "prob": 0.03226
+          "count": 7,
+          "prob": 0.03097
         },
         {
           "token": "a2",
           "count": 7,
-          "prob": 0.02258
-        },
-        {
-          "token": "c1",
-          "count": 4,
-          "prob": 0.0129
-        },
-        {
-          "token": "0",
-          "count": 4,
-          "prob": 0.0129
+          "prob": 0.03097
         },
         {
           "token": "c5",
           "count": 4,
-          "prob": 0.0129
+          "prob": 0.0177
         },
         {
           "token": "d5",
           "count": 4,
-          "prob": 0.0129
+          "prob": 0.0177
+        },
+        {
+          "token": "c1",
+          "count": 3,
+          "prob": 0.01327
+        },
+        {
+          "token": "0",
+          "count": 3,
+          "prob": 0.01327
         },
         {
           "token": "d2*8",
           "count": 3,
-          "prob": 0.00968
+          "prob": 0.01327
         },
         {
           "token": "d4",
           "count": 3,
-          "prob": 0.00968
+          "prob": 0.01327
         },
         {
           "token": "C3",
           "count": 2,
-          "prob": 0.00645
-        },
-        {
-          "token": "C2",
-          "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "D2",
           "count": 2,
-          "prob": 0.00645
-        },
-        {
-          "token": "b4",
-          "count": 2,
-          "prob": 0.00645
-        },
-        {
-          "token": "G4",
-          "count": 2,
-          "prob": 0.00645
-        },
-        {
-          "token": "7",
-          "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "Gm7",
           "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "g2",
           "count": 2,
-          "prob": 0.00645
-        },
-        {
-          "token": "a1",
-          "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "a#5",
           "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "c2*8",
           "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "e4",
           "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "g5",
           "count": 2,
-          "prob": 0.00645
+          "prob": 0.00885
         },
         {
           "token": "C1",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "g1",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "B2",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
+        },
+        {
+          "token": "b4",
+          "count": 1,
+          "prob": 0.00442
         },
         {
           "token": "e1",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "f6",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "c4*2",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "g#4@2",
           "count": 1,
-          "prob": 0.00323
-        },
-        {
-          "token": "d2",
-          "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "c4@2",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "d#5@2",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "b@2",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "a5",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "e3",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "g4",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
           "token": "f4",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         },
         {
-          "token": "d",
+          "token": "a1",
           "count": 1,
-          "prob": 0.00323
+          "prob": 0.00442
         }
       ],
       "sequences": [
@@ -7432,26 +6585,11 @@
         ],
         [
           "0",
-          "04"
-        ],
-        [
-          "0",
           "1"
         ],
         [
           "b4",
           "eb4"
-        ],
-        [
-          "G4",
-          "A4",
-          "Bb4",
-          "A4",
-          "Bb3",
-          "D3"
-        ],
-        [
-          "12"
         ],
         [
           "c3",
@@ -7464,12 +6602,6 @@
           "12"
         ],
         [
-          "C2",
-          "A1",
-          "D2",
-          "F2"
-        ],
-        [
           "a3",
           "c#4",
           "e4",
@@ -7480,17 +6612,6 @@
           "a",
           "f",
           "e"
-        ],
-        [
-          "c",
-          "a",
-          "f",
-          "e"
-        ],
-        [
-          "c3",
-          "e3",
-          "g3"
         ],
         [
           "c3",
@@ -7534,95 +6655,10 @@
           "e"
         ],
         [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c2",
-          "d2"
-        ],
-        [
           "12"
         ],
         [
           "12"
-        ],
-        [
-          "c",
-          "a",
-          "f",
-          "e"
         ],
         [
           "c",
@@ -7672,55 +6708,13 @@
           "c"
         ],
         [
-          "c",
-          "d",
-          "e",
-          "f",
-          "e",
-          "d",
-          "c"
-        ],
-        [
-          "c",
-          "d",
-          "e",
-          "f",
-          "e",
-          "d",
-          "c"
-        ],
-        [
-          "c",
-          "a",
-          "f",
-          "e"
-        ],
-        [
           "12"
-        ],
-        [
-          "12"
-        ],
-        [
-          "c2",
-          "a2",
-          "eb2"
         ],
         [
           "c2",
           "c2",
           "g2",
           "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "e4",
-          "c4",
-          "e4",
-          "g4",
-          "c5"
         ],
         [
           "c4",
@@ -8003,10 +6997,6 @@
           "~",
           "3",
           "72"
-        ],
-        [
-          "a1",
-          "6"
         ],
         [
           "a#5",
@@ -8363,12 +7353,6 @@
           "f"
         ],
         [
-          "c",
-          "a",
-          "f",
-          "e"
-        ],
-        [
           "a4",
           "c5",
           "e5",
@@ -8379,30 +7363,6 @@
         ],
         [
           "a2"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
         ],
         [
           "a4",
@@ -8558,9 +7518,6 @@
           "c5",
           "d5",
           "e5"
-        ],
-        [
-          "a2*8"
         ],
         [
           "a2*8"
@@ -9505,33 +8462,12 @@
           "1"
         ],
         [
-          "b4",
-          "eb4"
-        ],
-        [
           "G4",
           "A4",
           "Bb4",
           "A4",
           "Bb3",
           "D3"
-        ],
-        [
-          "12"
-        ],
-        [
-          "d",
-          "f",
-          "a",
-          "a#",
-          "a",
-          "d3"
-        ],
-        [
-          "c",
-          "a",
-          "f",
-          "e"
         ],
         [
           "a3",
@@ -9550,89 +8486,6 @@
           "a",
           "f",
           "e"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c3"
-        ],
-        [
-          "c2",
-          "d2"
-        ],
-        [
-          "c2",
-          "d2"
         ],
         [
           "C1*16"
@@ -9681,22 +8534,6 @@
           "f2"
         ],
         [
-          "c1",
-          "~",
-          "~",
-          "c2",
-          "~",
-          "c1",
-          "~",
-          "~"
-        ],
-        [
-          "c3",
-          "eb3",
-          "g3",
-          "bb3"
-        ],
-        [
           "c1"
         ],
         [
@@ -9718,14 +8555,6 @@
           "c5"
         ],
         [
-          "Cm7",
-          "F7",
-          "Bbmaj7"
-        ],
-        [
-          "7"
-        ],
-        [
           "h2"
         ],
         [
@@ -9734,87 +8563,85 @@
       ]
     },
     "sound": {
-      "n_strings": 235,
-      "vocab_size": 25,
+      "n_strings": 215,
+      "vocab_size": 23,
       "length": {
         "counts": {
-          "1": 199,
-          "2": 13,
-          "3": 6,
-          "4": 11,
-          "5": 1,
-          "6": 1,
+          "1": 188,
+          "2": 11,
+          "3": 3,
+          "4": 9,
           "8": 4
         },
         "min": 1,
         "max": 8,
-        "mean": 1.4
+        "mean": 1.33
       },
       "start": [
         {
           "token": "sawtooth",
-          "count": 122,
-          "prob": 0.53043
+          "count": 117,
+          "prob": 0.55714
         },
         {
           "token": "bd",
-          "count": 32,
-          "prob": 0.13913
+          "count": 22,
+          "prob": 0.10476
         },
         {
           "token": "square",
           "count": 21,
-          "prob": 0.0913
+          "prob": 0.1
         },
         {
           "token": "supersaw",
           "count": 18,
-          "prob": 0.07826
+          "prob": 0.08571
         },
         {
           "token": "triangle",
           "count": 13,
-          "prob": 0.05652
+          "prob": 0.0619
         },
         {
           "token": "sine",
           "count": 7,
-          "prob": 0.03043
-        },
-        {
-          "token": "piano",
-          "count": 3,
-          "prob": 0.01304
-        },
-        {
-          "token": "drums",
-          "count": 3,
-          "prob": 0.01304
-        },
-        {
-          "token": "hh",
-          "count": 3,
-          "prob": 0.01304
-        },
-        {
-          "token": "kick",
-          "count": 3,
-          "prob": 0.01304
+          "prob": 0.03333
         },
         {
           "token": "drum",
           "count": 2,
-          "prob": 0.0087
+          "prob": 0.00952
         },
         {
           "token": "~",
           "count": 2,
-          "prob": 0.0087
+          "prob": 0.00952
+        },
+        {
+          "token": "drums",
+          "count": 2,
+          "prob": 0.00952
+        },
+        {
+          "token": "hh",
+          "count": 2,
+          "prob": 0.00952
+        },
+        {
+          "token": "piano",
+          "count": 2,
+          "prob": 0.00952
         },
         {
           "token": "bd*2",
           "count": 1,
-          "prob": 0.00435
+          "prob": 0.00476
+        },
+        {
+          "token": "kick",
+          "count": 1,
+          "prob": 0.00476
         }
       ],
       "sequences": [
@@ -9826,27 +8653,8 @@
         ],
         [
           "bd",
-          "~",
           "sd",
           "cp"
-        ],
-        [
-          "bd",
-          "sd",
-          "cp"
-        ],
-        [
-          "bd",
-          "sd",
-          "cp"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd",
-          "sd"
         ],
         [
           "bd",
@@ -9917,9 +8725,6 @@
           "sawtooth"
         ],
         [
-          "piano"
-        ],
-        [
           "drums",
           "kick",
           "drums",
@@ -10030,32 +8835,6 @@
         [
           "kick",
           "snare",
-          "hat",
-          "snare"
-        ],
-        [
-          "drums",
-          "kick",
-          "drums",
-          "snare",
-          "drums",
-          "hat"
-        ],
-        [
-          "bd",
-          "casio",
-          "c4",
-          "drums",
-          "kick"
-        ],
-        [
-          "kick",
-          "snare",
-          "hat"
-        ],
-        [
-          "kick",
-          "snare",
           "hat"
         ],
         [
@@ -10089,18 +8868,6 @@
           "sawtooth"
         ],
         [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
           "square"
         ],
         [
@@ -10135,9 +8902,6 @@
         ],
         [
           "square"
-        ],
-        [
-          "sawtooth"
         ],
         [
           "sawtooth"
@@ -10594,26 +9358,6 @@
         ],
         [
           "triangle"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd",
-          "bd",
-          "bd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "hh"
         ],
         [
           "num"

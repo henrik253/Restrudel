@@ -1,0 +1,803 @@
+{
+  "schema_version": 1,
+  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "n_patterns": 697,
+  "n_sources": 8,
+  "schema": "corpus_test.v1",
+  "note": "20% of corpus snippets HELD OUT from all analysis/distribution building to prevent leakage into generated training data. The SAME snippets (by hash) are rendered as the Strudel TEST set by scripts/dataset/preprocess_strudel.py.",
+  "test_fraction": 0.2,
+  "n_test": 158,
+  "n_train_pool": 697,
+  "items": [
+    {
+      "hash": "f15977ad5b207af6802b92a91cf54646",
+      "source": "strudel-sampler-mixes",
+      "path": "strudel-sampler-mixes/README.md"
+    },
+    {
+      "hash": "e36c9a3b8981e63c39d7e792b686f4e2",
+      "source": "strudel-sampler-mixes",
+      "path": "strudel-sampler-mixes/README.md"
+    },
+    {
+      "hash": "d70b1e5f1d500beab912fc544ce3f1bd",
+      "source": "strudel-sampler-mixes",
+      "path": "strudel-sampler-mixes/docs/getting-started.md"
+    },
+    {
+      "hash": "f539bd8847aa86b67c3cd4e87ad82c64",
+      "source": "strudel-sampler-mixes",
+      "path": "strudel-sampler-mixes/docs/patterns.md"
+    },
+    {
+      "hash": "d0d70946939ff2e4b977166fb88ccf65",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/paper/paper.md"
+    },
+    {
+      "hash": "eb8537b701d6137026f810cbdf56923e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/paper/paper.md"
+    },
+    {
+      "hash": "f1ccf51f5d8f4a3fb25b96de37a81dc7",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/paper/paper.md"
+    },
+    {
+      "hash": "eaec8b5c496460d2c0b783361ff11399",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/paper/paper.md"
+    },
+    {
+      "hash": "db6b90ef73efb627c5a987c0e903fc94",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/test/testtunes.mjs"
+    },
+    {
+      "hash": "d07546546f23f3a8628420d59933710e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/test/testtunes.mjs"
+    },
+    {
+      "hash": "eba221a92f064ed07070cf92581a0cb7",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/test/testtunes.mjs"
+    },
+    {
+      "hash": "e4a730befec8967a5f640db0e29258a3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d9ab216ad6764c1210a3b3158c8253bb",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "eee4ab5f144c90711bbda206a6b9fb88",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f99c63f39bbbd5667f9e4c4ebd36aab1",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ce2eb644387620951dbe3291cc4cb964",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f2ee0df673c1e4dce6140124b6cece6e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f4606ee4c39995c13529b1593861de3b",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "eb9b8441d9fc1e3be3c4f908f5e53ab8",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "efb7b507a1141f1889081e32db011bcc",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f6b9f4b322773a238861a882eac0f2d9",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ec674216a14b110a3321badc55d73be3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "dbed3d0ab0e46f366a6879b1b70edc24",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e969e64c813279555cb4849236eb3530",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d764b5194c7e8420468adc4a30cf2311",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e357dfc0896099103e50ef4b60c12830",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "cd27d5a1ec0f6b4dd99a8d3791cafde8",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d2bdc6cf20d7b819806e2d2f2611461d",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e64c9b5f17bfe4b8fd36817d134b4a15",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "db5ec32e499a95c65e5f5714f57517dc",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e307439e3baefc20752d7bc01d623b51",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "edffaa0906041599aa55642965c5d16f",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "edc90a403da85afe106142cf923bfb80",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e48ddb3b9ec80b976223f7dc94d705c0",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "dfd9d5f32b53deb34bb09298cc5b0fbc",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ff5b5929c6f252248622a885ec5906fe",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d47dc76a9030205138dfad80c0679cb3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d981536b59a7cef9e741e438d0c67580",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f4e36abced6587128ab1a18883bc2efc",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e910728e8e3a2d170c0198913d26f2d0",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f493582be16618116960f9f420e69684",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "dc5f7600a120387ff1e1444d00ccea4e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ee6d080a96279efff51960624754ca44",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e084f186f847c8ac79c280bfaa19e280",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f3c45df25131e5b31e98db4b7b17052b",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fbc049cead7671c4024f0e0a1e0305bd",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fef79fdfc75250a954629581a2550444",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d9ef28d40b6ee87d2aceca08efcb05c5",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "da39fb07513b41c094ed5c9593c38d8e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d211ec04952a4b03f7199aab0a6c0b74",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fdb62c8246897c8ac7f782d7aecdd925",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e557067495589fd8fa5504a5cd59f604",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e1e8787a95447db6b59b85ab1500e4c5",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f1a454f4cfdd3b38c6bb9cf3dd04526a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ee1b633cbeb2daa9793158e4a428c93b",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ebd1cb232b10dcbe795291d0f6434806",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f979a03b4ae8202d8b34377598dff6e3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "eeccf0177d8755af4a8d5a556f927185",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fd9804907dc65655998d982175739660",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fab0af1e5a1b41c69f1ebb2635dc087c",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f5890baba149503b82109df7de2124da",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e1ac082d50bb4f6cd4639fd148414fa3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f2291827ab3706cdc2c384181e031759",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d5dd7cd82e2f56f78a8908d11ecf6815",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f38342a0979c000b428e51ffd1e77adb",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "cd0636a3ac41e8c8cc29d9944ccbe21a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f8faecc2c526a9a5581956ccd43cc2ca",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f2b435509a5a2edba0ee2768fedba386",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e086332deecd61744086fe02bfbf8c78",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f96bb98af20435305c67db960bed7cba",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ff455b3bb647cfd28e8f391152325f1a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e3c617ba6352fe7dbd6aaeaeef4a2042",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f3e71d08eadf9828afe1a9706154754f",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "cf65b374698a993e732a19701afa496c",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e8f9a95492108a935d0130d8eb420722",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fffe3d79cedb253689d0fd9f6265d540",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fe25b7fa3cf7216ad4291c2fa71c8234",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d9a447a553b542e4516420de2927494e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "de5645c2094a8ff3292aece0cfed714b",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e228ec99b49dd89d91c1bcbe7cee82e8",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "efb327cf7d218465d74a572e758f06e5",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d3e35217f3e7fae85b0fc3459b6c95d1",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "cf1cdcb196a57e5571fd83264ce34b88",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e387441bf3d1a5d4a368c349715b05de",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "cd6f34309f83f29b05919ee7e056322d",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "eed5adc82397535bafdbe0e0d0d6a657",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fe428f457551cb0ec6a4d0728b48b35f",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ec2da2ebb719c26482d12a1bfb50a58a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ff8a67bca31a522585d38f75c4494f1f",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f388aa59724fac848e1f244a6f31f9c3",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "dd4df175cbc116d58533ee5c431c9501",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fa5f36694a68fde9f82506a57ad5faa1",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e8ceefd97598ceeb5b4d93e576e9bc14",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "ea04db78bef145b9b4dfe49a1e31ea60",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "dbd516046ae97902c9bd1ef57569cbbf",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "d36bcadbd356d7293bbfe36c9c69db66",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e86ccfb702b03e382c8569e177588faa",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e5ca6cd0622fd9d002ae36789c91e2e2",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "e9eb26d38c1102f70290fde0a20257ba",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "df8054babcb1b2c7383ce7463d6cc1e5",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "fa2cd9443dcf915eb770fe76107292b5",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f4ff91ea0c4b47c9360224efb314c99e",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/drum_patterns.mjs"
+    },
+    {
+      "hash": "f257c5f3d8b61a69bc5c94e7fd4a4769",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "ecc29f42f0ef2824dc77b3ecee1163ab",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "cee06fc349e5c8ff713e114fbdae0e67",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "d42ec7b1cb236a57892e8205ef8f518d",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "e37d725053d4101b64a764d81517b987",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "d877ba36e03ba06e9736f4b6ec25da48",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "f22a74f50f1f46c20a4a94a85db69975",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "e5ac28f89c7598bd1d10133d666a9d4f",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/pages/learn/strudel-vs-tidal.mdx"
+    },
+    {
+      "hash": "dd0869993075449e032ebaafab0c880c",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/pages/technical-manual/sounds.mdx"
+    },
+    {
+      "hash": "fee2c198f6b3b241deef1dc41cc01096",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/pages/technical-manual/repl.mdx"
+    },
+    {
+      "hash": "eb791eaa027c9ebab3e27b363d1f3999",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/website/src/pages/technical-manual/repl.mdx"
+    },
+    {
+      "hash": "f5de59bac77d2de7cb2df4a3727845d4",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/examples/codemirror-repl/tunes.mjs"
+    },
+    {
+      "hash": "e2ef57d2ce85cb7fea989e8f8975523a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/core/euclid.mjs"
+    },
+    {
+      "hash": "e01bb4a4c44d9ffa3af36c0ff020bc2a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/core/pick.mjs"
+    },
+    {
+      "hash": "f594493871751f7529c0467d1f656fc4",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/midi/README.md"
+    },
+    {
+      "hash": "d6ed65b1fba19c82b21c9efcf8c8ebe2",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/midi/README.md"
+    },
+    {
+      "hash": "e1aa3a7b120a64ac4c6f2619ffc2d9ba",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/midi/README.md"
+    },
+    {
+      "hash": "dd720f305d09aa922c7753240b17c823",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/web/README.md"
+    },
+    {
+      "hash": "cd2280205a1c2cafaebb76db3c9a4843",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/repl/README.md"
+    },
+    {
+      "hash": "fdabb91abddae48d6a4c2e253ec2472a",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/draw/spiral.mjs"
+    },
+    {
+      "hash": "fb7c81416bb60b0960d70aa955e7ba05",
+      "source": "strudel-coding-music",
+      "path": "strudel-coding-music/packages/draw/pitchwheel.mjs"
+    },
+    {
+      "hash": "e7616879a04c2c5705e827f9ddbc6dc7",
+      "source": "strudelplay",
+      "path": "strudelplay/QUICKSTART.md"
+    },
+    {
+      "hash": "d7e9c52df01476616125f6eb9cb4af54",
+      "source": "strudelplay",
+      "path": "strudelplay/mcp-server/tests/browser-test.js"
+    },
+    {
+      "hash": "f0e45ee8da5449804d9bca05ccde9824",
+      "source": "strudelplay",
+      "path": "strudelplay/samples/README.md"
+    },
+    {
+      "hash": "e7132e80e244aaa2c5d4fce7a28076c0",
+      "source": "strudelplay",
+      "path": "strudelplay/samples/README.md"
+    },
+    {
+      "hash": "ff186a8c9e95a9ce2e56112307be8fd6",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/whydoesmybrain.js"
+    },
+    {
+      "hash": "f7c9fa76affba439f9510dfa599570f6",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/satiesfaction.js"
+    },
+    {
+      "hash": "df91503ab1da8eea46eb03ec5388b44f",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/budsandspawn.js"
+    },
+    {
+      "hash": "cd193d07ea589092001d22a4fdff8a6f",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/anniesroom.js"
+    },
+    {
+      "hash": "e1d1b4f0c1a5e12703f98efbe55e2c12",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/pumpupthejam.js"
+    },
+    {
+      "hash": "ecc49b0eb6e243562628ace0d2b595ac",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/strangerthings.js"
+    },
+    {
+      "hash": "de58f3701dc7116422a69dad813e46ca",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/strudelman.js"
+    },
+    {
+      "hash": "ef63002ea573998755fcc7d400412b15",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/eversoclosely.js"
+    },
+    {
+      "hash": "dfc2cfd0da038c649f2a720b3ecb412d",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/aztecchallenge.js"
+    },
+    {
+      "hash": "ed73063ea045faa4728725d3f37338d2",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/tinkering/stacktricks.js"
+    },
+    {
+      "hash": "e6a73eb0d3c8cda16cfd083e82762030",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/functions/addeg.js"
+    },
+    {
+      "hash": "d6ef149fe8d886a1f5c87826f8e301a0",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/functions/tenbandeq.js"
+    },
+    {
+      "hash": "e3b460e31f59e2b82d5b53473ce6d369",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/functions/timeconv.js"
+    },
+    {
+      "hash": "da2ff0fb72f9b0a80d69062c4bae1a1a",
+      "source": "strudel-songs-collection",
+      "path": "strudel-songs-collection/jamsessions/nudelimprov1.js"
+    },
+    {
+      "hash": "fd9802880aab8ef8733ffb8f90f8e52d",
+      "source": "strudel-using-local-samples",
+      "path": "strudel-using-local-samples/packages/codemirror/codemirror.mjs"
+    },
+    {
+      "hash": "dfbe1b690e7582b6d560d3ad4a44b649",
+      "source": "strudel-using-local-samples",
+      "path": "strudel-using-local-samples/packages/superdough/helpers.mjs"
+    },
+    {
+      "hash": "f493091fd45dd35a03f46838c2080d75",
+      "source": "strudel_trance",
+      "path": "strudel_trance/BRAINSTORMING.md"
+    },
+    {
+      "hash": "fbd556b9f0484b79fde06c9908be03a2",
+      "source": "strudel_trance",
+      "path": "strudel_trance/TIPS_AND_TRICKS.md"
+    },
+    {
+      "hash": "ec987affffe5fff9fbe96bad8400849e",
+      "source": "strudel_trance",
+      "path": "strudel_trance/TIPS_AND_TRICKS.md"
+    },
+    {
+      "hash": "d1966a9794314d9aa366037e8506da46",
+      "source": "strudel_trance",
+      "path": "strudel_trance/TIPS_AND_TRICKS.md"
+    },
+    {
+      "hash": "ec2ad19620ae322833fa934c164f60cb",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "f8e63ee51550bf8d313df0ed98969e4c",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/website/src/repl/tunes.mjs"
+    },
+    {
+      "hash": "dbae01c2292239e623332fed838b7772",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/website/src/content/blog/release-1.1.0-bananensplit.mdx"
+    },
+    {
+      "hash": "cce72c1090ffc6a8f68561f63d84768b",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/website/src/components/Dough/dough-mirror.mjs"
+    },
+    {
+      "hash": "d58e9d163b6b32d08ed62e788c37acb5",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/packages/core/euclid.mjs"
+    },
+    {
+      "hash": "ec3a70ea7341f8ce511afdc56c5fa785",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/packages/core/pick.mjs"
+    },
+    {
+      "hash": "d74be422070e52bc2136a5a32bf41860",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/packages/core/bench/pattern.bench.mjs"
+    },
+    {
+      "hash": "e823e0007801501c4afe1fca66877ddd",
+      "source": "uzu-strudel",
+      "path": "uzu-strudel/packages/osc/README.md"
+    },
+    {
+      "hash": "e076b8ec11bd7ee385749217309820eb",
+      "source": "strudel-mcp-server",
+      "path": "strudel-mcp-server/README.md"
+    },
+    {
+      "hash": "fff0673c0eb67d6660e304c1af2092de",
+      "source": "strudel-mcp-server",
+      "path": "strudel-mcp-server/README.md"
+    },
+    {
+      "hash": "faf6bce8e5a5caac55e9eb7384efa519",
+      "source": "strudel-mcp-server",
+      "path": "strudel-mcp-server/README.md"
+    }
+  ]
+}
