@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 855,
+  "n_patterns": 697,
   "n_sources": 8,
   "schema": "complexity.v1",
   "voices": {
-    "count": 855.0,
-    "mean": 1.966,
-    "std": 1.077,
+    "count": 697.0,
+    "mean": 2.006,
+    "std": 1.157,
     "min": 1.0,
     "25%": 2.0,
     "50%": 2.0,
@@ -15,14 +15,14 @@
     "max": 15.0
   },
   "functions_per_pattern": {
-    "count": 855.0,
-    "mean": 16.062,
-    "std": 33.555,
+    "count": 697.0,
+    "mean": 16.103,
+    "std": 33.946,
     "min": 1.0,
     "25%": 3.0,
     "50%": 3.0,
     "75%": 12.0,
     "max": 305.0
   },
-  "patterns_with_tempo": 77
+  "patterns_with_tempo": 64
 }

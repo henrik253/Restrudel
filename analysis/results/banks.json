@@ -1,104 +1,104 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 855,
+  "n_patterns": 697,
   "n_sources": 8,
   "schema": "banks.v1",
   "items": [
     {
       "name": "rolandtr909",
-      "occurrences": 15,
-      "weight": 0.202703
+      "occurrences": 11,
+      "weight": 0.166667
     },
     {
       "name": "linn9000",
-      "occurrences": 11,
-      "weight": 0.148649
+      "occurrences": 10,
+      "weight": 0.151515
     },
     {
       "name": "rolandtr808",
       "occurrences": 8,
-      "weight": 0.108108
+      "weight": 0.121212
     },
     {
       "name": "akailinn",
       "occurrences": 8,
-      "weight": 0.108108
+      "weight": 0.121212
     },
     {
       "name": "rolandmt32",
       "occurrences": 7,
-      "weight": 0.094595
-    },
-    {
-      "name": "rolandtr707",
-      "occurrences": 3,
-      "weight": 0.040541
-    },
-    {
-      "name": "yamahary30",
-      "occurrences": 3,
-      "weight": 0.040541
+      "weight": 0.106061
     },
     {
       "name": "alesishr16",
       "occurrences": 3,
-      "weight": 0.040541
+      "weight": 0.045455
     },
     {
       "name": "tr909",
       "occurrences": 3,
-      "weight": 0.040541
+      "weight": 0.045455
     },
     {
       "name": "9000",
       "occurrences": 3,
-      "weight": 0.040541
+      "weight": 0.045455
+    },
+    {
+      "name": "yamahary30",
+      "occurrences": 2,
+      "weight": 0.030303
     },
     {
       "name": "sequentialcircuitsdrumtracks",
       "occurrences": 2,
-      "weight": 0.027027
+      "weight": 0.030303
     },
     {
       "name": "casiomt40",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "latin",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "crate",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
+    },
+    {
+      "name": "rolandtr707",
+      "occurrences": 1,
+      "weight": 0.015152
     },
     {
       "name": "linndrum",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "bossdr550",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "bossdr110",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "korgddm110",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     },
     {
       "name": "linn",
       "occurrences": 1,
-      "weight": 0.013514
+      "weight": 0.015152
     }
   ]
 }

@@ -6,11 +6,11 @@ code loads** (16 kHz mono WAV + `Note`/`NoteEvent` `.npy` + `yourmt3_indexes/
 
 ```
 datasets/                          (gitignored; Drive-synced)
-├── strudel_yourmt3_16k/<id>/      preprocess_strudel.py   corpus 50% + inspired
+├── strudel_yourmt3_16k/<id>/      preprocess_strudel.py   corpus 80% + LLM-enhanced
 ├── lakh_yourmt3_16k/<id>/         prepare_lakh.py         electronic Lakh subset
 ├── slakh/ maestro_yourmt3_16k/ …  install_reference_sets.py   (their hosted sets)
 ├── yourmt3_indexes/*.json         the file lists their loaders read
-├── strudel_holdout.json           withheld corpus 50% — EVAL ONLY, never train
+├── strudel_corpus_test.json       held-out corpus 20% — the Strudel TEST set
 └── strudel_build_report.json      skip reasons, unknown sounds, alignment stats
 ```
 
@@ -18,7 +18,7 @@ datasets/                          (gitignored; Drive-synced)
 
 | Script | What it does |
 |---|---|
-| `preprocess_strudel.py` | **Strudel → training data.** Corpus snippets (deterministic 50 % hash split; other half recorded in `strudel_holdout.json` and never rendered) + all `dataset/generated_500_inspired.yaml` songs. Per song: 16 kHz mono render (`data_gen/render_offline.mjs`), ground-truth events (`data_gen/extract_labels.mjs`, same eval + tempo code path — aligned by construction, measured ≈ +0.3 ms), YourMT3 `.npy`s, MIDI, index entries (90/5/5). |
+| `preprocess_strudel.py` | **Strudel → training data.** Corpus snippets (deterministic 50 % hash split; other half recorded in `strudel_holdout.json` and never rendered) + all `dataset/generated_500_inspired.yaml` songs. Per song: 16 kHz mono render (`data_gen/render_offline.mjs`), ground-truth events (`data_gen/extract_labels.mjs`, same eval + tempo code path — aligned by construction, measured ≈ +0.3 ms), YourMT3 `.npy`s, MIDI, index entries (train/validation 95/5; **never test** — testing uses the reference sets' canonical test splits, the corpus holdout, and real recordings). |
 | `prepare_lakh.py` | **Lakh MIDI (electronic subset) → labels** (+ placeholder audio). `--download` fetches lmd_full (~1.8 GB). Filter: drums present, ≥ 50 % of pitched notes on synth/electric programs, 30–600 s. Labels via their own `midi2note`. Audio is pluggable: `--render builtin` = toy synth placeholder; the real path is rendering through Surge XT / Vital / Dexed later. Without audio, entries stay in `lakh_staging_file_list.json` so loaders never see missing WAVs. |
 | `install_reference_sets.py` | **Slakh / MAESTRO / EGMD** from YourMT3's own hosted, preprocessed 16 kHz archives (Zenodo/mirdata) — zero conversion. These are the **forgetting-mitigation** sets: mix them into fine-tuning batches (~20–50 %) so the model keeps piano/guitar/real-audio ability. ~30/19/36 GB. |
 | `sync_drive.sh` | **datasets/ ↔ Google Drive** via rclone: `push`, `pull`, `check`. Credentials: one-time `rclone config` (browser OAuth) → `~/.config/rclone/rclone.conf`, machine-local, never in the repo. See the script header. |
@@ -59,7 +59,7 @@ JSONs without re-rendering).
   true clap class means extending the drum vocab (bigger change, later).
 - **Binary velocity** (their synthetic-data convention).
 - **Deterministic hash splits** — corpus train-pool/holdout and
-  train/validation/test never shift between runs; the holdout half of the
+  train/validation never shift between runs; the holdout half of the
   corpus is the untouched eval set.
 - **Validity gate**: songs must evaluate through the real Strudel engine
   (queryArc) and render non-silent audio, or they're skipped and logged in
