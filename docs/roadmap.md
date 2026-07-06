@@ -11,9 +11,18 @@ The later MIDI→Strudel stage and end-to-end demo remain in
 [project_plan.md](project_plan.md) until this works. **AWS is out of scope for now**
 (a possible scale fallback later, not the plan).
 
-> **🔥 Current priority: the data-generation pipeline (Phase 4, with Phases 2–3
-> as its prerequisites).** Sources → analysis → sample new Strudel code from the
-> measured distributions → render to WAV + labels → fine-tuning dataset.
+> **🔥 Current priority: build the YourMT3+ fine-tuning corpus (Phase 5).**
+> Phases 1–4 have landed — corpus **train/test split**, distribution **analysis**,
+> distribution-**sampled generation** (500), and **LLM enhancement** (500 inspired)
+> are all done, and `scripts/dataset/preprocess_strudel.py` already renders the
+> Strudel data into YourMT3+'s exact training format. Now:
+> 1. **Extend with labeled electronic audio** — Lakh electronic subset + EGMD
+>    (real WAV↔MIDI pairs) — plus MAESTRO/Slakh as forgetting-mitigation sets.
+> 2. **Run the whole fetch/render in Colab writing straight to a Drive-mounted
+>    store** (`DATA_HOME` under `MyDrive/restrudel/datasets`), so nothing large
+>    ever lands on this server or a local disk.
+> 3. **EDA** of the assembled categories (electronic vs. Strudel-generated vs.
+>    Strudel-corpus) in `notebooks/04_finetune_data.ipynb`.
 
 ## Guiding principles
 - **Data-driven, not random.** We do *not* generate uniform-random notes. We
@@ -34,7 +43,13 @@ The later MIDI→Strudel stage and end-to-end demo remain in
 - **Compute (Phase 3–4, heavy):** local or a VM; Colab optional. The authored
   `notebooks/00_setup.ipynb` (Drive mount + Node) is kept for that stage.
 - **Storage:** git for code + small artifacts (corpus, analysis, MIDI);
-  **Google Drive** for the WAV dataset only (sync mechanism TBD).
+  **Google Drive (5 TB available)** for the heavy audio + reference datasets.
+  **Sync mechanism decided:** the fetch/render runs **in Colab with Drive mounted**
+  (`drive.mount('/content/drive')`, `DATA_HOME = MyDrive/restrudel/datasets`), so
+  downloads and WAV renders land in Drive directly — never on this server or a
+  local disk. `scripts/dataset/sync_drive.sh` (rclone) is the equivalent path for
+  non-Colab machines. The claude.ai Google Drive MCP connector is **not** used for
+  this — it is read/search only, not a bulk-storage backend.
 - **Audio render (Part B):** `OfflineAudioContext` (faster-than-realtime) first;
   headless browser as proven fallback. Validated by a spike before we depend on it.
 - **Training (Goal 2):** **fine-tune** the released YourMT3+ checkpoint — *not* train
@@ -105,18 +120,20 @@ songs use — the evidence that drives generation.
 > so templates target the real sound palette (e.g. if `sawtooth`+`lpf` dominates
 > basslines, generate accordingly).
 
-## Phase 2 — Label pipeline (Part A: pattern → MIDI/events)
+## Phase 2 — Label pipeline (Part A: pattern → MIDI/events)  ✅ DONE
 **Outcome:** deterministic, exact labels from any pattern string — no audio needed.
 
-- [ ] Node script `data_gen/labels.mjs`: evaluate pattern (`@strudel/transpiler`
-      + `@strudel/mini`) → `pattern.queryArc(0, cycles)` → haps.
-- [ ] Convert haps → MIDI (`@tonejs/midi`): cycle→seconds via `cps`, pitch from
-      `note`/`n`, duration from `whole`, velocity from `gain`.
-- [ ] Also dump raw haps + synth params → `events/{id}.json`.
-- [ ] Unit-check: round-trip a known pattern, assert note count/timing.
-- [ ] Pin Strudel version (eval import surface varies across versions).
+- [x] Node labeler `data_gen/extract_labels.mjs`: evaluate pattern
+      (`@strudel/transpiler` + `@strudel/mini`) → `queryArc` → haps → MIDI/events.
+      Same eval + tempo code path as the renderer → aligned by construction
+      (measured median onset skew ≈ +0.3 ms).
+- [x] Haps → MIDI + raw haps/synth params dumped for each song; consumed by
+      `preprocess_strudel.py` to write YourMT3 `.npy` targets.
+- [x] Validity gate `data_gen/strudel_eval.mjs`: a song must evaluate in the real
+      engine or it is skipped and logged in `strudel_build_report.json`.
+- [x] Strudel package versions pinned (`data_gen/package-lock.json`).
 
-## Phase 3 — Audio renderer (Part B: pattern → WAV), scalable
+## Phase 3 — Audio renderer (Part B: pattern → WAV), scalable  ✅ DONE
 **Outcome:** batch WAV rendering, faster-than-realtime, aligned with Phase 2 labels.
 
 - [x] **Spike:** run SuperDough under `node-web-audio-api` + `OfflineAudioContext`;
@@ -126,15 +143,18 @@ songs use — the evidence that drives generation.
       MIDI) in `notebooks/03_yourmt3_demo.ipynb`. Caveats: AudioWorklet-based
       FX (crush/distort/coarse) don't load under node-web-audio-api yet;
       `stop()` idempotence shim needed (see script header).
-- [ ] If spike passes → `data_gen/render.mjs` batch renderer (offline, parallel).
-- [ ] If spike fails → fallback `render_browser.mjs` (Puppeteer drives a local
-      `@strudel/web` page + WAV export); accept near-real-time.
-- [ ] Render from the **same pattern string** used for labels (guarantees alignment).
-- [ ] Standardize output: 16 kHz mono WAV (matches AMT front end in project_plan).
+- [x] Spike passed → batch renderer `data_gen/render_offline.mjs` (offline,
+      faster-than-realtime); renders synths *and* sample banks. Fallback
+      `render_browser.mjs` not needed.
+- [x] Renders from the **same pattern string** used for labels (guarantees alignment).
+- [x] Output standardized: 16 kHz mono WAV (matches the AMT front end).
+- [ ] Remaining gap: AudioWorklet FX (crush/distort/coarse) don't load under
+      `node-web-audio-api` yet — songs using them are skipped by the validity gate.
 
-## Phase 4 — Synthetic data generation 🔥 (HIGHEST PRIORITY)
-**Outcome:** the actual training corpus of aligned triples, in Drive — the data
-YourMT3+ gets fine-tuned on. **This is the job right now.**
+## Phase 4 — Synthetic data generation  ✅ DONE (500 sampled + 500 enhanced)
+**Outcome:** the actual training corpus of aligned triples — the data YourMT3+
+gets fine-tuned on. Sampler, content synthesis, validity gate, and LLM enhancement
+all landed; packaging into YourMT3 format continues in Phase 5.
 
 ### The pipeline, end to end
 
@@ -192,9 +212,13 @@ JSONs to emit new `.js` pattern files:
       *structure* (`[]`, `<>`, euclid, `*`) is not yet synthesized around the
       tokens (flat sequences for now); optional templates
       (bassline/arp/lead/drums) as skeletons; higher-order (depth-2) token model.
-- [ ] **Validity gate:** every generated pattern must evaluate in the Strudel
-      engine (Phase 2 evaluator) — reject/resample on error, so only playable
-      code enters the dataset. *(needs Phase 2)*
+- [x] **Validity gate:** every generated pattern must evaluate in the Strudel
+      engine (`data_gen/strudel_eval.mjs`) and render non-silent audio — else it is
+      skipped and logged. On the corpus expect ~75–80% yield.
+- [x] **LLM enhancement:** `data_gen/enhance_samples.py` + `collate_enhanced.py`
+      turn the 500 raw sketches into 500 musically-richer "inspired" tracks
+      (`dataset/enhanced/*.js` → `dataset/generated_500_inspired.yaml`); these are
+      the synthetic songs that actually enter the fine-tuning set.
 - [x] **Reproducibility:** seeded RNG (mulberry32), seed recorded per song;
       - [ ] still to do: manifest row with seed + generator version per sample.
 
@@ -207,20 +231,52 @@ git, `dataset/audio/{id}.wav` to Drive, one manifest row per sample
 (id, seed, template, sounds used, params, split). This is exactly what Phase 6
 consumes.
 
-### Order of work (since Phases 2–3 are prerequisites)
-1. [ ] **Phase 2 labeler** (`labels.mjs`) — also serves as the validity gate.
-2. [ ] **Phase 3 renderer spike** (`render.mjs`) — the main technical risk.
-3. [ ] **Generator** (`generate.mjs`) — sampler core → structure → gate.
-4. [ ] **Pilot batch (~500 samples)** → listen, check MIDI alignment, inspect
-       distribution of generated vs. corpus stats → then scale up.
+### Order of work — ✅ all landed
+1. [x] **Labeler** (`data_gen/extract_labels.mjs`) — also the validity gate.
+2. [x] **Offline renderer** (`data_gen/render_offline.mjs`) — the main technical risk, retired.
+3. [x] **Generator** (`data_gen/generate.mjs`) — sampler core + content synthesis.
+4. [x] **Pilot batch (500 samples)** generated, LLM-enhanced, and checked against
+       corpus stats (`notebooks/02_generated_vs_corpus.ipynb`).
 
-## Phase 5 — Dataset packaging
-**Outcome:** training-ready dataset.
+## Phase 5 — Fine-tuning corpus (Goal 1 output) 🔥 (CURRENT PRIORITY)
+**Outcome:** a training-ready dataset in **YourMT3+'s exact load format** (16 kHz
+mono WAV + `Note`/`NoteEvent` `.npy` + `yourmt3_indexes/*_file_list.json`),
+assembled **in Colab straight into a Drive-mounted store** — no heavy data on this
+server or a local disk. Built by `scripts/dataset/` (see its README).
 
-- [ ] Train/val/test splits in `manifest.jsonl`; hold out some templates/timbres
-      for generalization testing.
-- [ ] Reserve a tiny **real** eval set (hand-labeled real electronic clips).
-- [ ] Document format so the AMT stage can consume it directly.
+### Execution model (decided)
+- Colab mounts Drive; `DATA_HOME = /content/drive/MyDrive/restrudel/datasets`.
+  Downloads/extracts use the VM's fast ephemeral disk, then move into Drive.
+- Orchestrated by `notebooks/04_finetune_data.ipynb` (download → format → EDA →
+  split-integrity checks). 5 TB of Drive means every reference set fits.
+
+### The data categories
+- [x] **Strudel — generated (synthetic, target domain).** 500 sampled + 500
+      LLM-enhanced tracks rendered to aligned WAV/MIDI by `preprocess_strudel.py`.
+- [x] **Strudel — corpus (real, target domain).** Train-pool (697) → train/val;
+      **held-out 20% (158) → the Strudel TEST set** (deterministic hash split,
+      `analysis/results/corpus_test.json`; never rendered into train/val).
+- [ ] **Electronic — external, labeled (the extension).** `prepare_lakh.py`
+      filters the Lakh MIDI electronic subset (drums + ≥50% synth/electric
+      programs) → labels now; **real audio via Surge XT / Vital / Dexed rendering
+      still to wire up** (placeholder audio for now, kept out of the loaders).
+      Add **EGMD** (electronic drums) as real WAV↔MIDI via `install_reference_sets.py`.
+- [ ] **Acoustic — forgetting-mitigation reference sets.** MAESTRO (piano) +
+      Slakh (band mixes) from YourMT3's hosted 16 kHz archives; mix ~20–50% into
+      batches so the model keeps its existing pitched/real-audio ability.
+
+### Remaining work
+- [ ] Run the Colab download of EGMD/MAESTRO/Slakh into Drive (§2 of notebook 04).
+- [ ] **Real synth audio for the Lakh electronic subset** (Surge/Vital/Dexed) —
+      the highest-leverage way to add labeled electronic timbres beyond Strudel.
+- [ ] Per-voice stems for YourMT3's cross-stem mixing augmentation (render each
+      `$:`/`stack` voice separately).
+- [ ] Reserve a tiny **real** eval set (hand-labeled real electronic clips) — the
+      honest generalization test alongside the Strudel holdout.
+- [x] **EDA of the assembled categories** in notebook 04 §7 (electronic vs.
+      Strudel-generated vs. Strudel-corpus; songs/hours per split).
+- [ ] Register a `"strudel"` preset in YourMT3's `amt/src/config/data_presets.py`
+      pointing at these file lists when the fine-tune run is set up.
 
 ## Phase 6 — Fine-tune YourMT3+ (Goal 2)
 **Outcome:** a YourMT3+ checkpoint that beats the released baseline on synth/
@@ -245,13 +301,14 @@ Fine-tuning the released checkpoint on our synth data tests the thesis in
 ---
 
 ## Milestones
-1. **M1 — Infra:** Colab mounts Drive; repo skeleton; Drive layout exists. (Ph 0)
-2. **M2 — Analysis:** distributions of real Strudel sounds plotted & reviewed. (Ph 1) ⭐
-3. **M3 — Labels:** pattern → MIDI/events working & verified. (Ph 2)
-4. **M4 — Audio:** scalable WAV render validated (offline or fallback). (Ph 3)
-5. **M5 — Dataset:** pilot batch of distribution-sampled songs rendered, labeled,
-   and in Drive; generated stats match corpus stats. (Ph 4–5) 🔥
-6. **M6 — Fine-tune:** YourMT3+ beats its own baseline on electronic clips. (Ph 6) 🎯
+1. ✅ **M1 — Infra:** Colab mounts Drive; repo skeleton; Drive layout exists. (Ph 0)
+2. ✅ **M2 — Analysis:** distributions of real Strudel sounds plotted & reviewed. (Ph 1)
+3. ✅ **M3 — Labels:** pattern → MIDI/events working & verified. (Ph 2)
+4. ✅ **M4 — Audio:** scalable WAV render validated (offline). (Ph 3)
+5. 🔥 **M5 — Dataset:** Strudel data (500 sampled + 500 enhanced + corpus split)
+   packaged in YourMT3 format; **now extend with electronic (Lakh/EGMD) + reference
+   sets, assembled in Colab→Drive**; categories reviewed in the EDA. (Ph 4–5)
+6. 🎯 **M6 — Fine-tune:** YourMT3+ beats its own baseline on electronic clips. (Ph 6)
 
 ## Open questions / risks
 - [ ] SuperDough on `node-web-audio-api` — unproven (Phase 3 spike de-risks).
