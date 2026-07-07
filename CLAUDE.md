@@ -61,6 +61,18 @@ transcription needed to get labels.
 - Corpus analysis is the notebook `notebooks/01_corpus_analysis.ipynb`
   (matplotlib/pandas); re-run it top-to-bottom to refresh `analysis/out/` and
   `analysis/results/`.
+- **Colab MCP (fork, not upstream):** cloud runtime work (e.g. running
+  `notebooks/04_finetune_data.ipynb`, downloading reference sets to Drive) uses
+  the `colab-mcp` MCP server. We run a **local patched fork of
+  `googlecolab/colab-mcp`, not the upstream package** — upstream hardcodes a
+  scratch notebook so every reconnect opens a fresh blank one (their
+  discussion #80). The fork adds a `COLAB_MCP_NOTEBOOK_URL` env var so reconnects
+  reopen a pinned notebook (currently `notebooks/04_finetune_data.ipynb` via its
+  GitHub Colab URL) and reattach using the still-live proxy token/port. The MCP
+  config points `uvx --from <local-fork-path> colab-mcp` with that env set;
+  config changes need an MCP-server restart to take effect. Long downloads must
+  be launched **backgrounded + logging to Drive**, never as a blocking cell (a
+  blocking multi-minute cell drops the MCP WebSocket).
 
 ## Workflow for new features (REQUIRED)
 
