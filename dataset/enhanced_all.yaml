@@ -1,7 +1,7 @@
 generator: data_gen/collate_enhanced.py --all
 source: dataset/batches/*/enhanced.yaml
-batches: 2
-count: 1000
+batches: 3
+count: 1500
 songs:
   - id: "inspired_010"
     source_id: "10"
@@ -14048,3 +14048,6666 @@ songs:
       $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
       
       $: s("hh*4").gain(.2).room(.3)
+  - id: "inspired_3000_0"
+    source_id: "3000_0"
+    source_seed: 3000
+    voices: 3
+    events: 22
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_1"
+    source_id: "3000_1"
+    source_seed: 3001
+    voices: 2
+    events: 6
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_10"
+    source_id: "3000_10"
+    source_seed: 3010
+    voices: 4
+    events: 38
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_100"
+    source_id: "3000_100"
+    source_seed: 3100
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_101"
+    source_id: "3000_101"
+    source_seed: 3101
+    voices: 4
+    events: 30
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_102"
+    source_id: "3000_102"
+    source_seed: 3102
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("square").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_103"
+    source_id: "3000_103"
+    source_seed: 3103
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("c2 d3 c2 a2").scale("c:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("c:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_104"
+    source_id: "3000_104"
+    source_seed: 3104
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("square").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_105"
+    source_id: "3000_105"
+    source_seed: 3105
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_106"
+    source_id: "3000_106"
+    source_seed: 3106
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_107"
+    source_id: "3000_107"
+    source_seed: 3107
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c2 d3 c2 a2").scale("c:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("c:minor").s("triangle").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_108"
+    source_id: "3000_108"
+    source_seed: 3108
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("square").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_109"
+    source_id: "3000_109"
+    source_seed: 3109
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_11"
+    source_id: "3000_11"
+    source_seed: 3011
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_110"
+    source_id: "3000_110"
+    source_seed: 3110
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_111"
+    source_id: "3000_111"
+    source_seed: 3111
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_112"
+    source_id: "3000_112"
+    source_seed: 3112
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_113"
+    source_id: "3000_113"
+    source_seed: 3113
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_114"
+    source_id: "3000_114"
+    source_seed: 3114
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_115"
+    source_id: "3000_115"
+    source_seed: 3115
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_116"
+    source_id: "3000_116"
+    source_seed: 3116
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:pentatonic").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:pentatonic").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_117"
+    source_id: "3000_117"
+    source_seed: 3117
+    voices: 4
+    events: 30
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3500).release(.12).gain(.45).resonance(3)
+      
+      $: note("7 5 3 5").scale("g:minor").s("triangle").lpf(2000).gain(.35).room(.25).resonance(4)
+  - id: "inspired_3000_118"
+    source_id: "3000_118"
+    source_seed: 3118
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("d2 d3 d2 a2").scale("d:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("d:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_119"
+    source_id: "3000_119"
+    source_seed: 3119
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_12"
+    source_id: "3000_12"
+    source_seed: 3012
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_120"
+    source_id: "3000_120"
+    source_seed: 3120
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_121"
+    source_id: "3000_121"
+    source_seed: 3121
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_122"
+    source_id: "3000_122"
+    source_seed: 3122
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_123"
+    source_id: "3000_123"
+    source_seed: 3123
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("square").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_124"
+    source_id: "3000_124"
+    source_seed: 3124
+    voices: 4
+    events: 30
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_125"
+    source_id: "3000_125"
+    source_seed: 3125
+    voices: 4
+    events: 30
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_126"
+    source_id: "3000_126"
+    source_seed: 3126
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:dorian").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:dorian").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_127"
+    source_id: "3000_127"
+    source_seed: 3127
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c2 d3 c2 a2").scale("c:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("c:minor").s("triangle").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_128"
+    source_id: "3000_128"
+    source_seed: 3128
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_129"
+    source_id: "3000_129"
+    source_seed: 3129
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_13"
+    source_id: "3000_13"
+    source_seed: 3013
+    voices: 1
+    events: 4
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_130"
+    source_id: "3000_130"
+    source_seed: 3130
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_131"
+    source_id: "3000_131"
+    source_seed: 3131
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("square").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_132"
+    source_id: "3000_132"
+    source_seed: 3132
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_133"
+    source_id: "3000_133"
+    source_seed: 3133
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("c2 d3 c2 a2").scale("c:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("c:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_134"
+    source_id: "3000_134"
+    source_seed: 3134
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_135"
+    source_id: "3000_135"
+    source_seed: 3135
+    voices: 4
+    events: 30
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_136"
+    source_id: "3000_136"
+    source_seed: 3136
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c2 d3 c2 a2").scale("c:dorian").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("c:dorian").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_137"
+    source_id: "3000_137"
+    source_seed: 3137
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:dorian").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:dorian").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_138"
+    source_id: "3000_138"
+    source_seed: 3138
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_139"
+    source_id: "3000_139"
+    source_seed: 3139
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_14"
+    source_id: "3000_14"
+    source_seed: 3014
+    voices: 2
+    events: 20
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_140"
+    source_id: "3000_140"
+    source_seed: 3140
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("d2 d3 d2 a2").scale("d:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("d:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_141"
+    source_id: "3000_141"
+    source_seed: 3141
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_142"
+    source_id: "3000_142"
+    source_seed: 3142
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("square").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("square").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_143"
+    source_id: "3000_143"
+    source_seed: 3143
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_144"
+    source_id: "3000_144"
+    source_seed: 3144
+    voices: 4
+    events: 34
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_145"
+    source_id: "3000_145"
+    source_seed: 3145
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 7").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_146"
+    source_id: "3000_146"
+    source_seed: 3146
+    voices: 4
+    events: 26
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_147"
+    source_id: "3000_147"
+    source_seed: 3147
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.1)
+  - id: "inspired_3000_148"
+    source_id: "3000_148"
+    source_seed: 3148
+    voices: 4
+    events: 38
+    code: |
+      setcpm(80/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("hh*4 ~ hh*2").gain(.19)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3200).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_149"
+    source_id: "3000_149"
+    source_seed: 3149
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~ bd*2 sd").gain(.68)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g2 d3 g2 a2").scale("g:minor").s("sawtooth").lpf(3500).release(.12).gain(.45)
+      
+      $: note("7 5 3 5").scale("g:minor").s("sawtooth").lpf(2000).gain(.35).room(.25)
+  - id: "inspired_3000_15"
+    source_id: "3000_15"
+    source_seed: 3015
+    voices: 5
+    events: 40
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_150"
+    source_id: "3000_150"
+    source_seed: 3150
+    voices: 5
+    events: 40
+    code: |
+      setcpm(110/4)
+      
+      $: s("shaker ~ hh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_151"
+    source_id: "3000_151"
+    source_seed: 3151
+    voices: 5
+    events: 40
+    code: |
+      setcpm(110/4)
+      
+      $: s("lt ~ ht").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_152"
+    source_id: "3000_152"
+    source_seed: 3152
+    voices: 4
+    events: 60
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("~ c5 ~ e5 ~ ~ ~ d5 ~ ~ ~ c5 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("<.5 .8>*16").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_153"
+    source_id: "3000_153"
+    source_seed: 3153
+    voices: 4
+    events: 30
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("d#5@2 d5@2 c#5@7 ~ d#5@2 d5@2 ").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c4@2 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_154"
+    source_id: "3000_154"
+    source_seed: 3154
+    voices: 3
+    events: 12
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd").gain(.75).room(.2)
+      
+      $: n("e1 ~ ~ e2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("e1 ~ ~ e2").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_155"
+    source_id: "3000_155"
+    source_seed: 3155
+    voices: 3
+    events: 24
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("c5 g4 e4 c4 g4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c5 g4 e4 c4 g4").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_156"
+    source_id: "3000_156"
+    source_seed: 3156
+    voices: 4
+    events: 26
+    code: |
+      setcpm(75/4)
+      
+      $: s("cr ~ lt").gain(.75).room(.2)
+      
+      $: n("3 -4 ~ 4 6 5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("3 -4 ~ 4 6 5").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_157"
+    source_id: "3000_157"
+    source_seed: 3157
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110/4)
+      
+      $: s("bongo").gain(.75).room(.2)
+      
+      $: n("e1 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("a2*8 a2*4 ~ ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_158"
+    source_id: "3000_158"
+    source_seed: 3158
+    voices: 4
+    events: 36
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: n("[1 0.5]*4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("[1 0.5]*4").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_159"
+    source_id: "3000_159"
+    source_seed: 3159
+    voices: 4
+    events: 36
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("f4 f4@2").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_16"
+    source_id: "3000_16"
+    source_seed: 3016
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_160"
+    source_id: "3000_160"
+    source_seed: 3160
+    voices: 4
+    events: 26
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("g#4@2 g#4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("g#4@2 g#4").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_161"
+    source_id: "3000_161"
+    source_seed: 3161
+    voices: 3
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: s("cp").gain(.75).room(.2)
+      
+      $: n("b4 eb4 g4 bb4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 ~ 3 4 ~ 3").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_162"
+    source_id: "3000_162"
+    source_seed: 3162
+    voices: 4
+    events: 22
+    code: |
+      setcpm(90/4)
+      
+      $: s("bd").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_163"
+    source_id: "3000_163"
+    source_seed: 3163
+    voices: 4
+    events: 60
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("3 2!3 4 3@3 4 3 4 5 6@3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("3 2!3 4 3@3 4 3 4 5 ").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_164"
+    source_id: "3000_164"
+    source_seed: 3164
+    voices: 3
+    events: 16
+    code: |
+      setcpm(110/4)
+      
+      $: s("cowbell").gain(.75).room(.2)
+      
+      $: n("7 11!2 6 7").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("g5 c5").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_165"
+    source_id: "3000_165"
+    source_seed: 3165
+    voices: 3
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: s("cp").gain(.75).room(.2)
+      
+      $: n("c a f e").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c a f e").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_166"
+    source_id: "3000_166"
+    source_seed: 3166
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("shaker ~ rim").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_167"
+    source_id: "3000_167"
+    source_seed: 3167
+    voices: 2
+    events: 12
+    code: |
+      setcpm(110/4)
+      
+      $: n("e5 ~ e5 d#5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("e5 ~ e5 d#5").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_168"
+    source_id: "3000_168"
+    source_seed: 3168
+    voices: 3
+    events: 40
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("~ F3 A3 C4 F3 A3 C4 ~ F3 A3 C3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("d2*8 g3").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_169"
+    source_id: "3000_169"
+    source_seed: 3169
+    voices: 3
+    events: 46
+    code: |
+      setcpm(110/4)
+      
+      $: n("d2*8 c#2@11 e2 f#2@3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("d2*8 c#2@11 e2 f#2@3").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_17"
+    source_id: "3000_17"
+    source_seed: 3017
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_170"
+    source_id: "3000_170"
+    source_seed: 3170
+    voices: 3
+    events: 22
+    code: |
+      setcpm(110/4)
+      
+      $: s("cowbell ~ sd").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_171"
+    source_id: "3000_171"
+    source_seed: 3171
+    voices: 4
+    events: 36
+    code: |
+      setcpm(110/4)
+      
+      $: s("crow ~ cowbell").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("a#5 g#5 e5 c#5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("a#5 g#5 e5 c#5").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_172"
+    source_id: "3000_172"
+    source_seed: 3172
+    voices: 3
+    events: 12
+    code: |
+      setcpm(90/4)
+      
+      $: s("clave ~ bd").gain(.75).room(.2)
+      
+      $: n("e5 a5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("e5 a5").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_173"
+    source_id: "3000_173"
+    source_seed: 3173
+    voices: 2
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: n("9 5 7 10 4 7").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("~ 0 4 7").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_174"
+    source_id: "3000_174"
+    source_seed: 3174
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("~ ~ 2 11 9 10").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("~ ~ 2 11 9 10").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_175"
+    source_id: "3000_175"
+    source_seed: 3175
+    voices: 4
+    events: 34
+    code: |
+      setcpm(110/4)
+      
+      $: s("lt").gain(.75).room(.2)
+      
+      $: n("c3 g2 a2 f2 c3 g2 c2 f2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c3 g2 a2 f2 c3 g2 c2").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_176"
+    source_id: "3000_176"
+    source_seed: 3176
+    voices: 2
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_177"
+    source_id: "3000_177"
+    source_seed: 3177
+    voices: 3
+    events: 22
+    code: |
+      setcpm(75/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_178"
+    source_id: "3000_178"
+    source_seed: 3178
+    voices: 3
+    events: 24
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd").gain(.75).room(.2)
+      
+      $: n("d#5@2 ~ a4 d#5@3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("[1 0.7 0.5 0.3]*2").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_179"
+    source_id: "3000_179"
+    source_seed: 3179
+    voices: 4
+    events: 24
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_18"
+    source_id: "3000_18"
+    source_seed: 3018
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("d:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("bb:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_180"
+    source_id: "3000_180"
+    source_seed: 3180
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110/4)
+      
+      $: s("cowbell").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_181"
+    source_id: "3000_181"
+    source_seed: 3181
+    voices: 3
+    events: 10
+    code: |
+      setcpm(110/4)
+      
+      $: s("rim").gain(.75).room(.2)
+      
+      $: n("0 3").scale("D1:hirajoshi").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("0 3").scale("D1:hirajoshi").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_182"
+    source_id: "3000_182"
+    source_seed: 3182
+    voices: 4
+    events: 30
+    code: |
+      setcpm(110/4)
+      
+      $: s("clave").gain(.75).room(.2)
+      
+      $: n("G3 C3 E3 F2 D2 G2 C2 F2 D2 G2 ").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("~ g#3 g#3 g3").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_183"
+    source_id: "3000_183"
+    source_seed: 3183
+    voices: 4
+    events: 52
+    code: |
+      setcpm(75/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("0 7 -4 -4 b -2 7 4 b 3 1 2 1 0").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("0 7 -4 -4 b -2 7 4 b").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_184"
+    source_id: "3000_184"
+    source_seed: 3184
+    voices: 3
+    events: 14
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: n("d4 d4@2 ~ c4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("d4 d4@2 ~ c4").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_185"
+    source_id: "3000_185"
+    source_seed: 3185
+    voices: 3
+    events: 38
+    code: |
+      setcpm(100/4)
+      
+      $: s("oh ~ bd").gain(.75).room(.2)
+      
+      $: n("e4 g4 g3 b3 d4 a3 c4 e4 f3 a3 ").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("e4 g4 g3 b3 d4 a3 c4").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_186"
+    source_id: "3000_186"
+    source_seed: 3186
+    voices: 3
+    events: 22
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd").gain(.75).room(.2)
+      
+      $: n("B2 F#2 F2 Bb2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("a1 g1*2 a1*2").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_187"
+    source_id: "3000_187"
+    source_seed: 3187
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ lt").gain(.75).room(.2)
+      
+      $: n("12 e d c d e f e").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("12 e d c d e f e").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_188"
+    source_id: "3000_188"
+    source_seed: 3188
+    voices: 3
+    events: 14
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("C1 F1 G1").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("2 -5").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_189"
+    source_id: "3000_189"
+    source_seed: 3189
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh ~ perc").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_19"
+    source_id: "3000_19"
+    source_seed: 3019
+    voices: 3
+    events: 22
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("c:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_190"
+    source_id: "3000_190"
+    source_seed: 3190
+    voices: 4
+    events: 24
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh ~ bd").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_191"
+    source_id: "3000_191"
+    source_seed: 3191
+    voices: 5
+    events: 32
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh ~ oh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("-3 0 2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c4 d#4").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_192"
+    source_id: "3000_192"
+    source_seed: 3192
+    voices: 2
+    events: 36
+    code: |
+      setcpm(100/4)
+      
+      $: n("c2*8 e2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("c2*8 e2").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_193"
+    source_id: "3000_193"
+    source_seed: 3193
+    voices: 2
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: n("~ Ab3 B3 F4 Ab3 B3 F4 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("~ 4@3 ~ 9 4").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_194"
+    source_id: "3000_194"
+    source_seed: 3194
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_195"
+    source_id: "3000_195"
+    source_seed: 3195
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110/4)
+      
+      $: s("oh").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_196"
+    source_id: "3000_196"
+    source_seed: 3196
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_197"
+    source_id: "3000_197"
+    source_seed: 3197
+    voices: 3
+    events: 22
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_198"
+    source_id: "3000_198"
+    source_seed: 3198
+    voices: 4
+    events: 24
+    code: |
+      setcpm(110/4)
+      
+      $: s("cp ~ cowbell").gain(.75).room(.2)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(400).gain(.5).release(.1)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_199"
+    source_id: "3000_199"
+    source_seed: 3199
+    voices: 3
+    events: 34
+    code: |
+      setcpm(110/4)
+      
+      $: s("oh").gain(.75).room(.2)
+      
+      $: n("[0.8 0.9 0.7 0.9]*2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("[0.8 0.9 0.7 0.9]*2").scale("c2:minor").transpose(12).s("square").lpf(1800).gain(.35).release(.2)
+  - id: "inspired_3000_2"
+    source_id: "3000_2"
+    source_seed: 3002
+    voices: 2
+    events: 20
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_20"
+    source_id: "3000_20"
+    source_seed: 3020
+    voices: 5
+    events: 40
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_200"
+    source_id: "3000_200"
+    source_seed: 3200
+    voices: 5
+    events: 49
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("vocal 1").clip(1).note("c4 c#4 d#4 f4 d#4 g#3@8 ~ d#4 f4@2 d#4@2 d4 d#4@4").lpf(1500).gain(.4)
+      
+      $: s("hh cp").slow(8).gain(.2)
+      
+      $: note("b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4").lpf(1500).gain(.4)
+      
+      $: s("gm_oboe tambourine*2").cutoff(1000).resonance(2).gain(.5)
+  - id: "inspired_3000_201"
+    source_id: "3000_201"
+    source_seed: 3201
+    voices: 4
+    events: 54
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("c5 d5 e5 g5").sound("supersaw triangle").lpf(700).gain(.5)
+      
+      $: n("c2 f2 g2 f2 g2 f2 ~ -1 -1 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0").velocity(.0723).pan("<.4 .6>/10").lpf(1500).gain(.4)
+      
+      $: s("cowbell ~").gain(.5)
+  - id: "inspired_3000_202"
+    source_id: "3000_202"
+    source_seed: 3202
+    voices: 4
+    events: 44
+    code: |
+      setcpm(100)
+      
+      $: note("c5 g3 b3").lpf(1500).gain(.4)
+      
+      $: n("c2 ~ f2 ~ 10 4").scale("C:ritusen").transpose(3).s("misc:2 sawtooth").gain(.4).lpf(1500).gain(.4)
+      
+      $: n("0 -7!8 9!2 6 7").clip("<1@3 [.3 1]>/2").s("bd 1").bank("RolandTR909").gain(.8)
+      
+      $: s("gm_lead_6_voice rhodes").release(1.4367).delay(.5).gain(.8722).lpf(1500).gain(.4)
+  - id: "inspired_3000_203"
+    source_id: "3000_203"
+    source_seed: 3203
+    voices: 4
+    events: 86
+    code: |
+      setcpm(100)
+      
+      $: s("gm_electric_guitar_jazz gm_synth_strings_1").struct("x(5,8,-1)").gain(.3).lpf(1500).gain(.4)
+      
+      $: s("gm_piano gm_string_ensemble_2 gm_piccolo gm_drawbar_organ sd*3").gain(.2).lpf(1500).gain(.4)
+      
+      $: note("0 1 4!3 12 2 a#5 g#5 c#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4").s("gm_electric_bass_finger:2 bd*4").speed(1.002).room(.6).delay(.6).delaytime(.08).delayfeedback(.5).orbit(2).bank("RolandTR909").gain(.8)
+      
+      $: note("c1 f1 g1 a#1 eb g bb c4 d4 eb4 g4 bb4").lpf(3000).resonance(5).gain(.8133).clip(.95).release(.1).attack(.001)
+  - id: "inspired_3000_204"
+    source_id: "3000_204"
+    source_seed: 3204
+    voices: 4
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: n("F4 Ab3 B3 F4 ~ G3").s("gm_overdriven_guitar:3 cp*8 rd*3 sd*4").gain(.6).hpf(1000).lpf(3000)
+      
+      $: s("hh*2 cp").clip(.8092).gain("0.25 0.35 0.3 0.4")
+      
+      $: sound("drum triangle").lpf(249).room(.25).bank("RolandTR909").gain(.8)
+      
+      $: s("gm_distortion_guitar gm_bassoon gm_acoustic_bass gm_electric_bass_pick:7").lpf(600).gain(.9)
+  - id: "inspired_3000_205"
+    source_id: "3000_205"
+    source_seed: 3205
+    voices: 2
+    events: 8
+    code: |
+      setcpm(100)
+      
+      $: s("gm_lead_6_voice rim").gain(.2159)
+      
+      $: s("bd!2 ~").gain(.8).release(.4).attack(.3).delay(.2).bank("RolandTR909")
+  - id: "inspired_3000_206"
+    source_id: "3000_206"
+    source_seed: 3206
+    voices: 4
+    events: 73
+    code: |
+      setcpm(100)
+      
+      $: s("triangle hats*8").slow(16).room(.4).gain(.2)
+      
+      $: note("~ 6 f2 g#2!3").sound("square hadoken").lpf(800).gain(.4)
+      
+      $: note("c3 a#2 f2@3 ~ ~ f2 g#2!3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 g#3 g3 f3 c3@3 c3 d#3@2 c#3 c3").sound("kick snare").lpf(650).attack(.1).decay(.1).sustain(0).delay(.25).gain(.2).bank("RolandTR909")
+      
+      $: s("cowbell ~").cutoff(500).resonance(12).gain(.5)
+  - id: "inspired_3000_207"
+    source_id: "3000_207"
+    source_seed: 3207
+    voices: 3
+    events: 18
+    code: |
+      setcpm(100)
+      
+      $: s("linndrum_bd cajon").gain(.5).bank("RolandTR909")
+      
+      $: n("~ Ab3 C4 Eb4 Ab3 C4").clip(.9).release(.5).lpf(1500).gain(.4)
+      
+      $: s("hh*4 ~").velocity(.65).slow(2).gain(.2)
+  - id: "inspired_3000_208"
+    source_id: "3000_208"
+    source_seed: 3208
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("kick 1").fast(2).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("e3 c3@2 ~ g#3").sound("sine ~").lpf(2000).velocity(.1799).gain(.4)
+  - id: "inspired_3000_209"
+    source_id: "3000_209"
+    source_seed: 3209
+    voices: 3
+    events: 24
+    code: |
+      setcpm(100)
+      
+      $: s("perc*3 bd!3").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("pad bd@3 ~ bd ~").slow(3.7111).bank("RolandTR909").gain(.8)
+  - id: "inspired_3000_21"
+    source_id: "3000_21"
+    source_seed: 3021
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("d:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_210"
+    source_id: "3000_210"
+    source_seed: 3210
+    voices: 4
+    events: 18
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("supersaw oh").slow(2).gain(.5)
+      
+      $: note("c4 g4 d4 b3").s("gm_electric_guitar_jazz gm_distortion_guitar").velocity(.4348).pan(.4).hpf(800).speed(.7692).gain(.4821).room(.277).lpf(1500).gain(.4)
+      
+      $: s("vocal 1").speed(.9903).bank("Linn9000").gain(.8).lpf(1500).gain(.4)
+  - id: "inspired_3000_211"
+    source_id: "3000_211"
+    source_seed: 3211
+    voices: 3
+    events: 30
+    code: |
+      setcpm(100)
+      
+      $: sound("sine bd*2").lpf(2632).resonance(2).room(.8).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("g5 d5 e5 c5").cutoff(933).resonance(13).gain(.3).lpf(1500).gain(.4)
+  - id: "inspired_3000_212"
+    source_id: "3000_212"
+    source_seed: 3212
+    voices: 4
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: note("c5 g3 b3 d4").sound("bd hh").lpf(232).room(.5).bank("RolandTR909").gain(.8)
+      
+      $: s("cp ~ ~ ~ crash ~ ~ ~").room(1).pan(.5526).gain(.2)
+      
+      $: s("hh*16 hh*16").slow(8.9774).gain(.2)
+      
+      $: note("C1 F1 G1 C1").lpf(1500).gain(.4)
+  - id: "inspired_3000_213"
+    source_id: "3000_213"
+    source_seed: 3213
+    voices: 5
+    events: 25
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh 3 5 4").lpf(495).room(.9512).delay(.5).gain(.3)
+      
+      $: s("bass gm_cello").slow(2).gain(.5)
+      
+      $: s("pad ballwhistle:1 gm_epiano1:1").slow(2).gain(.5)
+      
+      $: s("gm_piccolo snare_rim:0 gong 8").lpf(2000).gain(.5)
+  - id: "inspired_3000_214"
+    source_id: "3000_214"
+    source_seed: 3214
+    voices: 3
+    events: 27
+    code: |
+      setcpm(100)
+      
+      $: s("ocarina cr sd bd").clip(1).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("gm_overdriven_guitar:6 sine ~ snare").slow(2).gain(.5)
+  - id: "inspired_3000_215"
+    source_id: "3000_215"
+    source_seed: 3215
+    voices: 3
+    events: 32
+    code: |
+      setcpm(100)
+      
+      $: s("cr sd bd bd sd").gain(.3).lpf(3000).room(.8).delay(.3).bank("RolandTR909")
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("supersaw mt*2").gain(.5)
+  - id: "inspired_3000_216"
+    source_id: "3000_216"
+    source_seed: 3216
+    voices: 3
+    events: 12
+    code: |
+      setcpm(100)
+      
+      $: s("woodblock:1 woodblock:2*2").slow(2.5409).gain(.5)
+      
+      $: s("gm_acoustic_guitar_steel:2 gm_synth_strings_1").bank("RolandTR909").gain(.732).fast(1.2).lpf(1500).gain(.4)
+      
+      $: note("a4 d#5@6").sound("drums kick").lpf(3200).hpf(188).room(.5).gain("[1 0.5]*4").bank("RolandTR909")
+  - id: "inspired_3000_217"
+    source_id: "3000_217"
+    source_seed: 3217
+    voices: 3
+    events: 16
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("F4 A3 Gb4 Bb3").scale("a3:minor").s("ocarina gm_choir_aahs:0").velocity(.5).lpf(1500).gain(.4)
+      
+      $: s("gm_oboe ballwhistle").gain(.5)
+  - id: "inspired_3000_218"
+    source_id: "3000_218"
+    source_seed: 3218
+    voices: 3
+    events: 36
+    code: |
+      setcpm(100)
+      
+      $: note("c4 c4 a4@3 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2").transpose(1).lpf(1500).gain(.4)
+      
+      $: s("oh*4 bd!3").bank("RolandTR909").gain(.8)
+      
+      $: s("sine recorder_tenor_sus").lpf(600).gain(.5)
+  - id: "inspired_3000_219"
+    source_id: "3000_219"
+    source_seed: 3219
+    voices: 3
+    events: 69
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("a3 d4").s("gm_epiano1:1 sd*4 lt*4").slow(10.9523).lpf(1500).gain(.4)
+      
+      $: note("b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5").lpf(1500).gain(.4)
+  - id: "inspired_3000_22"
+    source_id: "3000_22"
+    source_seed: 3022
+    voices: 2
+    events: 20
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_220"
+    source_id: "3000_220"
+    source_seed: 3220
+    voices: 4
+    events: 44
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("lead rd*8").delay(.8).delaytime(.0949).room(1.5).gain(.5)
+      
+      $: s("hh*2 ~").gain(.2)
+      
+      $: s("amen hh*8").gain(.3906).delay(.6).decay(.0325).sustain(0).release(.5)
+  - id: "inspired_3000_221"
+    source_id: "3000_221"
+    source_seed: 3221
+    voices: 4
+    events: 19
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("a3 c#4").sound("square cp").lpf(3500).gain(.4)
+      
+      $: n("3 1 5 4 3").lpf(1500).gain(.4)
+      
+      $: s("gm_piano gm_choir_aahs:6").slow(8).gain(.5)
+  - id: "inspired_3000_222"
+    source_id: "3000_222"
+    source_seed: 3222
+    voices: 4
+    events: 31
+    code: |
+      setcpm(100)
+      
+      $: s("bd*4 ~ cp ~").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: note("12 3").fm(2).gain(1.4).lpf(1500).gain(.4)
+      
+      $: s("rect misc:2 snare_rim:0 gong 8 brakedrum:1 ~ 3").bank("YamahaRY30").room(.9).bank("RolandTR909").gain(.8)
+      
+      $: n("3 ~ 1 ~ 2 3").lpf(1500).gain(.4)
+  - id: "inspired_3000_223"
+    source_id: "3000_223"
+    source_seed: 3223
+    voices: 4
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note(0).cutoff(1000).gain(.8).lpf(1500).gain(.4)
+      
+      $: s("gm_ocarina bass 1!3 2").lpf(2724).resonance(12).gain(.6388)
+      
+      $: s("misc:2 hh!4").gain(.8)
+  - id: "inspired_3000_224"
+    source_id: "3000_224"
+    source_seed: 3224
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100)
+      
+      $: s("lt cr").slow(2).gain(.5)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("c2 a2").sound("drums snare").lpf(3000).velocity(.5).gain(.5).release(6).attack(.1).clip(1.2).bank("RolandTR909")
+  - id: "inspired_3000_225"
+    source_id: "3000_225"
+    source_seed: 3225
+    voices: 4
+    events: 23
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("e4 f2").sound("supersaw rim").lpf(700).room("<0.5@7 5@5>/16").gain(.2)
+      
+      $: note("f4 ~ c4 ~ e4 a4 ~ e4 ~ ~ a3 ~ c4 f4 ~ c4").s("rd 1!3").slow(2).lpf(1500).gain(.4)
+      
+      $: s("~ 3 sd ~ 3").gain(.5)
+  - id: "inspired_3000_226"
+    source_id: "3000_226"
+    source_seed: 3226
+    voices: 4
+    events: 35
+    code: |
+      setcpm(100)
+      
+      $: s("kick snare ~ snare").release(.1).attack(.0619).decay(.03).sustain(0).bank("AkaiLinn").room(1.1125).bank("RolandTR909").gain(.8)
+      
+      $: s("gm_synth_strings_1 3").velocity(.3).gain(.5)
+      
+      $: s("lead hh!7").slow(2).gain(.2)
+      
+      $: note("a2 c3 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4").s("misc:2 num vocal 1").slow(2).lpf(1500).gain(.4)
+  - id: "inspired_3000_227"
+    source_id: "3000_227"
+    source_seed: 3227
+    voices: 3
+    events: 54
+    code: |
+      setcpm(100)
+      
+      $: s("bd*2 ~").clip(1).note(21).gain("0.2 0.4 0.3 0.5").bank("RolandTR909")
+      
+      $: s("hh*4 ~ sd ~ sd:2 bd 4 4 4 0").gain(.943).bank("RolandTR909")
+      
+      $: note("b@2 f@2 ~ b b@2 b b b b@2 f@2 ~ b ~ a4 d#5@2 ~ a4 d#5@3").lpf(1500).gain(.4)
+  - id: "inspired_3000_228"
+    source_id: "3000_228"
+    source_seed: 3228
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100)
+      
+      $: s("drums snare").slow(2).hpf(2521).room(.8).gain(.2336).bank("RolandTR909")
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("sawtooth square").bank("RolandTR909").velocity(.9).hpf(400).gain(.5)
+  - id: "inspired_3000_229"
+    source_id: "3000_229"
+    source_seed: 3229
+    voices: 4
+    events: 16
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("sawtooth square gm_distortion_guitar:3 linn9000_sd").gain(.6).lpf(1500).gain(.4)
+      
+      $: s("gm_ocarina vocal").slow(2.1802).gain(.5)
+      
+      $: s("sd hh").slow(2).gain(.2)
+  - id: "inspired_3000_23"
+    source_id: "3000_23"
+    source_seed: 3023
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_230"
+    source_id: "3000_230"
+    source_seed: 3230
+    voices: 4
+    events: 21
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("ellipse gm_overdriven_guitar:3").bank("Linn9000").gain(.3).lpf(1500).gain(.4)
+      
+      $: s("gm_tuba clave gm_percussive_organ shaker_small:3 gm_bandoneon").gain(.5).lpf(1500).gain(.4)
+      
+      $: s("perc*3 hh:0").slow(4).gain(.2)
+  - id: "inspired_3000_231"
+    source_id: "3000_231"
+    source_seed: 3231
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("bd*4 ~").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("perc*3 lt").gain("[1 0.7 1 0.5]*2").lpf(1500).gain(.4)
+  - id: "inspired_3000_232"
+    source_id: "3000_232"
+    source_seed: 3232
+    voices: 3
+    events: 50
+    code: |
+      setcpm(100)
+      
+      $: n("F4 A3 Gb4 Bb3 E4 G4 ~ F3 A3 C3 F3 A3 C3 ~ F3 A3 C3").scale("c3:minor").velocity("<.9@28 1.2@2>").lpf(1500).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("kick 1").lpf(650).room(.3).gain(.1841).release(.1).attack(.08).bank("RolandTR909")
+  - id: "inspired_3000_233"
+    source_id: "3000_233"
+    source_seed: 3233
+    voices: 3
+    events: 40
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("9 12!2 ~ 9").lpf(1500).gain(.4)
+      
+      $: n("~ 3 ~ 5 ~ 8 ~ 7 ~ 6 ~ 8 9*2 8 ~ 7 8*2 6 ~ 3").clip(.95).release(.2).gain(.4).lpf(1500).gain(.4)
+  - id: "inspired_3000_234"
+    source_id: "3000_234"
+    source_seed: 3234
+    voices: 3
+    events: 12
+    code: |
+      setcpm(100)
+      
+      $: note("a1 f1 c2").lpf(1500).gain(.4)
+      
+      $: s("gm_epiano1:1 attack").slow(2).gain(.5)
+      
+      $: s("bd*2 ~").gain("[1 0.7 0.8 0.5]*2").bank("RolandTR909")
+  - id: "inspired_3000_235"
+    source_id: "3000_235"
+    source_seed: 3235
+    voices: 3
+    events: 15
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("c d e f").s("snare 2 5 perc").slow(8).lpf(1500).gain(.4)
+      
+      $: n("6 8 10 ~ 4 ~ 3").room(.2).delay(.2791).gain(.4).lpf(1500).gain(.4)
+  - id: "inspired_3000_236"
+    source_id: "3000_236"
+    source_seed: 3236
+    voices: 3
+    events: 27
+    code: |
+      setcpm(100)
+      
+      $: s("gm_oboe gm_electric_guitar_muted").slow(4).gain(.5)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("linndrum_sd sd*4").gain(.3).bank("RolandTR909")
+  - id: "inspired_3000_237"
+    source_id: "3000_237"
+    source_seed: 3237
+    voices: 3
+    events: 60
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2 3 -4 -3 -2").scale("a3:minor").s("recorder_bass_sus anvil").gain(.15).release(.4252).lpf(1500).gain(.4)
+      
+      $: s("bass sd*3").slow(3.5973).gain(.5)
+  - id: "inspired_3000_238"
+    source_id: "3000_238"
+    source_seed: 3238
+    voices: 3
+    events: 34
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("a2 f2 c3 g2 f2 a2 c3 f3 a3 c4 f4 c4 e4").lpf(1500).gain(.4)
+      
+      $: s("gm_acoustic_guitar_steel:2 gm_electric_bass_finger").gain(.15).hpf(8000).lpf(1500).gain(.4)
+  - id: "inspired_3000_239"
+    source_id: "3000_239"
+    source_seed: 3239
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("c a").lpf(1500).gain(.4)
+      
+      $: note("c5 c4 e4 g4 g4 b4 d5 ~").s("gm_harmonica gm_oboe:2").gain(.5).room(.8221).delay(.3).lpf(1500).gain(.4)
+      
+      $: note("d5 e5").s("hh*16 hh*16 hh*16 hh*16").gain(1)
+  - id: "inspired_3000_24"
+    source_id: "3000_24"
+    source_seed: 3024
+    voices: 1
+    events: 4
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_240"
+    source_id: "3000_240"
+    source_seed: 3240
+    voices: 3
+    events: 14
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("gm_ocarina perc*3").clip(1.2).gain(.5)
+      
+      $: note("B2 D2 G2 Bb2").s("~ 31").slow(2).lpf(1500).gain(.4)
+  - id: "inspired_3000_241"
+    source_id: "3000_241"
+    source_seed: 3241
+    voices: 3
+    events: 34
+    code: |
+      setcpm(100)
+      
+      $: s("mt mt lt lt").gain(.6).lpf(1500).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("b@2 b b b b@2").clip(1.0011).sustain(0).s("drums lead").velocity(.55).bank("RolandTR909").gain(.8)
+  - id: "inspired_3000_242"
+    source_id: "3000_242"
+    source_seed: 3242
+    voices: 3
+    events: 10
+    code: |
+      setcpm(100)
+      
+      $: note("a5 c6").sound("supersaw sine").lpf(2579).velocity(0).pan("<.4 .6>/10").room(.7).gain(.4)
+      
+      $: note("c4 f4").sound("drum ~").lpf(1045).room(.5996).gain(.4).bank("RolandTR909")
+      
+      $: s("sawtooth square").room(.2).gain(.5)
+  - id: "inspired_3000_243"
+    source_id: "3000_243"
+    source_seed: 3243
+    voices: 3
+    events: 24
+    code: |
+      setcpm(100)
+      
+      $: s("drums 3 crow").note("c3 eb3 g3 bb3 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2").velocity(.55).bank("RolandTR909").gain(.8)
+      
+      $: sound("sawtooth drum").lpf(4041).gain("<.65 .75 .85>").bank("RolandTR909")
+      
+      $: s("perc*3 noise*4").gain(.5)
+  - id: "inspired_3000_244"
+    source_id: "3000_244"
+    source_seed: 3244
+    voices: 3
+    events: 76
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("c4 a3 f4 c4").transpose(-12).lpf(1500).gain(.4)
+      
+      $: s("hh*16 hh*16").gain(.2132)
+  - id: "inspired_3000_245"
+    source_id: "3000_245"
+    source_seed: 3245
+    voices: 4
+    events: 104
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("D2 G2 D2 C#2 F#2").lpf(1500).gain(.4)
+      
+      $: n("0 7 4 2 7 4 b 3 1 2 1 0 4 5 2 4 0").lpf(1500).gain(.4)
+      
+      $: note("c2 g2 a2 f2 c3 g2 d#2 f2@3 ~ 3 72 gb2*2 gb2@1.4 ab2 bb2 gb2 a1*2 g1 ~ c#2 ~ f#2 ~ d4 d4@2 ~ c4 c4 a4@3 ~ c3 f3@2").sound("square sd").lpf("<[10 10 100]>").resonance(10).gain(.8)
+  - id: "inspired_3000_246"
+    source_id: "3000_246"
+    source_seed: 3246
+    voices: 3
+    events: 44
+    code: |
+      setcpm(100)
+      
+      $: n("4 4 5 4 3 2 0 0 -3").scale("c4:minor").lpf(1500).gain(.4)
+      
+      $: s("bd 0 1 2 4 8 6 sd").delay(.5).gain(.8).release(.1421).bank("RolandTR909")
+      
+      $: s("kick*4 gm_vibraphone:3").bank("RolandTR808").gain(.8)
+  - id: "inspired_3000_247"
+    source_id: "3000_247"
+    source_seed: 3247
+    voices: 4
+    events: 31
+    code: |
+      setcpm(100)
+      
+      $: s("lead gm_pad_warm").pan(.6).gain(.3).release(.0513).lpf(1500).gain(.4)
+      
+      $: note("a3 b3 c4 d4").lpf(1500).gain(.4)
+      
+      $: s("gm_electric_guitar_jazz bd*4").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: s("ocarina sd:2 bd hh cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~ cp ~").slow(2.5532).bank("RolandTR909").gain(.8)
+  - id: "inspired_3000_248"
+    source_id: "3000_248"
+    source_seed: 3248
+    voices: 3
+    events: 84
+    code: |
+      setcpm(100)
+      
+      $: note("e4 g4 c5 g3 b3 d4 g4 a3 c4 e4 a4 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4 a4 f3 a3 c4").s("gtr xylo").lpf(1500).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("bd*2 ~ sd bd").lpf(5000).room(.8218).gain(.3).release(2).bank("RolandTR909")
+  - id: "inspired_3000_249"
+    source_id: "3000_249"
+    source_seed: 3249
+    voices: 3
+    events: 19
+    code: |
+      setcpm(100)
+      
+      $: note("g5 e5").s("bd bd").slow(12).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("linndrum_oh ballwhistle").slow(2).bank("RolandTR909").gain(.8)
+  - id: "inspired_3000_25"
+    source_id: "3000_25"
+    source_seed: 3025
+    voices: 2
+    events: 20
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_250"
+    source_id: "3000_250"
+    source_seed: 3250
+    voices: 2
+    events: 11
+    code: |
+      setcpm(25)
+      
+      $: n("F4 Bb3 D3 F4 ~ Bb3").scale("c3:minor").s("clave sd").gain(1.5)
+      
+      $: s("square whirl").slow(7.9759)
+  - id: "inspired_3000_251"
+    source_id: "3000_251"
+    source_seed: 3251
+    voices: 3
+    events: 23
+    code: |
+      setcpm(25)
+      
+      $: s("bd*4 linndrum_sd*2 ~").gain(.7)
+      
+      $: s("oh*2 ~").slow(9.8923).gain(.3)
+      
+      $: s("pulse gm_flute:0 cp*8").slow(2).gain(.4)
+  - id: "inspired_3000_252"
+    source_id: "3000_252"
+    source_seed: 3252
+    voices: 3
+    events: 26
+    code: |
+      setcpm(26)
+      
+      $: s("kick*4 gm_electric_guitar_clean:2").gain(.389).lpf(4000)
+      
+      $: s("gm_bassoon chord gm_oboe:2 gm_synth_strings_1").gain("0.25 0.35 0.3 0.4")
+      
+      $: n("0 ~ 0 0 0 ~")
+  - id: "inspired_3000_253"
+    source_id: "3000_253"
+    source_seed: 3253
+    voices: 1
+    events: 38
+    code: |
+      setcpm(26)
+      
+      $: s("piano rd*6 gm_trumpet:2 hh*8 gm_tenor_sax:1 2 bd")
+  - id: "inspired_3000_254"
+    source_id: "3000_254"
+    source_seed: 3254
+    voices: 2
+    events: 12
+    code: |
+      setcpm(26)
+      
+      $: note("e3 a3 c4 e4").s("sleighbells lt*2 lt@3 20 cr!3 cr!2").gain(.2846)
+      
+      $: s("psaltery_pluck gtr").speed(.9).gain(.35).release(.4).attack(.3).decay(.05).sustain(.3).room(.3)
+  - id: "inspired_3000_255"
+    source_id: "3000_255"
+    source_seed: 3255
+    voices: 2
+    events: 14
+    code: |
+      setcpm(26)
+      
+      $: s("bd 0")
+      
+      $: n("-2 b -2 b -5")
+  - id: "inspired_3000_256"
+    source_id: "3000_256"
+    source_seed: 3256
+    voices: 2
+    events: 30
+    code: |
+      setcpm(27)
+      
+      $: s("hh*8 brown gm_vibraphone bd*3").gain(.6).release(.1)
+      
+      $: s("gm_harmonica 7").gain(.7703)
+  - id: "inspired_3000_257"
+    source_id: "3000_257"
+    source_seed: 3257
+    voices: 2
+    events: 6
+    code: |
+      setcpm(27)
+      
+      $: s("cowbell ~").fast(1.692)
+      
+      $: s("~ lt")
+  - id: "inspired_3000_258"
+    source_id: "3000_258"
+    source_seed: 3258
+    voices: 1
+    events: 18
+    code: |
+      setcpm(27)
+      
+      $: s("ellipse gm_gunshot:3 gm_epiano1:2 hh!6")
+  - id: "inspired_3000_259"
+    source_id: "3000_259"
+    source_seed: 3259
+    voices: 2
+    events: 16
+    code: |
+      setcpm(27)
+      
+      $: s("lt cr lt cr").speed(".5").room(.85)
+      
+      $: n("G3 C3 E3 F2").gain(.5147)
+  - id: "inspired_3000_26"
+    source_id: "3000_26"
+    source_seed: 3026
+    voices: 4
+    events: 38
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("d:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_260"
+    source_id: "3000_260"
+    source_seed: 3260
+    voices: 2
+    events: 9
+    code: |
+      setcpm(28)
+      
+      $: s("amen kick*4").slow(2)
+      
+      $: note("a4 g4")
+  - id: "inspired_3000_261"
+    source_id: "3000_261"
+    source_seed: 3261
+    voices: 1
+    events: 10
+    code: |
+      setcpm(28)
+      
+      $: s("ocarina bd*4").note("d#5@2 d5@2 c#5@7").gain(.25).release(.4).attack(.05)
+  - id: "inspired_3000_262"
+    source_id: "3000_262"
+    source_seed: 3262
+    voices: 2
+    events: 12
+    code: |
+      setcpm(28)
+      
+      $: s("sawtooth square woodblock:2*2 snare_rim:0").gain(.3557)
+      
+      $: s("sawtooth square").note("a2*8 ~ ~")
+  - id: "inspired_3000_263"
+    source_id: "3000_263"
+    source_seed: 3263
+    voices: 2
+    events: 30
+    code: |
+      setcpm(28)
+      
+      $: s("gm_electric_guitar_jazz hh*8").bank("linn").lpf(700).room(.5336)
+      
+      $: n("5 3 4 2 3 1 2 0 1 ~ 6 -1@3 ~ ~ 3 4 2 3").scale("D dorian")
+  - id: "inspired_3000_264"
+    source_id: "3000_264"
+    source_seed: 3264
+    voices: 3
+    events: 34
+    code: |
+      setcpm(29)
+      
+      $: s("linndrum_sd chord").bank("BossDR110")
+      
+      $: note("0 1 4!3 12 a1*4 e4 f3 a3 c4").decay(.03).sustain(.4314).delay(.5).gain(.5)
+      
+      $: s("clave gm_baritone_sax").slow(2)
+  - id: "inspired_3000_265"
+    source_id: "3000_265"
+    source_seed: 3265
+    voices: 2
+    events: 14
+    code: |
+      setcpm(29)
+      
+      $: s("bd*2 ~ sd ~ bd ~ sd ~").gain(.7)
+      
+      $: note("a2 c3 e3 a3").s("hh*16").slow(2).gain(.3)
+  - id: "inspired_3000_266"
+    source_id: "3000_266"
+    source_seed: 3266
+    voices: 2
+    events: 19
+    code: |
+      setcpm(29)
+      
+      $: s("hh*8").gain(.3)
+      
+      $: s("bd*2 ~ sd ~").slow(2).gain(.7)
+  - id: "inspired_3000_267"
+    source_id: "3000_267"
+    source_seed: 3267
+    voices: 2
+    events: 10
+    code: |
+      setcpm(29)
+      
+      $: note("a1 g1*2").sound("sine sine hh hh").lpf(2732)
+      
+      $: s("misc:2 mt").gain(.8).room(.2)
+  - id: "inspired_3000_268"
+    source_id: "3000_268"
+    source_seed: 3268
+    voices: 3
+    events: 12
+    code: |
+      setcpm(30)
+      
+      $: s("hh*2 ~").slow(4)
+      
+      $: n(5).scale("g2 minor pentatonic").s("pulse perc*4").gain(.3)
+      
+      $: note("a3 a3!2 c4!2").sound("sawtooth sawtooth").lpf(800).room(1).gain(.7126)
+  - id: "inspired_3000_269"
+    source_id: "3000_269"
+    source_seed: 3269
+    voices: 2
+    events: 10
+    code: |
+      setcpm(30)
+      
+      $: note("C1 F1 G1 C1").sound("bd*2 ~").lpf(1217).gain(.25)
+      
+      $: n("1 4 2 1 3*2 E3").scale("a4:minor").s("cowbell ~").lpf(4642).room(.8).delay(.2).gain(.25)
+  - id: "inspired_3000_27"
+    source_id: "3000_27"
+    source_seed: 3027
+    voices: 3
+    events: 22
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_270"
+    source_id: "3000_270"
+    source_seed: 3270
+    voices: 3
+    events: 52
+    code: |
+      setcpm(30)
+      
+      $: s("linndrum_oh breath").struct("x*8").clip(.9203).release(.01)
+      
+      $: n("9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3").scale("g1 dorian").s("gm_electric_guitar_clean:2 3").room(.6).velocity(.9)
+      
+      $: s("lead Sitar")
+  - id: "inspired_3000_271"
+    source_id: "3000_271"
+    source_seed: 3271
+    voices: 3
+    events: 31
+    code: |
+      setcpm(30)
+      
+      $: note("c1 ~ f1 g1 a#1 b@2 f@2 ~ b b@2 f@2 ~ b b@2 b b").sound("sawtooth snare").lpf(1347).room(1.1307)
+      
+      $: s("pulse gm_church_organ:2")
+      
+      $: s("gm_overdriven_guitar:3 0").slow(4)
+  - id: "inspired_3000_272"
+    source_id: "3000_272"
+    source_seed: 3272
+    voices: 2
+    events: 10
+    code: |
+      setcpm(31)
+      
+      $: note("e1 ~ ~ e2").sound("bd*2 ~").gain(.8).release(3)
+      
+      $: note("a#5 g#5 e5 c#5").lpf(3000).room(.4275)
+  - id: "inspired_3000_273"
+    source_id: "3000_273"
+    source_seed: 3273
+    voices: 3
+    events: 35
+    code: |
+      setcpm(31)
+      
+      $: note("a4 c#5@6 ~ a4 c#5@2 ~ a4 c#5@3 ~ a4 d#5 d5 c#5 d5 c#5@2 d#5@4 ~ a4 d#5@6 ~ a4 d#5@2 ~ a4 d#5@3 ~ a4 d#5 d5 c#5 d5 c#5@2").s("sine 1!3").slow(2)
+      
+      $: s("cymbal ~").gain(.4871).release(2)
+      
+      $: s("saw perc*3").hpf(7820).lpf(400)
+  - id: "inspired_3000_274"
+    source_id: "3000_274"
+    source_seed: 3274
+    voices: 3
+    events: 9
+    code: |
+      setcpm(31)
+      
+      $: note("g1 bb1 a4@10 a3").s("bd*2 ~").slow(2)
+      
+      $: s("gm_electric_guitar_jazz gm_electric_bass_finger:7").slow(2)
+      
+      $: s("gm_synth_strings_1 gm_synth_strings_1").gain(.4)
+  - id: "inspired_3000_275"
+    source_id: "3000_275"
+    source_seed: 3275
+    voices: 4
+    events: 26
+    code: |
+      setcpm(31)
+      
+      $: note("e3 c3@2").s("pulse gm_electric_bass_pick linndrum_hh sine 32 64 linndrum_oh bd:0 bd:1 bd:2 bd:3 gm_overdriven_guitar:3 ocarina mt lt ht hh").clip(1).lpf(5000)
+      
+      $: note("g5 c6 g5 d5 g5 b5").s("piano gm_distortion_guitar:2").gain(.15).release(.4)
+      
+      $: s("cymbal ~").gain(1)
+      
+      $: n("5 1 2 4 ~").clip(1).release(.1)
+  - id: "inspired_3000_276"
+    source_id: "3000_276"
+    source_seed: 3276
+    voices: 2
+    events: 196
+    code: |
+      setcpm(32)
+      
+      $: s("hh*16 hh*16 hh*16 hh*16 hh*16 hh*16").gain(.9).pan(.55)
+      
+      $: s("bass 4")
+  - id: "inspired_3000_277"
+    source_id: "3000_277"
+    source_seed: 3277
+    voices: 2
+    events: 44
+    code: |
+      setcpm(32)
+      
+      $: note("e3 g3 b3 d4 a3 c4 e4 f3 a3 c4 c4 e4 g4 g3 b3 d4").s("oh 2").gain(.8)
+      
+      $: n("9 5 7 10 4 7 9 4 7").scale("ab4 minor pentatonic").s("gm_electric_guitar_clean:2 gm_electric_bass_finger:7").gain(.55)
+  - id: "inspired_3000_278"
+    source_id: "3000_278"
+    source_seed: 3278
+    voices: 2
+    events: 16
+    code: |
+      setcpm(32)
+      
+      $: note("12 1 4!3 12").s("gm_electric_bass_pick bd:1").delay(.5)
+      
+      $: s("gm_electric_guitar_clean:2 whirl").gain("<.66 .72 .75 .8>/13").release(.1).attack(.041)
+  - id: "inspired_3000_279"
+    source_id: "3000_279"
+    source_seed: 3279
+    voices: 3
+    events: 38
+    code: |
+      setcpm(32)
+      
+      $: s("linndrum_hh piano").room(.8).gain(.3).slow(2)
+      
+      $: note("c4 c4 e4 g4 g3 b3 d4 a3 c4 e4 f3 a3 c4 c4 e4 g4").sound("supersaw num").lpf(700).room(.5741).gain(.8).pan("0.2 -0.2")
+      
+      $: s("sawtooth square").gain(.6)
+  - id: "inspired_3000_28"
+    source_id: "3000_28"
+    source_seed: 3028
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("d:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("bb:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_280"
+    source_id: "3000_280"
+    source_seed: 3280
+    voices: 2
+    events: 12
+    code: |
+      setcpm(33)
+      
+      $: note(12).sound("sine square").lpf(2000).resonance(8)
+      
+      $: n("0 7 b -4 -4").gain(.509)
+  - id: "inspired_3000_281"
+    source_id: "3000_281"
+    source_seed: 3281
+    voices: 2
+    events: 30
+    code: |
+      setcpm(33)
+      
+      $: note("d2*8 d#4@2").sound("sine piano hadoken sine cp triangle hadoken jazz").lpf("4000").resonance(10).gain(.8)
+      
+      $: n("c2 f2 g2 f2 g2 f2").pan(.4)
+  - id: "inspired_3000_282"
+    source_id: "3000_282"
+    source_seed: 3282
+    voices: 3
+    events: 9
+    code: |
+      setcpm(33)
+      
+      $: s("bd*2 sd").gain(.7)
+      
+      $: s("oh*2 ~").slow(2).gain(.3)
+      
+      $: n("2 4 5 2").scale("c3:minor").s("gm_bassoon").slow(8).gain(.4)
+  - id: "inspired_3000_283"
+    source_id: "3000_283"
+    source_seed: 3283
+    voices: 3
+    events: 27
+    code: |
+      setcpm(33)
+      
+      $: s("sawtooth square shaker*16 linndrum_cr").slow(2)
+      
+      $: note("e5 g5").clip(.9)
+      
+      $: s("gm_synth_strings_1 woodblock:1").gain(.6)
+  - id: "inspired_3000_284"
+    source_id: "3000_284"
+    source_seed: 3284
+    voices: 2
+    events: 20
+    code: |
+      setcpm(34)
+      
+      $: s("gm_pad_warm hh*5").gain(.3)
+      
+      $: s("rd*3 127").velocity(.0613)
+  - id: "inspired_3000_285"
+    source_id: "3000_285"
+    source_seed: 3285
+    voices: 2
+    events: 10
+    code: |
+      setcpm(34)
+      
+      $: s("sd cp").gain(.3)
+      
+      $: n("3 2 0 ~").clip(.8).release(.5)
+  - id: "inspired_3000_286"
+    source_id: "3000_286"
+    source_seed: 3286
+    voices: 3
+    events: 42
+    code: |
+      setcpm(34)
+      
+      $: sound("square hh bd").gain(.6737).release(.2084).attack(.3)
+      
+      $: note("a1 g1*2 a1*2 g1 ~ f#5@2 a#4@2 e5@2 d#5 ~ c#5@2 b4@2 a#4@2 ~ b4 ~ a#4@2 f#4@2").sound("sine num").lpf(1056)
+      
+      $: s("gm_epiano1:1 0").room(.85).gain(.5).release(.08)
+  - id: "inspired_3000_287"
+    source_id: "3000_287"
+    source_seed: 3287
+    voices: 2
+    events: 26
+    code: |
+      setcpm(34)
+      
+      $: s("bd 0").gain(.5).segment(8).slow(8)
+      
+      $: note("a#5 g#5 c#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4").decay(.1612).sustain(0).delay(.5).gain(.8)
+  - id: "inspired_3000_288"
+    source_id: "3000_288"
+    source_seed: 3288
+    voices: 3
+    events: 53
+    code: |
+      setcpm(35)
+      
+      $: s("amen cp*2").slow(8.4593)
+      
+      $: note("d2*8 A4 Bb4").gain(.4)
+      
+      $: note("a2*8 a2*8 ~ ~").s("gm_epiano1:1 4").bank("RolandTR909")
+  - id: "inspired_3000_289"
+    source_id: "3000_289"
+    source_seed: 3289
+    voices: 3
+    events: 16
+    code: |
+      setcpm(35)
+      
+      $: s("gm_electric_bass_finger SequentialCircuitsDrumtracks_cr gm_acoustic_guitar_steel:2 bd:2").speed(.5801).gain(.4).clip(1.1088)
+      
+      $: n("5 ~ 2").lpf(2800).room(.314)
+      
+      $: s("clavisynth 4").clip(.95).gain(.9).release(.1082)
+  - id: "inspired_3000_29"
+    source_id: "3000_29"
+    source_seed: 3029
+    voices: 3
+    events: 28
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_290"
+    source_id: "3000_290"
+    source_seed: 3290
+    voices: 3
+    events: 18
+    code: |
+      setcpm(35)
+      
+      $: s("cowbell*4 ~").gain(.4)
+      
+      $: n("0 2 4 0").scale("D:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: s("cymbal ~ ~ ~").clip(1).gain(.3)
+  - id: "inspired_3000_291"
+    source_id: "3000_291"
+    source_seed: 3291
+    voices: 1
+    events: 4
+    code: |
+      setcpm(35)
+      
+      $: s("piano linn9000_bd")
+  - id: "inspired_3000_292"
+    source_id: "3000_292"
+    source_seed: 3292
+    voices: 2
+    events: 14
+    code: |
+      setcpm(36)
+      
+      $: s("gm_electric_bass_pick my_sound").clip(.9835).lpf(700).velocity(.5185)
+      
+      $: note("f6 d6 b5 ~ 88 f6").clip(.8).gain(.8)
+  - id: "inspired_3000_293"
+    source_id: "3000_293"
+    source_seed: 3293
+    voices: 2
+    events: 5
+    code: |
+      setcpm(36)
+      
+      $: sound("square bd").room(1)
+      
+      $: s("~ cowbell ~ ~").slow(3.6494)
+  - id: "inspired_3000_294"
+    source_id: "3000_294"
+    source_seed: 3294
+    voices: 2
+    events: 46
+    code: |
+      setcpm(36)
+      
+      $: s("drums r8_rd:1 sax gm_acoustic_guitar_nylon").gain(.8).release(.1475)
+      
+      $: n("9*2 8 ~ 7 8*2 6 ~ 3 8*2 9*3 10 4 9*5 6*3 6*4").scale("D5 dorian").attack(.001).release(.1)
+  - id: "inspired_3000_295"
+    source_id: "3000_295"
+    source_seed: 3295
+    voices: 1
+    events: 8
+    code: |
+      setcpm(36)
+      
+      $: s("gm_tuba bd:1*2 ~ sd:0 ~").gain(.4068).release(.4819)
+  - id: "inspired_3000_296"
+    source_id: "3000_296"
+    source_seed: 3296
+    voices: 4
+    events: 101
+    code: |
+      setcpm(37)
+      
+      $: note("a2*8 a2*8 a2*4 ~").sound("bd rim").lpf(2600).gain(.35)
+      
+      $: s("supersaw gm_electric_guitar_jazz")
+      
+      $: s("supersaw white*16").lpf(2594).room(1).gain(.8)
+      
+      $: n("1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3 ~ 0 1").scale("c4:minor").s("woodblock:1 woodblock:2*2").slow(2)
+  - id: "inspired_3000_297"
+    source_id: "3000_297"
+    source_seed: 3297
+    voices: 1
+    events: 30
+    code: |
+      setcpm(37)
+      
+      $: note("b@2 f@2 ~ b b@2 f@2 ~ b b@2 b b b b@2 f@2 ~ b ~ g5 ~ c5").sound("sine kick").gain(.8)
+  - id: "inspired_3000_298"
+    source_id: "3000_298"
+    source_seed: 3298
+    voices: 2
+    events: 8
+    code: |
+      setcpm(37)
+      
+      $: s("sawtooth square").gain(.2138)
+      
+      $: n("1 -4").scale("a2:major").transpose(-9).s("gm_piccolo vibraslap").clip(.6).release(2).attack(.3)
+  - id: "inspired_3000_299"
+    source_id: "3000_299"
+    source_seed: 3299
+    voices: 2
+    events: 11
+    code: |
+      setcpm(37)
+      
+      $: s("bd*4 bd!4").slow(8.9359)
+      
+      $: s("woodblock:1 woodblock:2*2")
+  - id: "inspired_3000_3"
+    source_id: "3000_3"
+    source_seed: 3003
+    voices: 3
+    events: 28
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("d:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_30"
+    source_id: "3000_30"
+    source_seed: 3030
+    voices: 3
+    events: 28
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_300"
+    source_id: "3000_300"
+    source_seed: 3300
+    voices: 3
+    events: 24
+    code: |
+      setcpm(110)
+      
+      $: s("gm_electric_guitar_clean:2 pulse").struct("x*4").gain(0.40)
+      $: s("rd*3 my_sound EmuDrumulator_oh brakedrum:1").room(.2).delay(.8).delaytime(".75").delayfeedback(.4).gain(.5)
+      $: s("clavisynth sd").gain(0.90).room(.2)
+  - id: "inspired_3000_301"
+    source_id: "3000_301"
+    source_seed: 3301
+    voices: 3
+    events: 28
+    code: |
+      setcpm(80)
+      
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("0 2 4 5").scale("c:major").s("sine").lpf(1500).gain(.3).room(.4)
+  - id: "inspired_3000_302"
+    source_id: "3000_302"
+    source_seed: 3302
+    voices: 2
+    events: 8
+    code: |
+      setcpm(80)
+      
+      $: s("gm_electric_bass_finger:2 rd").gain(0.50).release(.1566)
+      $: s("linndrum_bd sd!7").slow(4).gain(.5)
+  - id: "inspired_3000_303"
+    source_id: "3000_303"
+    source_seed: 3303
+    voices: 4
+    events: 18
+    code: |
+      setcpm(110)
+      
+      $: n(5).sound("sine square").lpf(2000).room(.5).gain(0.90)
+      $: n("0 1 2 3").s("recorder_bass_sus bd!3").gain(0.20)
+      $: s("mt mt").gain(0.80)
+      $: s("gm_tuba gm_trombone:1").gain(0.60)
+  - id: "inspired_3000_304"
+    source_id: "3000_304"
+    source_seed: 3304
+    voices: 2
+    events: 10
+    code: |
+      setcpm(80)
+      
+      $: s("linndrum_hh oh").slow(2).gain(.5)
+      $: n("0 1 2 3").gain(.5)
+  - id: "inspired_3000_305"
+    source_id: "3000_305"
+    source_seed: 3305
+    voices: 2
+    events: 9
+    code: |
+      setcpm(80)
+      
+      $: s("hh*2 hh").crush(8).gain(.5)
+      $: s("woodblock:1 woodblock:2*2").slow(2).gain(.5)
+  - id: "inspired_3000_306"
+    source_id: "3000_306"
+    source_seed: 3306
+    voices: 4
+    events: 40
+    code: |
+      setcpm(80)
+      
+      $: s("gm_acoustic_bass ballwhistle gm_pad_bowed:1 supersaw sawtooth").gain(0.90).release(.5)
+      $: n("0 1 2 3").s("gm_pad_warm gm_synth_bass_1 woodblock:1 woodblock:2*2 snare_rim:0 gong 8 brakedrum:1 ~").release(.1).gain(.5)
+      $: s("bd*4 bd!4 ~").slow(2.7928).gain(.5)
+      $: s("perc*3 bd!4").bank("BossDR550").lpf(800).gain(0.90).release(1.219).attack(.1926)
+  - id: "inspired_3000_307"
+    source_id: "3000_307"
+    source_seed: 3307
+    voices: 3
+    events: 25
+    code: |
+      setcpm(80)
+      
+      $: n("5 3 4 2 3 1").scale("d3:whole:tone").s("clavisynth p").struct("x(3,8,-1)").add("[-12,0]").gain(.5)
+      $: n("0 1 2 3").gain(.5)
+      $: s("woodblock:1 woodblock:2*2 snare_rim:0 gong").slow(2).gain(.5)
+  - id: "inspired_3000_308"
+    source_id: "3000_308"
+    source_seed: 3308
+    voices: 2
+    events: 18
+    code: |
+      setcpm(110)
+      
+      $: s("gm_epiano1:1 linn9000_bd").gain(.5)
+      $: s("sawtooth square rd:3*4 gm_pizzicato_strings:4").gain(0.21)
+  - id: "inspired_3000_309"
+    source_id: "3000_309"
+    source_seed: 3309
+    voices: 2
+    events: 8
+    code: |
+      setcpm(80)
+      
+      $: s("gm_ocarina ballwhistle:1").slow(2).gain(.5)
+      $: n("1 2 ~ 4 5!2").scale("g1 dorian").velocity(.5965).s("psaltery_pluck lead").clip(1).gain(0.50)
+  - id: "inspired_3000_31"
+    source_id: "3000_31"
+    source_seed: 3031
+    voices: 4
+    events: 30
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_310"
+    source_id: "3000_310"
+    source_seed: 3310
+    voices: 2
+    events: 12
+    code: |
+      setcpm(110)
+      
+      $: s("gm_pad_warm gm_vibraphone:3").crush("<16 8 4>").lpf(2148).velocity(.55).gain(.5)
+      $: n("0 1 2 3").s("supersaw gm_clarinet").gain(0.90)
+  - id: "inspired_3000_311"
+    source_id: "3000_311"
+    source_seed: 3311
+    voices: 4
+    events: 33
+    code: |
+      setcpm(80)
+      
+      $: s("ocarina 127").velocity(1.6).gain(.5)
+      $: s("rd*3 rd:3*4").speed(1.002).pan(.1563).hpf(1200).gain(0.53).transpose(12).velocity(.8)
+      $: s("hh*8 hh!7").slow(4).gain(.5)
+      $: s("gm_piano woodblock:1").gain(0.50)
+  - id: "inspired_3000_312"
+    source_id: "3000_312"
+    source_seed: 3312
+    voices: 2
+    events: 12
+    code: |
+      setcpm(110)
+      
+      $: s("triangle gm_distortion_guitar").speed(1.3).velocity(.8).lpf(650).room(.4).gain(0.17).release(.08).attack(1.3136)
+      $: n("0 1 2 3").s("gtr shaker_small:3").gain(.5)
+  - id: "inspired_3000_313"
+    source_id: "3000_313"
+    source_seed: 3313
+    voices: 2
+    events: 14
+    code: |
+      setcpm(110)
+      
+      $: n("9 10 8 -1 0@3").scale("G4 minor").gain(.5)
+      $: n("1 0 ~ 1 2*3 ~").s("gm_synth_strings_1 gm_piano").gain(.5)
+  - id: "inspired_3000_314"
+    source_id: "3000_314"
+    source_seed: 3314
+    voices: 4
+    events: 177
+    code: |
+      setcpm(80)
+      
+      $: note("a2*8 a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8").sound("sawtooth drum").gain(.5)
+      $: s("bd sd").slow(2).gain(.5)
+      $: s("ellipse ht").slow(16).gain(.5)
+      $: s("gm_pad_warm shaker_small:0 hh!4 oh").room(.6).gain(.5)
+  - id: "inspired_3000_315"
+    source_id: "3000_315"
+    source_seed: 3315
+    voices: 2
+    events: 16
+    code: |
+      setcpm(110)
+      
+      $: s("oh 2 16 16").gain(0.35).lpf(300)
+      $: n("0 1 2 3").sound("kick snare").lpf(650).room(1).gain(.5)
+  - id: "inspired_3000_316"
+    source_id: "3000_316"
+    source_seed: 3316
+    voices: 2
+    events: 9
+    code: |
+      setcpm(80)
+      
+      $: s("hh*2 ~").slow(11.0355).gain(.5)
+      $: n("0 1 2 3").sound("supersaw bd*2").lpf(3500).gain(.5)
+  - id: "inspired_3000_317"
+    source_id: "3000_317"
+    source_seed: 3317
+    voices: 3
+    events: 28
+    code: |
+      setcpm(80)
+      
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("0 2 4 5").scale("c:major").s("sine").lpf(1500).gain(.3).room(.4)
+  - id: "inspired_3000_318"
+    source_id: "3000_318"
+    source_seed: 3318
+    voices: 2
+    events: 12
+    code: |
+      setcpm(110)
+      
+      $: n("0 1 2 3").transpose("<0 -3 6 3>/16").s("rd 1!3").hpf(400).gain(0.38)
+      $: s("clavisynth pad").room(.8).hpf(200).gain(.5)
+  - id: "inspired_3000_319"
+    source_id: "3000_319"
+    source_seed: 3319
+    voices: 2
+    events: 16
+    code: |
+      setcpm(110)
+      
+      $: n("0 1 2 3").gain(0.28)
+      $: n("0 1 2 3").gain(.5)
+  - id: "inspired_3000_32"
+    source_id: "3000_32"
+    source_seed: 3032
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("e:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_320"
+    source_id: "3000_320"
+    source_seed: 3320
+    voices: 2
+    events: 14
+    code: |
+      setcpm(110)
+      
+      $: note("c4*2 c4 a#3 c4").sound("hh ~").lpf(306).hpf(8000).gain(0.90).release(1.1049).attack(.0396)
+      $: n("0 1 2 3").sound("bd rim").lpf(2000).gain(0.35).clip(.95).release(.5)
+  - id: "inspired_3000_321"
+    source_id: "3000_321"
+    source_seed: 3321
+    voices: 2
+    events: 10
+    code: |
+      setcpm(80)
+      
+      $: s("perc*3 woodblock:1").gain(0.50).room(.5235).delay(.3)
+      $: s("gtr cymbal ~").slow(2).gain(.5)
+  - id: "inspired_3000_322"
+    source_id: "3000_322"
+    source_seed: 3322
+    voices: 3
+    events: 28
+    code: |
+      setcpm(80)
+      
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("0 2 4 5").scale("c:major").s("sine").lpf(1500).gain(.3).room(.4)
+  - id: "inspired_3000_323"
+    source_id: "3000_323"
+    source_seed: 3323
+    voices: 4
+    events: 14
+    code: |
+      setcpm(80)
+      
+      $: note("c a").gain(.5)
+      $: s("supersaw kick").attack(.001).gain(.5)
+      $: s("clave Acoustic").slow(2).gain(.5)
+      $: s("sine my_sound").gain(.5)
+  - id: "inspired_3000_324"
+    source_id: "3000_324"
+    source_seed: 3324
+    voices: 4
+    events: 118
+    code: |
+      setcpm(110)
+      
+      $: n("5 3").scale("major").transpose(-8).s("gm_acoustic_guitar_steel:2 gm_overdriven_guitar:6").gain(.5)
+      $: note("a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8").sound("kick snare").lpf(1887).velocity(.3).hpf(500).gain(0.50).pan(.55)
+      $: s("gm_overdriven_guitar:3 gm_drawbar_organ:4").gain(.5)
+      $: s("kick*4 bd:0 bd:1 bd:2").gain(0.55)
+  - id: "inspired_3000_325"
+    source_id: "3000_325"
+    source_seed: 3325
+    voices: 2
+    events: 12
+    code: |
+      setcpm(110)
+      
+      $: note("c4*2 d#4 f4 ~").s("rd 1!3").clip(1.0039).gain(0.70).room(.1).delay(.25)
+      $: s("supersaw sawtooth").velocity(.55).gain(.5)
+  - id: "inspired_3000_326"
+    source_id: "3000_326"
+    source_seed: 3326
+    voices: 2
+    events: 33
+    code: |
+      setcpm(80)
+      
+      $: s("rect bd:5").slow(32).gain(.5)
+      $: note("a2*8 a2*8").clip(.7149).release(.4).attack(.3).gain(.5)
+  - id: "inspired_3000_327"
+    source_id: "3000_327"
+    source_seed: 3327
+    voices: 3
+    events: 12
+    code: |
+      setcpm(80)
+      
+      $: s("lt cr").velocity("<.8 .3 .6>*8").gain(.5)
+      $: s("bass gm_choir_aahs:1 lt*4 hh!3").slow(4).gain(.5)
+      $: s("oh bd").slow(3.7711).gain(.5)
+  - id: "inspired_3000_328"
+    source_id: "3000_328"
+    source_seed: 3328
+    voices: 3
+    events: 20
+    code: |
+      setcpm(110)
+      
+      $: s("cp hh").gain(.5)
+      $: n("0 1 2 3").sound("kick drums").lpf(2600).room(.1).gain(.5)
+      $: note("12 12 a4 d#5@6").gain(.5)
+  - id: "inspired_3000_329"
+    source_id: "3000_329"
+    source_seed: 3329
+    voices: 4
+    events: 22
+    code: |
+      setcpm(80)
+      
+      $: s("psaltery_pluck gm_trumpet:2").slow(8).gain(.5)
+      $: s("pad gm_electric_bass_finger:2 gm_drawbar_organ:4 hh").slow(4).gain(.5)
+      $: s("mt lt").slow(24).gain(.5)
+      $: n("2 0 2 3 4 2 3 4 4 5 4 3 2 0").scale("g2 minor pentatonic").gain(.5)
+  - id: "inspired_3000_33"
+    source_id: "3000_33"
+    source_seed: 3033
+    voices: 3
+    events: 28
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("d:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_330"
+    source_id: "3000_330"
+    source_seed: 3330
+    voices: 3
+    events: 60
+    code: |
+      setcpm(110)
+      
+      $: note("a2*8 a2*4 ~ ~").sound("piano sine").gain(.5)
+      $: n("0 7").scale("C3 major").attack(1).gain(0.30)
+      $: s("square noise*16").lpf(2500).room(1.137).gain(.5)
+  - id: "inspired_3000_331"
+    source_id: "3000_331"
+    source_seed: 3331
+    voices: 2
+    events: 10
+    code: |
+      setcpm(80)
+      
+      $: s("bd*2 ~ sd hh*4").slow(4).gain(.5)
+      $: s("gm_overdriven_guitar:6 cp:12 gm_choir_aahs:3 kick").hpf(7104).gain(0.55).transpose("<0 0 1 0>/8").n("0 1 2 3")
+  - id: "inspired_3000_332"
+    source_id: "3000_332"
+    source_seed: 3332
+    voices: 2
+    events: 8
+    code: |
+      setcpm(110)
+      
+      $: note("d#5@2 d5@2 c#5@7").s("perc*3 bd:5 ~ sd:1!3 sd:1").gain(0.50)
+      $: s("piano 0").gain(.5)
+  - id: "inspired_3000_333"
+    source_id: "3000_333"
+    source_seed: 3333
+    voices: 3
+    events: 18
+    code: |
+      setcpm(110)
+      
+      $: n(5).s("misc:2 cp*2 sd*3 sd*2").lpf(1000).gain(0.28).release(.01).hpf(300).speed(.95).velocity(.2)
+      $: n("0 1 2 3").sound("triangle kick").lpf(3000).room(.7).gain(.5)
+      $: n("0 1 2 3").s("bd*4 sd*2 cp*8 gm_violin").gain(0.50)
+  - id: "inspired_3000_334"
+    source_id: "3000_334"
+    source_seed: 3334
+    voices: 2
+    events: 11
+    code: |
+      setcpm(80)
+      
+      $: s("gm_overdriven_guitar:6 bd*4").slow(3.0824).gain(.5)
+      $: s("rd*3 white").gain(.5)
+  - id: "inspired_3000_335"
+    source_id: "3000_335"
+    source_seed: 3335
+    voices: 3
+    events: 18
+    code: |
+      setcpm(110)
+      
+      $: s("bd bd").clip(1).release(2.0323).gain(.5)
+      $: n("0 ~ 1 2*3 ~").s("vocal 1").room(.25).delay(.5).gain(0.60)
+      $: n("0 1 2 3").sound("square ~").lpf(3000).gain(0.30)
+  - id: "inspired_3000_336"
+    source_id: "3000_336"
+    source_seed: 3336
+    voices: 4
+    events: 28
+    code: |
+      setcpm(110)
+      
+      $: s("gm_piano gm_recorder").velocity(.15).gain(.5)
+      $: note("g#4@2 g#4").sound("drums kick").lpf(2501).hpf(8000).gain(.5)
+      $: s("gm_electric_bass_pick gm_electric_guitar_jazz").gain(.5)
+      $: n("7 10!2 7!2 14!2 ~ 7").velocity(.6831).room(.8).gain(.5)
+  - id: "inspired_3000_337"
+    source_id: "3000_337"
+    source_seed: 3337
+    voices: 2
+    events: 72
+    code: |
+      setcpm(110)
+      
+      $: s("hh*16 hh*16").gain("0.25 0.35 0.3 0.4")
+      $: n("0 1 2 3").room(.9).gain(0.50).release(.05).attack(.001)
+  - id: "inspired_3000_338"
+    source_id: "3000_338"
+    source_seed: 3338
+    voices: 2
+    events: 24
+    code: |
+      setcpm(110)
+      
+      $: s("bd*4 ~ hh hh hh ~ sd ~").gain(.5)
+      $: n("0 1 2 3").sound("bd hh").lpf(2000).lpq(8).gain(.5)
+  - id: "inspired_3000_339"
+    source_id: "3000_339"
+    source_seed: 3339
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("0 2 4 5").scale("c:major").s("sine").lpf(1500).gain(.3).room(.4)
+  - id: "inspired_3000_34"
+    source_id: "3000_34"
+    source_seed: 3034
+    voices: 2
+    events: 20
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_340"
+    source_id: "3000_340"
+    source_seed: 3340
+    voices: 3
+    events: 10
+    code: |
+      setcpm(110)
+      
+      $: s("gtr xylo").velocity(.2946).pan(.4).gain(.5)
+      $: n(7).gain(.5)
+      $: sound("sine num").lpf(700).hpf(1000).gain(0.30)
+  - id: "inspired_3000_341"
+    source_id: "3000_341"
+    source_seed: 3341
+    voices: 3
+    events: 14
+    code: |
+      setcpm(110)
+      
+      $: n(5).sound("supersaw bd*2").lpf(4000).room(.6).gain(.5)
+      $: note("d#5@2 d5@2 c#5@2 a4@10").gain(.5)
+      $: s("linndrum_sd brakedrum:1").gain(0.50)
+  - id: "inspired_3000_342"
+    source_id: "3000_342"
+    source_seed: 3342
+    voices: 3
+    events: 13
+    code: |
+      setcpm(80)
+      
+      $: s("linndrum_oh bell").gain(.5)
+      $: s("recorder_bass_sus noise*4").slow(2).gain(.5)
+      $: s("cr lt").gain(0.50)
+  - id: "inspired_3000_343"
+    source_id: "3000_343"
+    source_seed: 3343
+    voices: 4
+    events: 8
+    code: |
+      setcpm(80)
+      
+      $: s("piano breaks165:1").gain(.5)
+      $: n("0 1 2 3").sound("~ ~").lpf(800).pan("0.2").room(.5).gain(.5)
+      $: s("amen sine").slow(3.1005).gain(.5)
+      $: s("gm_acoustic_guitar_steel:2 gm_pad_warm").slow(2.8934).gain(.5)
+  - id: "inspired_3000_344"
+    source_id: "3000_344"
+    source_seed: 3344
+    voices: 3
+    events: 11
+    code: |
+      setcpm(80)
+      
+      $: n(5).slow(2).gain(.5)
+      $: s("hh 8").gain("[1 0.5]*4")
+      $: n("0 1 2 3").sound("supersaw sawtooth ~ hh").lpf(300).gain(.5)
+  - id: "inspired_3000_345"
+    source_id: "3000_345"
+    source_seed: 3345
+    voices: 2
+    events: 20
+    code: |
+      setcpm(110)
+      
+      $: s("gm_synth_strings_1 woodblock:1").struct("x*8").gain(.5)
+      $: s("bell 6").gain(0.30).room(.2).orbit(2)
+  - id: "inspired_3000_346"
+    source_id: "3000_346"
+    source_seed: 3346
+    voices: 3
+    events: 12
+    code: |
+      setcpm(110)
+      
+      $: sound("kick drums").gain(.5)
+      $: s("bass cowbell ~").gain(.5)
+      $: s("cp sd").gain("0.2 0.4 0.3 0.5")
+  - id: "inspired_3000_347"
+    source_id: "3000_347"
+    source_seed: 3347
+    voices: 2
+    events: 8
+    code: |
+      setcpm(110)
+      
+      $: s("sleighbells cymbal").pan(.0277).gain(.5)
+      $: s("gm_overdriven_guitar:6 5").gain(0.80).release(.3)
+  - id: "inspired_3000_348"
+    source_id: "3000_348"
+    source_seed: 3348
+    voices: 2
+    events: 24
+    code: |
+      setcpm(110)
+      
+      $: s("bd sd hh*2 cp").fast(2).gain(.5)
+      $: s("bell misc:2").gain(0.25)
+  - id: "inspired_3000_349"
+    source_id: "3000_349"
+    source_seed: 3349
+    voices: 3
+    events: 34
+    code: |
+      setcpm(110)
+      
+      $: s("sine bell lt*4 hh!3").gain(0.30).release(.5)
+      $: n("9 4 3@3 4 3 4 5 6@3 7 8@3 ~ 1*3 ~ 6*3 5 4 5 ~ 2 ~ 6 ~ 4 ~ 3").scale("d3:whole:tone").struct("x(3,8)").s("gm_piano snare_rim:0").bank("RolandTR909").gain(0.51)
+      $: s("bd!2 bd*4").gain(0.15)
+  - id: "inspired_3000_35"
+    source_id: "3000_35"
+    source_seed: 3035
+    voices: 4
+    events: 38
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_350"
+    source_id: "3000_350"
+    source_seed: 3350
+    voices: 4
+    events: 56
+    code: |
+      setcpm(36)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_351"
+    source_id: "3000_351"
+    source_seed: 3351
+    voices: 4
+    events: 30
+    code: |
+      setcpm(36)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_352"
+    source_id: "3000_352"
+    source_seed: 3352
+    voices: 4
+    events: 32
+    code: |
+      setcpm(37)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_353"
+    source_id: "3000_353"
+    source_seed: 3353
+    voices: 4
+    events: 30
+    code: |
+      setcpm(37)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_354"
+    source_id: "3000_354"
+    source_seed: 3354
+    voices: 4
+    events: 42
+    code: |
+      setcpm(37)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_355"
+    source_id: "3000_355"
+    source_seed: 3355
+    voices: 4
+    events: 56
+    code: |
+      setcpm(22)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_356"
+    source_id: "3000_356"
+    source_seed: 3356
+    voices: 4
+    events: 30
+    code: |
+      setcpm(22)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_357"
+    source_id: "3000_357"
+    source_seed: 3357
+    voices: 4
+    events: 32
+    code: |
+      setcpm(23)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_358"
+    source_id: "3000_358"
+    source_seed: 3358
+    voices: 4
+    events: 30
+    code: |
+      setcpm(23)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_359"
+    source_id: "3000_359"
+    source_seed: 3359
+    voices: 4
+    events: 42
+    code: |
+      setcpm(23)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_36"
+    source_id: "3000_36"
+    source_seed: 3036
+    voices: 4
+    events: 38
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("d:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_360"
+    source_id: "3000_360"
+    source_seed: 3360
+    voices: 4
+    events: 56
+    code: |
+      setcpm(23)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_361"
+    source_id: "3000_361"
+    source_seed: 3361
+    voices: 4
+    events: 30
+    code: |
+      setcpm(24)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_362"
+    source_id: "3000_362"
+    source_seed: 3362
+    voices: 4
+    events: 32
+    code: |
+      setcpm(24)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_363"
+    source_id: "3000_363"
+    source_seed: 3363
+    voices: 4
+    events: 30
+    code: |
+      setcpm(24)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_364"
+    source_id: "3000_364"
+    source_seed: 3364
+    voices: 4
+    events: 42
+    code: |
+      setcpm(24)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_365"
+    source_id: "3000_365"
+    source_seed: 3365
+    voices: 4
+    events: 56
+    code: |
+      setcpm(25)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_366"
+    source_id: "3000_366"
+    source_seed: 3366
+    voices: 4
+    events: 30
+    code: |
+      setcpm(25)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_367"
+    source_id: "3000_367"
+    source_seed: 3367
+    voices: 4
+    events: 32
+    code: |
+      setcpm(25)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_368"
+    source_id: "3000_368"
+    source_seed: 3368
+    voices: 4
+    events: 30
+    code: |
+      setcpm(25)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_369"
+    source_id: "3000_369"
+    source_seed: 3369
+    voices: 4
+    events: 42
+    code: |
+      setcpm(26)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_37"
+    source_id: "3000_37"
+    source_seed: 3037
+    voices: 2
+    events: 20
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_370"
+    source_id: "3000_370"
+    source_seed: 3370
+    voices: 4
+    events: 56
+    code: |
+      setcpm(26)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_371"
+    source_id: "3000_371"
+    source_seed: 3371
+    voices: 4
+    events: 30
+    code: |
+      setcpm(26)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_372"
+    source_id: "3000_372"
+    source_seed: 3372
+    voices: 4
+    events: 32
+    code: |
+      setcpm(26)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_373"
+    source_id: "3000_373"
+    source_seed: 3373
+    voices: 4
+    events: 30
+    code: |
+      setcpm(27)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_374"
+    source_id: "3000_374"
+    source_seed: 3374
+    voices: 4
+    events: 42
+    code: |
+      setcpm(27)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_375"
+    source_id: "3000_375"
+    source_seed: 3375
+    voices: 4
+    events: 56
+    code: |
+      setcpm(27)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_376"
+    source_id: "3000_376"
+    source_seed: 3376
+    voices: 4
+    events: 30
+    code: |
+      setcpm(27)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_377"
+    source_id: "3000_377"
+    source_seed: 3377
+    voices: 4
+    events: 32
+    code: |
+      setcpm(28)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_378"
+    source_id: "3000_378"
+    source_seed: 3378
+    voices: 4
+    events: 30
+    code: |
+      setcpm(28)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_379"
+    source_id: "3000_379"
+    source_seed: 3379
+    voices: 4
+    events: 42
+    code: |
+      setcpm(28)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_38"
+    source_id: "3000_38"
+    source_seed: 3038
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_380"
+    source_id: "3000_380"
+    source_seed: 3380
+    voices: 4
+    events: 56
+    code: |
+      setcpm(28)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_381"
+    source_id: "3000_381"
+    source_seed: 3381
+    voices: 4
+    events: 30
+    code: |
+      setcpm(29)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_382"
+    source_id: "3000_382"
+    source_seed: 3382
+    voices: 4
+    events: 32
+    code: |
+      setcpm(29)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_383"
+    source_id: "3000_383"
+    source_seed: 3383
+    voices: 4
+    events: 30
+    code: |
+      setcpm(29)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_384"
+    source_id: "3000_384"
+    source_seed: 3384
+    voices: 4
+    events: 42
+    code: |
+      setcpm(29)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_385"
+    source_id: "3000_385"
+    source_seed: 3385
+    voices: 4
+    events: 56
+    code: |
+      setcpm(30)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_386"
+    source_id: "3000_386"
+    source_seed: 3386
+    voices: 4
+    events: 30
+    code: |
+      setcpm(30)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_387"
+    source_id: "3000_387"
+    source_seed: 3387
+    voices: 4
+    events: 32
+    code: |
+      setcpm(30)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_388"
+    source_id: "3000_388"
+    source_seed: 3388
+    voices: 4
+    events: 30
+    code: |
+      setcpm(30)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_389"
+    source_id: "3000_389"
+    source_seed: 3389
+    voices: 4
+    events: 42
+    code: |
+      setcpm(31)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_39"
+    source_id: "3000_39"
+    source_seed: 3039
+    voices: 1
+    events: 4
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_390"
+    source_id: "3000_390"
+    source_seed: 3390
+    voices: 4
+    events: 56
+    code: |
+      setcpm(31)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_391"
+    source_id: "3000_391"
+    source_seed: 3391
+    voices: 4
+    events: 30
+    code: |
+      setcpm(31)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_392"
+    source_id: "3000_392"
+    source_seed: 3392
+    voices: 4
+    events: 32
+    code: |
+      setcpm(31)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_393"
+    source_id: "3000_393"
+    source_seed: 3393
+    voices: 4
+    events: 30
+    code: |
+      setcpm(32)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_394"
+    source_id: "3000_394"
+    source_seed: 3394
+    voices: 4
+    events: 42
+    code: |
+      setcpm(32)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_395"
+    source_id: "3000_395"
+    source_seed: 3395
+    voices: 4
+    events: 56
+    code: |
+      setcpm(32)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*16").gain(.2)
+      
+      $: n("0 5 7 3").scale("d:dorian").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 5 7 4").scale("f:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_396"
+    source_id: "3000_396"
+    source_seed: 3396
+    voices: 4
+    events: 30
+    code: |
+      setcpm(32)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 7 3 5").scale("f:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 7 4 3 5").scale("e:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_397"
+    source_id: "3000_397"
+    source_seed: 3397
+    voices: 4
+    events: 32
+    code: |
+      setcpm(33)
+      
+      $: s("bd ~ sd sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: n("0 2 7 5").scale("e:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 4 7 5 3").scale("c:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_398"
+    source_id: "3000_398"
+    source_seed: 3398
+    voices: 4
+    events: 30
+    code: |
+      setcpm(33)
+      
+      $: s("bd bd ~ sd").bank("RolandTR909").gain(.7)
+      
+      $: s("hh hh ~ hh").gain(.2)
+      
+      $: n("0 7 5 3").scale("c:minor").s("square").lpf(800).gain(.4)
+      
+      $: n("0 3 7 4 5").scale("g:minor").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_399"
+    source_id: "3000_399"
+    source_seed: 3399
+    voices: 4
+    events: 42
+    code: |
+      setcpm(33)
+      
+      $: s("bd cp sd cp").bank("RolandTR909").gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 7 5").scale("g:minor").s("sawtooth").lpf(800).gain(.4)
+      
+      $: n("0 4 7 2 5").scale("d:dorian").s("sawtooth").lpf(2000).resonance(3).gain(.4)
+  - id: "inspired_3000_4"
+    source_id: "3000_4"
+    source_seed: 3004
+    voices: 3
+    events: 28
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_40"
+    source_id: "3000_40"
+    source_seed: 3040
+    voices: 1
+    events: 4
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_400"
+    source_id: "3000_400"
+    source_seed: 3400
+    voices: 3
+    events: 22
+    code: |
+      setcpm(120/4)
+      
+      $: s("sd bd*2").gain(.3).room(1.2).delay(.7318)
+      
+      $: s("gtr hh!3").gain(.9)
+      
+      $: n("F4 G3 C4 E4").s("sawtooth")
+  - id: "inspired_3000_401"
+    source_id: "3000_401"
+    source_seed: 3401
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("kick snare").gain(.7)
+      
+      $: s("sawtooth square").lpf(2792).room(.6775).gain(.8).release(.0574).attack(.08).velocity(0).pan(.6)
+      
+      $: note("c4 eb4 g4 bb4").struct("x*8").s("sawtooth")
+  - id: "inspired_3000_402"
+    source_id: "3000_402"
+    source_seed: 3402
+    voices: 2
+    events: 6
+    code: |
+      setcpm(120/4)
+      
+      $: note("a1 g1*2").s("linndrum_oh rd").slow(3.8281)
+      
+      $: note("e5 d#5").sound("drums kick").lpf(3000).gain("[1 0.3]*8").room(.5).delay(.5).delaytime(.12).delayfeedback(.4).s("sawtooth")
+  - id: "inspired_3000_403"
+    source_id: "3000_403"
+    source_seed: 3403
+    voices: 2
+    events: 8
+    code: |
+      setcpm(120/4)
+      
+      $: s("piano misc:2").lpf(200).gain(.831).release(.12).attack(1.3971)
+      
+      $: s("gm_baritone_sax cowbell").gain(.2589)
+  - id: "inspired_3000_404"
+    source_id: "3000_404"
+    source_seed: 3404
+    voices: 2
+    events: 22
+    code: |
+      setcpm(120/4)
+      
+      $: n("9*2 9!2 6 7 11*2 11!2").s("gm_synth_strings_1 triangle 8 12").velocity(.2)
+      
+      $: s("sd hh").slow(2)
+  - id: "inspired_3000_405"
+    source_id: "3000_405"
+    source_seed: 3405
+    voices: 2
+    events: 120
+    code: |
+      setcpm(120/4)
+      
+      $: n("~ 14 8*2 6 ~").s("sawtooth")
+      
+      $: note("a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8").sound("hh bd").s("sawtooth")
+  - id: "inspired_3000_406"
+    source_id: "3000_406"
+    source_seed: 3406
+    voices: 4
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_acoustic_bass SequentialCircuitsDrumtracks_cr")
+      
+      $: s("square saw").note("B2 D2 G2 Bb2")
+      
+      $: s("gm_baritone_sax gm_choir_aahs:3").bank("RolandMT32").speed(.8982).hpf(2868).gain(.4)
+      
+      $: s("bd*4 sd!2").gain(.7)
+  - id: "inspired_3000_407"
+    source_id: "3000_407"
+    source_seed: 3407
+    voices: 3
+    events: 12
+    code: |
+      setcpm(120/4)
+      
+      $: s("sine supersaw").bank("YamahaRY30").clip(.9099)
+      
+      $: s("hh bd").lpf(1500).lpq(2).shape(.5719).release(2)
+      
+      $: s("mt lt").gain(.3051)
+  - id: "inspired_3000_408"
+    source_id: "3000_408"
+    source_seed: 3408
+    voices: 3
+    events: 14
+    code: |
+      setcpm(120/4)
+      
+      $: s("saw hh:8 sd").lpf(3000).room(.3).gain(.3779).release(.08)
+      
+      $: s("clavisynth rd").lpf("<[10 10 100]>").room(2).gain(.15)
+      
+      $: note("a5 c6").s("sawtooth")
+  - id: "inspired_3000_409"
+    source_id: "3000_409"
+    source_seed: 3409
+    voices: 2
+    events: 5
+    code: |
+      setcpm(120/4)
+      
+      $: note(4).sound("drums snare").s("sawtooth")
+      
+      $: s("saw sine:2 oh").delay(.5).slow(2)
+  - id: "inspired_3000_41"
+    source_id: "3000_41"
+    source_seed: 3041
+    voices: 4
+    events: 38
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("d:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_410"
+    source_id: "3000_410"
+    source_seed: 3410
+    voices: 2
+    events: 10
+    code: |
+      setcpm(120/4)
+      
+      $: n("F4 Bb4 D5 D4").gain(.2239).s("sawtooth")
+      
+      $: s("ocarina 3 crow crow ~ 3 sd sd").slow(10.6779)
+  - id: "inspired_3000_411"
+    source_id: "3000_411"
+    source_seed: 3411
+    voices: 3
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: n("3 3 -1 ~ -1 -1 0 ~ 0").s("pulse gm_trumpet:2 gm_acoustic_guitar_steel:2 gm_drawbar_organ").gain("[1 0.6]*4").cutoff(235).decay(.2).sustain(0).degradeBy(.5).room(2)
+      
+      $: s("cr sd").slow(4)
+      
+      $: s("oh*4 bd!3").bank("Linn9000")
+  - id: "inspired_3000_412"
+    source_id: "3000_412"
+    source_seed: 3412
+    voices: 3
+    events: 16
+    code: |
+      setcpm(120/4)
+      
+      $: s("supersaw bd*4").lpf(1000).room(.5)
+      
+      $: note(30).s("sawtooth")
+      
+      $: s("hh 2").lpf(2926).room(1).gain(.8)
+  - id: "inspired_3000_413"
+    source_id: "3000_413"
+    source_seed: 3413
+    voices: 3
+    events: 12
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_electric_guitar_clean:2 hh:8").bank("RolandTR707").hpf(7086)
+      
+      $: s("vocal 1").gain(.5)
+      
+      $: s("bd*2 ~").lpf(2000).gain(.4957).transpose("<0@7 1 0 1 0 1>/16")
+  - id: "inspired_3000_414"
+    source_id: "3000_414"
+    source_seed: 3414
+    voices: 3
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("lead pulse").velocity(.3).attack(.08).release(.05)
+      
+      $: s("gm_baritone_sax hh*4 ~ sd").gain(.1747)
+      
+      $: s("ocarina a").attack(.0213).decay(.1).sustain(.5821).room(.7801).delay(.25)
+  - id: "inspired_3000_415"
+    source_id: "3000_415"
+    source_seed: 3415
+    voices: 3
+    events: 14
+    code: |
+      setcpm(120/4)
+      
+      $: s("linndrum_bd cr").lpf(5000).release(.3).delay(.5)
+      
+      $: note("c2 c2 eb2").s("sawtooth")
+      
+      $: s("pulse gm_electric_bass_finger psaltery_pluck drums").slow(2)
+  - id: "inspired_3000_416"
+    source_id: "3000_416"
+    source_seed: 3416
+    voices: 3
+    events: 41
+    code: |
+      setcpm(120/4)
+      
+      $: s("perc*3 4").slow(2)
+      
+      $: note("e1 ~").decay(.05).sustain(0).degradeBy(.3).s("sawtooth")
+      
+      $: n("6 9!3 6 9 11*2 11!2 10 12 12 13 ~ 9 ~ 12 9 12").s("sawtooth")
+  - id: "inspired_3000_417"
+    source_id: "3000_417"
+    source_seed: 3417
+    voices: 2
+    events: 17
+    code: |
+      setcpm(120/4)
+      
+      $: n("G3 G3 C3 E3 F2 D2").s("sawtooth")
+      
+      $: s("hh*8 white").slow(6.42)
+  - id: "inspired_3000_418"
+    source_id: "3000_418"
+    source_seed: 3418
+    voices: 3
+    events: 72
+    code: |
+      setcpm(120/4)
+      
+      $: s("cp 4").pan(.5636)
+      
+      $: s("gm_bassoon gm_marimba").gain(.1848).release(.2465)
+      
+      $: s("hh*16 hh*16").speed("1 2")
+  - id: "inspired_3000_419"
+    source_id: "3000_419"
+    source_seed: 3419
+    voices: 3
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("hh*8 oh 2 3")
+      
+      $: note("d#5@2 d5@2").sound("square hat").room(.8351).gain(.3).hpf(1000).lpf(1730).velocity(.55).pan(.6056).s("sawtooth")
+      
+      $: s("vocal 1").slow(2)
+  - id: "inspired_3000_42"
+    source_id: "3000_42"
+    source_seed: 3042
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("e:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_420"
+    source_id: "3000_420"
+    source_seed: 3420
+    voices: 2
+    events: 8
+    code: |
+      setcpm(120/4)
+      
+      $: note(30).sound("triangle sd").lpf(2688).gain(.3).room(.5).s("sawtooth")
+      
+      $: n("3 2 5").scale("d3:minor:pentatonic").s("triangle sine:2 sd!3 sd*4")
+  - id: "inspired_3000_421"
+    source_id: "3000_421"
+    source_seed: 3421
+    voices: 2
+    events: 7
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*2 sd").slow(2)
+      
+      $: s("perc*3 ht").slow(2).gain(.9)
+  - id: "inspired_3000_422"
+    source_id: "3000_422"
+    source_seed: 3422
+    voices: 2
+    events: 16
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_acoustic_guitar_steel:2 rd*3").gain(1.2)
+      
+      $: note("a3 b3 c4 d4").s("sawtooth")
+  - id: "inspired_3000_423"
+    source_id: "3000_423"
+    source_seed: 3423
+    voices: 2
+    events: 50
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_drawbar_organ bass").gain("<0.4 0.45 0.5 0.6>")
+      
+      $: note("d2*8 A4 Bb4 A4 Bb3 D3 E3 F3 c2 c2 c2 c2 c2 c2 c2 c2").sound("sawtooth bd*2").lpf(4121).room(.7483).s("sawtooth")
+  - id: "inspired_3000_424"
+    source_id: "3000_424"
+    source_seed: 3424
+    voices: 4
+    events: 90
+    code: |
+      setcpm(120/4)
+      
+      $: note("c1 f1 g1 a#1").sound("triangle hadoken").lpf(2000).velocity(2.1346).s("sawtooth")
+      
+      $: note("~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 g5 e5 c5").velocity(.9).s("sawtooth")
+      
+      $: note("~ c#5@2 d5@2 c#5@8 ~ 18 g5 c6 g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 ~ ~ ~ g5 ~ ~ ~ d5 ~ ~ ~").s("sawtooth")
+      
+      $: s("bd*4 sd!2").gain(.7)
+  - id: "inspired_3000_425"
+    source_id: "3000_425"
+    source_seed: 3425
+    voices: 3
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: note("D2 G2 D2 C#2 F#2 B2 F#2 F2 Bb2").s("amen anvil linn9000_cr bongo*2 ~").clip(.97)
+      
+      $: note("c1 f1 g1 a#1").sound("triangle snare").lpf(3500).hpf(523).s("sawtooth")
+      
+      $: s("ocarina_vib misc:2").slow(2)
+  - id: "inspired_3000_426"
+    source_id: "3000_426"
+    source_seed: 3426
+    voices: 3
+    events: 16
+    code: |
+      setcpm(120/4)
+      
+      $: n("7 0").scale("g3:major").s("supersaw").lpf(1500).gain(.3)
+      
+      $: s("bd rim").gain(.6)
+      
+      $: n("11 10 8 1").scale("c3:major").s("square").gain(.4).lpf(1200).room(.3)
+  - id: "inspired_3000_427"
+    source_id: "3000_427"
+    source_seed: 3427
+    voices: 3
+    events: 14
+    code: |
+      setcpm(120/4)
+      
+      $: n("9 7").scale("d3:minor:pentatonic").s("sawtooth").clip(.9249).release(2.5).room(.44).gain(.8387)
+      
+      $: s("square cymbal").room(1.1062).gain(1.5)
+      
+      $: s("perc*3").gain(.5).room(.3)
+  - id: "inspired_3000_428"
+    source_id: "3000_428"
+    source_seed: 3428
+    voices: 4
+    events: 42
+    code: |
+      setcpm(120/4)
+      
+      $: note("c d e f e d c a f e d c a f e d").sound("sawtooth jazz").lpf(600).gain(.4).s("sawtooth")
+      
+      $: s("square jazz").room(1.1743).gain(.6).release(.08)
+      
+      $: s("linndrum_sd gm_oboe").gain(.6)
+      
+      $: s("cr lt").slow(2)
+  - id: "inspired_3000_429"
+    source_id: "3000_429"
+    source_seed: 3429
+    voices: 4
+    events: 48
+    code: |
+      setcpm(120/4)
+      
+      $: s("linndrum_oh gm_trombone:4")
+      
+      $: note("g4 a3 c4 e4").clip(.9152).release(.1).gain(.5).room(.6402).s("sawtooth")
+      
+      $: n("2 11 9 10 8 13 12 9 ~ 6 -1@3 ~ ~ 3 4 2 3 1 2 0 1 ~ 6 -1@3 ~ ~ 3 4").lpf(3200).hpf(8000).gain(.4).room(.5426).delay(.4544).degradeBy(.3).s("sawtooth")
+      
+      $: s("bd*4 sd!2").gain(.7)
+  - id: "inspired_3000_43"
+    source_id: "3000_43"
+    source_seed: 3043
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("d:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("bb:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_430"
+    source_id: "3000_430"
+    source_seed: 3430
+    voices: 3
+    events: 54
+    code: |
+      setcpm(120/4)
+      
+      $: n("0 -7 ~ 2 0@3 ~ 3 ~ 1 ~ 2 3 -4 -3 4 3 4 0 7 6 4 5 6 4 5 3 4 2").scale("G4 minor").s("sawtooth")
+      
+      $: s("bd!2 bd*4 bd!4 ~").clip(.4).gain(.3)
+      
+      $: s("supersaw sd").lpf(2500).gain(.5).release(.1)
+  - id: "inspired_3000_431"
+    source_id: "3000_431"
+    source_seed: 3431
+    voices: 4
+    events: 13
+    code: |
+      setcpm(120/4)
+      
+      $: s("hh 4 8 6").slow(2)
+      
+      $: s("pulse gm_pad_bowed:1").slow(32)
+      
+      $: s("recorder_bass_sus cymbal").gain(.5).slow(2)
+      
+      $: note("f6 d6 b5 ~").lpf(2793).s("sawtooth")
+  - id: "inspired_3000_432"
+    source_id: "3000_432"
+    source_seed: 3432
+    voices: 2
+    events: 39
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_ocarina lt*4").slow(2)
+      
+      $: note("a4 e4 c4 a3 f4 c4 a3 f3 c4 g3 a3 f3 c4 g3 a3 f3 c4").sound("drum hh*8").lpf(600).gain(.3).s("sawtooth")
+  - id: "inspired_3000_433"
+    source_id: "3000_433"
+    source_seed: 3433
+    voices: 3
+    events: 10
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_drawbar_organ ocarina_vib").vib(4).vibmod(.2113).hpf(50).gain("[0.8 0.4]*4").room(.4)
+      
+      $: s("gm_electric_bass_finger ~").velocity(.3).pan(.55)
+      
+      $: s("rd 1!3").slow(2)
+  - id: "inspired_3000_434"
+    source_id: "3000_434"
+    source_seed: 3434
+    voices: 2
+    events: 8
+    code: |
+      setcpm(120/4)
+      
+      $: s("cp 4 8 16").slow(2)
+      
+      $: note("c2 eb2 g1 bb1").clip(1.0045).sustain(.4).s("triangle bass").slow(2)
+  - id: "inspired_3000_435"
+    source_id: "3000_435"
+    source_seed: 3435
+    voices: 3
+    events: 11
+    code: |
+      setcpm(120/4)
+      
+      $: note("~ c5 ~ d5").s("triangle perc").struct("x(5,8)")
+      
+      $: note(0).s("psaltery_pluck rect").slow(8)
+      
+      $: s("ocarina linn9000_bd").gain(.9947)
+  - id: "inspired_3000_436"
+    source_id: "3000_436"
+    source_seed: 3436
+    voices: 3
+    events: 15
+    code: |
+      setcpm(120/4)
+      
+      $: s("kick*4 sn:3 ~ ~").release(.12)
+      
+      $: s("linndrum_bd gm_choir_aahs:2")
+      
+      $: s("sine sine:2").slow(4)
+  - id: "inspired_3000_437"
+    source_id: "3000_437"
+    source_seed: 3437
+    voices: 2
+    events: 42
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_ocarina EmuDrumulator_mt").gain(.8195)
+      
+      $: note("c4*2 c4 a#3 c4 c4@2 ~ c4*2 d#4 f4 ~ d#4*2!2 d#4 c4 g#4 ~ g4 ~ f#4").sound("supersaw bd").decay(.03).sustain(0).delay(.6).gain(.3).s("sawtooth")
+  - id: "inspired_3000_438"
+    source_id: "3000_438"
+    source_seed: 3438
+    voices: 2
+    events: 17
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd*4 bd!4").gain(.25)
+      
+      $: s("ocarina 20").slow(8.3963)
+  - id: "inspired_3000_439"
+    source_id: "3000_439"
+    source_seed: 3439
+    voices: 2
+    events: 14
+    code: |
+      setcpm(120/4)
+      
+      $: note("c4 c4@2 a#3@2").sound("bd sd").lpf(3000).room(1.2).delay(.5).delaytime(".16 | .33").delayfeedback(.4).s("sawtooth")
+      
+      $: note("C3 Eb3 G2 Bb2").sound("sine square hat hat").lpf(4220).room(1).gain(.5).s("sawtooth")
+  - id: "inspired_3000_44"
+    source_id: "3000_44"
+    source_seed: 3044
+    voices: 3
+    events: 22
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("c:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_440"
+    source_id: "3000_440"
+    source_seed: 3440
+    voices: 3
+    events: 18
+    code: |
+      setcpm(120/4)
+      
+      $: s("sawtooth square").lpf(2000).gain(.4).slow(2)
+      
+      $: n("0 4 9 0").scale("c3:major").s("sine").gain(.3).slow(2)
+      
+      $: s("bd*4 sd!2").gain(.6)
+  - id: "inspired_3000_441"
+    source_id: "3000_441"
+    source_seed: 3441
+    voices: 3
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("misc:2 woodblock:1").gain(.35).room(.8).delay(.5).delaytime(.1).delayfeedback(.4)
+      
+      $: s("woodblock:1 woodblock:2*2 snare_rim:0 gong 8 brakedrum:1 ~ 3").gain(.5)
+      
+      $: s("cr sd bd bd sd").pan(.6)
+  - id: "inspired_3000_442"
+    source_id: "3000_442"
+    source_seed: 3442
+    voices: 2
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("hh*16 hh*16").slow(6.4297)
+      
+      $: s("gm_ocarina gm_trombone:1 oh*4 bd!3").gain(.5647)
+  - id: "inspired_3000_443"
+    source_id: "3000_443"
+    source_seed: 3443
+    voices: 3
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: note(0).s("sawtooth")
+      
+      $: note("a3 a2 f2 c3 g2 c2 f2 c3 g2 f2 a2 c3 f3 a3 c4 f4 c4 e4").s("supersaw gm_drawbar_organ").slow(6.4609)
+      
+      $: s("bd*4 sd!2").gain(.7)
+  - id: "inspired_3000_444"
+    source_id: "3000_444"
+    source_seed: 3444
+    voices: 2
+    events: 8
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_piano sd*3").slow(2)
+      
+      $: s("gm_distortion_guitar gm_acoustic_guitar_nylon").gain(.2454).room(.6148).delay(.2).delaytime(.1).delayfeedback(.4)
+  - id: "inspired_3000_445"
+    source_id: "3000_445"
+    source_seed: 3445
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: note("c d e f e d c a").sound("sawtooth sine").room(.5466).delay(.8).gain(.439).s("sawtooth")
+      
+      $: s("hh*2 ~")
+  - id: "inspired_3000_446"
+    source_id: "3000_446"
+    source_seed: 3446
+    voices: 3
+    events: 64
+    code: |
+      setcpm(120/4)
+      
+      $: note("d#5@2 d5@2 c#5@7 ~ d#5@2 d5@2 c#5@2 d5 ~ d#5@2 d5@2 c#5@2 a4@10 g#3@5 ~ ~ d#4 f4@2 d#4@2 d4 d#4 ~ ~ d#4 f4@2 g4 f4 d#4 f4 d#4@2 ~ ~").s("sawtooth")
+      
+      $: s("clavisynth vibraslap").gain("<0.4 0.45 0.5 0.6>")
+      
+      $: s("bd*4 sd!2").gain(.7)
+  - id: "inspired_3000_447"
+    source_id: "3000_447"
+    source_seed: 3447
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("ocarina_vib linn9000_sd").slow(2)
+      
+      $: s("supersaw hh!2")
+      
+      $: note("B2 D2 G2 Bb2 Eb2 Bb3 A2 D2").s("lead ballwhistle:1").gain(.25)
+  - id: "inspired_3000_448"
+    source_id: "3000_448"
+    source_seed: 3448
+    voices: 3
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("lt cr lt lt")
+      
+      $: s("hh*2 ~").slow(2)
+      
+      $: s("kick*4 lead").lpf(2500).room(.9463)
+  - id: "inspired_3000_449"
+    source_id: "3000_449"
+    source_seed: 3449
+    voices: 3
+    events: 19
+    code: |
+      setcpm(120/4)
+      
+      $: s("cr sd bd bd sd bd bd sd sd bd bd sd bd sd bd sd bd").slow(4)
+      
+      $: s("linndrum_hh gm_bassoon")
+      
+      $: n("0 3 5").scale("c3:major").s("sawtooth").lpf(2000).gain(.3)
+  - id: "inspired_3000_45"
+    source_id: "3000_45"
+    source_seed: 3045
+    voices: 4
+    events: 38
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_450"
+    source_id: "3000_450"
+    source_seed: 3450
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_451"
+    source_id: "3000_451"
+    source_seed: 3451
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_452"
+    source_id: "3000_452"
+    source_seed: 3452
+    voices: 5
+    events: 100
+    code: |
+      setcpm(75/4)
+      
+      $: s("hh*16 hh*16").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_453"
+    source_id: "3000_453"
+    source_seed: 3453
+    voices: 5
+    events: 100
+    code: |
+      setcpm(100/4)
+      
+      $: s("hh*16 hh*16").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_454"
+    source_id: "3000_454"
+    source_seed: 3454
+    voices: 5
+    events: 42
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("9 8 6").scale("Bb:lydian").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("Bb:lydian").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("Bb:lydian").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_455"
+    source_id: "3000_455"
+    source_seed: 3455
+    voices: 5
+    events: 38
+    code: |
+      setcpm(75/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0.3 0.6 0.5 0.7").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 5 5 5").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_456"
+    source_id: "3000_456"
+    source_seed: 3456
+    voices: 4
+    events: 98
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh*16 hh*16").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_457"
+    source_id: "3000_457"
+    source_seed: 3457
+    voices: 5
+    events: 60
+    code: |
+      setcpm(75/4)
+      
+      $: s("gm_oboe hh ~ rim").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("~ 3 4 ~ 4 3 3 4 4 4 4 4 5 3 3 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4@2 4 4 4@2").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_458"
+    source_id: "3000_458"
+    source_seed: 3458
+    voices: 5
+    events: 76
+    code: |
+      setcpm(100/4)
+      
+      $: s("supersaw hh!6").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 2 2 2 ~ 9 10 9 7 ~ 11 8 ~ ~ 9 10 9 7 ~ 11").scale("g4:dorian").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("g4:dorian").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("g4:dorian").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_459"
+    source_id: "3000_459"
+    source_seed: 3459
+    voices: 5
+    events: 44
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0.2 0.4 0.3 0.5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_46"
+    source_id: "3000_46"
+    source_seed: 3046
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+  - id: "inspired_3000_460"
+    source_id: "3000_460"
+    source_seed: 3460
+    voices: 5
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0.25 0.35 0.3 0.4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("3 3 2 2").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_461"
+    source_id: "3000_461"
+    source_seed: 3461
+    voices: 5
+    events: 32
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("<.2 .8>10").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 5@2 5@4 ~").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_462"
+    source_id: "3000_462"
+    source_seed: 3462
+    voices: 5
+    events: 50
+    code: |
+      setcpm(110/4)
+      
+      $: s("misc:2 bd:1").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 3 5 7 4 2 1 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_463"
+    source_id: "3000_463"
+    source_seed: 3463
+    voices: 5
+    events: 48
+    code: |
+      setcpm(110/4)
+      
+      $: s("cp hh sd ht hh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 1").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("[1 0.7 0.5 0.3]*2").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_464"
+    source_id: "3000_464"
+    source_seed: 3464
+    voices: 5
+    events: 36
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 ~ 2 ~ 15 9*2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_465"
+    source_id: "3000_465"
+    source_seed: 3465
+    voices: 5
+    events: 58
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh*8 bd!2").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("-2 0 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_466"
+    source_id: "3000_466"
+    source_seed: 3466
+    voices: 5
+    events: 98
+    code: |
+      setcpm(110/4)
+      
+      $: s("oh*4 bd!3 bd*2 ~ ~").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2*8 5@7 ~ 5@2 5@2 5@2 5 ~ 5@2 5@2 5@2 4@10 3!2 4!2 4!2 4@2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_467"
+    source_id: "3000_467"
+    source_seed: 3467
+    voices: 5
+    events: 70
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh!4 EmuDrumulator_mt").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("1 1@2 1 1*2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("2 2 3 3 3 4 4 4 2 3 3 3 4 4 4 4").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_468"
+    source_id: "3000_468"
+    source_seed: 3468
+    voices: 5
+    events: 36
+    code: |
+      setcpm(110/4)
+      
+      $: s("gm_baritone_sax bd:3 gm_electric_bass_pick").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("~ 4 4@2 ~").scale("G0:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("3 4 -3 -2").scale("G0:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("G0:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_469"
+    source_id: "3000_469"
+    source_seed: 3469
+    voices: 5
+    events: 86
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 4 4 4 4 5 3 3 4 4 3 4 4 4 3 3 4 4 4 4 4 5 3 3 4 4 3 4").scale("C:ritusen").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 5 5 5").scale("C:ritusen").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("C:ritusen").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_47"
+    source_id: "3000_47"
+    source_seed: 3047
+    voices: 5
+    events: 40
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("e:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_470"
+    source_id: "3000_470"
+    source_seed: 3470
+    voices: 5
+    events: 38
+    code: |
+      setcpm(90/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_471"
+    source_id: "3000_471"
+    source_seed: 3471
+    voices: 5
+    events: 42
+    code: |
+      setcpm(110/4)
+      
+      $: s("bell bd:0 bd:1").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("6 6").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_472"
+    source_id: "3000_472"
+    source_seed: 3472
+    voices: 5
+    events: 44
+    code: |
+      setcpm(75/4)
+      
+      $: s("misc:2 breaks165:1 2 bd").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_473"
+    source_id: "3000_473"
+    source_seed: 3473
+    voices: 5
+    events: 52
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd*4 bd!4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("3 3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_474"
+    source_id: "3000_474"
+    source_seed: 3474
+    voices: 4
+    events: 30
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 -7@3 3 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("~ 15").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_475"
+    source_id: "3000_475"
+    source_seed: 3475
+    voices: 5
+    events: 40
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_476"
+    source_id: "3000_476"
+    source_seed: 3476
+    voices: 5
+    events: 36
+    code: |
+      setcpm(75/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("~ 2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("1 1*2 1*2 1").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_477"
+    source_id: "3000_477"
+    source_seed: 3477
+    voices: 4
+    events: 50
+    code: |
+      setcpm(110/4)
+      
+      $: s("drums hh!7").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_478"
+    source_id: "3000_478"
+    source_seed: 3478
+    voices: 5
+    events: 44
+    code: |
+      setcpm(110/4)
+      
+      $: s("cr sd bd bd").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_479"
+    source_id: "3000_479"
+    source_seed: 3479
+    voices: 5
+    events: 60
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd*4 bd!4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("[1 0.6 0.8]*3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("1 1 3 5").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_48"
+    source_id: "3000_48"
+    source_seed: 3048
+    voices: 1
+    events: 4
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_480"
+    source_id: "3000_480"
+    source_seed: 3480
+    voices: 5
+    events: 46
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd*4 bd!4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 3").scale("G3:minor pentatonic").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("2 0 4 5").scale("G3:minor pentatonic").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("G3:minor pentatonic").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_481"
+    source_id: "3000_481"
+    source_seed: 3481
+    voices: 4
+    events: 52
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("3 ~ 5 7 ~ 8 ~ 15 9*2 8 ~ 14").scale("a3:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("a3:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_482"
+    source_id: "3000_482"
+    source_seed: 3482
+    voices: 5
+    events: 32
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 ~ ~ 2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 3 3").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_483"
+    source_id: "3000_483"
+    source_seed: 3483
+    voices: 5
+    events: 62
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd*4 bd!4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("6 0 3 6 0 2 5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_484"
+    source_id: "3000_484"
+    source_seed: 3484
+    voices: 5
+    events: 52
+    code: |
+      setcpm(90/4)
+      
+      $: s("hh*8 ~").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 ~ 3 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_485"
+    source_id: "3000_485"
+    source_seed: 3485
+    voices: 4
+    events: 30
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("5 5 5 5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("1 ~").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_486"
+    source_id: "3000_486"
+    source_seed: 3486
+    voices: 5
+    events: 50
+    code: |
+      setcpm(110/4)
+      
+      $: s("oh*4 bd!3 bd*2 ~ ~ sd ~ ~ sd").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("1 1").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 6 6").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_487"
+    source_id: "3000_487"
+    source_seed: 3487
+    voices: 5
+    events: 64
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("2 ~ 2 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("2*8 3 4 3 3 3 4 3 3 3 4 3").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_488"
+    source_id: "3000_488"
+    source_seed: 3488
+    voices: 5
+    events: 76
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd!2 bd*4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 4 3 3 4 3 3 3 4 3 3 3 4 3 3 3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_489"
+    source_id: "3000_489"
+    source_seed: 3489
+    voices: 5
+    events: 60
+    code: |
+      setcpm(110/4)
+      
+      $: s("gm_electric_bass_finger:2 hh*2").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 -7!8 5!2 ~").scale("C:hirajoshi").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("C:hirajoshi").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("C:hirajoshi").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_49"
+    source_id: "3000_49"
+    source_seed: 3049
+    voices: 4
+    events: 38
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("c:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_490"
+    source_id: "3000_490"
+    source_seed: 3490
+    voices: 4
+    events: 42
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 3 4 4@2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_491"
+    source_id: "3000_491"
+    source_seed: 3491
+    voices: 4
+    events: 42
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("5 5 4 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("0 3 5 7 4 2 1 ~").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_492"
+    source_id: "3000_492"
+    source_seed: 3492
+    voices: 4
+    events: 54
+    code: |
+      setcpm(110/4)
+      
+      $: s("gm_electric_guitar_jazz bd*4").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0 3 5 7 4 2 1 ~").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+  - id: "inspired_3000_493"
+    source_id: "3000_493"
+    source_seed: 3493
+    voices: 5
+    events: 52
+    code: |
+      setcpm(100/4)
+      
+      $: s("hh!4 gm_string_ensemble_1").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 2 2 3 3 3 4 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 5 5 5").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_494"
+    source_id: "3000_494"
+    source_seed: 3494
+    voices: 5
+    events: 62
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4@2 4!3").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("2*8 2*8").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_495"
+    source_id: "3000_495"
+    source_seed: 3495
+    voices: 5
+    events: 44
+    code: |
+      setcpm(110/4)
+      
+      $: s("gtr bd@3").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 3 4 4@2").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("c2:minor").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_496"
+    source_id: "3000_496"
+    source_seed: 3496
+    voices: 5
+    events: 56
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd lt").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("4 4 4 4 4 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("6 6 5 ~ 88 6 6 5 ~ 88 6 6 5").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_497"
+    source_id: "3000_497"
+    source_seed: 3497
+    voices: 5
+    events: 46
+    code: |
+      setcpm(110/4)
+      
+      $: s("hh oh").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("0.2 0.4 0.3 0.5").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("3 4 4 4 3 4 4 4").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_498"
+    source_id: "3000_498"
+    source_seed: 3498
+    voices: 5
+    events: 34
+    code: |
+      setcpm(75/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("5 3 3 4").scale("c2:minor").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("5 ~ ~ ~ 5 ~ ~").scale("c2:minor").transpose(12).s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("c2:minor").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_499"
+    source_id: "3000_499"
+    source_seed: 3499
+    voices: 5
+    events: 68
+    code: |
+      setcpm(75/4)
+      
+      $: s("gm_oboe hats*8 hh*8 linndrum_sd").gain(.75).room(.2)
+      
+      $: s("hh*8").gain(.2).room(.3)
+      
+      $: n("~       ~").scale("C:hirajoshi").s("sawtooth").lpf(500).gain(.5).release(.15)
+      
+      $: n("4 5 7 5 4 2 0 ~").scale("C:hirajoshi").s("square").lpf(1800).resonance(4).gain(.4).release(.2)
+      
+      $: n("0").scale("C:hirajoshi").s("sine").lpf(1200).room(.6).gain(.12).release(.4)
+  - id: "inspired_3000_5"
+    source_id: "3000_5"
+    source_seed: 3005
+    voices: 4
+    events: 38
+    code: |
+      setcpm(95)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("c:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("g:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_50"
+    source_id: "3000_50"
+    source_seed: 3050
+    voices: 4
+    events: 32
+    code: |
+      setcpm(30/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_51"
+    source_id: "3000_51"
+    source_seed: 3051
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_52"
+    source_id: "3000_52"
+    source_seed: 3052
+    voices: 3
+    events: 34
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_53"
+    source_id: "3000_53"
+    source_seed: 3053
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_54"
+    source_id: "3000_54"
+    source_seed: 3054
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_55"
+    source_id: "3000_55"
+    source_seed: 3055
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_56"
+    source_id: "3000_56"
+    source_seed: 3056
+    voices: 2
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_57"
+    source_id: "3000_57"
+    source_seed: 3057
+    voices: 4
+    events: 40
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_58"
+    source_id: "3000_58"
+    source_seed: 3058
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_59"
+    source_id: "3000_59"
+    source_seed: 3059
+    voices: 4
+    events: 40
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_6"
+    source_id: "3000_6"
+    source_seed: 3006
+    voices: 1
+    events: 4
+    code: |
+      setcpm(100)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+  - id: "inspired_3000_60"
+    source_id: "3000_60"
+    source_seed: 3060
+    voices: 4
+    events: 40
+    code: |
+      setcpm(41/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_61"
+    source_id: "3000_61"
+    source_seed: 3061
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+  - id: "inspired_3000_62"
+    source_id: "3000_62"
+    source_seed: 3062
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_63"
+    source_id: "3000_63"
+    source_seed: 3063
+    voices: 3
+    events: 24
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_64"
+    source_id: "3000_64"
+    source_seed: 3064
+    voices: 4
+    events: 32
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("[0 3] [7 5]").scale("c4:major").s("sine").gain(.3).lpf(2500).release(.3)
+  - id: "inspired_3000_65"
+    source_id: "3000_65"
+    source_seed: 3065
+    voices: 2
+    events: 28
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_66"
+    source_id: "3000_66"
+    source_seed: 3066
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_67"
+    source_id: "3000_67"
+    source_seed: 3067
+    voices: 3
+    events: 28
+    code: |
+      setcpm(30/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_68"
+    source_id: "3000_68"
+    source_seed: 3068
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+  - id: "inspired_3000_69"
+    source_id: "3000_69"
+    source_seed: 3069
+    voices: 2
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_7"
+    source_id: "3000_7"
+    source_seed: 3007
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("g:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("e:minor").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+  - id: "inspired_3000_70"
+    source_id: "3000_70"
+    source_seed: 3070
+    voices: 3
+    events: 36
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_71"
+    source_id: "3000_71"
+    source_seed: 3071
+    voices: 2
+    events: 28
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_72"
+    source_id: "3000_72"
+    source_seed: 3072
+    voices: 4
+    events: 40
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_73"
+    source_id: "3000_73"
+    source_seed: 3073
+    voices: 4
+    events: 30
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_74"
+    source_id: "3000_74"
+    source_seed: 3074
+    voices: 2
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_75"
+    source_id: "3000_75"
+    source_seed: 3075
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_76"
+    source_id: "3000_76"
+    source_seed: 3076
+    voices: 2
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_77"
+    source_id: "3000_77"
+    source_seed: 3077
+    voices: 3
+    events: 28
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_78"
+    source_id: "3000_78"
+    source_seed: 3078
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+  - id: "inspired_3000_79"
+    source_id: "3000_79"
+    source_seed: 3079
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_8"
+    source_id: "3000_8"
+    source_seed: 3008
+    voices: 2
+    events: 20
+    code: |
+      setcpm(120)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_3000_80"
+    source_id: "3000_80"
+    source_seed: 3080
+    voices: 3
+    events: 32
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_81"
+    source_id: "3000_81"
+    source_seed: 3081
+    voices: 4
+    events: 32
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_82"
+    source_id: "3000_82"
+    source_seed: 3082
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_83"
+    source_id: "3000_83"
+    source_seed: 3083
+    voices: 4
+    events: 40
+    code: |
+      setcpm(30/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_84"
+    source_id: "3000_84"
+    source_seed: 3084
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_85"
+    source_id: "3000_85"
+    source_seed: 3085
+    voices: 2
+    events: 28
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_86"
+    source_id: "3000_86"
+    source_seed: 3086
+    voices: 3
+    events: 26
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_87"
+    source_id: "3000_87"
+    source_seed: 3087
+    voices: 2
+    events: 28
+    code: |
+      setcpm(30/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_88"
+    source_id: "3000_88"
+    source_seed: 3088
+    voices: 3
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      
+      $: n("0 [3 7]").scale("c4:major").s("sine").gain(.25).lpf(3000).release(.5)
+  - id: "inspired_3000_89"
+    source_id: "3000_89"
+    source_seed: 3089
+    voices: 4
+    events: 32
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("[0 3] [7 5]").scale("c4:major").s("sine").gain(.3).lpf(2500).release(.3)
+  - id: "inspired_3000_9"
+    source_id: "3000_9"
+    source_seed: 3009
+    voices: 5
+    events: 40
+    code: |
+      setcpm(130)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 3").scale("f:major").s("sawtooth").lpf(1200).gain(.45).release(.8).room(.3)
+      $: n("4 ~ 7 ~ 5 3 0 ~").scale("c:major").s("square").lpf(1500).gain(.35).release(.6).room(.4).delay(.2)
+      $: s("pad").gain(.12).room(.85).delay(.5).release(2)
+  - id: "inspired_3000_90"
+    source_id: "3000_90"
+    source_seed: 3090
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_91"
+    source_id: "3000_91"
+    source_seed: 3091
+    voices: 2
+    events: 20
+    code: |
+      setcpm(30/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+  - id: "inspired_3000_92"
+    source_id: "3000_92"
+    source_seed: 3092
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_93"
+    source_id: "3000_93"
+    source_seed: 3093
+    voices: 4
+    events: 32
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_94"
+    source_id: "3000_94"
+    source_seed: 3094
+    voices: 2
+    events: 28
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+  - id: "inspired_3000_95"
+    source_id: "3000_95"
+    source_seed: 3095
+    voices: 2
+    events: 20
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+  - id: "inspired_3000_96"
+    source_id: "3000_96"
+    source_seed: 3096
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
+  - id: "inspired_3000_97"
+    source_id: "3000_97"
+    source_seed: 3097
+    voices: 3
+    events: 32
+    code: |
+      setcpm(15/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_98"
+    source_id: "3000_98"
+    source_seed: 3098
+    voices: 3
+    events: 24
+    code: |
+      setcpm(60/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").bank("RolandTR909").gain(.25)
+      
+      $: n("0 ~ 5 ~").scale("c3:major").s("sawtooth").gain(.4).lpf(800).release(.1)
+  - id: "inspired_3000_99"
+    source_id: "3000_99"
+    source_seed: 3099
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd:1 ~ sd:1 ~").gain(.8)
+      
+      $: s("[hh hh*2]*4").gain(.25)
+      
+      
+      $: n("0 3 7 5").scale("c4:major").s("square").gain(.3).lpf(2000).resonance(1).release(.2)
