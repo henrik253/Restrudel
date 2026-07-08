@@ -36,14 +36,17 @@ Node tooling that turns Strudel pattern strings into training samples.
   (Anthropic SDK if `ANTHROPIC_API_KEY` is set, else a logged-in `claude -p`),
   validating every candidate against the real engine (`extract_labels.mjs`) with
   retry. When no API/login is available, enhancement runs as **subagents** that
-  write one validated `dataset/enhanced/<id>.js` per sketch (see the enhancement
-  spec used per batch); `collate_enhanced.py` then re-validates those files and
-  assembles `dataset/generated_500_inspired.yaml`.
+  write one validated `dataset/batches/batch_<N>/enhanced/<id>.js` per sketch (see
+  the enhancement spec used per batch); `collate_enhanced.py` then re-validates
+  those files and assembles that batch's `enhanced.yaml` plus the dataset-level
+  `enhanced_all.yaml`. Songs are organised per sampling run — see
+  [`../dataset/README.md`](../dataset/README.md).
 
   ```bash
-  node generate.mjs --n 500 --seed 1 --temp 0.2 --yaml ../dataset/generated_500.yaml
-  python enhance_samples.py            # LLM enhance (needs API key or claude login)
-  python collate_enhanced.py           # dataset/enhanced/*.js -> inspired YAML
+  node generate.mjs --n 500 --seed 1000 --temp 0.2 \
+       --yaml ../dataset/batches/batch_2/sketches.yaml
+  python enhance_samples.py --batch 2  # LLM enhance (needs API key or claude login)
+  python collate_enhanced.py --batch 2 # enhanced/*.js -> batch enhanced.yaml + *_all.yaml
   ```
   This replaces the old templated `inspire_from_yaml.py` (kept for reference): the
   enhancer keeps each sketch's sound palette and tempo feel instead of emitting a

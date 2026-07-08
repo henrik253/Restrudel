@@ -6,8 +6,8 @@ Sources
             other 50% is WITHHELD for evaluation — its ids are recorded in
             strudel_holdout.json and never rendered here). The split is a
             deterministic hash of the code, so it never changes between runs.
-  inspired  all songs from dataset/generated_500_inspired.yaml (the improved
-            recompositions — NOT the raw sampled sketches).
+  inspired  all songs from dataset/enhanced_all.yaml (the improved
+            recompositions across every batch — NOT the raw sampled sketches).
 
 Per song (under <data-home>/strudel_yourmt3_16k/<id>/):
   song.js           the Strudel source
@@ -367,7 +367,7 @@ def main():
               f"-> strudel_corpus_test.json")
         songs += train_pool + corpus_test
     if "inspired" in sources:
-        inspired = collect_inspired(REPO / "dataset" / "generated_500_inspired.yaml")
+        inspired = collect_inspired(REPO / "dataset" / "enhanced_all.yaml")
         print(f"inspired: {len(inspired)} songs")
         songs += inspired
     if args.limit:
