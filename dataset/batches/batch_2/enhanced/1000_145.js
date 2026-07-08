@@ -1,0 +1,5 @@
+setcpm(115/4)
+$: note("d4 f4").sound("kick snare").lpf(2500).gain(.7)
+$: s("gm_distortion_guitar ~").slow(4).gain(.4)
+$: note("e5 f4 a4 c5").sound("bd ~").lpf(2000).gain(.35)
+$: note("d5 d#5 ~ ~").gain(.3).release(.2)

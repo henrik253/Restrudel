@@ -1,0 +1,5 @@
+setcpm(128/4)
+$: s("kick*4 ~ kick ~").bank("RolandTR909").gain(.85)
+$: s("hh ~ hh ~").gain(.2).room(.5).delay(.3)
+$: s("rd 1!3").slow(2).gain(.4)
+$: n("3 3 ~ 3 ~ 3 3 -1 ~ -1 -1 0 ~ 0 0 0").scale("a:minor").s("lead").lpf(1200).room(.8).gain(.4)

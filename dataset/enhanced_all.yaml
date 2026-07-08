@@ -1,7 +1,7 @@
 generator: data_gen/collate_enhanced.py --all
 source: dataset/batches/*/enhanced.yaml
-batches: 1
-count: 500
+batches: 2
+count: 1000
 songs:
   - id: "inspired_010"
     source_id: "10"
@@ -177,6 +177,5843 @@ songs:
       
       $: n("<0 3 5 4>").scale("c2:minor").s("square")
         .add(note(-12)).lpf(650).release(.25).gain(.5)
+  - id: "inspired_1000_0"
+    source_id: "1000_0"
+    source_seed: 1000
+    voices: 4
+    events: 30
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c1 c1 c1 ~").s("sawtooth").lpf(3500).gain(.5).room(.7)
+      $: n("0 3").scale("c4:minor").s("gm_acoustic_guitar_steel:2").room(.7).lpf(3500).gain(.35)
+  - id: "inspired_1000_1"
+    source_id: "1000_1"
+    source_seed: 1001
+    voices: 4
+    events: 44
+    code: |
+      setcpm(110/4)
+      $: s("bd sd bd sd").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 7 5 3 0 2").scale("g4:major").s("gm_piano").release(.1).gain(.4)
+      $: note("g4 ~ ~ b3").s("clave").speed(1.5).gain(.3)
+  - id: "inspired_1000_10"
+    source_id: "1000_10"
+    source_seed: 1010
+    voices: 3
+    events: 44
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*16").gain(.2)
+      $: n("5 6 4 5").scale("c:minor").s("sawtooth").lpf(1500).gain(.4).room(.5)
+  - id: "inspired_1000_100"
+    source_id: "1000_100"
+    source_seed: 1100
+    voices: 4
+    events: 12
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: note(38).s("gm_epiano1").gain(.5).release(.3)
+      $: note("f4 a4").s("ocarina_vib").velocity(.5).pan(.7).gain(.4).release(.2)
+      $: s("anvil ~ ~ ~").gain(.3).room(.4)
+  - id: "inspired_1000_101"
+    source_id: "1000_101"
+    source_seed: 1101
+    voices: 4
+    events: 32
+    code: |
+      setcpm(90/4)
+      $: s("hh*8").room(.4).gain(.2)
+      $: s("bd ~ sd ~").gain(.75)
+      $: note("f4 c4 g4 d4 b3").s("gm_pad_warm").gain(.35).release(2).room(.4)
+      $: s("gm_electric_bass_finger:2").n("<0 2>").gain(.4).release(.2)
+  - id: "inspired_1000_102"
+    source_id: "1000_102"
+    source_seed: 1102
+    voices: 3
+    events: 44
+    code: |
+      setcpm(128/4)
+      $: s("bd*4").gain(.75)
+      $: s("sd sd*4 lt*4 hh!3").slow(2).gain(.4)
+      $: note("c2*8 b2 d3 g3 b3").sound("sine").gain(.35).lpf(1500)
+  - id: "inspired_1000_103"
+    source_id: "1000_103"
+    source_seed: 1103
+    voices: 5
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ snare ~").lpf(1500).room(.4).gain(.8)
+      $: s("oh ~").slow(2).gain(.2)
+      $: s("bass ~").gain(.5)
+      $: s("gm_electric_guitar_jazz").n("<0 3 5>").gain(.4)
+      $: note("d2*4 f4!2 f4 c4").s("supersaw").slow(2).gain(.3).pan(0)
+  - id: "inspired_1000_104"
+    source_id: "1000_104"
+    source_seed: 1104
+    voices: 5
+    events: 22
+    code: |
+      setcpm(112/4)
+      $: s("hh*4 ~").slow(2).gain(.2)
+      $: s("hh*4 ~").gain(.15)
+      $: s("bd ~ sd ~").gain(.8)
+      $: s("lead").n("<0 3 5 7>").gain(.4).lpf(1500)
+      $: s("agogo*2").gain(.25)
+  - id: "inspired_1000_105"
+    source_id: "1000_105"
+    source_seed: 1105
+    voices: 3
+    events: 58
+    code: |
+      setcpm(96/4)
+      $: s("hh bd rim bd").lpf(650).hpf(443).gain(.7)
+      $: note("g4 ~ ~ b3 ~ d4 g4 ~ d4 ~ ~ c4").s("sawtooth").lpf(1200).gain(.35)
+      $: n("5 ~ 2 ~ 5 6 ~ 2*3 ~ 5 6 ~ 1*3 ~ 6*3 5 4 5 ~ 2").scale("c:minor").clip(.93).release(.05).s("gm_epiano1").gain(.3)
+  - id: "inspired_1000_106"
+    source_id: "1000_106"
+    source_seed: 1106
+    voices: 4
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("perc*3 bd").gain(.6)
+      $: s("bd ~ sd ~").gain(.8)
+      $: s("piano").n("<0 3 5 7>").slow(2).gain(.4).release(.2)
+      $: note("c4 eb4 g4 bb4").sound("sawtooth").slow(2).lpf(1400).gain(.3)
+  - id: "inspired_1000_107"
+    source_id: "1000_107"
+    source_seed: 1107
+    voices: 4
+    events: 25
+    code: |
+      setcpm(94/4)
+      $: s("hh*8").gain(.2)
+      $: s("bd ~ sd ~").gain(.8)
+      $: s("folkharp").n("<0 2 4 5>").slow(2).gain(.4).release(.3)
+      $: s("lt cr").gain(.3).release(.1)
+  - id: "inspired_1000_108"
+    source_id: "1000_108"
+    source_seed: 1108
+    voices: 5
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("kick ~ snare ~").struct("~ x*2").gain(.8)
+      $: s("hh bd").gain("<0.3 0.3 .3 .6!3>/12").attack(.1).release(.05)
+      $: note("12 g4@2 d#4@3").s("gm_oboe").gain(.3)
+      $: note("a4 c5").s("sawtooth").gain(.35).release(.15)
+      $: n(4).scale("d3:minor:pentatonic").s("gm_oboe").gain("[.5 0.4]*4")
+  - id: "inspired_1000_109"
+    source_id: "1000_109"
+    source_seed: 1109
+    voices: 3
+    events: 6
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ bd ~").slow(2).gain(.8)
+      $: s("pulse ~ pulse ~").slow(3.4771).gain(.3).lpf(1500)
+      $: s("gm_electric_guitar_clean:2").n("<0 3 5>").lpf(2500).hpf(200).gain(.4)
+  - id: "inspired_1000_11"
+    source_id: "1000_11"
+    source_seed: 1011
+    voices: 3
+    events: 20
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("3 4 3 2").scale("d:minor").s("gm_baritone_sax").clip(.95).release(.15).distort("5:.3").room(.6).gain(.5)
+      $: note("d#5@2 d5@2 c#5@2 d5").s("sawtooth").lpf(2000).gain(.35).room(.4)
+  - id: "inspired_1000_110"
+    source_id: "1000_110"
+    source_seed: 1110
+    voices: 5
+    events: 62
+    code: |
+      setcpm(110/4)
+      $: s("bd*4 sd*2 cp*8 bd@3 ~ bd ~ bd ~ ~ bd ~ bd ~ bd").gain(.7)
+      $: s("cr!3 cr!2").gain(.3)
+      $: s("gm_oboe pad supersaw").n("<0 2 4>").lpf(1600).gain(.35)
+      $: s("vocal").slow(3.0309).gain(.3)
+      $: s("psaltery_pluck hh!4").slow(2.1667).gain(.25)
+  - id: "inspired_1000_111"
+    source_id: "1000_111"
+    source_seed: 1111
+    voices: 5
+    events: 25
+    code: |
+      setcpm(96/4)
+      $: s("mt lt").gain(.35).segment(8)
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("clavisynth").n("<0 3 5>").lpf(1800).gain(.4).release(.4)
+      $: s("gm_church_organ:2").n("<0 2>").gain(.3).release(.4)
+      $: s("crash ~ ~ ~").slow(4).gain(.3)
+  - id: "inspired_1000_112"
+    source_id: "1000_112"
+    source_seed: 1112
+    voices: 4
+    events: 14
+    code: |
+      setcpm(100/4)
+      $: s("EmuDrumulator_mt ~").slow(2).gain(.7)
+      $: s("linndrum_hh*4").gain(.3)
+      $: s("bd ~ sd ~").bank("LinnDrum").gain(.8)
+      $: s("supersaw").n("<0 3 5 7>").slow(2).lpf(1600).gain(.35)
+  - id: "inspired_1000_113"
+    source_id: "1000_113"
+    source_seed: 1113
+    voices: 4
+    events: 13
+    code: |
+      setcpm(120/4)
+      $: s("hh*2 cp").slow(2).gain(.25)
+      $: s("mt lt").gain(.3).decay(.16).sustain(.4).bank("KorgDDM110")
+      $: s("amen").bank("SequentialCircuitsDrumtracks").lpf(2609).gain(.5).hpf(500).room(.6)
+      $: s("kalimba*2").lpf(2609).gain(.4).room(.6)
+  - id: "inspired_1000_114"
+    source_id: "1000_114"
+    source_seed: 1114
+    voices: 4
+    events: 12
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("YamahaRY30").gain(.75).room(.3)
+      $: s("sawtooth square").bank("YamahaRY30").gain(.35).room(.3).pan(.5941)
+      $: note(38).s("gm_electric_bass_finger").clip(.9).lpf(500).velocity(.6).gain(.4)
+      $: s("misc:2 ~").gain(.3)
+  - id: "inspired_1000_115"
+    source_id: "1000_115"
+    source_seed: 1115
+    voices: 4
+    events: 40
+    code: |
+      setcpm(96/4)
+      $: s("hh*16").room(.6).delay(.2).gain(.2)
+      $: s("bd ~ sd ~").gain(.75)
+      $: s("gm_acoustic_guitar_steel:2").n("<0 3 5 7>").slow(2).gain(.4)
+      $: s("perc*3").slow(2).gain(.3)
+  - id: "inspired_1000_116"
+    source_id: "1000_116"
+    source_seed: 1116
+    voices: 5
+    events: 18
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: s("gm_piccolo").n("<0 2 4>").slow(2).gain(.35)
+      $: note("c4 eb4 g4 bb4").sound("supersaw").lpf(2000).gain(.35)
+      $: n("5 6 ~").scale("c:ritusen").s("square").gain(.3).lpf(1500)
+      $: s("gm_applause:3 ~").slow(4).gain(.2)
+  - id: "inspired_1000_117"
+    source_id: "1000_117"
+    source_seed: 1117
+    voices: 5
+    events: 34
+    code: |
+      setcpm(84/4)
+      $: s("bd bd bd bd").lpf(700).gain(.5)
+      $: s("kick drums").lpf(650).gain("0.3 0.6 0.5 0.7").hpf(4000)
+      $: note("g3 c4 f3 d#4@2").sound("snare").lpf(700).room(.6).gain("0.4 0.2").release(3).attack(.05)
+      $: note("f4 c#4@2 d#4@2 ~").s("sawtooth").lpf(1200).gain(.3)
+      $: note("e5 g5 e5 c5").s("supersaw").gain(.25).release(.2)
+  - id: "inspired_1000_118"
+    source_id: "1000_118"
+    source_seed: 1118
+    voices: 3
+    events: 10
+    code: |
+      setcpm(100/4)
+      $: s("bd hh").slow(2).gain(.75)
+      $: s("perc*3").gain("<0.3 0.6>").room(.5).delay(.3)
+      $: s("gm_harmonica").n("<0 2 4>").room(.5).delay(.3).gain(.35)
+  - id: "inspired_1000_119"
+    source_id: "1000_119"
+    source_seed: 1119
+    voices: 5
+    events: 38
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").gain(.7)
+      $: s("piano gm_overdriven_guitar:2").gain(.3).room(.6)
+      $: s("pink*2").gain(.15).room(.6)
+      $: note("12 a4@3").sound("piano").lpf(1293).gain(.4)
+      $: n("0 -1 0 4@5 3 2 1@2 1@2 9@3 8 4@10").scale("a#3:minor").s("sawtooth").lpf(1400).gain(.3)
+  - id: "inspired_1000_12"
+    source_id: "1000_12"
+    source_seed: 1012
+    voices: 3
+    events: 10
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("recorder_bass_sus ~ brakedrum:1 ~").gain(.6)
+      $: s("gm_lead_6_voice ~").lpf(2000).gain(.4).room(.5)
+  - id: "inspired_1000_120"
+    source_id: "1000_120"
+    source_seed: 1120
+    voices: 3
+    events: 19
+    code: |
+      setcpm(96/4)
+      $: s("rd 1!3").slow(2).gain(.4)
+      $: s("oh*4 bd!3").slow(2).gain(.7)
+      $: n("0 3 5 7").scale("c:minor").s("sawtooth").lpf(1300).release(.1).gain(.3)
+  - id: "inspired_1000_121"
+    source_id: "1000_121"
+    source_seed: 1121
+    voices: 4
+    events: 52
+    code: |
+      setcpm(120/4)
+      $: s("rd 1!3").gain(.4)
+      $: s("hh*16").lpf(1366).gain(.2)
+      $: s("bd ~ sd ~").gain(.8)
+      $: n("0 3 5 7").scale("c:minor").s("sawtooth").lpf(1366).gain(.3).release(.1)
+  - id: "inspired_1000_122"
+    source_id: "1000_122"
+    source_seed: 1122
+    voices: 3
+    events: 45
+    code: |
+      setcpm(112/4)
+      $: s("bd*4 ~ hh hh hh ~ sd ~ sd:2 bd bd sd hh!7 oh bd").lpf(3000).gain(.4)
+      $: s("bd:1*2").slow(2).gain(.7)
+      $: s("gm_baritone_sax").n("<0 3 5>").slow(2).gain(.35)
+  - id: "inspired_1000_123"
+    source_id: "1000_123"
+    source_seed: 1123
+    voices: 5
+    events: 56
+    code: |
+      setcpm(120/4)
+      $: s("hh*16").gain(.2)
+      $: s("bd ~ sd ~").gain(.8)
+      $: s("mt@57 lt*4").gain(.4)
+      $: note("g3 c4 f3 f#2").s("square").gain(.3).lpf(1500)
+      $: s("gm_drawbar_organ").n("<0 2 4>").gain(.35)
+  - id: "inspired_1000_124"
+    source_id: "1000_124"
+    source_seed: 1124
+    voices: 5
+    events: 28
+    code: |
+      setcpm(100/4)
+      $: s("linndrum_bd sn:3").gain(.8)
+      $: s("rd*3 hh sd hh").gain(.3)
+      $: s("bass").n("<0 3 5>").speed(1.443).gain(.4)
+      $: s("gm_cello:1").n("<0 2>").gain(.3).release(.2)
+      $: note("c4*2 c4 a#3").s("sawtooth").gain(.25).release(.12).lpf(1200)
+  - id: "inspired_1000_125"
+    source_id: "1000_125"
+    source_seed: 1125
+    voices: 5
+    events: 15
+    code: |
+      setcpm(90/4)
+      $: s("lt ~").clip(1).release(.3).gain(.6)
+      $: s("linndrum_bd ~").slow(2).gain(.7)
+      $: s("bass flbass").slow(2).gain(.4)
+      $: note("c5 g5 eb5 bb5").sound("hh").lpf(500).gain(.3)
+      $: s("bd ~ ~ ~").gain(.6)
+  - id: "inspired_1000_126"
+    source_id: "1000_126"
+    source_seed: 1126
+    voices: 5
+    events: 27
+    code: |
+      setcpm(100/4)
+      $: s("cowbell ~").slow(2).gain(.5)
+      $: s("sd bd*2").gain(.6).release(.1)
+      $: note("c2*8").s("sawtooth").gain(.35).release(.1)
+      $: s("gm_overdriven_guitar:6").n(0).gain(.4).velocity(.7)
+      $: s("snare_rim:0 ~").gain(.3)
+  - id: "inspired_1000_127"
+    source_id: "1000_127"
+    source_seed: 1127
+    voices: 5
+    events: 38
+    code: |
+      setcpm(100/4)
+      $: s("linndrum_sd hh!4").slow(2).gain(.6)
+      $: s("breaks165:1 ~").slow(2).gain(.5)
+      $: note("b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4").sound("hh").lpf(1553).hpf(500).room(.5).gain(.3)
+      $: s("bass").fast(2).gain(.4)
+      $: s("supersaw bd!2").gain(.3)
+  - id: "inspired_1000_128"
+    source_id: "1000_128"
+    source_seed: 1128
+    voices: 4
+    events: 32
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("a4 e4 c4 a3").s("sawtooth").lpf(1500).release(.15).gain(.4)
+      $: note("f4 d#4 ~ ~").add(.02).s("triangle").lpf(1200).gain(.3)
+  - id: "inspired_1000_129"
+    source_id: "1000_129"
+    source_seed: 1129
+    voices: 3
+    events: 32
+    code: |
+      setcpm(128/4)
+      $: s("bd*2 sd bd*2 sd").gain("[.8 .4]*2").release(.06).attack(.02)
+      $: n("9*2 8 ~ 7").scale("D1:hirajoshi").s("triangle").struct("[~ x]*2").gain(.4).release(.1)
+      $: n("-3 0 0 -3 0 0 -3 0").scale("D1:hirajoshi").s("triangle").hpf(1500).lpf(3000).release(.05).attack(.02).gain(.2)
+  - id: "inspired_1000_13"
+    source_id: "1000_13"
+    source_seed: 1013
+    voices: 3
+    events: 34
+    code: |
+      setcpm(90/4)
+      $: note("12 eb2 c2 a2").s("cymbal ~").gain(.7)
+      $: note("d5 c#5@2 a4@4 ~ c#5 a4@6 ~ c#5 a4@2 ~ c#5 a4@3 ~ a#4@2 f#4@2 g#4@2").s("sawtooth").gain("[1 0.6]*4").lpf(1800).room(.4)
+      $: note("a#5 g#5 c#4").sound("square supersaw").lpf(2630).gain(.4)
+  - id: "inspired_1000_130"
+    source_id: "1000_130"
+    source_seed: 1130
+    voices: 3
+    events: 14
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: note("g4 ~ f#4 f4").s("sawtooth").lpf(1400).release(.2).gain(.4)
+      $: note("c2 e1 ~ ~").s("sawtooth").lpf(500).release(.2).gain(.5)
+  - id: "inspired_1000_131"
+    source_id: "1000_131"
+    source_seed: 1131
+    voices: 5
+    events: 26
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("e1 ~ ~ e2").s("sawtooth").lpf(600).gain(.5).release(.15)
+      $: note("e4 b4").sound("piano").release(.3).gain(.3)
+      $: note("c4 g3 a3 f3").sound("triangle").lpf(2000).gain(.3)
+      $: s("woodblock:1 woodblock:2*2").release(.3).gain(.3)
+  - id: "inspired_1000_132"
+    source_id: "1000_132"
+    source_seed: 1132
+    voices: 3
+    events: 18
+    code: |
+      setcpm(120/4)
+      $: s("misc:2 ~ cymbal ~").clip(1).release(.3).attack(.02).gain(.6)
+      $: s("mt lt lt mt*2").clip(.85).release(.3).hpf(400).gain("0.4 0.5 0.4 0.5")
+      $: note("c2 ~ g1 ~").s("sawtooth").lpf(500).gain(.4).release(.2)
+  - id: "inspired_1000_133"
+    source_id: "1000_133"
+    source_seed: 1133
+    voices: 3
+    events: 30
+    code: |
+      setcpm(96/4)
+      $: s("gm_tuba ~ cp ~").slow(2).gain(.5).room(.28)
+      $: n("-3 -3 -3 -1 -1 -4").scale("C4:bebop:major").s("sawtooth").gain(.4).lpf(1000).resonance(10).room(.2).delay(.5)
+      $: s("hh*8").gain(.15)
+  - id: "inspired_1000_134"
+    source_id: "1000_134"
+    source_seed: 1134
+    voices: 4
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("rd*3").gain(.2)
+      $: note("c1 ~ f1 g1").sound("sine").lpf(1500).resonance(8).gain(.5)
+      $: s("gm_tuba ~").clip(1.1).gain(.3).room(.6)
+  - id: "inspired_1000_135"
+    source_id: "1000_135"
+    source_seed: 1135
+    voices: 3
+    events: 15
+    code: |
+      setcpm(100/4)
+      $: s("cowbell ~").slow(2).gain(.5)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+      $: n("c2 ~ f2 ~ -5 ~ -6 -5").s("sawtooth").lpf(800).gain(.4).release(.15)
+  - id: "inspired_1000_136"
+    source_id: "1000_136"
+    source_seed: 1136
+    voices: 4
+    events: 40
+    code: |
+      setcpm(118/4)
+      $: s("bd*4 ~").fast(2).delay(".4:.15:.4").gain(.5)
+      $: s("hh*8").bank("YamahaRY30").gain(.2).room(.3)
+      $: s("gm_lead_6_voice ~ recorder_bass_sus ~ gm_synth_bass_1").bank("YamahaRY30").room(.3).gain(.4)
+      $: s("psaltery_pluck ~").speed(1.5).bank("Linn9000").gain(.4).release(1).hpf(200).room(.5)
+  - id: "inspired_1000_137"
+    source_id: "1000_137"
+    source_seed: 1137
+    voices: 3
+    events: 33
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("ocarina ~").slow(4).gain(.4)
+      $: n("4 11 9 10 8 -1 0 ~ ~ 2 11 9 10 8 13 12").scale("C:minor").s("triangle").gain(.3).release(.15)
+  - id: "inspired_1000_138"
+    source_id: "1000_138"
+    source_seed: 1138
+    voices: 4
+    events: 14
+    code: |
+      setcpm(120/4)
+      $: s("cp ~ sd ~").slow(2).gain(.7)
+      $: s("hh*4").velocity(.5).gain(.2)
+      $: s("gm_electric_guitar_jazz").velocity(.55).gain(.4)
+      $: note("d#5 ~ ~ ~").gain(.35).release(.3)
+  - id: "inspired_1000_139"
+    source_id: "1000_139"
+    source_seed: 1139
+    voices: 3
+    events: 8
+    code: |
+      setcpm(120/4)
+      $: s("~ cp ~ cp").gain(.7)
+      $: s("linndrum_bd ~").slow(2).gain(.7)
+      $: s("hh*3").slow(2).gain(.2)
+  - id: "inspired_1000_14"
+    source_id: "1000_14"
+    source_seed: 1014
+    voices: 3
+    events: 20
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("-2 0 -1 0 1 2 -1").scale("c:minor").s("sawtooth").gain("[1 0.3]*8").lpf(1600)
+      $: note("c1@2 ~").s("sine").velocity(.4).gain(.5)
+  - id: "inspired_1000_140"
+    source_id: "1000_140"
+    source_seed: 1140
+    voices: 3
+    events: 24
+    code: |
+      setcpm(100/4)
+      $: s("linndrum_bd ~").slow(2).gain(.8)
+      $: n("G3 C4 E4 G3 C4 E4 ~ F3 A3 C3 F3 A3 C3 ~ F3 Bb3 D3 F3 Bb3 D3 ~ A3 C4 E4").s("psaltery_pluck").slow(2).gain(.4)
+      $: sound("sine").lpf(2000).gain(.4)
+  - id: "inspired_1000_141"
+    source_id: "1000_141"
+    source_seed: 1141
+    voices: 3
+    events: 7
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("gm_electric_bass_pick ~").slow(2).gain(.4)
+      $: sound("sine").n("c4*2 d#4 f4 ~").lpf(2500).room(.4).gain(.3)
+  - id: "inspired_1000_142"
+    source_id: "1000_142"
+    source_seed: 1142
+    voices: 3
+    events: 14
+    code: |
+      setcpm(112/4)
+      $: s("bd*2 ~").gain(.7)
+      $: s("gm_piano ~").gain(.4)
+      $: note("b4 a4 b4 c5").sound("square").lpf(2000).room(.5).gain(.35)
+  - id: "inspired_1000_143"
+    source_id: "1000_143"
+    source_seed: 1143
+    voices: 4
+    events: 10
+    code: |
+      setcpm(105/4)
+      $: s("bongo:3 ~").room(.2).gain(.5)
+      $: s("gm_electric_bass_pick ~").gain(.5).release(1).attack(.05)
+      $: s("gm_electric_guitar_clean:2 ~").room(.2).gain(.35)
+      $: note("e4 f#4 ~ ~").add("<0 1>/16").gain(.3).release(.2)
+  - id: "inspired_1000_144"
+    source_id: "1000_144"
+    source_seed: 1144
+    voices: 4
+    events: 28
+    code: |
+      setcpm(130/4)
+      $: s("bd*2 sn").bank("tr909").clip(.95).gain(.5).decay(.05).sustain(0).release(.13)
+      $: s("hh*8").gain(.2).room(.3)
+      $: s("lead pulse").gain(.2).room(.4).delay(.3)
+      $: note("b4 ~ a#4 f#4").sound("bd*2 ~").lpf(2500).gain(.4)
+  - id: "inspired_1000_145"
+    source_id: "1000_145"
+    source_seed: 1145
+    voices: 4
+    events: 13
+    code: |
+      setcpm(115/4)
+      $: note("d4 f4").sound("kick snare").lpf(2500).gain(.7)
+      $: s("gm_distortion_guitar ~").slow(4).gain(.4)
+      $: note("e5 f4 a4 c5").sound("bd ~").lpf(2000).gain(.35)
+      $: note("d5 d#5 ~ ~").gain(.3).release(.2)
+  - id: "inspired_1000_146"
+    source_id: "1000_146"
+    source_seed: 1146
+    voices: 3
+    events: 15
+    code: |
+      setcpm(105/4)
+      $: s("bd hh").bank("RolandMT32").gain(.6).release(1.5)
+      $: s("supersaw ~ rd*4 sawtooth square").slow(4).gain(.3)
+      $: note("c2 a4 d#5 d5").gain(.3).release(.2)
+  - id: "inspired_1000_147"
+    source_id: "1000_147"
+    source_seed: 1147
+    voices: 4
+    events: 23
+    code: |
+      setcpm(122/4)
+      $: s("bd*4 sd*2").slow(3).gain(.8)
+      $: s("hh*5").clip(.18).gain(.2)
+      $: s("gm_electric_bass_pick ~ rd*2 ~").clip(.18).gain(.4)
+      $: s("pulse ~").gain(.4).room(.5)
+  - id: "inspired_1000_148"
+    source_id: "1000_148"
+    source_seed: 1148
+    voices: 3
+    events: 14
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("a#5 g#5 e5 c#5").clip(1).gain(.4).release(.2).attack(.05)
+      $: note("c2 ~ ~ ~").s("sawtooth").lpf(600).gain(.4).release(.2)
+  - id: "inspired_1000_149"
+    source_id: "1000_149"
+    source_seed: 1149
+    voices: 4
+    events: 26
+    code: |
+      setcpm(108/4)
+      $: s("saw ~ brakedrum:1 ~").gain(.5)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: n("3 ~ -4 -1 1").scale("C:minor").s("triangle").gain(.35).release(.15)
+      $: note("c2*4 Eb2 ~ ~ ~").gain(.4).release(.2)
+  - id: "inspired_1000_15"
+    source_id: "1000_15"
+    source_seed: 1015
+    voices: 4
+    events: 30
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ cp ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("cymbal ~ ~ ~").gain(.5)
+      $: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1400).gain(.4).room(.5)
+  - id: "inspired_1000_150"
+    source_id: "1000_150"
+    source_seed: 1150
+    voices: 4
+    events: 36
+    code: |
+      setcpm(120/4)
+      $: s("hh*2 ~ hh hh hh ~ sd ~ sd:2 bd").bank("RolandTR909").gain(.7)
+      $: note("c4 c4 c4 b3 b3").s("folkharp").room(.5).attack(.2).gain(.4)
+      $: note("a5 f5 ~ e5").s("gm_lead_2_sawtooth").release(.2).pan("0.2 -0.2").gain(.4)
+      $: note("a1 g1").s("sawtooth").lpf(600).gain(.5).release(.1)
+  - id: "inspired_1000_151"
+    source_id: "1000_151"
+    source_seed: 1151
+    voices: 3
+    events: 16
+    code: |
+      setcpm(110/4)
+      $: s("sd ~ sd:2 bd").bank("RolandTR909").gain(.8)
+      $: s("woodblock:1 woodblock:2*2").gain(.6).release(.1).attack(.1)
+      $: note("c5 f5").s("hh").lpf(4283).gain(.3)
+  - id: "inspired_1000_152"
+    source_id: "1000_152"
+    source_seed: 1152
+    voices: 4
+    events: 36
+    code: |
+      setcpm(128/4)
+      $: s("rd*3 linn9000_cr").gain(.7)
+      $: note("e3 a3 c4 e4 a4 e4 f2 a2 c3 f3").s("sawtooth").lpf(2000).gain(.4)
+      $: note("c4 a4 ~").s("hh*8").gain(.2)
+      $: note("e5 ~ g5").s("sawtooth").lpf(2282).room(.2).gain(.4)
+  - id: "inspired_1000_153"
+    source_id: "1000_153"
+    source_seed: 1153
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("gm_electric_bass_pick").note("c2 ~ eb2 ~").gain(.5)
+      $: s("cowbell ~ ~ cowbell").clip(.8).release(.3).attack(.1).gain(.4)
+  - id: "inspired_1000_154"
+    source_id: "1000_154"
+    source_seed: 1154
+    voices: 4
+    events: 26
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("vocal:1").note("a5 e5").room(.4).gain(.4)
+      $: note("a2 e2").s("sawtooth").lpf(800).release(.2).gain(.4)
+  - id: "inspired_1000_155"
+    source_id: "1000_155"
+    source_seed: 1155
+    voices: 4
+    events: 44
+    code: |
+      setcpm(96/4)
+      $: s("bd*2 ~").bank("AkaiLinn").gain(.8)
+      $: s("gm_electric_guitar_jazz gm_distortion_guitar:2").bank("AkaiLinn").gain(.5)
+      $: s("hh*8").gain(.2)
+      $: note("B2 D2 G2 Bb2 Eb2 Bb3 A2 D2 G2 Bb2").transpose(-1).s("sawtooth").lpf(900).gain(.4)
+  - id: "inspired_1000_156"
+    source_id: "1000_156"
+    source_seed: 1156
+    voices: 4
+    events: 82
+    code: |
+      setcpm(124/4)
+      $: n("G3 C4 E4 G3 C4 E4 ~ F3 A3 C3 F3 A3").s("supersaw").lpf(3200).room(.2).gain(.4)
+      $: note("g4 bb4 c5 f5").s("supersaw").room(.6).gain(.3)
+      $: s("bd*4 sd*2 cp*8").bank("RolandTR909").gain(.7)
+      $: note("a2*8 a2*4 ~ ~").s("sine").lpf(1500).gain(.4)
+  - id: "inspired_1000_157"
+    source_id: "1000_157"
+    source_seed: 1157
+    voices: 3
+    events: 28
+    code: |
+      setcpm(112/4)
+      $: s("bd*4 bd!4").bank("RolandTR909").clip(.8).cutoff(200).gain(.7)
+      $: s("gm_drawbar_organ gm_pizzicato_strings:1 gm_vibraphone:3").gain(.4)
+      $: s("bongo:3 sd sd").gain(.5)
+  - id: "inspired_1000_158"
+    source_id: "1000_158"
+    source_seed: 1158
+    voices: 4
+    events: 40
+    code: |
+      setcpm(140/4)
+      $: s("bd*4 sd*2 cp*8").bank("Linn9000").slow(2).gain(.7)
+      $: note("a#5 g#5 e5 c#5").s("sawtooth").lpf(2000).gain(.4)
+      $: s("hh*8").gain(.2).cutoff("<400 1200>").decay(.03).sustain(.6).bank("Linn9000")
+      $: s("clave").attack(.001).release(.4).room(.3).gain(.4)
+  - id: "inspired_1000_159"
+    source_id: "1000_159"
+    source_seed: 1159
+    voices: 3
+    events: 20
+    code: |
+      setcpm(100/4)
+      $: s("cp sd").bank("RolandTR909").lpf(3000).hpf(200).gain(.7)
+      $: note("d#5 d5 c#5 a4").room(.7).s("sawtooth").gain(.4)
+      $: n("0 3 7 5").scale("C:major").s("sawtooth").lpf(1200).release(.1).gain(.4)
+  - id: "inspired_1000_16"
+    source_id: "1000_16"
+    source_seed: 1016
+    voices: 4
+    events: 16
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("clave ~ gm_bassoon ~").gain(.6).pan(.3)
+      $: note("c1 ~ a1@2 ~").sound("drums kick").lpf(200).gain(.6)
+      $: s("sine pink").lpf(3000).room(.5).gain(.4).release(.4).attack(.3)
+  - id: "inspired_1000_160"
+    source_id: "1000_160"
+    source_seed: 1160
+    voices: 3
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("kick*4 linndrum_sd").bank("RolandTR909").velocity(.4).gain(.8)
+      
+      $: s("linndrum_hh*8").gain(.2).release(.1)
+      
+      $: n("0 2 4 2").scale("Bb2:major").s("sawtooth").lpf(900).release(.2).gain(.4)
+  - id: "inspired_1000_161"
+    source_id: "1000_161"
+    source_seed: 1161
+    voices: 4
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: s("kick drums").n("0 4 5 2").lpf(800).gain(.7)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("<a3 e3>").s("sawtooth").room(.5).delay(.5).gain(.4)
+      
+      $: note("a4 e4 c4 g4").s("square").lpf(1200).gain(.3).room(.3)
+  - id: "inspired_1000_162"
+    source_id: "1000_162"
+    source_seed: 1162
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100/4)
+      
+      $: s("oh*4 bd!3 bd*2 ~").release(.2).gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("a1 g1*2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_163"
+    source_id: "1000_163"
+    source_seed: 1163
+    voices: 4
+    events: 20
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd bd").gain("[0.8 0.4]*4").delay(.2376).delaytime(.1).delayfeedback(.6)
+      
+      $: s("mt lt").clip(.95).release(.5).attack(.1).gain(.5)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c2 eb2 g2 bb2").s("sawtooth").lpf(800).gain(.35)
+  - id: "inspired_1000_164"
+    source_id: "1000_164"
+    source_seed: 1164
+    voices: 4
+    events: 20
+    code: |
+      setcpm(90/4)
+      
+      $: s("hh*4 ~ sd bd").bank("RolandTR909").gain(.7)
+      
+      $: note("c2 g#1").s("sawtooth").lpf(600).gain(.4)
+      
+      $: s("gm_baritone_sax").note("c3 g#2").lpf(4000).room(.9).gain(.3)
+      
+      $: s("sd:2").gain(.15)
+  - id: "inspired_1000_165"
+    source_id: "1000_165"
+    source_seed: 1165
+    voices: 4
+    events: 25
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("0 -7 -3 -3 -1 -4 -2 0").scale("D:dorian").s("sawtooth").struct("x*8").gain(.4)
+      
+      $: s("Sitar").note("d4 f4 a4 c5").slow(2).room(.3).gain(.3)
+  - id: "inspired_1000_166"
+    source_id: "1000_166"
+    source_seed: 1166
+    voices: 4
+    events: 20
+    code: |
+      setcpm(100/4)
+      
+      $: s("sd cp ~ ~").slow(2).gain(.8)
+      
+      $: s("~ hh hh hh").gain("[.2 1@3]*2").hpf(4000)
+      
+      $: note("c2 g2").s("sawtooth").lpf(700).gain(.4)
+      
+      $: note("c4 eb4 g4 bb4").s("square").lpf(1500).room(.3).gain(.25)
+  - id: "inspired_1000_167"
+    source_id: "1000_167"
+    source_seed: 1167
+    voices: 5
+    events: 26
+    code: |
+      setcpm(95/4)
+      
+      $: s("bd*4 bd!4 ~ sd").bank("RolandTR909").lpf(1114).gain(.5)
+      
+      $: s("ellipse kalimba").lpf(2734).gain(.25)
+      
+      $: s("piano").note("c3 g#2").slow(4).gain(.3)
+      
+      $: s("gm_bassoon:2").note("c2").slow(8).gain(.3)
+      
+      $: s("ocarina_vib").note("f#5 a#4 e5 d#5 ~ c#5 b4 a#4").gain(.3)
+  - id: "inspired_1000_168"
+    source_id: "1000_168"
+    source_seed: 1168
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 a5 f5 ~").s("square").lpf(2000).gain(.35)
+      
+      $: s("dino").note("g5 ~ ~ ~ d5 ~ ~ ~ c5 ~ ~ ~ f5 ~ ~ ~").gain(.3)
+  - id: "inspired_1000_169"
+    source_id: "1000_169"
+    source_seed: 1169
+    voices: 4
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("cowbell ~").speed(1.1).attack(.01).gain(.4)
+      
+      $: s("~ cp:12 hh hh*2").gain(.3)
+      
+      $: note("c2 g2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_17"
+    source_id: "1000_17"
+    source_seed: 1017
+    voices: 4
+    events: 42
+    code: |
+      setcpm(128/4)
+      $: s("kick*4 ~ kick ~").bank("RolandTR909").gain(.85)
+      $: s("hh ~ hh ~").gain(.2).room(.5).delay(.3)
+      $: s("rd 1!3").slow(2).gain(.4)
+      $: n("3 3 ~ 3 ~ 3 3 -1 ~ -1 -1 0 ~ 0 0 0").scale("a:minor").s("lead").lpf(1200).room(.8).gain(.4)
+  - id: "inspired_1000_170"
+    source_id: "1000_170"
+    source_seed: 1170
+    voices: 4
+    events: 27
+    code: |
+      setcpm(105/4)
+      
+      $: s("bd*2 sd").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: s("perc*3").fast(2).gain(.3)
+      
+      $: s("gm_pad_warm").note("c3 g3").fast(2).room(.4).gain(.3)
+      
+      $: note("c2 g2 c2 g2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_171"
+    source_id: "1000_171"
+    source_seed: 1171
+    voices: 4
+    events: 24
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("oh ~ oh ~").gain(.3)
+      $: note("c4 g4 d4 b3").s("gm_oboe").clip(1).lpf(2000).gain(.4)
+      $: note("d5 c#5 d#5 a4").s("gm_oboe").release(.1).gain(.3).room(.3)
+  - id: "inspired_1000_172"
+    source_id: "1000_172"
+    source_seed: 1172
+    voices: 4
+    events: 38
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 -6 -5 -7 0 1 2 3").scale("d3:minor:pentatonic").s("supersaw").lpf(1500).gain(.35)
+      $: s("gm_electric_guitar_clean:2").clip(1).gain(.4).pan(.5)
+  - id: "inspired_1000_173"
+    source_id: "1000_173"
+    source_seed: 1173
+    voices: 4
+    events: 14
+    code: |
+      setcpm(95/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("cp*2 ~").gain(.3)
+      $: note("c2 f2").s("bass").hpf(2000).lpf(800).room(.5).gain(.4)
+      $: s("gm_baritone_sax kalimba").slow(2).gain(.35)
+  - id: "inspired_1000_174"
+    source_id: "1000_174"
+    source_seed: 1174
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("cajon*4").gain(.25)
+      $: note("c3 eb3 g3 c3").s("gm_electric_bass_finger").gain(.5)
+      $: note("c5 eb5 g5").s("lead").room(2).gain(.3)
+  - id: "inspired_1000_175"
+    source_id: "1000_175"
+    source_seed: 1175
+    voices: 5
+    events: 25
+    code: |
+      setcpm(105/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("sleighbells*4").gain(.2)
+      $: n("-2 -1 0 -7").scale("c:major").s("gm_bandoneon").release(.05).room(.5).gain(.4)
+      $: note("c2 g2").s("misc").clip(1).gain(.35)
+      $: s("gm_vibraphone:3").slow(2).release(.5).attack(.19).gain(.3)
+  - id: "inspired_1000_176"
+    source_id: "1000_176"
+    source_seed: 1176
+    voices: 4
+    events: 40
+    code: |
+      setcpm(130/4)
+      $: s("bd*4").bank("RolandTR909").gain(.7)
+      $: s("hh*8").gain(.15)
+      $: note("a3 g3 e3 c3").s("sawtooth").lpf(500).gain(.4)
+      $: note("a5 g5 e5 c5").s("square").lpf(1500).gain(.3)
+  - id: "inspired_1000_177"
+    source_id: "1000_177"
+    source_seed: 1177
+    voices: 4
+    events: 32
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ cr ~").bank("RolandTR909").gain(.8)
+      $: s("hh*4").gain(.2)
+      $: s("shaker*8").gain(.15)
+      $: note("b2 f2").s("sawtooth").lpf(3000).gain(.4)
+  - id: "inspired_1000_178"
+    source_id: "1000_178"
+    source_seed: 1178
+    voices: 4
+    events: 19
+    code: |
+      setcpm(120/4)
+      $: s("hh*4 ~").gain(.2)
+      $: s("amen").slow(2).gain(.5)
+      $: note(20).s("supersaw").lpf(200).gain(.35)
+      $: s("rim*4").gain(.25)
+  - id: "inspired_1000_179"
+    source_id: "1000_179"
+    source_seed: 1179
+    voices: 4
+    events: 29
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c4 c4 a#3 d#4").s("piano").lpf(578).gain(.4)
+      $: note("c2").s("sawtooth").slow(2).gain(.3)
+  - id: "inspired_1000_18"
+    source_id: "1000_18"
+    source_seed: 1018
+    voices: 3
+    events: 12
+    code: |
+      setcpm(104/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("gm_bassoon ~ supersaw ~").gain(.4)
+      $: s("gm_piano ~ harmonica_soft ~").lpf(1000).hpf(668).room(.7).gain(.4)
+  - id: "inspired_1000_180"
+    source_id: "1000_180"
+    source_seed: 1180
+    voices: 4
+    events: 66
+    code: |
+      setcpm(140/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("rd*8").gain("<0.3 0.6>")
+      $: n("0 3 0 2 4 0 2 4 -2 0 3 0 2 4 0").scale("c:minor").s("supersaw").lpf(1200).delay(.5).delaytime(.125).delayfeedback(.6).room(1.5).gain(.4)
+      $: s("cp*8 ~").gain(.3)
+  - id: "inspired_1000_181"
+    source_id: "1000_181"
+    source_seed: 1181
+    voices: 4
+    events: 46
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8).room(.3)
+      
+      $: s("hh*16").gain(.25).hpf(7000).lpf(4000).resonance(5)
+      
+      $: n("0 3 7 5").scale("G:dorian").s("sawtooth").lpf(3000).delay(.4).release(.291).attack(.05).gain(.4)
+      
+      $: s("~ drum").lpf(2000).gain(.3).room(.4)
+  - id: "inspired_1000_182"
+    source_id: "1000_182"
+    source_seed: 1182
+    voices: 4
+    events: 46
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.25).cutoff(4000).resonance(4)
+      
+      $: note("a5 e5 c5 f5 a5 f5 a5 f5 ~ a5 ~ f5 ~ d5 ~ e5").sound("square").lpf(1800).gain(.35)
+      
+      $: s("bd!2 ~").slow(2).lpf(800).gain(.6).room(.1)
+  - id: "inspired_1000_183"
+    source_id: "1000_183"
+    source_seed: 1183
+    voices: 4
+    events: 14
+    code: |
+      setcpm(100/4)
+      
+      $: note("e1 ~").sound("bd sd").gain(.8)
+      
+      $: s("hh*4").slow(2).gain(.2)
+      
+      $: note("c5 c#5").sound("triangle").lpf(644).gain(.35).room(.3)
+      
+      $: note("c3 ~ e3 ~").sound("piano").lpf(1200).gain(.3)
+  - id: "inspired_1000_184"
+    source_id: "1000_184"
+    source_seed: 1184
+    voices: 4
+    events: 24
+    code: |
+      setcpm(90/4)
+      
+      $: s("cowbell ~ cowbell ~").attack(.001).gain(.7)
+      
+      $: note("c2 ~ c2 ~").s("triangle").slow(2).lpf(600).gain(.4)
+      
+      $: n("0 3 5 7").scale("C:minor").s("gm_overdriven_guitar").release(.2).gain(.3)
+      
+      $: s("hh*8").gain(.2).degradeBy(.3)
+  - id: "inspired_1000_185"
+    source_id: "1000_185"
+    source_seed: 1185
+    voices: 4
+    events: 36
+    code: |
+      setcpm(115/4)
+      
+      $: s("bd*2 ~ sd bd*2").bank("RolandTR909").lpf(2000).room(.4).gain(.8)
+      
+      $: s("hh*4").gain(.2)
+      
+      $: note("a3 f4 c4 a3 f3 c4 g3 a3").sound("sawtooth").lpf(1800).gain(.35)
+      
+      $: n("0 2").s("gm_electric_bass_finger").slow(2).gain(.4)
+  - id: "inspired_1000_186"
+    source_id: "1000_186"
+    source_seed: 1186
+    voices: 4
+    events: 36
+    code: |
+      setcpm(105/4)
+      
+      $: s("~ sd ~ sd").cutoff(1000).gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("-3 -1 -1 -4 -2").scale("C:minor").s("square").lpf(1500).gain(.35)
+      
+      $: note("e3 c3@2 ~ g#3").sound("piano").lpf(2500).gain(.3)
+  - id: "inspired_1000_187"
+    source_id: "1000_187"
+    source_seed: 1187
+    voices: 4
+    events: 29
+    code: |
+      setcpm(95/4)
+      
+      $: s("bd*4").slow(2).bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("gm_pad_warm").slow(2).lpf(2000).room(.5).gain(.3)
+      
+      $: n("0 3 7 10").scale("C:major").s("sawtooth").lpf(1600).gain(.35)
+  - id: "inspired_1000_188"
+    source_id: "1000_188"
+    source_seed: 1188
+    voices: 4
+    events: 58
+    code: |
+      setcpm(125/4)
+      
+      $: s("mt lt lt mt*2").gain(.5)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("a2*8 a2*4 ~ ~ ~ a2*8").sound("square").lpf(2000).gain(.35)
+      
+      $: s("~ sd ~ sd").gain(.4).lpf(3000)
+  - id: "inspired_1000_189"
+    source_id: "1000_189"
+    source_seed: 1189
+    voices: 4
+    events: 28
+    code: |
+      setcpm(130/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 2 4 0 2 4 ~ -1").scale("C:bebopMajor").s("square").speed(1.2).lpf(2000).gain(.35)
+      
+      $: note("c5 d5 e5 e5 ~ ~ ~ ~").sound("supersaw").lpf(1200).gain(.2)
+  - id: "inspired_1000_19"
+    source_id: "1000_19"
+    source_seed: 1019
+    voices: 3
+    events: 13
+    code: |
+      setcpm(96/4)
+      $: s("kick*4 ~").gain(.8)
+      $: note("d#5@2 d5@2").s("gm_cello:1").gain(.5).room(1.2)
+      $: s("ocarina_vib ~").slow(2).gain(.4)
+  - id: "inspired_1000_190"
+    source_id: "1000_190"
+    source_seed: 1190
+    voices: 4
+    events: 38
+    code: |
+      setcpm(100/4)
+      
+      $: s("gm_harmonica ~ perc*4 ~").clip(1).release(.05).gain(.7)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("e5 g5 c6 g5").gain(.35).room(.2).lpf(2500)
+      
+      $: s("square ~ square ~").gain(.3).lpf(1800)
+  - id: "inspired_1000_191"
+    source_id: "1000_191"
+    source_seed: 1191
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh*2").gain(.2)
+      
+      $: note("c3 f3 c3 f3").sound("sawtooth").lpf(900).gain(.4)
+      
+      $: note("f4 a4 c5 c4 e4 g4 g4 b4").sound("sawtooth").gain(.3).room(.3)
+  - id: "inspired_1000_192"
+    source_id: "1000_192"
+    source_seed: 1192
+    voices: 4
+    events: 24
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("e3 c3 g3 f3").sound("sawtooth").lpf(1200).gain(.4)
+      
+      $: note("c2 eb2 g1 bb1").scale("A1:minor").sound("sawtooth").room(.5).gain(.3)
+  - id: "inspired_1000_193"
+    source_id: "1000_193"
+    source_seed: 1193
+    voices: 4
+    events: 28
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ ~ ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh:2 ~ hh:2*2").gain(.2)
+      
+      $: note("a3 c4 e4 c4 e4 g4 c5 g3").sound("sine").lpf(3000).gain(.35)
+      
+      $: note("c4 eb4 g4 bb4").sound("gm_oboe").slow(2).room(.4).gain(.3)
+  - id: "inspired_1000_194"
+    source_id: "1000_194"
+    source_seed: 1194
+    voices: 4
+    events: 22
+    code: |
+      setcpm(105/4)
+      
+      $: s("linndrum_bd ~ sd*2 ~").speed(.85).gain(.85)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("f6 d6").sound("piano").lpf(4000).gain(.3)
+      
+      $: note("c3 eb3 g3 bb3").sound("sawtooth").speed(.9).pan(.6).room(.3).gain(.3)
+  - id: "inspired_1000_195"
+    source_id: "1000_195"
+    source_seed: 1195
+    voices: 4
+    events: 24
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: n("9 4 9 4").scale("G0:minor").sound("hh").room(.2).gain(.4)
+      
+      $: n("0 3 5 3").scale("G2:minor").sound("sawtooth").lpf(1000).room(.3).gain(.3)
+  - id: "inspired_1000_196"
+    source_id: "1000_196"
+    source_seed: 1196
+    voices: 4
+    events: 46
+    code: |
+      setcpm(140/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR808").gain(.85)
+      
+      $: s("linndrum_hh*8").gain(.2)
+      
+      $: note("a2*4 a2*4").sound("sawtooth").lpf(700).gain(.4)
+      
+      $: note("a3 c4 e4 g3").sound("lead").room(.3).gain(.3)
+  - id: "inspired_1000_197"
+    source_id: "1000_197"
+    source_seed: 1197
+    voices: 4
+    events: 24
+    code: |
+      setcpm(90/4)
+      
+      $: s("~ hh hh*2 hh*2").lpf(400).resonance(8).room(.5).gain(.4)
+      
+      $: s("gm_electric_bass_finger").struct("[~ x]*2").gain(.5)
+      
+      $: note("~ d#4 f4 g4").sound("hh").lpf(300).resonance(6).room(.5).gain(.25)
+      
+      $: s("gm_oboe").struct("x ~ ~ x").note("d#4 f4 g4 d#4").room(.4).gain(.3)
+  - id: "inspired_1000_198"
+    source_id: "1000_198"
+    source_seed: 1198
+    voices: 4
+    events: 25
+    code: |
+      setcpm(115/4)
+      
+      $: s("bass ~ bd*4 ~").slow(2).gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c3 f3 a3 c4").sound("sawtooth").lpf(900).gain(.4)
+      
+      $: note("e4 b4 d#5 c#4").sound("sine").gain(.3).room(.3)
+  - id: "inspired_1000_199"
+    source_id: "1000_199"
+    source_seed: 1199
+    voices: 4
+    events: 24
+    code: |
+      setcpm(90/4)
+      
+      $: s("gm_harmonica ~ 64 ~").gain(.3).cutoff(400).attack(.05)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c3 d3 c3 d3").sound("gm_pad_bowed").delay(.5).decay(.1).sustain(1).room(.3).gain(.3)
+      
+      $: note("c d e d").sound("gm_lead_6_voice").room(.2).gain(.3)
+  - id: "inspired_1000_2"
+    source_id: "1000_2"
+    source_seed: 1002
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 3 5 7").scale("c4:minor").s("supersaw").lpf(2000).release(.5).gain(.35)
+      $: s("~ ~ ~ ballwhistle").gain(.3)
+  - id: "inspired_1000_20"
+    source_id: "1000_20"
+    source_seed: 1020
+    voices: 4
+    events: 37
+    code: |
+      setcpm(140/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("gm_string_ensemble_2 ~").slow(2).gain(.35).room(.6)
+      $: note("c2*4 c#4 d#4 f4 d#4").s("gm_overdriven_guitar:6").gain(.4).release(.3)
+  - id: "inspired_1000_200"
+    source_id: "1000_200"
+    source_seed: 1200
+    voices: 4
+    events: 26
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("gm_drawbar_organ cp:12").gain(.6).room(.3)
+      
+      $: note("<e5 g4 c5 b4>").s("gm_drawbar_organ").velocity(.5).release(.3)
+  - id: "inspired_1000_201"
+    source_id: "1000_201"
+    source_seed: 1201
+    voices: 3
+    events: 37
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("hh*16").gain("[.2 .12]*8").speed(.97).pan(.45)
+      
+      $: s("gm_synth_strings_1").note("<c3 eb3 g3 bb2>").slow(2).room(.4).gain(.4)
+  - id: "inspired_1000_202"
+    source_id: "1000_202"
+    source_seed: 1202
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh oh hh oh").lpf(1200).resonance(8).gain(.2)
+      
+      $: note("g4 c5 ~ g4 ~ ~ b3 ~ d4 g4 ~ d4 ~").sound("triangle").lpf(3000).room(1).delay(.3).gain(.35)
+      
+      $: n("0 3 5 7").scale("g:minor").s("sawtooth").lpf(900).release(.2).gain(.4)
+  - id: "inspired_1000_203"
+    source_id: "1000_203"
+    source_seed: 1203
+    voices: 3
+    events: 10
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").struct("[x*2 [x x*2] [x*2] ~]/2").bank("RolandTR808").gain(.8)
+      
+      $: note("g1 a#1 eb2").transpose(12).s("sawtooth").lpf(1500).gain("<0.4 0.45 0.5 0.6>")
+      
+      $: s("ocarina_vib").slow(2).gain(.4).room(.3)
+  - id: "inspired_1000_204"
+    source_id: "1000_204"
+    source_seed: 1204
+    voices: 4
+    events: 25
+    code: |
+      setcpm(104/4)
+      
+      $: s("bd ~ cajon rim").release(.05).gain(.75)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("gm_ocarina").n("0 3 5 7").slow(2).gain(.4)
+      
+      $: s("gm_overdriven_guitar:3").note("<e2 g2>").speed(1.2).gain(.3)
+  - id: "inspired_1000_205"
+    source_id: "1000_205"
+    source_seed: 1205
+    voices: 3
+    events: 28
+    code: |
+      setcpm(90/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("f#2 a2 c#3 f#2").s("psaltery_pluck").cutoff(1000).gain(.5)
+  - id: "inspired_1000_206"
+    source_id: "1000_206"
+    source_seed: 1206
+    voices: 4
+    events: 22
+    code: |
+      setcpm(126/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("rd*3 ~ woodblock:1 ~").gain(.35)
+      
+      $: s("~ sd").gain(.5)
+      
+      $: n("0 2 3 5").scale("a:minor").s("supersaw").lpf(1200).release(.2).gain(.4)
+  - id: "inspired_1000_207"
+    source_id: "1000_207"
+    source_seed: 1207
+    voices: 4
+    events: 14
+    code: |
+      setcpm(90/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("vocal:1 ~ vocal:2 ~").slow(2).gain(.3)
+      
+      $: note("g5 eb5 ~ ~").sound("piano").velocity(.6).room(.3)
+      
+      $: note("a5 c6 ~ ~").sound("piano").velocity(.5).release(.4)
+  - id: "inspired_1000_208"
+    source_id: "1000_208"
+    source_seed: 1208
+    voices: 3
+    events: 19
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("g1 f1 c2 g2").sound("square").lpf(2000).hpf(150).distort("1.2:.6").room(.2).gain(.4)
+      
+      $: n("1 ~ 2 3 -4 -3").scale("d:dorian").s("sawtooth").lpf(1500).slow(2).gain(.4)
+  - id: "inspired_1000_209"
+    source_id: "1000_209"
+    source_seed: 1209
+    voices: 4
+    events: 20
+    code: |
+      setcpm(118/4)
+      
+      $: s("bd!2 ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("sleighbells*4").slow(2).gain(.25)
+      
+      $: note("a#4 g#4 c#4 ~").sound("piano").lpf(1500).room(.6).gain(.4)
+      
+      $: n("0 -7").scale("c:<major minor>/2").s("sawtooth").transpose("<0 1 2 1>/8").lpf(1000).gain(.35)
+  - id: "inspired_1000_21"
+    source_id: "1000_21"
+    source_seed: 1021
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("rd*3 cr").release(1.2).gain(.4)
+      $: n("0 0 0 ~").scale("c:minor").s("sawtooth").gain(.4)
+      $: note("c5 b3 d4 g4").sound("supersaw").lpf(3000).resonance(8).gain(.35).delay(.4).room(1.2)
+  - id: "inspired_1000_210"
+    source_id: "1000_210"
+    source_seed: 1210
+    voices: 4
+    events: 32
+    code: |
+      setcpm(128/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("c5 c#5 d#5 d5").sound("square").lpf(2200).release(.15).gain(.4)
+      
+      $: s("kick*4 ~").slow(2).gain(.3)
+  - id: "inspired_1000_211"
+    source_id: "1000_211"
+    source_seed: 1211
+    voices: 4
+    events: 23
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandMT32").gain(.8)
+      
+      $: s("hh!4 lt").bank("RolandMT32").gain(.3)
+      
+      $: s("cr ~").slow(2).gain(.3)
+      
+      $: n("0 3 5 7").scale("e:minor").s("sawtooth").lpf(1000).release(.25).gain(.35)
+  - id: "inspired_1000_212"
+    source_id: "1000_212"
+    source_seed: 1212
+    voices: 3
+    events: 28
+    code: |
+      setcpm(140/4)
+      
+      $: s("bd!2 bd*4").bank("RolandTR909").gain(.6)
+      
+      $: s("sine bd sd cp").gain(.3)
+      
+      $: note("a3 a3 a3 d5 c#5 c5 a4 d#5").s("gm_overdriven_guitar:6").slow(2).gain(.4)
+  - id: "inspired_1000_213"
+    source_id: "1000_213"
+    source_seed: 1213
+    voices: 4
+    events: 17
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("cr ~").slow(2).gain(.3)
+      
+      $: s("~ sd").note("c3 e3").gain(.4)
+      
+      $: n("-2 7 4 0 7").scale("d:minor:pentatonic").transpose(-12).s("sawtooth").lpf(900).gain(.4)
+  - id: "inspired_1000_214"
+    source_id: "1000_214"
+    source_seed: 1214
+    voices: 3
+    events: 34
+    code: |
+      setcpm(112/4)
+      
+      $: s("hh!4 sd@3 ~ cp*4").bank("RolandMT32").gain(.4).speed(1).hpf(1500)
+      
+      $: note("c1 f1").s("square").lpf(800).gain(.4)
+      
+      $: n("2 0 2 3 4 2").scale("c:minor").s("sawtooth").lpf(1200).release(.2).gain(.4)
+  - id: "inspired_1000_215"
+    source_id: "1000_215"
+    source_seed: 1215
+    voices: 4
+    events: 32
+    code: |
+      setcpm(120/4)
+      
+      $: s("~ bd*2").bank("RolandTR808").gain(.8)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+      
+      $: note("a2 a3 c3 f3 a3 c4").sound("drums").lpf(2000).room(.5).gain(.5)
+      
+      $: n("0 -3 2 -1 -4 0").scale("c4:minor").s("sawtooth").lpf(1000).gain(.35)
+  - id: "inspired_1000_216"
+    source_id: "1000_216"
+    source_seed: 1216
+    voices: 4
+    events: 44
+    code: |
+      setcpm(120/4)
+      
+      $: s("cymbal ~ ~ ~ crash ~ ~ ~").room(.2).gain(.3)
+      
+      $: s("bd!4 ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("4 -2 0 3 ~ -4 -1 1").scale("<bb4:minor a4:lydian>/2").s("sawtooth").gain(.4).hpf(500).lpf(1500)
+  - id: "inspired_1000_217"
+    source_id: "1000_217"
+    source_seed: 1217
+    voices: 3
+    events: 6
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("Linn9000").slow(2).gain(.8)
+      
+      $: s("cowbell ~ ~ cowbell ~ ~ cowbell ~").slow(2).gain(.3)
+      
+      $: note("<c2 eb2 g2 bb1>").s("triangle").slow(2).release(.3).gain(.4)
+  - id: "inspired_1000_218"
+    source_id: "1000_218"
+    source_seed: 1218
+    voices: 3
+    events: 24
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd ~ rim ~").speed(.9).gain(.7)
+      
+      $: s("lt*4").room(.25).delay(.4).gain(.35).clip(1).release(.3).attack(.01)
+      
+      $: n("2 5 3 5 8 7").scale("d:minor").s("sawtooth").lpf(1200).release(.2).gain(.4)
+  - id: "inspired_1000_219"
+    source_id: "1000_219"
+    source_seed: 1219
+    voices: 4
+    events: 9
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd*2 ~").bank("RolandTR808").gain(.7)
+      
+      $: note("c4 e4").sound("bd*2 ~").lpf(2000).resonance(5).delay(.2).gain(.4)
+      
+      $: s("gm_distortion_guitar bell").slow(4).gain(.3)
+      
+      $: s("gm_distortion_guitar cr").transpose("<0 1 2 1>/8").attack(.1).slow(2).gain(.3)
+  - id: "inspired_1000_22"
+    source_id: "1000_22"
+    source_seed: 1022
+    voices: 3
+    events: 18
+    code: |
+      setcpm(108/4)
+      $: s("bd:1*2 ~ bd:1*2 ~").slow(2).gain(.8)
+      $: note("a#5 g#5 e5 c#5 ~ b4 f#5").s("gm_lead_6_voice").gain(.4)
+      $: s("gm_drawbar_organ ~").note("c d").segment(8).slow(8).gain(.4).room(.5)
+  - id: "inspired_1000_220"
+    source_id: "1000_220"
+    source_seed: 1220
+    voices: 3
+    events: 10
+    code: |
+      setcpm(92/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("ocarina").n("0 3 5").gain(.5).lpf(2000).room(.3).delay(.3)
+      
+      $: note("c5 e5").s("gm_pizzicato_strings").decay(.2).attack(.1).gain(.4)
+  - id: "inspired_1000_221"
+    source_id: "1000_221"
+    source_seed: 1221
+    voices: 3
+    events: 26
+    code: |
+      setcpm(126/4)
+      
+      $: s("bd*4 ~").gain(.8).release(.3).room(.5).pan("<.4 .6>/4")
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("ocarina_vib gm_pad_bowed").slow(2).gain(.35)
+  - id: "inspired_1000_222"
+    source_id: "1000_222"
+    source_seed: 1222
+    voices: 5
+    events: 22
+    code: |
+      setcpm(100/4)
+      
+      $: s("cr bd").gain(.4).attack(.05).decay(.16).sustain(.5).delay(.3)
+      
+      $: s("bd*4 ~").bank("RolandTR909").gain(.7)
+      
+      $: s("cp ~").gain(.3)
+      
+      $: s("lead gm_electric_guitar_clean:2").gain(.5)
+      
+      $: s("piano gm_harmonica").velocity(.3).attack(.05).gain(.3)
+  - id: "inspired_1000_223"
+    source_id: "1000_223"
+    source_seed: 1223
+    voices: 3
+    events: 22
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd sd").gain(.8)
+      
+      $: note("c4 c4!2 d#4@2 f4@2 f4 c4 c4@2").sound("kick").gain(.4)
+      
+      $: s("psaltery_pluck ~").release(.1).clip(.85).gain(.4)
+  - id: "inspired_1000_224"
+    source_id: "1000_224"
+    source_seed: 1224
+    voices: 4
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*16").slow(2).gain(.2)
+      
+      $: note("c2*4 c5@2 b4 ~").sound("sawtooth").lpf(1500).gain(.4).release(.4)
+      
+      $: note("a3 f3 c4 g3").sound("piano").lpf(2200).gain("0.3 0.6 0.5 0.7").hpf(400)
+  - id: "inspired_1000_225"
+    source_id: "1000_225"
+    source_seed: 1225
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.75)
+      
+      $: n("~ 9 10!2 ~ 7 10!2 7!2 14!2").scale("c:major").gain(.3).speed(1.09).s("sawtooth")
+      
+      $: s("ocarina_vib").n("0 2 4").gain(.3)
+      
+      $: note("c1 f1 g1 c1").struct("<~@2 [x x] [x ~]>").gain(.4)
+  - id: "inspired_1000_226"
+    source_id: "1000_226"
+    source_seed: 1226
+    voices: 3
+    events: 12
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: n("1 ~ 6 -1@3 ~ ~").scale("g4:minor").transpose(-12).s("sawtooth").lpf(1000).gain(.4)
+      
+      $: s("sawtooth sine").lpf(300).room(1).pan(.4).slow(2).gain(.3)
+  - id: "inspired_1000_227"
+    source_id: "1000_227"
+    source_seed: 1227
+    voices: 4
+    events: 10
+    code: |
+      setcpm(104/4)
+      
+      $: s("bd ~").slow(2).gain(.8)
+      
+      $: s("sd*3").gain("[1 0.4]*4").delay(.25).delaytime(.1).delayfeedback(.4)
+      
+      $: s("recorder_bass_sus").n("0 3").gain(.4)
+      
+      $: s("gm_synth_strings_1").note("<c3 g2>").slow(2).gain(.3)
+  - id: "inspired_1000_228"
+    source_id: "1000_228"
+    source_seed: 1228
+    voices: 4
+    events: 20
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").slow(2).gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: s("gm_distortion_guitar").note("<e2 g2 c2>").slow(2).gain(.4)
+      
+      $: s("gm_acoustic_guitar_steel:2").n("0 3 5").slow(2).gain(.3)
+  - id: "inspired_1000_229"
+    source_id: "1000_229"
+    source_seed: 1229
+    voices: 3
+    events: 7
+    code: |
+      setcpm(124/4)
+      
+      $: s("bd ~ sd ~").bank("Linn9000").gain(.8)
+      
+      $: s("supersaw").n("0 3 5 7").delay(.2).gain(.35)
+      
+      $: s("gm_piano").n("0 2 4 7").slow(2).gain(.4)
+  - id: "inspired_1000_23"
+    source_id: "1000_23"
+    source_seed: 1023
+    voices: 3
+    events: 9
+    code: |
+      setcpm(96/4)
+      $: s("woodblock:1 woodblock:2*2 snare_rim:0 gong").slow(2).gain(.6)
+      $: s("hh!3 ~").slow(2).gain(.2)
+      $: s("gm_harmonica ~").slow(2).gain(.4).room(.5)
+  - id: "inspired_1000_230"
+    source_id: "1000_230"
+    source_seed: 1230
+    voices: 4
+    events: 11
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd!3 ~").bank("RolandTR909").slow(2).gain(.8)
+      
+      $: s("oh*4").slow(2).gain(.2)
+      
+      $: s("drums").n("0 2 4").gain(.4)
+      
+      $: s("rhodes").note("<c3 eb3 g3>").gain(.35)
+  - id: "inspired_1000_231"
+    source_id: "1000_231"
+    source_seed: 1231
+    voices: 3
+    events: 32
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("a1 f1 c2 g1 ~ f1 a1@2 a1").transpose(3).s("gm_electric_guitar_clean:2").gain(.5)
+      
+      $: n("7 11!2 6 7 11 12").scale("a:minor").s("gm_oboe").gain(.35)
+  - id: "inspired_1000_232"
+    source_id: "1000_232"
+    source_seed: 1232
+    voices: 4
+    events: 18
+    code: |
+      setcpm(116/4)
+      
+      $: s("bd*4 ~").bank("Linn9000").room(.2).gain(.5)
+      
+      $: s("bell").note("a4 a3").gain(.3)
+      
+      $: s("gm_lead_6_voice").n("0 3 5").gain(.4)
+      
+      $: note("c4@2 a#3@2 d#4@2").s("gm_harmonica").gain(.3)
+  - id: "inspired_1000_233"
+    source_id: "1000_233"
+    source_seed: 1233
+    voices: 4
+    events: 30
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("c4 a3 f3 e3").s("sawtooth").lpf(1200).release(.2).gain(.4)
+      
+      $: note("e3 a3").sound("bd*2 ~").gain(.5)
+  - id: "inspired_1000_234"
+    source_id: "1000_234"
+    source_seed: 1234
+    voices: 3
+    events: 22
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").lpf(4000).pan("0.2 -0.2").gain(.2)
+      
+      $: n("~ 8").scale("ab:major").s("square").gain(.4)
+  - id: "inspired_1000_235"
+    source_id: "1000_235"
+    source_seed: 1235
+    voices: 3
+    events: 12
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd ~ bd ~").gain(.8).pan(.3)
+      
+      $: s("bell").n("0 2 4").gain(.3)
+      
+      $: note("g#4@2 a#4@2 f#4 ~").s("sawtooth").release(.2).gain(.3)
+  - id: "inspired_1000_236"
+    source_id: "1000_236"
+    source_seed: 1236
+    voices: 4
+    events: 24
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd sd").lpf(650).resonance(6).decay(.05).sustain(0).delay(.2).gain(.5)
+      
+      $: s("gm_drawbar_organ").note("<a2 c3 e3>").gain(.3)
+      
+      $: s("shaker*8").gain(.2)
+      
+      $: s("gm_piccolo").n("0 3 5").gain(.3)
+  - id: "inspired_1000_237"
+    source_id: "1000_237"
+    source_seed: 1237
+    voices: 4
+    events: 24
+    code: |
+      setcpm(100/4)
+      
+      $: s("gm_ocarina").struct("x(5,8,-1)").gain(.3)
+      
+      $: s("kick snare").gain(.4)
+      
+      $: n("5 6 7 8").scale("c4:minor").velocity(.55).s("sawtooth").gain(.35)
+      
+      $: s("gm_epiano1:1").n("0 2 4").gain(.4)
+  - id: "inspired_1000_238"
+    source_id: "1000_238"
+    source_seed: 1238
+    voices: 3
+    events: 19
+    code: |
+      setcpm(104/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      
+      $: s("gm_pad_warm").slow(2).clip(1).gain(.35)
+      
+      $: note("c2*4 a4@2 c#5 a4@2").s("sawtooth").lpf(1500).gain(.4)
+  - id: "inspired_1000_239"
+    source_id: "1000_239"
+    source_seed: 1239
+    voices: 3
+    events: 14
+    code: |
+      setcpm(120/4)
+      
+      $: s("cp sd").gain(.5)
+      
+      $: note("f6 d6 b5 ~").s("piano").gain(.4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+  - id: "inspired_1000_24"
+    source_id: "1000_24"
+    source_seed: 1024
+    voices: 3
+    events: 16
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd sd*4").bank("linn9000").gain(.8)
+      $: s("gm_electric_bass_finger ~").bank("linn9000").gain(.5)
+      $: s("gm_pad_warm gm_overdriven_guitar:6").slow(2).gain(.35).room(.6)
+  - id: "inspired_1000_240"
+    source_id: "1000_240"
+    source_seed: 1240
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7).crush(8)
+      
+      $: s("hh*16").slow(2).gain(.2)
+      
+      $: n("0 3 5 7").scale("c:minor").s("sawtooth").gain(.35)
+  - id: "inspired_1000_241"
+    source_id: "1000_241"
+    source_seed: 1241
+    voices: 3
+    events: 28
+    code: |
+      setcpm(112/4)
+      
+      $: s("hh*16").slow(2).gain(.2)
+      
+      $: note("c2 d2").s("gm_electric_bass_finger").delay(.25).gain(.4)
+      
+      $: s("bd ~ sd*3 ~").gain(.6).room(.4)
+  - id: "inspired_1000_242"
+    source_id: "1000_242"
+    source_seed: 1242
+    voices: 4
+    events: 16
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("b2 d2 g2").s("sawtooth").lpf(900).gain(.4)
+      
+      $: s("hh*3 ~ perc").slow(2).gain(.25)
+      
+      $: s("pulse").n("0 2 4").gain(.3)
+  - id: "inspired_1000_243"
+    source_id: "1000_243"
+    source_seed: 1243
+    voices: 5
+    events: 27
+    code: |
+      setcpm(140/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.6)
+      
+      $: note("c5 g5 eb5 bb5").add(2).lpf(1850).s("sawtooth").gain(.3)
+      
+      $: s("ocarina").struct("x ~ x ~ x ~ x ~").slow(4).gain(.3)
+      
+      $: n("0 3 5 ~ 0 3 7").scale("g3:minor").s("sawtooth").gain(.35)
+      
+      $: s("amen").lpf(2711).slow(4).gain(.4)
+  - id: "inspired_1000_244"
+    source_id: "1000_244"
+    source_seed: 1244
+    voices: 3
+    events: 16
+    code: |
+      setcpm(92/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: note("b2 d2").s("sawtooth").lpf(900).gain(.4)
+      
+      $: note("<[g3 bb3 d4 f4] [c4 e4 g4 bb4] [f3 a3 c4 e4]>").s("piano").clip(1).room(.3).delay(.3).gain(.5)
+  - id: "inspired_1000_245"
+    source_id: "1000_245"
+    source_seed: 1245
+    voices: 3
+    events: 16
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd sd").lpf(3000).room(.6).delay(.2).gain(.7)
+      
+      $: s("supersaw snare").lpf(3500).gain(.4)
+      
+      $: n("0 2 4 7").scale("c:major").s("sawtooth").gain(.35)
+  - id: "inspired_1000_246"
+    source_id: "1000_246"
+    source_seed: 1246
+    voices: 3
+    events: 28
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd sd").gain(.7)
+      
+      $: note("<[g3 bb3 d4 f4] [c4 e4 g4 bb4] [f3 a3 c4 e4] ab1>").s("piano").speed(.88).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_247"
+    source_id: "1000_247"
+    source_seed: 1247
+    voices: 4
+    events: 16
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").slow(2).gain(.75)
+      
+      $: note("a5 c6 e6").add(.1).s("sawtooth").gain(.3)
+      
+      $: note("g1 f1").s("bd").slow(3).gain(.4)
+      
+      $: n("0 3 5").scale("c:minor").s("square").gain(.3)
+  - id: "inspired_1000_248"
+    source_id: "1000_248"
+    source_seed: 1248
+    voices: 4
+    events: 7
+    code: |
+      setcpm(90/4)
+      
+      $: s("amen").slow(2).gain(.4)
+      
+      $: s("bd sd").lpf(700).gain(.7)
+      
+      $: s("lead").n("0 3 5").slow(4).gain(.3)
+      
+      $: s("gm_epiano1:1").n("0 2 4").slow(2).gain(.35)
+  - id: "inspired_1000_249"
+    source_id: "1000_249"
+    source_seed: 1249
+    voices: 3
+    events: 8
+    code: |
+      setcpm(112/4)
+      
+      $: s("snare ~").gain(.6)
+      
+      $: s("pulse").n("0 2 4 7").gain(.4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+  - id: "inspired_1000_25"
+    source_id: "1000_25"
+    source_seed: 1025
+    voices: 4
+    events: 42
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*16").gain(.25).lpf(4500).resonance(10)
+      $: s("triangle ~ gm_trumpet:2 ~").gain(.4)
+      $: s("gm_tuba gm_piccolo").slow(2).gain(.35)
+  - id: "inspired_1000_250"
+    source_id: "1000_250"
+    source_seed: 1250
+    voices: 4
+    events: 51
+    code: |
+      setcpm(96/4)
+      $: n("4 4 5 4 3 2").scale("D:dorian").s("sd sd").lpf(1200).gain(.6).release(.3)
+      $: s("hh*16").velocity(.6).hpf(2000).lpf(3000).room(.5).gain(.2)
+      $: s("gm_acoustic_guitar_steel:2 ~ cp ~").slow(4).gain(.4)
+      $: n("0 2 3 ~").scale("D:dorian").s("triangle").gain(.35).lpf(650).room(.3)
+  - id: "inspired_1000_251"
+    source_id: "1000_251"
+    source_seed: 1251
+    voices: 3
+    events: 22
+    code: |
+      setcpm(110/4)
+      $: s("perc perc*2 gm_harmonica ~").slow(2).gain(.4)
+      $: s("gm_electric_bass_finger:2 ~").gain(.4).delay(.2)
+      $: note("a2 a3 a2 eb2 c2 eb2 g1 bb1").s("sine").gain(.35).release(.2)
+  - id: "inspired_1000_252"
+    source_id: "1000_252"
+    source_seed: 1252
+    voices: 3
+    events: 16
+    code: |
+      setcpm(115/4)
+      $: s("snare ~").gain(.6).room(.4).delay(.25).delaytime(.21).delayfeedback(.5)
+      $: s("bass ~").gain(.4).release(.5)
+      $: s("hh*6").gain(.2)
+  - id: "inspired_1000_253"
+    source_id: "1000_253"
+    source_seed: 1253
+    voices: 4
+    events: 20
+    code: |
+      setcpm(112/4)
+      $: s("cp ~").gain(.7)
+      $: s("clavisynth ~").slow(2).gain(.4)
+      $: s("gm_electric_bass_finger ~").slow(2).gain(.4)
+      $: s("hh*8").gain(.15)
+  - id: "inspired_1000_254"
+    source_id: "1000_254"
+    source_seed: 1254
+    voices: 3
+    events: 24
+    code: |
+      setcpm(118/4)
+      $: s("snare ~ snare ~").sound("drums").lpf(3000).room(.5).gain(.6)
+      $: note("d5 e5").lpf(3500).room(.5).gain(.35)
+      $: note("g3 bb3 d4 f4 c4 e4 g4 bb4").s("sawtooth").lpf(1200).gain(.3).release(.3)
+  - id: "inspired_1000_255"
+    source_id: "1000_255"
+    source_seed: 1255
+    voices: 3
+    events: 20
+    code: |
+      setcpm(105/4)
+      $: s("bd sd").lpf(650).room(.4).gain(.7)
+      $: n("F4 A3 Gb4 Bb3 E4").s("triangle").lpf(1500).gain(.3)
+      $: note("d4 e4 ~ g4").struct("x*4").gain(.35).release(.15)
+  - id: "inspired_1000_256"
+    source_id: "1000_256"
+    source_seed: 1256
+    voices: 3
+    events: 32
+    code: |
+      setcpm(100/4)
+      $: s("bell ~ anvil ~").delay(.4).gain(.4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+      $: n("-3 -3 -1 -1 -4 -2 0 -2 0 -5 -3 -1").scale("C:minor").s("triangle").gain(.3).release(.15)
+  - id: "inspired_1000_257"
+    source_id: "1000_257"
+    source_seed: 1257
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100/4)
+      $: s("gm_synth_strings_1 cp:12").gain(.35)
+      $: note("a2*8 a2*8 ~ ~").clip(1).scale("C:ritusen").struct("1 ~ ~ ~").gain(.5)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_258"
+    source_id: "1000_258"
+    source_seed: 1258
+    voices: 3
+    events: 7
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("supersaw ~").gain(.3)
+      $: s("piano gm_church_organ:2").slow(4).gain(.4)
+  - id: "inspired_1000_259"
+    source_id: "1000_259"
+    source_seed: 1259
+    voices: 3
+    events: 9
+    code: |
+      setcpm(105/4)
+      $: n("0 7").scale("C:ritusen").s("hh*2 ~").slow(2).gain(.2)
+      $: s("gm_electric_guitar_clean:2 gm_marimba").gain(.3)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+  - id: "inspired_1000_26"
+    source_id: "1000_26"
+    source_seed: 1026
+    voices: 3
+    events: 10
+    code: |
+      setcpm(116/4)
+      $: s("cp ~ sd ~").slow(2).gain(.8)
+      $: s("hh*2 ~").gain(.2)
+      $: note("c4 c4@2").sound("sawtooth").lpf(1191).gain(.4)
+  - id: "inspired_1000_260"
+    source_id: "1000_260"
+    source_seed: 1260
+    voices: 3
+    events: 14
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("~ -4 ~ -5 ~ -6").scale("D3:whole:tone").velocity("<.8 .3 .6>*8").s("triangle").gain(.3)
+      $: note("g#4 g#4 ~ ~").gain(.35).release(.2)
+  - id: "inspired_1000_261"
+    source_id: "1000_261"
+    source_seed: 1261
+    voices: 4
+    events: 20
+    code: |
+      setcpm(112/4)
+      $: s("EmuDrumulator_lt ~").velocity(.3).gain(.6)
+      $: note("d2*4 a#4 ~").gain(.4).release(.2)
+      $: note("e4 f2").sound("piano").lpf(1500).gain(.3).release(.1)
+      $: s("gm_electric_guitar_clean:2 gm_choir_aahs").gain(.25)
+  - id: "inspired_1000_262"
+    source_id: "1000_262"
+    source_seed: 1262
+    voices: 2
+    events: 18
+    code: |
+      setcpm(108/4)
+      $: n("2 4 ~ 5 4").scale("A2:major").s("linndrum_bd oh").bank("linndrum").room(1).gain(.4)
+      $: n("4 9 6 6 5").scale("A2:major").clip(1).release(.12).s("triangle").gain(.3)
+  - id: "inspired_1000_263"
+    source_id: "1000_263"
+    source_seed: 1263
+    voices: 4
+    events: 17
+    code: |
+      setcpm(115/4)
+      $: s("bd*2 ~").slow(2).gain(.8)
+      $: s("sleighbells ~").slow(2).gain(.3)
+      $: n("9 9 6 7 11").scale("<Bb4:minor A4:lydian>/2").s("triangle").gain(.3)
+      $: note("~ c#5 d5").sound("square").lpf(2000).room(.5).pan(.4).gain(.3)
+  - id: "inspired_1000_264"
+    source_id: "1000_264"
+    source_seed: 1264
+    voices: 3
+    events: 36
+    code: |
+      setcpm(120/4)
+      $: s("hh*16").gain(.2)
+      $: s("amen ~").gain(.55)
+      $: s("gm_trombone:1 ~").gain(.3)
+  - id: "inspired_1000_265"
+    source_id: "1000_265"
+    source_seed: 1265
+    voices: 3
+    events: 11
+    code: |
+      setcpm(100/4)
+      $: s("hh ~").clip(.9).gain(.6)
+      $: s("ocarina_vib ~ cajon:12 lt*3").slow(2).gain(.4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.7)
+  - id: "inspired_1000_266"
+    source_id: "1000_266"
+    source_seed: 1266
+    voices: 4
+    events: 12
+    code: |
+      setcpm(118/4)
+      $: note("c4 c4 c4").sound("kick").gain(.7)
+      $: s("linndrum_sd linndrum_oh").gain(.3)
+      $: s("linndrum_hh ~").hpf(2000).gain(.2)
+      $: s("~ hh*8").slow(4).gain(.2)
+  - id: "inspired_1000_267"
+    source_id: "1000_267"
+    source_seed: 1267
+    voices: 3
+    events: 18
+    code: |
+      setcpm(105/4)
+      $: s("kick*4 perc*2").gain(.4).hpf(100).lpf(1500).room(.5).delay(.4)
+      $: note("c4 g#4 ~ ~").s("gm_piano").slow(2).gain(.35)
+      $: s("gm_lead_6_voice ~ crow ~").gain(.35)
+  - id: "inspired_1000_268"
+    source_id: "1000_268"
+    source_seed: 1268
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain("[0.25 0.15]*2")
+      $: note("a#5 g#5").s("gtr").room(.3557).lpf(2000).gain(.4)
+  - id: "inspired_1000_269"
+    source_id: "1000_269"
+    source_seed: 1269
+    voices: 3
+    events: 12
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ ~ sd").bank("RolandTR808").gain(.8)
+      $: s("gm_acoustic_guitar_steel:2").gain(.6).note("c2 a2 eb2 c2")
+      $: n("7 3").scale("g4:dorian").struct("x*3").s("sawtooth").lpf(1800).release(.1).gain(.4)
+  - id: "inspired_1000_27"
+    source_id: "1000_27"
+    source_seed: 1027
+    voices: 3
+    events: 6
+    code: |
+      setcpm(100/4)
+      $: s("cowbell ~ ~ cowbell").lpf(600).resonance(10).room(.7).gain(.5)
+      $: s("amen ~").slow(2).gain(.6)
+      $: s("piano ~").slow(2).gain(.35)
+  - id: "inspired_1000_270"
+    source_id: "1000_270"
+    source_seed: 1270
+    voices: 3
+    events: 21
+    code: |
+      setcpm(100/4)
+      $: s("bd sd*2").slow(2).bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n(7).scale("<Bb4:minor A4:lydian>/2").s("gm_tuba").delay(.2242).delayfeedback(.4).gain(.4)
+  - id: "inspired_1000_271"
+    source_id: "1000_271"
+    source_seed: 1271
+    voices: 4
+    events: 24
+    code: |
+      setcpm(115/4)
+      $: s("bd sn").slow(2).bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("~ 5").sound("sawtooth").lpf(1760).gain(.5).room(.75)
+      $: s("cowbell:3 ~ xylo ~").gain(.4).room(.3)
+  - id: "inspired_1000_272"
+    source_id: "1000_272"
+    source_seed: 1272
+    voices: 3
+    events: 36
+    code: |
+      setcpm(128/4)
+      $: s("bd!2 bd*4").lpf(3015).gain(.6691)
+      $: n("~ 3 4 ~ 3").sound("drum").lpf(650).gain(.6).room(1).attack(.1)
+      $: note("12 d2*8").sound("triangle").lpf(1556).room(.2154).gain(.35).release(.1)
+  - id: "inspired_1000_273"
+    source_id: "1000_273"
+    source_seed: 1273
+    voices: 4
+    events: 28
+    code: |
+      setcpm(130/4)
+      $: s("hh*2 cp").bank("RolandTR909").gain(.75)
+      $: n(3).scale("C:major").s("hh").gain(.2)
+      $: note("a2*8").lpf(3200).gain(.4)
+      $: note("a5 ~ f5 ~").velocity(.65).attack(.001).s("sawtooth").gain(.35)
+  - id: "inspired_1000_274"
+    source_id: "1000_274"
+    source_seed: 1274
+    voices: 4
+    events: 12
+    code: |
+      setcpm(95/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("gtr gm_acoustic_guitar_steel:1").gain(.5)
+      $: s("triangle a").slow(2).gain(.3)
+      $: s("gm_harmonica").gain(.25).room(.8).delay(.5)
+  - id: "inspired_1000_275"
+    source_id: "1000_275"
+    source_seed: 1275
+    voices: 4
+    events: 9
+    code: |
+      setcpm(140/4)
+      $: s("~ crash ~ ~").gain(.3).decay(.1).sustain(0).degradeBy(.5702).orbit(3)
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
+      $: s("lead").lpf(3000).clip(1).sustain(0).release(.06).room(1).gain(.4)
+      $: sound("sawtooth").lpf(4000).gain(.4)
+  - id: "inspired_1000_276"
+    source_id: "1000_276"
+    source_seed: 1276
+    voices: 3
+    events: 48
+    code: |
+      setcpm(125/4)
+      $: s("hh*4 ~ sd cp").lpf(3500).hpf("<2000!3 <4000 8000>>*4").gain(.6)
+      $: s("bd ~ ~ ~").bank("RolandTR909").gain(.8)
+      $: s("square shaker*16").gain(.3)
+  - id: "inspired_1000_277"
+    source_id: "1000_277"
+    source_seed: 1277
+    voices: 3
+    events: 10
+    code: |
+      setcpm(105/4)
+      $: s("sd hh").slow(2).bank("RolandTR909").gain(.7)
+      $: n("-3 -3").scale("<Bb4:minor A4:lydian>/2").struct("x*3").s("sawtooth").gain("[.2 .4@3]*2").release(1.2)
+      $: sound("triangle").lpf(3000).gain(.35)
+  - id: "inspired_1000_278"
+    source_id: "1000_278"
+    source_seed: 1278
+    voices: 3
+    events: 58
+    code: |
+      setcpm(118/4)
+      $: note("a2*8 ~ ~ a2*8").clip(1).gain(.5).fast(1.5).s("sawtooth")
+      $: s("linndrum_oh tambourine*2").speed("2 -2").pan(.55).gain(.4)
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.75)
+  - id: "inspired_1000_279"
+    source_id: "1000_279"
+    source_seed: 1279
+    voices: 3
+    events: 10
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("gm_bassoon sax").gain(.4165).lpf(3165).room(.2342)
+      $: s("pad").gain(.2).room(.8).delay(.2)
+  - id: "inspired_1000_28"
+    source_id: "1000_28"
+    source_seed: 1028
+    voices: 4
+    events: 7
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("EmuDrumulator_lt ~").slow(2).gain(.6)
+      $: s("gtr ~").slow(2).gain(.4)
+      $: s("gm_piano ~").slow(2).gain(.35).room(.5)
+  - id: "inspired_1000_280"
+    source_id: "1000_280"
+    source_seed: 1280
+    voices: 3
+    events: 12
+    code: |
+      setcpm(112/4)
+      $: note("a4 d#5@2 ~").sound("square").gain(.4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("a2 ~ a2 ~").sound("sawtooth").attack(.03).gain(.45)
+  - id: "inspired_1000_281"
+    source_id: "1000_281"
+    source_seed: 1281
+    voices: 3
+    events: 52
+    code: |
+      setcpm(132/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("0 7 4 2 7 4 3 2 1 2 1 0 4 5 2 4").scale("D:minor").s("sawtooth").lpf(1800).gain(.4)
+      $: s("hh*8").note("d5 a4 d5 c#5 d5 c#5 a4 d4").fm(2).gain(.25)
+  - id: "inspired_1000_282"
+    source_id: "1000_282"
+    source_seed: 1282
+    voices: 3
+    events: 16
+    code: |
+      setcpm(126/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*2 hh*3").crush(8).delay(.3452).delaytime(.0924).gain("[.3 .2 .15 .1]*2").clip(1).lpf(3592).attack(.05)
+      $: s("psaltery_pluck").velocity(.7).gain(.4)
+  - id: "inspired_1000_283"
+    source_id: "1000_283"
+    source_seed: 1283
+    voices: 4
+    events: 41
+    code: |
+      setcpm(140/4)
+      $: s("cp hh bd lt").gain(.7)
+      $: s("hh*8 lt*4 hh!3 oh").slow(2).gain(.25)
+      $: note("d4 f4 a4 c5").s("sawtooth").fm(.5).gain(.4).fast(2)
+      $: s("pulse").slow(2).gain(.3)
+  - id: "inspired_1000_284"
+    source_id: "1000_284"
+    source_seed: 1284
+    voices: 3
+    events: 34
+    code: |
+      setcpm(120/4)
+      $: s("misc:2 cp").gain(.4)
+      $: note("c2 g1 a#1 a1*4").sound("bd sd").lpf(4000).gain(.7)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_285"
+    source_id: "1000_285"
+    source_seed: 1285
+    voices: 3
+    events: 24
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("gm_oboe gm_tenor_sax:1").speed("<1 2 0.5>").hpf(80).room(.6).gain(.4)
+      $: note("C3 Eb3 G2 Bb2 Eb2 F#2 B2 F#2").sound("triangle").lpf(1474).gain(.35)
+  - id: "inspired_1000_286"
+    source_id: "1000_286"
+    source_seed: 1286
+    voices: 4
+    events: 36
+    code: |
+      setcpm(122/4)
+      $: note("g2 b2 d3").sound("bd*4").speed("1 2").hpf(800).gain(.7)
+      $: s("hh*8").gain(.2)
+      $: s("supersaw").gain(.3).lpf(2000)
+      $: n("-2 7 4 0 7 -4").scale("C:minor").s("sawtooth").gain(.3).release(.1)
+  - id: "inspired_1000_287"
+    source_id: "1000_287"
+    source_seed: 1287
+    voices: 3
+    events: 18
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: note("a1 g1*2 a1*2 g1").sound("sawtooth").lpf(3500).gain(.5)
+      $: s("gm_acoustic_guitar_steel:2 gm_acoustic_guitar_nylon").slow(2).gain(.4)
+  - id: "inspired_1000_288"
+    source_id: "1000_288"
+    source_seed: 1288
+    voices: 3
+    events: 30
+    code: |
+      setcpm(128/4)
+      $: s("bd*4 ~").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("g3 a#3 e4 ~").s("sawtooth").pan(.4).gain(.4)
+  - id: "inspired_1000_289"
+    source_id: "1000_289"
+    source_seed: 1289
+    voices: 3
+    events: 13
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("woodblock:1 woodblock:2*2").gain(.5).release(.4788)
+      $: s("hh*2 hh").slow(2).gain(.2)
+  - id: "inspired_1000_29"
+    source_id: "1000_29"
+    source_seed: 1029
+    voices: 3
+    events: 24
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: note("d#5@2 ~ a4 d#5 ~ a4 d#5 d5 c#5 d5").sound("sawtooth").lpf(2000).resonance(4).gain(.4)
+      $: note("f4 ~ f4 ~").s("sawtooth square").gain("[1 0.7 1 0.5]*2").release(1.2).lpf(900)
+  - id: "inspired_1000_290"
+    source_id: "1000_290"
+    source_seed: 1290
+    voices: 4
+    events: 54
+    code: |
+      setcpm(130/4)
+      $: s("hh*4 ~ sd bd").velocity(.65).gain(.6)
+      $: s("hh*16").gain(.15)
+      $: s("crow").struct("x*3").gain(.3)
+      $: s("gm_harmonica gm_distortion_guitar:4").gain(.4)
+  - id: "inspired_1000_291"
+    source_id: "1000_291"
+    source_seed: 1291
+    voices: 3
+    events: 12
+    code: |
+      setcpm(108/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("gm_electric_bass_finger gm_violin").delay(.4).gain(.5)
+      $: note("c4 e4").sound("triangle").gain(.4).pan(.5)
+  - id: "inspired_1000_292"
+    source_id: "1000_292"
+    source_seed: 1292
+    voices: 3
+    events: 10
+    code: |
+      setcpm(115/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: n("4 3").scale("C:major").s("sawtooth").gain(.4).release(.2)
+      $: s("gm_synth_strings_1").gain(.5).release(.4)
+  - id: "inspired_1000_293"
+    source_id: "1000_293"
+    source_seed: 1293
+    voices: 3
+    events: 14
+    code: |
+      setcpm(126/4)
+      $: s("hh*4 ~").gain(.2)
+      $: s("cp hh").bank("RolandTR909").gain(.7)
+      $: s("bd ~ ~ ~").bank("RolandTR909").gain(.8)
+  - id: "inspired_1000_294"
+    source_id: "1000_294"
+    source_seed: 1294
+    voices: 3
+    events: 14
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("a3 d4 d#4 d4").sound("triangle").gain(.4)
+      $: note(0).clip(1).release(.0641).attack(1.5).s("sawtooth").gain(.3)
+  - id: "inspired_1000_295"
+    source_id: "1000_295"
+    source_seed: 1295
+    voices: 3
+    events: 44
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("c2*8").sound("sine").gain(.4)
+      $: n("0 4 5 8 -1 0 2 11 9 10 8 13").lpf(1800).scale("C:minor").s("sawtooth").gain(.4)
+  - id: "inspired_1000_296"
+    source_id: "1000_296"
+    source_seed: 1296
+    voices: 3
+    events: 108
+    code: |
+      setcpm(94/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: note("a2 f2 c3 ~").s("gm_synth_strings_1").room(.5).gain(.4)
+      $: s("ocarina_vib hh*16 hh*16 hh*16").speed(.9142).gain(.2)
+  - id: "inspired_1000_297"
+    source_id: "1000_297"
+    source_seed: 1297
+    voices: 3
+    events: 12
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("psaltery_pluck gm_lead_2_sawtooth").lpf(1000).room(.5).gain(.4)
+      $: s("gm_piccolo bd:5").gain(.6).release(.0617).attack(.001)
+  - id: "inspired_1000_298"
+    source_id: "1000_298"
+    source_seed: 1298
+    voices: 3
+    events: 14
+    code: |
+      setcpm(102/4)
+      $: s("kick*4").speed(.7).gain(.7)
+      $: note("g1 a#1").s("sawtooth").room(.8).lpf(1838).gain(.4)
+      $: s("linndrum_oh").gain(.3)
+  - id: "inspired_1000_299"
+    source_id: "1000_299"
+    source_seed: 1299
+    voices: 3
+    events: 36
+    code: |
+      setcpm(124/4)
+      $: s("mt mt").speed(1.03).room(.4695).gain(.6)
+      $: note("d4 a2 c3 e3").s("supersaw").gain(.4).release(.1432)
+      $: note("d2*8 f4@2 d#4@2 d4 d#4 ~").s("sawtooth").gain(.3)
+  - id: "inspired_1000_3"
+    source_id: "1000_3"
+    source_seed: 1003
+    voices: 4
+    events: 48
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("3 -1 0 0 0 0").scale("a3:minor").s("sawtooth").lpf(1500).room(.4).gain(.4)
+      $: note("a4 f3 a3 c4 f4 c4 e4 g4").s("gm_contrabass").gain(.3).release(.1)
+  - id: "inspired_1000_30"
+    source_id: "1000_30"
+    source_seed: 1030
+    voices: 3
+    events: 42
+    code: |
+      setcpm(120/4)
+      $: s("bd*4 sd*2 cp*8").gain(.7)
+      $: note("c3 g#2 c3 f3").s("hh*2").slow(4).gain(.2)
+      $: n("1 -4 -1 -1 -5 -3").scale("c:ritusen").s("sawtooth").gain(.4).lpf(1500)
+  - id: "inspired_1000_300"
+    source_id: "1000_300"
+    source_seed: 1300
+    voices: 3
+    events: 48
+    code: |
+      setcpm(118/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: n("2 4 -2 0 3").scale("C4:major").lpf(524).s("sawtooth").gain(.4)
+      $: s("sleighbells hh*16").gain("[.3 .15]*8").clip(.7781).release(.5).pan(.5261)
+  - id: "inspired_1000_301"
+    source_id: "1000_301"
+    source_seed: 1301
+    voices: 3
+    events: 18
+    code: |
+      setcpm(115/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("e5 c5 b4 a4").sound("square").lpf(2199).gain("[.3 .4 .3 .5]")
+      $: note("f6 d6 b5 ~").s("sawtooth").gain(.25)
+  - id: "inspired_1000_302"
+    source_id: "1000_302"
+    source_seed: 1302
+    voices: 4
+    events: 54
+    code: |
+      setcpm(135/4)
+      $: s("bd*2 ~ bd*2 ~").bank("RolandTR909").lpf(618).gain(.7)
+      $: note("d2*8 d5@2 c#5@2 d5 ~ d#5@2 d5@2 c#5@2").s("sawtooth").gain(.3)
+      $: s("linndrum_sd gm_electric_guitar_clean:2").gain(.4)
+      $: s("perc*3 gm_tenor_sax:1 woodblock:2*2 snare_rim:0").room(1.4).gain(.3).release(1)
+  - id: "inspired_1000_303"
+    source_id: "1000_303"
+    source_seed: 1303
+    voices: 3
+    events: 22
+    code: |
+      setcpm(108/4)
+      $: s("linndrum_sd hh27").gain(.5)
+      $: note("c2 g2 a2 f2 c3 g2 f2 c3").hpf(8000).s("triangle").gain(.35)
+      $: s("gm_piccolo").velocity(.4).gain(.4)
+  - id: "inspired_1000_304"
+    source_id: "1000_304"
+    source_seed: 1304
+    voices: 4
+    events: 18
+    code: |
+      setcpm(128/4)
+      $: s("linndrum_sd ~ ~ ~").gain(.6)
+      $: note("c3 a2").sound("square").lpf(2000).gain(.5)
+      $: s("bd*4").gain(.8)
+      $: s("supersaw bd:5").gain(.5).delay(.6).lpf(2600).room(1.4)
+  - id: "inspired_1000_305"
+    source_id: "1000_305"
+    source_seed: 1305
+    voices: 3
+    events: 42
+    code: |
+      setcpm(98/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: note("D2 A2 G2").s("pulse").clip(.8258).release(.3).hpf(8000).gain(.4)
+      $: s("hh*16").gain(.2).hpf(1000).lpf(3200).room(.6981)
+  - id: "inspired_1000_306"
+    source_id: "1000_306"
+    source_seed: 1306
+    voices: 4
+    events: 19
+    code: |
+      setcpm(90/4)
+      $: s("bd!3 ~").gain(.7)
+      $: note("C1 F1 G1 C1").lpf(500).room(.2).delay(.5).delaytime(.16).delayfeedback(.5).s("sawtooth").gain(.4)
+      $: note("D2 G2 ~ ~").s("triangle").gain(.5).release(.2).attack(.001)
+      $: s("lead ~").slow(2).gain(.3)
+  - id: "inspired_1000_307"
+    source_id: "1000_307"
+    source_seed: 1307
+    voices: 3
+    events: 9
+    code: |
+      setcpm(105/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: n("3 6").scale("C:major").transpose(-12).s("sawtooth").gain(.4)
+      $: s("gm_electric_bass_finger").slow(2).gain(.5)
+  - id: "inspired_1000_308"
+    source_id: "1000_308"
+    source_seed: 1308
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").room(.5277).gain(.8)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: note("c3 d3 c3 d3").s("supersaw").lpf(2297).hpf(50).room(.5277).gain(.3)
+  - id: "inspired_1000_309"
+    source_id: "1000_309"
+    source_seed: 1309
+    voices: 4
+    events: 33
+    code: |
+      setcpm(96/4)
+      
+      $: n(2).scale("C:ritusen").s("lt lt mt*2 lt*2").gain(.7)
+      
+      $: note("c3 f3 a#2 g2").s("bd").lpf(279).gain(.5).struct("1 ~ ~ ~").slow(2)
+      
+      $: note("a4 g4 a4 c5").s("square").decay(.03).sustain(0).delay(.5).gain(.3)
+      
+      $: note("a#5 g#5 e5 c#5 ~ f#5 e5 ~ e5 d#5 a#4 ~ ~ b4 ~ a#4").s("square").lpf(4978).gain(.35)
+  - id: "inspired_1000_31"
+    source_id: "1000_31"
+    source_seed: 1031
+    voices: 3
+    events: 5
+    code: |
+      setcpm(96/4)
+      $: s("hh ~ hh ~").slow(2).gain(.2)
+      $: s("ocarina_vib ~").slow(2).gain(.4)
+      $: note("a5 ~").s("sine").gain(.4).room(.5)
+  - id: "inspired_1000_310"
+    source_id: "1000_310"
+    source_seed: 1310
+    voices: 4
+    events: 18
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sn ~").bank("BossDR110").gain(.8)
+      
+      $: s("linndrum_bd mt*2").bank("BossDR110").gain(.5)
+      
+      $: n("4 7 8 4 6 5").s("gm_electric_bass_pick:7").slow(2).gain(.45)
+      
+      $: s("gm_distortion_guitar").gain(.4).lpf(3000)
+  - id: "inspired_1000_311"
+    source_id: "1000_311"
+    source_seed: 1311
+    voices: 3
+    events: 34
+    code: |
+      setcpm(100/4)
+      
+      $: s("hh*16").gain(.2).clip(.9).attack(.001)
+      
+      $: s("gm_electric_bass_finger").slow(4).gain(.5)
+      
+      $: s("pad").slow(8).gain(.3).room(.6)
+  - id: "inspired_1000_312"
+    source_id: "1000_312"
+    source_seed: 1312
+    voices: 4
+    events: 20
+    code: |
+      setcpm(92/4)
+      
+      $: s("gm_electric_guitar_clean:2").gain(.5)
+      
+      $: s("gm_tuba").slow(2).gain(.4)
+      
+      $: note("c2 f2 g2 f2").s("sine").slow(4).gain(.35)
+      
+      $: note("g3 bb3 f4 g3 bb3 f4 g3 bb3 e4 g3 bb3 e4 bb3 d3 f4").s("triangle").gain(.3).slow(2)
+  - id: "inspired_1000_313"
+    source_id: "1000_313"
+    source_seed: 1313
+    voices: 2
+    events: 64
+    code: |
+      setcpm(128/4)
+      
+      $: s("bd!2 bd*4 bd!4 ~ sd ~ hh!2 hh*2 sd sd*4").gain(.5).lpf(2932)
+      
+      $: note("a2*8 a2*4 ~ ~").s("piano").lpf(2911).room(.6).gain(.5).release(.0529).attack(.001)
+  - id: "inspired_1000_314"
+    source_id: "1000_314"
+    source_seed: 1314
+    voices: 3
+    events: 38
+    code: |
+      setcpm(104/4)
+      
+      $: s("clavisynth sd").room(.8).attack(.3).clip(.8).gain(.3).release(1)
+      
+      $: note("c4@2 a#3@2").s("triangle").lpf(4000).room(1).delay(.3056).gain(.3)
+      
+      $: n("-2 0 3 ~ 0 2 4 0 2 4 -2 0 3 ~ 0 2 4").scale("c:minor").lpf(2175).room(1).delay(.5).gain(.25)
+  - id: "inspired_1000_315"
+    source_id: "1000_315"
+    source_seed: 1315
+    voices: 2
+    events: 10
+    code: |
+      setcpm(100/4)
+      
+      $: s("hh sd hh sd").gain(.6)
+      
+      $: s("gm_electric_guitar_jazz:0 ~").gain(.5)
+  - id: "inspired_1000_316"
+    source_id: "1000_316"
+    source_seed: 1316
+    voices: 4
+    events: 27
+    code: |
+      setcpm(120/4)
+      
+      $: s("psaltery_pluck r8_rd:1").bank("RolandTR808").gain(.4).release(.3).attack(.03).decay(.1541).sustain(.5).hpf(8000)
+      
+      $: s("cowbell ~").gain(.33)
+      
+      $: s("perc*3 hh*8 perc perc*3").slow(2).gain(.3)
+      
+      $: s("gm_epiano1:1 psaltery_pluck bd:5 ~").lpf(1500).room(.9).gain(.5).pan(.4)
+  - id: "inspired_1000_317"
+    source_id: "1000_317"
+    source_seed: 1317
+    voices: 3
+    events: 19
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd*4 bd!4").slow(2).gain(.75)
+      
+      $: s("bd*2 ~").delay(.5).room(2).gain(.5)
+      
+      $: n("1 2 1@3 0@3 2@5.5 1@0.5 -3@6").scale("G0:minor").gain(.4).slow(2)
+  - id: "inspired_1000_318"
+    source_id: "1000_318"
+    source_seed: 1318
+    voices: 3
+    events: 16
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ hh ~").gain(.7)
+      
+      $: note("c1 f1 g1 c1").s("square").lpf(299).gain(.4)
+      
+      $: note("g2 b2").s("triangle").gain(.35).release(.4029)
+  - id: "inspired_1000_319"
+    source_id: "1000_319"
+    source_seed: 1319
+    voices: 3
+    events: 20
+    code: |
+      setcpm(100/4)
+      
+      $: s("gong ~ gong ~").gain(.6)
+      
+      $: note("c4 c#4 e4 a4").s("gm_electric_guitar_clean:2").gain(.5)
+      
+      $: note("c3 c#3 e3 a3").s("sawtooth").lpf(4098).gain(.35)
+  - id: "inspired_1000_32"
+    source_id: "1000_32"
+    source_seed: 1032
+    voices: 4
+    events: 24
+    code: |
+      setcpm(112/4)
+      $: s("kick ~ snare ~").gain(.8)
+      $: note("a1 f1").s("sawtooth").gain(.5).lpf(700)
+      $: s("gm_electric_guitar_clean:2 ~").gain(.4)
+      $: n("9*2 8 ~ 7 8*2 6").scale("d:minor").s("sawtooth").gain(.35).lpf(1600)
+  - id: "inspired_1000_320"
+    source_id: "1000_320"
+    source_seed: 1320
+    voices: 3
+    events: 13
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd*4 cp").gain(.75)
+      
+      $: s("woodblock:1 woodblock:2*2").slow(4).gain(.4)
+      
+      $: s("pulse").transpose("<0 1>/8").gain(.4)
+  - id: "inspired_1000_321"
+    source_id: "1000_321"
+    source_seed: 1321
+    voices: 3
+    events: 26
+    code: |
+      setcpm(120/4)
+      
+      $: s("gm_oboe bd:1 rim sd").bank("Linn9000").gain(.7)
+      
+      $: s("hh*2 sd").gain(.5).transpose(9).hpf(500).clip(.9).release(.1)
+      
+      $: note("c2 ~ eb2 g2 bb2 d3 e3").transpose(-12).s("sawtooth").gain(.35)
+  - id: "inspired_1000_322"
+    source_id: "1000_322"
+    source_seed: 1322
+    voices: 3
+    events: 20
+    code: |
+      setcpm(100/4)
+      
+      $: s("drum cp").gain(.7).lpf(800)
+      
+      $: note("c1 f1 g1 c1 f1 g1").s("square").lpf(800).gain(.4)
+      
+      $: note("c4 c5").s("ellipse").speed(1.3).delay(.4).gain(.35)
+  - id: "inspired_1000_323"
+    source_id: "1000_323"
+    source_seed: 1323
+    voices: 3
+    events: 32
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd sd").slow(2).gain(.7)
+      
+      $: note("d2*8 g#3@2 e3@4 b2@3").s("sawtooth").lpf(3528).gain(.35)
+      
+      $: note("g5 e5 c5 d5").s("sawtooth").lpf(1000).room(.6194).gain(.4).hpf(200)
+  - id: "inspired_1000_324"
+    source_id: "1000_324"
+    source_seed: 1324
+    voices: 2
+    events: 10
+    code: |
+      setcpm(96/4)
+      
+      $: s("mt mt").slow(2).gain(.6)
+      
+      $: s("hh!4").bank("Linn9000").gain(.2).release(.15)
+  - id: "inspired_1000_325"
+    source_id: "1000_325"
+    source_seed: 1325
+    voices: 3
+    events: 12
+    code: |
+      setcpm(100/4)
+      
+      $: s("lt cr").gain(.5).release(.1)
+      
+      $: s("~ hh*2 ~").lpf(2800).room(1.0074).gain(.2)
+      
+      $: s("gm_acoustic_bass gm_electric_bass_finger:7").gain(.45)
+  - id: "inspired_1000_326"
+    source_id: "1000_326"
+    source_seed: 1326
+    voices: 2
+    events: 14
+    code: |
+      setcpm(130/4)
+      
+      $: s("pulse gm_pizzicato_strings:4").bank("tr909").gain("<0.5 0.6 0.7 0.8>").clip(2).lpf(557).hpf(176).room(.3).delay(.5)
+      
+      $: n("2 1 5 8 7").scale("c:minor").s("sawtooth").gain(.35)
+  - id: "inspired_1000_327"
+    source_id: "1000_327"
+    source_seed: 1327
+    voices: 2
+    events: 14
+    code: |
+      setcpm(96/4)
+      
+      $: s("gm_piccolo ~").gain(.4).lpf(3000)
+      
+      $: n("-3 0 2 -3 -1 1").scale("a#3:minor").s("sawtooth").gain(.35)
+  - id: "inspired_1000_328"
+    source_id: "1000_328"
+    source_seed: 1328
+    voices: 3
+    events: 14
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd!2 ~ bd bd").gain(.7)
+      
+      $: s("sleighbells woodblock:1").speed(.5).gain(.3)
+      
+      $: s("gm_overdriven_guitar:6").slow(1).gain(.4)
+  - id: "inspired_1000_329"
+    source_id: "1000_329"
+    source_seed: 1329
+    voices: 4
+    events: 30
+    code: |
+      setcpm(120/4)
+      
+      $: s("perc*3 hh*4").gain(.5).segment(16).slow(2)
+      
+      $: s("gm_oboe").gain(.4)
+      
+      $: s("gm_distortion_guitar shaker_small:0").lpf(600).hpf(7000).gain(.35)
+      
+      $: n("1 2*3").scale("c:minor").clip(.95).gain(.3)
+  - id: "inspired_1000_33"
+    source_id: "1000_33"
+    source_seed: 1033
+    voices: 3
+    events: 13
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("6 9!3").scale("c:minor").s("sawtooth").gain(.4).lpf(1400)
+      $: s("gm_harmonica ~").slow(2).gain(.35)
+  - id: "inspired_1000_330"
+    source_id: "1000_330"
+    source_seed: 1330
+    voices: 2
+    events: 12
+    code: |
+      setcpm(112/4)
+      
+      $: s("bell ~").gain(.5).release(.0695)
+      
+      $: n("1 -4 -1 -1 -5").scale("C:<major minor>/2").s("square").velocity(.42).gain(.4)
+  - id: "inspired_1000_331"
+    source_id: "1000_331"
+    source_seed: 1331
+    voices: 3
+    events: 24
+    code: |
+      setcpm(100/4)
+      
+      $: s("oh ~ oh").slow(2).gain(.5)
+      
+      $: s("gm_overdriven_guitar:6 kick").gain(.642).room(1.1316)
+      
+      $: note("a1 g1*2 a1*2 g1 ~ eb1 g1 bb1").s("bd!3").gain(.4)
+  - id: "inspired_1000_332"
+    source_id: "1000_332"
+    source_seed: 1332
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd cp").gain(.7)
+      
+      $: n(5).s("kick snare").gain(.5)
+      
+      $: note("c5 c4 e4 g4 g4 b4 d5 a4").s("sawtooth").release(1).gain(.3)
+  - id: "inspired_1000_333"
+    source_id: "1000_333"
+    source_seed: 1333
+    voices: 3
+    events: 18
+    code: |
+      setcpm(116/4)
+      
+      $: s("bd cr").gain("0.3 0.6 0.5 0.7")
+      
+      $: s("gm_overdriven_guitar:6 cp sd hh*2").gain(.4).release(1.2).distort("1.5:.7").room(.75).delay(.294)
+      
+      $: n("7 8").scale("D1:hirajoshi").s("gm_overdriven_guitar:3").delay(.5).gain(.35)
+  - id: "inspired_1000_334"
+    source_id: "1000_334"
+    source_seed: 1334
+    voices: 3
+    events: 16
+    code: |
+      setcpm(112/4)
+      
+      $: s("lt ht hh bd").slow(2).gain(.6)
+      
+      $: n("4 3 2 3 2").scale("a3:minor").s("gm_electric_guitar_clean:2").delay(.5).gain(.4)
+      
+      $: note("c4").s("supersaw").lpf("<[1000 5000]>").gain(.3)
+  - id: "inspired_1000_335"
+    source_id: "1000_335"
+    source_seed: 1335
+    voices: 2
+    events: 12
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd rim").lpf(300).hpf(800).gain(.6)
+      
+      $: note("g4 d4 a2 c3").s("square").lpf(3000).gain(.4)
+  - id: "inspired_1000_336"
+    source_id: "1000_336"
+    source_seed: 1336
+    voices: 3
+    events: 58
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ hh ~").gain(.7)
+      
+      $: note("a2*8 ~ a2*8 a2*8").s("triangle").lpf("<9000@7 5000@5>/16").gain(.3)
+      
+      $: note("e4 g#4 e4 ~").s("sine").lpf(3341).hpf(800).room(.4).gain(.4).release(.1)
+  - id: "inspired_1000_337"
+    source_id: "1000_337"
+    source_seed: 1337
+    voices: 3
+    events: 16
+    code: |
+      setcpm(92/4)
+      
+      $: s("gm_oboe cowbell").room(.6214).gain(.5)
+      
+      $: s("sine gm_epiano1:2").clip(1).gain(.4)
+      
+      $: note("c3 eb3 g2 bb2").s("sawtooth").gain(.3)
+  - id: "inspired_1000_338"
+    source_id: "1000_338"
+    source_seed: 1338
+    voices: 4
+    events: 20
+    code: |
+      setcpm(120/4)
+      
+      $: s("vocal ~").clip(1).room(.6964).gain(.6)
+      
+      $: n("5 4 4 ~").s("perc*3 gm_marimba").room(.9492).gain(.3).release(.4196)
+      
+      $: note("d5 e5").s("supersaw").lpf(3000).gain(.4)
+      
+      $: note("d#5@2 d5@2 c#5@2 a4@10").add(-3).s("square").gain(.3)
+  - id: "inspired_1000_339"
+    source_id: "1000_339"
+    source_seed: 1339
+    voices: 2
+    events: 12
+    code: |
+      setcpm(100/4)
+      
+      $: s("sd sd*4").gain(.7)
+      
+      $: note(0).s("square").lpf(650).speed(1.2323).gain("<.35 .4 .45 .5>/13")
+  - id: "inspired_1000_34"
+    source_id: "1000_34"
+    source_seed: 1034
+    voices: 4
+    events: 11
+    code: |
+      setcpm(120/4)
+      $: s("cp ~").slow(2).gain(.8)
+      $: s("hh*4 ~").slow(2).gain(.2)
+      $: note("c3 d3 e3 f3").s("oh").slow(2).gain(.4)
+      $: sound("supersaw").lpf(2800).hpf(1200).gain(.35).pan(.51)
+  - id: "inspired_1000_340"
+    source_id: "1000_340"
+    source_seed: 1340
+    voices: 4
+    events: 28
+    code: |
+      setcpm(112/4)
+      
+      $: s("sd sd*4 lt*4 hh!3").slow(2).gain(.6)
+      
+      $: s("kick*4").slow(2).gain(.7)
+      
+      $: s("cr bd").gain("<0 0 .3 .6!3>/12")
+      
+      $: note("d4 eb4 g4 bb4").s("gm_pad_bowed:1").gain(.4)
+  - id: "inspired_1000_341"
+    source_id: "1000_341"
+    source_seed: 1341
+    voices: 3
+    events: 40
+    code: |
+      setcpm(120/4)
+      
+      $: s("kick*4 oh:2*8").slow(2).gain(.6)
+      
+      $: s("hh!4").bank("RolandMT32").gain(.2)
+      
+      $: n("4 6 5 4 3").scale("D:minor").s("gm_electric_bass_finger:2").fast(2).gain(.4)
+  - id: "inspired_1000_342"
+    source_id: "1000_342"
+    source_seed: 1342
+    voices: 4
+    events: 41
+    code: |
+      setcpm(116/4)
+      
+      $: s("oh*4 bd!3").slow(2).gain(.6)
+      
+      $: s("gm_piccolo ht").room(.3001).gain(.5)
+      
+      $: note("c2*8 f4 f4@2 ~ d#4 d#4@2 ~ d4").s("triangle").lpf(700).room(1.0037).gain(.35)
+      
+      $: note("~ 5 ~ c3").s("square").lpf(650).gain(.4)
+  - id: "inspired_1000_343"
+    source_id: "1000_343"
+    source_seed: 1343
+    voices: 2
+    events: 7
+    code: |
+      setcpm(100/4)
+      
+      $: s("~ hh*2 ~ sd").speed("<1 2>").hpf(200).gain(.5)
+      
+      $: s("saw").slow(2).gain(.35)
+  - id: "inspired_1000_344"
+    source_id: "1000_344"
+    source_seed: 1344
+    voices: 3
+    events: 32
+    code: |
+      setcpm(120/4)
+      
+      $: s("kick*4 hh*8").lpf(600).room(.5218).delay(.3241).gain(.6)
+      
+      $: s("gm_acoustic_guitar_steel:2 shaker_small:3").gain(.4)
+      
+      $: n("-3 4 3 4").scale("D:dorian").s("lt ht").slow(2).gain(.35)
+  - id: "inspired_1000_345"
+    source_id: "1000_345"
+    source_seed: 1345
+    voices: 4
+    events: 28
+    code: |
+      setcpm(112/4)
+      
+      $: note("a4 d#5@2 ~ a4").s("hh").gain(.6)
+      
+      $: s("gm_synth_strings_1 gm_piccolo").gain(.35)
+      
+      $: n(7).scale("g4:dorian").s("gm_oboe").clip(.18).release(.1).attack(.06).gain(.4)
+      
+      $: note("c3 g2 a2 f2 c3 g2 f2 c3").s("sawtooth").lpf(513).hpf(7000).room(.8131).gain(.35)
+  - id: "inspired_1000_346"
+    source_id: "1000_346"
+    source_seed: 1346
+    voices: 3
+    events: 16
+    code: |
+      setcpm(96/4)
+      
+      $: s("sd sd").lpf(2053).gain(.4)
+      
+      $: note("c2 f1 g1 a#1").s("sawtooth").lpf(200).gain(.5).delay(.2).room(.8).hpf(8000)
+      
+      $: note("g1 a#1").s("triangle").velocity(.15).gain(.3)
+  - id: "inspired_1000_347"
+    source_id: "1000_347"
+    source_seed: 1347
+    voices: 3
+    events: 9
+    code: |
+      setcpm(100/4)
+      
+      $: n("3 3 ~ 3").s("drums kick").lpf(400).gain(.5).pan(1)
+      
+      $: note(42).s("triangle").lpf(2000).gain(.35)
+      
+      $: n(7).scale("c:minor").s("sawtooth").slow(2).gain(.3)
+  - id: "inspired_1000_348"
+    source_id: "1000_348"
+    source_seed: 1348
+    voices: 4
+    events: 24
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.85)
+      $: s("~ lt ~ lt").slow(1).gain(.5)
+      $: n("0 3 7 5").scale("c3:minor").s("sawtooth").lpf(1200).release(.15).gain(.4)
+      $: note("e5 f4 a4 c5").sound("square").lpf(2199).room(.8).gain(.35)
+  - id: "inspired_1000_349"
+    source_id: "1000_349"
+    source_seed: 1349
+    voices: 3
+    events: 30
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ ~ bd ~ cp ~ ~").bank("RolandTR808").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c2 c2 g1 c2").sound("drum").lpf(400).room(.5684).gain(.4).release(.05)
+  - id: "inspired_1000_35"
+    source_id: "1000_35"
+    source_seed: 1035
+    voices: 2
+    events: 26
+    code: |
+      setcpm(96/4)
+      $: s("linndrum_sd hh!2").gain(.5)
+      $: note("a4 f#5 e5 e5 d#5 a#4 b4 a#4@2 f#4@2 g#4@2").sound("square supersaw").lpf(2318).room(.6).gain(.4)
+  - id: "inspired_1000_350"
+    source_id: "1000_350"
+    source_seed: 1350
+    voices: 4
+    events: 40
+    code: |
+      setcpm(126/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("perc*4").lpf(204).gain(.3)
+      $: n("7 -1 -4 -4 -2 7").scale("g4:minor").s("gm_ocarina").decay(.03).sustain(.6).release(.1).gain(.35)
+      $: note("g5 d5 g5 b5 g5 c5 e5 a5").decay(.03).sustain(.6317).release(.1).s("gm_percussive_organ").gain(.3)
+  - id: "inspired_1000_351"
+    source_id: "1000_351"
+    source_seed: 1351
+    voices: 4
+    events: 46
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c2*8 f3@2 f3!2 g3").s("sawtooth").lpf(600).gain(.4).release(.1)
+      $: s("vocal:1").gain(.3).room(.4)
+  - id: "inspired_1000_352"
+    source_id: "1000_352"
+    source_seed: 1352
+    voices: 3
+    events: 70
+    code: |
+      setcpm(118/4)
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.85)
+      $: s("hh*16 hh*16").gain(.2)
+      $: s("bass xylo").slow(2).gain(.4).lpf(900)
+  - id: "inspired_1000_353"
+    source_id: "1000_353"
+    source_seed: 1353
+    voices: 3
+    events: 14
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("rd*4").gain(.25)
+      $: s("gm_electric_guitar_jazz xylo").slow(2.6625).gain(.4)
+  - id: "inspired_1000_354"
+    source_id: "1000_354"
+    source_seed: 1354
+    voices: 3
+    events: 38
+    code: |
+      setcpm(96/4)
+      $: s("rd*6 shaker_small:1").gain(.3)
+      $: n("3 4 0 7 6 4 5 6 4 5 3 4 2 3 1 2").scale("a2:major").s("gm_acoustic_bass").slow(2).gain(.4)
+      $: note("c4*2 d#4 f4 ~").sound("piano").lpf(700).room(.6).delay(.4).delaytime(".16 | .33").delayfeedback(.4).gain(.35)
+  - id: "inspired_1000_355"
+    source_id: "1000_355"
+    source_seed: 1355
+    voices: 3
+    events: 22
+    code: |
+      setcpm(120/4)
+      $: s("saw bd:3").bank("RolandTR909").gain(.8)
+      $: s("hh*8").slow(2).hpf(787).room(.5).gain(.2)
+      $: s("gm_ocarina gm_bassoon lt*3").gain(.35)
+  - id: "inspired_1000_356"
+    source_id: "1000_356"
+    source_seed: 1356
+    voices: 3
+    events: 24
+    code: |
+      setcpm(112/4)
+      $: s("sd bd").bank("RolandTR909").slow(2.3175).gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("piano sd*2").speed(1.05).gain(.4)
+  - id: "inspired_1000_357"
+    source_id: "1000_357"
+    source_seed: 1357
+    voices: 3
+    events: 24
+    code: |
+      setcpm(108/4)
+      $: s("hh*2 ~ rim ~ rim ~ rim sd").slow(2).gain(.5)
+      $: n("~ 5").scale("a3:minor").s("gm_reed_organ:5").gain(.3).pan(-0.3)
+      $: note("g#4@2 g#4 f#4 f4 d#4 f4 d#4 a3").gain(.4).s("sawtooth").lpf(900)
+  - id: "inspired_1000_358"
+    source_id: "1000_358"
+    source_seed: 1358
+    voices: 4
+    events: 14
+    code: |
+      setcpm(115/4)
+      $: s("mt lt").slow(2).gain(.7)
+      $: s("hh bd").lpf(550).room(.34).gain(.5)
+      $: s("gm_oboe square").clip(.7).lpf(650).resonance(2).gain(.4)
+      $: note("d5 e5").sound("square").lpf(900).hpf(1500).room(.1).delay(.3).gain(.35).pan(.6)
+  - id: "inspired_1000_359"
+    source_id: "1000_359"
+    source_seed: 1359
+    voices: 2
+    events: 8
+    code: |
+      setcpm(100/4)
+      $: s("sd bd").bank("RolandTR808").slow(2).gain(.8)
+      $: note("c2 g2").struct("x(3,8)").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_36"
+    source_id: "1000_36"
+    source_seed: 1036
+    voices: 3
+    events: 5
+    code: |
+      setcpm(100/4)
+      $: s("kick ~").slow(2).gain(.8)
+      $: s("sd hh").slow(2).gain(.5)
+      $: note("f#1 ~").s("sine").velocity(.3).gain(.5)
+  - id: "inspired_1000_360"
+    source_id: "1000_360"
+    source_seed: 1360
+    voices: 3
+    events: 16
+    code: |
+      setcpm(128/4)
+      $: s("bd ~ bd ~").bank("RolandTR909").gain(.85)
+      $: s("triangle crash").gain(.4)
+      $: s("perc*3 cp").gain(.6)
+  - id: "inspired_1000_361"
+    source_id: "1000_361"
+    source_seed: 1361
+    voices: 4
+    events: 58
+    code: |
+      setcpm(120/4)
+      $: s("bd*4").bank("RolandTR909").gain(.8)
+      $: s("hh*16").gain(.2)
+      $: note("c3 g2 f2 a2 c3 f3 a3 c4").sound("sawtooth").lpf(500).gain(.4).release(.2)
+      $: s("gm_electric_bass_finger").gain(.4)
+  - id: "inspired_1000_362"
+    source_id: "1000_362"
+    source_seed: 1362
+    voices: 4
+    events: 18
+    code: |
+      setcpm(115/4)
+      $: s("gm_drawbar_organ bd sd*2 ~").gain(.7)
+      $: s("amen").gain(.6)
+      $: note("f4 d#4@2").bank("CasioMT40").clip(.9).release(.12).room(.27).gain(.4)
+      $: note("12 a1*2 g1 ~").add("<0 7>/2").slow(2).s("sawtooth").lpf(600).gain(.4)
+  - id: "inspired_1000_363"
+    source_id: "1000_363"
+    source_seed: 1363
+    voices: 4
+    events: 26
+    code: |
+      setcpm(110/4)
+      $: s("hh ~ hh ~").cutoff(800).resonance(8).room(.5).delay(.3).gain(.2)
+      $: s("pulse sax").gain(.4)
+      $: s("gm_overdriven_guitar:6 bell").pan(.4).gain(.4)
+      $: note("d2*4 e2 b2@2 c4@2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_364"
+    source_id: "1000_364"
+    source_seed: 1364
+    voices: 3
+    events: 19
+    code: |
+      setcpm(96/4)
+      $: s("gm_electric_bass_finger").slow(2).gain(.5)
+      $: s("gm_acoustic_guitar_steel:2 shaker_small:1").slow(2).gain(.3)
+      $: note("c4 d4 eb4 g4 bb4 c5 e5 g5").decay(.05).sustain(.8).s("gm_ocarina").gain(.4)
+  - id: "inspired_1000_365"
+    source_id: "1000_365"
+    source_seed: 1365
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      $: s("bass").gain(.7).hpf(300).lpf(1375)
+      $: s("hh*16 hh*16").slow(8).gain(.2)
+      $: note("c eb g bb").sound("triangle").lpf(500).gain(.4)
+      $: n("1 4 2 1").scale("c4:minor").s("gm_overdriven_guitar:6").gain(.4).release(.3)
+  - id: "inspired_1000_366"
+    source_id: "1000_366"
+    source_seed: 1366
+    voices: 3
+    events: 30
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ ~ bd").bank("RolandTR808").lpf(700).gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("mt lt lt mt*2").note("b2 d2 g2 bb2").fm(2).gain(.4)
+  - id: "inspired_1000_367"
+    source_id: "1000_367"
+    source_seed: 1367
+    voices: 3
+    events: 26
+    code: |
+      setcpm(112/4)
+      $: s("cr sd bd bd").bank("RolandTR808").gain(.8)
+      $: s("hh*16 hh*16").slow(4).gain(.2)
+      $: note("c3 d3").s("triangle").slow(2).gain(.4)
+  - id: "inspired_1000_368"
+    source_id: "1000_368"
+    source_seed: 1368
+    voices: 4
+    events: 26
+    code: |
+      setcpm(105/4)
+      $: s("bd!2 bd*4").cutoff(1000).gain(.8)
+      $: s("hh").gain(.2)
+      $: note("c2 ~").sound("square").lpf(500).hpf(754).room(.4).delay(.5).gain(.4)
+      $: note("d2*8 c3@2 ~ g#3").s("sawtooth").lpf(1500).gain(.3).delay(.3).slow(2)
+  - id: "inspired_1000_369"
+    source_id: "1000_369"
+    source_seed: 1369
+    voices: 4
+    events: 54
+    code: |
+      setcpm(120/4)
+      $: s("bd!3 bd*2 ~ ~ sd ~ bd sd ~ bd bd bd sd").bank("RolandTR808").gain(.8)
+      $: s("hh!7 oh").gain(.2)
+      $: s("clave cowbell ~ ~ cowbell ~ ~ cowbell ~").delay(.5).gain(.5)
+      $: s("gm_overdriven_guitar:3 gm_pad_bowed gm_trumpet:2").gain(.4)
+  - id: "inspired_1000_37"
+    source_id: "1000_37"
+    source_seed: 1037
+    voices: 2
+    events: 7
+    code: |
+      setcpm(90/4)
+      $: s("rd 1!3 2 0").slow(4).gain(.5)
+      $: note("d4 a3").s("sawtooth").gain(.4).lpf(1200)
+  - id: "inspired_1000_370"
+    source_id: "1000_370"
+    source_seed: 1370
+    voices: 3
+    events: 27
+    code: |
+      setcpm(115/4)
+      $: s("bd sd bd sd bd").bank("RolandTR909").slow(2).gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c3 a#2 f2@3 ~").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_371"
+    source_id: "1000_371"
+    source_seed: 1371
+    voices: 3
+    events: 34
+    code: |
+      setcpm(105/4)
+      $: s("cp hh ~ hh*2").gain(.5)
+      $: s("gm_electric_bass_finger").cutoff(295).resonance(10).gain(.4)
+      $: note("c4 d#4 d#4@2 f4!2 f4 c4 c4!2 d#4@2 f4@2 f4").s("sawtooth").lpf(900).gain(.35)
+  - id: "inspired_1000_372"
+    source_id: "1000_372"
+    source_seed: 1372
+    voices: 3
+    events: 42
+    code: |
+      setcpm(128/4)
+      $: s("bd*4 bd!4").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: s("gm_electric_guitar_clean:2 noise*4").gain(.4).lpf("<800 1000 1500>").room(.6).delay(.3)
+  - id: "inspired_1000_373"
+    source_id: "1000_373"
+    source_seed: 1373
+    voices: 4
+    events: 26
+    code: |
+      setcpm(100/4)
+      $: s("sd@3 ~ cr lt cr lt cr").gain(.6)
+      $: note("e1 ~ ~ e2").sound("bd sd").lpf(2000).gain(.7)
+      $: note("c4 g#4 c5 c#5").sound("hh").lpf(400).gain(.4)
+      $: s("gm_piano").gain(.4)
+  - id: "inspired_1000_374"
+    source_id: "1000_374"
+    source_seed: 1374
+    voices: 3
+    events: 26
+    code: |
+      setcpm(110/4)
+      $: s("gm_drawbar_organ hh*8").gain(.7)
+      $: s("ocarina kalimba").gain("[.5 .3]*4")
+      $: n("0 ~ 5").scale("c2:minor").s("sawtooth").lpf(600).gain(.4)
+  - id: "inspired_1000_375"
+    source_id: "1000_375"
+    source_seed: 1375
+    voices: 3
+    events: 12
+    code: |
+      setcpm(122/4)
+      $: s("bd*4 ~").cutoff(1000).gain("<.5 .6 .7 .8>")
+      $: s("linndrum_hh").clip(.5).gain(.2)
+      $: note("c2").sound("white").gain(.3)
+  - id: "inspired_1000_376"
+    source_id: "1000_376"
+    source_seed: 1376
+    voices: 4
+    events: 15
+    code: |
+      setcpm(105/4)
+      $: note("e4 g4 g3 b3 d4").struct("x*4").gain(.4).room(.5)
+      $: s("supersaw").slow(2).gain(.3)
+      $: s("gm_synth_strings_1").clip(1).lpf(656).gain("[.5 .3]*8")
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+  - id: "inspired_1000_377"
+    source_id: "1000_377"
+    source_seed: 1377
+    voices: 3
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("bd cr").slow(4).gain(.7)
+      $: s("rd*3").gain(.3)
+      $: note("c2*4 e1").sound("gm_piccolo").clip(.8).gain(.4).release(.1).attack(.001)
+  - id: "inspired_1000_378"
+    source_id: "1000_378"
+    source_seed: 1378
+    voices: 4
+    events: 31
+    code: |
+      setcpm(115/4)
+      $: s("kick*4 hh:8").attack(.03).release(.5).room(.24).gain(.5)
+      $: s("linndrum_oh").gain(.4)
+      $: s("square").slow(2).gain(.3)
+      $: n("-3 -3 -3 -1 -1 -4 -2 -1 -2").scale("d3:whole:tone").s("sawtooth").lpf(700).gain(.35)
+  - id: "inspired_1000_379"
+    source_id: "1000_379"
+    source_seed: 1379
+    voices: 4
+    events: 10
+    code: |
+      setcpm(115/4)
+      $: s("linndrum_hh").gain(.5)
+      $: s("gm_distortion_guitar:4").gain(.6)
+      $: note("c3 d#3@2").sound("sawtooth").lpf(800).gain(.4)
+      $: s("gm_synth_strings_1").gain(.4)
+  - id: "inspired_1000_38"
+    source_id: "1000_38"
+    source_seed: 1038
+    voices: 3
+    events: 22
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("g5 ~").sound("sawtooth").lpf(1014).room(.7).delay(.27).gain(.4)
+  - id: "inspired_1000_380"
+    source_id: "1000_380"
+    source_seed: 1380
+    voices: 4
+    events: 22
+    code: |
+      setcpm(110/4)
+      $: s("misc:2 brakedrum:1 ~ cowbell:3 cr!3 cr!2").slow(2).gain(.5)
+      $: s("rd*3").gain(.5)
+      $: s("sine").gain(.3).pan(.4265)
+      $: note("c4@2 a#3@2 d#4@2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_381"
+    source_id: "1000_381"
+    source_seed: 1381
+    voices: 3
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: s("gm_electric_guitar_clean:2").gain(.5)
+      $: note("c4 d4 e4 f4 e4 d4").s("sawtooth").lpf(800).gain(.4)
+  - id: "inspired_1000_382"
+    source_id: "1000_382"
+    source_seed: 1382
+    voices: 3
+    events: 18
+    code: |
+      setcpm(105/4)
+      $: s("linndrum_hh rim sd cowbell:3").room(.2).delay(.28).delaytime(.125).gain(.4).clip(.9).release(.1).attack(.05)
+      $: s("kick").gain(.7)
+      $: note("c3 eb3 g2 bb2").sound("sawtooth").lpf(1500).gain(.4).release(.5)
+  - id: "inspired_1000_383"
+    source_id: "1000_383"
+    source_seed: 1383
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100/4)
+      $: s("kick ~ ~ ~").gain(.8)
+      $: s("gm_drawbar_organ shaker*8").lpf(1366).gain(.3)
+      $: note("g5 c5 e5 a5").sound("triangle").lpf(2000).room(.5).gain(.4).release(.1).attack(.05)
+  - id: "inspired_1000_384"
+    source_id: "1000_384"
+    source_seed: 1384
+    voices: 3
+    events: 28
+    code: |
+      setcpm(115/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("gm_electric_bass_finger:2").fast(2).gain(.4)
+      $: note("a#5 g#5 e5 c#5 ~ f5 f#5 e5 ~ e5 d#5 a#4").sound("sawtooth").transpose("<0 2 [3 1]>/8").lpf(1200).gain(.35)
+  - id: "inspired_1000_385"
+    source_id: "1000_385"
+    source_seed: 1385
+    voices: 3
+    events: 16
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").slow(2).gain(.2)
+      $: note("b2 d2").s("sawtooth").lpf(700).gain(.4)
+  - id: "inspired_1000_386"
+    source_id: "1000_386"
+    source_seed: 1386
+    voices: 4
+    events: 6
+    code: |
+      setcpm(112/4)
+      $: s("amen").gain(.7)
+      $: s("oh ~").gain(.3)
+      $: s("gm_electric_bass_finger").slow(4).gain(.4)
+      $: s("gm_distortion_guitar:4").slow(4).gain(.4)
+  - id: "inspired_1000_387"
+    source_id: "1000_387"
+    source_seed: 1387
+    voices: 3
+    events: 28
+    code: |
+      setcpm(105/4)
+      $: s("hh*4 ~ sd bd").gain(.7)
+      $: s("gm_epiano1:1 gm_choir_aahs:2").gain("[.5 .3]*4").release(2.5)
+      $: n("9 5 7 10 4 7").scale("c4:major").s("sawtooth").lpf(900).gain(.35)
+  - id: "inspired_1000_388"
+    source_id: "1000_388"
+    source_seed: 1388
+    voices: 3
+    events: 14
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: s("gm_electric_guitar_clean:2 oh").slow(2).gain(.4)
+      $: n("0 3 7 5").s("sawtooth square").lpf(1400).release(.1).gain(.4)
+  - id: "inspired_1000_389"
+    source_id: "1000_389"
+    source_seed: 1389
+    voices: 3
+    events: 16
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: note("g1 f1 g1 g1").s("sawtooth").lpf(500).gain(.45)
+      $: note("c2 eb2").sound("supersaw triangle").lpf(2435).gain(.35).release(.0723)
+  - id: "inspired_1000_39"
+    source_id: "1000_39"
+    source_seed: 1039
+    voices: 2
+    events: 26
+    code: |
+      setcpm(96/4)
+      $: note("g5 c5 e5 a5").sound("kick snare").lpf(2000).gain(.5)
+      $: note("~ e5 ~ g5 ~ d5 ~ b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~").s("sawtooth").gain(.35).lpf(1800)
+  - id: "inspired_1000_390"
+    source_id: "1000_390"
+    source_seed: 1390
+    voices: 3
+    events: 12
+    code: |
+      setcpm(96/4)
+      $: s("amen").slow(2).gain(.7)
+      $: s("rd 1!3 2 3").slow(4).gain(.3)
+      $: n("0 3 5 7").s("gm_lead_6_voice").lpf(1800).gain(.4).release(.15)
+  - id: "inspired_1000_391"
+    source_id: "1000_391"
+    source_seed: 1391
+    voices: 3
+    events: 16
+    code: |
+      setcpm(120/4)
+      $: s("kick ~ snare ~").gain(.8)
+      $: s("linndrum_sd 8 16 4").lpf(2600).room(.6).gain(.5)
+      $: note("b4 eb4").s("triangle").gain(.3).room(.3)
+  - id: "inspired_1000_392"
+    source_id: "1000_392"
+    source_seed: 1392
+    voices: 4
+    events: 46
+    code: |
+      setcpm(128/4)
+      $: s("bd ~ sd ~ bd ~ sd ~").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("3 8 9 10 4 9 6 5").scale("a3:minor").s("sawtooth").lpf(1000).gain(.35)
+      $: note("a2 a2 ~ a2").s("triangle").cutoff(180).gain(.4)
+  - id: "inspired_1000_393"
+    source_id: "1000_393"
+    source_seed: 1393
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ bd sd ~ 5 perc").gain(.75).room(.3)
+      $: s("gm_electric_bass_pick hh*3").delay(.375).gain(.5).room(.4)
+      $: n("7 0").s("sawtooth").gain(.35).room(.5)
+  - id: "inspired_1000_394"
+    source_id: "1000_394"
+    source_seed: 1394
+    voices: 5
+    events: 26
+    code: |
+      setcpm(118/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*4").gain(.2)
+      $: note("c3 eb3 g3 bb3").s("supersaw").lpf(1600).gain(.35)
+      $: note("c1 ~ eb1 ~").s("sine").slow(2).gain(.4)
+      $: s("triangle gm_electric_guitar_muted").gain(.15)
+  - id: "inspired_1000_395"
+    source_id: "1000_395"
+    source_seed: 1395
+    voices: 4
+    events: 25
+    code: |
+      setcpm(96/4)
+      $: s("cr bd sd bd").gain(.8).release(.08).attack(.02)
+      $: s("gm_electric_guitar_clean:2 gm_clarinet").slow(4).gain(.3)
+      $: note("c1 f1 g1 a1").s("sawtooth").hpf(300).room(.5).delay(.3).gain(.4)
+      $: note("g4 g3 b3 d4").sound("sine").lpf(3000).pan(.4).gain(.3)
+  - id: "inspired_1000_396"
+    source_id: "1000_396"
+    source_seed: 1396
+    voices: 4
+    events: 16
+    code: |
+      setcpm(90/4)
+      $: s("bd:1 ~ bd:1 ~").gain(.8)
+      $: s("sawtooth square ~ ~").lpf(1200).gain(.3)
+      $: note("g3 c3").s("triangle").lpf(400).room(.8).gain(.4)
+      $: note("g4 c5").s("gm_lead_6_voice").gain(.35).release(.15).room(.6).delay(.4).delaytime(.33).delayfeedback(.4)
+  - id: "inspired_1000_397"
+    source_id: "1000_397"
+    source_seed: 1397
+    voices: 4
+    events: 22
+    code: |
+      setcpm(126/4)
+      $: s("bd*4 ~").gain(.8)
+      $: s("~ sd ~ sd").clip(1).release(.15).gain(.7)
+      $: s("hh*4").gain(.2)
+      $: note("g5 ~ c5 ~").sound("piano").lpf(700).room(.5).slow(2).gain(.35)
+  - id: "inspired_1000_398"
+    source_id: "1000_398"
+    source_seed: 1398
+    voices: 5
+    events: 25
+    code: |
+      setcpm(112/4)
+      $: s("kick*4").gain(.8)
+      $: s("cowbell ~").gain(.4)
+      $: note("c3 d3 c3").cutoff(683).s("square").slow(2).gain(.35)
+      $: note("a2 f2").s("gm_bassoon").gain(.4)
+      $: s("conga*3").note("b2 f2").segment(4).gain(.5)
+  - id: "inspired_1000_399"
+    source_id: "1000_399"
+    source_seed: 1399
+    voices: 4
+    events: 13
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").gain(.8)
+      $: note("g3 bb3 e4 ~").s("sawtooth square").slow(2).gain(.35)
+      $: s("gm_electric_bass_finger:2 hh27").slow(2).gain(.45)
+      $: s("square square").gain(.25)
+  - id: "inspired_1000_4"
+    source_id: "1000_4"
+    source_seed: 1004
+    voices: 4
+    events: 60
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*16").gain(.2)
+      $: note("<[g3,bb3,d4,f4] [c4,e4,g4,bb4]>").s("square").lpf(3000).gain(.4).release(.3)
+      $: n("5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~").scale("g3:minor").s("supersaw").gain(.35).lpf(2000)
+  - id: "inspired_1000_40"
+    source_id: "1000_40"
+    source_seed: 1040
+    voices: 2
+    events: 11
+    code: |
+      setcpm(128/4)
+      $: s("bd*2 ~ sd ~").slow(2).gain(.8)
+      $: s("oh*4 ~").lpf(1000).gain(.2)
+  - id: "inspired_1000_400"
+    source_id: "1000_400"
+    source_seed: 1400
+    voices: 4
+    events: 28
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").gain(.8)
+      $: s("hh27 shaker*8").gain(.2)
+      $: s("recorder_bass_sus gm_electric_bass_finger").gain(.35)
+      $: s("crash ~").gain(.3)
+  - id: "inspired_1000_401"
+    source_id: "1000_401"
+    source_seed: 1401
+    voices: 4
+    events: 41
+    code: |
+      setcpm(100/4)
+      $: s("gtr bd*4").room(.5).gain(.7)
+      $: s("hh*16").slow(2).gain(.2)
+      $: n("0 -7 5 9").s("sawtooth").lpf(2800).gain(.35)
+      $: note("c5 e5 g5 b5 c6 eb5 bb5").s("triangle").slow(2).gain(.3)
+  - id: "inspired_1000_402"
+    source_id: "1000_402"
+    source_seed: 1402
+    voices: 4
+    events: 14
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ bd ~").gain(.75)
+      $: s("hh*4 ~").gain(.2)
+      $: s("gm_synth_bass_1").slow(2).gain(.4)
+      $: s("gm_distortion_guitar:3").slow(4).gain(.3)
+  - id: "inspired_1000_403"
+    source_id: "1000_403"
+    source_seed: 1403
+    voices: 4
+    events: 26
+    code: |
+      setcpm(124/4)
+      $: s("kick ~ kick ~").gain(.8).clip(.9).sustain(.4).cutoff(2000).resonance(11)
+      $: s("bd bd ~ bd").lpf(700).room(.6).gain(.5)
+      $: note("c4 d4 e4 f4").sound("supersaw").lpf(1200).room(.3).delay(.3).gain(.35)
+      $: s("pulse gm_electric_bass_finger:7 triangle sd").gain(.3).room(.5)
+  - id: "inspired_1000_404"
+    source_id: "1000_404"
+    source_seed: 1404
+    voices: 4
+    events: 24
+    code: |
+      setcpm(108/4)
+      $: s("bell ~ kick ~").note("e4 c#4 a3 g4").gain(.6)
+      $: note("b2 f2 f2 bb2").s("psaltery_pluck").gain(.5)
+      $: note("g3 c4 e4 g3").s("triangle").clip(.8).gain(.35)
+      $: s("gm_acoustic_guitar_steel:2 gm_synth_strings_2").delay(.6).gain(.5).release(.12)
+  - id: "inspired_1000_405"
+    source_id: "1000_405"
+    source_seed: 1405
+    voices: 2
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("bd*4 sd*2").gain(.8)
+      $: note("a3 a3 a3").sound("square").lpf(2500).room(.6).gain(.35)
+  - id: "inspired_1000_406"
+    source_id: "1000_406"
+    source_seed: 1406
+    voices: 4
+    events: 23
+    code: |
+      setcpm(112/4)
+      $: s("drums ~ drums ~").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("cowbell ~").slow(2).gain(.3)
+      $: s("gm_baritone_sax linndrum_oh").slow(2).gain(.35)
+  - id: "inspired_1000_407"
+    source_id: "1000_407"
+    source_seed: 1407
+    voices: 3
+    events: 16
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~ hh ht").gain(.75).shape(.2).release(.15).attack(.02)
+      $: sound("hh ~").lpf(2600).room(.6).gain(.2)
+      $: note("c2 a2 eb2").sound("sawtooth").lpf(500).gain(.4)
+  - id: "inspired_1000_408"
+    source_id: "1000_408"
+    source_seed: 1408
+    voices: 3
+    events: 18
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ lt ~").gain(.75)
+      $: s("bell hh*2").gain(.25)
+      $: note("g1 bb1 g2 c2").s("piano").gain(.35)
+  - id: "inspired_1000_409"
+    source_id: "1000_409"
+    source_seed: 1409
+    voices: 3
+    events: 17
+    code: |
+      setcpm(120/4)
+      $: s("kick*4 ~ cp*4 ~").slow(2).gain(.6)
+      $: note("e4 f2").sound("triangle").lpf(1202).room(.3).gain(.4)
+      $: s("piano hh*3 oh").speed(1.3).slow(2).gain(.3)
+  - id: "inspired_1000_41"
+    source_id: "1000_41"
+    source_seed: 1041
+    voices: 3
+    events: 8
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+      $: s("hh ~").gain(.15)
+      $: s("ocarina gm_piano").slow(2).gain(.4)
+  - id: "inspired_1000_410"
+    source_id: "1000_410"
+    source_seed: 1410
+    voices: 3
+    events: 28
+    code: |
+      setcpm(96/4)
+      $: s("cr bd sd bd").gain(.7)
+      $: s("gm_harmonica").gain(.35)
+      $: s("hh*8 sax").hpf(500).gain(.25)
+  - id: "inspired_1000_411"
+    source_id: "1000_411"
+    source_seed: 1411
+    voices: 4
+    events: 26
+    code: |
+      setcpm(120/4)
+      $: s("amen cp sd hh*2").gain(.7)
+      $: n("1 2 ~ 4").scale("g:minor:pentatonic").s("sawtooth").release(.3).gain(.4)
+      $: note("c3 d3 e3 f3").sound("bd*2 ~").lpf(4000).gain(.5)
+      $: note("g3 bb3 f4").s("gm_ocarina").release(1.2).room(.6).clip(1).attack(.05).gain(.35)
+  - id: "inspired_1000_412"
+    source_id: "1000_412"
+    source_seed: 1412
+    voices: 2
+    events: 8
+    code: |
+      setcpm(90/4)
+      $: s("piano jazz").gain(.4)
+      $: s("gm_electric_bass_finger gm_lead_8_bass_lead").room(.6).delay(.5).gain(.4)
+  - id: "inspired_1000_413"
+    source_id: "1000_413"
+    source_seed: 1413
+    voices: 3
+    events: 26
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: s("hh*8").gain(.2)
+      $: s("recorder_bass_sus gm_lead_2_sawtooth recorder_tenor_sus").gain(.35)
+  - id: "inspired_1000_414"
+    source_id: "1000_414"
+    source_seed: 1414
+    voices: 4
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("cymbal ~").slow(2).gain(.4)
+      $: s("hh*4 tambourine").gain(.2)
+      $: s("cowbell ~").gain(.3)
+      $: s("gm_pad_warm sd").gain(.35).delay(.3).room(.6)
+  - id: "inspired_1000_415"
+    source_id: "1000_415"
+    source_seed: 1415
+    voices: 3
+    events: 10
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("cymbal ~").bank("RolandTR909").gain(.4)
+      $: note("a4 d5").s("sawtooth").gain(.35)
+  - id: "inspired_1000_416"
+    source_id: "1000_416"
+    source_seed: 1416
+    voices: 4
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("linndrum_bd hh*8").slow(2).gain(.75)
+      $: note("e3 g3").sound("bd*2 ~").lpf(800).gain(.5)
+      $: s("triangle perc*3").slow(2).gain(.3)
+      $: s("gm_electric_bass_finger gm_bassoon").slow(3).gain(.3)
+  - id: "inspired_1000_417"
+    source_id: "1000_417"
+    source_seed: 1417
+    voices: 3
+    events: 10
+    code: |
+      setcpm(90/4)
+      $: s("kick ~ snare ~").slow(2).gain(.75)
+      $: note("c2 f1 g1").s("sawtooth").gain(.4)
+      $: s("sawtooth square").slow(3).gain(.3)
+  - id: "inspired_1000_418"
+    source_id: "1000_418"
+    source_seed: 1418
+    voices: 3
+    events: 12
+    code: |
+      setcpm(100/4)
+      $: s("snare ~ snare ~").gain(.6).release(.1).attack(.03)
+      $: s("recorder_bass_sus gm_lead_6_voice").room(.4).speed(1.01).gain(.35)
+      $: s("gm_bassoon gm_pizzicato_strings:4").gain(.4)
+  - id: "inspired_1000_419"
+    source_id: "1000_419"
+    source_seed: 1419
+    voices: 4
+    events: 26
+    code: |
+      setcpm(112/4)
+      $: sound("bd*2 ~").delay(.5).room(.8).speed(.9).gain(.75)
+      $: s("hh*3 oh ~").clip(.6).release(.06).room(.4).gain(.2)
+      $: s("gm_baritone_sax").gain(.4)
+      $: note("c3 d3 e3 f3 g3 ~ b3 ~").s("sawtooth").gain(.35)
+  - id: "inspired_1000_42"
+    source_id: "1000_42"
+    source_seed: 1042
+    voices: 2
+    events: 8
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ cr ~").gain(.6).transpose(-12).orbit(1)
+      $: s("gm_pad_warm gm_choir_aahs:1").room(1.0).delay(.5).gain(.35)
+  - id: "inspired_1000_420"
+    source_id: "1000_420"
+    source_seed: 1420
+    voices: 3
+    events: 34
+    code: |
+      setcpm(110/4)
+      $: s("kick*4 hh*3 ~ perc").gain(.7)
+      $: note("c3 eb3 g2 bb2 eb2 bb3 a2 d2").s("sawtooth").gain(.35)
+      $: s("gm_distortion_guitar gm_tenor_sax:1").slow(2).gain(.3)
+  - id: "inspired_1000_421"
+    source_id: "1000_421"
+    source_seed: 1421
+    voices: 3
+    events: 12
+    code: |
+      setcpm(100/4)
+      $: s("amen bass").bank("AlesisHR16").clip(.85).note("c4 a4 ~ c#5 b4 a#4 ~ a2").gain(.7)
+      $: n("0 -1").scale("d:minor:pentatonic").s("rd").release(.3).gain(.35)
+      $: s("gm_piccolo crow ~ ~").bank("RolandMT32").room(.8).gain(.4)
+  - id: "inspired_1000_422"
+    source_id: "1000_422"
+    source_seed: 1422
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: s("hh*16").slow(2).gain(.2)
+      $: note("b2 f2").sound("supersaw").lpf(1800).gain(.3)
+  - id: "inspired_1000_423"
+    source_id: "1000_423"
+    source_seed: 1423
+    voices: 4
+    events: 18
+    code: |
+      setcpm(104/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: n("-3 4 3 4").pan(.7).room(.2).s("sawtooth").gain(.35)
+      $: s("ocarina gm_overdriven_guitar:3").slow(2).gain(.3)
+      $: s("gm_distortion_guitar gm_marimba").room(.5).gain(.35).lpf(1500).resonance(5)
+  - id: "inspired_1000_424"
+    source_id: "1000_424"
+    source_seed: 1424
+    voices: 3
+    events: 18
+    code: |
+      setcpm(96/4)
+      $: s("bd*4").struct("x*4").gain(.7)
+      $: note("b2 d2 g2 bb2").s("triangle").gain(.35)
+      $: note(0).sound("sine").lpf(3500).gain(.3).room(.8)
+  - id: "inspired_1000_425"
+    source_id: "1000_425"
+    source_seed: 1425
+    voices: 4
+    events: 26
+    code: |
+      setcpm(112/4)
+      $: s("kick*4 ~").gain(.75)
+      $: note("c2 g2 a2 f2").sound("sine").lpf(1500).room(.3).delay(.3).delaytime(.125).gain(.4)
+      $: note("c4 d4 e4 f4").sound("supersaw").lpf(800).gain(.35)
+      $: s("gm_piano gm_trumpet:2").slow(2).gain(.3)
+  - id: "inspired_1000_426"
+    source_id: "1000_426"
+    source_seed: 1426
+    voices: 2
+    events: 8
+    code: |
+      setcpm(100/4)
+      $: s("kick ~ snare ~").slow(2).gain(.75)
+      $: s("gtr mt*2").gain(.35)
+  - id: "inspired_1000_427"
+    source_id: "1000_427"
+    source_seed: 1427
+    voices: 4
+    events: 26
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").gain(.75)
+      $: note("g#4 f#4 f4 d#4 d4 c4 a4 e4").sound("supersaw").lpf(1393).room(.5).release(.4).attack(.1).gain(.35)
+      $: s("gm_baritone_sax sn:3").gain(.35)
+      $: s("gm_ocarina").speed(.963).lpf(400).gain(.4)
+  - id: "inspired_1000_428"
+    source_id: "1000_428"
+    source_seed: 1428
+    voices: 4
+    events: 36
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("a4 c#5@3 ~ a4").s("sawtooth").lpf("<800@2 1200@2 2400>").hpf(50).gain(.4)
+      $: n("9 8 ~ 14 8 6").scale("a3:minor").s("sawtooth").lpf(1200).release(.1).gain(.3)
+  - id: "inspired_1000_429"
+    source_id: "1000_429"
+    source_seed: 1429
+    voices: 4
+    events: 30
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("c2 c2 d2 e2 f2 c2 d2 e2").s("gm_electric_bass_pick").gain(.5)
+      $: note("c4 ~ d4 d4").s("mt lt").gain(.35)
+      $: s("sawtooth square").note("c3 eb3 g3 c3").gain(.2).release(.1).pan(.5).room(.6).delay(.4)
+  - id: "inspired_1000_43"
+    source_id: "1000_43"
+    source_seed: 1043
+    voices: 2
+    events: 12
+    code: |
+      setcpm(128/4)
+      $: s("bd*2 ~").gain(.8)
+      $: s("hh*4 ~").gain(.25).release(.15).attack(.05)
+  - id: "inspired_1000_430"
+    source_id: "1000_430"
+    source_seed: 1430
+    voices: 4
+    events: 41
+    code: |
+      setcpm(100/4)
+      $: s("bd sd bd sd").lpf("<800 1600>").room(.5).gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("5 5 5 5 5 5 5 5").scale("c:major").add(12).s("sawtooth").lpf(2000).gain(.3)
+      $: s("gm_pad_warm").slow(4).gain(.25).room(.6)
+  - id: "inspired_1000_431"
+    source_id: "1000_431"
+    source_seed: 1431
+    voices: 5
+    events: 32
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("c2 ~ c2 g1").s("gm_string_ensemble_1").gain(.5)
+      $: n("0 3 5 7").scale("c3:minor").s("sawtooth").struct("<x ~ ~ x>*4").fm(1.1).lpf(2000).gain(.35)
+      $: n("~ 4").scale("c5:minor").s("square").gain(.3).pan(.6)
+  - id: "inspired_1000_432"
+    source_id: "1000_432"
+    source_seed: 1432
+    voices: 3
+    events: 12
+    code: |
+      setcpm(120/4)
+      $: s("pulse ~ pulse ~").gain(.6)
+      $: s("hh*3").gain(.2)
+      $: s("gm_electric_guitar_jazz").note("c4 e4 g4 c5").lpf(2000).room(.5).gain(.35)
+  - id: "inspired_1000_433"
+    source_id: "1000_433"
+    source_seed: 1433
+    voices: 5
+    events: 28
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").hpf(7000).lpf(2000).gain(.3)
+      $: s("cymbal ~ ~ ~").clip(.6).gain(.4)
+      $: s("gm_pad_bowed gm_electric_bass_finger").note("c3 eb3 g3 c4").gain(.4).room(.4)
+      $: s("gm_acoustic_guitar_nylon gm_trumpet:2").bank("RolandMT32").note("c4 e4").slow(2).gain(.3)
+  - id: "inspired_1000_434"
+    source_id: "1000_434"
+    source_seed: 1434
+    voices: 5
+    events: 40
+    code: |
+      setcpm(104/4)
+      $: s("rd*3 sd").struct("1 ~ ~ ~").gain(.7)
+      $: s("hh*16").distort("10:.17").room(.3).gain(.2)
+      $: s("gm_drawbar_organ").note("c3 e3 g3 c4").room(.3).gain(.35)
+      $: s("piano").note("c5 e5 g5 c6").bank("RolandMT32").gain(.3)
+      $: s("square").note("c2 eb2 g2").gain(.4).pan(.5)
+  - id: "inspired_1000_435"
+    source_id: "1000_435"
+    source_seed: 1435
+    voices: 5
+    events: 14
+    code: |
+      setcpm(128/4)
+      $: s("bd*2 ~").gain(.85)
+      $: s("hh*3").gain(.2)
+      $: s("gm_electric_bass_pick").note("f2 ab2 c3 f2").slow(2).clip(1).gain(.5)
+      $: s("gm_piccolo").note("f4 ab4 c5").slow(2).clip(1).gain(.3)
+      $: s("gm_harmonica").note("f3 c4").bank("AkaiLinn").gain(.3)
+  - id: "inspired_1000_436"
+    source_id: "1000_436"
+    source_seed: 1436
+    voices: 4
+    events: 30
+    code: |
+      setcpm(118/4)
+      $: s("bd ~ sd ~").lpf("<800 1200>").room(.4).gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 ~ 5 3 4").scale("c3:minor").s("sawtooth").lpq(4).shape(.3).decay(.05).gain(.4)
+      $: note("c4").s("supersaw").lpf(2000).gain(.3)
+  - id: "inspired_1000_437"
+    source_id: "1000_437"
+    source_seed: 1437
+    voices: 4
+    events: 36
+    code: |
+      setcpm(126/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("9 4 7 8 4 6").scale("a3:minor").s("sawtooth").lpf(1800).gain(.35)
+      $: s("sawtooth square").note("a2 c3 e3").gain(.3)
+  - id: "inspired_1000_438"
+    source_id: "1000_438"
+    source_seed: 1438
+    voices: 4
+    events: 34
+    code: |
+      setcpm(100/4)
+      $: s("lt ~ lt ~").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("5 1 2 4 ~ 5 5").scale("g4:minor").s("gm_piano").lpf(1571).hpf(500).clip(1).release(.07).delay(.3).gain(.4)
+      $: s("gm_ocarina").note("a3 f4 c4").clip(.85).gain(.25)
+  - id: "inspired_1000_439"
+    source_id: "1000_439"
+    source_seed: 1439
+    voices: 4
+    events: 25
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: note("g#4@2 a#4@2").s("sine").gain(.4)
+      $: s("vocal").note("g#3 a#3").slow(4).gain(.3)
+  - id: "inspired_1000_44"
+    source_id: "1000_44"
+    source_seed: 1044
+    voices: 4
+    events: 32
+    code: |
+      setcpm(120/4)
+      $: s("square ~ rd*8 ~").bank("linn9000").gain(.8)
+      $: s("oh ~").gain(.2)
+      $: note("c2 g1").sound("sawtooth").lpf(1547).gain(.4)
+      $: note("g2 c2 f2 c3").sound("supersaw").lpf(650).gain(.3)
+  - id: "inspired_1000_440"
+    source_id: "1000_440"
+    source_seed: 1440
+    voices: 4
+    events: 27
+    code: |
+      setcpm(100/4)
+      $: s("amen*2").slow(2).gain(.7)
+      $: s("hh*8").gain(.2)
+      $: note("a4 d5 c#5 d5").s("sawtooth").lpf(2500).gain(.4)
+      $: s("gm_electric_bass_finger:3").note("a2 d3 c#3 d3").slow(2).gain(.4)
+  - id: "inspired_1000_441"
+    source_id: "1000_441"
+    source_seed: 1441
+    voices: 4
+    events: 32
+    code: |
+      setcpm(112/4)
+      $: s("linndrum_sd conga*3").struct("[~ x]*4 [[~ x]*2 [x@3 ~]]").gain(.7)
+      $: s("hh*8").gain(.2)
+      $: s("gm_electric_bass_finger:2").note("c2 e2 g2 c2").slow(2).gain(.4)
+      $: s("gm_synth_strings_2").note("c4 e4 g4").slow(2).gain(.3)
+  - id: "inspired_1000_442"
+    source_id: "1000_442"
+    source_seed: 1442
+    voices: 4
+    events: 54
+    code: |
+      setcpm(120/4)
+      $: s("cowbell ~ cowbell ~").gain(.5)
+      $: s("hh*8").gain(.2)
+      $: note("g5 c6 g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 ~").s("sawtooth").lpf(3000).gain(.3)
+      $: note("c3 f3").s("sawtooth").gain(.4)
+  - id: "inspired_1000_443"
+    source_id: "1000_443"
+    source_seed: 1443
+    voices: 5
+    events: 29
+    code: |
+      setcpm(100/4)
+      $: s("bd sd bd sd bd sd bd sd").room(.5776).gain(.8)
+      $: sound("rim*2").lpf(3200).gain(.2)
+      $: s("gm_oboe cr").note("a4 c5").gain(.3)
+      $: s("psaltery_pluck gm_lead_8_bass_lead").note("a1 g1 a1 g1").gain(.35)
+      $: s("gm_tuba").note("a1").slow(2).gain(.3)
+  - id: "inspired_1000_444"
+    source_id: "1000_444"
+    source_seed: 1444
+    voices: 4
+    events: 68
+    code: |
+      setcpm(114/4)
+      $: note("e4 c4").sound("bd sd").lpf(2000).room(.3).delay(.5).gain(.35)
+      $: s("hh*8").gain(.3)
+      $: n("4 11 9 10 8 ~ 0 ~ ~ 2 11 9 10 8 13 12 9 ~ 6 13 ~").scale("d3:whole:tone").clip(.95).s("sawtooth").gain(.4)
+      $: note("c5 g4 e4 c4 g4 d4 b3 g3").s("sawtooth").lpf(2500).gain(.3)
+  - id: "inspired_1000_445"
+    source_id: "1000_445"
+    source_seed: 1445
+    voices: 4
+    events: 45
+    code: |
+      setcpm(108/4)
+      $: note("c4 d#4 f4 ~ d#4 d#4 c4 g#4 ~ g4 ~ f#4 f4 d#4 c#4 a#3").sound("bd sd").lpf(2177).gain(.5621).release(.04).attack(.03)
+      $: s("hh*8").gain(.2)
+      $: s("bass").note("c2 g1 c2 g1").gain(.5)
+      $: s("woodblock:1 woodblock:2*2").note("c2 ~").slow(2).gain(.3)
+  - id: "inspired_1000_446"
+    source_id: "1000_446"
+    source_seed: 1446
+    voices: 3
+    events: 46
+    code: |
+      setcpm(100/4)
+      $: n("0 ~ 7 6 4 5 ~ 2 3 ~ 4 3 ~ 4 0 7 6 4").clip(1).s("bd sd").lpf(600).hpf(200).gain(.7)
+      $: s("hh*8").gain(.2)
+      $: s("gm_oboe").note("c4 e4").gain(.2).release(.6)
+  - id: "inspired_1000_447"
+    source_id: "1000_447"
+    source_seed: 1447
+    voices: 4
+    events: 15
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("linn9000").gain(.8)
+      $: s("linndrum_hh*8").slow(2).gain(.2)
+      $: s("flbass").note("c2 g1").slow(2).gain(.4)
+      $: s("gm_reed_organ:5").note("c4 e4 g4").gain(.3)
+  - id: "inspired_1000_448"
+    source_id: "1000_448"
+    source_seed: 1448
+    voices: 4
+    events: 50
+    code: |
+      setcpm(104/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("1 4 8").scale("g4:minor").transpose(12).s("sawtooth").gain(.35)
+      $: n("3 3 ~ 3 ~ 3 3 -1 ~ -1 -1 0 ~ 0 0 0").scale("g4:minor").s("gm_piccolo").gain(.5)
+  - id: "inspired_1000_449"
+    source_id: "1000_449"
+    source_seed: 1449
+    voices: 5
+    events: 17
+    code: |
+      setcpm(122/4)
+      $: s("hh*4 bd").lpf(3500).resonance(11).gain(.6).release(.1)
+      $: s("psaltery_pluck").note("c2 g2").slow(2).gain(.4)
+      $: s("gm_epiano1:1").note("c4 e4 g4").gain(.4)
+      $: s("supersaw").note("c3 eb3 g3").gain(.35)
+      $: s("gm_baritone_sax").speed(.7).note("c2").gain(.3)
+  - id: "inspired_1000_45"
+    source_id: "1000_45"
+    source_seed: 1045
+    voices: 4
+    events: 12
+    code: |
+      setcpm(128/4)
+      $: sound("bd*2 ~").lpf(700).room(.5).delay(.4).gain(.8)
+      $: s("~ cr").gain(.3).pan(0).room(.6)
+      $: note("d4 d#4@4").sound("hh bd rim bd").lpf(5000).gain(.5).decay(.16).sustain(0).room(.5).delay(.3)
+      $: sound("supersaw").lpf(700).room(.5).delay(.4).gain(.3)
+  - id: "inspired_1000_450"
+    source_id: "1000_450"
+    source_seed: 1450
+    voices: 3
+    events: 19
+    code: |
+      setcpm(96/4)
+      $: s("~ ~ bd ~").lpf(650).gain(.8)
+      $: s("cp hh").slow(4).gain(.3)
+      $: note("a3 f3 c4 g3 a3 f3 c4 g3").s("sawtooth").lpf(650).gain(.35)
+  - id: "inspired_1000_451"
+    source_id: "1000_451"
+    source_seed: 1451
+    voices: 4
+    events: 34
+    code: |
+      setcpm(118/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").lpf("<600 800 1000 1200>").gain(.8)
+      $: s("sd ht").struct("x ~ x ~ x x").gain(.4)
+      $: n("0 2 4").scale("c:major").s("sawtooth").decay(.03).gain(.4)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_452"
+    source_id: "1000_452"
+    source_seed: 1452
+    voices: 4
+    events: 30
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*16").slow(4).gain(.2)
+      $: note("c#4").s("sawtooth").fast("<2 4>").gain(.35)
+      $: s("gm_oboe gm_vibraphone:3").note("c4 e4").fast("<2 4>").gain(.3)
+  - id: "inspired_1000_453"
+    source_id: "1000_453"
+    source_seed: 1453
+    voices: 3
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: s("sd ~ sd sd").bank("RolandMT32").gain(.75).release(.3875).room(.5)
+      $: note("b4 ~ a#4 f#4").s("sawtooth").gain(.5)
+      $: n("~ 9 9 12 13 9").scale("a4:minor").s("gm_lead_8_bass_lead").slow(2).gain(.35)
+  - id: "inspired_1000_454"
+    source_id: "1000_454"
+    source_seed: 1454
+    voices: 3
+    events: 54
+    code: |
+      setcpm(130/4)
+      $: note("c d e f e d c a").sound("bd rim").fast(2).gain(.7)
+      $: s("hh*8").gain(.2)
+      $: n("6 7 7").scale("c3:minor").s("sawtooth").gain(.4)
+  - id: "inspired_1000_455"
+    source_id: "1000_455"
+    source_seed: 1455
+    voices: 4
+    events: 12
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+      $: n("-2 -1 0 2 0 1").scale("g2:lydian").s("hh*16").slow(2).gain(.2)
+      $: s("gm_pad_warm").note("g3 b3 d4").slow(2).gain(.3).room(.5)
+      $: s("recorder_bass_sus").note("g2").slow(2).gain(.3)
+  - id: "inspired_1000_456"
+    source_id: "1000_456"
+    source_seed: 1456
+    voices: 3
+    events: 24
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("sawtooth square").note("c3 eb3 g3 c4").clip(.9494).gain(.4)
+  - id: "inspired_1000_457"
+    source_id: "1000_457"
+    source_seed: 1457
+    voices: 3
+    events: 15
+    code: |
+      setcpm(100/4)
+      $: s("recorder_bass_sus").note("c3 g2").slow(2).gain(.35)
+      $: s("oh*2").gain(.2)
+      $: s("gm_harmonica rd:3*4").lpf(2500).gain(.6631).release(.1)
+  - id: "inspired_1000_458"
+    source_id: "1000_458"
+    source_seed: 1458
+    voices: 4
+    events: 14
+    code: |
+      setcpm(108/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("e5 d#5 a#4").s("sawtooth").gain(.35)
+      $: s("gm_acoustic_guitar_steel:2").note("c3 e3 g3").gain(.6).room(.2811)
+      $: s("sawtooth square").note("c2 g2").crush(12).lpf(3993).slow(2).gain(.3)
+  - id: "inspired_1000_459"
+    source_id: "1000_459"
+    source_seed: 1459
+    voices: 4
+    events: 28
+    code: |
+      setcpm(112/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: s("gm_electric_bass_finger:2").note("c2 g2").gain(.5)
+      $: note("c5 f5 ~ b4").sound("square").lpf(4000).hpf(50).gain(.35)
+  - id: "inspired_1000_46"
+    source_id: "1000_46"
+    source_seed: 1046
+    voices: 3
+    events: 12
+    code: |
+      setcpm(96/4)
+      $: s("cr bd sd bd").slow(4).gain(.7)
+      $: s("linndrum_bd ~").bank("RolandMT32").room(.7).delay(.4).delaytime(.125).delayfeedback(.3).gain(.6)
+      $: note("c4*2 d#4 f4 ~").s("sawtooth").gain(.35).lpf(1500)
+  - id: "inspired_1000_460"
+    source_id: "1000_460"
+    source_seed: 1460
+    voices: 3
+    events: 73
+    code: |
+      setcpm(100/4)
+      $: s("gm_drawbar_organ").note("c3 e3 g3").slow(2).gain(.4)
+      $: s("shaker_small:3*8").slow(2).gain(.2)
+      $: note("a2*8 ~ ~ a2*8 a2*8 a2*8").s("sawtooth").room(.6807).gain(.4)
+  - id: "inspired_1000_461"
+    source_id: "1000_461"
+    source_seed: 1461
+    voices: 3
+    events: 8
+    code: |
+      setcpm(100/4)
+      $: s("hh*2 hh").slow(4).gain(.2)
+      $: s("ocarina_vib gm_trumpet:2").note("c4 e4").gain(.4).release(.05)
+      $: s("gm_piano pulse").note("c3 g3").slow(2).gain(.3)
+  - id: "inspired_1000_462"
+    source_id: "1000_462"
+    source_seed: 1462
+    voices: 3
+    events: 22
+    code: |
+      setcpm(96/4)
+      $: s("piano sd*3").slow(2).gain(.4)
+      $: s("snare ~").delay(.6716).gain(.3).pan("0.2 -0.2")
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_463"
+    source_id: "1000_463"
+    source_seed: 1463
+    voices: 3
+    events: 13
+    code: |
+      setcpm(104/4)
+      $: s("woodblock:1 woodblock:2*2 snare_rim:0").slow(2).gain(.5)
+      $: s("linndrum_hh amen linndrum_oh shaker_small:0").gain(.4)
+      $: s("gm_synth_strings_1").note("c3 e3 g3").slow(2).gain(.3).room(.4)
+  - id: "inspired_1000_464"
+    source_id: "1000_464"
+    source_seed: 1464
+    voices: 3
+    events: 22
+    code: |
+      setcpm(120/4)
+      $: s("cowbell ~ cowbell ~").speed(1.5).gain(.5)
+      $: s("sd ~").pan(.0709).gain(.6)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_465"
+    source_id: "1000_465"
+    source_seed: 1465
+    voices: 4
+    events: 24
+    code: |
+      setcpm(112/4)
+      $: s("bd!3 bd*2").gain(.7)
+      $: s("hh*2").gain(.2)
+      $: note("e4 a4 ~ e4").s("supersaw").gain(.35)
+      $: n("0 4").scale("f:major").s("gm_overdriven_guitar:3").gain(.5).release(.2543).hpf(2000).lpf(3000)
+  - id: "inspired_1000_466"
+    source_id: "1000_466"
+    source_seed: 1466
+    voices: 3
+    events: 9
+    code: |
+      setcpm(100/4)
+      $: s("cymbal ~ cymbal ~").gain(.4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+      $: s("recorder_bass_sus").note("c3").transpose(12).slow(2).gain(.35)
+  - id: "inspired_1000_467"
+    source_id: "1000_467"
+    source_seed: 1467
+    voices: 3
+    events: 15
+    code: |
+      setcpm(100/4)
+      $: s("perc*3").slow(2).gain(.5)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+      $: note("<[g3 bb3 d4 f4] [c4 e4 g4 bb4] [f3 a3 c4 e4]>").sound("piano").lpf(4618).room(.6).delay("<0 .5>").gain(.4)
+  - id: "inspired_1000_468"
+    source_id: "1000_468"
+    source_seed: 1468
+    voices: 3
+    events: 22
+    code: |
+      setcpm(100/4)
+      $: s("cowbell ~ cowbell ~").gain(.5).room(.3)
+      $: n("-2 ~ 5 3 4 5").scale("C:hirajoshi").s("triangle").lpf(2000).release(.2).gain(.4)
+      $: s("kick*4").bank("RolandTR909").gain(.8)
+  - id: "inspired_1000_469"
+    source_id: "1000_469"
+    source_seed: 1469
+    voices: 3
+    events: 12
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("linndrum").gain(.8).release(.3)
+      $: note("d5 c#5@2 d#5@4 ~").s("sawtooth").lpf(2000).room(.5).delay(.3).delaytime(.125).gain(.4)
+      $: s("cymbal ~ ~ ~").gain(.3)
+  - id: "inspired_1000_47"
+    source_id: "1000_47"
+    source_seed: 1047
+    voices: 2
+    events: 28
+    code: |
+      setcpm(96/4)
+      $: s("bd*2 ~").gain(.6).room(.7)
+      $: note("e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5").s("sawtooth").gain(.35).room(.7)
+  - id: "inspired_1000_470"
+    source_id: "1000_470"
+    source_seed: 1470
+    voices: 3
+    events: 8
+    code: |
+      setcpm(90/4)
+      $: s("bd:1 ~ bd:1 ~").gain(.8)
+      $: note("d5 ~ a4 ~").s("gm_synth_strings_1").slow(2).gain(.4).room(.4)
+      $: s("gm_vibraphone:3").gain(.3).attack(.05)
+  - id: "inspired_1000_471"
+    source_id: "1000_471"
+    source_seed: 1471
+    voices: 3
+    events: 12
+    code: |
+      setcpm(110/4)
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      $: n("0 3 7 ~").scale("g:minor").s("sawtooth").gain(.4).delay(.2).delayfeedback(.4).lpf(1500)
+      $: s("lt ht").slow(2).gain(.3)
+  - id: "inspired_1000_472"
+    source_id: "1000_472"
+    source_seed: 1472
+    voices: 3
+    events: 9
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("c3 eb3").add("<0 .12>").transpose("<0 1 2 1>/8").s("sawtooth").gain(.4).lpf(1200)
+      $: s("sleighbells ~").slow(2).gain(.2)
+  - id: "inspired_1000_473"
+    source_id: "1000_473"
+    source_seed: 1473
+    voices: 3
+    events: 14
+    code: |
+      setcpm(120/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("gm_electric_bass_pick").note("a2 d2 c#2 a2").clip(.9).gain(.5)
+      $: note("a4 d5 c#5 c5").s("bell").gain(.35).release(.2)
+  - id: "inspired_1000_474"
+    source_id: "1000_474"
+    source_seed: 1474
+    voices: 3
+    events: 28
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: note("c3 d3 e3 f3").s("sawtooth").speed(1.1).lpf(1500).gain(.4)
+      $: s("hh*8").gain(.2).room(.3)
+  - id: "inspired_1000_475"
+    source_id: "1000_475"
+    source_seed: 1475
+    voices: 3
+    events: 9
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").gain(.8).slow(2)
+      $: s("supersaw hh gm_piano").room(.4).gain(.4).hpf(400).clip(1)
+      $: s("gm_electric_bass_finger:2").note("c2 g2").slow(2).gain(.5)
+  - id: "inspired_1000_476"
+    source_id: "1000_476"
+    source_seed: 1476
+    voices: 3
+    events: 38
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ cajon ~").gain(.8)
+      $: s("gm_electric_guitar_clean:2").note("e4 c4 d4 e4").gain(.3).release(.15)
+      $: s("hh*16").gain(.2).room(.4).delay(.3).delaytime(.166).delayfeedback(.4)
+  - id: "inspired_1000_477"
+    source_id: "1000_477"
+    source_seed: 1477
+    voices: 3
+    events: 38
+    code: |
+      setcpm(110/4)
+      $: s("hh ~ hh ~").lpf(2500).room(.2).gain(.3)
+      $: note("c2*8 c3 d#3@2 c#3").segment(16).s("sawtooth").gain(.4)
+      $: s("bd ~ ~ ~").gain(.8)
+  - id: "inspired_1000_478"
+    source_id: "1000_478"
+    source_seed: 1478
+    voices: 3
+    events: 9
+    code: |
+      setcpm(90/4)
+      $: s("psaltery_pluck clave").gain("<.65 .75 .85>").cutoff(500).resonance(10)
+      $: s("gm_acoustic_guitar_steel:2 sn:3").gain(.5).release(.4)
+      $: s("recorder_bass_sus").note("c2 g2").slow(4).gain(.4)
+  - id: "inspired_1000_479"
+    source_id: "1000_479"
+    source_seed: 1479
+    voices: 4
+    events: 11
+    code: |
+      setcpm(120/4)
+      $: s("clave hh*2").cutoff(2000).gain(.4)
+      $: note("a1").s("sawtooth").lpf(500).resonance(7).room(.3).clip(1).gain(.6)
+      $: s("piano").velocity(.7).gain(.4)
+      $: s("gm_electric_bass_finger:7").note("a2 c3").slow(2).gain(.4)
+  - id: "inspired_1000_48"
+    source_id: "1000_48"
+    source_seed: 1048
+    voices: 2
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("rd*3 sd:1!3").slow(2).gain(.6)
+      $: n("4 3 2 3 4 4 ~ ~").scale("g2:minor pentatonic").s("sawtooth").gain(.35).lpf(1400)
+  - id: "inspired_1000_480"
+    source_id: "1000_480"
+    source_seed: 1480
+    voices: 2
+    events: 6
+    code: |
+      setcpm(90/4)
+      $: s("bd ~ sd ~").bank("SequentialCircuitsDrumtracks").slow(2).gain(.8)
+      $: s("mt mt").velocity(.5).gain(.4)
+  - id: "inspired_1000_481"
+    source_id: "1000_481"
+    source_seed: 1481
+    voices: 3
+    events: 14
+    code: |
+      setcpm(96/4)
+      $: s("gm_electric_guitar_jazz").note("e2 b2").gain(.4).room(.5)
+      $: note("c2 g2").s("square").lpf(2000).room(.5).delay(.3).gain(.4)
+      $: s("rd*3 clave").speed(.9).gain(.4).room(.3).pan(.4)
+  - id: "inspired_1000_482"
+    source_id: "1000_482"
+    source_seed: 1482
+    voices: 3
+    events: 29
+    code: |
+      setcpm(130/4)
+      $: s("clave ~ clave ~").lpf(4000).room(.5).release(.2).gain(.4)
+      $: n("9 10 8 13 9 8 6 ~ 8 6 8 9").scale("c:minor").s("sawtooth").gain(.3).release(.08).attack(.001)
+      $: s("bd sd*2").bank("RolandTR909").slow(2).gain(.8)
+  - id: "inspired_1000_483"
+    source_id: "1000_483"
+    source_seed: 1483
+    voices: 3
+    events: 13
+    code: |
+      setcpm(90/4)
+      $: s("cr ~ bd ~").lpf(650).room(.6).gain(.6)
+      $: note("g2 ~ f#3 ~ e4 d#4").clip(.8).release(.05).s("sawtooth").gain(.4)
+      $: s("gm_ocarina").slow(2).gain(.4)
+  - id: "inspired_1000_484"
+    source_id: "1000_484"
+    source_seed: 1484
+    voices: 3
+    events: 16
+    code: |
+      setcpm(90/4)
+      $: s("snare ~ snare ~").gain(.4).slow(2)
+      $: s("piano").note("c3 e3 g3").clip(.5).gain(.4)
+      $: s("lt*3 lt mt*2").gain(.3)
+  - id: "inspired_1000_485"
+    source_id: "1000_485"
+    source_seed: 1485
+    voices: 4
+    events: 33
+    code: |
+      setcpm(120/4)
+      $: s("bd*4 sd*2 cp*8").slow(4).gain(.7)
+      $: s("oh*4 bd!3 bd*2 ~").gain(.3)
+      $: s("sd ht hh bd").gain(.3)
+      $: note(4).scale("c:minor").s("sawtooth").gain(.3)
+  - id: "inspired_1000_486"
+    source_id: "1000_486"
+    source_seed: 1486
+    voices: 3
+    events: 10
+    code: |
+      setcpm(90/4)
+      $: note("b1 d2").transpose(1).velocity(.5).s("sawtooth").gain(.4)
+      $: s("recorder_bass_sus").note("b3 d3").gain(.5)
+      $: s("bd ~ sd ~").bank("RolandTR808").room(.5).gain(.7)
+  - id: "inspired_1000_487"
+    source_id: "1000_487"
+    source_seed: 1487
+    voices: 4
+    events: 17
+    code: |
+      setcpm(100/4)
+      $: n("2 -1").scale("c:minor").s("sawtooth").gain(.4)
+      $: s("bd*2 sd").bank("RolandTR909").slow(2).gain(.8)
+      $: s("gm_tuba").note("c2 g2").gain(.4).release(.5)
+      $: s("rd:3*4").speed(.95).velocity(.6).gain(.3)
+  - id: "inspired_1000_488"
+    source_id: "1000_488"
+    source_seed: 1488
+    voices: 3
+    events: 10
+    code: |
+      setcpm(100/4)
+      $: s("woodblock:1 woodblock:2*2").vib(5).vibmod(.2).gain(.2)
+      $: s("piano").note("c4 e4 g4").velocity(.6).gain(.4)
+      $: s("bd ~ ~ ~").gain(.7)
+  - id: "inspired_1000_489"
+    source_id: "1000_489"
+    source_seed: 1489
+    voices: 3
+    events: 23
+    code: |
+      setcpm(90/4)
+      $: note("c3 g2").s("sawtooth").gain(.4)
+      $: s("~ sd:1!3").slow(2).gain(.6)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_49"
+    source_id: "1000_49"
+    source_seed: 1049
+    voices: 3
+    events: 22
+    code: |
+      setcpm(104/4)
+      $: s("bd!3 ~ oh*4 ~").gain(.75)
+      $: note("c4 g#4").sound("sawtooth").gain(.4)
+      $: s("gm_harmonica hh*3").slow(2).gain(.3)
+  - id: "inspired_1000_490"
+    source_id: "1000_490"
+    source_seed: 1490
+    voices: 4
+    events: 16
+    code: |
+      setcpm(90/4)
+      $: note("c2 c2").s("sawtooth").gain(.3)
+      $: s("gm_pad_warm").note("c3 g3").gain(.4).hpf(250).lpf(1470).room(.4)
+      $: s("pad").note("a3 e3").gain("[.5 .3 .2 .1]*2")
+      $: note("a2 a2 a3 a2").s("triangle").lpf(2000).room(.5).delay(.3).gain(.4)
+  - id: "inspired_1000_491"
+    source_id: "1000_491"
+    source_seed: 1491
+    voices: 3
+    events: 28
+    code: |
+      setcpm(96/4)
+      $: note("~ b4@2 g#4@2 a#4@2").s("woodblock:1")
+      $: n("-2 ~ 5 7 9 7 8 5 1 2 4 ~").scale("a4:minor").s("sawtooth").gain(.4)
+      $: s("bd bd").slow(2).gain(.8)
+  - id: "inspired_1000_492"
+    source_id: "1000_492"
+    source_seed: 1492
+    voices: 3
+    events: 20
+    code: |
+      setcpm(90/4)
+      $: note("b1 f#2 f2 bb1").s("sawtooth").gain(.35)
+      $: note("c3 d3 e3 f3").velocity(.78).pan(.3).room(.3).delay(.3).delaytime(.12).gain(.4).s("triangle")
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+  - id: "inspired_1000_493"
+    source_id: "1000_493"
+    source_seed: 1493
+    voices: 4
+    events: 14
+    code: |
+      setcpm(120/4)
+      $: s("triangle sd*2").gain(.4).release(.15).attack(.047)
+      $: s("gm_piano woodblock").gain(.4)
+      $: s("gm_piccolo").gain(.4)
+      $: s("bd ~ ~ ~").gain(.7)
+  - id: "inspired_1000_494"
+    source_id: "1000_494"
+    source_seed: 1494
+    voices: 3
+    events: 23
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ ~ ~").slow(2).gain(.7)
+      $: n("0 2 4 0 ~ 2 4 0").scale("a2:major").struct("x*3").add("<0 .02>").s("sawtooth").gain(.4)
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_495"
+    source_id: "1000_495"
+    source_seed: 1495
+    voices: 2
+    events: 24
+    code: |
+      setcpm(100/4)
+      $: n("-3 0 2 -3 -1 1").scale("c:minor").s("sawtooth").gain(.3).room(.5).delay(.3)
+      $: s("sleighbells bd hh*4 ~").gain(.5)
+  - id: "inspired_1000_496"
+    source_id: "1000_496"
+    source_seed: 1496
+    voices: 3
+    events: 10
+    code: |
+      setcpm(90/4)
+      $: note("a4 g#4").s("sawtooth").gain(.4)
+      $: s("cymbal ~ ~ ~ rim").gain(.6)
+      $: s("bd ~ ~ ~").gain(.7)
+  - id: "inspired_1000_497"
+    source_id: "1000_497"
+    source_seed: 1497
+    voices: 4
+    events: 19
+    code: |
+      setcpm(100/4)
+      $: n("7 0").scale("g:minor").clip(.95).release(.142).s("sawtooth").gain(.3)
+      $: s("square").note("b1").slow(4).gain(.2)
+      $: note("b1 d2 g2").s("sawtooth").lpf(400).gain("[.5 .3]*4")
+      $: note("c2 eb2 g2 bb2").s("gm_acoustic_guitar_steel:2").lpf(1200).release(.295).gain(.3)
+  - id: "inspired_1000_498"
+    source_id: "1000_498"
+    source_seed: 1498
+    voices: 4
+    events: 21
+    code: |
+      setcpm(110/4)
+      $: note("a2 g3 f#3 e3").s("sawtooth").lpf(3000).gain(.4).release(.3).room(.4)
+      $: s("cp hh").gain(.5)
+      $: s("amen").gain(.5).slow(2)
+      $: note("d2 f3 a3 c3").s("sawtooth").lpf(2000).hpf(258).clip(.5).release(.08).gain(.3)
+  - id: "inspired_1000_499"
+    source_id: "1000_499"
+    source_seed: 1499
+    voices: 3
+    events: 42
+    code: |
+      setcpm(120/4)
+      $: n("5 2 4 6 4 2 1 3 10 7 10 7 14 7 11 10").scale("c:minor").s("sawtooth").gain(.3)
+      $: note("a4 d#5@2 ~ a4").s("sawtooth").lpf(1725).gain(.35)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
+  - id: "inspired_1000_5"
+    source_id: "1000_5"
+    source_seed: 1005
+    voices: 4
+    events: 40
+    code: |
+      setcpm(110/4)
+      $: s("bd*2 ~ bd*2 ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 4 7 4 0 4 7 4").scale("e5:minor").s("gm_acoustic_guitar_steel:2").lpf(2000).gain(.4).slow(2)
+      $: note("e5 e5 c5 d5").s("sawtooth").lpf(2000).gain(.35)
+  - id: "inspired_1000_50"
+    source_id: "1000_50"
+    source_seed: 1050
+    voices: 4
+    events: 16
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ ~ ~").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("c1 f1 c1 f1").sound("sine").lpf(sine.range(400,1400).slow(4)).room(.4645).gain(.4)
+      
+      $: note("c3 f3").sound("sawtooth").slow(2).lpf(1200).room(.4).gain(.25)
+  - id: "inspired_1000_51"
+    source_id: "1000_51"
+    source_seed: 1051
+    voices: 4
+    events: 22
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd*2 sd ~ sd").bank("RolandTR808").gain(.85)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: s("clave ~ clave clave").gain(.5)
+      
+      $: note("c3 eb3 g3 bb3").sound("gm_choir_aahs").slow(2).room(.5).gain(.3)
+  - id: "inspired_1000_52"
+    source_id: "1000_52"
+    source_seed: 1052
+    voices: 4
+    events: 16
+    code: |
+      setcpm(118/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("lt*4").gain("[.7 .35]*4")
+      
+      $: s("bell ~ bell ~").slow(2).gain(.4).room(.5)
+      
+      $: note("<c2 g1 eb2 g1>").sound("sawtooth").lpf(700).release(.2).gain(.4)
+  - id: "inspired_1000_53"
+    source_id: "1000_53"
+    source_seed: 1053
+    voices: 4
+    events: 19
+    code: |
+      setcpm(96/4)
+      
+      $: s("sd bd ~ bd").bank("RolandTR808").gain(.85)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("a5 g5 f5 c5").sound("square").lpf(sine.range(800,2400).slow(4)).room(.2236).gain(.3)
+      
+      $: note("<a2 f2>").sound("sawtooth").slow(2).lpf(600).release(.2).gain(.4)
+  - id: "inspired_1000_54"
+    source_id: "1000_54"
+    source_seed: 1054
+    voices: 4
+    events: 16
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd*2 ~ bd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("<g3 c3>").chord("<m7 7>").clip(.9).sound("gm_cello").gain(.35).room(.3)
+      
+      $: s("gm_overdriven_guitar ~ gm_overdriven_guitar ~").gain(.4).lpf(1800)
+  - id: "inspired_1000_55"
+    source_id: "1000_55"
+    source_seed: 1055
+    voices: 4
+    events: 15
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ lt ht").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: s("gm_lead_6_voice ~ gm_lead_6_voice ~").vib("4:.2").gain(.4)
+      
+      $: note("<g2 a#2>").sound("gtr").slow(2).gain(.4)
+  - id: "inspired_1000_56"
+    source_id: "1000_56"
+    source_seed: 1056
+    voices: 4
+    events: 30
+    code: |
+      setcpm(130/4)
+      
+      $: s("bd ht ~ bd").bank("RolandTR909").gain(.8)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("e5 f4 a4 c5 c4 e4 g4 g4").sound("square").clip(.85).lpf(1772).gain(.35)
+      
+      $: s("perc ~ perc ~").lpf(4000).gain(.3)
+  - id: "inspired_1000_57"
+    source_id: "1000_57"
+    source_seed: 1057
+    voices: 4
+    events: 24
+    code: |
+      setcpm(96/4)
+      
+      $: s("~ cp ~ cp").bank("RolandTR808").gain(.75)
+      
+      $: s("hh*8").gain(.18)
+      
+      $: note("c4@2 ~ e4 g4").sound("ocarina").slow(2).room(.4).gain(.4)
+      
+      $: note("<c3 e3>").sound("gm_string_ensemble_2").slow(2).room(.6).gain(.25)
+  - id: "inspired_1000_58"
+    source_id: "1000_58"
+    source_seed: 1058
+    voices: 4
+    events: 43
+    code: |
+      setcpm(108/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hats*8").gain(.2)
+      
+      $: note("<c3 e3>").sound("gm_synth_strings_1").slow(2).room(.8).gain(.3)
+      
+      $: note("a#5 g#5 e5 c#5 ~ a5 f#5 e5 ~ e5 d#5 a#4 ~ ~ b4 ~").sound("sine").gain(.25)
+  - id: "inspired_1000_59"
+    source_id: "1000_59"
+    source_seed: 1059
+    voices: 4
+    events: 13
+    code: |
+      setcpm(104/4)
+      
+      $: s("bd ~ sd ~").bank("AkaiLinn").gain(.85)
+      
+      $: s("~ snare ~ snare").room(.7024).gain(.3536)
+      
+      $: n("7 11 11 10 ~").scale("c:bebop major").sound("gm_baritone_sax").slow(2).gain(.5)
+      
+      $: note("<c2 g1>").sound("sawtooth").slow(2).lpf(700).release(.2).gain(.4)
+  - id: "inspired_1000_6"
+    source_id: "1000_6"
+    source_seed: 1006
+    voices: 4
+    events: 42
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: s("hh*8 cp").gain(.3)
+      $: n("0 2 4 5 4 2 0 4").scale("b4:minor").s("sawtooth").gain(.4).release(.2)
+      $: note("b4 f#5").s("sine").gain(.3).room(.3)
+  - id: "inspired_1000_60"
+    source_id: "1000_60"
+    source_seed: 1060
+    voices: 4
+    events: 30
+    code: |
+      setcpm(90/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: note("g1 f1 g1 f1").s("triangle").lpf(500).release(.2).gain(.5)
+      
+      $: note("<g3 f3>").s("sine").lpf(1200).resonance(10).release(.3).gain(.35)
+  - id: "inspired_1000_61"
+    source_id: "1000_61"
+    source_seed: 1061
+    voices: 4
+    events: 30
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: note("c4 g3 a3 f3").s("triangle").attack(.015).release(.2).lpf(1500).gain(.4)
+      
+      $: note("<c2 g1 a1 f1>").s("sine").lpf(400).release(.3).gain(.5)
+  - id: "inspired_1000_62"
+    source_id: "1000_62"
+    source_seed: 1062
+    voices: 4
+    events: 38
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.18)
+      
+      $: n("0 7 5 3 0 7 5 3").scale("c#4:minor").s("square").room(.6).release(.15).gain(.4)
+      
+      $: note("<D2 C#2 F#2 B2>").s("sawtooth").lpf(600).release(.3).gain(.5)
+  - id: "inspired_1000_63"
+    source_id: "1000_63"
+    source_seed: 1063
+    voices: 5
+    events: 38
+    code: |
+      setcpm(95/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: s("vocal:1 ~ vocal:2 ~").room(.4).gain(.5)
+      
+      $: n("0 2 4 6 4 2").scale("bb4:minor").s("sawtooth").lpf(1000).release(.2).gain(.4)
+      
+      $: note("<Bb1 F1>").s("sine").lpf(500).release(.3).gain(.5)
+  - id: "inspired_1000_64"
+    source_id: "1000_64"
+    source_seed: 1064
+    voices: 4
+    events: 34
+    code: |
+      setcpm(105/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").room(.3).delay(.2).lpf(3000).gain(.15)
+      
+      $: note("a1 f1 c2").struct("x(5,8,-1)").s("sawtooth").lpf(600).release(.2).gain(.5)
+      
+      $: note("c3 eb3").s("square").cutoff(471).release(.15).gain(.35)
+  - id: "inspired_1000_65"
+    source_id: "1000_65"
+    source_seed: 1065
+    voices: 4
+    events: 32
+    code: |
+      setcpm(115/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: n("4 9 4 9 4").scale("ab4:minor:pentatonic").s("gm_drawbar_organ").release(.2).gain(.4)
+      
+      $: note("<Ab1 Eb1>").s("supersaw").lpf(500).release(.3).gain(.5)
+  - id: "inspired_1000_66"
+    source_id: "1000_66"
+    source_seed: 1066
+    voices: 5
+    events: 42
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: note("e5 c5 d5 e5").s("triangle").gain(.4).lpf(1800).room(.4).delay(.3).release(.15)
+      
+      $: note("d3 ~ f3 a3").s("gm_tuba").release(.3).gain(.5)
+      
+      $: n("0 3 7 5").scale("d:minor").s("square").lpf(900).release(.15).gain(.35)
+  - id: "inspired_1000_67"
+    source_id: "1000_67"
+    source_seed: 1067
+    voices: 5
+    events: 36
+    code: |
+      setcpm(125/4)
+      
+      $: s("bd sd bd sd").bank("RolandTR909").gain(.85)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: note("<c2 g1 f1 c2>").s("sawtooth").lpf(600).release(.2).gain(.5)
+      
+      $: n("0 3 5 7").scale("c:minor").s("square").lpf(1200).release(.15).gain(.35)
+      
+      $: s("gm_overdriven_guitar:6 ~ ~ ~").gain(.4)
+  - id: "inspired_1000_68"
+    source_id: "1000_68"
+    source_seed: 1068
+    voices: 4
+    events: 32
+    code: |
+      setcpm(120/4)
+      
+      $: s("woodblock ~ woodblock*2 ~").bank("KorgDDM110").room(.6).gain(.7)
+      
+      $: s("hh*8").gain(.15)
+      
+      $: n("-2 3 0 3").scale("c:mixolydian").s("square").gain(.3).clip(1).release(.15)
+      
+      $: note("<c2 f2>").s("sawtooth").lpf(600).release(.2).gain(.5)
+  - id: "inspired_1000_69"
+    source_id: "1000_69"
+    source_seed: 1069
+    voices: 4
+    events: 22
+    code: |
+      setcpm(105/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("sleighbells cowbell").room(.3).gain(.2)
+      
+      $: n("0 -3 0 0 -3 0").scale("c:ritusen").struct("x(5,8,-1)").s("square").release(.15).gain(.4)
+      
+      $: note("c3 g2").s("psaltery_pluck").hpf(500).release(.2).gain(.5)
+  - id: "inspired_1000_7"
+    source_id: "1000_7"
+    source_seed: 1007
+    voices: 5
+    events: 60
+    code: |
+      setcpm(100/4)
+      $: s("bd*4 ~").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: note("a2*4 a2*4 a2*2 ~").s("sawtooth").lpf(700).room(.5).gain(.5)
+      $: n("4 5 5 ~ 4 2 1").scale("a2:minor").s("triangle").clip(.5).release(.15).gain(.35)
+      $: s("~ sleighbells ~ sleighbells").gain(.2)
+  - id: "inspired_1000_70"
+    source_id: "1000_70"
+    source_seed: 1070
+    voices: 4
+    events: 18
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("LinnDrum").gain(.85)
+      
+      $: s("~ hh ~ hh").bank("LinnDrum").gain(.22)
+      
+      $: s("~ cowbell").gain(.25)
+      
+      $: n("0 3 5 3").scale("a:minor").s("gm_overdriven_guitar").lpf(1500).release(.2).gain(.5)
+  - id: "inspired_1000_71"
+    source_id: "1000_71"
+    source_seed: 1071
+    voices: 4
+    events: 30
+    code: |
+      setcpm(128/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("0 3 5 7").scale("c:major").s("gm_piano").release(.2).gain(.4)
+      
+      $: n("<0 3 5 7>").scale("c:major").s("gm_pizzicato_strings").gain(.35).room(.4)
+  - id: "inspired_1000_72"
+    source_id: "1000_72"
+    source_seed: 1072
+    voices: 3
+    events: 16
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ bd ~").bank("RolandTR808").lpf(728).gain(.8)
+      
+      $: s("~ cr ~ sd").gain(.6)
+      
+      $: note("g5 e5 a5 g5").s("drum").lpf(5000).gain(.35).release(.1)
+  - id: "inspired_1000_73"
+    source_id: "1000_73"
+    source_seed: 1073
+    voices: 4
+    events: 16
+    code: |
+      setcpm(112/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: n("<0 2 4 5>").scale("c:major").s("gm_drawbar_organ").release(.3).gain(.4)
+      
+      $: n("0 2 4 5").scale("c:major").s("supersaw").lpf(1800).gain(.3)
+      
+      $: s("~ sleighbells").gain(.2)
+  - id: "inspired_1000_74"
+    source_id: "1000_74"
+    source_seed: 1074
+    voices: 4
+    events: 22
+    code: |
+      setcpm(96/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.85)
+      
+      $: s("clave*4").gain(.3)
+      
+      $: n("0 3 5 3").scale("e:minor").s("rect").lpf(1200).gain(.4)
+      
+      $: n("<0 3 5>").scale("e:minor").s("gm_acoustic_guitar_steel").release(.3).gain(.4)
+  - id: "inspired_1000_75"
+    source_id: "1000_75"
+    source_seed: 1075
+    voices: 4
+    events: 32
+    code: |
+      setcpm(118/4)
+      
+      $: s("bd ~ sd ~").bank("LinnDrum").gain(.85)
+      
+      $: s("perc*3 ~ crash ~").gain(.3)
+      
+      $: note("e3 a3 c4 e4 a4").s("sawtooth").release(.12).gain(.4)
+      
+      $: s("rd*3 rd bd").clip(.85).gain(.3)
+  - id: "inspired_1000_76"
+    source_id: "1000_76"
+    source_seed: 1076
+    voices: 4
+    events: 31
+    code: |
+      setcpm(130/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("hh*16").gain("[0.8 0.4]*8").decay(.0769).sustain(0).degradeBy(.4)
+      
+      $: n("0 3 5 7").scale("c:minor").s("gm_piano").gain(.5).cutoff(1200).decay(.16).sustain(0).room(.4).delay(.3)
+      
+      $: s("~ snare").gain(.4)
+  - id: "inspired_1000_77"
+    source_id: "1000_77"
+    source_seed: 1077
+    voices: 4
+    events: 26
+    code: |
+      setcpm(105/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.85)
+      
+      $: s("mt mt lt lt mt*2").gain(.3)
+      
+      $: n("0 3 5 7").scale("d:minor").s("pulse").lpf(1500).gain(.4)
+      
+      $: n("<0 3 5>").scale("d:minor").s("gm_electric_guitar_jazz").release(.2).gain(.35)
+  - id: "inspired_1000_78"
+    source_id: "1000_78"
+    source_seed: 1078
+    voices: 4
+    events: 28
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("hh*8").gain(.2)
+      
+      $: n("<0 2 3>").scale("c:major").s("gm_lead_8_bass_lead").lpf(2000).release(.15).gain(.4)
+      
+      $: note("c5 e5 f4").s("bell").gain(.3).release(.2)
+  - id: "inspired_1000_79"
+    source_id: "1000_79"
+    source_seed: 1079
+    voices: 3
+    events: 18
+    code: |
+      setcpm(100/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+      $: n("0 0 3").scale("c:minor").s("gm_synth_bass_1").lpf(900).release(.1).gain(.4)
+      $: note("c4*2 d#4 f4").s("gm_epiano1").gain(.35).release(.2).room(.3)
+  - id: "inspired_1000_8"
+    source_id: "1000_8"
+    source_seed: 1008
+    voices: 4
+    events: 42
+    code: |
+      setcpm(92/4)
+      $: s("bd ~ sd ~ oh").bank("RolandTR909").gain(.8)
+      $: s("hh*8").gain(.2)
+      $: n("0 2 4 -2").scale("g1:minor").s("gm_electric_bass_finger:2").hpf(600).gain(.4)
+      $: note("g1 bb1 e5 c#5 f#5 e5").s("pulse").gain(.3).delay(.5).release(.2)
+  - id: "inspired_1000_80"
+    source_id: "1000_80"
+    source_seed: 1080
+    voices: 3
+    events: 26
+    code: |
+      setcpm(110/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: note("c1 ~ f1 g1").s("sawtooth").lpf(400).release(.2).gain(.5)
+      
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_81"
+    source_id: "1000_81"
+    source_seed: 1081
+    voices: 4
+    events: 16
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("cajon*2 ~").gain(.6)
+      
+      $: note("e4 g4 b4 e5").s("gm_oboe").slow(2).gain(.4)
+      
+      $: note("e2 ~ b1 ~").s("gm_overdriven_guitar").gain(.5)
+  - id: "inspired_1000_82"
+    source_id: "1000_82"
+    source_seed: 1082
+    voices: 4
+    events: 20
+    code: |
+      setcpm(115/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("~ hh ~ hh").gain(.2)
+      
+      $: note("e2 ~ e3 ~").s("gm_drawbar_organ").gain(.4)
+      
+      $: note("e4 g4 b4 e5").s("sawtooth").gain(.3).release(.1)
+  - id: "inspired_1000_83"
+    source_id: "1000_83"
+    source_seed: 1083
+    voices: 4
+    events: 24
+    code: |
+      setcpm(120/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.85)
+      
+      $: s("hh*4 ~").gain(.2)
+      
+      $: s("tambourine*2").gain(.3)
+      
+      $: note("c2 eb2 g2 bb2").s("gm_lead_8_bass_lead").lpf(800).gain(.5)
+  - id: "inspired_1000_84"
+    source_id: "1000_84"
+    source_seed: 1084
+    voices: 4
+    events: 13
+    code: |
+      setcpm(130/4)
+      
+      $: s("amen").gain(.8)
+      
+      $: s("~ sd:1 ~ sd:1").bank("RolandTR909").gain(.7)
+      
+      $: note("c2 ~ g1 ~").s("gm_overdriven_guitar").gain(.5)
+      
+      $: note("e4 g4 c5").s("gm_choir_aahs").slow(2).gain(.3).room(.4)
+  - id: "inspired_1000_85"
+    source_id: "1000_85"
+    source_seed: 1085
+    voices: 4
+    events: 26
+    code: |
+      setcpm(125/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      
+      $: s("~ cp*4").gain(.5)
+      
+      $: note("c4 cs4 ds4 f4 cs4@2").s("square").lpf(1500).release(.15).gain(.4)
+      
+      $: note("c2 ~ g1 ~").s("sawtooth").lpf(500).gain(.5)
+  - id: "inspired_1000_86"
+    source_id: "1000_86"
+    source_seed: 1086
+    voices: 4
+    events: 28
+    code: |
+      setcpm(105/4)
+      
+      $: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+      
+      $: s("gm_piccolo gm_recorder").delay(.4).room(.3).gain(.3)
+      
+      $: note("c1 f1").s("gm_overdriven_guitar").gain(.6)
+      
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_87"
+    source_id: "1000_87"
+    source_seed: 1087
+    voices: 4
+    events: 27
+    code: |
+      setcpm(100/4)
+      
+      $: s("bd rim").lpf(800).gain(.7)
+      
+      $: note("e4 c4 e4").s("sawtooth").lpf(1200).gain(.4)
+      
+      $: s("mt").slow(2).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_88"
+    source_id: "1000_88"
+    source_seed: 1088
+    voices: 4
+    events: 34
+    code: |
+      setcpm(115/4)
+      
+      $: s("bd*2 ~ sd ~").bank("RolandTR909").gain(.8)
+      
+      $: note("c4 c4").s("gm_electric_guitar_clean").gain(.5)
+      
+      $: note("g2 b2 d3 g3").s("supersaw").lpf(3000).room(.6).gain(.4)
+      
+      $: s("hh*8").gain(.2)
+  - id: "inspired_1000_89"
+    source_id: "1000_89"
+    source_seed: 1089
+    voices: 4
+    events: 26
+    code: |
+      setcpm(96/4)
+      $: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+      $: n("9 12 ~ ~ 32 9 12 13").scale("c:minor").s("gm_electric_bass_pick").release(.3).attack(.08).clip(1).gain(.4)
+      $: note("c4 b3@5 g#3@2 e3@4").sound("sawtooth").lpf(1500).gain(.3)
+      $: s("gm_ocarina").n("<0 2 4>").gain(.3).release(.2)
+  - id: "inspired_1000_9"
+    source_id: "1000_9"
+    source_seed: 1009
+    voices: 3
+    events: 26
+    code: |
+      setcpm(120/4)
+      $: s("bd!2 ~ bd").bank("RolandTR909").gain(.85)
+      $: s("hh*8").gain(.2)
+      $: n("0 5 7 12").scale("c3:minor").s("sine").slow(2).gain(.4).release(.3)
+  - id: "inspired_1000_90"
+    source_id: "1000_90"
+    source_seed: 1090
+    voices: 4
+    events: 34
+    code: |
+      setcpm(120/4)
+      $: s("bd!2 bd*2").gain(.85)
+      $: s("hh*8").lpf(5000).room(.3).gain(.2)
+      $: note("c3 eb3 g3 bb3").sound("supersaw").delay(.3).delayfeedback(.4).delaytime(".33 | .6 | .166 | .25").lpf(2000).gain(.35)
+      $: s("gong").n("<0 1>").gain(.3).release(.06)
+  - id: "inspired_1000_91"
+    source_id: "1000_91"
+    source_seed: 1091
+    voices: 4
+    events: 22
+    code: |
+      setcpm(112/4)
+      $: s("bass ~ bass ~").slow(2.5).gain(.7)
+      $: s("hh:1*4").slow(2.5).gain(.2)
+      $: note("c3 eb3 g3 bb3").s("gm_piano").gain("0.25 0.35 0.3 0.4").release(.1)
+      $: note("c5 eb5 g5 bb5").s("supersaw").gain(.25).release(.1).lpf(1800)
+  - id: "inspired_1000_92"
+    source_id: "1000_92"
+    source_seed: 1092
+    voices: 3
+    events: 28
+    code: |
+      setcpm(110/4)
+      $: s("sleighbells*3 sd:1!3").struct("x(3,8)").gain(.6).release(.1)
+      $: note("e1 ~ ~ e2 ~ e1 ~ ~").s("bass").gain(.5).release(.15)
+      $: note("b4 f#5 e5 c#4 e5 d#5 a#4 d#4").s("gm_pad_warm").gain(.3).room(.4).release(1)
+  - id: "inspired_1000_93"
+    source_id: "1000_93"
+    source_seed: 1093
+    voices: 3
+    events: 10
+    code: |
+      setcpm(100/4)
+      $: s("mt ~ lt ~").room(.2).gain(.8)
+      $: s("bd ~ ~ ~").gain(.85)
+      $: n("2 1@3 0@3 2@5.5").slow(2).scale("d:minor").s("sawtooth").lpf(1200).gain(.35).release(.15)
+  - id: "inspired_1000_94"
+    source_id: "1000_94"
+    source_seed: 1094
+    voices: 4
+    events: 11
+    code: |
+      setcpm(100/4)
+      $: s("cowbell ~").slow(2).gain(.6)
+      $: s("bd ~ sd ~").gain(.8)
+      $: note("a2 ~ a2 ~").sound("sawtooth").lpf(2000).room(.5).gain(.4)
+      $: s("cp ~ cp ~").gain(.3).slow(2)
+  - id: "inspired_1000_95"
+    source_id: "1000_95"
+    source_seed: 1095
+    voices: 3
+    events: 15
+    code: |
+      setcpm(118/4)
+      $: s("rd:3*4").hpf(500).lpf(1929).room(.5).gain("[.5 .35]*4")
+      $: s("cajon ~ tambourine ~").hpf(500).room(.5).gain(.5)
+      $: n("7 ~ 7 ~").scale("c:minor").gain(.28).decay(.1).sustain(0).degradeBy(.25).s("gm_overdriven_guitar").lpf(1929)
+  - id: "inspired_1000_96"
+    source_id: "1000_96"
+    source_seed: 1096
+    voices: 4
+    events: 30
+    code: |
+      setcpm(96/4)
+      $: s("bd bd ~ bd").lpf(4000).room(.5).gain(.7).clip(1).release(.06)
+      $: s("hh*4").gain(.2)
+      $: note("c1 f1 g1").s("pulse").lpf(1200).gain(.5).release(.06)
+      $: note("d2*4 a4@2").s("noise*4").gain(.5).release(.15).transpose("<0@7 1 0 1 0 1>/16")
+  - id: "inspired_1000_97"
+    source_id: "1000_97"
+    source_seed: 1097
+    voices: 5
+    events: 24
+    code: |
+      setcpm(126/4)
+      $: s("bd ~ cp ~").gain(.8)
+      $: s("hh*2 cp").gain(.25)
+      $: s("hh*8").slow(4).gain(.2)
+      $: s("drums").struct("<x!4 ~!2 x!9 x@3 x!6>").gain(.4)
+      $: n("0 3 5 7").scale("c:minor").s("sawtooth").lpf(1400).release(.1).gain(.3)
+  - id: "inspired_1000_98"
+    source_id: "1000_98"
+    source_seed: 1098
+    voices: 4
+    events: 28
+    code: |
+      setcpm(90/4)
+      $: s("sine bd:2").gain(.5).hpf(500)
+      $: s("bd ~ sd ~").gain(.7)
+      $: n("0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3").scale("c:minor").s("gm_oboe").gain(.3)
+      $: note(0).s("gm_tuba").gain(.3).release(.3)
+  - id: "inspired_1000_99"
+    source_id: "1000_99"
+    source_seed: 1099
+    voices: 4
+    events: 27
+    code: |
+      setcpm(100/4)
+      $: s("bd*2 ~").lpf(3500).resonance(15).room(.6).pan(.5).gain(.8)
+      $: s("hh*8").gain(.2)
+      $: note("b3@2 f3@2 ~ b3").sound("sawtooth").lpf(1800).room(.4).gain(.4)
+      $: s("gm_lead_6_voice").n("<0 2 4 5>").slow(4).gain(.3).release(.5)
   - id: "inspired_110"
     source_id: "110"
     source_seed: 11

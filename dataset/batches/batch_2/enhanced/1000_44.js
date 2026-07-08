@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("square ~ rd*8 ~").bank("linn9000").gain(.8)
+$: s("oh ~").gain(.2)
+$: note("c2 g1").sound("sawtooth").lpf(1547).gain(.4)
+$: note("g2 c2 f2 c3").sound("supersaw").lpf(650).gain(.3)

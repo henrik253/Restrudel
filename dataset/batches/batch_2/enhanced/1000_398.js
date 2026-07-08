@@ -1,0 +1,6 @@
+setcpm(112/4)
+$: s("kick*4").gain(.8)
+$: s("cowbell ~").gain(.4)
+$: note("c3 d3 c3").cutoff(683).s("square").slow(2).gain(.35)
+$: note("a2 f2").s("gm_bassoon").gain(.4)
+$: s("conga*3").note("b2 f2").segment(4).gain(.5)

@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("YamahaRY30").gain(.75).room(.3)
+$: s("sawtooth square").bank("YamahaRY30").gain(.35).room(.3).pan(.5941)
+$: note(38).s("gm_electric_bass_finger").clip(.9).lpf(500).velocity(.6).gain(.4)
+$: s("misc:2 ~").gain(.3)

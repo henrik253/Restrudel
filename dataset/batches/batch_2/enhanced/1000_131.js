@@ -1,0 +1,6 @@
+setcpm(112/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: note("e1 ~ ~ e2").s("sawtooth").lpf(600).gain(.5).release(.15)
+$: note("e4 b4").sound("piano").release(.3).gain(.3)
+$: note("c4 g3 a3 f3").sound("triangle").lpf(2000).gain(.3)
+$: s("woodblock:1 woodblock:2*2").release(.3).gain(.3)

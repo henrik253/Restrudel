@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd bd ~ bd").lpf(4000).room(.5).gain(.7).clip(1).release(.06)
+$: s("hh*4").gain(.2)
+$: note("c1 f1 g1").s("pulse").lpf(1200).gain(.5).release(.06)
+$: note("d2*4 a4@2").s("noise*4").gain(.5).release(.15).transpose("<0@7 1 0 1 0 1>/16")

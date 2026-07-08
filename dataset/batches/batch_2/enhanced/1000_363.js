@@ -1,0 +1,5 @@
+setcpm(110/4)
+$: s("hh ~ hh ~").cutoff(800).resonance(8).room(.5).delay(.3).gain(.2)
+$: s("pulse sax").gain(.4)
+$: s("gm_overdriven_guitar:6 bell").pan(.4).gain(.4)
+$: note("d2*4 e2 b2@2 c4@2").s("sawtooth").lpf(700).gain(.4)

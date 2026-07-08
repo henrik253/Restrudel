@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("rd*3 cr").release(1.2).gain(.4)
+$: n("0 0 0 ~").scale("c:minor").s("sawtooth").gain(.4)
+$: note("c5 b3 d4 g4").sound("supersaw").lpf(3000).resonance(8).gain(.35).delay(.4).room(1.2)

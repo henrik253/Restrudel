@@ -1,0 +1,5 @@
+setcpm(118/4)
+$: note("c4 c4 c4").sound("kick").gain(.7)
+$: s("linndrum_sd linndrum_oh").gain(.3)
+$: s("linndrum_hh ~").hpf(2000).gain(.2)
+$: s("~ hh*8").slow(4).gain(.2)

@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").gain(.8)
+$: note("g3 bb3 e4 ~").s("sawtooth square").slow(2).gain(.35)
+$: s("gm_electric_bass_finger:2 hh27").slow(2).gain(.45)
+$: s("square square").gain(.25)

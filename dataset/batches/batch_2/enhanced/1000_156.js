@@ -1,0 +1,5 @@
+setcpm(124/4)
+$: n("G3 C4 E4 G3 C4 E4 ~ F3 A3 C3 F3 A3").s("supersaw").lpf(3200).room(.2).gain(.4)
+$: note("g4 bb4 c5 f5").s("supersaw").room(.6).gain(.3)
+$: s("bd*4 sd*2 cp*8").bank("RolandTR909").gain(.7)
+$: note("a2*8 a2*4 ~ ~").s("sine").lpf(1500).gain(.4)

@@ -1,0 +1,5 @@
+setcpm(128/4)
+$: s("linndrum_sd ~ ~ ~").gain(.6)
+$: note("c3 a2").sound("square").lpf(2000).gain(.5)
+$: s("bd*4").gain(.8)
+$: s("supersaw bd:5").gain(.5).delay(.6).lpf(2600).room(1.4)

@@ -1,0 +1,5 @@
+setcpm(115/4)
+$: s("linndrum_hh").gain(.5)
+$: s("gm_distortion_guitar:4").gain(.6)
+$: note("c3 d#3@2").sound("sawtooth").lpf(800).gain(.4)
+$: s("gm_synth_strings_1").gain(.4)

@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("sd@3 ~ cr lt cr lt cr").gain(.6)
+$: note("e1 ~ ~ e2").sound("bd sd").lpf(2000).gain(.7)
+$: note("c4 g#4 c5 c#5").sound("hh").lpf(400).gain(.4)
+$: s("gm_piano").gain(.4)

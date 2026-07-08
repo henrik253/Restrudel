@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*16").gain(.2)
+$: note("<[g3,bb3,d4,f4] [c4,e4,g4,bb4]>").s("square").lpf(3000).gain(.4).release(.3)
+$: n("5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~").scale("g3:minor").s("supersaw").gain(.35).lpf(2000)

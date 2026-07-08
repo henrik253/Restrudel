@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.85)
+$: n("9 12 ~ ~ 32 9 12 13").scale("c:minor").s("gm_electric_bass_pick").release(.3).attack(.08).clip(1).gain(.4)
+$: note("c4 b3@5 g#3@2 e3@4").sound("sawtooth").lpf(1500).gain(.3)
+$: s("gm_ocarina").n("<0 2 4>").gain(.3).release(.2)

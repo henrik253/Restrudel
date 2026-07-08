@@ -1,0 +1,6 @@
+setcpm(100/4)
+$: s("bd sd bd sd bd sd bd sd").room(.5776).gain(.8)
+$: sound("rim*2").lpf(3200).gain(.2)
+$: s("gm_oboe cr").note("a4 c5").gain(.3)
+$: s("psaltery_pluck gm_lead_8_bass_lead").note("a1 g1 a1 g1").gain(.35)
+$: s("gm_tuba").note("a1").slow(2).gain(.3)

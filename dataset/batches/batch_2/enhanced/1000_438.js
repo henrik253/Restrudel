@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("lt ~ lt ~").gain(.7)
+$: s("hh*8").gain(.2)
+$: n("5 1 2 4 ~ 5 5").scale("g4:minor").s("gm_piano").lpf(1571).hpf(500).clip(1).release(.07).delay(.3).gain(.4)
+$: s("gm_ocarina").note("a3 f4 c4").clip(.85).gain(.25)

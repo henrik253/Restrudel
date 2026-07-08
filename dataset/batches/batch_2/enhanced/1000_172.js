@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: n("0 -6 -5 -7 0 1 2 3").scale("d3:minor:pentatonic").s("supersaw").lpf(1500).gain(.35)
+$: s("gm_electric_guitar_clean:2").clip(1).gain(.4).pan(.5)

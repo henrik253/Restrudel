@@ -1,0 +1,5 @@
+setcpm(115/4)
+$: s("kick*4 hh:8").attack(.03).release(.5).room(.24).gain(.5)
+$: s("linndrum_oh").gain(.4)
+$: s("square").slow(2).gain(.3)
+$: n("-3 -3 -3 -1 -1 -4 -2 -1 -2").scale("d3:whole:tone").s("sawtooth").lpf(700).gain(.35)

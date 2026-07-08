@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("hh*16").room(.6).delay(.2).gain(.2)
+$: s("bd ~ sd ~").gain(.75)
+$: s("gm_acoustic_guitar_steel:2").n("<0 3 5 7>").slow(2).gain(.4)
+$: s("perc*3").slow(2).gain(.3)

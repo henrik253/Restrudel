@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd*2 ~").lpf(3500).resonance(15).room(.6).pan(.5).gain(.8)
+$: s("hh*8").gain(.2)
+$: note("b3@2 f3@2 ~ b3").sound("sawtooth").lpf(1800).room(.4).gain(.4)
+$: s("gm_lead_6_voice").n("<0 2 4 5>").slow(4).gain(.3).release(.5)

@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("bd ~ cp ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: s("cymbal ~ ~ ~").gain(.5)
+$: n("0 3 5 3").scale("a:minor").s("sawtooth").lpf(1400).gain(.4).room(.5)

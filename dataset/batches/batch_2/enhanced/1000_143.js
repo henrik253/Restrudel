@@ -1,0 +1,5 @@
+setcpm(105/4)
+$: s("bongo:3 ~").room(.2).gain(.5)
+$: s("gm_electric_bass_pick ~").gain(.5).release(1).attack(.05)
+$: s("gm_electric_guitar_clean:2 ~").room(.2).gain(.35)
+$: note("e4 f#4 ~ ~").add("<0 1>/16").gain(.3).release(.2)

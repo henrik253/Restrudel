@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("bass").gain(.7).hpf(300).lpf(1375)
+$: s("hh*16 hh*16").slow(8).gain(.2)
+$: note("c eb g bb").sound("triangle").lpf(500).gain(.4)
+$: n("1 4 2 1").scale("c4:minor").s("gm_overdriven_guitar:6").gain(.4).release(.3)

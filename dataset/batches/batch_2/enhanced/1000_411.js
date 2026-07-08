@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("amen cp sd hh*2").gain(.7)
+$: n("1 2 ~ 4").scale("g:minor:pentatonic").s("sawtooth").release(.3).gain(.4)
+$: note("c3 d3 e3 f3").sound("bd*2 ~").lpf(4000).gain(.5)
+$: note("g3 bb3 f4").s("gm_ocarina").release(1.2).room(.6).clip(1).attack(.05).gain(.35)

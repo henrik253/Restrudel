@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("cp ~").slow(2).gain(.8)
+$: s("hh*4 ~").slow(2).gain(.2)
+$: note("c3 d3 e3 f3").s("oh").slow(2).gain(.4)
+$: sound("supersaw").lpf(2800).hpf(1200).gain(.35).pan(.51)

@@ -1,0 +1,5 @@
+setcpm(90/4)
+$: s("bd:1 ~ bd:1 ~").gain(.8)
+$: s("sawtooth square ~ ~").lpf(1200).gain(.3)
+$: note("g3 c3").s("triangle").lpf(400).room(.8).gain(.4)
+$: note("g4 c5").s("gm_lead_6_voice").gain(.35).release(.15).room(.6).delay(.4).delaytime(.33).delayfeedback(.4)

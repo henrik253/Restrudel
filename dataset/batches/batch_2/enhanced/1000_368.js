@@ -1,0 +1,5 @@
+setcpm(105/4)
+$: s("bd!2 bd*4").cutoff(1000).gain(.8)
+$: s("hh").gain(.2)
+$: note("c2 ~").sound("square").lpf(500).hpf(754).room(.4).delay(.5).gain(.4)
+$: note("d2*8 c3@2 ~ g#3").s("sawtooth").lpf(1500).gain(.3).delay(.3).slow(2)

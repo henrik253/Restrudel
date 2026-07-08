@@ -1,0 +1,5 @@
+setcpm(110/4)
+$: note("a2 g3 f#3 e3").s("sawtooth").lpf(3000).gain(.4).release(.3).room(.4)
+$: s("cp hh").gain(.5)
+$: s("amen").gain(.5).slow(2)
+$: note("d2 f3 a3 c3").s("sawtooth").lpf(2000).hpf(258).clip(.5).release(.08).gain(.3)

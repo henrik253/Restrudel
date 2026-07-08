@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("amen").gain(.7)
+$: s("oh ~").gain(.3)
+$: s("gm_electric_bass_finger").slow(4).gain(.4)
+$: s("gm_distortion_guitar:4").slow(4).gain(.4)

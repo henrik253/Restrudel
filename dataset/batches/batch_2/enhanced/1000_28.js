@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("EmuDrumulator_lt ~").slow(2).gain(.6)
+$: s("gtr ~").slow(2).gain(.4)
+$: s("gm_piano ~").slow(2).gain(.35).room(.5)

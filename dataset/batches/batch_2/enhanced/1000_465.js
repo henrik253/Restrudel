@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("bd!3 bd*2").gain(.7)
+$: s("hh*2").gain(.2)
+$: note("e4 a4 ~ e4").s("supersaw").gain(.35)
+$: n("0 4").scale("f:major").s("gm_overdriven_guitar:3").gain(.5).release(.2543).hpf(2000).lpf(3000)

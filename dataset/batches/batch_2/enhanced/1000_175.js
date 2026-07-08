@@ -1,0 +1,6 @@
+setcpm(105/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("sleighbells*4").gain(.2)
+$: n("-2 -1 0 -7").scale("c:major").s("gm_bandoneon").release(.05).room(.5).gain(.4)
+$: note("c2 g2").s("misc").clip(1).gain(.35)
+$: s("gm_vibraphone:3").slow(2).release(.5).attack(.19).gain(.3)

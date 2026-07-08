@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: sound("bd*2 ~").delay(.5).room(.8).speed(.9).gain(.75)
+$: s("hh*3 oh ~").clip(.6).release(.06).room(.4).gain(.2)
+$: s("gm_baritone_sax").gain(.4)
+$: note("c3 d3 e3 f3 g3 ~ b3 ~").s("sawtooth").gain(.35)

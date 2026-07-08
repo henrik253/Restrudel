@@ -1,0 +1,6 @@
+setcpm(126/4)
+$: s("bd ~ cp ~").gain(.8)
+$: s("hh*2 cp").gain(.25)
+$: s("hh*8").slow(4).gain(.2)
+$: s("drums").struct("<x!4 ~!2 x!9 x@3 x!6>").gain(.4)
+$: n("0 3 5 7").scale("c:minor").s("sawtooth").lpf(1400).release(.1).gain(.3)

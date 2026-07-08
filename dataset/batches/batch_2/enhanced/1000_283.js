@@ -1,0 +1,5 @@
+setcpm(140/4)
+$: s("cp hh bd lt").gain(.7)
+$: s("hh*8 lt*4 hh!3 oh").slow(2).gain(.25)
+$: note("d4 f4 a4 c5").s("sawtooth").fm(.5).gain(.4).fast(2)
+$: s("pulse").slow(2).gain(.3)

@@ -1,0 +1,5 @@
+setcpm(114/4)
+$: note("e4 c4").sound("bd sd").lpf(2000).room(.3).delay(.5).gain(.35)
+$: s("hh*8").gain(.3)
+$: n("4 11 9 10 8 ~ 0 ~ ~ 2 11 9 10 8 13 12 9 ~ 6 13 ~").scale("d3:whole:tone").clip(.95).s("sawtooth").gain(.4)
+$: note("c5 g4 e4 c4 g4 d4 b3 g3").s("sawtooth").lpf(2500).gain(.3)

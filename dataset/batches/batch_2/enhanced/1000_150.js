@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("hh*2 ~ hh hh hh ~ sd ~ sd:2 bd").bank("RolandTR909").gain(.7)
+$: note("c4 c4 c4 b3 b3").s("folkharp").room(.5).attack(.2).gain(.4)
+$: note("a5 f5 ~ e5").s("gm_lead_2_sawtooth").release(.2).pan("0.2 -0.2").gain(.4)
+$: note("a1 g1").s("sawtooth").lpf(600).gain(.5).release(.1)
