@@ -1,0 +1,9 @@
+setcpm(31)
+
+$: s("bd ~ bd ~").gain(.75)
+
+$: s("hh*8").gain(.2)
+
+$: n("0 ~ 3 ~ 5 ~ 3 ~").scale("C:major").s("sawtooth").lpf(1500).gain(.4)
+
+$: n("0 3 5 7 5 3").scale("C:major").s("sawtooth").lpf(2200).gain(.33)

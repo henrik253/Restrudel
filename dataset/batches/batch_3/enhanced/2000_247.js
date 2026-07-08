@@ -1,0 +1,6 @@
+setcpm(110/4)
+
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.75)
+$: s("hh*8").gain(.25).pan("0.2 -0.2")
+$: n("0 ~ 3 ~").scale("Bb:lydian").s("sawtooth").lpf(4000).resonance(4).gain(.4).release(.1)
+$: n("4 7 5 0").scale("Bb:lydian").s("supersaw").lpf(2000).resonance(6).gain(.35).release(.15).room(.2)
