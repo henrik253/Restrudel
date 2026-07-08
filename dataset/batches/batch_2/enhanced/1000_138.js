@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("cp ~ sd ~").slow(2).gain(.7)
+$: s("hh*4").velocity(.5).gain(.2)
+$: s("gm_electric_guitar_jazz").velocity(.55).gain(.4)
+$: note("d#5 ~ ~ ~").gain(.35).release(.3)

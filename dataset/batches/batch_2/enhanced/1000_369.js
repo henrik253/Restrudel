@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("bd!3 bd*2 ~ ~ sd ~ bd sd ~ bd bd bd sd").bank("RolandTR808").gain(.8)
+$: s("hh!7 oh").gain(.2)
+$: s("clave cowbell ~ ~ cowbell ~ ~ cowbell ~").delay(.5).gain(.5)
+$: s("gm_overdriven_guitar:3 gm_pad_bowed gm_trumpet:2").gain(.4)

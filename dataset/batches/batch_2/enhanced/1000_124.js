@@ -1,0 +1,6 @@
+setcpm(100/4)
+$: s("linndrum_bd sn:3").gain(.8)
+$: s("rd*3 hh sd hh").gain(.3)
+$: s("bass").n("<0 3 5>").speed(1.443).gain(.4)
+$: s("gm_cello:1").n("<0 2>").gain(.3).release(.2)
+$: note("c4*2 c4 a#3").s("sawtooth").gain(.25).release(.12).lpf(1200)

@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("bd!2 bd*2").gain(.85)
+$: s("hh*8").lpf(5000).room(.3).gain(.2)
+$: note("c3 eb3 g3 bb3").sound("supersaw").delay(.3).delayfeedback(.4).delaytime(".33 | .6 | .166 | .25").lpf(2000).gain(.35)
+$: s("gong").n("<0 1>").gain(.3).release(.06)

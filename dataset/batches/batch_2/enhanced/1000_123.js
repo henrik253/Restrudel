@@ -1,0 +1,6 @@
+setcpm(120/4)
+$: s("hh*16").gain(.2)
+$: s("bd ~ sd ~").gain(.8)
+$: s("mt@57 lt*4").gain(.4)
+$: note("g3 c4 f3 f#2").s("square").gain(.3).lpf(1500)
+$: s("gm_drawbar_organ").n("<0 2 4>").gain(.35)

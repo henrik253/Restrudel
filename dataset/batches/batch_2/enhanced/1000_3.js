@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: n("3 -1 0 0 0 0").scale("a3:minor").s("sawtooth").lpf(1500).room(.4).gain(.4)
+$: note("a4 f3 a3 c4 f4 c4 e4 g4").s("gm_contrabass").gain(.3).release(.1)

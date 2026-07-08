@@ -20,8 +20,8 @@ No API key here -> Claude Code headless (`claude -p`), same as
 scripts/midi_to_strudel.py. Runs in parallel and is resumable (finished songs
 are re-read from the output file and skipped).
 
-Usage:
-  python data_gen/enhance_samples.py                         # all 500
+Usage (per batch; default input/output is batch_2):
+  python data_gen/enhance_samples.py --batch 2               # enhance one batch
   python data_gen/enhance_samples.py --limit 8 --jobs 2      # smoke test
   python data_gen/enhance_samples.py --model claude-haiku-4-5
 """
@@ -166,7 +166,7 @@ def enhance_one(song: dict, model: str, attempts: int) -> dict | None:
 
 def write_yaml(path: Path, songs: list[dict], model: str) -> None:
     lines = ["generator: data_gen/enhance_samples.py",
-             "source: dataset/generated_500.yaml",
+             "source: dataset/batches/*/sketches.yaml",
              f"model: {model}", f"count: {len(songs)}", "songs:"]
     for s in sorted(songs, key=lambda x: x["id"]):
         lines.append(f"  - id: \"{s['id']}\"")
@@ -188,14 +188,22 @@ def load_done(path: Path) -> dict[str, dict]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=Path, default=HERE.parent / "dataset" / "generated_500.yaml")
-    ap.add_argument("--output", type=Path, default=HERE.parent / "dataset" / "generated_500_inspired.yaml")
+    ap.add_argument("--batch", type=int, help="enhance dataset/batches/batch_<N>/")
+    ap.add_argument("--input", type=Path, help="sketches.yaml (overrides --batch)")
+    ap.add_argument("--output", type=Path, help="enhanced.yaml output (overrides --batch)")
     ap.add_argument("--model", default="claude-sonnet-5")
     ap.add_argument("--attempts", type=int, default=3)
     ap.add_argument("--jobs", type=int, default=4)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--no-resume", action="store_true")
     args = ap.parse_args()
+
+    batch = args.batch if args.batch is not None else 2
+    bd = HERE.parent / "dataset" / "batches" / f"batch_{batch}"
+    if args.input is None:
+        args.input = bd / "sketches.yaml"
+    if args.output is None:
+        args.output = bd / "enhanced.yaml"
 
     songs = yaml.safe_load(args.input.read_text(encoding="utf-8"))["songs"]
     if args.limit:

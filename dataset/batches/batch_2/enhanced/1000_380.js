@@ -1,0 +1,5 @@
+setcpm(110/4)
+$: s("misc:2 brakedrum:1 ~ cowbell:3 cr!3 cr!2").slow(2).gain(.5)
+$: s("rd*3").gain(.5)
+$: s("sine").gain(.3).pan(.4265)
+$: note("c4@2 a#3@2 d#4@2").s("sawtooth").lpf(700).gain(.4)

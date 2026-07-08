@@ -1,0 +1,5 @@
+setcpm(124/4)
+$: s("kick ~ kick ~").gain(.8).clip(.9).sustain(.4).cutoff(2000).resonance(11)
+$: s("bd bd ~ bd").lpf(700).room(.6).gain(.5)
+$: note("c4 d4 e4 f4").sound("supersaw").lpf(1200).room(.3).delay(.3).gain(.35)
+$: s("pulse gm_electric_bass_finger:7 triangle sd").gain(.3).room(.5)

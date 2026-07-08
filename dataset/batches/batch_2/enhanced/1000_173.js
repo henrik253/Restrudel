@@ -1,0 +1,5 @@
+setcpm(95/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("cp*2 ~").gain(.3)
+$: note("c2 f2").s("bass").hpf(2000).lpf(800).room(.5).gain(.4)
+$: s("gm_baritone_sax kalimba").slow(2).gain(.35)

@@ -1,0 +1,5 @@
+setcpm(108/4)
+$: note("c4 d#4 f4 ~ d#4 d#4 c4 g#4 ~ g4 ~ f#4 f4 d#4 c#4 a#3").sound("bd sd").lpf(2177).gain(.5621).release(.04).attack(.03)
+$: s("hh*8").gain(.2)
+$: s("bass").note("c2 g1 c2 g1").gain(.5)
+$: s("woodblock:1 woodblock:2*2").note("c2 ~").slow(2).gain(.3)

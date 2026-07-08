@@ -1,0 +1,5 @@
+setcpm(90/4)
+$: s("bd!3 ~").gain(.7)
+$: note("C1 F1 G1 C1").lpf(500).room(.2).delay(.5).delaytime(.16).delayfeedback(.5).s("sawtooth").gain(.4)
+$: note("D2 G2 ~ ~").s("triangle").gain(.5).release(.2).attack(.001)
+$: s("lead ~").slow(2).gain(.3)

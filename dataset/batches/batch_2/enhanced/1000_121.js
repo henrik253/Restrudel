@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("rd 1!3").gain(.4)
+$: s("hh*16").lpf(1366).gain(.2)
+$: s("bd ~ sd ~").gain(.8)
+$: n("0 3 5 7").scale("c:minor").s("sawtooth").lpf(1366).gain(.3).release(.1)

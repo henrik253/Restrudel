@@ -1,0 +1,5 @@
+setcpm(130/4)
+$: s("bd*2 sn").bank("tr909").clip(.95).gain(.5).decay(.05).sustain(0).release(.13)
+$: s("hh*8").gain(.2).room(.3)
+$: s("lead pulse").gain(.2).room(.4).delay(.3)
+$: note("b4 ~ a#4 f#4").sound("bd*2 ~").lpf(2500).gain(.4)

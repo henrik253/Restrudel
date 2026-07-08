@@ -1,0 +1,5 @@
+setcpm(122/4)
+$: s("bd*4 sd*2").slow(3).gain(.8)
+$: s("hh*5").clip(.18).gain(.2)
+$: s("gm_electric_bass_pick ~ rd*2 ~").clip(.18).gain(.4)
+$: s("pulse ~").gain(.4).room(.5)

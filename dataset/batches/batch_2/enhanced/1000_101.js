@@ -1,0 +1,5 @@
+setcpm(90/4)
+$: s("hh*8").room(.4).gain(.2)
+$: s("bd ~ sd ~").gain(.75)
+$: note("f4 c4 g4 d4 b3").s("gm_pad_warm").gain(.35).release(2).room(.4)
+$: s("gm_electric_bass_finger:2").n("<0 2>").gain(.4).release(.2)

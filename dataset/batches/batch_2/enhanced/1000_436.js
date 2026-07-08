@@ -1,0 +1,5 @@
+setcpm(118/4)
+$: s("bd ~ sd ~").lpf("<800 1200>").room(.4).gain(.8)
+$: s("hh*8").gain(.2)
+$: n("0 ~ 5 3 4").scale("c3:minor").s("sawtooth").lpq(4).shape(.3).decay(.05).gain(.4)
+$: note("c4").s("supersaw").lpf(2000).gain(.3)

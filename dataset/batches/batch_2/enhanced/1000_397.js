@@ -1,0 +1,5 @@
+setcpm(126/4)
+$: s("bd*4 ~").gain(.8)
+$: s("~ sd ~ sd").clip(1).release(.15).gain(.7)
+$: s("hh*4").gain(.2)
+$: note("g5 ~ c5 ~").sound("piano").lpf(700).room(.5).slow(2).gain(.35)

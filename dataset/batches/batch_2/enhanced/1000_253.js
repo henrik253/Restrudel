@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("cp ~").gain(.7)
+$: s("clavisynth ~").slow(2).gain(.4)
+$: s("gm_electric_bass_finger ~").slow(2).gain(.4)
+$: s("hh*8").gain(.15)

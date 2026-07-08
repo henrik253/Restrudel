@@ -1,0 +1,6 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").hpf(7000).lpf(2000).gain(.3)
+$: s("cymbal ~ ~ ~").clip(.6).gain(.4)
+$: s("gm_pad_bowed gm_electric_bass_finger").note("c3 eb3 g3 c4").gain(.4).room(.4)
+$: s("gm_acoustic_guitar_nylon gm_trumpet:2").bank("RolandMT32").note("c4 e4").slow(2).gain(.3)

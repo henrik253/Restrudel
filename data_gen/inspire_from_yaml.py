@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+DEPRECATED / reference only. Superseded by enhance_samples.py + collate_enhanced.py
+(subagent enhancement), which keep each sketch's character instead of emitting a
+fixed random template. Its default paths still point at the pre-batch-layout files
+and it is no longer part of the pipeline; kept for reference.
+
 Recompose the raw generated Strudel sketches into fuller songs.
 
 The sampler in generate.mjs is useful for exploring corpus probabilities, but

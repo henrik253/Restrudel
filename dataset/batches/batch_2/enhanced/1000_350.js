@@ -1,0 +1,5 @@
+setcpm(126/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("perc*4").lpf(204).gain(.3)
+$: n("7 -1 -4 -4 -2 7").scale("g4:minor").s("gm_ocarina").decay(.03).sustain(.6).release(.1).gain(.35)
+$: note("g5 d5 g5 b5 g5 c5 e5 a5").decay(.03).sustain(.6317).release(.1).s("gm_percussive_organ").gain(.3)
