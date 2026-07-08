@@ -125,7 +125,9 @@ def aggregate_all() -> None:
              "source: dataset/batches/*/sketches.yaml",
              f"count: {len(sk_songs)}", "songs:"]
     for s in sk_songs:
-        lines += [f"  - id: {s['id']}", f"    seed: {s.get('seed')}",
+        # id must stay quoted: YAML 1.1 treats "_" in bare scalars as a digit
+        # separator, so an unquoted "1000_0" silently parses back as int 10000.
+        lines += [f"  - id: \"{s['id']}\"", f"    seed: {s.get('seed')}",
                   f"    voices: {s.get('voices')}"]
         code = s.get("code") or ""
         if not code:

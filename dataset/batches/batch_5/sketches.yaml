@@ -10,14 +10,14 @@ params:
   max_order: 6
 count: 500
 songs:
-  - id: 4000_0
+  - id: "4000_0"
     seed: 4000
     voices: 2
     code: |
       $: n("0 1 2 3 -4 -3 -2 -1").scale("d3:minor:pentatonic").s("gm_bassoon b")
 
       $: s("cymbal ~")
-  - id: 4000_1
+  - id: "4000_1"
     seed: 4001
     voices: 4
     code: |
@@ -28,7 +28,7 @@ songs:
       $: note("c eb g bb").clip(.9408)
 
       $: note("e5 c5 a4 g4 a4 c5 e5 g5 e5 c5 d5 e5 g5 e5 a5 g5 d5 e5 c5 d5 e5 e5 ~ ~ ~ ~ ~ e5 e5 c5").sound("hh ~").lpf(4980).gain("<0.8 0.6 0.4 0.2>")
-  - id: 4000_2
+  - id: "4000_2"
     seed: 4002
     voices: 4
     code: |
@@ -39,7 +39,7 @@ songs:
       $: note("d2*8 72")
 
       $: note("0 1").sound("bd*2 ~").lpf(2110).room(.25)
-  - id: 4000_3
+  - id: "4000_3"
     seed: 4003
     voices: 3
     code: |
@@ -48,7 +48,7 @@ songs:
       $: n("6 9!3 6 9").slow(2)
 
       $: s("lt lt").gain(.35)
-  - id: 4000_4
+  - id: "4000_4"
     seed: 4004
     voices: 3
     code: |
@@ -57,7 +57,7 @@ songs:
       $: note("c4 a4@3").segment(16)
 
       $: s("pad gm_drawbar_organ:4").release(.06)
-  - id: 4000_5
+  - id: "4000_5"
     seed: 4005
     voices: 3
     code: |
@@ -66,14 +66,14 @@ songs:
       $: s("linndrum_oh pad").lpf(3000).gain("0.5 0.3 0.5 0.3 0.5 0.3 0.5 0.3")
 
       $: sound("drums snare").lpf(600).lpq(8).delay(.8).gain("<0 0 0 0.2 0.3 0.5 0 0>").release(.1)
-  - id: 4000_6
+  - id: "4000_6"
     seed: 4006
     voices: 2
     code: |
       $: s("gm_ocarina sd@3").slow(2)
 
       $: s("kick*4 vibraslap").gain(.6)
-  - id: 4000_7
+  - id: "4000_7"
     seed: 4007
     voices: 4
     code: |
@@ -84,7 +84,7 @@ songs:
       $: s("gm_overdriven_guitar:6 lt@3 sawtooth square").struct("[x ~]*4")
 
       $: n("7 ~ 11 8").lpf(2000).gain(.8)
-  - id: 4000_8
+  - id: "4000_8"
     seed: 4008
     voices: 4
     code: |
@@ -95,7 +95,7 @@ songs:
       $: s("gm_lead_6_voice gm_violin ocarina_vib rect").gain(.8)
 
       $: s("clavisynth Sitar Ethnic sd!3").transpose(14)
-  - id: 4000_9
+  - id: "4000_9"
     seed: 4009
     voices: 4
     code: |
@@ -106,7 +106,7 @@ songs:
       $: s("gm_harmonica square hh*2 cp ~").release(.05)
 
       $: s("hh*16 hh*16")
-  - id: 4000_10
+  - id: "4000_10"
     seed: 4010
     voices: 4
     code: |
@@ -117,35 +117,35 @@ songs:
       $: s("hh*2 cp").lpf(3000).gain(.2956).release(.05)
 
       $: n("~ 3 ~ 3 3 -1 ~ -1 -1 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0 0 0 ~ 0")
-  - id: 4000_11
+  - id: "4000_11"
     seed: 4011
     voices: 2
     code: |
       $: s("mt mt").lpf(496).gain(.6543)
 
       $: s("linndrum_hh gm_overdriven_guitar:11 cr!3 cr!2 gm_bassoon").slow(2)
-  - id: 4000_12
+  - id: "4000_12"
     seed: 4012
     voices: 2
     code: |
       $: note("c5 e5 f4 a4")
 
       $: s("oh 2 16 16").slow(2)
-  - id: 4000_13
+  - id: "4000_13"
     seed: 4013
     voices: 2
     code: |
       $: note(12).sound("drum supersaw").lpf(4000).room(.773)
 
       $: note("a5 f5").sound("sawtooth sawtooth").lpf(400).room(.4)
-  - id: 4000_14
+  - id: "4000_14"
     seed: 4014
     voices: 2
     code: |
       $: s("oh bd sd sd*4").slow(2)
 
       $: sound("bd*2 ~ bd*2 ~ bd*2 ~ bd*2 ~").lpf(2800).gain("<0 .1 .15 .2!3>/12")
-  - id: 4000_15
+  - id: "4000_15"
     seed: 4015
     voices: 3
     code: |
@@ -154,49 +154,49 @@ songs:
       $: s("linndrum_sd b").slow(2)
 
       $: n("6 8 7 9!2 7 8 5 1 2 4 ~ 5!2 4 ~ 2 1 0 -7!8 1@3 0@3 3@3.5 4 3 2 1 2 1@3 0@3 2@5.5 1@0.5 -3@6 Ab5").lpf(3000).room(.9).delay(.3392).gain(.55).pan(.6)
-  - id: 4000_16
+  - id: "4000_16"
     seed: 4016
     voices: 2
     code: |
       $: note("b@2 f@2 ~ b b@2 b b b")
 
       $: note("d5 c#5 a4 d#4 d4").struct("x*4").gain(.2)
-  - id: 4000_17
+  - id: "4000_17"
     seed: 4017
     voices: 2
     code: |
       $: s("bd*4 sd*2 cp*8 cr!3 cr!2 cymbal ~ ~ ~ rim").gain(.5).clip("0.92").release(.1).note("a3 d5")
 
       $: note("d#5@2 d5@2 c#5@7 ~").segment(6).slow(2)
-  - id: 4000_18
+  - id: "4000_18"
     seed: 4018
     voices: 2
     code: |
       $: s("hh*2 hh")
 
       $: note("a4 ~ c5 ~ e5 ~ ~ ~ d5 ~ ~ ~").s("pad 6").slow(2)
-  - id: 4000_19
+  - id: "4000_19"
     seed: 4019
     voices: 2
     code: |
       $: s("gm_oboe piano").slow(4)
 
       $: s("gm_electric_bass_finger gm_electric_bass_finger:3").attack(.05)
-  - id: 4000_20
+  - id: "4000_20"
     seed: 4020
     voices: 2
     code: |
       $: s("bd*2 ~").slow(2.5)
 
       $: s("gm_electric_bass_finger:2 gm_contrabass cr").struct("[x@2 x] [~@2 x] [~ x@2]@2 [x ~@2] ~ [~@2 x@4]@2").fast(2).delay(.5).delaytime(".16 | .33").room(.7).gain(.6)
-  - id: 4000_21
+  - id: "4000_21"
     seed: 4021
     voices: 2
     code: |
       $: s("saw hh:1*4 gm_epiano1:1 crow crow ~ ~ ~ 3").gain(.4)
 
       $: s("gm_epiano1:1 noise*16")
-  - id: 4000_22
+  - id: "4000_22"
     seed: 4022
     voices: 3
     code: |
@@ -205,7 +205,7 @@ songs:
       $: s("ellipse 0 4 4").gain(.4)
 
       $: note("c5 b3 d4 g4 c4 e4 a4 a3 c4 f4 c4 e4 g4 c5 g3 b3").sound("supersaw bd*2").lpf(650).room(.6476)
-  - id: 4000_23
+  - id: "4000_23"
     seed: 4023
     voices: 3
     code: |
@@ -214,28 +214,28 @@ songs:
       $: note("a3 f4").sound("drums snare").lpf(300).room(1)
 
       $: s("gm_electric_guitar_clean:2 bd!2")
-  - id: 4000_24
+  - id: "4000_24"
     seed: 4024
     voices: 2
     code: |
       $: s("gm_piano rect").slow(11.631)
 
       $: note("C3 D3 E3 F3").sound("drum snare hat bd*2").lpf(3500).gain(.2945).crush(4)
-  - id: 4000_25
+  - id: "4000_25"
     seed: 4025
     voices: 2
     code: |
       $: s("hh sd").gain(.8386)
 
       $: s("rd*3 cp*16 cp*32 ~").slow(2)
-  - id: 4000_26
+  - id: "4000_26"
     seed: 4026
     voices: 2
     code: |
       $: note("c eb g bb c4 d4 eb4 g4 bb4 c5 d5 e5 e5").s("cymbal ~ ~").gain(.55).fast(2)
 
       $: n("9*2 9!2 6 7 11*2 11!2").scale("d3:minor:pentatonic").s("rd 1!3 2 4 8 6 sd ~ 5").lpf(2517).velocity(.0157).pan(.55)
-  - id: 4000_27
+  - id: "4000_27"
     seed: 4027
     voices: 3
     code: |
@@ -244,7 +244,7 @@ songs:
       $: s("linndrum_hh hh!6 hh*2 hh").slow(2)
 
       $: s("hh*8 woodblock:1 woodblock:2*2 snare_rim:0")
-  - id: 4000_28
+  - id: "4000_28"
     seed: 4028
     voices: 4
     code: |
@@ -255,35 +255,35 @@ songs:
       $: s("gm_electric_guitar_jazz 127 bd cp sd hh*2 sd bd").clip(.5079).gain(.495).room(.25).delay(.5)
 
       $: s("gm_oboe sd:2").bank("RolandTR707").gain(.25)
-  - id: 4000_29
+  - id: "4000_29"
     seed: 4029
     voices: 2
     code: |
       $: s("sleighbells ~").bank("RolandTR808").gain(.3)
 
       $: note("d5 e5 c5 f5").s("gtr brakedrum:1 ~ 3").room(.4085).gain(.5289).lpf("[400 800 1200 800]*2")
-  - id: 4000_30
+  - id: "4000_30"
     seed: 4030
     voices: 2
     code: |
       $: s("woodblock:1 woodblock:2*2").struct("[~ x]*2").gain(.7311)
 
       $: sound("supersaw piano").lpf(3500)
-  - id: 4000_31
+  - id: "4000_31"
     seed: 4031
     voices: 2
     code: |
       $: n("0 ~ 1 2*3 ~ 2 5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~ 5 6 ~ 2*3")
 
       $: note("c a")
-  - id: 4000_32
+  - id: "4000_32"
     seed: 4032
     voices: 2
     code: |
       $: n(5).clip(.9).cutoff(500).resonance(10).room(.4).delay(.5).delayfeedback(.4)
 
       $: s("pad kick*4").slow(2)
-  - id: 4000_33
+  - id: "4000_33"
     seed: 4033
     voices: 3
     code: |
@@ -292,7 +292,7 @@ songs:
       $: note("~ a#4@2 g4@2 c5@2 b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~").gain(.4)
 
       $: s("sine gm_flute:1").gain(.415)
-  - id: 4000_34
+  - id: "4000_34"
     seed: 4034
     voices: 4
     code: |
@@ -303,7 +303,7 @@ songs:
       $: n("3 4 5 ~ 2 ~ 6 ~").clip(.9047).lpf(800).room(.7).gain(.3).hpf(80)
 
       $: s("oh*4 bd!3").gain(.8).delay(.2342).delayfeedback(.5).delaytime(.08)
-  - id: 4000_35
+  - id: "4000_35"
     seed: 4035
     voices: 3
     code: |
@@ -312,35 +312,35 @@ songs:
       $: note("c d e f").sound("kick drums").lpf(2036).gain("[1 0.7 0.8 0.5]*2")
 
       $: s("lead gm_electric_bass_finger:7").slow(8)
-  - id: 4000_36
+  - id: "4000_36"
     seed: 4036
     voices: 2
     code: |
       $: note("Gm7 C7 Fmaj7 bb4 c5 b3 d4 g4 c4 e4 a4 a3")
 
       $: s("square woodblock:1").fast(8)
-  - id: 4000_37
+  - id: "4000_37"
     seed: 4037
     voices: 2
     code: |
       $: note("a5 f5 ~ a5").sound("triangle sawtooth").lpf(2000).room(1.0141).delay(.7255).gain(.35)
 
       $: s("cymbal ~").gain(.5)
-  - id: 4000_38
+  - id: "4000_38"
     seed: 4038
     voices: 2
     code: |
       $: s("square gm_lead_8_bass_lead")
 
       $: s("sine gm_epiano1:2 12 16 24")
-  - id: 4000_39
+  - id: "4000_39"
     seed: 4039
     voices: 2
     code: |
       $: s("lt mt").lpf(527).gain(.6033)
 
       $: n("5 2 5 ~ 2 ~").scale("C:major").transpose(12).s("amen gm_electric_bass_finger").slow(2)
-  - id: 4000_40
+  - id: "4000_40"
     seed: 4040
     voices: 3
     code: |
@@ -349,21 +349,21 @@ songs:
       $: note("B2 D2 G2").struct("x(5,8,-1)").gain(.3).s("gm_ocarina 16").slow(2)
 
       $: n("6 7@2 8@2 6@2 4@3 ~ 7 2 2@3 3 4 5")
-  - id: 4000_41
+  - id: "4000_41"
     seed: 4041
     voices: 2
     code: |
       $: s("gm_bassoon gm_distortion_guitar gm_harmonica").slow(4)
 
       $: s("hh*4 ~").room(.5).gain(.8)
-  - id: 4000_42
+  - id: "4000_42"
     seed: 4042
     voices: 2
     code: |
       $: n("3 ~ 0 2 4 0 2 4 -2 0 3 ~")
 
       $: note("g2 f2 c3 g2 a2 f2 c3 g2 a#2 d#3 c3@2 ~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 A2 D2 G2 Bb2 Eb2 F#2").s("linndrum_hh lt@3").lpf(292).room(.8).gain(.5)
-  - id: 4000_43
+  - id: "4000_43"
     seed: 4043
     voices: 4
     code: |
@@ -374,7 +374,7 @@ songs:
       $: s("bd*4 bd!4").gain("[1 0.7 0.5 0.3]*2").speed("-1").pan("0.2 -0.2")
 
       $: note("d5 ~ f5 ~").s("hh*16 hh*16").gain(.3).clip("[.5 1]*2").lpf(2000).hpf(7000)
-  - id: 4000_44
+  - id: "4000_44"
     seed: 4044
     voices: 3
     code: |
@@ -383,7 +383,7 @@ songs:
       $: s("sd hh*4").lpf(3000).room(.3036).release(.5).hpf(6645)
 
       $: note("C3 Eb3 G2 Bb2 Eb2 F#2 B2 F#2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2")
-  - id: 4000_45
+  - id: "4000_45"
     seed: 4045
     voices: 3
     code: |
@@ -392,7 +392,7 @@ songs:
       $: s("amen gm_vibraphone").velocity(.4824).pan(.6)
 
       $: s("bd*4 bd!4").lpf("4000").gain(.5)
-  - id: 4000_46
+  - id: "4000_46"
     seed: 4046
     voices: 3
     code: |
@@ -401,14 +401,14 @@ songs:
       $: note("f4 d#4@2 ~ ~").sound("sine bd").lpf("4000")
 
       $: note("~ e5 c5").s("~ 6").lpf(700).gain(.8)
-  - id: 4000_47
+  - id: "4000_47"
     seed: 4047
     voices: 2
     code: |
       $: n("3 -4 ~ 4 6").scale("C:major").transpose(12)
 
       $: sound("supersaw triangle").lpf(1000).gain("[1 0.4]*8")
-  - id: 4000_48
+  - id: "4000_48"
     seed: 4048
     voices: 4
     code: |
@@ -419,14 +419,14 @@ songs:
       $: n("9 12")
 
       $: n("3 8*2 9*3 10 4 9*5")
-  - id: 4000_49
+  - id: "4000_49"
     seed: 4049
     voices: 2
     code: |
       $: n("9*2 8 ~ 7 8*2")
 
       $: n("6 -3 -1 1 -4 -1 -1 -5 -3 -3 -3 -1 -1 -4 -2 b -2 b -5 -3 -1 -4 -2 -2 ~ 59 -7@3 3 4 2 3 -4").scale("a4:minor")
-  - id: 4000_50
+  - id: "4000_50"
     seed: 4050
     voices: 3
     code: |
@@ -435,7 +435,7 @@ songs:
       $: s("hh*4 ~").gain(.8).release(1.9651)
 
       $: note("d5 d#5 d5 a4 d5 c#5 d5 c#5 a4 d#4 d4 c#4 d4 a3 d4 d#4")
-  - id: 4000_51
+  - id: "4000_51"
     seed: 4051
     voices: 3
     code: |
@@ -444,14 +444,14 @@ songs:
       $: s("bell xylo").gain(.1911).hpf(259).velocity(.5).lpf(200).room(.3529)
 
       $: note("C3 D3").s("bell rhodes").gain(.8)
-  - id: 4000_52
+  - id: "4000_52"
     seed: 4052
     voices: 2
     code: |
       $: s("linndrum_bd white").gain(.8)
 
       $: s("misc:2 bell").slow(2).note("c3 g2 a#2 d#3").struct("x*3").gain(.9776)
-  - id: 4000_53
+  - id: "4000_53"
     seed: 4053
     voices: 4
     code: |
@@ -462,7 +462,7 @@ songs:
       $: s("hh!4 sd*3 drums ellipse hh 4 8 6 sd").gain(.9399).release(2)
 
       $: s("gm_pad_warm hh*16").slow(2)
-  - id: 4000_54
+  - id: "4000_54"
     seed: 4054
     voices: 4
     code: |
@@ -473,14 +473,14 @@ songs:
       $: s("gm_harmonica sd:1!3 sd:1 hh27").gain("<0 0 0 0.2 0.3 0.5 0 0>")
 
       $: note("g5 b5 g5 c5").sound("piano hh hh hh")
-  - id: 4000_55
+  - id: "4000_55"
     seed: 4055
     voices: 2
     code: |
       $: s("rd*3 recorder_bass_sus").slow(2)
 
       $: s("kick snare").gain(.3)
-  - id: 4000_56
+  - id: "4000_56"
     seed: 4056
     voices: 3
     code: |
@@ -489,7 +489,7 @@ songs:
       $: s("sawtooth square").slow(8)
 
       $: note("a5 g5 d5 e5").s("gm_ocarina Bass").gain(.2888)
-  - id: 4000_57
+  - id: "4000_57"
     seed: 4057
     voices: 4
     code: |
@@ -500,21 +500,21 @@ songs:
       $: s("bd*2 ~").attack(.001)
 
       $: s("gm_synth_strings_1 snare_rim:0").slow(8)
-  - id: 4000_58
+  - id: "4000_58"
     seed: 4058
     voices: 2
     code: |
       $: note("C3 D3").s("gm_electric_bass_finger:2 crow").slow(2)
 
       $: s("bd*2 ~ sd bd").slow(8)
-  - id: 4000_59
+  - id: "4000_59"
     seed: 4059
     voices: 2
     code: |
       $: s("hh*4 ~").slow(1)
 
       $: s("gm_pad_warm gm_electric_bass_finger:2").gain(1).release(.05)
-  - id: 4000_60
+  - id: "4000_60"
     seed: 4060
     voices: 3
     code: |
@@ -523,7 +523,7 @@ songs:
       $: s("lead 16")
 
       $: s("rd 1!3 2").slow(2)
-  - id: 4000_61
+  - id: "4000_61"
     seed: 4061
     voices: 4
     code: |
@@ -534,7 +534,7 @@ songs:
       $: n(5).scale("D5 dorian").transpose("<0@61 [0,12] [-1,11] [-3,9] [-5,7] [0,12] [-1,11] [-3,9] 0@25>").s("hh*2 ~").clip(2).release(.2004).gain(.8).room(1.2)
 
       $: s("psaltery_pluck gm_harmonica").gain(.4)
-  - id: 4000_62
+  - id: "4000_62"
     seed: 4062
     voices: 4
     code: |
@@ -545,14 +545,14 @@ songs:
       $: s("misc:2 gm_choir_aahs:4").crush(4).lpf(2409).room(.9082).delay(.4).delayfeedback(.6449)
 
       $: note("a#5 g#5 e5 c#5 ~ 5 f#5 e5 ~ e5 d#5 a#4 ~ ~ b4 ~").transpose(-4).s("sd hh!7 oh bd")
-  - id: 4000_63
+  - id: "4000_63"
     seed: 4063
     voices: 2
     code: |
       $: s("oh*4 bd!3").slow(16).clip(1)
 
       $: s("bell oh:2*8").slow(2)
-  - id: 4000_64
+  - id: "4000_64"
     seed: 4064
     voices: 3
     code: |
@@ -561,14 +561,14 @@ songs:
       $: s("bd*4 sd*2").n("F4 G3 C4 E4").lpf(4000).room(.8).release(2.5).gain(.2675)
 
       $: s("oh ~").lpf(600).gain(.2697)
-  - id: 4000_65
+  - id: "4000_65"
     seed: 4065
     voices: 2
     code: |
       $: s("gm_drawbar_organ cp*16").gain(.6)
 
       $: s("vocal 1 2 4").delay(.5879)
-  - id: 4000_66
+  - id: "4000_66"
     seed: 4066
     voices: 3
     code: |
@@ -577,7 +577,7 @@ songs:
       $: note("c3 eb3 g3 bb3").attack(.1)
 
       $: note(51).sound("piano sawtooth").lpf(600)
-  - id: 4000_67
+  - id: "4000_67"
     seed: 4067
     voices: 3
     code: |
@@ -586,7 +586,7 @@ songs:
       $: s("hh!4 noise*4").slow(2)
 
       $: n(7).scale("g1 dorian").s("bd bd sd sd bd bd sd bd")
-  - id: 4000_68
+  - id: "4000_68"
     seed: 4068
     voices: 4
     code: |
@@ -597,7 +597,7 @@ songs:
       $: note("f6 d6").sound("bd*2 ~").lpf(2600).gain(.08)
 
       $: note("a4 d#5@6").sound("sine sine").lpf(2000).gain(.7)
-  - id: 4000_69
+  - id: "4000_69"
     seed: 4069
     voices: 3
     code: |
@@ -606,7 +606,7 @@ songs:
       $: note("a#5 g#5 e5 c#5")
 
       $: s("hh!4 breath gm_applause:3 hh!3 oh ~ 4 4").slow(16)
-  - id: 4000_70
+  - id: "4000_70"
     seed: 4070
     voices: 3
     code: |
@@ -615,14 +615,14 @@ songs:
       $: s("hh*4 ~").slow(2)
 
       $: note("d5 a4").s("triangle gm_synth_strings_2").slow(2)
-  - id: 4000_71
+  - id: "4000_71"
     seed: 4071
     voices: 2
     code: |
       $: n("9 12 13 9 8 6 ~ 100 -7!8 -7@3 ~ 0 1 2 3 -4 -3 -2 -1 0 -7 ~ 2 0@3 ~ 3 ~ 1").room(.8)
 
       $: s("sine bd!3").gain(.3812)
-  - id: 4000_72
+  - id: "4000_72"
     seed: 4072
     voices: 4
     code: |
@@ -633,7 +633,7 @@ songs:
       $: s("gm_lead_6_voice 16 32 64").slow(2)
 
       $: s("misc:2 cajon:12").lpf("<[10 10 100]>").hpf(6000)
-  - id: 4000_73
+  - id: "4000_73"
     seed: 4073
     voices: 3
     code: |
@@ -642,7 +642,7 @@ songs:
       $: note("12 g1 a1@2 a1 g1*2 a1*2 g1 ~ c#2 ~ f#2 ~").s("gm_overdriven_guitar:3 bd").gain(.3)
 
       $: note("12 a5 c6 e6")
-  - id: 4000_74
+  - id: "4000_74"
     seed: 4074
     voices: 4
     code: |
@@ -653,7 +653,7 @@ songs:
       $: note(24).lpf(400).gain(.8325).room(.2342)
 
       $: note("e3 a3 c4 e4")
-  - id: 4000_75
+  - id: "4000_75"
     seed: 4075
     voices: 3
     code: |
@@ -662,7 +662,7 @@ songs:
       $: note("a4 g4 ~ e4").s("pulse gm_violin gm_cello linndrum_oh Kalimba").velocity(.5709)
 
       $: note("g5 b5").sound("sawtooth ~").lpf(4000).gain(.7681)
-  - id: 4000_76
+  - id: "4000_76"
     seed: 4076
     voices: 4
     code: |
@@ -673,14 +673,14 @@ songs:
       $: s("pulse gm_electric_guitar_clean:2").gain(.5).release(2)
 
       $: s("hh*4 ~").lpf(2147).room(.3836).gain(.8)
-  - id: 4000_77
+  - id: "4000_77"
     seed: 4077
     voices: 2
     code: |
       $: s("gm_acoustic_guitar_steel:2 folkharp lt@3 gm_synth_bass_1").slow(14.1312)
 
       $: note(0).slow(8)
-  - id: 4000_78
+  - id: "4000_78"
     seed: 4078
     voices: 4
     code: |
@@ -691,7 +691,7 @@ songs:
       $: n("5 8 -1 0@3 ~ ~ 2 11 9 10 8 13 14 15 16 17 F4 Bb3 D3 F4 ~ Bb3 D3 F4 Bb3").pan(.4)
 
       $: s("gm_oboe hh!6").slow(2).add("-24")
-  - id: 4000_79
+  - id: "4000_79"
     seed: 4079
     voices: 3
     code: |
@@ -700,7 +700,7 @@ songs:
       $: note("g5 eb5 bb5 c2@4")
 
       $: s("linndrum_sd sd").bank("AkaiLinn").gain(.9322)
-  - id: 4000_80
+  - id: "4000_80"
     seed: 4080
     voices: 4
     code: |
@@ -711,7 +711,7 @@ songs:
       $: note("g4 ~")
 
       $: n("c2 f2 g2 f2 ~ 4 4 b 3 1 2 1 0 4 5 2 4 1 2 7 9 4 7 8 4 6 -3 -1 1 -4 -1 -1").scale("a4:minor").s("oh bd").bank("RolandTR808")
-  - id: 4000_81
+  - id: "4000_81"
     seed: 4081
     voices: 4
     code: |
@@ -722,7 +722,7 @@ songs:
       $: s("gm_electric_guitar_jazz gm_tenor_sax:1").clip(.9).release(.4748)
 
       $: note("c4@2 ~ c4*2 d#4").s("triangle kick").slow(2)
-  - id: 4000_82
+  - id: "4000_82"
     seed: 4082
     voices: 3
     code: |
@@ -731,14 +731,14 @@ songs:
       $: s("linndrum_sd 2").gain(.5).hpf(539).room(.2)
 
       $: s("gm_distortion_guitar woodblock:1").slow(2)
-  - id: 4000_83
+  - id: "4000_83"
     seed: 4083
     voices: 2
     code: |
       $: s("supersaw EmuDrumulator_bd").gain(.5).velocity(.2)
 
       $: n(4).scale("g2 minor pentatonic")
-  - id: 4000_84
+  - id: "4000_84"
     seed: 4084
     voices: 3
     code: |
@@ -747,14 +747,14 @@ songs:
       $: s("bass rd*6").slow(2)
 
       $: n(0).scale("C3 major").s("vocal 1").slow(2)
-  - id: 4000_85
+  - id: "4000_85"
     seed: 4085
     voices: 2
     code: |
       $: s("hh*2 hh*3").slow(4)
 
       $: n("F4 A3 C4 F4 ~ A3 C4 F4 A3 C4 F4 ~ A3 C4 F4 A3 C4 F4 ~ Ab3 B3 F4 Ab3 B3 F4 ~ Ab3 B3 F4 Ab3 B3 F4").s("gm_acoustic_guitar_steel:2 brown")
-  - id: 4000_86
+  - id: "4000_86"
     seed: 4086
     voices: 3
     code: |
@@ -763,7 +763,7 @@ songs:
       $: s("bass rd")
 
       $: s("gm_baritone_sax gm_epiano1:2").slow(2)
-  - id: 4000_87
+  - id: "4000_87"
     seed: 4087
     voices: 3
     code: |
@@ -772,7 +772,7 @@ songs:
       $: s("gm_distortion_guitar 15").slow(2)
 
       $: note("a2 c3 e3 a3 c4 e4 a4 e4 f2 a2 c3 f3 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4 a3 c4 e4 a4 f3 a3 c4 f4 c4").sound("triangle supersaw").lpf(700).room(.3631).delay(.7752).gain(.8)
-  - id: 4000_88
+  - id: "4000_88"
     seed: 4088
     voices: 4
     code: |
@@ -783,14 +783,14 @@ songs:
       $: note("a2*8 a2*8")
 
       $: s("gm_electric_bass_finger 1!3").gain(0)
-  - id: 4000_89
+  - id: "4000_89"
     seed: 4089
     voices: 2
     code: |
       $: s("psaltery_pluck cp*2").slow(32)
 
       $: s("gm_harmonica white*16").velocity(.5)
-  - id: 4000_90
+  - id: "4000_90"
     seed: 4090
     voices: 3
     code: |
@@ -799,14 +799,14 @@ songs:
       $: n("0 -3 0 0 -3 0").scale("Bb:lydian").s("sawtooth square").gain("<0.4 0.45 0.5 0.6>")
 
       $: s("gm_electric_guitar_jazz shaker*8").gain(.6)
-  - id: 4000_91
+  - id: "4000_91"
     seed: 4091
     voices: 2
     code: |
       $: n("0 4 5 4 3 2").s("rd*3 5").gain(.6105).slow(2)
 
       $: s("sine hh:1*4")
-  - id: 4000_92
+  - id: "4000_92"
     seed: 4092
     voices: 3
     code: |
@@ -815,7 +815,7 @@ songs:
       $: s("recorder_bass_sus crash").slow(2)
 
       $: s("gm_overdriven_guitar:3 supersaw").gain(.3999).delay(.25).delaytime(.125).delayfeedback(.8)
-  - id: 4000_93
+  - id: "4000_93"
     seed: 4093
     voices: 3
     code: |
@@ -824,7 +824,7 @@ songs:
       $: s("drums vocal").slow(2)
 
       $: n("2 0@3").scale("Bb:lydian")
-  - id: 4000_94
+  - id: "4000_94"
     seed: 4094
     voices: 3
     code: |
@@ -833,14 +833,14 @@ songs:
       $: s("bd*4 bd!4").slow(2)
 
       $: s("gm_drawbar_organ Bass").slow(2)
-  - id: 4000_95
+  - id: "4000_95"
     seed: 4095
     voices: 2
     code: |
       $: s("vocal 1").slow(2)
 
       $: s("gm_electric_bass_finger:2 bd!2").struct("x!2").add("[-12,0]").note("c4*2 d#4")
-  - id: 4000_96
+  - id: "4000_96"
     seed: 4096
     voices: 3
     code: |
@@ -849,7 +849,7 @@ songs:
       $: s("bd*2 ~")
 
       $: note("a2 a3 a2 f2").s("vocal 1").gain(.4).clip(.6).release(.1)
-  - id: 4000_97
+  - id: "4000_97"
     seed: 4097
     voices: 3
     code: |
@@ -858,28 +858,28 @@ songs:
       $: n("3 1 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~ -4").s("cowbell ~")
 
       $: s("supersaw gm_string_ensemble_1").slow(8)
-  - id: 4000_98
+  - id: "4000_98"
     seed: 4098
     voices: 2
     code: |
       $: s("oh*4 bd!3 bd*2").slow(2)
 
       $: s("bass Bass").slow(2)
-  - id: 4000_99
+  - id: "4000_99"
     seed: 4099
     voices: 2
     code: |
       $: s("pulse gtr").gain(.3).release(.5)
 
       $: s("bd*4 bd!4").note("d4 g4 d4").fast(2)
-  - id: 4000_100
+  - id: "4000_100"
     seed: 4100
     voices: 2
     code: |
       $: note("e4 f3 a3 c4").s("gm_electric_bass_finger bd:1*2").gain(.7244)
 
       $: n("9 11*2 11!2 10 ~ 4 4 b 3 1 2 1")
-  - id: 4000_101
+  - id: "4000_101"
     seed: 4101
     voices: 3
     code: |
@@ -888,14 +888,14 @@ songs:
       $: s("gm_tuba perc*3 gm_synth_bass_1 gm_oboe").gain(.8)
 
       $: note("g4 g3 b3 d4 a3 c4").sound("sine bd")
-  - id: 4000_102
+  - id: "4000_102"
     seed: 4102
     voices: 2
     code: |
       $: s("gm_harmonica cowbell ~ ~ cowbell").bank("RolandTR808").gain(.5855)
 
       $: note("f4 c4 c4!2 d#4@2")
-  - id: 4000_103
+  - id: "4000_103"
     seed: 4103
     voices: 4
     code: |
@@ -906,7 +906,7 @@ songs:
       $: s("mt mt*2").speed(.9)
 
       $: s("bd*2 ~").gain(.3564)
-  - id: 4000_104
+  - id: "4000_104"
     seed: 4104
     voices: 4
     code: |
@@ -917,7 +917,7 @@ songs:
       $: s("bd ~").slow(2)
 
       $: s("gm_electric_guitar_jazz bd:1 rim ~ rim").bank("AkaiLinn").gain(.5)
-  - id: 4000_105
+  - id: "4000_105"
     seed: 4105
     voices: 3
     code: |
@@ -926,14 +926,14 @@ songs:
       $: note("c3 g2 d#2 f2@3 ~ 3 72 d4@2 ~ c4 c4 a4@3").sound("piano sawtooth").lpf(1312).gain(.3151).release(2.5).room(.8)
 
       $: n("3 2 1@2 1@2 9@3 8 4@10 4@2 9@3 8 9@8 8@2 6@2 4@3").scale("A1 minor").s("gm_distortion_guitar 3").release(3)
-  - id: 4000_106
+  - id: "4000_106"
     seed: 4106
     voices: 2
     code: |
       $: note("d2*8 b5 g5 c5").sound("drum drum").lpf(2000).velocity(.1).room(.2)
 
       $: note(0)
-  - id: 4000_107
+  - id: "4000_107"
     seed: 4107
     voices: 3
     code: |
@@ -942,7 +942,7 @@ songs:
       $: s("mt lt").slow(2)
 
       $: s("mt lt").gain(.5)
-  - id: 4000_108
+  - id: "4000_108"
     seed: 4108
     voices: 3
     code: |
@@ -951,14 +951,14 @@ songs:
       $: note("f6 d6").sound("supersaw snare").lpf(2000).room(.5)
 
       $: note("g1 a1@2").sound("bd rim").lpf(4213).room(.5).gain(.3)
-  - id: 4000_109
+  - id: "4000_109"
     seed: 4109
     voices: 2
     code: |
       $: s("amen bd*4")
 
       $: note("c d e f e d c d e f e d").sound("sawtooth num").lpf(3053).gain(.15)
-  - id: 4000_110
+  - id: "4000_110"
     seed: 4110
     voices: 4
     code: |
@@ -969,21 +969,21 @@ songs:
       $: note("e1 ~").s("gm_electric_guitar_jazz gm_flute:0").gain("<0.5 0.6 0.7 0.8>")
 
       $: s("gm_piccolo pulse").slow(2)
-  - id: 4000_111
+  - id: "4000_111"
     seed: 4111
     voices: 2
     code: |
       $: s("gm_lead_6_voice gm_string_ensemble_2").gain(.4)
 
       $: s("psaltery_pluck 16").slow(2).scale("G0 minor")
-  - id: 4000_112
+  - id: "4000_112"
     seed: 4112
     voices: 2
     code: |
       $: s("bd*4 ~").slow(2)
 
       $: s("linndrum_sd sd:0 ~ hh:0").slow(2)
-  - id: 4000_113
+  - id: "4000_113"
     seed: 4113
     voices: 4
     code: |
@@ -994,21 +994,21 @@ songs:
       $: s("supersaw amencutup")
 
       $: note("a4 d#4 d4 c#4").gain(.3725)
-  - id: 4000_114
+  - id: "4000_114"
     seed: 4114
     voices: 2
     code: |
       $: s("bd*2 ~").gain(.3).cutoff(2000)
 
       $: s("gm_overdriven_guitar:6 gm_pad_bowed:1").degradeBy(.4)
-  - id: 4000_115
+  - id: "4000_115"
     seed: 4115
     voices: 2
     code: |
       $: note("c4 a#3 c4 c4@2")
 
       $: n("-3 -3 -3 -1 -1 -4 -2 b").scale("g4 dorian")
-  - id: 4000_116
+  - id: "4000_116"
     seed: 4116
     voices: 3
     code: |
@@ -1017,7 +1017,7 @@ songs:
       $: n(3).scale("f3:minor").velocity(0)
 
       $: s("cymbal ~").note("d#5@2 ~ a4").fast(1.9438)
-  - id: 4000_117
+  - id: "4000_117"
     seed: 4117
     voices: 3
     code: |
@@ -1026,14 +1026,14 @@ songs:
       $: s("gm_overdriven_guitar:3 hh27").slow(10.7106)
 
       $: s("hh*8 gm_acoustic_guitar_steel:2").gain(.6935).shape(.4).decay(.05).sustain(1).bank("RolandTR909")
-  - id: 4000_118
+  - id: "4000_118"
     seed: 4118
     voices: 2
     code: |
       $: n("2 5 3 5 8 7 9!2 7 8 5 1 2 4 ~ 5!2 4 ~ 2 1 0 -7!8 8@2 6@2 4@3 ~ 7 3 ~ 5 7 ~ 8")
 
       $: s("gm_overdriven_guitar:6 gm_reed_organ:5 gm_vibraphone:3 clave").slow(2)
-  - id: 4000_119
+  - id: "4000_119"
     seed: 4119
     voices: 4
     code: |
@@ -1044,7 +1044,7 @@ songs:
       $: s("amen attack").gain(.3359).pan(.4).room(.3).delay(.5).delaytime(".33 | .6 | .166 | .25").delayfeedback(.4)
 
       $: note("a3 ~ a4 g4").s("gm_acoustic_bass amen").room(.5926)
-  - id: 4000_120
+  - id: "4000_120"
     seed: 4120
     voices: 3
     code: |
@@ -1053,14 +1053,14 @@ songs:
       $: s("ocarina_vib 32 64 gm_pizzicato_strings:4 linndrum_hh 2 bd ~ bd ~").clip(1).release(.4)
 
       $: s("gm_epiano1:1 triangle").slow(2)
-  - id: 4000_121
+  - id: "4000_121"
     seed: 4121
     voices: 2
     code: |
       $: s("gm_pad_warm gm_overdriven_guitar:6 gm_string_ensemble_2 hh!6").struct("1 1 1 1 1 1 1 1")
 
       $: s("snare ~")
-  - id: 4000_122
+  - id: "4000_122"
     seed: 4122
     voices: 3
     code: |
@@ -1069,35 +1069,35 @@ songs:
       $: note("C3 D3 E3 F3").s("~ sd!7").transpose(-1).scale("a2:major")
 
       $: n("0 0 -3 0 0 -3 0 0").s("bell gm_piccolo").slow(10.1767)
-  - id: 4000_123
+  - id: "4000_123"
     seed: 4123
     voices: 2
     code: |
       $: note("e3 a3 c4 e4").clip("0.85").release(.0944).gain(.5)
 
       $: s("gm_acoustic_bass lt*3").slow(2)
-  - id: 4000_124
+  - id: "4000_124"
     seed: 4124
     voices: 2
     code: |
       $: s("recorder_bass_sus gm_distortion_guitar:4")
 
       $: s("ellipse east").decay(.1).sustain(0).delay(.3)
-  - id: 4000_125
+  - id: "4000_125"
     seed: 4125
     voices: 2
     code: |
       $: s("gm_synth_strings_1 0 4 4 4").slow(2.3598)
 
       $: note("a3 c4 f4 c4")
-  - id: 4000_126
+  - id: "4000_126"
     seed: 4126
     voices: 2
     code: |
       $: note("D2 G2 D2").sound("piano hadoken").attack(.05)
 
       $: s("bd*4 sd*2").slow(2)
-  - id: 4000_127
+  - id: "4000_127"
     seed: 4127
     voices: 3
     code: |
@@ -1106,7 +1106,7 @@ songs:
       $: s("cymbal ~ ~ ~").gain(.5247)
 
       $: s("sawtooth square").bank("9000").gain(.3)
-  - id: 4000_128
+  - id: "4000_128"
     seed: 4128
     voices: 4
     code: |
@@ -1117,7 +1117,7 @@ songs:
       $: n("4 7 9 4 7 8").scale("a3:minor")
 
       $: s("bd*4 sd*2").gain(.3)
-  - id: 4000_129
+  - id: "4000_129"
     seed: 4129
     voices: 3
     code: |
@@ -1126,28 +1126,28 @@ songs:
       $: n("0 2").gain(.308).release(.1).attack(.08)
 
       $: s("kick snare").slow(2)
-  - id: 4000_130
+  - id: "4000_130"
     seed: 4130
     voices: 2
     code: |
       $: note("f4 g#4").s("piano EmuDrumulator_bd").gain("0.2 0.3 0.25 0.35").room(.7).delay(.5).delaytime(".16 | .33")
 
       $: s("gm_overdriven_guitar:6 gm_electric_bass_pick").clip(1).gain(.3449)
-  - id: 4000_131
+  - id: "4000_131"
     seed: 4131
     voices: 2
     code: |
       $: s("vocal 1").gain(.7)
 
       $: note("a5 g5").s("gm_synth_strings_1 bongo:3 xylo SequentialCircuitsDrumtracks_cr").slow(8)
-  - id: 4000_132
+  - id: "4000_132"
     seed: 4132
     voices: 2
     code: |
       $: note("~ 3 c3 g#2 c3 f3 a#2 g2 d#2 f2@3 ~ 3 72 f4@3 d#4@3 f4@9").sound("supersaw hh").hpf(800).speed(.5878)
 
       $: s("psaltery_pluck bd*2").gain(.5)
-  - id: 4000_133
+  - id: "4000_133"
     seed: 4133
     voices: 3
     code: |
@@ -1156,14 +1156,14 @@ songs:
       $: n("0 3 6 0 2 5").sound("triangle sd").lpf(2000).resonance(6).decay(.1).sustain(0).room(1.0252).delay(.5)
 
       $: note("e5 e5 ~ ~").sound("piano sine").lpf(4000).room(.5).gain(.8602)
-  - id: 4000_134
+  - id: "4000_134"
     seed: 4134
     voices: 2
     code: |
       $: note("f6 d6 b5 ~").segment(28).gain(1)
 
       $: s("psaltery_pluck gm_electric_bass_finger:3 noise*16 hh!4 rect woodblock:1").lpf(4000).gain(.3)
-  - id: 4000_135
+  - id: "4000_135"
     seed: 4135
     voices: 3
     code: |
@@ -1172,14 +1172,14 @@ songs:
       $: s("ellipse agogo")
 
       $: note("d5 c#5@6 ~ a4 c#5@6 ~ a4 c#5@2 ~ a4 c#5@3 ~").sound("bd ~")
-  - id: 4000_136
+  - id: "4000_136"
     seed: 4136
     voices: 2
     code: |
       $: s("hh*16 hh*16").distort("10:.17").room(.2).delay(.25).gain(.3)
 
       $: note("d#5@2 ~")
-  - id: 4000_137
+  - id: "4000_137"
     seed: 4137
     voices: 4
     code: |
@@ -1190,14 +1190,14 @@ songs:
       $: s("hh*4 ~").slow(4)
 
       $: s("rd*3 num").gain(.25).slow(8).add("<0,5>")
-  - id: 4000_138
+  - id: "4000_138"
     seed: 4138
     voices: 2
     code: |
       $: s("gm_lead_6_voice gm_harmonica").slow(2)
 
       $: s("pad gm_distortion_guitar:2").bank("tr909")
-  - id: 4000_139
+  - id: "4000_139"
     seed: 4139
     voices: 3
     code: |
@@ -1206,14 +1206,14 @@ songs:
       $: s("kick*4 Ethnic").slow(2)
 
       $: note("a2 eb2 c2").sound("drum hh").lpf(200).hpf(400)
-  - id: 4000_140
+  - id: "4000_140"
     seed: 4140
     voices: 2
     code: |
       $: s("ocarina_vib gm_epiano1:2").gain(.5).pan(.4).room(.9652)
 
       $: s("oh bd").bank("linn9000").gain(.7)
-  - id: 4000_141
+  - id: "4000_141"
     seed: 4141
     voices: 4
     code: |
@@ -1224,21 +1224,21 @@ songs:
       $: n("6 8 7 6 5 4 3 2 1 3 0@3 ~").scale("C3 major")
 
       $: s("rect sd").slow(2)
-  - id: 4000_142
+  - id: "4000_142"
     seed: 4142
     voices: 2
     code: |
       $: note(12).sound("supersaw rim").room(.336).gain(.8)
 
       $: s("cr sd").gain(.2).segment(1)
-  - id: 4000_143
+  - id: "4000_143"
     seed: 4143
     voices: 2
     code: |
       $: note("g1 ~ 88 f6 d6 b5 ~ 88 f6").clip(1).attack(.05).gain(.8).release(.3)
 
       $: s("gm_bassoon gm_electric_guitar_muted")
-  - id: 4000_144
+  - id: "4000_144"
     seed: 4144
     voices: 3
     code: |
@@ -1247,7 +1247,7 @@ songs:
       $: s("pulse kick*4")
 
       $: s("linndrum_bd xylo").crush(12)
-  - id: 4000_145
+  - id: "4000_145"
     seed: 4145
     voices: 3
     code: |
@@ -1256,14 +1256,14 @@ songs:
       $: s("snare ~").clip(.95)
 
       $: s("square gm_electric_bass_finger").clip(.6087)
-  - id: 4000_146
+  - id: "4000_146"
     seed: 4146
     voices: 2
     code: |
       $: note("B2 D2 G2 Bb2 Eb2 Bb3 A2 D2 G2 Bb2 Eb2 F#2").sound("supersaw bd").lpf(2800)
 
       $: s("mt mt").gain(.6)
-  - id: 4000_147
+  - id: "4000_147"
     seed: 4147
     voices: 3
     code: |
@@ -1272,21 +1272,21 @@ songs:
       $: sound("sine triangle").lpf(2000).resonance(15).gain("[0.8 0.4]*4")
 
       $: s("cp sd").slow(5)
-  - id: 4000_148
+  - id: "4000_148"
     seed: 4148
     voices: 2
     code: |
       $: s("gm_ocarina bongo*2").gain(.6)
 
       $: s("~ 31").gain("0.3 0.6 0.5 0.7").room(.2).delay(.5).decay(.1).sustain(0).cutoff(200).attack(.2)
-  - id: 4000_149
+  - id: "4000_149"
     seed: 4149
     voices: 2
     code: |
       $: s("linndrum_bd rd:3*4").slow(24)
 
       $: s("hh*4 ~").slow(14.9752)
-  - id: 4000_150
+  - id: "4000_150"
     seed: 4150
     voices: 4
     code: |
@@ -1297,7 +1297,7 @@ songs:
       $: sound("kick drums").lpf(200)
 
       $: s("bd*2 ~").slow(2)
-  - id: 4000_151
+  - id: "4000_151"
     seed: 4151
     voices: 4
     code: |
@@ -1308,7 +1308,7 @@ songs:
       $: s("vocal 1").gain(.4).delay(.6)
 
       $: n("c2 ~ f2 ~ f2 ~ 11 8 ~ ~ 9 10 9 7 ~ 11").scale("C:ritusen").s("cowbell ~ ~ cowbell").gain(.6)
-  - id: 4000_152
+  - id: "4000_152"
     seed: 4152
     voices: 3
     code: |
@@ -1317,21 +1317,21 @@ songs:
       $: s("misc:2 gm_trumpet:2 0 8").slow(2)
 
       $: s("rd 1!3").gain(.8)
-  - id: 4000_153
+  - id: "4000_153"
     seed: 4153
     voices: 2
     code: |
       $: note("e5 c5 f5 a5 f5 ~ ~ ~ g5 ~ ~ ~ d5").sound("sawtooth triangle").lpf(3726).gain(.9211)
 
       $: n("6 -3 -1 1 -4 -1 -1 -5 -3 -3 -3 -1 -1 -4 -2 b").scale("a3:minor").struct("[~ x]*2")
-  - id: 4000_154
+  - id: "4000_154"
     seed: 4154
     voices: 2
     code: |
       $: s("gm_drawbar_organ gm_marimba").fast(4)
 
       $: s("piano woodblock:1")
-  - id: 4000_155
+  - id: "4000_155"
     seed: 4155
     voices: 4
     code: |
@@ -1342,14 +1342,14 @@ songs:
       $: s("pulse kick*4 woodblock:1 woodblock:2*2").lpf(2056).room(.3502)
 
       $: note("f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6 b5 ~ 88 f6 d6").sound("drums snare").lpf("<600 800 1000 1200!3>/12").resonance(3).room(.8385).delay(.3).gain(.9837)
-  - id: 4000_156
+  - id: "4000_156"
     seed: 4156
     voices: 2
     code: |
       $: s("hh*16 hh*16").gain(.3763).release(.1112)
 
       $: s("rd 1!3 2 3").pan(.7)
-  - id: 4000_157
+  - id: "4000_157"
     seed: 4157
     voices: 3
     code: |
@@ -1358,7 +1358,7 @@ songs:
       $: s("gm_electric_bass_pick crow").slow(2)
 
       $: note("c d e f e d c a f e d c a f e d c a f e d c eb g bb c4 d4 eb4 g4 bb4 c5 g4").sound("sine sd").lpf(2000).gain(.9)
-  - id: 4000_158
+  - id: "4000_158"
     seed: 4158
     voices: 4
     code: |
@@ -1369,7 +1369,7 @@ songs:
       $: s("vocal 1 2 4 8 16 0 0 8 16")
 
       $: s("~ lt").slow(2)
-  - id: 4000_159
+  - id: "4000_159"
     seed: 4159
     voices: 3
     code: |
@@ -1378,14 +1378,14 @@ songs:
       $: s("hh cp ~ ~ ~ crash").pan("0.2")
 
       $: s("bd*4 bd!4").slow(9.7512)
-  - id: 4000_160
+  - id: "4000_160"
     seed: 4160
     voices: 2
     code: |
       $: s("bell sd").slow(2)
 
       $: n("1 5 8 7 9!2 7 8 5 1")
-  - id: 4000_161
+  - id: "4000_161"
     seed: 4161
     voices: 3
     code: |
@@ -1394,7 +1394,7 @@ songs:
       $: s("cp ~").velocity(.9)
 
       $: s("gm_overdriven_guitar:6 east bongo:3 hats*8").slow(4)
-  - id: 4000_162
+  - id: "4000_162"
     seed: 4162
     voices: 4
     code: |
@@ -1405,14 +1405,14 @@ songs:
       $: s("linndrum_bd rd:3*4").gain("<0.4 0.2>")
 
       $: s("sawtooth square").gain(.8).release(.4)
-  - id: 4000_163
+  - id: "4000_163"
     seed: 4163
     voices: 2
     code: |
       $: note("a4 b4 c5 e5")
 
       $: s("rect gm_dulcimer").gain(.3)
-  - id: 4000_164
+  - id: "4000_164"
     seed: 4164
     voices: 4
     code: |
@@ -1423,7 +1423,7 @@ songs:
       $: s("piano 16").slow(2)
 
       $: s("ellipse shaker_small:3").room(.4).delay(".5").gain("[1 0.6]*2").release(2.0444)
-  - id: 4000_165
+  - id: "4000_165"
     seed: 4165
     voices: 4
     code: |
@@ -1434,14 +1434,14 @@ songs:
       $: note("a1 g1*2 a1*2 g1 ~ b2@11 ~ 6 2 d#4@2 c#4@2 c4").clip(.97).release(.4)
 
       $: s("lead 4 8 16").release(.1176)
-  - id: 4000_166
+  - id: "4000_166"
     seed: 4166
     voices: 2
     code: |
       $: s("gm_synth_strings_1 gm_lead_6_voice")
 
       $: s("gm_acoustic_guitar_steel:2 lead gm_electric_bass_pick cowbell:3").gain(.5).release(1.8515).attack(.0473)
-  - id: 4000_167
+  - id: "4000_167"
     seed: 4167
     voices: 4
     code: |
@@ -1452,14 +1452,14 @@ songs:
       $: s("linndrum_bd bd:3")
 
       $: s("gm_baritone_sax 16").gain("[1 0.6]*2").release(.08).attack(.001).delay(.5).delaytime(.125)
-  - id: 4000_168
+  - id: "4000_168"
     seed: 4168
     voices: 2
     code: |
       $: s("supersaw cowbell").cutoff(1000)
 
       $: s("hh*8 crash ~ ~").gain(.5).add("<0 1>")
-  - id: 4000_169
+  - id: "4000_169"
     seed: 4169
     voices: 4
     code: |
@@ -1470,14 +1470,14 @@ songs:
       $: note("C3 D3 E3 F3")
 
       $: s("gm_synth_strings_1 Kalimba Ethnic").note("C1 F1 G1 C1 F1 G1 C1")
-  - id: 4000_170
+  - id: "4000_170"
     seed: 4170
     voices: 2
     code: |
       $: s("gm_drawbar_organ gm_electric_guitar_clean:2").velocity(.55).hpf(50).gain(.6733)
 
       $: s("gm_distortion_guitar recorder_tenor_sus gm_acoustic_guitar_nylon woodblock:2*2 snare_rim:0 gong 8 brakedrum:1").gain(1.5).pan("<.4 .6>/10")
-  - id: 4000_171
+  - id: "4000_171"
     seed: 4171
     voices: 4
     code: |
@@ -1488,7 +1488,7 @@ songs:
       $: s("gm_acoustic_bass hh:0").note("c4 a3 b3 c4").clip(1).release(.4).hpf(4000)
 
       $: s("drums dino flbass white*4").room(.3661).delay(.6).gain(0)
-  - id: 4000_172
+  - id: "4000_172"
     seed: 4172
     voices: 3
     code: |
@@ -1497,28 +1497,28 @@ songs:
       $: s("ellipse gm_synth_strings_2").clip(.9).release(.4).attack(.08)
 
       $: n("6 8 10 ~ 4 6@2 4@5")
-  - id: 4000_173
+  - id: "4000_173"
     seed: 4173
     voices: 2
     code: |
       $: s("supersaw bd cr sd").slow(1)
 
       $: s("bd!2 bd*4").gain(.5).shape(.6)
-  - id: 4000_174
+  - id: "4000_174"
     seed: 4174
     voices: 2
     code: |
       $: note("a#5 g#5 e5 c#5 ~ 5 f#5 e5 ~ e5 d#5 a#4").pan(.5308)
 
       $: note("c1 f1 g1").sound("square bd").lpf(3500).gain(.9238).release(.3)
-  - id: 4000_175
+  - id: "4000_175"
     seed: 4175
     voices: 2
     code: |
       $: note("a2 eb2 g1 bb1").s("gm_pad_warm gm_string_ensemble_1").slow(2)
 
       $: s("woodblock:1 woodblock:2*2 snare_rim:0 gong").clip(.9).note(29)
-  - id: 4000_176
+  - id: "4000_176"
     seed: 4176
     voices: 4
     code: |
@@ -1529,7 +1529,7 @@ songs:
       $: s("rd 1!3").gain(.5).lpf(600).resonance(10).room(.9)
 
       $: sound("drum hadoken").lpf(2512).velocity(2.3515)
-  - id: 4000_177
+  - id: "4000_177"
     seed: 4177
     voices: 3
     code: |
@@ -1538,7 +1538,7 @@ songs:
       $: note("0 1 4!3 12 c3 f3@2 f3!2 g3 f3 e3 c3@2 ~").sound("supersaw rim")
 
       $: n("7 11!2 6 7 11 12 13 14 15 16 17 C2 F2 D2 G2 C2 F2 A2 Bb2 B2 G2 C2 F2 F2 F2 A2 Bb2 B2 A2 Ab2 G2 C2").scale("D minor").s("clave gm_electric_guitar_muted")
-  - id: 4000_178
+  - id: "4000_178"
     seed: 4178
     voices: 3
     code: |
@@ -1547,14 +1547,14 @@ songs:
       $: s("cowbell ~ ~ cowbell").velocity(.1338).hpf(7869).gain(.3935).shape(.4).lpf(2000).lpq(8)
 
       $: n("0 -7@3 3 4 2 3 -4 ~ 4 6 5 4 3 2 1 3 0@3 ~ -7 0 1 2 3 4 -3 -2 -1 0 -7 -1 -3 ~").s("gm_electric_guitar_clean:2 attack").gain("[1 0.6]*2")
-  - id: 4000_179
+  - id: "4000_179"
     seed: 4179
     voices: 2
     code: |
       $: s("bd 4").lpf(3000).room(.4)
 
       $: s("hh*2 hh*3").bank("9000")
-  - id: 4000_180
+  - id: "4000_180"
     seed: 4180
     voices: 4
     code: |
@@ -1565,7 +1565,7 @@ songs:
       $: s("square gm_electric_bass_finger:7").slow(2)
 
       $: s("bd*4 bd!4 ~").pan(.4)
-  - id: 4000_181
+  - id: "4000_181"
     seed: 4181
     voices: 3
     code: |
@@ -1574,7 +1574,7 @@ songs:
       $: note("e5 a5 g5 e5 c5 d5 e5 g5").s("drums hh*8 gm_piano").slow(11.0602)
 
       $: note("b@2 f@2 ~ b")
-  - id: 4000_182
+  - id: "4000_182"
     seed: 4182
     voices: 3
     code: |
@@ -1583,7 +1583,7 @@ songs:
       $: s("piano hh").speed(1.1).delay(.6513).room(.6981).gain("<.2 .1 .15 .1>/16")
 
       $: note("g#4@2 a#4@2 b4@2 d#5").transpose("<0 0 1 0>/8")
-  - id: 4000_183
+  - id: "4000_183"
     seed: 4183
     voices: 4
     code: |
@@ -1594,21 +1594,21 @@ songs:
       $: s("piano bd*4").gain(.8)
 
       $: note("C3 D3 E3 F3 e5 ~ f5 ~ e5 ~").s("hh*8 hh!6 hh*2").gain(1)
-  - id: 4000_184
+  - id: "4000_184"
     seed: 4184
     voices: 2
     code: |
       $: sound("drums kick").lpf(2600).velocity(.551).hpf(50)
 
       $: s("woodblock:1 woodblock:2*2 snare_rim:0 gong").gain(.5)
-  - id: 4000_185
+  - id: "4000_185"
     seed: 4185
     voices: 2
     code: |
       $: s("ocarina gm_trombone:4").gain(.7).release(.1).attack(.03)
 
       $: s("mt mt*2").gain(.5)
-  - id: 4000_186
+  - id: "4000_186"
     seed: 4186
     voices: 4
     code: |
@@ -1619,28 +1619,28 @@ songs:
       $: s("gm_electric_bass_finger 32 64 gm_electric_bass_pick:7").slow(8)
 
       $: s("psaltery_pluck gm_pizzicato_strings:4 gm_electric_bass_finger:7 gm_overdriven_guitar:3").slow(2)
-  - id: 4000_187
+  - id: "4000_187"
     seed: 4187
     voices: 2
     code: |
       $: s("gm_overdriven_guitar:3 woodblock").slow(2)
 
       $: note("a2 a2 a3 a2").sound("sine hh").lpf(1957).lpq(2)
-  - id: 4000_188
+  - id: "4000_188"
     seed: 4188
     voices: 2
     code: |
       $: s("gm_distortion_guitar gm_electric_bass_pick")
 
       $: s("lead perc").note("e5 g5 e5 d5")
-  - id: 4000_189
+  - id: "4000_189"
     seed: 4189
     voices: 2
     code: |
       $: s("gm_piccolo 5").gain(.5714)
 
       $: s("~ ~").note("c a f e")
-  - id: 4000_190
+  - id: "4000_190"
     seed: 4190
     voices: 3
     code: |
@@ -1649,21 +1649,21 @@ songs:
       $: s("bass sd").clip(1)
 
       $: s("piano lt@3").gain(.25)
-  - id: 4000_191
+  - id: "4000_191"
     seed: 4191
     voices: 2
     code: |
       $: note("e4 f3 a3 c4").clip(1)
 
       $: s("gm_electric_bass_finger east")
-  - id: 4000_192
+  - id: "4000_192"
     seed: 4192
     voices: 2
     code: |
       $: n("2 1@2 1@2 9@3 8 4@10").scale("c3:minor").s("triangle shaker*8").pan(.3002)
 
       $: s("lead cp:12").note("c a f e d c eb g bb c4 d4 eb4 g4 bb4 c5 b3 d4 g4 c4 e4 a4 a3 c4 f4 c4 e4 g4 c5 g3 b3 d4 g4").add("0,.12").struct("x(5,8,-1)").velocity(.8)
-  - id: 4000_193
+  - id: "4000_193"
     seed: 4193
     voices: 4
     code: |
@@ -1674,14 +1674,14 @@ songs:
       $: s("gm_tuba sd*4").gain(0).lpf(2051).room(.5206)
 
       $: sound("drums snare").lpf(700).gain(.5).clip(.9).release(.0729).pan(.4).speed(.9761)
-  - id: 4000_194
+  - id: "4000_194"
     seed: 4194
     voices: 2
     code: |
       $: s("sawtooth square gm_epiano1:1 sd*2 cp*8 sn").release(.5).note("0 1 4!3 12").struct("<x*4>")
 
       $: n("2 2@3 3 4 5 6@3 7 8 6 ~ 4@3 ~ 9 4 3@3 4 3 4 5 6@3 7 8@3 ~ 6 ~ 4 ~ 3").gain("[1 0.6]*4")
-  - id: 4000_195
+  - id: "4000_195"
     seed: 4195
     voices: 4
     code: |
@@ -1692,14 +1692,14 @@ songs:
       $: note("a4 d#5").sound("bd sd").delay(.441)
 
       $: s("recorder_bass_sus cp*32 ~ ~").slow(8.8305)
-  - id: 4000_196
+  - id: "4000_196"
     seed: 4196
     voices: 2
     code: |
       $: s("gm_electric_bass_pick gm_recorder 24 32").lpf(650)
 
       $: s("bd*4 ~")
-  - id: 4000_197
+  - id: "4000_197"
     seed: 4197
     voices: 3
     code: |
@@ -1708,7 +1708,7 @@ songs:
       $: note("e1 ~").transpose(-12)
 
       $: s("oh 2 4 8").slow(2).gain(1.5)
-  - id: 4000_198
+  - id: "4000_198"
     seed: 4198
     voices: 4
     code: |
@@ -1719,7 +1719,7 @@ songs:
       $: s("bd*2 sd").slow(2)
 
       $: note("~ c#4 c4 c#4")
-  - id: 4000_199
+  - id: "4000_199"
     seed: 4199
     voices: 3
     code: |
@@ -1728,7 +1728,7 @@ songs:
       $: s("cowbell ~").slow(2)
 
       $: sound("~ hh").lpf(2710).gain(.4334)
-  - id: 4000_200
+  - id: "4000_200"
     seed: 4200
     voices: 4
     code: |
@@ -1739,14 +1739,14 @@ songs:
       $: sound("bd sd").lpf(800).gain(.9983)
 
       $: s("mt mt*2").gain(.25)
-  - id: 4000_201
+  - id: "4000_201"
     seed: 4201
     voices: 2
     code: |
       $: note("12 a2*8 a2*8 a2*8").clip(1)
 
       $: s("bd*2 ~").slow(2).note("c a f e").struct("x").velocity(1).hpf(8000)
-  - id: 4000_202
+  - id: "4000_202"
     seed: 4202
     voices: 3
     code: |
@@ -1755,7 +1755,7 @@ songs:
       $: s("hh*8 cowbell:3").gain(.35).room(.2)
 
       $: note("e3 g3").sound("sine bd*4").lpf("<1500 1800 2400>/10").gain(.4)
-  - id: 4000_203
+  - id: "4000_203"
     seed: 4203
     voices: 4
     code: |
@@ -1766,14 +1766,14 @@ songs:
       $: s("piano bongo:3").gain(.6)
 
       $: note("c3 d#3@2 c#3").velocity(.5)
-  - id: 4000_204
+  - id: "4000_204"
     seed: 4204
     voices: 2
     code: |
       $: s("saw gm_lead_2_sawtooth").slow(2)
 
       $: s("gm_synth_strings_1 drums").slow(16)
-  - id: 4000_205
+  - id: "4000_205"
     seed: 4205
     voices: 3
     code: |
@@ -1782,14 +1782,14 @@ songs:
       $: s("psaltery_pluck gm_string_ensemble_1").slow(3.4858)
 
       $: note("c2 c2 eb2 c2").sound("square rim").lpf(3000).hpf(5443).velocity("<.9@28 1.2@2>")
-  - id: 4000_206
+  - id: "4000_206"
     seed: 4206
     voices: 2
     code: |
       $: s("bd!2 bd*4").slow(8)
 
       $: s("gm_overdriven_guitar:3 mt")
-  - id: 4000_207
+  - id: "4000_207"
     seed: 4207
     voices: 3
     code: |
@@ -1798,7 +1798,7 @@ songs:
       $: sound("supersaw bd*4").lpf(2000).gain(.5)
 
       $: note("0 1 4!3 12").s("hh*4 ~").bank("RolandTR808").lpf(4000).velocity(.3716).pan(.3)
-  - id: 4000_208
+  - id: "4000_208"
     seed: 4208
     voices: 3
     code: |
@@ -1807,7 +1807,7 @@ songs:
       $: s("rd 1!3").slow(2)
 
       $: s("gm_electric_bass_finger gm_electric_bass_pick").slow(2)
-  - id: 4000_209
+  - id: "4000_209"
     seed: 4209
     voices: 3
     code: |
@@ -1816,7 +1816,7 @@ songs:
       $: s("rd*3 6 sd ~").lpf(1500).room(.6728)
 
       $: n("0 -3 0 0 -3").clip(.9005).gain(.3)
-  - id: 4000_210
+  - id: "4000_210"
     seed: 4210
     voices: 3
     code: |
@@ -1825,7 +1825,7 @@ songs:
       $: note("d2*8 b3@2 b3").s("triangle anvil rd*6 sd:1").room(.2).gain(.4255).release(.0627).attack(.05).clip(.95).lpf(650)
 
       $: note("c4@2 c4!3 b3 b3@2 b3 a3 a3!2 c4!2").fm(.5).gain(.8)
-  - id: 4000_211
+  - id: "4000_211"
     seed: 4211
     voices: 3
     code: |
@@ -1834,7 +1834,7 @@ songs:
       $: note("c4*2 d#4 f4 ~ d#4*2!2 d#4 c4 g#4 ~ g4 ~ f#4 f4 d#4 c#4 a#3")
 
       $: s("clavisynth hh!6 hh*2 hh ~")
-  - id: 4000_212
+  - id: "4000_212"
     seed: 4212
     voices: 4
     code: |
@@ -1845,7 +1845,7 @@ songs:
       $: note("c2 a2 eb2 c2").sound("sawtooth drums").lpf(4000).room(.7).gain(.8).release(.3)
 
       $: n(7).scale("C:major").fast(2).s("sd sd*4").slow(4)
-  - id: 4000_213
+  - id: "4000_213"
     seed: 4213
     voices: 3
     code: |
@@ -1854,21 +1854,21 @@ songs:
       $: note("c2*8 b4 c5 e5").sound("square sine").attack(.001)
 
       $: s("gm_oboe breath").clip(1).release(.08).pan("<0 1>/16").speed(1.3519).velocity(.1)
-  - id: 4000_214
+  - id: "4000_214"
     seed: 4214
     voices: 2
     code: |
       $: s("triangle gm_pizzicato_strings:1").fast(9.9504)
 
       $: s("piano flute").bank("RolandTR808")
-  - id: 4000_215
+  - id: "4000_215"
     seed: 4215
     voices: 2
     code: |
       $: note("c1 f1 g1 a#1 6 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4")
 
       $: s("clave gm_baritone_sax").speed(1.1)
-  - id: 4000_216
+  - id: "4000_216"
     seed: 4216
     voices: 3
     code: |
@@ -1877,7 +1877,7 @@ songs:
       $: note("Gm7 C7 Fmaj7 e5 c#5 ~ 5 f#5 e5 ~ e5 d#5 a#4 ~ ~ b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4 d4@2").sound("drum kick").lpf(2972)
 
       $: s("mt mt*2").lpf(4000).resonance(10).gain(1)
-  - id: 4000_217
+  - id: "4000_217"
     seed: 4217
     voices: 3
     code: |
@@ -1886,7 +1886,7 @@ songs:
       $: s("hh*16 hh*16").slow(2)
 
       $: n("~ A3 C4 E4 A3 C4 E4 ~ Ab3 C4 Eb4 Ab3 C4 Eb4 ~ F3 Bb3 D3 F3 Bb3 D3 ~ F3 B3 D3 F3 B3 D3 ~ F3 A3 C3").scale("a3:minor").s("gm_piccolo Acoustic").lpf(1930)
-  - id: 4000_218
+  - id: "4000_218"
     seed: 4218
     voices: 3
     code: |
@@ -1895,14 +1895,14 @@ songs:
       $: n("-2 -2 ~ 59 F2 F2")
 
       $: n("F4 Bb4 D5 D4")
-  - id: 4000_219
+  - id: "4000_219"
     seed: 4219
     voices: 2
     code: |
       $: s("clavisynth gm_acoustic_guitar_steel:2").slow(2)
 
       $: s("mt lt")
-  - id: 4000_220
+  - id: "4000_220"
     seed: 4220
     voices: 3
     code: |
@@ -1911,7 +1911,7 @@ songs:
       $: s("pulse hh:0").gain("<0.4 0.2>")
 
       $: note("c3 e3").sound("bd bd").lpf(3200).gain(.8801)
-  - id: 4000_221
+  - id: "4000_221"
     seed: 4221
     voices: 3
     code: |
@@ -1920,28 +1920,28 @@ songs:
       $: s("vocal 1 2 4").room(1.0429).delay(.7196).delaytime(.0936).gain(.2195).release(.12)
 
       $: n("5 7 9 5").scale("A1 minor").s("sleighbells linn9000_cr supersaw linn9000_lt").slow(10.617)
-  - id: 4000_222
+  - id: "4000_222"
     seed: 4222
     voices: 2
     code: |
       $: s("gm_tuba lt@3").hpf(4000).gain(1.2)
 
       $: s("misc:2 gm_baritone_sax").slow(32)
-  - id: 4000_223
+  - id: "4000_223"
     seed: 4223
     voices: 2
     code: |
       $: s("clave gm_clarinet lt@3 cr!3").cutoff(200)
 
       $: s("piano gm_acoustic_guitar_steel:2").gain(.6)
-  - id: 4000_224
+  - id: "4000_224"
     seed: 4224
     voices: 2
     code: |
       $: s("cymbal ~").slow(2)
 
       $: s("vocal 1").n(7).scale("a#3:minor")
-  - id: 4000_225
+  - id: "4000_225"
     seed: 4225
     voices: 3
     code: |
@@ -1950,14 +1950,14 @@ songs:
       $: s("gm_electric_bass_finger supersaw whirl attack").slow(2.9043)
 
       $: note("g#4@2 g#4").sound("hh hh").fast(4)
-  - id: 4000_226
+  - id: "4000_226"
     seed: 4226
     voices: 2
     code: |
       $: s("bell sleighbells psaltery_pluck 63").slow(8)
 
       $: s("cowbell ~ ~ cowbell ~ ~ cowbell ~").struct("x").velocity(.9)
-  - id: 4000_227
+  - id: "4000_227"
     seed: 4227
     voices: 3
     code: |
@@ -1966,14 +1966,14 @@ songs:
       $: s("hh*4 ~").gain(.5)
 
       $: s("hh!4 gm_oboe").slow(3)
-  - id: 4000_228
+  - id: "4000_228"
     seed: 4228
     voices: 2
     code: |
       $: s("lt ht").gain(.6)
 
       $: note("a5 c6").sound("triangle snare").lpf(1500)
-  - id: 4000_229
+  - id: "4000_229"
     seed: 4229
     voices: 3
     code: |
@@ -1982,14 +1982,14 @@ songs:
       $: s("misc:2 sd*4").slow(2)
 
       $: s("hh*2 ~ sd:1!3 sd:1").room(.9).lpf(650).gain(1.4).release(.4613).attack(.05)
-  - id: 4000_230
+  - id: "4000_230"
     seed: 4230
     voices: 2
     code: |
       $: note("d5 ~ ~ ~").sound("kick snare").lpf(2000).gain(.399).room(.8)
 
       $: s("gm_pad_warm gm_tuba")
-  - id: 4000_231
+  - id: "4000_231"
     seed: 4231
     voices: 4
     code: |
@@ -2000,7 +2000,7 @@ songs:
       $: note("C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1").sound("piano drums").lpf(2806).gain(.5)
 
       $: n("5 ~ 8 ~ 7 ~").scale("g1 dorian").s("hh sd ht hh bd lt hh sd").gain(.6496)
-  - id: 4000_232
+  - id: "4000_232"
     seed: 4232
     voices: 3
     code: |
@@ -2009,7 +2009,7 @@ songs:
       $: s("rect Bass").slow(3.9687)
 
       $: s("misc:2 kick*4 hh:0 linndrum_oh").slow(2)
-  - id: 4000_233
+  - id: "4000_233"
     seed: 4233
     voices: 3
     code: |
@@ -2018,7 +2018,7 @@ songs:
       $: s("linndrum_bd clave perc perc*3").gain(.3)
 
       $: n("G3 C4").scale("g1 dorian").s("snare ~").slow(2)
-  - id: 4000_234
+  - id: "4000_234"
     seed: 4234
     voices: 3
     code: |
@@ -2027,14 +2027,14 @@ songs:
       $: s("sine misc:2").lpf(4000).room(.2)
 
       $: n("F4 ~ A3 C4 F4 A3 C4 F4")
-  - id: 4000_235
+  - id: "4000_235"
     seed: 4235
     voices: 2
     code: |
       $: s("linndrum_oh shaker_small:3")
 
       $: s("clavisynth gong").room(.1)
-  - id: 4000_236
+  - id: "4000_236"
     seed: 4236
     voices: 3
     code: |
@@ -2043,7 +2043,7 @@ songs:
       $: note("d5 c#5 d5 c#5")
 
       $: s("gm_epiano1:1 6")
-  - id: 4000_237
+  - id: "4000_237"
     seed: 4237
     voices: 3
     code: |
@@ -2052,7 +2052,7 @@ songs:
       $: s("gm_distortion_guitar linndrum_hh").gain(.2294)
 
       $: note("e5 c#5 ~ 5").sound("sawtooth bd*4").lpf(2500).gain(.4).velocity(.55)
-  - id: 4000_238
+  - id: "4000_238"
     seed: 4238
     voices: 4
     code: |
@@ -2063,14 +2063,14 @@ songs:
       $: note("C3 D3").sound("kick snare")
 
       $: s("hh!4 gm_synth_strings_2")
-  - id: 4000_239
+  - id: "4000_239"
     seed: 4239
     voices: 2
     code: |
       $: s("kick*4 lt@3").slow(6.3416)
 
       $: s("gm_overdriven_guitar:3 lt@3").cutoff(273).gain(.3).release(.1)
-  - id: 4000_240
+  - id: "4000_240"
     seed: 4240
     voices: 3
     code: |
@@ -2079,14 +2079,14 @@ songs:
       $: s("gm_harmonica rd*6").attack(.9719)
 
       $: note(12).sound("bd rim bd hh")
-  - id: 4000_241
+  - id: "4000_241"
     seed: 4241
     voices: 2
     code: |
       $: n("6 9 11*2 11!2")
 
       $: s("cr bd").slow(8)
-  - id: 4000_242
+  - id: "4000_242"
     seed: 4242
     voices: 3
     code: |
@@ -2095,7 +2095,7 @@ songs:
       $: s("bass 0").slow(2)
 
       $: s("oh ~ oh ~")
-  - id: 4000_243
+  - id: "4000_243"
     seed: 4243
     voices: 4
     code: |
@@ -2106,7 +2106,7 @@ songs:
       $: note("12 a4").s("triangle cp*16").slow(2)
 
       $: note("c1 ~ f1 g1").s("oh*4 bd!3 bd*2 ~ ~ sd ~ bd").gain(.7)
-  - id: 4000_244
+  - id: "4000_244"
     seed: 4244
     voices: 3
     code: |
@@ -2115,7 +2115,7 @@ songs:
       $: s("hh*4 ~").gain(.15)
 
       $: s("psaltery_pluck lt").gain(.8)
-  - id: 4000_245
+  - id: "4000_245"
     seed: 4245
     voices: 4
     code: |
@@ -2126,14 +2126,14 @@ songs:
       $: note("a#5 g#5").sound("bd sd").lpf(3500).room(.2512).delay(.4246)
 
       $: note("a3 a2 c3 e3 a3 c4 e4 a4 e4 f2 a2 c3 f3 a3 c4 f4").sound("hh bd").lpf(2000).room(.8).delay(.3).gain(.5)
-  - id: 4000_246
+  - id: "4000_246"
     seed: 4246
     voices: 2
     code: |
       $: s("gm_overdriven_guitar:3 flute").gain(.8).room(1.5).delay(.3754).delaytime(.125).delayfeedback(.6).orbit(2)
 
       $: s("rd 1!3").gain("<0.5 0.6 0.7 0.8>").release(.1863)
-  - id: 4000_247
+  - id: "4000_247"
     seed: 4247
     voices: 3
     code: |
@@ -2142,7 +2142,7 @@ songs:
       $: s("perc*3 cr lt lt mt*2 lt*2 lt@3 hh!3 oh").gain(.1736).release(.05)
 
       $: s("gm_electric_guitar_clean:2 woodblock").gain(.2447)
-  - id: 4000_248
+  - id: "4000_248"
     seed: 4248
     voices: 4
     code: |
@@ -2153,7 +2153,7 @@ songs:
       $: note("c4@2 ~ c4*2 d#4")
 
       $: n("5 8 7 9!2 7").scale("a#3:minor")
-  - id: 4000_249
+  - id: "4000_249"
     seed: 4249
     voices: 3
     code: |
@@ -2162,7 +2162,7 @@ songs:
       $: n(7).clip(.5965)
 
       $: n("c2 ~ f2 ~ -1@3 ~").scale("G4 minor").s("bd*4 bd!4").slow(2)
-  - id: 4000_250
+  - id: "4000_250"
     seed: 4250
     voices: 3
     code: |
@@ -2171,14 +2171,14 @@ songs:
       $: note("B2 D2").s("cymbal ~").slow(5)
 
       $: s("linndrum_sd sd").gain(.5)
-  - id: 4000_251
+  - id: "4000_251"
     seed: 4251
     voices: 2
     code: |
       $: note("b@2 f@2")
 
       $: note("Gm7 C7 Fmaj7 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2").sound("drums kick").lpf(1800)
-  - id: 4000_252
+  - id: "4000_252"
     seed: 4252
     voices: 3
     code: |
@@ -2187,28 +2187,28 @@ songs:
       $: s("mt lt").gain(.3).room(.7).orbit(2)
 
       $: note("c3 d#3@2")
-  - id: 4000_253
+  - id: "4000_253"
     seed: 4253
     voices: 2
     code: |
       $: n(7).scale("D3 hirajoshi")
 
       $: note("c1 f1 g1 a#1 c4 g4")
-  - id: 4000_254
+  - id: "4000_254"
     seed: 4254
     voices: 2
     code: |
       $: s("ocarina_vib ballwhistle:1 gm_bassoon sn").struct("x*4").fast(2)
 
       $: s("gm_overdriven_guitar:3 lead")
-  - id: 4000_255
+  - id: "4000_255"
     seed: 4255
     voices: 2
     code: |
       $: n("4 5!2 ~ 4").s("perc*3 gm_vibraphone:3").gain(.3957)
 
       $: s("rect misc:2").speed(1.5)
-  - id: 4000_256
+  - id: "4000_256"
     seed: 4256
     voices: 4
     code: |
@@ -2219,7 +2219,7 @@ songs:
       $: s("gm_distortion_guitar sd*2").release(2.2586)
 
       $: s("cowbell ~").bank("AlesisHR16").gain(.4).release(.12)
-  - id: 4000_257
+  - id: "4000_257"
     seed: 4257
     voices: 3
     code: |
@@ -2228,14 +2228,14 @@ songs:
       $: note("c3 eb3 g3 bb3 eb2 g1 bb1 f4@2").sound("sawtooth bd*2").lpf(2000).room(.732).gain(.5)
 
       $: s("bd*2 ~").slow(2)
-  - id: 4000_258
+  - id: "4000_258"
     seed: 4258
     voices: 2
     code: |
       $: note("c1 ~ f1 g1").sound("bd*2 ~").lpf(5000)
 
       $: note("e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4").s("oh*4 bd!3").room(.6).gain(.9).release(2.5).attack(.05)
-  - id: 4000_259
+  - id: "4000_259"
     seed: 4259
     voices: 4
     code: |
@@ -2246,14 +2246,14 @@ songs:
       $: s("piano hh 1 2").gain(.41)
 
       $: s("kick snare").lpf(1800)
-  - id: 4000_260
+  - id: "4000_260"
     seed: 4260
     voices: 2
     code: |
       $: n("3 1 2 1 0 4 5 2 4").scale("G4 minor")
 
       $: n("0 1 3 2!3").velocity(0).pan("0.2 -0.2")
-  - id: 4000_261
+  - id: "4000_261"
     seed: 4261
     voices: 3
     code: |
@@ -2262,7 +2262,7 @@ songs:
       $: note(12)
 
       $: s("hh*2 hh").gain(.7411)
-  - id: 4000_262
+  - id: "4000_262"
     seed: 4262
     voices: 3
     code: |
@@ -2271,21 +2271,21 @@ songs:
       $: note(0)
 
       $: note("a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4 c5 e5 c5 b4 a4 b4").gain(.5)
-  - id: 4000_263
+  - id: "4000_263"
     seed: 4263
     voices: 2
     code: |
       $: note("d#5@2 ~ a4 d#5@3 ~ a4 d#5 d5")
 
       $: s("bell gm_acoustic_guitar_steel:1").gain(.6).release(.5)
-  - id: 4000_264
+  - id: "4000_264"
     seed: 4264
     voices: 2
     code: |
       $: s("kick snare 2 5").gain(.5)
 
       $: s("bd*4 bd!4").slow(8)
-  - id: 4000_265
+  - id: "4000_265"
     seed: 4265
     voices: 3
     code: |
@@ -2294,7 +2294,7 @@ songs:
       $: s("gm_epiano1:1 gm_pad_warm").slow(2)
 
       $: s("bd sd hh*2 cp ~ cp ~ cp ~")
-  - id: 4000_266
+  - id: "4000_266"
     seed: 4266
     voices: 3
     code: |
@@ -2303,28 +2303,28 @@ songs:
       $: note("Gm7 C7 Fmaj7 f3").struct("x*8").gain(1).room(.7402).delay(.2).lpf(4000)
 
       $: s("piano sd@3 ~ 4").slow(8)
-  - id: 4000_267
+  - id: "4000_267"
     seed: 4267
     voices: 2
     code: |
       $: note("c2 eb2 c2 f1 3 5 8 a3@4")
 
       $: s("oh 2 4 8").slow(2)
-  - id: 4000_268
+  - id: "4000_268"
     seed: 4268
     voices: 2
     code: |
       $: n("7 11 12 13 14 15 16 17 b -2 7 4 b 3 1 2 1 0 4 5 2 4 -2 0 3 ~ -4 -1 1 -4 -1 -1")
 
       $: s("kick 1").slow(2)
-  - id: 4000_269
+  - id: "4000_269"
     seed: 4269
     voices: 2
     code: |
       $: s("gm_distortion_guitar cajon:12").degradeBy(.3337).gain(.7).room(.5).delay(.5).delaytime(.33).delayfeedback(.4)
 
       $: s("vocal 1").slow(2)
-  - id: 4000_270
+  - id: "4000_270"
     seed: 4270
     voices: 3
     code: |
@@ -2333,7 +2333,7 @@ songs:
       $: s("gm_bassoon gm_string_ensemble_2").gain(.4293)
 
       $: s("gm_overdriven_guitar:6 breath").bank("AkaiLinn").clip(1).note(0).lpf(974).gain(.6)
-  - id: 4000_271
+  - id: "4000_271"
     seed: 4271
     voices: 4
     code: |
@@ -2344,28 +2344,28 @@ songs:
       $: s("mt lt").lpf(2600).gain(.3).release(.0968)
 
       $: s("gm_overdriven_guitar:3 gm_choir_aahs:6 bd:5 ~").cutoff(800)
-  - id: 4000_272
+  - id: "4000_272"
     seed: 4272
     voices: 2
     code: |
       $: note("c2 f1 3 5 8 a3@4 ~ 8 a3@4 ~ 16 a3@8 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1").struct("[x ~]*8").fast(1.5306).slow(8)
 
       $: note(35).s("oh*4 bd!3").slow(2)
-  - id: 4000_273
+  - id: "4000_273"
     seed: 4273
     voices: 2
     code: |
       $: note("c5 g3 b3 d4").s("rd*3 rd*6 linn9000_cr hh*8").slow(2)
 
       $: s("gtr ocarina").gain(.7).shape(.3).release(.04).attack(.001).decay(.1).sustain(.5).room(.5)
-  - id: 4000_274
+  - id: "4000_274"
     seed: 4274
     voices: 2
     code: |
       $: s("bd cr").hpf(8000)
 
       $: s("gm_electric_guitar_clean:2 gm_choir_aahs:3").transpose(-12)
-  - id: 4000_275
+  - id: "4000_275"
     seed: 4275
     voices: 4
     code: |
@@ -2376,7 +2376,7 @@ songs:
       $: note("c2*8 eb g").sound("drums kick").lpf(329).room(.5).gain(.8)
 
       $: s("sawtooth square").slow(2)
-  - id: 4000_276
+  - id: "4000_276"
     seed: 4276
     voices: 3
     code: |
@@ -2385,7 +2385,7 @@ songs:
       $: note("e5 g5 e5 a5").transpose(-12)
 
       $: s("linndrum_sd 31 crash ~ ~ ~").room(1).delay(.125).gain(.4)
-  - id: 4000_277
+  - id: "4000_277"
     seed: 4277
     voices: 3
     code: |
@@ -2394,21 +2394,21 @@ songs:
       $: n("1 0 ~ 1 2*3 ~").scale("a3:minor").transpose(3).release(.2)
 
       $: s("bd*2 sd").bank("RolandTR909").room(.5).delay(.5).delaytime(.12).delayfeedback(.8)
-  - id: 4000_278
+  - id: "4000_278"
     seed: 4278
     voices: 2
     code: |
       $: s("hh*8 cp:12").slow(2)
 
       $: s("misc:2 0 0 8").slow(2)
-  - id: 4000_279
+  - id: "4000_279"
     seed: 4279
     voices: 2
     code: |
       $: note("e3 c3@2 ~ g#3")
 
       $: s("oh 2").slow(2)
-  - id: 4000_280
+  - id: "4000_280"
     seed: 4280
     voices: 3
     code: |
@@ -2417,7 +2417,7 @@ songs:
       $: s("gm_electric_guitar_jazz cr!2").slow(2)
 
       $: note("a1 g1*2 a1*2 g1").sound("sawtooth square").lpf(277).room(.2)
-  - id: 4000_281
+  - id: "4000_281"
     seed: 4281
     voices: 3
     code: |
@@ -2426,14 +2426,14 @@ songs:
       $: s("mt mt*2 mt*2 cr").slow(2)
 
       $: note("c2*8 fm7 f2@3 ~").sound("drums kick").lpf(1500).room(.9)
-  - id: 4000_282
+  - id: "4000_282"
     seed: 4282
     voices: 2
     code: |
       $: s("sawtooth square").gain(.55)
 
       $: s("hh*4 ~").gain("<0.4 0.5 0.6 0.7>")
-  - id: 4000_283
+  - id: "4000_283"
     seed: 4283
     voices: 3
     code: |
@@ -2442,7 +2442,7 @@ songs:
       $: s("gm_epiano1:1 white 0").clip(.625).release(.15).attack(2).velocity(.2)
 
       $: note("~ c#4").sound("sawtooth bd*2").lpf(800).gain(.7).hpf(8000)
-  - id: 4000_284
+  - id: "4000_284"
     seed: 4284
     voices: 4
     code: |
@@ -2453,7 +2453,7 @@ songs:
       $: note("c1 f1 g1").sound("bd hh").lpf(300).velocity(.3)
 
       $: s("linndrum_sd sleighbells").slow(2)
-  - id: 4000_285
+  - id: "4000_285"
     seed: 4285
     voices: 3
     code: |
@@ -2462,7 +2462,7 @@ songs:
       $: s("rect gm_synth_strings_2").gain(.85)
 
       $: s("gm_acoustic_bass sd!3").gain(.2)
-  - id: 4000_286
+  - id: "4000_286"
     seed: 4286
     voices: 3
     code: |
@@ -2471,7 +2471,7 @@ songs:
       $: s("hh cp").release(.1)
 
       $: s("~ 20").slow(2.8387)
-  - id: 4000_287
+  - id: "4000_287"
     seed: 4287
     voices: 3
     code: |
@@ -2480,14 +2480,14 @@ songs:
       $: s("cr lt lt mt*2 lt*2").slow(15.6017)
 
       $: s("linndrum_hh hh*3").lpf(2183)
-  - id: 4000_288
+  - id: "4000_288"
     seed: 4288
     voices: 2
     code: |
       $: note("c3 e3 g3 c4").sound("square snare").lpf(3000).gain(.5)
 
       $: note("c4 c#4 d#4 f4 c#4@2 d#4@2 ~ ~ c#4 c4").sound("bd ~").lpf(3000).gain(.9699)
-  - id: 4000_289
+  - id: "4000_289"
     seed: 4289
     voices: 3
     code: |
@@ -2496,7 +2496,7 @@ songs:
       $: s("linndrum_bd gm_ocarina").clip(1.0027).vib("4:.2").vibmod(.2).hpf(4000).lpf(3000).room(.4906).gain(.348)
 
       $: s("gm_electric_guitar_clean:2 hh!4").struct("x(5,8,-1)").gain(.2666)
-  - id: 4000_290
+  - id: "4000_290"
     seed: 4290
     voices: 4
     code: |
@@ -2507,7 +2507,7 @@ songs:
       $: note("d2*8 e d c").sound("supersaw ~").room(.5).attack(.1857).release(.4)
 
       $: n("9*2 9!2 6 7 11*2 11!2 6 7 11 12 13 14 15 16 17 9 4 7 8 4 6").sound("piano bd").hpf(347)
-  - id: 4000_291
+  - id: "4000_291"
     seed: 4291
     voices: 3
     code: |
@@ -2516,21 +2516,21 @@ songs:
       $: n("2 1@2 ~ 2 ~ 5 6 ~ 2*3 ~ 5 6 ~ 1*3 ~ 6*3 5 4 5 ~ 2 ~ 6 ~ 4 ~ 3 4 ~ 3 2 2").clip(1).release(2).room(.8511)
 
       $: s("cp 4").gain("[1 0.6]*4")
-  - id: 4000_292
+  - id: "4000_292"
     seed: 4292
     voices: 2
     code: |
       $: note("C3 Eb3 G2 Bb2 Eb2 Bb3 A2 D2 G2 Bb2 Eb2 F#2 B2 F#2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb3 C#2 F#2 B2 F#2")
 
       $: s("gm_ocarina gm_violin").gain(.35)
-  - id: 4000_293
+  - id: "4000_293"
     seed: 4293
     voices: 2
     code: |
       $: s("hh!4 sd:1").fast("<1 <2!3 [4 8]>>")
 
       $: n("G3 C3 E3 F2 D2").scale("a3:minor").s("bass hh:0").bank("Linn9000").gain(.4)
-  - id: 4000_294
+  - id: "4000_294"
     seed: 4294
     voices: 3
     code: |
@@ -2539,7 +2539,7 @@ songs:
       $: s("pad shaker*8 bd hh").lpf(650).gain(.6).delay(.4)
 
       $: n("5 8 7 9!2 7 8").scale("a:minor").s("pad p")
-  - id: 4000_295
+  - id: "4000_295"
     seed: 4295
     voices: 3
     code: |
@@ -2548,7 +2548,7 @@ songs:
       $: s("kick snare")
 
       $: s("ellipse gm_electric_bass_finger:7 sd bd").hpf(1200)
-  - id: 4000_296
+  - id: "4000_296"
     seed: 4296
     voices: 4
     code: |
@@ -2559,7 +2559,7 @@ songs:
       $: sound("piano triangle").lpf(3134).resonance(5).room(.7002).gain(.4358)
 
       $: s("perc*3 gtr")
-  - id: 4000_297
+  - id: "4000_297"
     seed: 4297
     voices: 4
     code: |
@@ -2570,14 +2570,14 @@ songs:
       $: s("lead flute cajon:12 hh:8 mt lt ht hh bd lt").release(.05).room(.8).attack(.0119)
 
       $: note(17).s("~ 31").gain(.7)
-  - id: 4000_298
+  - id: "4000_298"
     seed: 4298
     voices: 2
     code: |
       $: note(12)
 
       $: s("gm_electric_guitar_clean:2 gm_oboe").slow(2)
-  - id: 4000_299
+  - id: "4000_299"
     seed: 4299
     voices: 3
     code: |
@@ -2586,7 +2586,7 @@ songs:
       $: note("~ b b@2 b").lpf(4000)
 
       $: n("F4 ~ Bb3")
-  - id: 4000_300
+  - id: "4000_300"
     seed: 4300
     voices: 3
     code: |
@@ -2595,7 +2595,7 @@ songs:
       $: s("oh 2").lpf(1800).room(.5).delay(.5).gain(.3)
 
       $: s("saw bell bd hh*4").slow(2)
-  - id: 4000_301
+  - id: "4000_301"
     seed: 4301
     voices: 3
     code: |
@@ -2604,7 +2604,7 @@ songs:
       $: note("e4 d#4").struct("<~ x x>*3")
 
       $: s("mt mt")
-  - id: 4000_302
+  - id: "4000_302"
     seed: 4302
     voices: 3
     code: |
@@ -2613,7 +2613,7 @@ songs:
       $: s("triangle gm_church_organ").transpose(3)
 
       $: s("gm_overdriven_guitar:3 linn9000_sd").gain(.3).release(.1).attack(.05)
-  - id: 4000_303
+  - id: "4000_303"
     seed: 4303
     voices: 4
     code: |
@@ -2624,7 +2624,7 @@ songs:
       $: note("C3 D3 E3 F3 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 ~ d5").sound("supersaw triangle").lpf(5000).release(.3)
 
       $: note("c eb g bb")
-  - id: 4000_304
+  - id: "4000_304"
     seed: 4304
     voices: 3
     code: |
@@ -2633,7 +2633,7 @@ songs:
       $: note("g1 ~").sound("drum square").lpf(3500).room(.2).delay(.2).gain(.6)
 
       $: note("B2 F#2 F2 Bb2 Eb2 Bb3")
-  - id: 4000_305
+  - id: "4000_305"
     seed: 4305
     voices: 3
     code: |
@@ -2642,14 +2642,14 @@ songs:
       $: s("hh*16 hh*16").crush(10)
 
       $: n("2 1@2 1@2 9@3 8 4@10").scale("G4 minor").s("misc:2 gm_choir_aahs:3").velocity(.55)
-  - id: 4000_306
+  - id: "4000_306"
     seed: 4306
     voices: 2
     code: |
       $: s("gm_ocarina gm_church_organ gm_overdriven_guitar:3 16").lpf(2000).resonance(12).room(.9219).delay(.5).gain(.9)
 
       $: note("c2*8 c2*8 c#2 ~ f#2 ~ d4 g4").sound("sine bd*2").lpf(1800)
-  - id: 4000_307
+  - id: "4000_307"
     seed: 4307
     voices: 4
     code: |
@@ -2660,7 +2660,7 @@ songs:
       $: s("gm_electric_bass_finger bd!4 ~").slow(2)
 
       $: note("c4@2 ~").sound("piano hat")
-  - id: 4000_308
+  - id: "4000_308"
     seed: 4308
     voices: 3
     code: |
@@ -2669,7 +2669,7 @@ songs:
       $: n("-3 4 3 4 0").s("gm_lead_6_voice breath").clip(.9772)
 
       $: s("ocarina_vib gm_harmonica").slow(4)
-  - id: 4000_309
+  - id: "4000_309"
     seed: 4309
     voices: 3
     code: |
@@ -2678,14 +2678,14 @@ songs:
       $: s("gm_acoustic_bass vocal").gain(.4).release(.1).room(.1).lpf(2800).hpf(2000)
 
       $: n("5 5 6 ~ 2 ~").s("cr bd")
-  - id: 4000_310
+  - id: "4000_310"
     seed: 4310
     voices: 2
     code: |
       $: s("bd!2 bd*4").gain(.3897)
 
       $: note(7)
-  - id: 4000_311
+  - id: "4000_311"
     seed: 4311
     voices: 4
     code: |
@@ -2696,7 +2696,7 @@ songs:
       $: s("linndrum_hh 127")
 
       $: s("sleighbells 1!3 2 bd!2 ~").gain(.3)
-  - id: 4000_312
+  - id: "4000_312"
     seed: 4312
     voices: 3
     code: |
@@ -2705,21 +2705,21 @@ songs:
       $: note("c2*8 e f e d c a f e d c eb g bb c4 d4").sound("supersaw rim").lpf(2000).gain(.08)
 
       $: s("saw cajon").slow(2)
-  - id: 4000_313
+  - id: "4000_313"
     seed: 4313
     voices: 2
     code: |
       $: s("kick 1").slow(2)
 
       $: s("gm_pad_warm sd:2").delay("<0@7 .9@5>/16").gain(.2).segment(10)
-  - id: 4000_314
+  - id: "4000_314"
     seed: 4314
     voices: 2
     code: |
       $: s("mt mt*2").lpf(1000).gain(.8127).pan(.4)
 
       $: s("~ sd").slow(2)
-  - id: 4000_315
+  - id: "4000_315"
     seed: 4315
     voices: 4
     code: |
@@ -2730,56 +2730,56 @@ songs:
       $: s("hh 4 8").struct("x(4,8,-2)").gain("<0.8 1>").delay(.5)
 
       $: note(0).clip(1.0432).cutoff(1000).resonance(7)
-  - id: 4000_316
+  - id: "4000_316"
     seed: 4316
     voices: 2
     code: |
       $: s("kick snare").slow(3.4234)
 
       $: s("cp ~").clip(1.1039).gain(.3987).lpf(700).room(.2).delay(.4946)
-  - id: 4000_317
+  - id: "4000_317"
     seed: 4317
     voices: 2
     code: |
       $: s("bd*4 ~ hh hh")
 
       $: s("bd*2 ~").gain(1.4)
-  - id: 4000_318
+  - id: "4000_318"
     seed: 4318
     voices: 2
     code: |
       $: s("kick 1").bank("RolandMT32").hpf(8000).speed("1 2")
 
       $: s("gm_acoustic_bass gtr").velocity(.2).lpf(1043).gain(.55).clip(.9682).release(.08)
-  - id: 4000_319
+  - id: "4000_319"
     seed: 4319
     voices: 2
     code: |
       $: s("bd sd hh!7 oh").release(.5).room(.6)
 
       $: s("gm_electric_guitar_jazz 2").velocity(.5995).pan(.5838).lpf(2500).room(.3).gain(.15)
-  - id: 4000_320
+  - id: "4000_320"
     seed: 4320
     voices: 2
     code: |
       $: n("F4 Bb4 D5 D4 G4 Bb4 Bb3 D4 F4 G3 C4 E4").gain(.2).pan("<.4 .6>/10").hpf(8000)
 
       $: note("c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2 c2")
-  - id: 4000_321
+  - id: "4000_321"
     seed: 4321
     voices: 2
     code: |
       $: note("a2 f2 c3").sound("supersaw snare").lpf(600).resonance(10).room(.1)
 
       $: note("g1 f1 3 5 8 a3@4 ~ 8 a3@4 ~ 16 a3@8 e5@2 d#5 ~ c#5@2 b4@2").s("gtr oh").bank("RolandTR808")
-  - id: 4000_322
+  - id: "4000_322"
     seed: 4322
     voices: 2
     code: |
       $: note("d4 e4 c4 g4")
 
       $: sound("drum ~").speed(1.5).gain(.5)
-  - id: 4000_323
+  - id: "4000_323"
     seed: 4323
     voices: 3
     code: |
@@ -2788,7 +2788,7 @@ songs:
       $: note("c3 f3 a3 c4").s("kick 1").slow(2)
 
       $: s("bd*2 sd").vib("4:.2").vibmod(.3693).gain(.5).release(1.506)
-  - id: 4000_324
+  - id: "4000_324"
     seed: 4324
     voices: 3
     code: |
@@ -2797,14 +2797,14 @@ songs:
       $: s("perc*3 flbass").speed(1.3)
 
       $: s("gm_acoustic_guitar_steel:2 piano").fast(6.9874)
-  - id: 4000_325
+  - id: "4000_325"
     seed: 4325
     voices: 2
     code: |
       $: s("gm_baritone_sax gm_cello:1").gain(.3).release(.1)
 
       $: sound("square drums").gain("<0.8 1>").release(.2)
-  - id: 4000_326
+  - id: "4000_326"
     seed: 4326
     voices: 3
     code: |
@@ -2813,7 +2813,7 @@ songs:
       $: note("d4 a2").sound("hh bd").lpf(3200).gain(.9668)
 
       $: s("triangle bd").slow(8)
-  - id: 4000_327
+  - id: "4000_327"
     seed: 4327
     voices: 3
     code: |
@@ -2822,7 +2822,7 @@ songs:
       $: s("gm_pad_warm b").slow(2)
 
       $: note("d5 a4 d5 c#5")
-  - id: 4000_328
+  - id: "4000_328"
     seed: 4328
     voices: 4
     code: |
@@ -2833,7 +2833,7 @@ songs:
       $: s("bd sd").slow(2)
 
       $: note("e4 g4 c5 g4").s("gm_electric_guitar_clean:2 hh:0 cp 16 24 32 64 gm_lead_6_voice").slow(2)
-  - id: 4000_329
+  - id: "4000_329"
     seed: 4329
     voices: 3
     code: |
@@ -2842,7 +2842,7 @@ songs:
       $: note("C3 Eb3 G2").s("hh cp").bank("9000").gain(.5649).release(2)
 
       $: n("5 6@3 ~ 4 7 6@3 ~ 3@3 -4@3 ~ -1@3 ~").scale("D:minor:pentatonic").s("oh 2").clip(.9583).gain("<0.4 0.45 0.5 0.6>")
-  - id: 4000_330
+  - id: "4000_330"
     seed: 4330
     voices: 3
     code: |
@@ -2851,21 +2851,21 @@ songs:
       $: note("B2 D2 G2 Bb2").sound("square square").lpf(600).room(.7).delay(.5).gain(.2674)
 
       $: s("gm_pad_warm hh*5 gm_electric_guitar_jazz misc:2").slow(2)
-  - id: 4000_331
+  - id: "4000_331"
     seed: 4331
     voices: 2
     code: |
       $: s("lead hh!7 oh bd").slow(2)
 
       $: s("saw bd").room(.7)
-  - id: 4000_332
+  - id: "4000_332"
     seed: 4332
     voices: 2
     code: |
       $: note("a2 a3 a2 ~").sound("supersaw square").lpf(2572).gain(.9552)
 
       $: s("bd!2 bd*4").slow(2)
-  - id: 4000_333
+  - id: "4000_333"
     seed: 4333
     voices: 3
     code: |
@@ -2874,14 +2874,14 @@ songs:
       $: s("gm_harmonica gm_choir_aahs").slow(3.2904)
 
       $: n("6 8 7 9!2 7 8 5 1 2 4 ~ 5!2 4 ~ 2 1 0 -7!8 Bb2 B2 G2 C2 F2 F2 Bb2 Bb2 A2 A2 Ab2 Ab2 G2 C2").scale("C:ritusen")
-  - id: 4000_334
+  - id: "4000_334"
     seed: 4334
     voices: 2
     code: |
       $: n("9 12!2").scale("a3:minor").s("kick*4 ocarina_vib").gain(.4).release(.5).room(.2195).delay("<0@7 .9@5>/16")
 
       $: s("drums 15")
-  - id: 4000_335
+  - id: "4000_335"
     seed: 4335
     voices: 4
     code: |
@@ -2892,21 +2892,21 @@ songs:
       $: s("vocal 1 2").slow(8)
 
       $: s("gm_synth_strings_1 clavisynth").slow(2)
-  - id: 4000_336
+  - id: "4000_336"
     seed: 4336
     voices: 2
     code: |
       $: s("gm_overdriven_guitar:6 cp:12")
 
       $: s("supersaw linn9000_cr").gain(.4)
-  - id: 4000_337
+  - id: "4000_337"
     seed: 4337
     voices: 2
     code: |
       $: note("g#4@2 ~ f#4 f#4@2").add("2,4")
 
       $: n("F4 Bb4 D5 D4 G4 Bb4")
-  - id: 4000_338
+  - id: "4000_338"
     seed: 4338
     voices: 4
     code: |
@@ -2917,14 +2917,14 @@ songs:
       $: note("a1 f1 c2").s("gm_pad_warm ocarina gm_recorder gm_pizzicato_strings:4 bongo*2").struct("x(3,8)").velocity("<.8 .3 .6>*8")
 
       $: note("f4 ~").s("ellipse gm_synth_bass_1").gain(.5)
-  - id: 4000_339
+  - id: "4000_339"
     seed: 4339
     voices: 2
     code: |
       $: s("gm_synth_strings_1 square")
 
       $: note("d5 e5 g5").cutoff(2000)
-  - id: 4000_340
+  - id: "4000_340"
     seed: 4340
     voices: 4
     code: |
@@ -2935,7 +2935,7 @@ songs:
       $: note("a1 g1*2").sound("kick drums snare hat").lpf(3000)
 
       $: s("gm_tuba crow").lpf(600).room(.7)
-  - id: 4000_341
+  - id: "4000_341"
     seed: 4341
     voices: 4
     code: |
@@ -2946,21 +2946,21 @@ songs:
       $: note(0).struct("1 1 1 1 1 1 1 1")
 
       $: note("0 1 4!3").struct("x(5,8,-1)").s("gm_pad_warm supersaw gm_electric_guitar_jazz gm_distortion_guitar gm_marimba").slow(8)
-  - id: 4000_342
+  - id: "4000_342"
     seed: 4342
     voices: 2
     code: |
       $: note("a#5 g#5 c#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4").sound("square drums").lpf(1020).gain(.8).room(.6).delay(.2)
 
       $: s("gm_tuba supersaw").slow(2)
-  - id: 4000_343
+  - id: "4000_343"
     seed: 4343
     voices: 2
     code: |
       $: s("clave square ocarina_vib cajon:12")
 
       $: s("gm_acoustic_bass brakedrum:1").velocity(2.7513)
-  - id: 4000_344
+  - id: "4000_344"
     seed: 4344
     voices: 3
     code: |
@@ -2969,7 +2969,7 @@ songs:
       $: note("a3 b3 c4 d4").sound("triangle sawtooth").lpf(700).velocity(1.1).hpf(6171)
 
       $: s("gm_harmonica gm_lead_1_square").slow(2)
-  - id: 4000_345
+  - id: "4000_345"
     seed: 4345
     voices: 3
     code: |
@@ -2978,7 +2978,7 @@ songs:
       $: s("cymbal ~ ~ ~ sn:3 ~ ~ sn:3 ~ ~ sn:3 ~ ~ sn:3 ~ ~ sn:3").slow(2)
 
       $: s("bass sd:1!3").attack(.05).release(1.7435)
-  - id: 4000_346
+  - id: "4000_346"
     seed: 4346
     voices: 3
     code: |
@@ -2987,14 +2987,14 @@ songs:
       $: s("triangle gm_choir_aahs:4").gain(.25)
 
       $: n("0 7 4 2 7 4 2 7 4 b 3 1 2 1 0 4 5 2 4 1 2 7").scale("D dorian")
-  - id: 4000_347
+  - id: "4000_347"
     seed: 4347
     voices: 2
     code: |
       $: s("gm_electric_bass_pick hh!7").slow(2)
 
       $: s("gm_acoustic_bass sd!7")
-  - id: 4000_348
+  - id: "4000_348"
     seed: 4348
     voices: 4
     code: |
@@ -3005,7 +3005,7 @@ songs:
       $: s("gm_electric_bass_finger white@3").clip(1).gain(.4477)
 
       $: n("3 6 0 2 5 3").scale("a4:minor")
-  - id: 4000_349
+  - id: "4000_349"
     seed: 4349
     voices: 3
     code: |
@@ -3014,7 +3014,7 @@ songs:
       $: s("gm_ocarina square").slow(2)
 
       $: s("woodblock:1 woodblock:2*2")
-  - id: 4000_350
+  - id: "4000_350"
     seed: 4350
     voices: 4
     code: |
@@ -3025,21 +3025,21 @@ songs:
       $: s("mt mt lt lt").slow(2)
 
       $: s("hh*2 hh sd ht").slow(8)
-  - id: 4000_351
+  - id: "4000_351"
     seed: 4351
     voices: 2
     code: |
       $: note("a2*8 a2*4 ~ ~").gain(.8)
 
       $: s("bell EmuDrumulator_bd").pan(.4)
-  - id: 4000_352
+  - id: "4000_352"
     seed: 4352
     voices: 2
     code: |
       $: s("recorder_bass_sus Ethnic").hpf(1200).gain(.08).release(.1).attack(1.5)
 
       $: s("gm_acoustic_bass sd*2 cp*8 31 crash ~ ~ ~ rim").slow(2)
-  - id: 4000_353
+  - id: "4000_353"
     seed: 4353
     voices: 4
     code: |
@@ -3050,7 +3050,7 @@ songs:
       $: note("a2 c3 e3 a3 c4 e4 a4 e4 f2 a2 c3 f3")
 
       $: s("gm_electric_guitar_clean:2 linn9000_sd").slow(2.9881)
-  - id: 4000_354
+  - id: "4000_354"
     seed: 4354
     voices: 4
     code: |
@@ -3061,7 +3061,7 @@ songs:
       $: s("sd hh*4").gain(.08).release(3).note("d5 g5 b5 g5")
 
       $: s("gm_harmonica linndrum_sd hh*3 bd").note("d2*8 A4 Bb4 A4")
-  - id: 4000_355
+  - id: "4000_355"
     seed: 4355
     voices: 3
     code: |
@@ -3070,14 +3070,14 @@ songs:
       $: n("F4 ~ A3 C4").clip(1).release(1.3972).room(.9)
 
       $: note("12 bb1 d c d e f e d c a f").s("cr sd").slow(2)
-  - id: 4000_356
+  - id: "4000_356"
     seed: 4356
     voices: 2
     code: |
       $: note(37).sound("~ sd").lpf(600).gain(.6332).release(2.3084).clip(1.0908).attack(.001)
 
       $: s("oh bd").slow(8)
-  - id: 4000_357
+  - id: "4000_357"
     seed: 4357
     voices: 4
     code: |
@@ -3088,21 +3088,21 @@ songs:
       $: s("bass amencutup").slow(8)
 
       $: s("gm_electric_bass_pick crow").slow(2)
-  - id: 4000_358
+  - id: "4000_358"
     seed: 4358
     voices: 2
     code: |
       $: note("Gm7 C7 Fmaj7 a3*8 ~ b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2").lpf(916)
 
       $: n("c2 f2 g2 f2 g2 f2 ~ f2 ~ ~ 2 1 ~ 6 -1@3 ~ ~ 3 4 2 3 1 2 0 1 ~ 6 -1@3 ~ ~ 3 4").gain(.8).room(.8697).lpf(326).hpf(6000)
-  - id: 4000_359
+  - id: "4000_359"
     seed: 4359
     voices: 2
     code: |
       $: note("D2 A2 G2 F2").s("gm_acoustic_guitar_steel:2 pad cowbell")
 
       $: note("g#4@2 a#4@2 f#4 ~").room(.3415)
-  - id: 4000_360
+  - id: "4000_360"
     seed: 4360
     voices: 3
     code: |
@@ -3111,7 +3111,7 @@ songs:
       $: note("c4 c4@2").velocity(.1486)
 
       $: note("0 04 b b@2").sound("kick snare").lpf(2038).lpq(.2).delay(.3462).gain(.5).release(.5).pan(.6)
-  - id: 4000_361
+  - id: "4000_361"
     seed: 4361
     voices: 4
     code: |
@@ -3122,14 +3122,14 @@ songs:
       $: s("gm_electric_bass_finger:2 31").gain(.2)
 
       $: note("b4 eb4").s("clave shaker_small:0")
-  - id: 4000_362
+  - id: "4000_362"
     seed: 4362
     voices: 2
     code: |
       $: note("12 Eb3 G2 Bb2 Eb2 F#2 B2 F#2").s("gm_epiano1:1 gm_electric_bass_pick:7").velocity(.5478)
 
       $: s("gm_epiano1:1 Bass Bass Bass").lpf(2151).gain(.5)
-  - id: 4000_363
+  - id: "4000_363"
     seed: 4363
     voices: 3
     code: |
@@ -3138,7 +3138,7 @@ songs:
       $: s("gm_acoustic_bass rhodes").gain(.5)
 
       $: s("gm_piccolo bd:0 bd:1 bd:2 bd:3 attack hh:8 gm_drawbar_organ:4 gm_string_ensemble_1 3 cowbell:3 bd:0 bd:1 bd:2 bd:3 cr!2 east b pink white 0 0 0 4 8 16 0 0 8 16").attack(.0758)
-  - id: 4000_364
+  - id: "4000_364"
     seed: 4364
     voices: 3
     code: |
@@ -3147,14 +3147,14 @@ songs:
       $: note("d5 c#5 c5 a4 d#4 d4 a3 d5").sound("supersaw hadoken")
 
       $: s("drums gm_electric_bass_pick").note("e5 d#5 a#4 ~")
-  - id: 4000_365
+  - id: "4000_365"
     seed: 4365
     voices: 2
     code: |
       $: n("-2 ~ 59 -1").scale("C hirajoshi").s("kick snare").gain(.4).room(.3626).lpf(400).resonance(9)
 
       $: note(36).sound("bd bd").lpf(3000).gain(1.5)
-  - id: 4000_366
+  - id: "4000_366"
     seed: 4366
     voices: 4
     code: |
@@ -3165,7 +3165,7 @@ songs:
       $: note("b4 f#5 e5 c#4").sound("bd rim").lpf(1798)
 
       $: n("9*2 9!2 6 7").s("gtr bd*2").velocity(.5)
-  - id: 4000_367
+  - id: "4000_367"
     seed: 4367
     voices: 3
     code: |
@@ -3174,7 +3174,7 @@ songs:
       $: note("C3 D3 E3 F3").sound("triangle sd").lpf(1748).hpf(6113).speed("2 | -2").room(.6).gain(.2561)
 
       $: sound("supersaw bd*4").lpf(2000).room(.3)
-  - id: 4000_368
+  - id: "4000_368"
     seed: 4368
     voices: 4
     code: |
@@ -3185,21 +3185,21 @@ songs:
       $: note("b@2 f@2").add("<-12 0>/8")
 
       $: s("cr lt lt mt*2 lt*2 lt@3").gain(.4).crush(4)
-  - id: 4000_369
+  - id: "4000_369"
     seed: 4369
     voices: 2
     code: |
       $: s("bd*2 ~").slow(2)
 
       $: s("psaltery_pluck gm_trombone:1 gm_choir_aahs:6 hh*2").slow(2)
-  - id: 4000_370
+  - id: "4000_370"
     seed: 4370
     voices: 2
     code: |
       $: s("gtr rhodes").gain(.8).pan(.6)
 
       $: note("Gm7 C7").s("sawtooth square").gain(.9505)
-  - id: 4000_371
+  - id: "4000_371"
     seed: 4371
     voices: 4
     code: |
@@ -3210,14 +3210,14 @@ songs:
       $: note("b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4 e4 b4 d#5 c#4 g#3 b4 f#5").sound("triangle snare").lpf(600).hpf(200)
 
       $: note(24).s("gm_ocarina gm_overdriven_guitar:6").slow(2.433)
-  - id: 4000_372
+  - id: "4000_372"
     seed: 4372
     voices: 2
     code: |
       $: s("triangle gm_choir_aahs").slow(2)
 
       $: s("hh*2 ~")
-  - id: 4000_373
+  - id: "4000_373"
     seed: 4373
     voices: 4
     code: |
@@ -3228,35 +3228,35 @@ songs:
       $: note("d2*8 b2@11 ~ 6")
 
       $: note("f6 d6 b5 ~")
-  - id: 4000_374
+  - id: "4000_374"
     seed: 4374
     voices: 2
     code: |
       $: s("square bd!3").slow(8)
 
       $: n("9*2 9!2 6 7 11*2 11!2 6 7 11 12 13 14 15 16 17 Bb4 D5 D4 G4 Bb4 Bb3 D4 F4 G3 C4 E4 Ab3 F4 A3 Gb4 Bb3 E4").gain(.3)
-  - id: 4000_375
+  - id: "4000_375"
     seed: 4375
     voices: 2
     code: |
       $: note("e1 ~ ~ e2").sound("hh hh").lpf(3500).room(1).gain(.8).pan(.49)
 
       $: s("piano ballwhistle hh!2 hh*2").slow(8)
-  - id: 4000_376
+  - id: "4000_376"
     seed: 4376
     voices: 2
     code: |
       $: s("rd 1!3 2 1").note(38).cutoff(771).gain(.15).room(.3)
 
       $: s("piano bd sd*2 ~ cp:12").gain(.6)
-  - id: 4000_377
+  - id: "4000_377"
     seed: 4377
     voices: 2
     code: |
       $: s("gm_bassoon crash").slow(2)
 
       $: s("gm_electric_guitar_clean:2 tambourine hh*3 bd").slow(8)
-  - id: 4000_378
+  - id: "4000_378"
     seed: 4378
     voices: 4
     code: |
@@ -3267,14 +3267,14 @@ songs:
       $: s("gm_piccolo breaks165").gain(.4).lpf(388).room(.7).delay(.6).delaytime(.125).delayfeedback(.4)
 
       $: note("a#5 g#5 c#4 e4 b4 d#5 c#4 g#3 b4 f#5 e5 c#4 e5 d#5 a#4 d#4").sound("drums kick").lpf(800).lpq(2).shape(.4).release(.3)
-  - id: 4000_379
+  - id: "4000_379"
     seed: 4379
     voices: 2
     code: |
       $: s("cymbal ~").room(.2).gain(.6).release(.0722).attack(.001)
 
       $: s("bd ~").slow(4)
-  - id: 4000_380
+  - id: "4000_380"
     seed: 4380
     voices: 3
     code: |
@@ -3283,7 +3283,7 @@ songs:
       $: note("b@2 b b b b@2 f@2 ~ b ~ f4 f4@2 ~ d#4 d#4@2 ~ d4").sound("sine kick").lpf(800).gain(.5952)
 
       $: note("c2 ~").sound("drum sawtooth").lpf(800)
-  - id: 4000_381
+  - id: "4000_381"
     seed: 4381
     voices: 4
     code: |
@@ -3294,21 +3294,21 @@ songs:
       $: note("g1 ~ c4*2 d#4")
 
       $: s("gm_oboe gm_pad_warm").gain(.8).room(.2392)
-  - id: 4000_382
+  - id: "4000_382"
     seed: 4382
     voices: 2
     code: |
       $: n("0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3 ~ 0 1 2").velocity(.3).hpf(500)
 
       $: s("pad bd*4").gain(.9135).release(.4)
-  - id: 4000_383
+  - id: "4000_383"
     seed: 4383
     voices: 2
     code: |
       $: n("c2 f2 g2 f2 g2 f2 g2")
 
       $: s("cr bd").clip(.6112)
-  - id: 4000_384
+  - id: "4000_384"
     seed: 4384
     voices: 4
     code: |
@@ -3319,14 +3319,14 @@ songs:
       $: note("0 04 Ab1 G1 G2 G1 G2 G1 G2 G1 G2 G1 C1 F1 G1 C1 F1 G1 C1 F1").s("piano gm_pad_bowed").clip(1).release(.1295).gain(1)
 
       $: sound("~ hh").lpf(4892).room(.6)
-  - id: 4000_385
+  - id: "4000_385"
     seed: 4385
     voices: 2
     code: |
       $: note("g2 a#2 d#3 c3@2").sound("kick snare").lpf(2000).gain(.2)
 
       $: s("misc:2 bd!4").gain(.4162)
-  - id: 4000_386
+  - id: "4000_386"
     seed: 4386
     voices: 4
     code: |
@@ -3337,7 +3337,7 @@ songs:
       $: s("snare ~").slow(3.6016)
 
       $: note("f6 d6")
-  - id: 4000_387
+  - id: "4000_387"
     seed: 4387
     voices: 3
     code: |
@@ -3346,7 +3346,7 @@ songs:
       $: sound("~ ~").lpf(650).gain(.7)
 
       $: s("lt mt lt lt").speed(.992).pan(.5411).hpf(3000)
-  - id: 4000_388
+  - id: "4000_388"
     seed: 4388
     voices: 3
     code: |
@@ -3355,14 +3355,14 @@ songs:
       $: s("vocal 1").slow(2)
 
       $: note("b@2 b").sound("square kick")
-  - id: 4000_389
+  - id: "4000_389"
     seed: 4389
     voices: 2
     code: |
       $: s("bd*4 ~").gain(.35)
 
       $: note("C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1 F1 G1 C1").sound("sine square").decay(.1161).sustain(.4).cutoff(356).resonance(8)
-  - id: 4000_390
+  - id: "4000_390"
     seed: 4390
     voices: 3
     code: |
@@ -3371,7 +3371,7 @@ songs:
       $: s("linndrum_oh gm_baritone_sax").gain(.8)
 
       $: n("2 5 3 5 8 -1").scale("C bebop major")
-  - id: 4000_391
+  - id: "4000_391"
     seed: 4391
     voices: 3
     code: |
@@ -3380,28 +3380,28 @@ songs:
       $: s("gm_overdriven_guitar:6 bd").gain(.6).release(.05).attack(.001)
 
       $: note("c2 ~").decay(.03).sustain(.8).delay(.8)
-  - id: 4000_392
+  - id: "4000_392"
     seed: 4392
     voices: 2
     code: |
       $: s("hh*16 hh*16").slow(2)
 
       $: n("3 2 5 3 5 8 7 9!2 7 8 5 1 2 4 ~ 5!2 4").scale("C:major")
-  - id: 4000_393
+  - id: "4000_393"
     seed: 4393
     voices: 2
     code: |
       $: s("ocarina vibraslap").slow(2)
 
       $: n("F4 Bb3").scale("C4 bebop major")
-  - id: 4000_394
+  - id: "4000_394"
     seed: 4394
     voices: 2
     code: |
       $: s("gm_piccolo cr!2").velocity(0)
 
       $: s("snare 2").velocity(.2)
-  - id: 4000_395
+  - id: "4000_395"
     seed: 4395
     voices: 4
     code: |
@@ -3412,14 +3412,14 @@ songs:
       $: note("c2 eb2 g1 bb1 g#2 c3 f3 a#2").s("hh*8 chord")
 
       $: n("0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 G2 C2 D2 E2 F2 A2 Bb2 B2 G2 C2 F2 F2 F2").scale("a#3:minor").s("gtr hh*8").lpf(2000)
-  - id: 4000_396
+  - id: "4000_396"
     seed: 4396
     voices: 2
     code: |
       $: s("gm_bassoon gm_distortion_guitar:2").slow(16)
 
       $: note("c4 c4 e4 g4").sound("triangle sd cp hh*8").lpf(3000).gain(.4)
-  - id: 4000_397
+  - id: "4000_397"
     seed: 4397
     voices: 3
     code: |
@@ -3428,21 +3428,21 @@ songs:
       $: s("woodblock:1 woodblock:2*2").lpf(3000).gain(.5)
 
       $: s("bass linndrum_sd").slow(2)
-  - id: 4000_398
+  - id: "4000_398"
     seed: 4398
     voices: 2
     code: |
       $: note("f4 f4@2 ~ d#4 d#4@2 ~ d4").cutoff(180).s("amen snare").speed("2 | -2").attack(.03)
 
       $: s("ocarina 5 perc").slow(8)
-  - id: 4000_399
+  - id: "4000_399"
     seed: 4399
     voices: 2
     code: |
       $: s("hh*8 bd!2").slow(11.3825)
 
       $: s("hh 8").fast(2).note("a2 a2 a3 a2").struct("x")
-  - id: 4000_400
+  - id: "4000_400"
     seed: 4400
     voices: 3
     code: |
@@ -3451,7 +3451,7 @@ songs:
       $: s("linndrum_hh sine rd*8 white@3 gm_pizzicato_strings:1 gm_reed_organ:5 gm_electric_bass_pick clave 4").slow(2)
 
       $: note("a2 eb2 g1 bb1")
-  - id: 4000_401
+  - id: "4000_401"
     seed: 4401
     voices: 3
     code: |
@@ -3460,7 +3460,7 @@ songs:
       $: s("perc*3 gm_choir_aahs:0").gain(1.5)
 
       $: note("a2*8 a2*8 ~").sound("sawtooth rim").lpf(600)
-  - id: 4000_402
+  - id: "4000_402"
     seed: 4402
     voices: 3
     code: |
@@ -3469,21 +3469,21 @@ songs:
       $: note("c5 c#5").sound("sine piano")
 
       $: s("bd!2 bd*4 bd!4").slow(2)
-  - id: 4000_403
+  - id: "4000_403"
     seed: 4403
     voices: 2
     code: |
       $: s("bd!2 bd*4")
 
       $: s("gm_pad_warm linn9000_mt").lpf(250).lpq(8)
-  - id: 4000_404
+  - id: "4000_404"
     seed: 4404
     voices: 2
     code: |
       $: s("bd*4 bd!4").slow(4)
 
       $: s("ocarina gm_electric_guitar_jazz").lpf(3200).gain(1.2)
-  - id: 4000_405
+  - id: "4000_405"
     seed: 4405
     voices: 3
     code: |
@@ -3492,7 +3492,7 @@ songs:
       $: n("-3 -1 1").s("cp sd hh*2 sd").slow(2.6119)
 
       $: sound("bd bd").lpf(552).clip(1)
-  - id: 4000_406
+  - id: "4000_406"
     seed: 4406
     voices: 3
     code: |
@@ -3501,14 +3501,14 @@ songs:
       $: s("kick 1 3 7").slow(2)
 
       $: s("rd 1!3").slow(2)
-  - id: 4000_407
+  - id: "4000_407"
     seed: 4407
     voices: 2
     code: |
       $: note("0 1 4!3 12").s("perc*3 5").clip(1).gain(.9356)
 
       $: s("gm_acoustic_bass sn").gain(.5)
-  - id: 4000_408
+  - id: "4000_408"
     seed: 4408
     voices: 4
     code: |
@@ -3519,21 +3519,21 @@ songs:
       $: note("g1 bb1").sound("sine sine").lpf(3000)
 
       $: s("mt lt")
-  - id: 4000_409
+  - id: "4000_409"
     seed: 4409
     voices: 2
     code: |
       $: s("hh*16 hh*16")
 
       $: note("c4 d#4 d#4@2 f4!2").velocity(.55).pan(.49)
-  - id: 4000_410
+  - id: "4000_410"
     seed: 4410
     voices: 2
     code: |
       $: s("hh*16 hh*16").gain(.386).release(.4)
 
       $: note("e5 d5 c5 d5 e5 g5 e5 d5 c5").sound("square triangle").lpf(3726).resonance(11)
-  - id: 4000_411
+  - id: "4000_411"
     seed: 4411
     voices: 3
     code: |
@@ -3542,7 +3542,7 @@ songs:
       $: s("gm_overdriven_guitar:6 gm_epiano1:2").slow(8)
 
       $: s("linndrum_sd gm_pad_bowed").slow(2)
-  - id: 4000_412
+  - id: "4000_412"
     seed: 4412
     voices: 3
     code: |
@@ -3551,7 +3551,7 @@ songs:
       $: note("c3 f3@2 f3!2 g3 f3 e3 c3@2 ~ g#3 g#3 g3 f3 c3@3 c3 d#3@2 c#3").s("gm_oboe hh*3").velocity(.6411)
 
       $: n("-2 -2 ~ 59").scale("G4 minor").s("sawtooth square").slow(2)
-  - id: 4000_413
+  - id: "4000_413"
     seed: 4413
     voices: 3
     code: |
@@ -3560,21 +3560,21 @@ songs:
       $: note("c4*2 c4 a#3 c4").sound("triangle bd").lpf(597).velocity(.9)
 
       $: s("sine gm_pizzicato_strings:1")
-  - id: 4000_414
+  - id: "4000_414"
     seed: 4414
     voices: 2
     code: |
       $: s("sawtooth square").slow(2)
 
       $: s("lead recorder_bass_sus").slow(2)
-  - id: 4000_415
+  - id: "4000_415"
     seed: 4415
     voices: 2
     code: |
       $: note("c d e f e d c eb g").sound("bd*2 ~").lpf(3200).hpf(520)
 
       $: s("gm_electric_guitar_clean:2 hh*5").transpose(-12).lpf(916).room(.2).gain(.7495)
-  - id: 4000_416
+  - id: "4000_416"
     seed: 4416
     voices: 3
     code: |
@@ -3583,14 +3583,14 @@ songs:
       $: s("oh bd").gain(.6).hpf(4000).room(.1)
 
       $: s("gm_distortion_guitar bd:1").lpf(582).gain(.7).fast(9.0344).add(7)
-  - id: 4000_417
+  - id: "4000_417"
     seed: 4417
     voices: 2
     code: |
       $: note("D2 C#2 F#2 B2 F#2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2 F#2 B2").s("supersaw gm_overdriven_guitar:3").bank("RolandTR909").gain(.6165)
 
       $: s("misc:2 gm_choir_aahs:2 cr!3 cr!2").slow(2)
-  - id: 4000_418
+  - id: "4000_418"
     seed: 4418
     voices: 3
     code: |
@@ -3599,7 +3599,7 @@ songs:
       $: s("rect gm_electric_guitar_muted").lpf(2500).gain(.8)
 
       $: s("ellipse Bass Bass Bass").release(3).gain(.3).room(.4827)
-  - id: 4000_419
+  - id: "4000_419"
     seed: 4419
     voices: 3
     code: |
@@ -3608,7 +3608,7 @@ songs:
       $: s("hh*4 ~ sd cp ~").hpf(418).lpf(700).gain(.4226)
 
       $: s("ocarina_vib rd*6").speed(1.1)
-  - id: 4000_420
+  - id: "4000_420"
     seed: 4420
     voices: 4
     code: |
@@ -3619,7 +3619,7 @@ songs:
       $: s("hh 3").slow(10.0802)
 
       $: note("c5 g3 b3 d4 g4 a3 c4 e4").sound("sine sawtooth").lpf(700).gain(.4).release(.0525).room(.4).delay(.3641)
-  - id: 4000_421
+  - id: "4000_421"
     seed: 4421
     voices: 3
     code: |
@@ -3628,35 +3628,35 @@ songs:
       $: s("triangle gm_epiano1:2").slow(12.4699)
 
       $: s("hh!4 shaker_small:0").note("0 1 4!3 12")
-  - id: 4000_422
+  - id: "4000_422"
     seed: 4422
     voices: 2
     code: |
       $: s("gm_electric_bass_finger:2 harmonica_soft")
 
       $: n("5 1 2 4 ~ 5!2").gain("[0.8 0.9 0.7 0.9]*2").release(.1)
-  - id: 4000_423
+  - id: "4000_423"
     seed: 4423
     voices: 2
     code: |
       $: s("lead gm_electric_bass_finger:3").slow(2)
 
       $: s("gm_oboe shaker_small:3").gain("[1 0.6]*2").delay(.5)
-  - id: 4000_424
+  - id: "4000_424"
     seed: 4424
     voices: 2
     code: |
       $: s("gm_electric_guitar_jazz crow").slow(4)
 
       $: s("bd*4 sd*2").gain(.2228)
-  - id: 4000_425
+  - id: "4000_425"
     seed: 4425
     voices: 2
     code: |
       $: s("hh*8 shaker_small:0").gain(.6)
 
       $: note(0)
-  - id: 4000_426
+  - id: "4000_426"
     seed: 4426
     voices: 4
     code: |
@@ -3667,21 +3667,21 @@ songs:
       $: s("hh*2 hh")
 
       $: n("5 5 6 ~ 2 ~ 5 2 5 ~ 2 ~ 5 6").s("supersaw folkharp").lpf(3563).gain(.5)
-  - id: 4000_427
+  - id: "4000_427"
     seed: 4427
     voices: 2
     code: |
       $: note("a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8").s("perc*3 drums")
 
       $: s("pulse sd*3").gain(.8459)
-  - id: 4000_428
+  - id: "4000_428"
     seed: 4428
     voices: 2
     code: |
       $: s("clavisynth bd 0 1 2").slow(2)
 
       $: s("rd 1!3").slow(3.9668)
-  - id: 4000_429
+  - id: "4000_429"
     seed: 4429
     voices: 3
     code: |
@@ -3690,14 +3690,14 @@ songs:
       $: note("a2 c3 f3 a3 c4 f4 c4 e4 g4").sound("triangle supersaw").lpf(5000).gain(.8)
 
       $: s("woodblock:1 woodblock:2*2").pan(.49)
-  - id: 4000_430
+  - id: "4000_430"
     seed: 4430
     voices: 2
     code: |
       $: note("12 20 b4@2 d#5").s("rect gm_harmonica").slow(11.1023)
 
       $: s("kick*4 snare").slow(8)
-  - id: 4000_431
+  - id: "4000_431"
     seed: 4431
     voices: 3
     code: |
@@ -3706,7 +3706,7 @@ songs:
       $: note("c1 ~ f1").clip(.9).release(6).attack(.0209)
 
       $: n("c2 f2 g2 f2 g2 f2 g2 f2 g2")
-  - id: 4000_432
+  - id: "4000_432"
     seed: 4432
     voices: 4
     code: |
@@ -3717,28 +3717,28 @@ songs:
       $: note("c4*2 d#4").s("gm_bassoon cowbell").speed(.992).pan("0.2")
 
       $: note("e4 d#4 e4 e4").sound("square bd*2").lpf("<200@15 400@15 1000@13 1500@2>").room(1)
-  - id: 4000_433
+  - id: "4000_433"
     seed: 4433
     voices: 2
     code: |
       $: s("sleighbells gm_applause:3").lpf(300).room(.4).delay(.5).gain(.55)
 
       $: s("cp sd").slow(10.6946)
-  - id: 4000_434
+  - id: "4000_434"
     seed: 4434
     voices: 2
     code: |
       $: note("d#5@2 d5@2 c#5@7 ~").sound("sawtooth sawtooth").decay(.1053).sustain(0).delay(.5).gain(.6).room(.8)
 
       $: s("gm_harmonica gm_choir_aahs:3").hpf(5413).room(.3)
-  - id: 4000_435
+  - id: "4000_435"
     seed: 4435
     voices: 2
     code: |
       $: note("c4 a#3 c4 c4@2").gain(.2085).release(.1)
 
       $: s("linndrum_oh bell").slow(15.613)
-  - id: 4000_436
+  - id: "4000_436"
     seed: 4436
     voices: 3
     code: |
@@ -3747,28 +3747,28 @@ songs:
       $: s("piano sd!3").release(.08).room(.2).gain("<0.8 0.6 0.4 0.2>")
 
       $: s("sd cp").gain(.5)
-  - id: 4000_437
+  - id: "4000_437"
     seed: 4437
     voices: 2
     code: |
       $: note("Gm7 C7 Fmaj7 d#4@2").sound("square ~").lpf(2983).gain(.2655)
 
       $: s("amen clavisynth").gain(.7)
-  - id: 4000_438
+  - id: "4000_438"
     seed: 4438
     voices: 2
     code: |
       $: s("triangle cr!3").hpf(400).room(.5)
 
       $: s("gm_epiano1:1 brakedrum:1").gain("<.66 .72 .75 .8>/13")
-  - id: 4000_439
+  - id: "4000_439"
     seed: 4439
     voices: 2
     code: |
       $: n("4 b 3 1 2").clip(.9).release(2.1584)
 
       $: s("recorder_bass_sus ocarina_vib").hpf(8000)
-  - id: 4000_440
+  - id: "4000_440"
     seed: 4440
     voices: 3
     code: |
@@ -3777,14 +3777,14 @@ songs:
       $: s("gm_oboe 3").clip("[.5 1]*2")
 
       $: s("sine flute").slow(2)
-  - id: 4000_441
+  - id: "4000_441"
     seed: 4441
     voices: 2
     code: |
       $: s("bell gm_pad_warm").gain(.7)
 
       $: s("gm_drawbar_organ 2").velocity(.6).pan(.7)
-  - id: 4000_442
+  - id: "4000_442"
     seed: 4442
     voices: 4
     code: |
@@ -3795,21 +3795,21 @@ songs:
       $: sound("square drums").lpf(493).room(.5).delay(.5).gain(.5606)
 
       $: s("linndrum_oh hh!4 bd*2 ~").fast(2)
-  - id: 4000_443
+  - id: "4000_443"
     seed: 4443
     voices: 2
     code: |
       $: s("misc:2 6 sd ~").gain(.6)
 
       $: s("rd 1!3").gain(.9637)
-  - id: 4000_444
+  - id: "4000_444"
     seed: 4444
     voices: 2
     code: |
       $: note("~ e2 ~ e1").s("bd*2 sd").lpf(1497).room(2)
 
       $: s("rd 1!3")
-  - id: 4000_445
+  - id: "4000_445"
     seed: 4445
     voices: 3
     code: |
@@ -3818,35 +3818,35 @@ songs:
       $: s("gm_pad_warm piano").slow(2)
 
       $: s("kick 1").slow(2)
-  - id: 4000_446
+  - id: "4000_446"
     seed: 4446
     voices: 2
     code: |
       $: note("c5 c4 e4 g4").sound("square sawtooth").lpf(521).hpf(1000).room(.4).slow(51)
 
       $: s("bd*2 ~")
-  - id: 4000_447
+  - id: "4000_447"
     seed: 4447
     voices: 2
     code: |
       $: n("c2 ~ f2 ~")
 
       $: note("c5 e5").lpf(4000).resonance(12)
-  - id: 4000_448
+  - id: "4000_448"
     seed: 4448
     voices: 2
     code: |
       $: s("kick*4 sd").lpf(3966).gain(.3)
 
       $: s("bd sd hh")
-  - id: 4000_449
+  - id: "4000_449"
     seed: 4449
     voices: 2
     code: |
       $: sound("hh bd").lpf(563).gain(.35)
 
       $: s("rect oh:2*8").slow(2)
-  - id: 4000_450
+  - id: "4000_450"
     seed: 4450
     voices: 4
     code: |
@@ -3857,7 +3857,7 @@ songs:
       $: s("woodblock:1 woodblock:2*2").gain(.4117)
 
       $: note("g4 g3").sound("hh hh").lpf(3000).velocity(0)
-  - id: 4000_451
+  - id: "4000_451"
     seed: 4451
     voices: 3
     code: |
@@ -3866,7 +3866,7 @@ songs:
       $: n("6 9 11*2 11!2 10")
 
       $: note("c3 d#3@2 c#3 c3").add(5)
-  - id: 4000_452
+  - id: "4000_452"
     seed: 4452
     voices: 3
     code: |
@@ -3875,7 +3875,7 @@ songs:
       $: s("perc*3 chord").clip(1)
 
       $: s("clave hh:1*4 rd 1!3").slow(2)
-  - id: 4000_453
+  - id: "4000_453"
     seed: 4453
     voices: 3
     code: |
@@ -3884,7 +3884,7 @@ songs:
       $: note("a#5 g#5 c#4 e4").s("square gm_electric_guitar_clean:2").gain(.8399)
 
       $: note("c4@2 c4").sound("hh bd rim bd").lpf(3697).room(1.1165)
-  - id: 4000_454
+  - id: "4000_454"
     seed: 4454
     voices: 4
     code: |
@@ -3895,14 +3895,14 @@ songs:
       $: note(0).sound("bd*2 ~").lpf(300)
 
       $: s("gm_baritone_sax gm_overdriven_guitar:11 east gm_overdriven_guitar:2").slow(2)
-  - id: 4000_455
+  - id: "4000_455"
     seed: 4455
     voices: 2
     code: |
       $: s("kick*4 linn9000_cr").struct("x*6").velocity(7)
 
       $: note("g4 a4 f4 c4 g4 a4 f4 c4")
-  - id: 4000_456
+  - id: "4000_456"
     seed: 4456
     voices: 3
     code: |
@@ -3911,14 +3911,14 @@ songs:
       $: s("square sd:1!3").bank("BossDR110").room(.8).gain(.3).clip(1.0278)
 
       $: s("drums linndrum_oh").slow(2)
-  - id: 4000_457
+  - id: "4000_457"
     seed: 4457
     voices: 2
     code: |
       $: s("sd hh*4").gain(.9).pan(.6715)
 
       $: note("Gm7 C7").sound("~ bd ~ ~").fast(1.3483)
-  - id: 4000_458
+  - id: "4000_458"
     seed: 4458
     voices: 3
     code: |
@@ -3927,7 +3927,7 @@ songs:
       $: s("saw vibraslap")
 
       $: note("d4 a3 c4 e4 f3 a3 c4 c4").s("gm_piccolo lt*3 lt mt*2").slow(2)
-  - id: 4000_459
+  - id: "4000_459"
     seed: 4459
     voices: 3
     code: |
@@ -3936,28 +3936,28 @@ songs:
       $: s("drums gm_overdriven_guitar:3 7 ballwhistle 3").velocity(.65).pan(.4194)
 
       $: s("cr lt lt mt*2").lpf(650).room(.8).gain(.6305)
-  - id: 4000_460
+  - id: "4000_460"
     seed: 4460
     voices: 2
     code: |
       $: note("c3 g2").hpf(6857).room(.8)
 
       $: n("-2 b -2 b").scale("a4:minor").s("linndrum_oh gm_acoustic_guitar_steel:2 gm_lead_1_square gm_overdriven_guitar:6 gm_oboe:2 gm_dulcimer gong 8 brakedrum:1 ~ 3 cowbell:3 sd!3 sd*4 lt*4 hh!3 oh")
-  - id: 4000_461
+  - id: "4000_461"
     seed: 4461
     voices: 2
     code: |
       $: s("gm_electric_guitar_jazz bd cp sd hh*2 sd sd*4 lt*4")
 
       $: s("gm_electric_guitar_clean:2 3 sd sd bd").slow(9.5342)
-  - id: 4000_462
+  - id: "4000_462"
     seed: 4462
     voices: 2
     code: |
       $: note("d4 f4 a4 c5 c4 e4 g4 g4 b4 d5 c5 d5")
 
       $: s("cr lt").room(.5).delay(.5).gain("[1 0.5]*4")
-  - id: 4000_463
+  - id: "4000_463"
     seed: 4463
     voices: 4
     code: |
@@ -3968,35 +3968,35 @@ songs:
       $: note("a3 d5 c#5").sound("hh bd").lpf(1866).gain(.418).release(.2333)
 
       $: s("triangle hh!2").gain(.3).release(2.5087)
-  - id: 4000_464
+  - id: "4000_464"
     seed: 4464
     voices: 2
     code: |
       $: note("C1 F1 G1")
 
       $: s("rect sax flute ~").gain(.8).room(.3)
-  - id: 4000_465
+  - id: "4000_465"
     seed: 4465
     voices: 2
     code: |
       $: note("~ b ~ c#2 ~ f#2 ~ b2@11 ~ 6 D3 E3 F3 c5@2 b4 ~").sound("drum piano").lpf(2000).transpose(-12).attack(.001).decay(.1).sustain(0).degradeBy(.6885)
 
       $: s("bass snare_rim:0").gain("<.2 .1 .15 .1>/16")
-  - id: 4000_466
+  - id: "4000_466"
     seed: 4466
     voices: 2
     code: |
       $: note("c a f e")
 
       $: s("hh*16 hh*16").slow(2).note("c a f e d c d e f e d c").velocity(.8).pan(.45)
-  - id: 4000_467
+  - id: "4000_467"
     seed: 4467
     voices: 2
     code: |
       $: s("bd*2 sd").slow(2)
 
       $: note("a3 d5 c#5 c5").sound("~ sd").lpf(3000).gain(.5).release(.5).attack(.05)
-  - id: 4000_468
+  - id: "4000_468"
     seed: 4468
     voices: 4
     code: |
@@ -4007,28 +4007,28 @@ songs:
       $: note(36).s("supersaw pink white 0")
 
       $: note("D2 A2 G2 F2 Bb2 Eb2 Bb2 A2 D2 G2 D2 C#2").slow(12.1105)
-  - id: 4000_469
+  - id: "4000_469"
     seed: 4469
     voices: 2
     code: |
       $: s("bass shaker*16").slow(4)
 
       $: s("gm_harmonica perc").room(.8).velocity(.6792)
-  - id: 4000_470
+  - id: "4000_470"
     seed: 4470
     voices: 2
     code: |
       $: note("c3 g2 a#2 d#3").s("gm_ocarina gm_synth_strings_1 lt@3 misc:2").velocity(.7).pan(.2543)
 
       $: s("sine vocal").slow(2)
-  - id: 4000_471
+  - id: "4000_471"
     seed: 4471
     voices: 2
     code: |
       $: n(3).s("kick snare").slow(2).add(45)
 
       $: note("c5 a4 d#4 d4 a3 d5 c#5 c5").sound("sawtooth hh").lpf(3000).gain(.6)
-  - id: 4000_472
+  - id: "4000_472"
     seed: 4472
     voices: 4
     code: |
@@ -4039,7 +4039,7 @@ songs:
       $: n("-2 ~")
 
       $: s("sine 0").gain(.9094)
-  - id: 4000_473
+  - id: "4000_473"
     seed: 4473
     voices: 4
     code: |
@@ -4050,21 +4050,21 @@ songs:
       $: s("square bass").slow(8)
 
       $: s("recorder_bass_sus triangle").slow(4)
-  - id: 4000_474
+  - id: "4000_474"
     seed: 4474
     voices: 2
     code: |
       $: note("12 a f e").s("cp 4").gain(.4).pan(.51)
 
       $: s("amen sine").hpf(300)
-  - id: 4000_475
+  - id: "4000_475"
     seed: 4475
     voices: 2
     code: |
       $: n("1 2*3 ~ 2 5 5").scale("C:major").s("gm_electric_bass_finger:2 lt*4").pan(.5)
 
       $: n("5 5 6 ~").scale("<C:minor!3 C:melodic:minor>/2").struct("x(4,8,-2)").add("[-12,0]").s("linndrum_hh EmuDrumulator_lt").lpf(4000)
-  - id: 4000_476
+  - id: "4000_476"
     seed: 4476
     voices: 3
     code: |
@@ -4073,21 +4073,21 @@ songs:
       $: s("gm_acoustic_bass snare").slow(2)
 
       $: s("gm_overdriven_guitar:6 oh bd sd")
-  - id: 4000_477
+  - id: "4000_477"
     seed: 4477
     voices: 2
     code: |
       $: s("supersaw gm_choir_aahs:2").lpf(800).room(.5).speed(".5").velocity(.65).pan("0.2 -0.2")
 
       $: note("e5 f4 a4 c5").s("bass hh*8").velocity(.7)
-  - id: 4000_478
+  - id: "4000_478"
     seed: 4478
     voices: 2
     code: |
       $: note("c2*8 G1 C1 F1").sound("bd hh bd rim").lpf(3500)
 
       $: s("psaltery_pluck bell kick 1").gain(.35).room(.4).delay(.2).delaytime(.08).delayfeedback(".6 | .8")
-  - id: 4000_479
+  - id: "4000_479"
     seed: 4479
     voices: 3
     code: |
@@ -4096,7 +4096,7 @@ songs:
       $: n("-3 -2 -1 0 -7 -1").scale("c4 whole tone").transpose(1).release(.08)
 
       $: s("gm_drawbar_organ bd:1").gain(.9375)
-  - id: 4000_480
+  - id: "4000_480"
     seed: 4480
     voices: 3
     code: |
@@ -4105,7 +4105,7 @@ songs:
       $: note(4).s("gm_piccolo gm_electric_guitar_jazz").slow(2)
 
       $: s("drums snare").room(.6).delay(.5).delaytime(.0841).gain(.8)
-  - id: 4000_481
+  - id: "4000_481"
     seed: 4481
     voices: 3
     code: |
@@ -4114,7 +4114,7 @@ songs:
       $: s("bd*2 sd bd*2 sd").gain(.4376)
 
       $: note("a2*8 a2*8 a2*4 ~").sound("sine triangle").lpf(3554).gain(.8)
-  - id: 4000_482
+  - id: "4000_482"
     seed: 4482
     voices: 3
     code: |
@@ -4123,7 +4123,7 @@ songs:
       $: sound("drum square").lpf(3000).gain(.3).cutoff(1000).resonance(10)
 
       $: s("gm_synth_strings_1 gm_trombone:1 sn hh").clip(.8969).lpf(400).room(.6816).gain(.4).release(.05).attack(.3)
-  - id: 4000_483
+  - id: "4000_483"
     seed: 4483
     voices: 3
     code: |
@@ -4132,14 +4132,14 @@ songs:
       $: note("0 04 b2@11 ~ 6").sound("sawtooth sawtooth").lpf(2130).resonance(5)
 
       $: sound("sawtooth num").hpf(328).gain(.6)
-  - id: 4000_484
+  - id: "4000_484"
     seed: 4484
     voices: 2
     code: |
       $: n("F4 ~ G3 Bb3").scale("A1 minor")
 
       $: note("e3 a3").sound("piano sd").lpf(400).room(.6578)
-  - id: 4000_485
+  - id: "4000_485"
     seed: 4485
     voices: 3
     code: |
@@ -4148,21 +4148,21 @@ songs:
       $: note("c1 ~")
 
       $: note("c4 c#4").sound("sawtooth ~")
-  - id: 4000_486
+  - id: "4000_486"
     seed: 4486
     voices: 2
     code: |
       $: s("amen rd:3*4").gain(.3)
 
       $: s("gm_ocarina cp*16").gain(.5)
-  - id: 4000_487
+  - id: "4000_487"
     seed: 4487
     voices: 2
     code: |
       $: s("clave psaltery_pluck").slow(2)
 
       $: n("2 0 ~ 3 ~ 5!2").clip(.9).lpf(580).room(.4764)
-  - id: 4000_488
+  - id: "4000_488"
     seed: 4488
     voices: 3
     code: |
@@ -4171,21 +4171,21 @@ songs:
       $: note("c2 f1 g1 a#1").sound("triangle sawtooth").lpf(4000).room(.7048).delay(.2)
 
       $: note("c4 g#4 ~ g4 ~ f#4 f4").lpf(4000).room(.7333)
-  - id: 4000_489
+  - id: "4000_489"
     seed: 4489
     voices: 2
     code: |
       $: n(6).s("piano gm_marimba").gain(.2597)
 
       $: s("woodblock:1 woodblock:2*2").slow(2)
-  - id: 4000_490
+  - id: "4000_490"
     seed: 4490
     voices: 2
     code: |
       $: s("~ sd:0").slow(2)
 
       $: note("0 1 4!3 12").velocity(.6)
-  - id: 4000_491
+  - id: "4000_491"
     seed: 4491
     voices: 3
     code: |
@@ -4194,7 +4194,7 @@ songs:
       $: note("e1 ~ ~ e2 ~ e1 ~ ~ e2 ~ e1 ~ ~ e2 ~ e1").sound("kick snare")
 
       $: note("g4 g4 b4 d5").sound("sine hh").lpf(1500).velocity(.7).pan(.4)
-  - id: 4000_492
+  - id: "4000_492"
     seed: 4492
     voices: 3
     code: |
@@ -4203,7 +4203,7 @@ songs:
       $: note("c5 d5").sound("kick snare hat supersaw").lpf(650).gain(1).speed(.998).pan("0.2 -0.2")
 
       $: note("a2*8 ~ ~ a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8 a2*8")
-  - id: 4000_493
+  - id: "4000_493"
     seed: 4493
     voices: 3
     code: |
@@ -4212,21 +4212,21 @@ songs:
       $: sound("piano sawtooth").gain("<.2 .1 .15 .1>/16")
 
       $: s("drums breaks165:1").slow(2)
-  - id: 4000_494
+  - id: "4000_494"
     seed: 4494
     voices: 2
     code: |
       $: s("gm_pad_warm gm_acoustic_guitar_nylon").delay(.282).gain(.3)
 
       $: s("linndrum_oh sd").slow(2)
-  - id: 4000_495
+  - id: "4000_495"
     seed: 4495
     voices: 2
     code: |
       $: s("linndrum_hh gm_electric_bass_finger").gain(.4).transpose(-12)
 
       $: s("linndrum_sd gm_distortion_guitar r8_rd:1 bd*4 bd!4 ~ sd ~ hh!2 hh*2 hh*3 bd ~ ~ ~ rim ~ rim sd 2 3 5 4")
-  - id: 4000_496
+  - id: "4000_496"
     seed: 4496
     voices: 4
     code: |
@@ -4237,7 +4237,7 @@ songs:
       $: s("linndrum_bd gm_epiano1:2").gain(.3282)
 
       $: s("gm_harmonica gm_distortion_guitar").slow(3.6723)
-  - id: 4000_497
+  - id: "4000_497"
     seed: 4497
     voices: 3
     code: |
@@ -4246,14 +4246,14 @@ songs:
       $: s("gm_lead_6_voice gm_electric_bass_finger:7 psaltery_pluck 2").gain(.9)
 
       $: n("G3 G3 C3 E3 F2 D2 G2 C2 F2 D2 G2 C2 F2 A2").gain(.5)
-  - id: 4000_498
+  - id: "4000_498"
     seed: 4498
     voices: 2
     code: |
       $: s("kick*4 noise*4").slow(2)
 
       $: n("3 3 -1 ~").s("cp 4 8 16").gain(.5105).release(.1)
-  - id: 4000_499
+  - id: "4000_499"
     seed: 4499
     voices: 3
     code: |
