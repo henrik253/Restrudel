@@ -1,0 +1,6 @@
+setcpm(128/4)
+$: s("bd*2 ~").gain(.85)
+$: s("hh*3").gain(.2)
+$: s("gm_electric_bass_pick").note("f2 ab2 c3 f2").slow(2).clip(1).gain(.5)
+$: s("gm_piccolo").note("f4 ab4 c5").slow(2).clip(1).gain(.3)
+$: s("gm_harmonica").note("f3 c4").bank("AkaiLinn").gain(.3)

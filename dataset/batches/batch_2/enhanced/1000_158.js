@@ -1,0 +1,5 @@
+setcpm(140/4)
+$: s("bd*4 sd*2 cp*8").bank("Linn9000").slow(2).gain(.7)
+$: note("a#5 g#5 e5 c#5").s("sawtooth").lpf(2000).gain(.4)
+$: s("hh*8").gain(.2).cutoff("<400 1200>").decay(.03).sustain(.6).bank("Linn9000")
+$: s("clave").attack(.001).release(.4).room(.3).gain(.4)

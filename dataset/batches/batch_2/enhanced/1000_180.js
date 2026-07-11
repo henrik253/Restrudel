@@ -1,0 +1,5 @@
+setcpm(140/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("rd*8").gain("<0.3 0.6>")
+$: n("0 3 0 2 4 0 2 4 -2 0 3 0 2 4 0").scale("c:minor").s("supersaw").lpf(1200).delay(.5).delaytime(.125).delayfeedback(.6).room(1.5).gain(.4)
+$: s("cp*8 ~").gain(.3)

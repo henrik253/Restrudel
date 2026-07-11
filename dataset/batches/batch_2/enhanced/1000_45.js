@@ -1,0 +1,5 @@
+setcpm(128/4)
+$: sound("bd*2 ~").lpf(700).room(.5).delay(.4).gain(.8)
+$: s("~ cr").gain(.3).pan(0).room(.6)
+$: note("d4 d#4@4").sound("hh bd rim bd").lpf(5000).gain(.5).decay(.16).sustain(0).room(.5).delay(.3)
+$: sound("supersaw").lpf(700).room(.5).delay(.4).gain(.3)

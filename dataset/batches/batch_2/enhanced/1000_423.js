@@ -1,0 +1,5 @@
+setcpm(104/4)
+$: s("bd ~ sd ~").gain(.75)
+$: n("-3 4 3 4").pan(.7).room(.2).s("sawtooth").gain(.35)
+$: s("ocarina gm_overdriven_guitar:3").slow(2).gain(.3)
+$: s("gm_distortion_guitar gm_marimba").room(.5).gain(.35).lpf(1500).resonance(5)

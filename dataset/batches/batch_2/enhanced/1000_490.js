@@ -1,0 +1,5 @@
+setcpm(90/4)
+$: note("c2 c2").s("sawtooth").gain(.3)
+$: s("gm_pad_warm").note("c3 g3").gain(.4).hpf(250).lpf(1470).room(.4)
+$: s("pad").note("a3 e3").gain("[.5 .3 .2 .1]*2")
+$: note("a2 a2 a3 a2").s("triangle").lpf(2000).room(.5).delay(.3).gain(.4)

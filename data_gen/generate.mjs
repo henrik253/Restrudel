@@ -236,7 +236,9 @@ function toYaml({ generator, params, count, songs }) {
   for (const [k, v] of Object.entries(params)) L.push(`  ${k}: ${v}`);
   L.push(`count: ${count}`, 'songs:');
   for (const s of songs) {
-    L.push(`  - id: ${s.id}`, `    seed: ${s.seed}`, `    voices: ${s.voices}`);
+    // id is quoted: YAML 1.1 treats underscores in bare scalars as digit
+    // separators, so an unquoted "1000_0" silently parses as the int 10000.
+    L.push(`  - id: "${s.id}"`, `    seed: ${s.seed}`, `    voices: ${s.voices}`);
     if (!s.code) { L.push('    code: ""'); continue; }
     L.push('    code: |');
     for (const line of s.code.split('\n')) L.push(line === '' ? '' : `      ${line}`);

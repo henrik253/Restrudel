@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("hh*2 cp").slow(2).gain(.25)
+$: s("mt lt").gain(.3).decay(.16).sustain(.4).bank("KorgDDM110")
+$: s("amen").bank("SequentialCircuitsDrumtracks").lpf(2609).gain(.5).hpf(500).room(.6)
+$: s("kalimba*2").lpf(2609).gain(.4).room(.6)

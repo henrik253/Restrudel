@@ -1,0 +1,5 @@
+setcpm(115/4)
+$: s("mt lt").slow(2).gain(.7)
+$: s("hh bd").lpf(550).room(.34).gain(.5)
+$: s("gm_oboe square").clip(.7).lpf(650).resonance(2).gain(.4)
+$: note("d5 e5").sound("square").lpf(900).hpf(1500).room(.1).delay(.3).gain(.35).pan(.6)

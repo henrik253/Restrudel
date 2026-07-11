@@ -217,8 +217,9 @@ JSONs to emit new `.js` pattern files:
       skipped and logged. On the corpus expect ~75–80% yield.
 - [x] **LLM enhancement:** `data_gen/enhance_samples.py` + `collate_enhanced.py`
       turn the 500 raw sketches into 500 musically-richer "inspired" tracks
-      (`dataset/enhanced/*.js` → `dataset/generated_500_inspired.yaml`); these are
-      the synthetic songs that actually enter the fine-tuning set.
+      (`dataset/batches/batch_<N>/enhanced/*.js` → each batch's `enhanced.yaml` →
+      aggregated `dataset/enhanced_all.yaml`); these are the synthetic songs that
+      actually enter the fine-tuning set.
 - [x] **Reproducibility:** seeded RNG (mulberry32), seed recorded per song;
       - [ ] still to do: manifest row with seed + generator version per sample.
 

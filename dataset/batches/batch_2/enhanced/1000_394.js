@@ -1,0 +1,6 @@
+setcpm(118/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*4").gain(.2)
+$: note("c3 eb3 g3 bb3").s("supersaw").lpf(1600).gain(.35)
+$: note("c1 ~ eb1 ~").s("sine").slow(2).gain(.4)
+$: s("triangle gm_electric_guitar_muted").gain(.15)

@@ -1,0 +1,6 @@
+setcpm(84/4)
+$: s("bd bd bd bd").lpf(700).gain(.5)
+$: s("kick drums").lpf(650).gain("0.3 0.6 0.5 0.7").hpf(4000)
+$: note("g3 c4 f3 d#4@2").sound("snare").lpf(700).room(.6).gain("0.4 0.2").release(3).attack(.05)
+$: note("f4 c#4@2 d#4@2 ~").s("sawtooth").lpf(1200).gain(.3)
+$: note("e5 g5 e5 c5").s("supersaw").gain(.25).release(.2)

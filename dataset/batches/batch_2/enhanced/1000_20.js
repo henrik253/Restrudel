@@ -1,0 +1,5 @@
+setcpm(140/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: s("gm_string_ensemble_2 ~").slow(2).gain(.35).room(.6)
+$: note("c2*4 c#4 d#4 f4 d#4").s("gm_overdriven_guitar:6").gain(.4).release(.3)

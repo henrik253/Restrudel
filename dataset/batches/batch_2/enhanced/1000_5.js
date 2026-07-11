@@ -1,0 +1,5 @@
+setcpm(110/4)
+$: s("bd*2 ~ bd*2 ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: n("0 4 7 4 0 4 7 4").scale("e5:minor").s("gm_acoustic_guitar_steel:2").lpf(2000).gain(.4).slow(2)
+$: note("e5 e5 c5 d5").s("sawtooth").lpf(2000).gain(.35)

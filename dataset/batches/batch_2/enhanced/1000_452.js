@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*16").slow(4).gain(.2)
+$: note("c#4").s("sawtooth").fast("<2 4>").gain(.35)
+$: s("gm_oboe gm_vibraphone:3").note("c4 e4").fast("<2 4>").gain(.3)

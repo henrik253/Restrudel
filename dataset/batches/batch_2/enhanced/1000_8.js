@@ -1,0 +1,5 @@
+setcpm(92/4)
+$: s("bd ~ sd ~ oh").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: n("0 2 4 -2").scale("g1:minor").s("gm_electric_bass_finger:2").hpf(600).gain(.4)
+$: note("g1 bb1 e5 c#5 f#5 e5").s("pulse").gain(.3).delay(.5).release(.2)

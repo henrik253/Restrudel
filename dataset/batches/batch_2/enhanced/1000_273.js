@@ -1,0 +1,5 @@
+setcpm(130/4)
+$: s("hh*2 cp").bank("RolandTR909").gain(.75)
+$: n(3).scale("C:major").s("hh").gain(.2)
+$: note("a2*8").lpf(3200).gain(.4)
+$: note("a5 ~ f5 ~").velocity(.65).attack(.001).s("sawtooth").gain(.35)

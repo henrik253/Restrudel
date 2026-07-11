@@ -1,0 +1,5 @@
+setcpm(135/4)
+$: s("bd*2 ~ bd*2 ~").bank("RolandTR909").lpf(618).gain(.7)
+$: note("d2*8 d5@2 c#5@2 d5 ~ d#5@2 d5@2 c#5@2").s("sawtooth").gain(.3)
+$: s("linndrum_sd gm_electric_guitar_clean:2").gain(.4)
+$: s("perc*3 gm_tenor_sax:1 woodblock:2*2 snare_rim:0").room(1.4).gain(.3).release(1)

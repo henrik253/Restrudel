@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd ~ sd ~").gain(.75)
+$: note(38).s("gm_epiano1").gain(.5).release(.3)
+$: note("f4 a4").s("ocarina_vib").velocity(.5).pan(.7).gain(.4).release(.2)
+$: s("anvil ~ ~ ~").gain(.3).room(.4)

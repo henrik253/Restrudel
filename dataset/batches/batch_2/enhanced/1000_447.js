@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd ~ sd ~").bank("linn9000").gain(.8)
+$: s("linndrum_hh*8").slow(2).gain(.2)
+$: s("flbass").note("c2 g1").slow(2).gain(.4)
+$: s("gm_reed_organ:5").note("c4 e4 g4").gain(.3)

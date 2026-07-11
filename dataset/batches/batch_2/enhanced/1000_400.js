@@ -1,0 +1,5 @@
+setcpm(96/4)
+$: s("bd ~ sd ~").gain(.8)
+$: s("hh27 shaker*8").gain(.2)
+$: s("recorder_bass_sus gm_electric_bass_finger").gain(.35)
+$: s("crash ~").gain(.3)

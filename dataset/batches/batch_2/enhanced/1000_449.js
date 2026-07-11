@@ -1,0 +1,6 @@
+setcpm(122/4)
+$: s("hh*4 bd").lpf(3500).resonance(11).gain(.6).release(.1)
+$: s("psaltery_pluck").note("c2 g2").slow(2).gain(.4)
+$: s("gm_epiano1:1").note("c4 e4 g4").gain(.4)
+$: s("supersaw").note("c3 eb3 g3").gain(.35)
+$: s("gm_baritone_sax").speed(.7).note("c2").gain(.3)

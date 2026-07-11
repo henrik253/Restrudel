@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("amen*2").slow(2).gain(.7)
+$: s("hh*8").gain(.2)
+$: note("a4 d5 c#5 d5").s("sawtooth").lpf(2500).gain(.4)
+$: s("gm_electric_bass_finger:3").note("a2 d3 c#3 d3").slow(2).gain(.4)

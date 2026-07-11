@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
+$: s("hh*8").gain(.2)
+$: s("gm_electric_bass_finger:2").note("c2 g2").gain(.5)
+$: note("c5 f5 ~ b4").sound("square").lpf(4000).hpf(50).gain(.35)

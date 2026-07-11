@@ -1,0 +1,5 @@
+setcpm(120/4)
+$: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
+$: s("hh*8").gain(.2)
+$: n("0 3 5 7").scale("c4:minor").s("supersaw").lpf(2000).release(.5).gain(.35)
+$: s("~ ~ ~ ballwhistle").gain(.3)

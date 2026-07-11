@@ -1,0 +1,5 @@
+setcpm(112/4)
+$: s("bd ~ sd ~").gain(.75)
+$: note("g#4 f#4 f4 d#4 d4 c4 a4 e4").sound("supersaw").lpf(1393).room(.5).release(.4).attack(.1).gain(.35)
+$: s("gm_baritone_sax sn:3").gain(.35)
+$: s("gm_ocarina").speed(.963).lpf(400).gain(.4)

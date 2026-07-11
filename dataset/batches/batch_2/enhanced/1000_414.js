@@ -1,0 +1,5 @@
+setcpm(100/4)
+$: s("cymbal ~").slow(2).gain(.4)
+$: s("hh*4 tambourine").gain(.2)
+$: s("cowbell ~").gain(.3)
+$: s("gm_pad_warm sd").gain(.35).delay(.3).room(.6)
