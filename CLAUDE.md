@@ -61,6 +61,10 @@ transcription needed to get labels.
 - Corpus analysis is the notebook `notebooks/01_corpus_analysis.ipynb`
   (matplotlib/pandas); re-run it top-to-bottom to refresh `analysis/out/` and
   `analysis/results/`.
+- **Task-completion report (REQUIRED):** when a task is finished, end the reply
+  with a **step-by-step bullet report** that maps what was done back to what was
+  asked — one bullet per step, in the order it happened, so the path from request
+  to result is auditable. Note anything skipped, deferred, or still running.
 
 ## Workflow for new features (REQUIRED)
 
