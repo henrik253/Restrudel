@@ -1,28 +1,24 @@
-# Restrudel — Roadmap (Draft v1)
+# Restrudel — Roadmap (Draft v2)
 
-Step-by-step workflow for the **current master plan**:
-1. **Generate synthetic training data** — aligned (audio WAV, MIDI/events, Strudel
-   code) triples — and store the heavy audio on **Google Drive**.
-2. **Fine-tune the existing YourMT3+ checkpoint** on it to improve transcription of
-   synth/electronic timbres.
+Phases 0–6 (build the data, fine-tune YourMT3+) are **done**: two fine-tuned
+variants were trained and fully benchmarked (run `comparison_20260713-222456`);
+**strudel50** is the carry-forward model. Results + adversarial critique:
+[benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md).
+Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-instr
+0.52→0.84, at the cost of −15 slakh / −11 maestro forgetting.
 
-Phases 0–5 build the data (**Goal 1**); Phase 6 does the fine-tune (**Goal 2**).
-The later MIDI→Strudel stage and end-to-end demo remain in
-[project_plan.md](project_plan.md) until this works. **AWS is out of scope for now**
-(a possible scale fallback later, not the plan).
-
-> **🔥 Current priority: build the YourMT3+ fine-tuning corpus (Phase 5).**
-> Phases 1–4 have landed — corpus **train/test split**, distribution **analysis**,
-> distribution-**sampled generation** (500), and **LLM enhancement** (500 inspired)
-> are all done, and `scripts/dataset/preprocess_strudel.py` already renders the
-> Strudel data into YourMT3+'s exact training format. Now:
-> 1. **Extend with labeled electronic audio** — Lakh electronic subset + EGMD
->    (real WAV↔MIDI pairs) — plus MAESTRO/Slakh as forgetting-mitigation sets.
-> 2. **Run the whole fetch/render in Colab writing straight to a Drive-mounted
->    store** (`DATA_HOME` under `MyDrive/restrudel/datasets`), so nothing large
->    ever lands on this server or a local disk.
-> 3. **EDA** of the assembled categories (electronic vs. Strudel-generated vs.
->    Strudel-corpus) in `notebooks/04_finetune_data.ipynb`.
+> **🔥 Current priority: twin tracks (decided 2026-07-14).**
+> - **Track A — Application (Phase 7):** full-stack app — React+Vite frontend,
+>   Node backend on the personal server, model on **RunPod Serverless**
+>   (scale-to-zero GPU VM). User uploads a song, selects an interval, gets
+>   editable Strudel code in an embedded REPL. Design:
+>   [application_architecture.md](application_architecture.md).
+> - **Track B — Model v2 (Phase 8):** fix the Phase 6 evaluation problems, then
+>   shift the model **toward electronic music broadly** (not just
+>   Strudel-rendered timbres) — the renderer confound is the #1 known weakness.
+>
+> The tracks run in parallel and meet at a versioned model registry: the app
+> ships v1 with strudel50 and swaps in Track B checkpoints as they win.
 
 ## Guiding principles
 - **Data-driven, not random.** We do *not* generate uniform-random notes. We
@@ -239,7 +235,12 @@ consumes.
 4. [x] **Pilot batch (500 samples)** generated, LLM-enhanced, and checked against
        corpus stats (`notebooks/02_generated_vs_corpus.ipynb`).
 
-## Phase 5 — Fine-tuning corpus (Goal 1 output) 🔥 (CURRENT PRIORITY)
+## Phase 5 — Fine-tuning corpus (Goal 1 output)  ✅ DONE (core)
+**Done 2026-07:** strudel (1083 songs) + EGMD + MAESTRO + Slakh all in Drive in
+YourMT3 load format — 49.6k songs / 767 h / 238 GB total. The open items below
+(Lakh real-synth rendering, per-voice stems, real hand-labeled eval set) were
+**deferred into Phase 8**, where they are the core of the electronic shift.
+
 **Outcome:** a training-ready dataset in **YourMT3+'s exact load format** (16 kHz
 mono WAV + `Note`/`NoteEvent` `.npy` + `yourmt3_indexes/*_file_list.json`),
 assembled **in Colab straight into a Drive-mounted store** — no heavy data on this
@@ -279,7 +280,16 @@ server or a local disk. Built by `scripts/dataset/` (see its README).
 - [ ] Register a `"strudel"` preset in YourMT3's `amt/src/config/data_presets.py`
       pointing at these file lists when the fine-tune run is set up.
 
-## Phase 6 — Fine-tune YourMT3+ (Goal 2)
+## Phase 6 — Fine-tune YourMT3+ (Goal 2)  ✅ DONE
+**Done 2026-07-14** (run `comparison_20260713-222456`, checkpoints on Drive):
+two variants fine-tuned from the released checkpoint (3000 steps, bsz 8, LR 1e-4,
+A100) — **strudel50** (55% eff. strudel draws) and **egmd50** — and benchmarked
+3 models × 8 categories via `notebooks/06_benchmark.ipynb` (training itself:
+`notebooks/05_finetune.ipynb`). strudel50 > egmd50 > base on **every** strudel
+category → strudel50 carries forward. Full interpretation + adversarial critique
++ accepted follow-up actions: [benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md);
+those accepted actions are now Phase 8's work list.
+
 **Outcome:** a YourMT3+ checkpoint that beats the released baseline on synth/
 electronic timbres.
 
@@ -299,6 +309,85 @@ Fine-tuning the released checkpoint on our synth data tests the thesis in
       **real** electronic set vs. baseline — the number that proves the thesis.
 - [ ] Escalate to AWS Spot only if Colab session limits become the bottleneck.
 
+## Phase 7 — Application (Track A) 🔥
+**Outcome:** deployed web app — upload a song, drag-select an interval (~4–16
+bars), get editable Strudel code in an embedded REPL, with an honest
+"sketch, not transcription" framing. Full design (topology, contracts, latency/
+cost budget, risks): [application_architecture.md](application_architecture.md).
+
+**Stack (locked):** React+Vite frontend · Node backend on the personal server ·
+RunPod Serverless GPU worker (scale-to-zero VM, strudel50 checkpoint on a
+network volume) · repo layout `app/{frontend,backend,gpu-worker}`.
+
+Work packages, in dependency order:
+- [ ] **A0 — Contracts & skeleton:** JSON schemas for job / GPU-worker I/O
+      (see architecture doc), `app/` scaffolding, docker-compose for the server.
+- [ ] **A1 — GPU worker:** extract the proven inference path from
+      `notebooks/06_benchmark.ipynb` into `app/gpu-worker/` (RunPod
+      `handler.py` + Dockerfile); tempo/beat estimation (librosa) lives here
+      too; upload strudel50 to a RunPod network volume; deploy; measure
+      cold/warm latency. *Main integration risk — do first.*
+- [ ] **A2 — Codegen (the core new engineering, pure Node):** note events →
+      Strudel code: `setcps` from tempo, grid quantization per voice, drums →
+      mini-notation on corpus banks, pitched voices → `note()` + sounds/effects
+      from `analysis/results/` priors, `stack()` assembly. **Developed offline
+      against the existing aligned triples** (ground-truth events in → render
+      emitted code via `data_gen/render_offline.mjs` → spectral similarity vs.
+      original) — no GPU needed, codegen quality isolated from model quality.
+- [ ] **A3 — Backend:** Fastify + SQLite job flow, ffmpeg interval cut →
+      16 kHz mono WAV, RunPod client, SSE/poll progress, size/rate limits.
+- [ ] **A4 — Frontend:** upload + wavesurfer.js region selection, staged
+      progress (cold starts must look intentional), result in `@strudel/repl`,
+      copy/edit/play; BPM/offset correction control (re-run codegen only).
+- [ ] **A5 — Round-trip similarity score:** render the generated code, compare
+      log-mel spectrograms vs. the input interval → 0–1 score in the UI; same
+      harness doubles as A2's regression metric.
+- [ ] **A6 — Deploy + feedback loop:** personal server behind Caddy/HTTPS;
+      opt-in storage of uploaded intervals + scores → they become Track B's
+      hardest real-world eval set.
+
+> **Decision gate (after A1):** if real-mp3 transcription quality is unusable
+> (domain gap), the app pivots to "Strudel-ish input first" demo scope while
+> Track B closes the gap — the architecture doesn't change either way.
+
+## Phase 8 — Model v2: shift to electronic music (Track B) 🔥
+**Outcome:** a checkpoint that beats strudel50 on **real electronic music**
+(not just Strudel-rendered audio), with forgetting no worse, measured on a
+trustworthy eval. Direction: the shift away from base YourMT3+ stays, but it
+must generalize to electronic music broadly — attacking the renderer confound,
+the #1 finding of the Phase 6 critique.
+
+Order matters: **fix the measurement first, then the data, then train.**
+
+- [ ] **B0 — Eval fixes** (accepted critique actions; without these, B2 results
+      are uninterpretable):
+      - external electronic eval set — hand-labeled real EDM clips and/or MIDI
+        rendered through non-Strudel synths; the app's opt-in uploads (A6) feed
+        this over time;
+      - class-mapping audit (confusion matrix of predicted programs; explain the
+        exact-0.000s incl. Piano/Guitar);
+      - repo-held-out corpus split (leave-one-repo-out) + train/test
+        pattern-similarity dedup;
+      - drums-excluded multi-instrument F1 + per-class event counts in the
+        benchmark report;
+      - ≥2 seeds per arm for the headline numbers.
+- [ ] **B1 — Data broadening (the electronic shift itself):**
+      - Lakh electronic subset (`prepare_lakh.py`, scaffolded in Phase 5)
+        rendered through **real synth engines** — Surge XT / Dexed / Vital
+        headless — so the model sees subtractive/FM/wavetable timbres from more
+        than one renderer;
+      - mastering-chain augmentation (compression, limiting, EQ, reverb) so
+        training audio resembles released mp3s, not clean renders;
+      - per-voice stems for YourMT3's cross-stem mixing augmentation;
+      - swap/augment drum sample banks to break TR-909/808 memorization.
+- [ ] **B2 — Training run v2:** strudel50-style mix rebalanced toward the new
+      electronic data (strudel + lakh-synth + egmd majority; keep slakh/maestro
+      replay), **LR 3e-5 + warmup, 10–20k steps**, 2 seeds; nb05 driver as-is.
+- [ ] **B3 — Benchmark v2 + decision gate:** nb06 on the fixed eval incl. the
+      external electronic set; the new checkpoint replaces strudel50 in the app
+      (via the model registry / `model_version`) only if it wins there without
+      worse forgetting.
+
 ---
 
 ## Milestones
@@ -306,10 +395,14 @@ Fine-tuning the released checkpoint on our synth data tests the thesis in
 2. ✅ **M2 — Analysis:** distributions of real Strudel sounds plotted & reviewed. (Ph 1)
 3. ✅ **M3 — Labels:** pattern → MIDI/events working & verified. (Ph 2)
 4. ✅ **M4 — Audio:** scalable WAV render validated (offline). (Ph 3)
-5. 🔥 **M5 — Dataset:** Strudel data (500 sampled + 500 enhanced + corpus split)
-   packaged in YourMT3 format; **now extend with electronic (Lakh/EGMD) + reference
-   sets, assembled in Colab→Drive**; categories reviewed in the EDA. (Ph 4–5)
-6. 🎯 **M6 — Fine-tune:** YourMT3+ beats its own baseline on electronic clips. (Ph 6)
+5. ✅ **M5 — Dataset:** strudel + EGMD + MAESTRO + Slakh assembled in Drive in
+   YourMT3 format (49.6k songs / 767 h). (Ph 4–5)
+6. ✅ **M6 — Fine-tune:** strudel50 beats base on every Strudel category
+   (Synth Lead 0.00→0.52, drums 0.53→0.84); benchmark + critique documented. (Ph 6)
+7. 🔥 **M7 — App:** a real mp3 interval converts end-to-end to playable Strudel
+   code in the deployed app (upload → RunPod → codegen → embedded REPL). (Ph 7)
+8. 🎯 **M8 — Model v2:** a checkpoint beats strudel50 on the *external* real-
+   electronic eval without worse forgetting, and ships in the app. (Ph 8)
 
 ## Open questions / risks
 - [ ] SuperDough on `node-web-audio-api` — unproven (Phase 3 spike de-risks).
