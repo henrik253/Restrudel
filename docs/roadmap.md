@@ -256,7 +256,7 @@ server or a local disk. Built by `scripts/dataset/` (see its README).
 ### Execution model (decided)
 - Colab mounts Drive; `DATA_HOME = /content/drive/MyDrive/restrudel/datasets`.
   Downloads/extracts use the VM's fast ephemeral disk, then move into Drive.
-- Orchestrated by `notebooks/04_finetune_data.ipynb` (download → format → EDA →
+- Orchestrated by `notebooks/04_data_preparation.ipynb` (download → format → EDA →
   split-integrity checks). 5 TB of Drive means every reference set fits.
 
 ### The data categories
