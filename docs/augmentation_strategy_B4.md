@@ -58,10 +58,10 @@ low-value. Two changes: (a) **redirect** the LLM from "improve the music" to
 serves the actual lever; (b) **measure** it: an ablation in B6/B8 (raw-sketch
 vs. LLM-diversified) on the external eval decides whether it earns its place.
 Until measured, it is optional, not on the critical path.
-*(Tooling note: the user asked to use the `codex` GPT model for this. `codex` is
-**not currently installed** on this machine — verified 2026-07-15. B6 makes the
-LLM step pluggable (`--llm codex|anthropic|none`) so it runs once codex is
-installed via `npm i -g @openai/codex`; the pipeline does not block on it.)*
+*(Tooling note: the user asked to use the `codex` GPT model for this. codex is
+now installed (codex-cli 0.144.4); B6 wires it as a backend in
+`enhance_samples.py` (`--model codex`, via `codex exec`). Still optional/gated —
+the pipeline does not block on it.)*
 
 **4. Missing audio-domain augmentation — add it?**
 **Yes — this is the second-biggest win and it's cheap.** Today the training

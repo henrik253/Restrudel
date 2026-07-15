@@ -16,13 +16,14 @@ the output YAML only ever contains patterns that really evaluate and are not
 silent. Same output shape as the old script, so preprocess_strudel.py consumes
 it unchanged.
 
-No API key here -> Claude Code headless (`claude -p`), same as
-scripts/midi_to_strudel.py. Runs in parallel and is resumable (finished songs
-are re-read from the output file and skipped).
+Backends (auto by --model): `--model codex` (or a `gpt*` id) uses the OpenAI
+Codex CLI (`codex exec`, read-only sandbox) — this is the Track B path; else the
+Anthropic SDK if ANTHROPIC_API_KEY is set; else Claude Code headless (`claude
+-p`). Runs in parallel and is resumable (finished songs are re-read and skipped).
 
 Usage (per batch; default input/output is batch_2):
-  python data_gen/enhance_samples.py --batch 2               # enhance one batch
-  python data_gen/enhance_samples.py --limit 8 --jobs 2      # smoke test
+  python data_gen/enhance_samples.py --batch 1 --model codex  # Track B (GPT/codex)
+  python data_gen/enhance_samples.py --limit 8 --jobs 2       # smoke test
   python data_gen/enhance_samples.py --model claude-haiku-4-5
 """
 from __future__ import annotations
@@ -83,13 +84,47 @@ def log(msg: str) -> None:
         print(msg, flush=True)
 
 
+def _call_codex(system: str, prompt: str, model: str, timeout: int) -> str:
+    """OpenAI Codex CLI (`codex exec`), non-interactive + read-only sandbox.
+
+    Uses --output-schema so the final line of stdout is {"code": "..."} — robust
+    against the transcript noise codex prints. `model` "codex" uses codex's
+    configured default; any other id is passed with -m.
+    """
+    import tempfile
+    schema = ('{"type":"object","properties":{"code":{"type":"string"}},'
+              '"required":["code"],"additionalProperties":false}')
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        f.write(schema)
+        schema_path = f.name
+    cmd = ["codex", "exec", "-s", "read-only", "--skip-git-repo-check",
+           "--ephemeral", "--color", "never", "--output-schema", schema_path]
+    if model not in ("codex", "gpt"):
+        cmd += ["-m", model]
+    cmd.append(f"{system}\n\n{prompt}")
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    Path(schema_path).unlink(missing_ok=True)
+    if r.returncode != 0:
+        raise RuntimeError(f"codex exec failed: {(r.stderr or r.stdout)[:200]}")
+    for line in reversed(r.stdout.splitlines()):
+        line = line.strip()
+        if line.startswith("{"):
+            try:
+                return json.loads(line)["code"]
+            except (json.JSONDecodeError, KeyError):
+                continue
+    raise RuntimeError(f"codex exec: no JSON answer in output: {r.stdout[-200:]}")
+
+
 def call_llm(system: str, prompt: str, model: str, timeout: int = 300) -> str:
-    """Anthropic SDK if ANTHROPIC_API_KEY is set, else Claude Code headless.
+    """codex CLI (model 'codex'/'gpt*'), else Anthropic SDK, else Claude Code.
 
     NOTE: `claude -p` needs the CLI to be logged in (`claude` -> /login). With
     neither an API key nor a login available, use the subagent path instead
     (see data_gen/README.md) — subagents don't need external credentials.
     """
+    if model == "codex" or model.startswith("gpt"):
+        return _call_codex(system, prompt, model, timeout)
     try:
         import anthropic
         try:

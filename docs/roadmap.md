@@ -465,7 +465,8 @@ re-splitting would just bake the leak in again.
       - **S3** drum-bank rotation (8 machines) — breaks 909/808 memorization.
       Deferred to the Colab run (needs the Strudel engine + render + Drive): the
       validity gate at scale, render/index, augment; the LLM-enhance step is
-      gated/optional (codex not installed — pluggable hook noted). No unvalidated
+      gated/optional and now **wired to codex** (`enhance_samples.py --model
+      codex`, demonstrated end-to-end). No unvalidated
       batch committed (respects B1's purge). Full run recipe + B8 ablations in
       the doc. Test set stays untouched raw corpus.
 - [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,

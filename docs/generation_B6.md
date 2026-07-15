@@ -48,12 +48,17 @@ $: note("b4 eb4 g4 bb4").s("fm")
   (`node-web-audio-api`) aren't installed here, so no unvalidated batch is
   committed (B1 just purged untrusted data — we don't re-add any). Run at scale
   in Colab.
-- **LLM-enhance step.** B4 repurposed it from "improve music" to "diversify
-  timbre/FX" and **gated it on an ablation** — and S1 already delivers timbre
-  diversity without an LLM, so it's optional, not on the critical path. The user
-  asked to use **codex** for it; `codex` is **not installed** on this machine
-  (verified 2026-07-15). `data_gen/enhance_samples.py` remains the pluggable hook
-  (`npm i -g @openai/codex` to enable), but B6 does not depend on it.
+- **LLM-enhance step — now wired to codex.** B4 repurposed it from "improve
+  music" to "diversify timbre/FX" and **gated it on an ablation** — and S1
+  already delivers timbre diversity without an LLM, so it's optional, not on the
+  critical path. codex is now installed (codex-cli 0.144.4, model `gpt-5.6-sol`),
+  so `data_gen/enhance_samples.py` has a **codex backend**: `--model codex` runs
+  `codex exec` (read-only sandbox, `--output-schema` for a robust `{"code":...}`
+  answer). Demonstrated end-to-end: a raw 2-voice coverage sketch →
+  `setcpm(112/4)` + RolandTR909 drums + hats + an E:minor square bass
+  (lpf/resonance) + a sine lead, keeping the sketch's square/sine character. The
+  full enhance run (with the validity gate) is still a Colab step; the codex call
+  itself works locally.
 
 ## Full run recipe (Colab, train-side only)
 
