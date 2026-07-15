@@ -80,4 +80,4 @@ JSONs without re-rendering).
 ## Colab notebook
 
 For the Drive-first workflow (download reference sets into Drive, format docs,
-dataset analysis, split-integrity checks): [notebooks/04_finetune_data.ipynb](../../notebooks/04_finetune_data.ipynb).
+dataset analysis, split-integrity checks): [notebooks/04_data_preparation.ipynb](../../notebooks/04_data_preparation.ipynb).

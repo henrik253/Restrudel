@@ -107,7 +107,7 @@ songs use — the evidence that drives generation.
 
 - [x] **Fetch all available Strudel songs** into `corpus/github/` (9 repos +
       Codeberg monorepo docs; ~100 MB, < 2 GB budget). → 855 unique snippets.
-- [x] **Parse** each file and extract usage of (`notebooks/01_corpus_analysis.ipynb`):
+- [x] **Parse** each file and extract usage of (`notebooks/01_strudel_corpus_analysis.ipynb`):
   - sound sources: `s("...")` / `sound("...")` values, `n(...)`, synth waveforms
     (`sawtooth/square/triangle/sine/fm/...`) vs sample names
   - effects/params: `lpf`, `cutoff`, `resonance`, `room`, `delay`, `gain`,
@@ -163,7 +163,7 @@ all landed; packaging into YourMT3 format continues in Phase 5.
 
 ```
         (1) SOURCES              (2) ANALYSIS                (3) GENERATION
-  corpus/github/*  ──────▶  01_corpus_analysis.ipynb ──▶  sample new Strudel code
+  corpus/github/*  ──────▶  01_strudel_corpus_analysis.ipynb ──▶  sample new Strudel code
   (git submodules today;      → analysis/results/*.json      from the measured
    websites/scrapes later)      (weights, probs, Markov)     distributions
                                                                    │
@@ -185,7 +185,7 @@ strudel.cc shared links, forum scrapes. Adding a source only means re-running th
 analysis; nothing downstream changes. Keep the source list in one place so the
 pipeline stays extensible.
 
-**(2) Analysis — already built.** `notebooks/01_corpus_analysis.ipynb` distills
+**(2) Analysis — already built.** `notebooks/01_strudel_corpus_analysis.ipynb` distills
 the corpus into machine-readable distributions in `analysis/results/*.json`
 (consistent envelope, `weight`/`prob` fields ready for sampling):
 `sounds.json`, `functions.json`, `banks.json`, `mini_notation.json`,
@@ -240,7 +240,7 @@ consumes.
 2. [x] **Offline renderer** (`data_gen/render_offline.mjs`) — the main technical risk, retired.
 3. [x] **Generator** (`data_gen/generate.mjs`) — sampler core + content synthesis.
 4. [x] **Pilot batch (500 samples)** generated, LLM-enhanced, and checked against
-       corpus stats (`notebooks/02_generated_vs_corpus.ipynb`).
+       corpus stats (`notebooks/01_strudel_corpus_analysis.ipynb (§11)`).
 
 ## Phase 5 — Fine-tuning corpus (Goal 1 output)  ✅ DONE (core)
 **Done 2026-07:** strudel (1083 songs) + EGMD + MAESTRO + Slakh all in Drive in
@@ -256,7 +256,7 @@ server or a local disk. Built by `scripts/dataset/` (see its README).
 ### Execution model (decided)
 - Colab mounts Drive; `DATA_HOME = /content/drive/MyDrive/restrudel/datasets`.
   Downloads/extracts use the VM's fast ephemeral disk, then move into Drive.
-- Orchestrated by `notebooks/04_finetune_data.ipynb` (download → format → EDA →
+- Orchestrated by `notebooks/04_data_preparation.ipynb` (download → format → EDA →
   split-integrity checks). 5 TB of Drive means every reference set fits.
 
 ### The data categories

@@ -62,7 +62,7 @@ def import_amt(amt_src: Path):
 
 
 # ------------------------------------------------------- corpus collection ---
-# Extraction mirrors notebooks/01_corpus_analysis.ipynb (the 855-snippet set).
+# Extraction mirrors notebooks/01_strudel_corpus_analysis.ipynb (the 855-snippet set).
 EXTS = (".js", ".mjs", ".mdx", ".md", ".txt")
 PLAY_IDIOM = re.compile(r"(\$:|setcps?\(|setcpm\(|\bstack\s*\(|\bnote\s*\(|\bsound\s*\(|\.s\s*\(|\bs\s*\(\s*[\"'`])")
 SKIP_PATH = re.compile(r"(node_modules|/dist/|/build/|\.test\.|/krill|/parser|packages/.*/src/)", re.I)
@@ -70,7 +70,7 @@ SKIP_PATH = re.compile(r"(node_modules|/dist/|/build/|\.test\.|/krill|/parser|pa
 # Repository-level test split (Track B B5). Whole repos are held out as the
 # Strudel test set — never a per-snippet hash — so near-duplicate patterns within
 # a repo can't straddle the boundary and generation never sees a test author.
-# MUST stay identical to notebooks/01_corpus_analysis.ipynb (TEST_REPOS) and
+# MUST stay identical to notebooks/01_strudel_corpus_analysis.ipynb (TEST_REPOS) and
 # corpus/sources.yaml (split_role: test). Frozen 2026-07-15.
 TEST_REPOS = {"strudel-songs-collection", "strudel_trance"}
 
@@ -97,7 +97,7 @@ def collect_corpus(corpus_dir: Path, test_fraction: float = 0.0):
     Returns (train_pool, test), BOTH with full entries (incl. code) because the
     test-repo snippets are RENDERED as the Strudel test set. Test membership is
     by REPOSITORY (TEST_REPOS), matching the analysis notebook (notebooks/
-    01_corpus_analysis.ipynb, TEST_REPOS) and corpus/sources.yaml — so the
+    01_strudel_corpus_analysis.ipynb, TEST_REPOS) and corpus/sources.yaml — so the
     analysis train-pool and this train-pool are the identical set, and no test
     author touches the distributions or the train/validation indexes. The legacy
     `test_fraction` arg is ignored (kept for call-site compatibility).

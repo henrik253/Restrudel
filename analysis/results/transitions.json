@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_from": "notebooks/01_corpus_analysis.ipynb",
+  "generated_from": "notebooks/01_strudel_corpus_analysis.ipynb",
   "n_patterns": 731,
   "n_sources": 6,
   "schema": "transitions.v2",
