@@ -28,7 +28,13 @@ yields aligned **(audio WAV, MIDI/events, Strudel code)** triples — no
 transcription needed to get labels.
 
 ## Current state (what exists)
-- **Phase 0–1 done.** Phase 2+ not started; see roadmap.
+- **Phases 0–6 done** (data pipeline, dataset, fine-tune + benchmark). The
+  fine-tuned **strudel50** checkpoint beats base YourMT3+ on every Strudel
+  category (details: `docs/benchmark_interpretation_20260713.md`). **Current
+  work is twin tracks:** Phase 7 (full-stack app: React frontend, Node backend
+  on the personal server, RunPod Serverless GPU — see
+  `docs/application_architecture.md`) and Phase 8 (model v2: eval fixes, then
+  shift toward electronic music broadly). See roadmap.
 - **Corpus** of 8 third-party Strudel repos as **shallow git submodules** under
   `corpus/github/` (GPL code referenced, not vendored). Re-install with
   `git clone --recursive` or `git submodule update --init --recursive`.
