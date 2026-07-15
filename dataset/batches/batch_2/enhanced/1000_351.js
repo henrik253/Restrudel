@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
-$: s("hh*8").gain(.2)
-$: note("c2*8 f3@2 f3!2 g3").s("sawtooth").lpf(600).gain(.4).release(.1)
-$: s("vocal:1").gain(.3).room(.4)

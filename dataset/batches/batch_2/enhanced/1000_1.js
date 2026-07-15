@@ -1,5 +1,0 @@
-setcpm(110/4)
-$: s("bd sd bd sd").bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: n("0 3 5 7 5 3 0 2").scale("g4:major").s("gm_piano").release(.1).gain(.4)
-$: note("g4 ~ ~ b3").s("clave").speed(1.5).gain(.3)

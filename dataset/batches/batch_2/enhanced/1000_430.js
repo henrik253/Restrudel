@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("bd sd bd sd").lpf("<800 1600>").room(.5).gain(.7)
-$: s("hh*8").gain(.2)
-$: n("5 5 5 5 5 5 5 5").scale("c:major").add(12).s("sawtooth").lpf(2000).gain(.3)
-$: s("gm_pad_warm").slow(4).gain(.25).room(.6)

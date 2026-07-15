@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("rd*3").gain(.2)
-$: note("c1 ~ f1 g1").sound("sine").lpf(1500).resonance(8).gain(.5)
-$: s("gm_tuba ~").clip(1.1).gain(.3).room(.6)

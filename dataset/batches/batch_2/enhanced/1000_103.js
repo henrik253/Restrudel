@@ -1,6 +1,0 @@
-setcpm(100/4)
-$: s("bd ~ snare ~").lpf(1500).room(.4).gain(.8)
-$: s("oh ~").slow(2).gain(.2)
-$: s("bass ~").gain(.5)
-$: s("gm_electric_guitar_jazz").n("<0 3 5>").gain(.4)
-$: note("d2*4 f4!2 f4 c4").s("supersaw").slow(2).gain(.3).pan(0)

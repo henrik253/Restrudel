@@ -1,5 +1,0 @@
-setcpm(94/4)
-$: s("hh*8").gain(.2)
-$: s("bd ~ sd ~").gain(.8)
-$: s("folkharp").n("<0 2 4 5>").slow(2).gain(.4).release(.3)
-$: s("lt cr").gain(.3).release(.1)

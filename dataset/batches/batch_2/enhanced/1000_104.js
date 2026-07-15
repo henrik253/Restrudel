@@ -1,6 +1,0 @@
-setcpm(112/4)
-$: s("hh*4 ~").slow(2).gain(.2)
-$: s("hh*4 ~").gain(.15)
-$: s("bd ~ sd ~").gain(.8)
-$: s("lead").n("<0 3 5 7>").gain(.4).lpf(1500)
-$: s("agogo*2").gain(.25)

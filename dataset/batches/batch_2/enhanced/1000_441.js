@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("linndrum_sd conga*3").struct("[~ x]*4 [[~ x]*2 [x@3 ~]]").gain(.7)
-$: s("hh*8").gain(.2)
-$: s("gm_electric_bass_finger:2").note("c2 e2 g2 c2").slow(2).gain(.4)
-$: s("gm_synth_strings_2").note("c4 e4 g4").slow(2).gain(.3)

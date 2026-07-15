@@ -1,0 +1,12 @@
+{
+  "train": 731,
+  "test": 124,
+  "test_repos": [
+    "strudel-songs-collection",
+    "strudel_trance"
+  ],
+  "exact_cross_boundary": 0,
+  "near_dupes_ge_threshold": [],
+  "threshold": 0.8,
+  "max_test_to_train_jaccard": 0.208
+}

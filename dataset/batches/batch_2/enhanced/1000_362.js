@@ -1,5 +1,0 @@
-setcpm(115/4)
-$: s("gm_drawbar_organ bd sd*2 ~").gain(.7)
-$: s("amen").gain(.6)
-$: note("f4 d#4@2").bank("CasioMT40").clip(.9).release(.12).room(.27).gain(.4)
-$: note("12 a1*2 g1 ~").add("<0 7>/2").slow(2).s("sawtooth").lpf(600).gain(.4)

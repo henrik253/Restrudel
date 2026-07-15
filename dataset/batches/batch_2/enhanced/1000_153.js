@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: s("gm_electric_bass_pick").note("c2 ~ eb2 ~").gain(.5)
-$: s("cowbell ~ ~ cowbell").clip(.8).release(.3).attack(.1).gain(.4)

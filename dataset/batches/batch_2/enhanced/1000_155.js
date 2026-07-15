@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: s("bd*2 ~").bank("AkaiLinn").gain(.8)
-$: s("gm_electric_guitar_jazz gm_distortion_guitar:2").bank("AkaiLinn").gain(.5)
-$: s("hh*8").gain(.2)
-$: note("B2 D2 G2 Bb2 Eb2 Bb3 A2 D2 G2 Bb2").transpose(-1).s("sawtooth").lpf(900).gain(.4)

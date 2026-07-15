@@ -1,6 +1,0 @@
-setcpm(112/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: note("c2 ~ c2 g1").s("gm_string_ensemble_1").gain(.5)
-$: n("0 3 5 7").scale("c3:minor").s("sawtooth").struct("<x ~ ~ x>*4").fm(1.1).lpf(2000).gain(.35)
-$: n("~ 4").scale("c5:minor").s("square").gain(.3).pan(.6)

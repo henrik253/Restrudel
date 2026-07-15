@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("clave hh*2").cutoff(2000).gain(.4)
-$: note("a1").s("sawtooth").lpf(500).resonance(7).room(.3).clip(1).gain(.6)
-$: s("piano").velocity(.7).gain(.4)
-$: s("gm_electric_bass_finger:7").note("a2 c3").slow(2).gain(.4)

@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("bass ~ bass ~").slow(2.5).gain(.7)
-$: s("hh:1*4").slow(2.5).gain(.2)
-$: note("c3 eb3 g3 bb3").s("gm_piano").gain("0.25 0.35 0.3 0.4").release(.1)
-$: note("c5 eb5 g5 bb5").s("supersaw").gain(.25).release(.1).lpf(1800)

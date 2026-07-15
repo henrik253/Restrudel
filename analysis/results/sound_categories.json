@@ -1,34 +1,34 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 697,
-  "n_sources": 8,
+  "n_patterns": 731,
+  "n_sources": 6,
   "schema": "sound_categories.v1",
   "items": [
     {
       "category": "drum-sample",
-      "occurrences": 1062,
-      "weight": 0.623239
-    },
-    {
-      "category": "waveform-synth",
-      "occurrences": 275,
-      "weight": 0.161385
+      "occurrences": 653,
+      "weight": 0.709012
     },
     {
       "category": "other-sample",
-      "occurrences": 203,
-      "weight": 0.119131
+      "occurrences": 170,
+      "weight": 0.184582
+    },
+    {
+      "category": "waveform-synth",
+      "occurrences": 81,
+      "weight": 0.087948
     },
     {
       "category": "soundfont(gm)",
-      "occurrences": 149,
-      "weight": 0.087441
+      "occurrences": 12,
+      "weight": 0.013029
     },
     {
       "category": "noise",
-      "occurrences": 15,
-      "weight": 0.008803
+      "occurrences": 5,
+      "weight": 0.005429
     }
   ]
 }

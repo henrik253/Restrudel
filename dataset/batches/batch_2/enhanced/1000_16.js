@@ -1,5 +1,0 @@
-setcpm(90/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("clave ~ gm_bassoon ~").gain(.6).pan(.3)
-$: note("c1 ~ a1@2 ~").sound("drums kick").lpf(200).gain(.6)
-$: s("sine pink").lpf(3000).room(.5).gain(.4).release(.4).attack(.3)

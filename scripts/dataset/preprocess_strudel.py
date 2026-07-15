@@ -67,6 +67,13 @@ EXTS = (".js", ".mjs", ".mdx", ".md", ".txt")
 PLAY_IDIOM = re.compile(r"(\$:|setcps?\(|setcpm\(|\bstack\s*\(|\bnote\s*\(|\bsound\s*\(|\.s\s*\(|\bs\s*\(\s*[\"'`])")
 SKIP_PATH = re.compile(r"(node_modules|/dist/|/build/|\.test\.|/krill|/parser|packages/.*/src/)", re.I)
 
+# Repository-level test split (Track B B5). Whole repos are held out as the
+# Strudel test set — never a per-snippet hash — so near-duplicate patterns within
+# a repo can't straddle the boundary and generation never sees a test author.
+# MUST stay identical to notebooks/01_corpus_analysis.ipynb (TEST_REPOS) and
+# corpus/sources.yaml (split_role: test). Frozen 2026-07-15.
+TEST_REPOS = {"strudel-songs-collection", "strudel_trance"}
+
 
 def snippet_hash(code: str) -> str:
     return hashlib.md5(re.sub(r"\s+", "", code).encode()).hexdigest()
@@ -84,15 +91,16 @@ def extract_snippets(path: str, text: str):
     return [s for s in found if PLAY_IDIOM.search(s) and 15 < len(s) < 20000]
 
 
-def collect_corpus(corpus_dir: Path, test_fraction: float):
-    """Deterministic 80/20 split by md5(code), stable forever.
+def collect_corpus(corpus_dir: Path, test_fraction: float = 0.0):
+    """Repository-level train/test split (Track B B5), stable + leak-safe.
 
     Returns (train_pool, test), BOTH with full entries (incl. code) because the
-    20% test snippets are RENDERED as the Strudel test set. The same hash and
-    threshold drive the analysis notebook's leakage split (notebooks/
-    01_corpus_analysis.ipynb, corpus_split), so the analysis train-pool and this
-    train-pool are the identical 80%, and the test snippets never touch either
-    the distributions or the train/validation indexes.
+    test-repo snippets are RENDERED as the Strudel test set. Test membership is
+    by REPOSITORY (TEST_REPOS), matching the analysis notebook (notebooks/
+    01_corpus_analysis.ipynb, TEST_REPOS) and corpus/sources.yaml — so the
+    analysis train-pool and this train-pool are the identical set, and no test
+    author touches the distributions or the train/validation indexes. The legacy
+    `test_fraction` arg is ignored (kept for call-site compatibility).
     """
     train_pool, test, seen = [], [], set()
     for dirpath, _, files in os.walk(corpus_dir):
@@ -114,9 +122,11 @@ def collect_corpus(corpus_dir: Path, test_fraction: float):
                 if h in seen:
                     continue
                 seen.add(h)
-                entry = {"id": f"corpus_{h[:10]}", "hash": h, "path": rel, "code": snip}
-                # hash -> [0,1): top `test_fraction` is the held-out test set
-                if int(h[:8], 16) / 0xFFFFFFFF >= (1 - test_fraction):
+                source = rel.split(os.sep)[0]
+                entry = {"id": f"corpus_{h[:10]}", "hash": h, "path": rel,
+                         "source": source, "code": snip}
+                # Repo-level split: whole repos are test (see TEST_REPOS).
+                if source in TEST_REPOS:
                     test.append(entry)
                 else:
                     train_pool.append(entry)
@@ -125,6 +135,13 @@ def collect_corpus(corpus_dir: Path, test_fraction: float):
 
 def collect_inspired(yaml_path: Path):
     import yaml
+    if not yaml_path.exists():
+        # Track B B1: the leak-tainted generated set (batches + *_all.yaml) was
+        # purged because it was sampled from distributions computed over the
+        # FULL corpus (test files included). It is regenerated train-side only
+        # in B6, after the repo-level split (B5). Until then, run corpus-only.
+        print(f"inspired: {yaml_path.name} absent (purged in Track B B1) -> 0 songs")
+        return []
     doc = yaml.safe_load(open(yaml_path))
     return [{"id": s["id"], "hash": snippet_hash(s["code"]), "path": str(yaml_path.name),
              "code": s["code"]} for s in doc["songs"]]
@@ -356,12 +373,13 @@ def main():
         train_pool, corpus_test = collect_corpus(args.corpus_dir, args.test_fraction)
         test_hashes = {s["hash"] for s in corpus_test}
         (args.data_home / "strudel_corpus_test.json").write_text(json.dumps({
-            "note": "20% of corpus snippets held out from the analysis "
-                    "distributions AND from train/validation; rendered here as "
-                    "the Strudel TEST set (real held-out human patterns).",
-            "test_fraction": args.test_fraction,
+            "note": "Whole repositories (repo-level split, Track B B5) held out "
+                    "from the analysis distributions AND from train/validation; "
+                    "rendered here as the Strudel TEST set (real held-out human "
+                    "patterns from authors absent from training).",
+            "test_repos": sorted(TEST_REPOS),
             "n_test": len(corpus_test), "n_train_pool": len(train_pool),
-            "test": [{k: s[k] for k in ("id", "hash", "path")} for s in corpus_test]},
+            "test": [{k: s[k] for k in ("id", "hash", "path", "source")} for s in corpus_test]},
             indent=2) + "\n")
         print(f"corpus: {len(train_pool)} train-pool + {len(corpus_test)} held-out test "
               f"-> strudel_corpus_test.json")

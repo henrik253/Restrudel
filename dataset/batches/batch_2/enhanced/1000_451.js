@@ -1,5 +1,0 @@
-setcpm(118/4)
-$: s("bd ~ sd ~").bank("RolandTR909").lpf("<600 800 1000 1200>").gain(.8)
-$: s("sd ht").struct("x ~ x ~ x x").gain(.4)
-$: n("0 2 4").scale("c:major").s("sawtooth").decay(.03).gain(.4)
-$: s("hh*8").gain(.2)

@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.7)
-$: n("-2 -1 0 2 0 1").scale("g2:lydian").s("hh*16").slow(2).gain(.2)
-$: s("gm_pad_warm").note("g3 b3 d4").slow(2).gain(.3).room(.5)
-$: s("recorder_bass_sus").note("g2").slow(2).gain(.3)

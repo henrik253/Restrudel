@@ -1,5 +1,0 @@
-setcpm(122/4)
-$: note("g2 b2 d3").sound("bd*4").speed("1 2").hpf(800).gain(.7)
-$: s("hh*8").gain(.2)
-$: s("supersaw").gain(.3).lpf(2000)
-$: n("-2 7 4 0 7 -4").scale("C:minor").s("sawtooth").gain(.3).release(.1)

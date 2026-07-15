@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("kick ~ snare ~").gain(.8)
-$: note("a1 f1").s("sawtooth").gain(.5).lpf(700)
-$: s("gm_electric_guitar_clean:2 ~").gain(.4)
-$: n("9*2 8 ~ 7 8*2 6").scale("d:minor").s("sawtooth").gain(.35).lpf(1600)

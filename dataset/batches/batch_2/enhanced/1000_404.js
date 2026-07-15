@@ -1,5 +1,0 @@
-setcpm(108/4)
-$: s("bell ~ kick ~").note("e4 c#4 a3 g4").gain(.6)
-$: note("b2 f2 f2 bb2").s("psaltery_pluck").gain(.5)
-$: note("g3 c4 e4 g3").s("triangle").clip(.8).gain(.35)
-$: s("gm_acoustic_guitar_steel:2 gm_synth_strings_2").delay(.6).gain(.5).release(.12)

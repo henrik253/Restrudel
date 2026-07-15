@@ -13,9 +13,12 @@ Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-inst
 >   (scale-to-zero GPU VM). User uploads a song, selects an interval, gets
 >   editable Strudel code in an embedded REPL. Design:
 >   [application_architecture.md](application_architecture.md).
-> - **Track B — Model v2 (Phase 8):** fix the Phase 6 evaluation problems, then
->   shift the model **toward electronic music broadly** (not just
->   Strudel-rendered timbres) — the renderer confound is the #1 known weakness.
+> - **Track B — Model v2 (Phase 8):** shift the model **toward electronic music
+>   broadly** (not just Strudel-rendered timbres), in strict order: base-model
+>   ground truth (done) → purge leak-tainted synthetic data → grow the corpus
+>   (strudel.cc scrape) → hunt external electronic data → rethink the
+>   generation strategy → **split by repository** → only then generate → only
+>   then fine-tune.
 >
 > The tracks run in parallel and meet at a versioned model registry: the app
 > ships v1 with strudel50 and swaps in Track B checkpoints as they win.
@@ -76,7 +79,11 @@ Turning a Strudel pattern into a WAV has two modes:
   - `notebooks/` — Colab orchestration notebooks.
 - [x] Colab notebook `notebooks/00_setup.ipynb`: mount Drive, install Node + deps,
       sanity-check the pattern→events path. *(authored; deferred to the audio phase)*
-- [ ] **Repo layout** (small artifacts, in git):
+- [x] **Repo layout** (small artifacts, in git) — *landed in adapted form:*
+      `dataset/batches/<N>/{sketches,enhanced}/` + aggregated
+      `sketches_all.yaml`/`enhanced_all.yaml` instead of the sketch below;
+      a per-sample `manifest.jsonl` never materialized (open leftover, Phase 4).
+      Original sketch:
   ```
   corpus/            # raw fetched Strudel .js songs (Phase 1)
   analysis/out/      # distribution tables + plots (Phase 1)
@@ -86,13 +93,13 @@ Turning a Strudel pattern into a WAV has two modes:
     code/{id}.js     # the source pattern
     manifest.jsonl   # one row per sample → all artifacts + params + split
   ```
-- [ ] **Heavy audio → Google Drive:** decide the sync mechanism (DVC was set up
-      then removed as unused). `dataset/audio/` (16 kHz mono WAV renders) lives in
-      Drive; git keeps only the small artifacts. Drive layout:
-  ```
-  <drive_folder>/...        # 16 kHz mono WAV renders
-  ```
-- [ ] Decide reproducibility basics: pin Strudel package versions, seed RNG.
+- [x] **Heavy audio → Google Drive:** decided & running — Colab mounts Drive
+      (`DATA_HOME = MyDrive/restrudel/datasets`, everything renders/downloads
+      straight into it); `scripts/dataset/sync_drive.sh` (rclone) is the
+      non-Colab path. DVC was set up then removed as unused.
+- [x] Reproducibility basics: Strudel packages pinned
+      (`data_gen/package-lock.json`); seeded RNG (mulberry32), seed recorded
+      per generated song.
 
 ## Phase 1 — Corpus collection & sound analysis  ⭐ (do this first)
 **Outcome:** ranked distributions of which sounds/synths/effects real Strudel
@@ -258,27 +265,30 @@ server or a local disk. Built by `scripts/dataset/` (see its README).
 - [x] **Strudel — corpus (real, target domain).** Train-pool (697) → train/val;
       **held-out 20% (158) → the Strudel TEST set** (deterministic hash split,
       `analysis/results/corpus_test.json`; never rendered into train/val).
-- [ ] **Electronic — external, labeled (the extension).** `prepare_lakh.py`
-      filters the Lakh MIDI electronic subset (drums + ≥50% synth/electric
-      programs) → labels now; **real audio via Surge XT / Vital / Dexed rendering
-      still to wire up** (placeholder audio for now, kept out of the loaders).
-      Add **EGMD** (electronic drums) as real WAV↔MIDI via `install_reference_sets.py`.
-- [ ] **Acoustic — forgetting-mitigation reference sets.** MAESTRO (piano) +
-      Slakh (band mixes) from YourMT3's hosted 16 kHz archives; mix ~20–50% into
-      batches so the model keeps its existing pitched/real-audio ability.
+- [x] **Electronic — external, labeled.** **EGMD** (electronic drums, real
+      WAV↔MIDI, 45.5k songs / 444 h) installed via `install_reference_sets.py`
+      and used in Phase 6 training. The Lakh electronic subset
+      (`prepare_lakh.py`, scaffolded) still needs **real audio via
+      Surge XT / Vital / Dexed rendering** → deferred to **Phase 8 B3**.
+- [x] **Acoustic — forgetting-mitigation reference sets.** MAESTRO (1,276
+      songs / 199 h) + Slakh (1,710 songs / 118 h) in Drive from YourMT3's
+      hosted 16 kHz archives; mixed at 25%/15% nominal into the Phase 6 runs.
 
 ### Remaining work
-- [ ] Run the Colab download of EGMD/MAESTRO/Slakh into Drive (§2 of notebook 04).
+- [x] Run the Colab download of EGMD/MAESTRO/Slakh into Drive — done 2026-07-07
+      (total incl. strudel: 49.6k songs / 767 h / 238 GB, index paths verified).
 - [ ] **Real synth audio for the Lakh electronic subset** (Surge/Vital/Dexed) —
       the highest-leverage way to add labeled electronic timbres beyond Strudel.
+      → **Phase 8 B3.**
 - [ ] Per-voice stems for YourMT3's cross-stem mixing augmentation (render each
-      `$:`/`stack` voice separately).
+      `$:`/`stack` voice separately). → **Phase 8 B6.**
 - [ ] Reserve a tiny **real** eval set (hand-labeled real electronic clips) — the
-      honest generalization test alongside the Strudel holdout.
+      honest generalization test alongside the Strudel holdout. → **Phase 8 B8.**
 - [x] **EDA of the assembled categories** in notebook 04 §7 (electronic vs.
       Strudel-generated vs. Strudel-corpus; songs/hours per split).
-- [ ] Register a `"strudel"` preset in YourMT3's `amt/src/config/data_presets.py`
-      pointing at these file lists when the fine-tune run is set up.
+- [x] Register a `"strudel"` preset in YourMT3's `amt/src/config/data_presets.py`
+      pointing at these file lists — done by the marker-guarded setup cells in
+      notebooks 05/06 ("restrudel presets v2"), applied at runtime on each VM.
 
 ## Phase 6 — Fine-tune YourMT3+ (Goal 2)  ✅ DONE
 **Done 2026-07-14** (run `comparison_20260713-222456`, checkpoints on Drive):
@@ -298,16 +308,18 @@ steps** across 10 datasets, but the model is **small (~60M params, <2.5% over MT
 Fine-tuning the released checkpoint on our synth data tests the thesis in
 **hours of GPU, not days**, and our dataset (≤2 GB) + this model fit one GPU.
 
-- [ ] Get the released checkpoint + training code (`mimbres/YourMT3`); run its
-      inference on a few of our electronic clips to fix the **baseline to beat**.
-- [ ] Adapt our dataset to YourMT3+'s I/O: 16 kHz audio → its spectrogram front-end;
-      our MIDI/events → its MIDI-like event-token targets (`MT3_FULL_PLUS` vocab).
-      Reuse the Phase 2 labels.
-- [ ] Fine-tune on **Colab** (mount Drive, pull dataset): short run (≪300K steps),
-      1 GPU, bf16; checkpoint back to Drive.
-- [ ] Evaluate note-level F1 (onset / onset+offset / multi-instrument) on the held-out
-      **real** electronic set vs. baseline — the number that proves the thesis.
-- [ ] Escalate to AWS Spot only if Colab session limits become the bottleneck.
+- [x] Get the released checkpoint + training code (`mimbres/YourMT3`); baseline
+      fixed by benchmarking the base model across all 8 eval categories (nb06).
+- [x] Adapt our dataset to YourMT3+'s I/O — `scripts/dataset/preprocess_strudel.py`
+      renders 16 kHz WAV + `Note`/`NoteEvent` `.npy` + `yourmt3_indexes` file
+      lists from the Phase 2 labels.
+- [x] Fine-tune on **Colab** (A100, bf16, 3000 steps, bsz 8): two mix variants
+      via `notebooks/05_finetune.ipynb`; checkpoints back to Drive.
+- [x] Evaluate note-level F1 vs. baseline — `notebooks/06_benchmark.ipynb`,
+      3 models × 8 categories. *Caveat: the eval is the Strudel holdout +
+      references; the hand-labeled **real**-electronic eval is still missing →
+      Phase 8 B0.*
+- [x] AWS Spot escalation — **not needed**; Colab A100 sufficed (~3.5 h/variant).
 
 ## Phase 7 — Application (Track A) 🔥
 **Outcome:** deployed web app — upload a song, drag-select an interval (~4–16
@@ -353,39 +365,119 @@ Work packages, in dependency order:
 ## Phase 8 — Model v2: shift to electronic music (Track B) 🔥
 **Outcome:** a checkpoint that beats strudel50 on **real electronic music**
 (not just Strudel-rendered audio), with forgetting no worse, measured on a
-trustworthy eval. Direction: the shift away from base YourMT3+ stays, but it
-must generalize to electronic music broadly — attacking the renderer confound,
-the #1 finding of the Phase 6 critique.
+trustworthy eval. The shift away from base YourMT3+ stays, but it must
+generalize to electronic music broadly. **Strict ordering (decided
+2026-07-15): ground truth → data reset → corpus growth → strategy rethink →
+split by repository → only then generate → only then train.** Rationale: the
+Phase 6 critique showed the split leaked and the synthetic data was generated
+from distributions that had seen the test files; regenerating before
+re-splitting would just bake the leak in again.
 
-Order matters: **fix the measurement first, then the data, then train.**
-
-- [ ] **B0 — Eval fixes** (accepted critique actions; without these, B2 results
-      are uninterpretable):
-      - external electronic eval set — hand-labeled real EDM clips and/or MIDI
-        rendered through non-Strudel synths; the app's opt-in uploads (A6) feed
-        this over time;
-      - class-mapping audit (confusion matrix of predicted programs; explain the
-        exact-0.000s incl. Piano/Guitar);
-      - repo-held-out corpus split (leave-one-repo-out) + train/test
-        pattern-similarity dedup;
-      - drums-excluded multi-instrument F1 + per-class event counts in the
-        benchmark report;
-      - ≥2 seeds per arm for the headline numbers.
-- [ ] **B1 — Data broadening (the electronic shift itself):**
-      - Lakh electronic subset (`prepare_lakh.py`, scaffolded in Phase 5)
-        rendered through **real synth engines** — Surge XT / Dexed / Vital
-        headless — so the model sees subtractive/FM/wavetable timbres from more
-        than one renderer;
-      - mastering-chain augmentation (compression, limiting, EQ, reverb) so
-        training audio resembles released mp3s, not clean renders;
-      - per-voice stems for YourMT3's cross-stem mixing augmentation;
-      - swap/augment drum sample banks to break TR-909/808 memorization.
-- [ ] **B2 — Training run v2:** strudel50-style mix rebalanced toward the new
-      electronic data (strudel + lakh-synth + egmd majority; keep slakh/maestro
-      replay), **LR 3e-5 + warmup, 10–20k steps**, 2 seeds; nb05 driver as-is.
-- [ ] **B3 — Benchmark v2 + decision gate:** nb06 on the fixed eval incl. the
-      external electronic set; the new checkpoint replaces strudel50 in the app
-      (via the model registry / `model_version`) only if it wins there without
+- [x] **B0 — Ground truth: what did the base model train on?** Done
+      2026-07-15 → [base_model_training_data.md](base_model_training_data.md).
+      Verdict: base *has* Synth Lead/Pad labels (from Slakh, ≈2%/4.5% of
+      stems) but its only synth timbres are **~26 static Kontakt sample
+      patches** — nothing live-synthesized, and **synth bass was silently
+      skipped from Slakh entirely** (explains our Bass 0.000). Its own eval:
+      Synth Lead F1 0.82 in-domain → 0.02 on real recordings. Cautionary
+      tale for us: few static timbres from one renderer ⇒ the same cliff, one
+      renderer over — B2–B6 must maximize timbre/renderer diversity.
+- [x] **B1 — Purge the existing generated data.** Done 2026-07-15: removed
+      `dataset/batches/` (2009 files), `enhanced_all.yaml`, `sketches_all.yaml`
+      from git; `preprocess_strudel.py:collect_inspired` now tolerates the
+      missing yaml (corpus-only path still runs); `scripts/dataset/purge_generated_drive.py`
+      (dry-run by default) removes the matching Drive renders + drops their
+      YourMT3 index entries. Generator *code* and the real corpus are untouched;
+      the set is **regenerated train-side only in B6**.
+- [x] **B2 — Grow the corpus: scrape strudel.cc.** Done 2026-07-15 —
+      **finding: the public supply is saturated.** strudel.cc's built-in
+      examples are *already* in-corpus (our `uzu-strudel` + `strudel-coding-music`
+      sources carry `website/src/repl/tunes.mjs`), the site has no scrapeable
+      public pattern gallery (SPA + Codeberg blocks scrapers), and the wider
+      GitHub ecosystem is tooling, not songs. The four new personal repos found
+      are each blocked on license (unlicensed) or format (patterns in
+      `.html`/`.ts`) — none clears clean-licensed **and** non-trivial **and**
+      ingestible, so none was auto-added. Built the durable output instead:
+      `corpus/sources.yaml` (pluggable manifest: 8 ingested + 4 candidates with
+      blockers), `scripts/corpus/add_sources.sh`, and `docs/corpus_growth_B2.md`.
+      **Consequence for B5:** plan the repo split around the existing 8 sources;
+      real growth comes from generation (B6) + the app's user uploads (A6), not
+      scraping.
+- [x] **B3 — Hunt for external labeled electronic music data.** Done
+      2026-07-15 → [external_electronic_data_B3.md](external_electronic_data_B3.md)
+      (evidence-based survey). Key results: the renderer is **DawDreamer**
+      (Python VST3 host, offline, Colab-supported) hosting **Surge XT / Dexed /
+      Vital** — *correction to the old plan:* those synths have no offline CLI;
+      host them as VST3 in DawDreamer instead. Real work = the **GM-program →
+      synth-patch map** (scaffolded in `scripts/dataset/render_synths.py`,
+      plugs into `prepare_lakh.py`'s staging→loader promotion). Feed it
+      **MetaMIDI/GigaMIDI** genre-tagged electronic MIDI (CC BY 4.0) over
+      GM-filtered LMD. Quick independent win: **NES-MDB** (MIT, headless WAV +
+      note/timbre labels — real 2A03 electronic). Deprioritized: NSynth
+      (auxiliary; static samples recreate the Slakh trap), fluidsynth/SF2
+      (sampled baseline), BitMIDI/VGMusic (unlicensed). Fallback stays: scale
+      Strudel generation (B6), widening its timbre range per B4.
+- [x] **B4 — Rethink the generation/augmentation strategy.** Done 2026-07-15 →
+      [augmentation_strategy_B4.md](augmentation_strategy_B4.md). Decision:
+      **change the axis we sample on.** For a transcription model the
+      generalization axis is **timbre + audio realism**, not symbolic musical
+      realism — so:
+      - **S1** keep corpus-distribution sampling for *notes/rhythm/functions*,
+        but **decouple timbre**: a coverage sampler spans waveform/filter/env/
+        FX and *over-samples rare configs* (mirroring the corpus here is exactly
+        Slakh's 26-patch trap);
+      - **S2** add the missing **audio-domain augmentation** stage (mastering
+        chain: gain/EQ/comp/limit/saturation/bitcrush/short-reverb/MP3
+        round-trip; strictly time-preserving so labels stay aligned) — cheapest
+        + biggest realism gain, also sidesteps the node-web-audio-api FX gap;
+      - **S3** drum-bank rotation (breaks 909/808 memorization);
+      - structure/mini-notation: **not worth investing** (vary *density* as a
+        knob instead); LLM-enhance **repurposed** from "improve music" to
+        "diversify timbre/FX" and **gated on an ablation** (optional, not
+        critical path). *(codex requested for the LLM step is not installed —
+        B6 makes it pluggable `--llm codex|anthropic|none`.)*
+- [x] **B5 — Split by SOURCE, then freeze it.** Done 2026-07-15 →
+      [repo_split_B5.md](repo_split_B5.md). Leave-repositories-out split, frozen:
+      **TEST = strudel-songs-collection (eefano) + strudel_trance (honcoops) =
+      124 patterns, real songs, held-out authors**; TRAIN = the other 6 (731
+      patterns). The two Strudel forks (strudel-coding-music 70% + uzu-strudel)
+      stay together in train so their shared official `tunes.mjs` can't leak.
+      Single source of truth: `TEST_REPOS` in `preprocess_strudel.py` +
+      notebook 01, mirrored by `split_role` in `corpus/sources.yaml` (replaces
+      the drift-prone duplicated hash formula). **Recomputed distributions
+      train-side only** (ran notebook 01 headlessly → 731/124, all 10
+      `analysis/results/*.json` refreshed, `corpus_test.json` v2). **Dedup
+      audit** (`dedup_audit.py`): 0 cross-boundary duplicates, max test→train
+      Jaccard 0.208 → provably leak-free (the old hash split couldn't guarantee
+      this).
+- [x] **B6 — Only then: generate/augment the TRAINING set.** Done 2026-07-15 →
+      [generation_B6.md](generation_B6.md). Tooling built + verified locally,
+      train-side only (reads the B5 train-side distributions; test repos never
+      enter generation):
+      - **S1** `generate.mjs --timbre-coverage` — decouples timbre from the
+        corpus dist: FX/filter/env params span their range (10% extremes),
+        synth voices get a uniformly-chosen waveform (breaks sawtooth
+        dominance). Verified: 7 waveforms spread, lpf spans 111–1859+.
+      - **S2** `scripts/dataset/augment_audio.py` — strictly time-preserving
+        mastering-chain augmentation (gain/EQ/sat/comp/bitcrush/decimate/short-
+        reverb/limit). Verified: length preserved, onsets within ±50 ms, variants
+        differ meaningfully — labels stay aligned.
+      - **S3** drum-bank rotation (8 machines) — breaks 909/808 memorization.
+      Deferred to the Colab run (needs the Strudel engine + render + Drive): the
+      validity gate at scale, render/index, augment; the LLM-enhance step is
+      gated/optional and now **wired to codex** (`enhance_samples.py --model
+      codex`, demonstrated end-to-end). No unvalidated
+      batch committed (respects B1's purge). Full run recipe + B8 ablations in
+      the doc. Test set stays untouched raw corpus.
+- [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
+      strudel50-style mix rebalanced toward the new electronic data (keep
+      slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.
+- [ ] **B8 — Benchmark v2 + decision gate.** nb06 plus: external
+      real-electronic eval set (hand-labeled clips; app opt-in uploads from
+      A6 feed this), confusion matrix of predicted programs (settles the
+      exact-0.000 question for good), drums-excluded multi-instrument F1 +
+      per-class event counts. The new checkpoint replaces strudel50 in the
+      app (`model_version`) only if it wins on the external eval without
       worse forgetting.
 
 ---
@@ -405,12 +497,18 @@ Order matters: **fix the measurement first, then the data, then train.**
    electronic eval without worse forgetting, and ships in the app. (Ph 8)
 
 ## Open questions / risks
-- [ ] SuperDough on `node-web-audio-api` — unproven (Phase 3 spike de-risks).
+- [x] SuperDough on `node-web-audio-api` — **resolved**: Phase 3 spike passed;
+      `render_offline.mjs` renders synths + sample banks (AudioWorklet FX gap
+      remains, see Phase 3).
 - [ ] Corpus size (~100s of songs) may be small for robust distributions — do we
-      also scrape strudel.cc shared links / forums?
-- [ ] Node-in-Colab ergonomics (installing/running Node from a Python notebook).
+      also scrape strudel.cc shared links / forums? *(Also relevant to Phase 8
+      repo-held-out split: more repos = better splits.)*
+- [x] Node-in-Colab ergonomics — **resolved in practice** across notebooks 00–06
+      (apt/nvm Node install from Python cells, subprocess orchestration).
 - [ ] How much timbre/FX to encode as labels vs. notes-only (affects events JSON).
-- [ ] Licensing of fetched corpus songs — for analysis only vs. redistribution.
-- [ ] Fine-tune (Goal 2): does `mimbres/YourMT3` cleanly support loading its
-      checkpoint + resuming training on a new dataset? Matching our labels to its
-      exact event-token format is the main integration risk.
+      *(Phase 6 trained notes-only; synth params are dumped by the labeler but
+      unused — revisit if codegen (Phase 7 A2) wants them.)*
+- [x] Licensing of fetched corpus songs — **settled**: analysis-only; GPL repos
+      referenced as shallow submodules, never vendored or redistributed.
+- [x] Fine-tune integration risk — **resolved**: checkpoint loads and resumes
+      cleanly; our labels matched the event-token format (Phase 6 completed).

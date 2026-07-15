@@ -1,5 +1,0 @@
-setcpm(128/4)
-$: s("bd ~ sd ~ bd ~ sd ~").gain(.8)
-$: s("hh*8").gain(.2)
-$: n("3 8 9 10 4 9 6 5").scale("a3:minor").s("sawtooth").lpf(1000).gain(.35)
-$: note("a2 a2 ~ a2").s("triangle").cutoff(180).gain(.4)

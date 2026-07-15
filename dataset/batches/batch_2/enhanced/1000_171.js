@@ -1,5 +1,0 @@
-setcpm(110/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("oh ~ oh ~").gain(.3)
-$: note("c4 g4 d4 b3").s("gm_oboe").clip(1).lpf(2000).gain(.4)
-$: note("d5 c#5 d#5 a4").s("gm_oboe").release(.1).gain(.3).room(.3)

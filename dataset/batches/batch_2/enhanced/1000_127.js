@@ -1,6 +1,0 @@
-setcpm(100/4)
-$: s("linndrum_sd hh!4").slow(2).gain(.6)
-$: s("breaks165:1 ~").slow(2).gain(.5)
-$: note("b4 ~ a#4@2 f#4@2 g#4@2 ~ f#4 f#4@2 ~ f4 f4@2 ~ d#4 d#4@2 ~ d4").sound("hh").lpf(1553).hpf(500).room(.5).gain(.3)
-$: s("bass").fast(2).gain(.4)
-$: s("supersaw bd!2").gain(.3)

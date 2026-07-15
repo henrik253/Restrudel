@@ -1,5 +1,0 @@
-setcpm(90/4)
-$: s("bd ~ bd ~").gain(.75)
-$: s("hh*4 ~").gain(.2)
-$: s("gm_synth_bass_1").slow(2).gain(.4)
-$: s("gm_distortion_guitar:3").slow(4).gain(.3)

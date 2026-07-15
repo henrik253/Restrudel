@@ -1,437 +1,281 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 697,
-  "n_sources": 8,
+  "n_patterns": 731,
+  "n_sources": 6,
   "schema": "content_models.v2",
   "note": "sequence content for note/n/s/sound: generator builds a variable-order back-off Markov model from `sequences` (condition on the longest seen prefix, back off to shorter contexts, then unigram) and samples with a temperature. Generates NEW strings, not copies.",
   "functions": {
     "s": {
-      "n_strings": 954,
-      "vocab_size": 288,
+      "n_strings": 487,
+      "vocab_size": 127,
       "length": {
         "counts": {
-          "1": 669,
-          "2": 66,
-          "3": 31,
-          "4": 128,
-          "5": 21,
-          "6": 6,
-          "7": 1,
-          "8": 11,
-          "9": 8,
-          "10": 5,
-          "12": 2,
-          "14": 1,
-          "17": 2,
-          "23": 1,
-          "30": 1,
-          "41": 1
+          "1": 299,
+          "2": 53,
+          "3": 23,
+          "4": 85,
+          "5": 11,
+          "6": 2,
+          "8": 7,
+          "9": 2,
+          "10": 3,
+          "17": 2
         },
         "min": 1,
-        "max": 41,
-        "mean": 2.02
+        "max": 17,
+        "mean": 2.09
       },
       "start": [
         {
           "token": "bd",
-          "count": 133,
-          "prob": 0.1616
-        },
-        {
-          "token": "~",
-          "count": 92,
-          "prob": 0.11179
-        },
-        {
-          "token": "bd*4",
-          "count": 77,
-          "prob": 0.09356
-        },
-        {
-          "token": "hh*16",
-          "count": 45,
-          "prob": 0.05468
+          "count": 114,
+          "prob": 0.2539
         },
         {
           "token": "sawtooth",
-          "count": 42,
-          "prob": 0.05103
+          "count": 46,
+          "prob": 0.10245
+        },
+        {
+          "token": "bd*4",
+          "count": 29,
+          "prob": 0.06459
+        },
+        {
+          "token": "~",
+          "count": 28,
+          "prob": 0.06236
         },
         {
           "token": "hh*8",
-          "count": 28,
-          "prob": 0.03402
-        },
-        {
-          "token": "hh",
-          "count": 28,
-          "prob": 0.03402
+          "count": 23,
+          "prob": 0.05122
         },
         {
           "token": "piano",
           "count": 20,
-          "prob": 0.0243
-        },
-        {
-          "token": "triangle",
-          "count": 19,
-          "prob": 0.02309
-        },
-        {
-          "token": "sd",
-          "count": 14,
-          "prob": 0.01701
-        },
-        {
-          "token": "cr",
-          "count": 14,
-          "prob": 0.01701
-        },
-        {
-          "token": "bass",
-          "count": 13,
-          "prob": 0.0158
+          "prob": 0.04454
         },
         {
           "token": "bd*2",
-          "count": 12,
-          "prob": 0.01458
+          "count": 17,
+          "prob": 0.03786
+        },
+        {
+          "token": "hh",
+          "count": 16,
+          "prob": 0.03563
+        },
+        {
+          "token": "bass",
+          "count": 14,
+          "prob": 0.03118
         },
         {
           "token": "lead",
           "count": 12,
-          "prob": 0.01458
+          "prob": 0.02673
         },
         {
-          "token": "gm_electric_bass_finger",
-          "count": 11,
-          "prob": 0.01337
-        },
-        {
-          "token": "cp",
-          "count": 9,
-          "prob": 0.01094
+          "token": "square",
+          "count": 10,
+          "prob": 0.02227
         },
         {
           "token": "vocal",
           "count": 9,
-          "prob": 0.01094
-        },
-        {
-          "token": "sine",
-          "count": 9,
-          "prob": 0.01094
-        },
-        {
-          "token": "supersaw",
-          "count": 9,
-          "prob": 0.01094
+          "prob": 0.02004
         },
         {
           "token": "hh*4",
-          "count": 8,
-          "prob": 0.00972
-        },
-        {
-          "token": "square",
-          "count": 8,
-          "prob": 0.00972
-        },
-        {
-          "token": "gm_electric_guitar_jazz",
-          "count": 8,
-          "prob": 0.00972
-        },
-        {
-          "token": "oh",
           "count": 7,
-          "prob": 0.00851
+          "prob": 0.01559
         },
         {
-          "token": "rd",
+          "token": "triangle",
           "count": 7,
-          "prob": 0.00851
+          "prob": 0.01559
         },
         {
-          "token": "gm_oboe",
+          "token": "sine",
           "count": 7,
-          "prob": 0.00851
-        },
-        {
-          "token": "mt",
-          "count": 6,
-          "prob": 0.00729
-        },
-        {
-          "token": "gm_electric_guitar_clean:2",
-          "count": 6,
-          "prob": 0.00729
-        },
-        {
-          "token": "hh*2",
-          "count": 5,
-          "prob": 0.00608
+          "prob": 0.01559
         },
         {
           "token": "gm_lead_6_voice",
-          "count": 5,
-          "prob": 0.00608
+          "count": 6,
+          "prob": 0.01336
         },
         {
-          "token": "gm_drawbar_organ",
+          "token": "cp",
           "count": 5,
-          "prob": 0.00608
+          "prob": 0.01114
         },
         {
-          "token": "gm_electric_bass_finger:2",
+          "token": "hh*16",
           "count": 5,
-          "prob": 0.00608
-        },
-        {
-          "token": "lt",
-          "count": 5,
-          "prob": 0.00608
-        },
-        {
-          "token": "gm_piccolo",
-          "count": 5,
-          "prob": 0.00608
+          "prob": 0.01114
         },
         {
           "token": "drums",
           "count": 4,
-          "prob": 0.00486
+          "prob": 0.00891
         },
         {
           "token": "bell",
           "count": 4,
-          "prob": 0.00486
-        },
-        {
-          "token": "saw",
-          "count": 4,
-          "prob": 0.00486
-        },
-        {
-          "token": "gm_electric_bass_pick",
-          "count": 4,
-          "prob": 0.00486
-        },
-        {
-          "token": "linndrum_bd",
-          "count": 4,
-          "prob": 0.00486
-        },
-        {
-          "token": "linndrum_sd",
-          "count": 4,
-          "prob": 0.00486
-        },
-        {
-          "token": "gm_synth_strings_1",
-          "count": 4,
-          "prob": 0.00486
+          "prob": 0.00891
         },
         {
           "token": "kick",
           "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
         },
         {
           "token": "snare",
           "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
         },
         {
           "token": "perc*3",
           "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
         },
         {
           "token": "amen",
           "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
         },
         {
-          "token": "psaltery_pluck",
+          "token": "oh",
           "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
+        },
+        {
+          "token": "amencutup",
+          "count": 3,
+          "prob": 0.00668
+        },
+        {
+          "token": "breath",
+          "count": 3,
+          "prob": 0.00668
+        },
+        {
+          "token": "east",
+          "count": 3,
+          "prob": 0.00668
         },
         {
           "token": "rect",
           "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "gtr",
-          "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "gm_harmonica",
-          "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "linndrum_hh",
-          "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "linndrum_oh",
-          "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "gm_acoustic_guitar_steel:2",
-          "count": 3,
-          "prob": 0.00365
-        },
-        {
-          "token": "bd!2",
-          "count": 3,
-          "prob": 0.00365
+          "prob": 0.00668
         },
         {
           "token": "kick*4",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
+        },
+        {
+          "token": "sd",
+          "count": 2,
+          "prob": 0.00445
         },
         {
           "token": "cymbal",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
           "token": "pad",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
-          "token": "cowbell",
+          "token": "hh*2",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
           "token": "gm_epiano1:1",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
           "token": "gm_acoustic_bass",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
+        },
+        {
+          "token": "bd:5",
+          "count": 2,
+          "prob": 0.00445
+        },
+        {
+          "token": "mt",
+          "count": 2,
+          "prob": 0.00445
         },
         {
           "token": "misc:2",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
+        },
+        {
+          "token": "dino",
+          "count": 2,
+          "prob": 0.00445
         },
         {
           "token": "woodblock:1",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
           "token": "clavisynth",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
+        },
+        {
+          "token": "psaltery_pluck",
+          "count": 2,
+          "prob": 0.00445
         },
         {
           "token": "ocarina_vib",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
+        },
+        {
+          "token": "hh:1*4",
+          "count": 2,
+          "prob": 0.00445
         },
         {
           "token": "ellipse",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
-          "token": "gm_bassoon",
+          "token": "supersaw",
           "count": 2,
-          "prob": 0.00243
+          "prob": 0.00445
         },
         {
-          "token": "ocarina",
-          "count": 2,
-          "prob": 0.00243
+          "token": "perc",
+          "count": 1,
+          "prob": 0.00223
         },
         {
-          "token": "recorder_bass_sus",
-          "count": 2,
-          "prob": 0.00243
+          "token": "cowbell",
+          "count": 1,
+          "prob": 0.00223
         },
         {
-          "token": "rd*3",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_tuba",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_pad_warm",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "pulse",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_baritone_sax",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "clave",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_distortion_guitar",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "oh*4",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "sleighbells",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_ocarina",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_overdriven_guitar:6",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_piano",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "gm_overdriven_guitar:3",
-          "count": 2,
-          "prob": 0.00243
-        },
-        {
-          "token": "hh!4",
-          "count": 2,
-          "prob": 0.00243
+          "token": "bd:1",
+          "count": 1,
+          "prob": 0.00223
         }
       ],
       "sequences": [
@@ -477,6 +321,40 @@
           "sd",
           "~",
           "bd"
+        ],
+        [
+          "bd",
+          "sd"
+        ],
+        [
+          "bd",
+          "~",
+          "sd",
+          "~"
+        ],
+        [
+          "bd*4"
+        ],
+        [
+          "bd",
+          "cp",
+          "sd"
+        ],
+        [
+          "bd",
+          "sd"
+        ],
+        [
+          "bd",
+          "sd"
+        ],
+        [
+          "bd",
+          "sd"
+        ],
+        [
+          "bd",
+          "sd"
         ],
         [
           "bd",
@@ -655,6 +533,11 @@
         ],
         [
           "bd",
+          "cp",
+          "sd"
+        ],
+        [
+          "bd",
           "sd"
         ],
         [
@@ -758,6 +641,21 @@
           "bd",
           "sd",
           "hh",
+          "cp"
+        ],
+        [
+          "bd",
+          "~",
+          "sd",
+          "~",
+          "bd",
+          "cp",
+          "sd",
+          "~"
+        ],
+        [
+          "bd",
+          "sd",
           "cp"
         ],
         [
@@ -1552,6 +1450,15 @@
           "kalimba"
         ],
         [
+          "bd*2",
+          "bd",
+          "sn",
+          "hh"
+        ],
+        [
+          "square"
+        ],
+        [
           "mad"
         ],
         [
@@ -1559,6 +1466,22 @@
         ],
         [
           "bass"
+        ],
+        [
+          "bd:5",
+          "~",
+          "sd:1!3",
+          "sd:1",
+          "hh27"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "triangle"
         ],
         [
           "gm_epiano1:1"
@@ -1664,6 +1587,36 @@
           "ocarina_vib"
         ],
         [
+          "bd*2",
+          "~",
+          "cp",
+          "sd"
+        ],
+        [
+          "hh:1*4"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "square"
+        ],
+        [
+          "amencutup"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "breath"
+        ],
+        [
+          "east"
+        ],
+        [
           "sawtooth"
         ],
         [
@@ -1671,6 +1624,13 @@
         ],
         [
           "triangle"
+        ],
+        [
+          "bd*2",
+          "~",
+          "hh",
+          "~",
+          "cp"
         ],
         [
           "piano"
@@ -1713,6 +1673,9 @@
         ],
         [
           "my_sound"
+        ],
+        [
+          "mysaw"
         ],
         [
           "sawtooth"
@@ -1763,6 +1726,17 @@
           "rim*4"
         ],
         [
+          "bd*2",
+          "~",
+          "sd"
+        ],
+        [
+          "hh*4"
+        ],
+        [
+          "shaker_small"
+        ],
+        [
           "amencutup"
         ],
         [
@@ -1778,1012 +1752,22 @@
           "east"
         ],
         [
-          "piano"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "gm_lead_6_voice"
-        ],
-        [
-          "gm_lead_6_voice"
-        ],
-        [
           "bd",
-          "sd",
-          "hh"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "hh",
-          "oh"
-        ],
-        [
-          "gm_lead_6_voice"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "~",
-          "~",
-          "~",
-          "sn:3",
-          "~",
-          "~",
-          "sn:3",
-          "~",
-          "~"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "sine:2"
-        ],
-        [
-          "piano"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "bd*4",
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "gm_bassoon"
-        ],
-        [
-          "gm_drawbar_organ"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "gm_vibraphone"
-        ],
-        [
-          "saw"
-        ],
-        [
-          "hh"
-        ],
-        [
-          "ocarina"
-        ],
-        [
-          "gtr"
-        ],
-        [
-          "recorder_bass_sus"
-        ],
-        [
-          "gm_electric_bass_pick"
-        ],
-        [
-          "sd",
-          "hh*2"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "gm_tenor_sax:1"
-        ],
-        [
-          "gm_electric_bass_finger:3"
-        ],
-        [
-          "r8_rd:1"
-        ],
-        [
-          "linn9000_bd"
-        ],
-        [
-          "linn9000_sd"
-        ],
-        [
-          "linn9000_cr"
-        ],
-        [
-          "linn9000_mt"
-        ],
-        [
-          "linn9000_lt"
-        ],
-        [
-          "gm_oboe:2"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "square"
-        ],
-        [
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "sd"
-        ],
-        [
-          "rd*3"
-        ],
-        [
-          "gm_bandoneon"
-        ],
-        [
-          "gm_cello"
-        ],
-        [
-          "gm_electric_bass_finger:2"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "saw"
-        ],
-        [
-          "saw"
-        ],
-        [
-          "gm_vibraphone:3"
-        ],
-        [
-          "rd*3"
-        ],
-        [
-          "gm_clarinet"
-        ],
-        [
-          "gm_tuba"
-        ],
-        [
-          "gm_harmonica"
-        ],
-        [
-          "tambourine"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "gm_pad_warm"
-        ],
-        [
-          "pulse"
-        ],
-        [
-          "linndrum_bd"
-        ],
-        [
-          "linndrum_sd"
-        ],
-        [
-          "cp"
-        ],
-        [
-          "gm_pad_bowed"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_electric_bass_pick:7"
-        ],
-        [
-          "gm_overdriven_guitar:2"
-        ],
-        [
-          "gm_reed_organ:5"
-        ],
-        [
-          "gm_baritone_sax"
-        ],
-        [
-          "sd",
-          "mt@57"
-        ],
-        [
-          "hh",
-          "2"
-        ],
-        [
-          "sd",
-          "bd",
-          "cr",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "sd",
-          "bd",
-          "sd",
-          "sd",
-          "bd",
-          "sd",
-          "sd",
-          "bd",
-          "cr",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "sd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd"
-        ],
-        [
-          "oh",
-          "2"
-        ],
-        [
-          "bd",
-          "cr",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd",
-          "bd",
-          "sd",
-          "bd"
-        ],
-        [
-          "gm_pizzicato_strings:4"
-        ],
-        [
-          "gm_acoustic_guitar_nylon"
-        ],
-        [
-          "gm_marimba"
-        ],
-        [
-          "gm_trombone:4"
-        ],
-        [
-          "shaker_small:0"
-        ],
-        [
-          "shaker_small:1"
-        ],
-        [
-          "clave"
-        ],
-        [
-          "clave"
-        ],
-        [
-          "bongo:3"
-        ],
-        [
-          "agogo"
-        ],
-        [
-          "cowbell"
-        ],
-        [
-          "ballwhistle"
-        ],
-        [
-          "ballwhistle:1"
-        ],
-        [
-          "vibraslap"
-        ],
-        [
-          "brown"
-        ],
-        [
-          "square"
-        ],
-        [
-          "saw"
-        ],
-        [
-          "bd",
-          "lt",
-          "hh",
-          "sd",
-          "ht",
-          "hh",
-          "bd",
-          "lt"
-        ],
-        [
-          "gm_distortion_guitar"
-        ],
-        [
-          "gm_distortion_guitar"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "~",
-          "5",
-          "crow",
-          "crow",
-          "~",
-          "~",
-          "~",
-          "3",
-          "crow",
-          "crow",
-          "~",
-          "3"
-        ],
-        [
-          "oh*4",
-          "bd!3",
-          "bd*2",
-          "~",
-          "~",
-          "sd"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_electric_bass_pick"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "linndrum_bd"
-        ],
-        [
-          "linndrum_sd"
-        ],
-        [
-          "linndrum_hh"
-        ],
-        [
-          "linndrum_oh"
-        ],
-        [
-          "sleighbells"
-        ],
-        [
-          "anvil"
-        ],
-        [
-          "cp"
-        ],
-        [
-          "gm_electric_guitar_jazz:0"
-        ],
-        [
-          "gm_ocarina"
-        ],
-        [
-          "square"
-        ],
-        [
-          "gm_tuba"
-        ],
-        [
-          "cr",
-          "lt"
-        ],
-        [
-          "~",
-          "cr",
-          "lt"
-        ],
-        [
-          "lt",
-          "~",
-          "lt"
-        ],
-        [
-          "cr",
-          "lt"
-        ],
-        [
-          "cr",
-          "lt",
-          "cr",
-          "lt",
-          "lt",
-          "mt*2",
-          "lt*2",
-          "lt@3"
-        ],
-        [
-          "lt",
-          "mt",
-          "lt",
-          "lt",
-          "mt*2",
-          "lt*2",
-          "lt*3",
-          "lt",
-          "mt*2",
-          "lt*2"
-        ],
-        [
-          "mt",
-          "mt*2",
-          "mt*2",
-          "cr",
-          "lt",
-          "cr",
-          "lt",
-          "cr",
-          "lt"
-        ],
-        [
-          "cr",
-          "lt",
-          "~"
-        ],
-        [
-          "lt",
-          "mt*2",
-          "lt*2",
-          "~",
-          "20",
-          "cr!3",
-          "cr!2"
-        ],
-        [
-          "cr",
-          "lt"
-        ],
-        [
-          "mt",
-          "mt",
-          "lt",
-          "lt"
-        ],
-        [
-          "gm_acoustic_guitar_steel:1"
-        ],
-        [
-          "gm_pizzicato_strings:1"
-        ],
-        [
-          "gm_string_ensemble_1"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "~",
-          "sd"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "gm_acoustic_guitar_steel:2"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "gm_piccolo"
-        ],
-        [
-          "gm_overdriven_guitar:11"
-        ],
-        [
-          "gm_overdriven_guitar:6"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "linndrum_bd"
-        ],
-        [
-          "linndrum_sd"
-        ],
-        [
-          "linndrum_hh"
-        ],
-        [
-          "linndrum_oh"
-        ],
-        [
-          "linndrum_cr"
-        ],
-        [
-          "gm_piano"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "gm_harmonica"
-        ],
-        [
-          "gm_choir_aahs:2"
-        ],
-        [
-          "hh"
-        ],
-        [
-          "gm_choir_aahs:4"
-        ],
-        [
-          "gm_drawbar_organ"
-        ],
-        [
-          "gm_church_organ:2"
-        ],
-        [
-          "gm_overdriven_guitar:3"
-        ],
-        [
-          "gm_electric_bass_finger:2"
-        ],
-        [
-          "gm_choir_aahs:6"
-        ],
-        [
-          "hh"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_synth_strings_2"
-        ],
-        [
-          "~",
-          "rim"
-        ],
-        [
-          "rd*8"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "gm_electric_bass_pick"
-        ],
-        [
-          "bd",
-          "~",
-          "bd",
-          "~",
-          "2",
-          "bd!2",
-          "~",
-          "2",
-          "bd",
-          "~",
-          "2",
-          "bd",
-          "~",
-          "2",
-          "bd",
-          "~",
-          "bd",
-          "~",
-          "bd",
-          "~",
-          "2",
-          "bd",
-          "~"
-        ],
-        [
-          "~",
-          "3",
-          "sd",
-          "~",
-          "6",
-          "sd",
-          "~",
-          "5",
-          "sd",
-          "~",
-          "3",
-          "sd",
-          "~",
-          "3"
-        ],
-        [
-          "oh"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "gm_harmonica"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "hh*3",
-          "bd",
-          "~",
-          "~",
-          "~",
-          "rim"
-        ],
-        [
-          "ocarina"
-        ],
-        [
-          "gtr"
-        ],
-        [
-          "recorder_bass_sus"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "bd!4",
-          "~",
-          "sd",
-          "~",
-          "hh!2",
-          "hh*2"
-        ],
-        [
-          "hh!4"
-        ],
-        [
-          "gm_synth_bass_1"
-        ],
-        [
-          "linndrum_bd"
-        ],
-        [
-          "linndrum_sd"
-        ],
-        [
-          "linndrum_hh"
-        ],
-        [
-          "linndrum_oh"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "rd:3*4"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "gm_electric_bass_pick"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "oh"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "folkharp"
-        ],
-        [
-          "gm_bassoon"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_cello:1"
-        ],
-        [
-          "gm_pad_warm"
-        ],
-        [
-          "gm_piccolo"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "hh*2"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "~",
-          "~",
-          "3",
-          "sd",
-          "sd"
-        ],
-        [
-          "cajon"
-        ],
-        [
-          "psaltery_pluck"
-        ],
-        [
-          "harmonica_soft"
-        ],
-        [
-          "gm_electric_guitar_clean:2"
-        ],
-        [
-          "gm_percussive_organ"
-        ],
-        [
-          "~",
-          "hh"
-        ],
-        [
-          "bd",
-          "sd",
-          "bd",
-          "~",
-          "bd",
-          "sd",
-          "bd",
-          "~",
-          "bd",
-          "sd",
-          "bd",
-          "~"
-        ],
-        [
-          "oh:2*8"
-        ],
-        [
-          "gtr"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "hh*2"
-        ],
-        [
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "~"
-        ],
-        [
-          "~",
-          "~",
           "rim",
-          "~"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "pulse"
-        ],
-        [
-          "gm_synth_strings_1"
-        ],
-        [
-          "gm_synth_strings_1"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
           "hh"
         ],
         [
-          "supersaw"
+          "square"
         ],
         [
-          "triangle"
+          "piano"
         ],
         [
-          "gm_drawbar_organ"
-        ],
-        [
-          "sleighbells"
-        ],
-        [
-          "bd",
-          "sd"
-        ],
-        [
-          "rd*6"
-        ],
-        [
-          "gm_synth_strings_1"
-        ],
-        [
-          "gm_distortion_guitar:3"
-        ],
-        [
-          "gm_baritone_sax"
-        ],
-        [
-          "gm_electric_bass_finger:7"
-        ],
-        [
-          "gm_piccolo"
-        ],
-        [
-          "gm_choir_aahs"
-        ],
-        [
-          "gm_string_ensemble_2"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "bd!2",
-          "~",
           "bd"
         ],
         [
-          "~",
+          "cp",
           "sd"
-        ],
-        [
-          "hh*8"
         ],
         [
           "piano"
@@ -2792,1201 +1776,65 @@
           "piano"
         ],
         [
-          "shaker_small:3"
+          "gm_lead_6_voice"
         ],
         [
-          "woodblock"
-        ],
-        [
-          "gm_acoustic_guitar_steel:2"
-        ],
-        [
-          "gm_bassoon:2"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "mt"
-        ],
-        [
-          "lt"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "recorder_tenor_sus"
-        ],
-        [
-          "sax"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "hh!4"
+          "gm_lead_6_voice"
         ],
         [
           "bd",
           "sd",
-          "~",
-          "bd",
-          "bd",
-          "bd",
-          "sd",
-          "hh!7",
-          "oh",
-          "bd",
-          "sd",
-          "sd*4",
-          "lt*4",
-          "hh!3",
-          "oh",
-          "~",
-          "4"
-        ],
-        [
-          "gm_drawbar_organ:4"
-        ],
-        [
-          "gm_electric_bass_finger:2"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_electric_bass_finger:2"
-        ],
-        [
-          "gm_church_organ"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_distortion_guitar:2"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
           "hh"
         ],
         [
-          "cr"
-        ],
-        [
-          "gm_contrabass"
-        ],
-        [
-          "gm_piano"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_recorder"
-        ],
-        [
           "bd",
-          "sd",
-          "~",
-          "bd"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "gm_overdriven_guitar:6"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "gm_dulcimer"
-        ],
-        [
-          "gm_piccolo"
-        ],
-        [
-          "gm_violin"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "gm_choir_aahs:1"
-        ],
-        [
-          "gm_choir_aahs:0"
-        ],
-        [
-          "gm_gunshot:3"
-        ],
-        [
-          "gm_flute:0"
-        ],
-        [
-          "gm_flute:1"
-        ],
-        [
-          "gm_piccolo"
-        ],
-        [
-          "tambourine*2"
-        ],
-        [
-          "bd"
-        ],
-        [
           "sd"
         ],
         [
-          "sd"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "oh"
-        ],
-        [
-          "ht"
-        ],
-        [
-          "mt"
-        ],
-        [
-          "lt"
-        ],
-        [
-          "gm_lead_1_square"
-        ],
-        [
-          "gm_lead_8_bass_lead"
-        ],
-        [
-          "hh*2"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "hh*4"
-        ],
-        [
-          "bd@3",
-          "~",
-          "bd",
-          "~"
-        ],
-        [
-          "~",
-          "sd"
-        ],
-        [
-          "gm_lead_1_square"
-        ],
-        [
-          "gm_synth_strings_1"
-        ],
-        [
-          "gm_synth_bass_1"
-        ],
-        [
-          "gm_lead_2_sawtooth"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "oh"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp"
-        ],
-        [
-          "~",
-          "sd!3",
-          "sd*4"
-        ],
-        [
-          "cr"
-        ],
-        [
           "bd"
         ],
         [
-          "gm_violin"
-        ],
-        [
-          "gm_drawbar_organ"
-        ],
-        [
-          "gm_electric_bass_finger"
-        ],
-        [
-          "bd!2",
-          "~",
-          "bd"
-        ],
-        [
-          "~",
-          "sd",
-          "~",
-          "~",
-          "sd",
-          "sd"
-        ],
-        [
-          "oh*4"
-        ],
-        [
-          "gm_acoustic_guitar_steel:2"
-        ],
-        [
-          "gm_ocarina"
-        ],
-        [
-          "gm_choir_aahs:3"
-        ],
-        [
-          "gm_applause:3"
-        ],
-        [
-          "cajon:12"
-        ],
-        [
-          "gm_pad_bowed:1"
-        ],
-        [
-          "gm_drawbar_organ"
-        ],
-        [
-          "gm_distortion_guitar:4"
-        ],
-        [
-          "gm_electric_bass_finger:2"
-        ],
-        [
-          "gm_trumpet:2"
-        ],
-        [
-          "gm_trombone:1"
-        ],
-        [
-          "gm_overdriven_guitar:3"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "EmuDrumulator_bd"
-        ],
-        [
-          "EmuDrumulator_sd"
-        ],
-        [
-          "EmuDrumulator_oh"
-        ],
-        [
-          "EmuDrumulator_mt"
-        ],
-        [
-          "EmuDrumulator_lt"
-        ],
-        [
-          "SequentialCircuitsDrumtracks_cr"
-        ],
-        [
-          "gm_oboe"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "bd!2",
-          "bd*4",
-          "bd!4"
-        ],
-        [
-          "~",
-          "hh"
-        ],
-        [
-          "gm_lead_8_bass_lead"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "bd",
-          "~",
-          "~",
-          "bd",
-          "bd"
-        ],
-        [
-          "hh!6",
-          "hh*2",
-          "hh"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "gm_electric_guitar_jazz"
-        ],
-        [
-          "bd:2"
-        ],
-        [
-          "~",
-          "hh"
-        ],
-        [
-          "~",
-          "cp:12"
-        ],
-        [
-          "hh"
-        ],
-        [
-          "rd"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "sd"
-        ],
-        [
-          "cr"
-        ],
-        [
-          "~",
-          "crow",
-          "~",
-          "6"
-        ],
-        [
-          "bd",
           "hh",
-          "~"
+          "oh"
         ],
         [
-          "hh*8"
+          "gm_lead_6_voice"
         ],
         [
-          "gm_electric_guitar_muted"
+          "gm_lead_6_voice"
+        ],
+        [
+          "piano"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "sawtooth"
         ],
         [
           "sine"
         ],
         [
+          "sawtooth"
+        ],
+        [
+          "bd*4"
+        ],
+        [
+          "~",
+          "cp",
+          "~",
+          "cp"
+        ],
+        [
+          "hh*16"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
           "piano"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "bd",
-          "~",
-          "~",
-          "~",
-          "~",
-          "~",
-          "cp",
-          "~"
-        ],
-        [
-          "bd*4",
-          "sd*2",
-          "cp*8"
-        ],
-        [
-          "bd",
-          "4",
-          "8",
-          "16",
-          "32"
-        ],
-        [
-          "bd"
-        ],
-        [
-          "cp"
-        ],
-        [
-          "bd",
-          "hh",
-          "cp",
-          "~"
-        ],
-        [
-          "bd",
-          "4",
-          "8",
-          "16",
-          "32"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "cp*2",
-          "sd*3"
-        ],
-        [
-          "cp",
-          "4",
-          "8",
-          "16",
-          "32"
-        ],
-        [
-          "bd",
-          "~",
-          "cp",
-          "~"
-        ],
-        [
-          "bd",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "~",
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "~",
-          "15",
-          "white"
-        ],
-        [
-          "~",
-          "63",
-          "crash"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*8"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh",
-          "8",
-          "12",
-          "16",
-          "24"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd",
-          "4",
-          "4",
-          "4",
-          "0"
-        ],
-        [
-          "cp",
-          "4",
-          "8",
-          "16",
-          "32"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "white*4"
-        ],
-        [
-          "hh",
-          "8",
-          "16",
-          "24",
-          "32"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "~",
-          "hh*16",
-          "hh*16"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "cp",
-          "~",
-          "cp",
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "crash"
-        ],
-        [
-          "white*16"
-        ],
-        [
-          "bd",
-          "4",
-          "4",
-          "0",
-          "0",
-          "4",
-          "4",
-          "4",
-          "4"
-        ],
-        [
-          "hh",
-          "8",
-          "16",
-          "4",
-          "2",
-          "16",
-          "16",
-          "16",
-          "16"
-        ],
-        [
-          "~",
-          "~",
-          "cp*16",
-          "cp*32",
-          "~",
-          "~",
-          "~",
-          "~"
-        ],
-        [
-          "bd",
-          "4",
-          "2",
-          "0",
-          "0"
-        ],
-        [
-          "~",
-          "rim",
-          "~",
-          "rim"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "hh*4"
-        ],
-        [
-          "cp",
-          "16",
-          "24",
-          "32",
-          "64"
-        ],
-        [
-          "white*4"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "~"
-        ],
-        [
-          "bd",
-          "4",
-          "4",
-          "2",
-          "0",
-          "0",
-          "0",
-          "4",
-          "4"
-        ],
-        [
-          "hh",
-          "8",
-          "16",
-          "4",
-          "0",
-          "0",
-          "8",
-          "16",
-          "16"
-        ],
-        [
-          "white",
-          "0",
-          "0",
-          "0",
-          "4",
-          "8",
-          "16",
-          "0",
-          "0"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*8"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "~",
-          "31",
-          "crash"
-        ],
-        [
-          "~",
-          "127",
-          "bd",
-          "cp"
-        ],
-        [
-          "white"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*8"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "shaker*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh",
-          "~",
-          "hh",
-          "~",
-          "hh",
-          "~",
-          "hh",
-          "~"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "rim"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "oh",
-          "~",
-          "oh"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "bd*4"
-        ],
-        [
-          "hh*16"
-        ],
-        [
-          "~",
-          "cp",
-          "~",
-          "cp"
         ],
         [
           "bell"
@@ -4035,6 +1883,21 @@
           "bell"
         ],
         [
+          "bass"
+        ],
+        [
+          "bd*2",
+          "~",
+          "sd",
+          "hh*4"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "dino"
+        ],
+        [
           "woodblock:1",
           "woodblock:2*2",
           "snare_rim:0",
@@ -4070,6 +1933,21 @@
           "square"
         ],
         [
+          "amencutup"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "breath"
+        ],
+        [
+          "east"
+        ],
+        [
           "piano"
         ],
         [
@@ -4089,6 +1967,9 @@
         ],
         [
           "piano"
+        ],
+        [
+          "supersaw"
         ],
         [
           "sawtooth"
@@ -4149,13 +2030,37 @@
           "num"
         ],
         [
+          "bd",
+          "rim",
+          "hh"
+        ],
+        [
+          "square"
+        ],
+        [
+          "square"
+        ],
+        [
           "piano"
+        ],
+        [
+          "bd"
+        ],
+        [
+          "cp",
+          "sd"
         ],
         [
           "piano"
         ],
         [
           "piano"
+        ],
+        [
+          "piano"
+        ],
+        [
+          "bd*4"
         ],
         [
           "piano"
@@ -4210,6 +2115,31 @@
           "sine"
         ],
         [
+          "bd",
+          "~",
+          "~",
+          "bd",
+          "bd",
+          "~",
+          "~",
+          "bd",
+          "~",
+          "~",
+          "~",
+          "cp",
+          "~",
+          "~",
+          "cp",
+          "~",
+          "~"
+        ],
+        [
+          "square"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
           "sine"
         ],
         [
@@ -4244,6 +2174,55 @@
           "triangle"
         ],
         [
+          "bd*4"
+        ],
+        [
+          "~",
+          "cp",
+          "~",
+          "cp"
+        ],
+        [
+          "hh*16"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
+          "bd",
+          "~",
+          "~",
+          "bd",
+          "bd",
+          "~",
+          "~",
+          "bd",
+          "~",
+          "~",
+          "~",
+          "sn:3",
+          "~",
+          "~",
+          "sn:3",
+          "~",
+          "~"
+        ],
+        [
+          "hh*16"
+        ],
+        [
+          "sine:2"
+        ],
+        [
+          "piano"
+        ],
+        [
+          "sine"
+        ],
+        [
+          "sawtooth"
+        ],
+        [
           "bd"
         ],
         [
@@ -4272,128 +2251,101 @@
         ],
         [
           "bd*4"
+        ],
+        [
+          "bd*4",
+          "~",
+          "cp",
+          "~",
+          "cp"
+        ],
+        [
+          "bd*4"
+        ],
+        [
+          "bd*4"
+        ],
+        [
+          "bd*4",
+          "~",
+          "cp",
+          "~",
+          "cp"
         ]
       ]
     },
     "n": {
-      "n_strings": 94,
-      "vocab_size": 135,
+      "n_strings": 57,
+      "vocab_size": 67,
       "length": {
         "counts": {
-          "1": 4,
-          "2": 9,
-          "3": 3,
-          "4": 12,
-          "5": 12,
-          "6": 17,
-          "7": 2,
-          "8": 4,
-          "9": 2,
-          "12": 2,
-          "14": 4,
-          "15": 1,
-          "16": 2,
-          "17": 2,
-          "18": 1,
-          "20": 1,
-          "21": 1,
-          "22": 2,
-          "25": 1,
-          "28": 3,
-          "30": 1,
-          "32": 1,
-          "34": 1,
-          "45": 1,
-          "67": 1,
+          "1": 2,
+          "2": 7,
+          "3": 2,
+          "4": 13,
+          "5": 10,
+          "6": 12,
+          "7": 1,
+          "8": 6,
+          "17": 1,
           "72": 1,
           "81": 1,
-          "118": 1,
           "467": 1
         },
         "min": 1,
         "max": 467,
-        "mean": 17.28
+        "mean": 15.58
       },
       "start": [
         {
           "token": "0",
-          "count": 49,
-          "prob": 0.56977
-        },
-        {
-          "token": "~",
-          "count": 13,
-          "prob": 0.15116
-        },
-        {
-          "token": "2",
-          "count": 5,
-          "prob": 0.05814
-        },
-        {
-          "token": "5",
-          "count": 3,
-          "prob": 0.03488
+          "count": 41,
+          "prob": 0.74545
         },
         {
           "token": "c2",
           "count": 2,
-          "prob": 0.02326
+          "prob": 0.03636
         },
         {
-          "token": "3",
+          "token": "-7*3",
           "count": 2,
-          "prob": 0.02326
+          "prob": 0.03636
+        },
+        {
+          "token": "22",
+          "count": 2,
+          "prob": 0.03636
+        },
+        {
+          "token": "2",
+          "count": 2,
+          "prob": 0.03636
         },
         {
           "token": "4",
           "count": 2,
-          "prob": 0.02326
+          "prob": 0.03636
         },
         {
-          "token": "1",
-          "count": 2,
-          "prob": 0.02326
+          "token": "5",
+          "count": 1,
+          "prob": 0.01818
+        },
+        {
+          "token": "~",
+          "count": 1,
+          "prob": 0.01818
         },
         {
           "token": "F4",
           "count": 1,
-          "prob": 0.01163
+          "prob": 0.01818
         },
         {
           "token": "G3",
           "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "9*2",
-          "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "-3",
-          "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "6",
-          "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "9",
-          "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "7",
-          "count": 1,
-          "prob": 0.01163
-        },
-        {
-          "token": "-2",
-          "count": 1,
-          "prob": 0.01163
+          "prob": 0.01818
         }
       ],
       "sequences": [
@@ -5102,6 +3054,18 @@
           "0"
         ],
         [
+          "-7*3",
+          "0",
+          "2",
+          "6",
+          "8",
+          "7"
+        ],
+        [
+          "22",
+          "25"
+        ],
+        [
           "0@6",
           "1",
           "2",
@@ -5114,6 +3078,20 @@
           "1",
           "2",
           "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "2",
+          "3",
           "4"
         ],
         [
@@ -5136,6 +3114,32 @@
         [
           "0",
           "1"
+        ],
+        [
+          "0",
+          "1",
+          "2",
+          "0"
+        ],
+        [
+          "2",
+          "3",
+          "4",
+          "~"
+        ],
+        [
+          "4",
+          "5",
+          "4",
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "-3",
+          "0",
+          "~"
         ],
         [
           "0",
@@ -5183,6 +3187,13 @@
         [
           "0",
           "1",
+          "2",
+          "3",
+          "4"
+        ],
+        [
+          "0",
+          "1",
           "3",
           "1",
           "5",
@@ -5190,923 +3201,14 @@
         ],
         [
           "0",
+          "12"
+        ],
+        [
+          "0",
           "4",
           "2",
           "3",
           "1"
-        ],
-        [
-          "0",
-          "~",
-          "1",
-          "2"
-        ],
-        [
-          "0",
-          "-1",
-          "4",
-          "5"
-        ],
-        [
-          "3",
-          "4",
-          "5",
-          "~"
-        ],
-        [
-          "7!3",
-          "4",
-          "6",
-          "7*2",
-          "7!2",
-          "6",
-          "9!3",
-          "6",
-          "9",
-          "11*2",
-          "11!2",
-          "10"
-        ],
-        [
-          "9*2",
-          "9!2",
-          "6",
-          "7",
-          "11*2",
-          "11!2",
-          "6",
-          "7",
-          "11",
-          "12",
-          "13",
-          "14"
-        ],
-        [
-          "~",
-          "9",
-          "12!2",
-          "~",
-          "9",
-          "10!2",
-          "~",
-          "7",
-          "10!2",
-          "7!2",
-          "14!2",
-          "~",
-          "7",
-          "11!2"
-        ],
-        [
-          "~",
-          "6",
-          "13!2"
-        ],
-        [
-          "~",
-          "4",
-          "7",
-          "9",
-          "~",
-          "4"
-        ],
-        [
-          "4",
-          "7",
-          "9",
-          "~",
-          "6"
-        ],
-        [
-          "1",
-          "2"
-        ],
-        [
-          "2",
-          "4",
-          "6",
-          "-3",
-          "-1",
-          "1"
-        ],
-        [
-          "~",
-          "4",
-          "11",
-          "9",
-          "10",
-          "8",
-          "-1",
-          "0@3",
-          "~",
-          "~",
-          "2",
-          "11",
-          "9",
-          "10",
-          "8",
-          "13"
-        ],
-        [
-          "-3",
-          "0",
-          "2",
-          "-3",
-          "-1",
-          "1"
-        ],
-        [
-          "5",
-          "7",
-          "9",
-          "5",
-          "7",
-          "10",
-          "4",
-          "7",
-          "9",
-          "4",
-          "7",
-          "8",
-          "4",
-          "6"
-        ],
-        [
-          "6",
-          "8",
-          "10",
-          "~",
-          "4"
-        ],
-        [
-          "0"
-        ],
-        [
-          "~",
-          "3",
-          "2",
-          "2@3",
-          "3",
-          "4",
-          "5",
-          "6@3",
-          "7",
-          "8",
-          "6",
-          "~",
-          "4@3",
-          "~",
-          "9",
-          "4",
-          "3@3",
-          "4",
-          "3",
-          "4",
-          "5",
-          "6@3",
-          "7",
-          "8@3",
-          "~"
-        ],
-        [
-          "~",
-          "5",
-          "4",
-          "4",
-          "~",
-          "3",
-          "~",
-          "4",
-          "6@2",
-          "4@5",
-          "~",
-          "7",
-          "2",
-          "2@3",
-          "3",
-          "4",
-          "5",
-          "6@3",
-          "~",
-          "4"
-        ],
-        [
-          "~",
-          "4",
-          "6",
-          "7",
-          "8",
-          "6",
-          "4@3",
-          "~",
-          "10",
-          "4",
-          "6",
-          "7@2",
-          "8@2",
-          "6@2",
-          "4@3",
-          "~",
-          "7"
-        ],
-        [
-          "9",
-          "~",
-          "7",
-          "~",
-          "11",
-          "8",
-          "~",
-          "~",
-          "9",
-          "10",
-          "9",
-          "7",
-          "~",
-          "11",
-          "8",
-          "~"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "2",
-          "1",
-          "0"
-        ],
-        [
-          "~",
-          "4",
-          "0",
-          "~",
-          "1",
-          "0",
-          "~",
-          "1",
-          "2*3",
-          "~",
-          "2",
-          "5",
-          "5",
-          "6",
-          "~",
-          "2",
-          "~",
-          "5",
-          "2",
-          "5",
-          "~",
-          "2",
-          "~",
-          "5",
-          "6",
-          "~",
-          "2*3",
-          "~",
-          "5",
-          "6",
-          "~",
-          "1*3",
-          "~",
-          "6*3",
-          "5",
-          "4",
-          "5",
-          "~",
-          "2",
-          "~",
-          "6",
-          "~",
-          "4",
-          "~",
-          "3",
-          "4",
-          "~",
-          "3",
-          "2",
-          "2",
-          "0",
-          "2",
-          "3",
-          "~",
-          "4",
-          "~",
-          "3",
-          "2",
-          "0",
-          "~",
-          "3",
-          "~",
-          "5!2",
-          "6!2",
-          "2",
-          "~",
-          "6"
-        ],
-        [
-          "~",
-          "4",
-          "2",
-          "~",
-          "3",
-          "~",
-          "4",
-          "~",
-          "7",
-          "3",
-          "~",
-          "5",
-          "7",
-          "~",
-          "8",
-          "~",
-          "15",
-          "9*2",
-          "8",
-          "~",
-          "14",
-          "8*2",
-          "6",
-          "~",
-          "10",
-          "4*3",
-          "~",
-          "6"
-        ],
-        [
-          "7",
-          "9",
-          "13",
-          "12@2",
-          "~",
-          "2",
-          "9",
-          "12",
-          "13",
-          "9",
-          "8",
-          "6",
-          "~",
-          "8",
-          "9",
-          "12",
-          "13",
-          "9",
-          "8",
-          "6",
-          "~",
-          "8",
-          "6",
-          "8",
-          "9",
-          "13",
-          "12",
-          "9",
-          "~",
-          "6"
-        ],
-        [
-          "~",
-          "~",
-          "2",
-          "~",
-          "5",
-          "~",
-          "3",
-          "~",
-          "5",
-          "~",
-          "8",
-          "~",
-          "7",
-          "~",
-          "6",
-          "~",
-          "8",
-          "9*2",
-          "8",
-          "~",
-          "7",
-          "8*2",
-          "6",
-          "~",
-          "3",
-          "8*2",
-          "9*3",
-          "10",
-          "4",
-          "9*5",
-          "6*3",
-          "6*4",
-          "5*5",
-          "~"
-        ],
-        [
-          "~",
-          "10",
-          "12",
-          "12",
-          "13",
-          "~",
-          "9",
-          "~",
-          "12",
-          "9",
-          "12",
-          "~",
-          "~",
-          "32",
-          "9",
-          "12",
-          "13",
-          "9",
-          "8",
-          "6",
-          "~",
-          "100"
-        ],
-        [
-          "0",
-          "2"
-        ],
-        [
-          "0"
-        ],
-        [
-          "0@2",
-          "~",
-          "~",
-          "1",
-          "2",
-          "3",
-          "~"
-        ],
-        [
-          "3@5.5",
-          "2@0.5",
-          "1@3",
-          "0@3",
-          "3@3.5",
-          "4",
-          "3",
-          "2",
-          "1",
-          "2",
-          "1@3",
-          "0@3",
-          "2@5.5",
-          "1@0.5",
-          "-3@6"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "3"
-        ],
-        [
-          "0",
-          "~",
-          "0",
-          "4",
-          "7",
-          "3",
-          "~",
-          "4",
-          "0",
-          "~",
-          "4",
-          "7",
-          "6@3",
-          "~",
-          "3@3",
-          "-4@3",
-          "~",
-          "-1@3",
-          "~",
-          "~",
-          "1@3",
-          "2",
-          "-5",
-          "-4",
-          "~",
-          "2",
-          "0",
-          "-7@3",
-          "3",
-          "4",
-          "2",
-          "3",
-          "-4",
-          "~",
-          "4",
-          "6",
-          "5",
-          "4",
-          "3",
-          "2",
-          "1",
-          "3",
-          "0@3",
-          "~",
-          "-7",
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "-3",
-          "-2",
-          "-1",
-          "0",
-          "-7",
-          "-1",
-          "-3",
-          "~",
-          "-4",
-          "~",
-          "-5",
-          "~",
-          "-6",
-          "-5",
-          "-7@3",
-          "~",
-          "0",
-          "1",
-          "2",
-          "3",
-          "-4",
-          "-3",
-          "-2",
-          "-1",
-          "0",
-          "-7",
-          "~",
-          "2",
-          "0@3",
-          "~",
-          "3",
-          "~",
-          "1",
-          "~",
-          "2",
-          "3",
-          "-4",
-          "-3",
-          "4",
-          "3",
-          "4",
-          "0",
-          "7",
-          "6",
-          "4",
-          "5",
-          "6",
-          "4",
-          "5",
-          "3",
-          "4",
-          "2",
-          "3",
-          "1",
-          "2",
-          "0",
-          "1",
-          "~",
-          "6",
-          "-1@3",
-          "~",
-          "~",
-          "3",
-          "4",
-          "2",
-          "3",
-          "1",
-          "2"
-        ],
-        [
-          "0",
-          "2",
-          "4",
-          "0",
-          "2",
-          "4",
-          "-2",
-          "0",
-          "3",
-          "~",
-          "0",
-          "2",
-          "4",
-          "0",
-          "2",
-          "4",
-          "-2",
-          "0",
-          "3",
-          "~",
-          "-4",
-          "-1",
-          "1",
-          "-4",
-          "-1",
-          "-1",
-          "-5",
-          "-3",
-          "-3",
-          "-3",
-          "-1",
-          "-1",
-          "-4",
-          "-2",
-          "b",
-          "-2",
-          "b",
-          "-5",
-          "-3",
-          "-1",
-          "-4",
-          "-2",
-          "-2",
-          "~",
-          "59"
-        ],
-        [
-          "2@2",
-          "~",
-          "2",
-          "1@2",
-          "~",
-          "2"
-        ],
-        [
-          "2",
-          "~",
-          "~",
-          "2",
-          "1",
-          "~"
-        ],
-        [
-          "2",
-          "1"
-        ],
-        [
-          "~",
-          "1",
-          "2",
-          "3"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9",
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-          "16",
-          "17"
-        ],
-        [
-          "3",
-          "4",
-          "2",
-          "~",
-          "3",
-          "4",
-          "2",
-          "~",
-          "3",
-          "2",
-          "1",
-          "0",
-          "-1",
-          "-2",
-          "0",
-          "-1",
-          "0",
-          "1",
-          "2",
-          "-1",
-          "0"
-        ],
-        [
-          "0",
-          "1"
-        ],
-        [
-          "0",
-          "4",
-          "6",
-          "0",
-          "3",
-          "6",
-          "0",
-          "2",
-          "5"
-        ],
-        [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "3",
-          "4",
-          "3",
-          "4",
-          "5",
-          "4",
-          "3",
-          "2",
-          "3",
-          "2",
-          "1"
-        ],
-        [
-          "2",
-          "4@2",
-          "7@3",
-          "6",
-          "4@11",
-          "2",
-          "1",
-          "0",
-          "-1",
-          "0",
-          "4@5",
-          "3",
-          "2",
-          "1@2",
-          "1@2",
-          "9@3",
-          "8",
-          "4@10",
-          "4@2",
-          "9@3",
-          "8",
-          "9@8"
-        ],
-        [
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "7",
-          "6",
-          "5",
-          "4"
-        ],
-        [
-          "0",
-          "7"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "0",
-          "0",
-          "1",
-          "2",
-          "0",
-          "2",
-          "3",
-          "4",
-          "2",
-          "3",
-          "4",
-          "4",
-          "5",
-          "4",
-          "3",
-          "2",
-          "0",
-          "4",
-          "5",
-          "4",
-          "3",
-          "2",
-          "0",
-          "0",
-          "-3",
-          "0",
-          "0",
-          "-3",
-          "0"
-        ],
-        [
-          "0",
-          "1",
-          "2",
-          "~",
-          "4",
-          "5!2",
-          "~",
-          "4",
-          "2",
-          "1",
-          "5",
-          "8",
-          "7",
-          "9!2",
-          "7",
-          "8",
-          "5",
-          "1",
-          "2",
-          "4",
-          "~",
-          "5!2",
-          "4",
-          "~",
-          "2",
-          "1",
-          "0",
-          "-7!8"
-        ],
-        [
-          "-2",
-          "-1",
-          "0",
-          "2",
-          "0",
-          "1"
-        ],
-        [
-          "0",
-          "4"
-        ],
-        [
-          "5",
-          "~",
-          "4",
-          "4",
-          "b",
-          "3",
-          "1",
-          "2",
-          "1",
-          "0",
-          "4",
-          "5",
-          "2",
-          "4"
-        ],
-        [
-          "2",
-          "~",
-          "2",
-          "~",
-          "2",
-          "3",
-          "3",
-          "~",
-          "3",
-          "~",
-          "3",
-          "3",
-          "-1",
-          "~",
-          "-1",
-          "-1",
-          "0",
-          "~",
-          "0",
-          "0",
-          "0",
-          "~",
-          "0",
-          "0",
-          "0",
-          "~",
-          "0",
-          "0"
-        ],
-        [
-          "0",
-          "1",
-          "4",
-          "2",
-          "1",
-          "3*2"
         ],
         [
           "0"
@@ -6125,6 +3227,20 @@
         ],
         [
           "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
           "2",
           "4",
           "6",
@@ -6150,6 +3266,32 @@
           "1",
           "2",
           "3"
+        ],
+        [
+          "0",
+          "1",
+          "2",
+          "0"
+        ],
+        [
+          "2",
+          "3",
+          "4",
+          "~"
+        ],
+        [
+          "4",
+          "5",
+          "4",
+          "3",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "-3",
+          "0",
+          "~"
         ],
         [
           "0",
@@ -6212,244 +3354,130 @@
       ]
     },
     "note": {
-      "n_strings": 244,
-      "vocab_size": 210,
+      "n_strings": 148,
+      "vocab_size": 95,
       "length": {
         "counts": {
-          "1": 46,
-          "2": 13,
-          "3": 22,
-          "4": 90,
+          "1": 65,
+          "2": 16,
+          "3": 15,
+          "4": 34,
           "5": 2,
-          "6": 4,
-          "7": 6,
-          "8": 15,
-          "9": 2,
-          "10": 2,
-          "12": 9,
-          "13": 2,
-          "15": 1,
-          "16": 15,
-          "17": 2,
-          "18": 1,
-          "20": 1,
-          "26": 1,
-          "30": 1,
-          "32": 3,
-          "39": 2,
-          "43": 2,
-          "50": 1,
-          "60": 1
+          "6": 5,
+          "7": 5,
+          "8": 4,
+          "9": 1,
+          "32": 1
         },
         "min": 1,
-        "max": 60,
-        "mean": 6.64
+        "max": 32,
+        "mean": 2.88
       },
       "start": [
         {
-          "token": "a2*8",
-          "count": 26,
-          "prob": 0.11504
-        },
-        {
-          "token": "a3",
-          "count": 25,
-          "prob": 0.11062
-        },
-        {
-          "token": "c2",
-          "count": 24,
-          "prob": 0.10619
-        },
-        {
-          "token": "c4",
-          "count": 16,
-          "prob": 0.0708
+          "token": "c3",
+          "count": 60,
+          "prob": 0.42857
         },
         {
           "token": "c",
-          "count": 16,
-          "prob": 0.0708
+          "count": 19,
+          "prob": 0.13571
         },
         {
-          "token": "~",
-          "count": 16,
-          "prob": 0.0708
-        },
-        {
-          "token": "a4",
-          "count": 14,
-          "prob": 0.06195
-        },
-        {
-          "token": "e5",
-          "count": 14,
-          "prob": 0.06195
-        },
-        {
-          "token": "c3",
-          "count": 9,
-          "prob": 0.03982
+          "token": "c2",
+          "count": 15,
+          "prob": 0.10714
         },
         {
           "token": "12",
-          "count": 7,
-          "prob": 0.03097
+          "count": 10,
+          "prob": 0.07143
         },
         {
-          "token": "a2",
-          "count": 7,
-          "prob": 0.03097
-        },
-        {
-          "token": "c5",
-          "count": 4,
-          "prob": 0.0177
-        },
-        {
-          "token": "d5",
-          "count": 4,
-          "prob": 0.0177
+          "token": "c4",
+          "count": 5,
+          "prob": 0.03571
         },
         {
           "token": "c1",
-          "count": 3,
-          "prob": 0.01327
+          "count": 4,
+          "prob": 0.02857
         },
         {
           "token": "0",
-          "count": 3,
-          "prob": 0.01327
+          "count": 4,
+          "prob": 0.02857
         },
         {
-          "token": "d2*8",
+          "token": "a3",
           "count": 3,
-          "prob": 0.01327
+          "prob": 0.02143
         },
         {
-          "token": "d4",
-          "count": 3,
-          "prob": 0.01327
-        },
-        {
-          "token": "C3",
+          "token": "C2",
           "count": 2,
-          "prob": 0.00885
+          "prob": 0.01429
         },
         {
           "token": "D2",
           "count": 2,
-          "prob": 0.00885
+          "prob": 0.01429
+        },
+        {
+          "token": "b4",
+          "count": 2,
+          "prob": 0.01429
+        },
+        {
+          "token": "G4",
+          "count": 2,
+          "prob": 0.01429
+        },
+        {
+          "token": "7",
+          "count": 2,
+          "prob": 0.01429
         },
         {
           "token": "Gm7",
           "count": 2,
-          "prob": 0.00885
+          "prob": 0.01429
         },
         {
           "token": "g2",
           "count": 2,
-          "prob": 0.00885
-        },
-        {
-          "token": "a#5",
-          "count": 2,
-          "prob": 0.00885
-        },
-        {
-          "token": "c2*8",
-          "count": 2,
-          "prob": 0.00885
-        },
-        {
-          "token": "e4",
-          "count": 2,
-          "prob": 0.00885
-        },
-        {
-          "token": "g5",
-          "count": 2,
-          "prob": 0.00885
+          "prob": 0.01429
         },
         {
           "token": "C1",
           "count": 1,
-          "prob": 0.00442
+          "prob": 0.00714
         },
         {
           "token": "g1",
           "count": 1,
-          "prob": 0.00442
+          "prob": 0.00714
         },
         {
           "token": "B2",
           "count": 1,
-          "prob": 0.00442
+          "prob": 0.00714
         },
         {
-          "token": "b4",
+          "token": "d",
           "count": 1,
-          "prob": 0.00442
+          "prob": 0.00714
+        },
+        {
+          "token": "c5",
+          "count": 1,
+          "prob": 0.00714
         },
         {
           "token": "e1",
           "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "f6",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "c4*2",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "g#4@2",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "c4@2",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "d#5@2",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "b@2",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "a5",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "e3",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "g4",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "f4",
-          "count": 1,
-          "prob": 0.00442
-        },
-        {
-          "token": "a1",
-          "count": 1,
-          "prob": 0.00442
+          "prob": 0.00714
         }
       ],
       "sequences": [
@@ -6585,11 +3613,26 @@
         ],
         [
           "0",
+          "04"
+        ],
+        [
+          "0",
           "1"
         ],
         [
           "b4",
           "eb4"
+        ],
+        [
+          "G4",
+          "A4",
+          "Bb4",
+          "A4",
+          "Bb3",
+          "D3"
+        ],
+        [
+          "12"
         ],
         [
           "c3",
@@ -6602,6 +3645,12 @@
           "12"
         ],
         [
+          "C2",
+          "A1",
+          "D2",
+          "F2"
+        ],
+        [
           "a3",
           "c#4",
           "e4",
@@ -6612,6 +3661,17 @@
           "a",
           "f",
           "e"
+        ],
+        [
+          "c",
+          "a",
+          "f",
+          "e"
+        ],
+        [
+          "c3",
+          "e3",
+          "g3"
         ],
         [
           "c3",
@@ -6655,10 +3715,95 @@
           "e"
         ],
         [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c2",
+          "d2"
+        ],
+        [
           "12"
         ],
         [
           "12"
+        ],
+        [
+          "c",
+          "a",
+          "f",
+          "e"
         ],
         [
           "c",
@@ -6708,13 +3853,55 @@
           "c"
         ],
         [
+          "c",
+          "d",
+          "e",
+          "f",
+          "e",
+          "d",
+          "c"
+        ],
+        [
+          "c",
+          "d",
+          "e",
+          "f",
+          "e",
+          "d",
+          "c"
+        ],
+        [
+          "c",
+          "a",
+          "f",
+          "e"
+        ],
+        [
+          "12"
+        ],
+        [
           "12"
         ],
         [
           "c2",
+          "a2",
+          "eb2"
+        ],
+        [
+          "c2",
           "c2",
           "g2",
           "f2"
+        ],
+        [
+          "c4",
+          "e4",
+          "g4",
+          "e4",
+          "c4",
+          "e4",
+          "g4",
+          "c5"
         ],
         [
           "c4",
@@ -6744,1708 +3931,10 @@
           "c5"
         ],
         [
-          "c2",
-          "c2",
-          "eb2",
-          "c2"
-        ],
-        [
-          "e1",
-          "~",
-          "~",
-          "e2",
-          "~",
-          "e1",
-          "~",
-          "~"
-        ],
-        [
-          "Gm7",
-          "C7",
-          "Fmaj7"
-        ],
-        [
-          "g2",
-          "c2",
-          "f2"
-        ],
-        [
-          "f6",
-          "d6",
-          "b5",
-          "~",
-          "88",
-          "f6",
-          "d6",
-          "b5"
-        ],
-        [
-          "c4*2",
-          "c4",
-          "a#3",
-          "c4",
-          "c4@2",
-          "~",
-          "c4*2",
-          "d#4",
-          "f4",
-          "~",
-          "d#4*2!2",
-          "d#4",
-          "c4",
-          "g#4",
-          "~",
-          "g4",
-          "~",
-          "f#4",
-          "f4",
-          "d#4",
-          "c#4",
-          "a#3",
-          "~",
-          "e4",
-          "d#4",
-          "e4",
-          "e4",
-          "f#4",
-          "g#4@2",
-          "g#4"
-        ],
-        [
-          "g#4@2",
-          "~",
-          "f#4",
-          "f#4@2",
-          "~",
-          "f4",
-          "f4@2",
-          "~",
-          "d#4",
-          "d#4@2",
-          "~",
-          "d4",
-          "d4@2",
-          "~",
-          "c4",
-          "c4",
-          "a4@3"
-        ],
-        [
-          "d2",
-          "d2*2",
-          "g1*2",
-          "g1",
-          "a1@2",
-          "a1",
-          "g1*2",
-          "a1*2",
-          "g1",
-          "~"
-        ],
-        [
-          "c4@2",
-          "c4!3",
-          "b3",
-          "b3@2",
-          "b3",
-          "a3",
-          "a3!2",
-          "c4!2",
-          "c4!2",
-          "c4@2",
-          "c4",
-          "d#4",
-          "d#4@2",
-          "f4!2",
-          "f4",
-          "c4",
-          "c4!2",
-          "d#4@2",
-          "f4@2",
-          "f4",
-          "c4",
-          "c4@2",
-          "a#3@2",
-          "d#4@10",
-          "~",
-          "20"
-        ],
-        [
-          "~",
-          "b4@2",
-          "g#4@2",
-          "a#4@2",
-          "f#4",
-          "~",
-          "g#4@2",
-          "a#4@2",
-          "b4@2",
-          "d#5",
-          "~",
-          "f#5@2",
-          "a#4@2",
-          "e5@2",
-          "d#5",
-          "~",
-          "c#5@2",
-          "b4@2",
-          "a#4@2",
-          "~"
-        ],
-        [
-          "~",
-          "a#4@2",
-          "g4@2",
-          "c5@2",
-          "b4",
-          "~",
-          "a#4@2",
-          "f#4@2",
-          "g#4@2",
-          "~"
-        ],
-        [
-          "~",
-          "c#5@2",
-          "d5@2",
-          "c#5@8",
-          "~",
-          "18"
-        ],
-        [
-          "~",
-          "e4",
-          "c#4",
-          "a3",
-          "g4",
-          "f#4",
-          "e4",
-          "d4",
-          "e4",
-          "~",
-          "g4",
-          "f#4",
-          "e4",
-          "c4",
-          "~",
-          "g3",
-          "a3",
-          "~",
-          "a4",
-          "g4",
-          "~",
-          "e4",
-          "b3",
-          "e4",
-          "g#4",
-          "e4",
-          "~",
-          "b3",
-          "e4",
-          "e4",
-          "c4",
-          "b3@5",
-          "g#3@2",
-          "e3@4",
-          "b2@3",
-          "~",
-          "b2@11",
-          "~",
-          "6"
-        ],
-        [
-          "~",
-          "5",
-          "~",
-          "c3",
-          "f3@2",
-          "f3!2",
-          "g3",
-          "f3",
-          "e3",
-          "c3@2",
-          "~",
-          "g#3",
-          "g#3",
-          "g3",
-          "f3",
-          "c3@3",
-          "c3",
-          "d#3@2",
-          "c#3",
-          "c3",
-          "a#2",
-          "f2@3",
-          "~",
-          "~",
-          "f2",
-          "g#2!3",
-          "g2",
-          "a#2",
-          "d#3",
-          "c3@2",
-          "~",
-          "3",
-          "c3",
-          "g#2",
-          "c3",
-          "f3",
-          "a#2",
-          "g2",
-          "d#2",
-          "f2@3",
-          "~",
-          "3",
-          "72"
-        ],
-        [
-          "a#5",
-          "g#5",
-          "c#4",
-          "e4",
-          "b4",
-          "d#5",
-          "c#4",
-          "g#3",
-          "b4",
-          "f#5",
-          "e5",
-          "c#4",
-          "e5",
-          "d#5",
-          "a#4",
-          "d#4",
-          "e4",
-          "b4"
-        ],
-        [
-          "c#2@11",
-          "e2",
-          "f#2@3",
-          "e2"
-        ],
-        [
-          "c#2@2",
-          "~",
-          "~",
-          "c#2",
-          "~",
-          "f#2",
-          "~"
-        ],
-        [
-          "a#5",
-          "g#5",
-          "e5",
-          "c#5",
-          "~",
-          "5",
-          "f#5",
-          "e5",
-          "~",
-          "e5",
-          "d#5",
-          "a#4",
-          "~",
-          "~",
-          "b4"
-        ],
-        [
-          "~",
-          "c#4",
-          "d#4@2",
-          "c#4@2",
-          "c4",
-          "c#4",
-          "d#4",
-          "f4",
-          "c#4@2",
-          "d#4@2",
-          "~",
-          "~",
-          "c#4",
-          "c4",
-          "c#4",
-          "d#4",
-          "f4",
-          "d#4",
-          "g#3@5",
-          "~",
-          "~",
-          "d#4",
-          "f4@2",
-          "d#4@2",
-          "d4",
-          "d#4",
-          "~",
-          "~",
-          "d#4",
-          "f4@2",
-          "g4",
-          "f4",
-          "d#4",
-          "f4",
-          "d#4@2",
-          "~",
-          "~",
-          "d#4",
-          "f4@2",
-          "d#4@2",
-          "f4@3",
-          "d#4@3",
-          "f4@9"
-        ],
-        [
-          "~",
-          "2",
-          "d#4@2",
-          "c#4@2",
-          "c4",
-          "c#4",
-          "d#4",
-          "f4",
-          "c#4@2",
-          "d#4@6",
-          "~",
-          "c#4",
-          "c4",
-          "c#4",
-          "d#4",
-          "f4",
-          "d#4",
-          "g#3@8",
-          "~",
-          "d#4",
-          "f4@2",
-          "d#4@2",
-          "d4",
-          "d#4@4",
-          "~",
-          "d#4",
-          "f4@2",
-          "g4@2",
-          "d#4@3",
-          "~",
-          "d#4",
-          "f4@2",
-          "d#4@2",
-          "f4@2",
-          "d#4",
-          "f4@8",
-          "~",
-          "c#4",
-          "~"
-        ],
-        [
-          "~",
-          "c4",
-          "a3",
-          "b3",
-          "c4",
-          "d4",
-          "d#4",
-          "f4",
-          "f#4",
-          "f4",
-          "g#4",
-          "f#4",
-          "f4",
-          "d#4",
-          "f4",
-          "d#4",
-          "a3",
-          "b3",
-          "c4",
-          "d4",
-          "d#4",
-          "f4",
-          "f#4",
-          "g#4",
-          "c5",
-          "c#5",
-          "d#5",
-          "d5",
-          "a4",
-          "d5",
-          "c#5",
-          "c5",
-          "a4",
-          "d#4",
-          "d4",
-          "a3",
-          "d5",
-          "c#5",
-          "c5",
-          "a4",
-          "d#5",
-          "d5",
-          "c#5",
-          "d5",
-          "d#5",
-          "d5",
-          "a4",
-          "d5",
-          "c#5",
-          "d5",
-          "c#5",
-          "a4",
-          "d#4",
-          "d4",
-          "c#4",
-          "d4",
-          "a3",
-          "d4",
-          "d#4",
-          "d4"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "a3",
-          "~",
-          "~",
-          "a3",
-          "~",
-          "~",
-          "a3",
-          "~",
-          "~",
-          "a3"
-        ],
-        [
-          "a2"
-        ],
-        [
-          "d#5@2",
-          "d5@2",
-          "c#5@7",
-          "~",
-          "d#5@2",
-          "d5@2",
-          "c#5@2",
-          "d5",
-          "~",
-          "d#5@2",
-          "d5@2",
-          "c#5@2",
-          "a4@10"
-        ],
-        [
-          "~",
-          "8",
-          "a3@4",
-          "~",
-          "8",
-          "a3@4",
-          "~",
-          "16",
-          "a3@8"
-        ],
-        [
-          "a4",
-          "d#5",
-          "d5",
-          "c#5",
-          "d5",
-          "c#5@6",
-          "~",
-          "a4",
-          "c#5@6",
-          "~",
-          "a4",
-          "c#5@2",
-          "~",
-          "a4",
-          "c#5@3",
-          "~",
-          "a4",
-          "d#5",
-          "d5",
-          "c#5",
-          "d5",
-          "c#5@2",
-          "d#5@4",
-          "~",
-          "a4",
-          "d#5@6",
-          "~",
-          "a4",
-          "d#5@2",
-          "~",
-          "a4",
-          "d#5@3",
-          "~",
-          "a4",
-          "d#5",
-          "d5",
-          "c#5",
-          "d5",
-          "c#5@2",
-          "a4@4",
-          "~",
-          "c#5",
-          "a4@6",
-          "~",
-          "c#5",
-          "a4@2",
-          "~",
-          "c#5",
-          "a4@3",
-          "~"
-        ],
-        [
-          "b@2",
-          "f@2",
-          "~",
-          "b",
-          "b@2",
-          "f@2",
-          "~",
-          "b",
-          "b@2",
-          "b",
-          "b",
-          "b",
-          "b@2",
-          "f@2",
-          "~",
-          "b",
-          "~"
-        ],
-        [
-          "a3@2",
-          "a3",
-          "a3"
-        ],
-        [
-          "C3",
-          "Eb3",
-          "G2",
-          "Bb2"
-        ],
-        [
-          "c3@4",
-          "c2@4"
-        ],
-        [
           "c",
-          "d",
-          "e",
-          "f"
-        ],
-        [
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        [
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        [
-          "c",
-          "d",
-          "e",
-          "f"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a2"
-        ],
-        [
-          "a2"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "g5"
-        ],
-        [
-          "a4",
-          "~",
-          "c5",
-          "~",
-          "e5",
-          "~",
-          "~",
-          "~"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a5",
-          "c6",
-          "e6"
-        ],
-        [
-          "~",
-          "a2*8"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "g5"
-        ],
-        [
-          "a4",
-          "f4",
-          "c4",
-          "g4"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "c5",
-          "e5",
-          "g5",
-          "e5",
-          "c5",
-          "d5",
-          "e5",
-          "g5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "g4",
-          "a4",
-          "f4"
-        ],
-        [
-          "e5",
-          "g5",
-          "c6",
-          "g5",
-          "d5",
-          "g5",
-          "b5",
-          "g5",
-          "c5",
-          "e5",
-          "a5",
-          "e5",
-          "c5",
-          "f5",
-          "a5",
-          "f5"
-        ],
-        [
-          "d2*8"
-        ],
-        [
-          "d4",
-          "f4",
-          "a4"
-        ],
-        [
-          "d5",
-          "~",
-          "f5",
-          "~",
-          "a5",
-          "~",
-          "f5",
-          "~"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5",
-          "a4",
-          "g4",
-          "a4",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5",
-          "a4",
-          "g4",
-          "a4",
-          "c5"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "c5",
-          "a4",
-          "g4",
-          "a4",
-          "c5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e2*8"
-        ],
-        [
-          "e3",
-          "g3",
-          "b3"
-        ],
-        [
-          "c2*8"
-        ],
-        [
-          "c5",
-          "d5",
-          "e5",
-          "g5",
-          "e5",
-          "d5",
-          "c5",
-          "d5"
-        ],
-        [
-          "a4",
-          "b4",
-          "c5",
-          "e5",
-          "c5",
-          "b4",
-          "a4",
-          "b4"
-        ],
-        [
-          "d2*8"
-        ],
-        [
-          "d5",
-          "~",
-          "f5",
-          "~",
-          "a5",
-          "~",
-          "f5",
-          "~",
-          "d5",
-          "~",
-          "e5",
-          "~",
-          "f5",
-          "~",
-          "e5",
-          "~"
-        ],
-        [
-          "d4",
-          "f4",
-          "a4"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "f4",
-          "a4",
-          "c5",
-          "c4",
-          "e4",
-          "g4",
-          "g4",
-          "b4",
-          "d5"
-        ],
-        [
-          "e5",
-          "~",
-          "c5",
-          "~",
-          "c5",
-          "~",
-          "d5",
-          "~",
-          "e5",
-          "~",
-          "g5",
-          "~",
-          "d5",
-          "~",
-          "b4",
-          "~"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "c2*8"
-        ],
-        [
-          "c4",
-          "g3",
-          "a3",
-          "f3"
-        ],
-        [
-          "e4",
-          "b3",
-          "c4",
-          "a3"
-        ],
-        [
-          "g4",
-          "d4",
-          "e4",
-          "c4"
-        ],
-        [
-          "d2*8"
-        ],
-        [
-          "d4",
-          "f4",
-          "a4"
-        ],
-        [
-          "f4",
-          "a4",
-          "d5"
-        ],
-        [
-          "d5",
-          "~",
-          "f5",
-          "~",
-          "a5",
-          "~",
-          "f5",
-          "~",
-          "d5",
-          "~",
-          "e5",
-          "~",
-          "f5",
-          "~",
-          "e5",
-          "~"
-        ],
-        [
-          "d5",
-          "~",
-          "f5",
-          "~",
-          "a5",
-          "~",
-          "f5",
-          "~",
-          "d5",
-          "~",
-          "e5",
-          "~",
-          "f5",
-          "~",
-          "e5",
-          "~"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4"
-        ],
-        [
-          "~",
-          "a2*8",
-          "a2*8",
-          "a2*8"
-        ],
-        [
-          "~",
-          "~",
-          "~",
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8",
-          "a2*8",
-          "~",
-          "~",
-          "a2*8",
-          "a2*8",
-          "a2*8",
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "e5",
-          "c5",
-          "d5",
-          "e5",
-          "g5",
-          "e5",
-          "a5",
-          "g5"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a3",
-          "f3",
-          "c4",
-          "g3"
-        ],
-        [
-          "a2*8",
-          "a2*8",
-          "a2*4",
-          "~",
-          "~",
-          "~",
-          "a2*8",
-          "a2*8"
-        ],
-        [
-          "e5*4",
-          "e5",
-          "c5",
-          "d5",
-          "e5",
-          "e5",
-          "~",
-          "~",
-          "~",
-          "~",
-          "~",
-          "e5",
-          "e5",
-          "c5",
-          "d5",
-          "e5"
-        ],
-        [
-          "a2",
-          "f2",
-          "c3",
-          "g2"
-        ],
-        [
-          "a1",
-          "f1",
-          "c2",
-          "g1"
-        ],
-        [
-          "a2",
-          "f2",
-          "c3",
-          "g2"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4",
-          "a4",
-          "f3",
-          "a3",
-          "c4",
-          "f4",
-          "c4",
-          "e4",
-          "g4",
-          "c5",
-          "g3",
-          "b3",
-          "d4",
-          "g4"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4",
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4"
-        ],
-        [
-          "a4",
-          "c5",
-          "e5",
-          "f4",
-          "a4",
-          "c5",
-          "c4",
-          "e4",
-          "g4",
-          "g4",
-          "b4",
-          "d5"
-        ],
-        [
-          "e5",
-          "~",
-          "c5",
-          "~",
-          "c5",
-          "~",
-          "d5",
-          "~",
-          "e5",
-          "~",
-          "g5",
-          "~",
-          "d5",
-          "~",
-          "b4",
-          "~"
-        ],
-        [
-          "~",
-          "~",
-          "a5",
-          "~",
-          "~",
-          "~",
-          "f5",
-          "~",
-          "~",
-          "~",
-          "g5",
-          "~",
-          "~",
-          "~",
-          "d5",
-          "~"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a2",
-          "a2",
-          "a3",
-          "a2"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3",
-          "c4",
-          "e4",
-          "c4"
-        ],
-        [
-          "a2",
-          "~",
-          "a2",
-          "~",
-          "a2",
-          "~",
-          "~",
-          "a2"
-        ],
-        [
-          "a1*4"
-        ],
-        [
-          "a2*8"
-        ],
-        [
-          "a3*8"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4",
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "c5",
-          "g3",
-          "b3",
-          "d4",
-          "g4",
-          "a3",
-          "c4",
-          "e4",
-          "a4",
-          "f3",
-          "a3",
-          "c4",
-          "f4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c3",
-          "e3",
-          "g3",
-          "c4",
-          "e4",
-          "g4",
-          "c5",
-          "g4",
-          "g2",
-          "b2",
-          "d3",
-          "g3",
-          "b3",
-          "d4",
-          "g4",
-          "d4",
-          "a2",
-          "c3",
-          "e3",
-          "a3",
-          "c4",
-          "e4",
-          "a4",
-          "e4",
-          "f2",
-          "a2",
-          "c3",
-          "f3",
-          "a3",
-          "c4",
-          "f4",
-          "c4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "g4",
-          "a4",
-          "f4"
-        ],
-        [
-          "e4",
-          "g4",
-          "c5",
-          "b3",
-          "d4",
-          "g4",
-          "c4",
-          "e4",
-          "a4",
-          "a3",
-          "c4",
-          "f4"
-        ],
-        [
-          "g5",
-          "d5",
-          "e5",
-          "c5"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4",
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c5",
-          "g4",
-          "e4",
-          "c4",
-          "g4",
-          "d4",
-          "b3",
-          "g3",
-          "a4",
-          "e4",
-          "c4",
-          "a3",
-          "f4",
-          "c4",
-          "a3",
-          "f3"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4",
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4"
-        ],
-        [
-          "e5",
-          "~",
-          "g5",
-          "~",
-          "d5",
-          "~",
-          "g5",
-          "~",
-          "c5",
-          "~",
-          "e5",
-          "~",
-          "c5",
-          "~",
-          "f5",
-          "~"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "~",
-          "e4",
-          "~",
-          "g4",
-          "c5",
-          "~",
-          "g4",
-          "~",
-          "~",
-          "b3",
-          "~",
-          "d4",
-          "g4",
-          "~",
-          "d4",
-          "~",
-          "~",
-          "c4",
-          "~",
-          "e4",
-          "a4",
-          "~",
-          "e4",
-          "~",
-          "~",
-          "a3",
-          "~",
-          "c4",
-          "f4",
-          "~",
-          "c4",
-          "~"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4",
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "g4",
-          "a4",
-          "f4"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "c5",
-          "g3",
-          "b3",
-          "d4",
-          "g4",
-          "a3",
-          "c4",
-          "e4",
-          "a4",
-          "f3",
-          "a3",
-          "c4",
-          "f4"
-        ],
-        [
-          "e5",
-          "~",
-          "~",
-          "~",
-          "d5",
-          "~",
-          "~",
-          "~",
-          "c5",
-          "~",
-          "~",
-          "~",
-          "f5",
-          "~",
-          "~",
-          "~"
-        ],
-        [
-          "g5",
-          "d5",
-          "e5",
-          "c5"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "~",
-          "~",
-          "~",
-          "g3",
-          "~",
-          "b3",
-          "~",
-          "a3",
-          "c4",
-          "~",
-          "e4",
-          "f3",
-          "a3",
-          "c4",
-          "f4"
-        ],
-        [
-          "c2",
-          "g2",
-          "a2",
-          "f2"
-        ],
-        [
-          "c4",
-          "e4",
-          "g4",
-          "g3",
-          "b3",
-          "d4",
-          "a3",
-          "c4",
-          "e4",
-          "f3",
-          "a3",
-          "c4"
+          "a",
+          "f",
+          "e"
         ],
         [
           "D2",
@@ -8462,12 +3951,33 @@
           "1"
         ],
         [
+          "b4",
+          "eb4"
+        ],
+        [
           "G4",
           "A4",
           "Bb4",
           "A4",
           "Bb3",
           "D3"
+        ],
+        [
+          "12"
+        ],
+        [
+          "d",
+          "f",
+          "a",
+          "a#",
+          "a",
+          "d3"
+        ],
+        [
+          "c",
+          "a",
+          "f",
+          "e"
         ],
         [
           "a3",
@@ -8486,6 +3996,89 @@
           "a",
           "f",
           "e"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c3"
+        ],
+        [
+          "c2",
+          "d2"
+        ],
+        [
+          "c2",
+          "d2"
         ],
         [
           "C1*16"
@@ -8534,6 +4127,22 @@
           "f2"
         ],
         [
+          "c1",
+          "~",
+          "~",
+          "c2",
+          "~",
+          "c1",
+          "~",
+          "~"
+        ],
+        [
+          "c3",
+          "eb3",
+          "g3",
+          "bb3"
+        ],
+        [
           "c1"
         ],
         [
@@ -8555,6 +4164,40 @@
           "c5"
         ],
         [
+          "c2",
+          "c2",
+          "eb2",
+          "c2"
+        ],
+        [
+          "e1",
+          "~",
+          "~",
+          "e2",
+          "~",
+          "e1",
+          "~",
+          "~"
+        ],
+        [
+          "Gm7",
+          "C7",
+          "Fmaj7"
+        ],
+        [
+          "g2",
+          "c2",
+          "f2"
+        ],
+        [
+          "Cm7",
+          "F7",
+          "Bbmaj7"
+        ],
+        [
+          "7"
+        ],
+        [
           "h2"
         ],
         [
@@ -8563,85 +4206,67 @@
       ]
     },
     "sound": {
-      "n_strings": 215,
-      "vocab_size": 23,
+      "n_strings": 56,
+      "vocab_size": 20,
       "length": {
         "counts": {
-          "1": 188,
-          "2": 11,
-          "3": 3,
-          "4": 9,
+          "1": 20,
+          "2": 13,
+          "3": 6,
+          "4": 11,
+          "5": 1,
+          "6": 1,
           "8": 4
         },
         "min": 1,
         "max": 8,
-        "mean": 1.33
+        "mean": 2.7
       },
       "start": [
         {
-          "token": "sawtooth",
-          "count": 117,
-          "prob": 0.55714
-        },
-        {
           "token": "bd",
-          "count": 22,
-          "prob": 0.10476
+          "count": 32,
+          "prob": 0.61538
         },
         {
-          "token": "square",
-          "count": 21,
-          "prob": 0.1
+          "token": "sawtooth",
+          "count": 3,
+          "prob": 0.05769
         },
         {
-          "token": "supersaw",
-          "count": 18,
-          "prob": 0.08571
+          "token": "piano",
+          "count": 3,
+          "prob": 0.05769
         },
         {
-          "token": "triangle",
-          "count": 13,
-          "prob": 0.0619
+          "token": "drums",
+          "count": 3,
+          "prob": 0.05769
         },
         {
-          "token": "sine",
-          "count": 7,
-          "prob": 0.03333
+          "token": "hh",
+          "count": 3,
+          "prob": 0.05769
+        },
+        {
+          "token": "kick",
+          "count": 3,
+          "prob": 0.05769
         },
         {
           "token": "drum",
           "count": 2,
-          "prob": 0.00952
+          "prob": 0.03846
         },
         {
           "token": "~",
           "count": 2,
-          "prob": 0.00952
-        },
-        {
-          "token": "drums",
-          "count": 2,
-          "prob": 0.00952
-        },
-        {
-          "token": "hh",
-          "count": 2,
-          "prob": 0.00952
-        },
-        {
-          "token": "piano",
-          "count": 2,
-          "prob": 0.00952
+          "prob": 0.03846
         },
         {
           "token": "bd*2",
           "count": 1,
-          "prob": 0.00476
-        },
-        {
-          "token": "kick",
-          "count": 1,
-          "prob": 0.00476
+          "prob": 0.01923
         }
       ],
       "sequences": [
@@ -8653,8 +4278,27 @@
         ],
         [
           "bd",
+          "~",
           "sd",
           "cp"
+        ],
+        [
+          "bd",
+          "sd",
+          "cp"
+        ],
+        [
+          "bd",
+          "sd",
+          "cp"
+        ],
+        [
+          "bd",
+          "sd"
+        ],
+        [
+          "bd",
+          "sd"
         ],
         [
           "bd",
@@ -8723,6 +4367,9 @@
         ],
         [
           "sawtooth"
+        ],
+        [
+          "piano"
         ],
         [
           "drums",
@@ -8835,529 +4482,53 @@
         [
           "kick",
           "snare",
+          "hat",
+          "snare"
+        ],
+        [
+          "drums",
+          "kick",
+          "drums",
+          "snare",
+          "drums",
           "hat"
         ],
         [
-          "jazz"
+          "bd",
+          "casio",
+          "c4",
+          "drums",
+          "kick"
         ],
         [
-          "sawtooth"
+          "kick",
+          "snare",
+          "hat"
         ],
         [
-          "sawtooth"
+          "kick",
+          "snare",
+          "hat"
         ],
         [
-          "sawtooth"
+          "bd"
         ],
         [
-          "sawtooth"
+          "bd"
         ],
         [
-          "sawtooth"
+          "bd"
         ],
         [
-          "sawtooth"
+          "bd",
+          "bd",
+          "bd"
         ],
         [
-          "sawtooth"
+          "bd"
         ],
         [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "square"
-        ],
-        [
-          "square"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "square"
-        ],
-        [
-          "square"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "supersaw"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sine"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "square"
-        ],
-        [
-          "sawtooth"
-        ],
-        [
-          "triangle"
+          "hh"
         ],
         [
           "num"

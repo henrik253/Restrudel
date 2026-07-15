@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("bd*4 sd*2 cp*8").slow(4).gain(.7)
-$: s("oh*4 bd!3 bd*2 ~").gain(.3)
-$: s("sd ht hh bd").gain(.3)
-$: note(4).scale("c:minor").s("sawtooth").gain(.3)

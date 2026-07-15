@@ -1,5 +1,0 @@
-setcpm(105/4)
-$: note("e4 g4 g3 b3 d4").struct("x*4").gain(.4).room(.5)
-$: s("supersaw").slow(2).gain(.3)
-$: s("gm_synth_strings_1").clip(1).lpf(656).gain("[.5 .3]*8")
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)

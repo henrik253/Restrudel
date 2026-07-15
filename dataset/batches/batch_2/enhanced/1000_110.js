@@ -1,6 +1,0 @@
-setcpm(110/4)
-$: s("bd*4 sd*2 cp*8 bd@3 ~ bd ~ bd ~ ~ bd ~ bd ~ bd").gain(.7)
-$: s("cr!3 cr!2").gain(.3)
-$: s("gm_oboe pad supersaw").n("<0 2 4>").lpf(1600).gain(.35)
-$: s("vocal").slow(3.0309).gain(.3)
-$: s("psaltery_pluck hh!4").slow(2.1667).gain(.25)

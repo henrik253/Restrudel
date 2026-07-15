@@ -1,0 +1,110 @@
+# Corpus source manifest (Track B B2) — the single pluggable source list.
+#
+# Every Strudel-pattern source the corpus draws from, with provenance so B5's
+# repo-level split can reason about distinct authors, and so future growth is a
+# one-line edit + `scripts/corpus/add_sources.sh`. `source` names match the
+# directory under corpus/github/ (the analysis + preprocess walk auto-discover
+# by directory name; see scripts/dataset/preprocess_strudel.py:collect_corpus).
+#
+# Use: analysis-ONLY. We extract statistical distributions (sounds, functions,
+# transitions) — we do not redistribute the song code. Sources are referenced
+# as shallow submodules, never vendored.
+
+schema_version: 1
+
+# ---------------------------------------------------------------- ingested ---
+# The 8 sources that produced the 697-pattern corpus (analysis/results/*).
+ingested:
+  - source: strudel-songs-collection
+    url: https://github.com/eefano/strudel-songs-collection.git
+    author: eefano
+    split_role: test   # Track B B5 repo-level split (frozen)
+    kind: songs                # standalone .js song files (richest source)
+  - source: strudel-coding-music
+    url: https://github.com/craii/strudel-coding-music.git
+    author: craii
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: strudel-fork         # fork of the Strudel repo — carries the official
+    note: >                    # example tunes (website/src/repl/tunes.mjs). This
+      Contains the strudel.cc example tunes already, so the site's built-in
+      examples are ALREADY in-corpus — see docs/corpus_growth_B2.md.
+  - source: uzu-strudel
+    url: https://codeberg.org/uzu/strudel.git
+    author: uzu (Strudel maintainers)
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: strudel-upstream     # the canonical Strudel repo (moved to Codeberg);
+    note: also carries website/src/repl/tunes.mjs (official examples).
+  - source: strudel_trance
+    url: https://github.com/honcoops/strudel_trance.git
+    author: honcoops
+    split_role: test   # Track B B5 repo-level split (frozen)
+    kind: songs
+  - source: strudel-sampler-mixes
+    url: https://github.com/yakuzadave/strudel-sampler-mixes.git
+    author: yakuzadave
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: songs
+  - source: strudelplay
+    url: https://github.com/therebelrobot/strudelplay.git
+    author: therebelrobot
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: mixed
+  - source: strudel-using-local-samples
+    url: https://github.com/ideamonad/strudel-using-local-samples.git
+    author: ideamonad
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: mixed
+  - source: strudel-mcp-server
+    url: https://github.com/williamzujkowski/strudel-mcp-server.git
+    author: williamzujkowski
+    split_role: train   # Track B B5 repo-level split (frozen)
+    kind: tooling              # mostly README snippets
+
+# --------------------------------------------------------------- candidates ---
+# New public sources found in the B2 sweep (GitHub topic:strudel + keyword
+# search, 2026-07-15). NOT auto-ingested — each is blocked on the reason below.
+# To adopt one: move it to `ingested`, then run scripts/corpus/add_sources.sh.
+candidates:
+  - source: hannahlovegood-algorave-band
+    url: https://github.com/hannahlovegood/algorave-band.git
+    author: hannahlovegood
+    license: AGPL-3.0          # clean license (matches the Strudel ecosystem)
+    kind: presets
+    blocked_by: >
+      Patterns live in index.html as ~16 short one-liner UI presets
+      (e.g. s("bd hh sd hh")). Needs .html extraction support AND they are
+      trivial single-line presets, not songs — low distribution value.
+  - source: danbiilee-uvwy
+    url: https://github.com/danbiilee/uvwy.git
+    author: danbiilee
+    license: MIT               # clean license
+    kind: visuals+strudel
+    blocked_by: >
+      Audio-reactive 3D-visuals app (TypeScript); Strudel patterns embedded in
+      .ts. Needs .ts extraction; expected pattern yield is low. Verify content
+      before adopting.
+  - source: fcreme-strudel-livecoding
+    url: https://github.com/fcreme/strudel-livecoding.git
+    author: fcreme
+    license: none              # all-rights-reserved by default — do NOT ingest
+    kind: songs                # ~13 patterns in a single file.txt (.txt IS
+    blocked_by: unlicensed (no LICENSE file). Ask the author before use.
+  - source: mktwohy-LiveCodingMusic
+    url: https://github.com/mktwohy/LiveCodingMusic.git
+    author: mktwohy
+    license: none              # all-rights-reserved by default — do NOT ingest
+    kind: songs                # 3 .js files (AcidThing/BrainWave/RetroGame)
+    blocked_by: unlicensed (no LICENSE file). Ask the author before use.
+
+# ------------------------------------------------------------------ rejected ---
+# Considered and dropped — no new Strudel MUSIC (tooling/engines/plugins), or
+# already represented above. The public Strudel-music ecosystem is thin; see
+# docs/corpus_growth_B2.md for the full sweep.
+rejected_reason: >
+  Exhaustive GitHub topic:strudel + keyword search returned overwhelmingly
+  tooling (editors, MCP servers, converters, LSPs, visualizers) rather than
+  song collections. strudel.cc itself serves the bundled tunes.mjs examples
+  that are already in-corpus, and exposes no public gallery of user patterns to
+  scrape (Codeberg additionally blocks scrapers). Durable corpus growth will
+  come from the app's opt-in user uploads (Track A A6) and scaled generation
+  (B6), not from further scraping.

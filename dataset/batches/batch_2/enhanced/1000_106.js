@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("perc*3 bd").gain(.6)
-$: s("bd ~ sd ~").gain(.8)
-$: s("piano").n("<0 3 5 7>").slow(2).gain(.4).release(.2)
-$: note("c4 eb4 g4 bb4").sound("sawtooth").slow(2).lpf(1400).gain(.3)

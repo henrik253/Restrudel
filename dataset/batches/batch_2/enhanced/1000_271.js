@@ -1,5 +1,0 @@
-setcpm(115/4)
-$: s("bd sn").slow(2).bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: note("~ 5").sound("sawtooth").lpf(1760).gain(.5).room(.75)
-$: s("cowbell:3 ~ xylo ~").gain(.4).room(.3)

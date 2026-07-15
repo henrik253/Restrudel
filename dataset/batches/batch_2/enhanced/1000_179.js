@@ -1,5 +1,0 @@
-setcpm(110/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: note("c4 c4 a#3 d#4").s("piano").lpf(578).gain(.4)
-$: note("c2").s("sawtooth").slow(2).gain(.3)

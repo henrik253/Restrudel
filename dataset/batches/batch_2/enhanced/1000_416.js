@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("linndrum_bd hh*8").slow(2).gain(.75)
-$: note("e3 g3").sound("bd*2 ~").lpf(800).gain(.5)
-$: s("triangle perc*3").slow(2).gain(.3)
-$: s("gm_electric_bass_finger gm_bassoon").slow(3).gain(.3)

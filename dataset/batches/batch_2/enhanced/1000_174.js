@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("cajon*4").gain(.25)
-$: note("c3 eb3 g3 c3").s("gm_electric_bass_finger").gain(.5)
-$: note("c5 eb5 g5").s("lead").room(2).gain(.3)

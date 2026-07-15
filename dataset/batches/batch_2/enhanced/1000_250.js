@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: n("4 4 5 4 3 2").scale("D:dorian").s("sd sd").lpf(1200).gain(.6).release(.3)
-$: s("hh*16").velocity(.6).hpf(2000).lpf(3000).room(.5).gain(.2)
-$: s("gm_acoustic_guitar_steel:2 ~ cp ~").slow(4).gain(.4)
-$: n("0 2 3 ~").scale("D:dorian").s("triangle").gain(.35).lpf(650).room(.3)

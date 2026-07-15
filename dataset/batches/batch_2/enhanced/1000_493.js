@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("triangle sd*2").gain(.4).release(.15).attack(.047)
-$: s("gm_piano woodblock").gain(.4)
-$: s("gm_piccolo").gain(.4)
-$: s("bd ~ ~ ~").gain(.7)

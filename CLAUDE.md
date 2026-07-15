@@ -16,10 +16,12 @@ mp3 → preprocessing → spectrogram → transformer (AMT) → MIDI → LLM/rul
 
 ### The core thesis (why this can work)
 Models like **YourMT3+** take a 16 kHz log-mel/log-mag **spectrogram** and emit
-**MIDI-like event tokens**. They are trained on datasets (Slakh, MAESTRO, …) whose
-"synthetic" audio is MIDI rendered through **sampled acoustic instruments** —
-never subtractive/FM/wavetable **synthesizers**. That is exactly why they score
-<10% on electronic/pop synth timbres.
+**MIDI-like event tokens**. Their entire synth-timbre experience is **Kontakt
+sample playback** (~26 static lead/pad patches in Slakh) — no audio from a live
+subtractive/FM/wavetable engine, and **no synth bass at all** (Slakh silently
+skipped GM 38–39). Result, from their own eval: Synth Lead F1 **0.82 in-domain
+collapses to 0.02 on real recordings** (verified 2026-07-15, see
+`docs/base_model_training_data.md`).
 
 **Our differentiator:** generate training data by **rendering MIDI through real
 synths and Strudel's own engine**, so the model finally sees synth timbres.

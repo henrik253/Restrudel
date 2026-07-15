@@ -1,5 +1,0 @@
-setcpm(108/4)
-$: s("saw ~ brakedrum:1 ~").gain(.5)
-$: s("bd ~ sd ~").bank("RolandTR808").gain(.8)
-$: n("3 ~ -4 -1 1").scale("C:minor").s("triangle").gain(.35).release(.15)
-$: note("c2*4 Eb2 ~ ~ ~").gain(.4).release(.2)
