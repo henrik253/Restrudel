@@ -53,6 +53,8 @@ transcription needed to get labels.
 - `analysis/` — outputs of the corpus analysis: plots in `out/`, machine-readable
   stats in `results/*.json` (with sampling weights/probs, for `data_gen/`).
 - `data_gen/` — (Phase 2+) Node tooling: pattern→MIDI labels, audio render, generators.
+- `dataset/` — generated training songs (created on demand by generation; not a
+  tracked folder). Layout + how it's produced: `docs/dataset_layout.md`.
 - `notebooks/` — `00_setup.ipynb` (Colab/Drive); `01_corpus_analysis.ipynb` is the
   corpus analysis (sounds, functions, transitions → `analysis/results/`). Drive
   used only for the heavy WAV dataset (sync mechanism TBD); small artifacts live
