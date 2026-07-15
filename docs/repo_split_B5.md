@@ -17,7 +17,7 @@ generation never sees a test author. Frozen 2026-07-15.
 `strudel-mcp-server`.
 
 Single source of truth: `TEST_REPOS` in `scripts/dataset/preprocess_strudel.py`
-and `notebooks/01_corpus_analysis.ipynb`, mirrored by `split_role:` in
+and `notebooks/01_strudel_corpus_analysis.ipynb`, mirrored by `split_role:` in
 `corpus/sources.yaml`.
 
 ## Why these repos
@@ -66,7 +66,7 @@ landed on opposite sides).
 
 ## What changed
 
-- `notebooks/01_corpus_analysis.ipynb` — `corpus_split` is now repo-membership;
+- `notebooks/01_strudel_corpus_analysis.ipynb` — `corpus_split` is now repo-membership;
   distributions are recomputed **train-side only** (re-run here: 731 train / 124
   test; all 10 `analysis/results/*.json` refreshed, `corpus_test.json` → v2 with
   `test_repos`).

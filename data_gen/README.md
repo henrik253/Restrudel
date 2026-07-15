@@ -27,7 +27,7 @@ Node tooling that turns Strudel pattern strings into training samples.
   no quote-escaping, no blank-line placeholders.
 
   > **Leakage note:** `analysis/results/` is built from only the **80% corpus
-  > train-pool** (`notebooks/01_corpus_analysis.ipynb` holds 20% out), so nothing
+  > train-pool** (`notebooks/01_strudel_corpus_analysis.ipynb` holds 20% out), so nothing
   > `generate.mjs` samples can encode a held-out test snippet.
 
 - **Enhancement: `enhance_samples.py` + `collate_enhanced.py`** — the raw sampler
