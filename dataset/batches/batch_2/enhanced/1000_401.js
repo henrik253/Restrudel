@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("gtr bd*4").room(.5).gain(.7)
-$: s("hh*16").slow(2).gain(.2)
-$: n("0 -7 5 9").s("sawtooth").lpf(2800).gain(.35)
-$: note("c5 e5 g5 b5 c6 eb5 bb5").s("triangle").slow(2).gain(.3)

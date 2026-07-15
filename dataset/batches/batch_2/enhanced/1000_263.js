@@ -1,5 +1,0 @@
-setcpm(115/4)
-$: s("bd*2 ~").slow(2).gain(.8)
-$: s("sleighbells ~").slow(2).gain(.3)
-$: n("9 9 6 7 11").scale("<Bb4:minor A4:lydian>/2").s("triangle").gain(.3)
-$: note("~ c#5 d5").sound("square").lpf(2000).room(.5).pan(.4).gain(.3)

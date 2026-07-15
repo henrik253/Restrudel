@@ -1,1171 +1,590 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 697,
-  "n_sources": 8,
+  "n_patterns": 731,
+  "n_sources": 6,
   "schema": "sounds.v1",
   "items": [
     {
       "name": "bd",
-      "occurrences": 381,
-      "patterns": 143,
+      "occurrences": 262,
+      "patterns": 116,
       "category": "drum-sample",
-      "weight": 0.223592
+      "weight": 0.284473
     },
     {
       "name": "sd",
-      "occurrences": 210,
-      "patterns": 87,
+      "occurrences": 163,
+      "patterns": 73,
       "category": "drum-sample",
-      "weight": 0.123239
+      "weight": 0.176982
     },
     {
       "name": "hh",
-      "occurrences": 200,
-      "patterns": 101,
+      "occurrences": 122,
+      "patterns": 72,
       "category": "drum-sample",
-      "weight": 0.117371
+      "weight": 0.132465
     },
     {
       "name": "sawtooth",
-      "occurrences": 160,
-      "patterns": 56,
+      "occurrences": 50,
+      "patterns": 39,
       "category": "waveform-synth",
-      "weight": 0.093897
+      "weight": 0.054289
     },
     {
       "name": "cp",
-      "occurrences": 104,
-      "patterns": 40,
+      "occurrences": 42,
+      "patterns": 29,
       "category": "drum-sample",
-      "weight": 0.061033
-    },
-    {
-      "name": "lt",
-      "occurrences": 33,
-      "patterns": 7,
-      "category": "drum-sample",
-      "weight": 0.019366
-    },
-    {
-      "name": "square",
-      "occurrences": 33,
-      "patterns": 19,
-      "category": "waveform-synth",
-      "weight": 0.019366
-    },
-    {
-      "name": "triangle",
-      "occurrences": 32,
-      "patterns": 23,
-      "category": "waveform-synth",
-      "weight": 0.018779
-    },
-    {
-      "name": "oh",
-      "occurrences": 31,
-      "patterns": 19,
-      "category": "drum-sample",
-      "weight": 0.018192
-    },
-    {
-      "name": "supersaw",
-      "occurrences": 27,
-      "patterns": 9,
-      "category": "waveform-synth",
-      "weight": 0.015845
-    },
-    {
-      "name": "cr",
-      "occurrences": 24,
-      "patterns": 11,
-      "category": "drum-sample",
-      "weight": 0.014085
+      "weight": 0.045603
     },
     {
       "name": "piano",
-      "occurrences": 22,
-      "patterns": 16,
+      "occurrences": 23,
+      "patterns": 18,
       "category": "other-sample",
-      "weight": 0.012911
+      "weight": 0.024973
     },
     {
-      "name": "gm_electric_bass_finger",
-      "occurrences": 18,
-      "patterns": 17,
-      "category": "soundfont(gm)",
-      "weight": 0.010563
-    },
-    {
-      "name": "sine",
-      "occurrences": 17,
-      "patterns": 12,
+      "name": "square",
+      "occurrences": 14,
+      "patterns": 13,
       "category": "waveform-synth",
-      "weight": 0.009977
-    },
-    {
-      "name": "mt",
-      "occurrences": 15,
-      "patterns": 6,
-      "category": "drum-sample",
-      "weight": 0.008803
+      "weight": 0.015201
     },
     {
       "name": "bass",
-      "occurrences": 13,
-      "patterns": 8,
+      "occurrences": 14,
+      "patterns": 9,
       "category": "other-sample",
-      "weight": 0.007629
+      "weight": 0.015201
+    },
+    {
+      "name": "snare",
+      "occurrences": 14,
+      "patterns": 11,
+      "category": "drum-sample",
+      "weight": 0.015201
     },
     {
       "name": "lead",
       "occurrences": 12,
       "patterns": 4,
       "category": "other-sample",
-      "weight": 0.007042
+      "weight": 0.013029
     },
     {
-      "name": "rd",
+      "name": "drums",
       "occurrences": 12,
-      "patterns": 11,
-      "category": "drum-sample",
-      "weight": 0.007042
+      "patterns": 5,
+      "category": "other-sample",
+      "weight": 0.013029
     },
     {
-      "name": "rim",
+      "name": "kick",
       "occurrences": 12,
       "patterns": 10,
       "category": "drum-sample",
-      "weight": 0.007042
+      "weight": 0.013029
     },
     {
-      "name": "white",
+      "name": "a",
       "occurrences": 11,
-      "patterns": 4,
-      "category": "noise",
-      "weight": 0.006455
-    },
-    {
-      "name": "snare",
-      "occurrences": 10,
-      "patterns": 9,
-      "category": "drum-sample",
-      "weight": 0.005869
-    },
-    {
-      "name": "gm_electric_guitar_jazz",
-      "occurrences": 9,
-      "patterns": 9,
-      "category": "soundfont(gm)",
-      "weight": 0.005282
+      "patterns": 3,
+      "category": "other-sample",
+      "weight": 0.011944
     },
     {
       "name": "vocal",
       "occurrences": 9,
       "patterns": 4,
       "category": "other-sample",
-      "weight": 0.005282
+      "weight": 0.009772
     },
     {
-      "name": "gm_oboe",
+      "name": "rim",
       "occurrences": 8,
-      "patterns": 8,
-      "category": "soundfont(gm)",
-      "weight": 0.004695
-    },
-    {
-      "name": "drums",
-      "occurrences": 8,
-      "patterns": 4,
-      "category": "other-sample",
-      "weight": 0.004695
-    },
-    {
-      "name": "kick",
-      "occurrences": 8,
-      "patterns": 8,
+      "patterns": 7,
       "category": "drum-sample",
-      "weight": 0.004695
+      "weight": 0.008686
+    },
+    {
+      "name": "sine",
+      "occurrences": 8,
+      "patterns": 7,
+      "category": "waveform-synth",
+      "weight": 0.008686
+    },
+    {
+      "name": "b",
+      "occurrences": 7,
+      "patterns": 3,
+      "category": "other-sample",
+      "weight": 0.0076
+    },
+    {
+      "name": "triangle",
+      "occurrences": 7,
+      "patterns": 7,
+      "category": "waveform-synth",
+      "weight": 0.0076
     },
     {
       "name": "perc",
       "occurrences": 7,
       "patterns": 5,
       "category": "drum-sample",
-      "weight": 0.004108
-    },
-    {
-      "name": "gm_choir_aahs",
-      "occurrences": 7,
-      "patterns": 5,
-      "category": "soundfont(gm)",
-      "weight": 0.004108
-    },
-    {
-      "name": "gm_drawbar_organ",
-      "occurrences": 6,
-      "patterns": 6,
-      "category": "soundfont(gm)",
-      "weight": 0.003521
-    },
-    {
-      "name": "gm_overdriven_guitar",
-      "occurrences": 6,
-      "patterns": 5,
-      "category": "soundfont(gm)",
-      "weight": 0.003521
-    },
-    {
-      "name": "gm_electric_guitar_clean",
-      "occurrences": 6,
-      "patterns": 5,
-      "category": "soundfont(gm)",
-      "weight": 0.003521
-    },
-    {
-      "name": "gm_electric_bass_pick",
-      "occurrences": 5,
-      "patterns": 5,
-      "category": "soundfont(gm)",
-      "weight": 0.002934
+      "weight": 0.0076
     },
     {
       "name": "gm_lead_6_voice",
-      "occurrences": 5,
-      "patterns": 5,
+      "occurrences": 6,
+      "patterns": 6,
       "category": "soundfont(gm)",
-      "weight": 0.002934
+      "weight": 0.006515
     },
     {
-      "name": "woodblock",
+      "name": "oh",
       "occurrences": 5,
       "patterns": 3,
-      "category": "other-sample",
-      "weight": 0.002934
+      "category": "drum-sample",
+      "weight": 0.005429
     },
     {
-      "name": "gm_distortion_guitar",
-      "occurrences": 5,
-      "patterns": 4,
-      "category": "soundfont(gm)",
-      "weight": 0.002934
-    },
-    {
-      "name": "crow",
-      "occurrences": 5,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.002934
-    },
-    {
-      "name": "gm_piccolo",
-      "occurrences": 5,
-      "patterns": 4,
-      "category": "soundfont(gm)",
-      "weight": 0.002934
+      "name": "hat",
+      "occurrences": 4,
+      "patterns": 3,
+      "category": "drum-sample",
+      "weight": 0.004343
     },
     {
       "name": "cowbell",
-      "occurrences": 5,
-      "patterns": 4,
-      "category": "other-sample",
-      "weight": 0.002934
-    },
-    {
-      "name": "shaker",
-      "occurrences": 4,
-      "patterns": 4,
-      "category": "other-sample",
-      "weight": 0.002347
-    },
-    {
-      "name": "saw",
       "occurrences": 4,
       "patterns": 3,
-      "category": "waveform-synth",
-      "weight": 0.002347
-    },
-    {
-      "name": "gm_acoustic_guitar_steel",
-      "occurrences": 4,
-      "patterns": 4,
-      "category": "soundfont(gm)",
-      "weight": 0.002347
-    },
-    {
-      "name": "linndrum_sd",
-      "occurrences": 4,
-      "patterns": 4,
       "category": "other-sample",
-      "weight": 0.002347
+      "weight": 0.004343
     },
     {
-      "name": "linndrum_bd",
+      "name": "woodblock",
       "occurrences": 4,
-      "patterns": 4,
+      "patterns": 2,
       "category": "other-sample",
-      "weight": 0.002347
+      "weight": 0.004343
     },
     {
       "name": "bell",
       "occurrences": 4,
       "patterns": 4,
       "category": "other-sample",
-      "weight": 0.002347
+      "weight": 0.004343
     },
     {
-      "name": "gm_synth_strings_1",
+      "name": "sn",
       "occurrences": 4,
       "patterns": 3,
-      "category": "soundfont(gm)",
-      "weight": 0.002347
-    },
-    {
-      "name": "ht",
-      "occurrences": 4,
-      "patterns": 4,
       "category": "drum-sample",
-      "weight": 0.002347
+      "weight": 0.004343
     },
     {
-      "name": "crash",
-      "occurrences": 4,
-      "patterns": 4,
-      "category": "drum-sample",
-      "weight": 0.002347
-    },
-    {
-      "name": "amen",
-      "occurrences": 3,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001761
-    },
-    {
-      "name": "shaker_small",
-      "occurrences": 3,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001761
-    },
-    {
-      "name": "rect",
+      "name": "amencutup",
       "occurrences": 3,
       "patterns": 3,
       "category": "other-sample",
-      "weight": 0.001761
-    },
-    {
-      "name": "gm_harmonica",
-      "occurrences": 3,
-      "patterns": 3,
-      "category": "soundfont(gm)",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
       "name": "gm_epiano1",
       "occurrences": 3,
       "patterns": 3,
       "category": "soundfont(gm)",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
-      "name": "linndrum_hh",
+      "name": "rect",
       "occurrences": 3,
       "patterns": 3,
       "category": "other-sample",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
-      "name": "gtr",
+      "name": "breath",
       "occurrences": 3,
       "patterns": 3,
       "category": "other-sample",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
-      "name": "linndrum_oh",
+      "name": "east",
       "occurrences": 3,
       "patterns": 3,
       "category": "other-sample",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
-      "name": "gm_bassoon",
-      "occurrences": 3,
-      "patterns": 3,
-      "category": "soundfont(gm)",
-      "weight": 0.001761
-    },
-    {
-      "name": "sn",
+      "name": "amen",
       "occurrences": 3,
       "patterns": 2,
-      "category": "drum-sample",
-      "weight": 0.001761
-    },
-    {
-      "name": "psaltery_pluck",
-      "occurrences": 3,
-      "patterns": 3,
       "category": "other-sample",
-      "weight": 0.001761
+      "weight": 0.003257
     },
     {
-      "name": "recorder_bass_sus",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "clave",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "bongo",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "cajon",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "ocarina",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_trombone",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_acoustic_bass",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_pizzicato_strings",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "noise",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "noise",
-      "weight": 0.001174
-    },
-    {
-      "name": "pad",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_baritone_sax",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_tuba",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "tambourine",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_pad_warm",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "pulse",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "waveform-synth",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_pad_bowed",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_cello",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "drum",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_vibraphone",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "ellipse",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_piano",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_ocarina",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "breaks165",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "sleighbells",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "Bass",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "misc",
+      "name": "mt",
       "occurrences": 2,
       "patterns": 2,
       "category": "drum-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "snare_rim",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gong",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "brakedrum",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "clavisynth",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "ocarina_vib",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "cymbal",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "other-sample",
-      "weight": 0.001174
+      "weight": 0.002172
     },
     {
       "name": "num",
       "occurrences": 2,
       "patterns": 1,
       "category": "other-sample",
-      "weight": 0.001174
+      "weight": 0.002172
+    },
+    {
+      "name": "ht",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "drum-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "misc",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "drum-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "supersaw",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "waveform-synth",
+      "weight": 0.002172
+    },
+    {
+      "name": "dino",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "snare_rim",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "ocarina_vib",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "ellipse",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "gong",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "brakedrum",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "clavisynth",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "psaltery_pluck",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "lt",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "drum-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "white",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "noise",
+      "weight": 0.002172
+    },
+    {
+      "name": "noise",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "noise",
+      "weight": 0.002172
+    },
+    {
+      "name": "hh27",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "breaks165",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "gm_acoustic_bass",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "soundfont(gm)",
+      "weight": 0.002172
+    },
+    {
+      "name": "pad",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "Bass",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "drum",
+      "occurrences": 2,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.002172
+    },
+    {
+      "name": "cymbal",
+      "occurrences": 2,
+      "patterns": 2,
+      "category": "other-sample",
+      "weight": 0.002172
     },
     {
       "name": "Ethnic",
       "occurrences": 2,
       "patterns": 1,
       "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_church_organ",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "ballwhistle",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_lead_8_bass_lead",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_lead_1_square",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_flute",
-      "occurrences": 2,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_synth_bass_1",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_violin",
-      "occurrences": 2,
-      "patterns": 2,
-      "category": "soundfont(gm)",
-      "weight": 0.001174
-    },
-    {
-      "name": "gm_synth_strings_2",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "folkharp",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "harmonica_soft",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "b",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "a",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_percussive_organ",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_string_ensemble_2",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "jazz",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "SequentialCircuitsDrumtracks_cr",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "EmuDrumulator_lt",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "EmuDrumulator_mt",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "EmuDrumulator_oh",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "EmuDrumulator_sd",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "EmuDrumulator_bd",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "ride",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "drum-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_trumpet",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "linndrum_cr",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_lead_2_sawtooth",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "hh27",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_gunshot",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_electric_guitar_muted",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_dulcimer",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_recorder",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_contrabass",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "sax",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "recorder_tenor_sus",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_applause",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "r8_rd",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_string_ensemble_1",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "rhodes",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "flute",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "my_sound",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "dino",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "p",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "flbass",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "mad",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "kalimba",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "attack",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "amencutup",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "whirl",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "Acoustic",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "Kalimba",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "Sitar",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "chord",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "conga",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "hats",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "xylo",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "breath",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "anvil",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_bandoneon",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "brown",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "noise",
-      "weight": 0.000587
-    },
-    {
-      "name": "vibraslap",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "agogo",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_marimba",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_acoustic_guitar_nylon",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_reed_organ",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_clarinet",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "linn9000_lt",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "east",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "linn9000_mt",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "linn9000_cr",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "linn9000_sd",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "linn9000_bd",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "other-sample",
-      "weight": 0.000587
-    },
-    {
-      "name": "gm_tenor_sax",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "soundfont(gm)",
-      "weight": 0.000587
-    },
-    {
-      "name": "hat",
-      "occurrences": 1,
-      "patterns": 1,
-      "category": "drum-sample",
-      "weight": 0.000587
+      "weight": 0.002172
     },
     {
       "name": "hadoken",
       "occurrences": 1,
       "patterns": 1,
       "category": "other-sample",
-      "weight": 0.000587
+      "weight": 0.001086
+    },
+    {
+      "name": "gm_electric_guitar_jazz",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "soundfont(gm)",
+      "weight": 0.001086
+    },
+    {
+      "name": "shaker_small",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "crash",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "drum-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "p",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "flute",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "casio",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "c4",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "hats",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
     },
     {
       "name": "pink",
       "occurrences": 1,
       "patterns": 1,
       "category": "noise",
-      "weight": 0.000587
+      "weight": 0.001086
+    },
+    {
+      "name": "xylo",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "my_sound",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "conga",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "mysaw",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "flbass",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "bongo",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "shaker",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "chord",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "Sitar",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "Kalimba",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "Acoustic",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "rd",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "drum-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "whirl",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "attack",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "kalimba",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "mad",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
+    },
+    {
+      "name": "rhodes",
+      "occurrences": 1,
+      "patterns": 1,
+      "category": "other-sample",
+      "weight": 0.001086
     }
   ]
 }

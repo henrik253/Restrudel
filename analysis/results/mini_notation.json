@@ -1,69 +1,69 @@
 {
   "schema_version": 1,
   "generated_from": "notebooks/01_corpus_analysis.ipynb",
-  "n_patterns": 697,
-  "n_sources": 8,
+  "n_patterns": 731,
+  "n_sources": 6,
   "schema": "mini_notation.v1",
   "items": [
     {
       "feature": "sequence [ ]",
-      "patterns": 525,
-      "fraction": 0.753228
+      "patterns": 562,
+      "fraction": 0.76881
     },
     {
       "feature": "alternation < >",
-      "patterns": 148,
-      "fraction": 0.212339
+      "patterns": 82,
+      "fraction": 0.112175
     },
     {
       "feature": "polymeter { }",
-      "patterns": 22,
-      "fraction": 0.031564
+      "patterns": 25,
+      "fraction": 0.0342
     },
     {
       "feature": "euclid (n,k)",
-      "patterns": 36,
-      "fraction": 0.05165
+      "patterns": 44,
+      "fraction": 0.060192
     },
     {
       "feature": "replicate !",
-      "patterns": 67,
-      "fraction": 0.096126
+      "patterns": 18,
+      "fraction": 0.024624
     },
     {
       "feature": "elongate @",
-      "patterns": 99,
-      "fraction": 0.142037
+      "patterns": 43,
+      "fraction": 0.058824
     },
     {
       "feature": "speed up *",
-      "patterns": 159,
-      "fraction": 0.228121
+      "patterns": 99,
+      "fraction": 0.135431
     },
     {
       "feature": "slow down /",
-      "patterns": 90,
-      "fraction": 0.129125
+      "patterns": 53,
+      "fraction": 0.072503
     },
     {
       "feature": "rest ~",
-      "patterns": 522,
-      "fraction": 0.748924
+      "patterns": 551,
+      "fraction": 0.753762
     },
     {
       "feature": "random ?",
-      "patterns": 7,
-      "fraction": 0.010043
+      "patterns": 6,
+      "fraction": 0.008208
     },
     {
       "feature": "range ..",
-      "patterns": 4,
-      "fraction": 0.005739
+      "patterns": 6,
+      "fraction": 0.008208
     },
     {
       "feature": "parallel ,",
-      "patterns": 96,
-      "fraction": 0.137733
+      "patterns": 63,
+      "fraction": 0.086183
     }
   ]
 }

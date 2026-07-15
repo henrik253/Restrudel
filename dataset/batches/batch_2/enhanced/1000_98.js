@@ -1,5 +1,0 @@
-setcpm(90/4)
-$: s("sine bd:2").gain(.5).hpf(500)
-$: s("bd ~ sd ~").gain(.7)
-$: n("0 -7 -1 -3 ~ -4 ~ -5 ~ -6 -5 -7@3").scale("c:minor").s("gm_oboe").gain(.3)
-$: note(0).s("gm_tuba").gain(.3).release(.3)

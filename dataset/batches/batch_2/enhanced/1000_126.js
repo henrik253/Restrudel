@@ -1,6 +1,0 @@
-setcpm(100/4)
-$: s("cowbell ~").slow(2).gain(.5)
-$: s("sd bd*2").gain(.6).release(.1)
-$: note("c2*8").s("sawtooth").gain(.35).release(.1)
-$: s("gm_overdriven_guitar:6").n(0).gain(.4).velocity(.7)
-$: s("snare_rim:0 ~").gain(.3)

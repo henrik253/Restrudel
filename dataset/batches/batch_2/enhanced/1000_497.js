@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: n("7 0").scale("g:minor").clip(.95).release(.142).s("sawtooth").gain(.3)
-$: s("square").note("b1").slow(4).gain(.2)
-$: note("b1 d2 g2").s("sawtooth").lpf(400).gain("[.5 .3]*4")
-$: note("c2 eb2 g2 bb2").s("gm_acoustic_guitar_steel:2").lpf(1200).release(.295).gain(.3)

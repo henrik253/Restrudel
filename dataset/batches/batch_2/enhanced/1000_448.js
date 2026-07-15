@@ -1,5 +1,0 @@
-setcpm(104/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*8").gain(.2)
-$: n("1 4 8").scale("g4:minor").transpose(12).s("sawtooth").gain(.35)
-$: n("3 3 ~ 3 ~ 3 3 -1 ~ -1 -1 0 ~ 0 0 0").scale("g4:minor").s("gm_piccolo").gain(.5)

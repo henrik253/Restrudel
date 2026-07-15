@@ -1,6 +1,0 @@
-setcpm(96/4)
-$: s("mt lt").gain(.35).segment(8)
-$: s("bd ~ sd ~").gain(.7)
-$: s("clavisynth").n("<0 3 5>").lpf(1800).gain(.4).release(.4)
-$: s("gm_church_organ:2").n("<0 2>").gain(.3).release(.4)
-$: s("crash ~ ~ ~").slow(4).gain(.3)

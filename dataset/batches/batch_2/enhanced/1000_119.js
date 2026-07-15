@@ -1,6 +1,0 @@
-setcpm(96/4)
-$: s("bd ~ sd ~").gain(.7)
-$: s("piano gm_overdriven_guitar:2").gain(.3).room(.6)
-$: s("pink*2").gain(.15).room(.6)
-$: note("12 a4@3").sound("piano").lpf(1293).gain(.4)
-$: n("0 -1 0 4@5 3 2 1@2 1@2 9@3 8 4@10").scale("a#3:minor").s("sawtooth").lpf(1400).gain(.3)

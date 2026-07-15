@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("EmuDrumulator_mt ~").slow(2).gain(.7)
-$: s("linndrum_hh*4").gain(.3)
-$: s("bd ~ sd ~").bank("LinnDrum").gain(.8)
-$: s("supersaw").n("<0 3 5 7>").slow(2).lpf(1600).gain(.35)

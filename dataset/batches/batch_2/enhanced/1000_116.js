@@ -1,6 +1,0 @@
-setcpm(112/4)
-$: s("bd ~ sd ~").gain(.75)
-$: s("gm_piccolo").n("<0 2 4>").slow(2).gain(.35)
-$: note("c4 eb4 g4 bb4").sound("supersaw").lpf(2000).gain(.35)
-$: n("5 6 ~").scale("c:ritusen").s("square").gain(.3).lpf(1500)
-$: s("gm_applause:3 ~").slow(4).gain(.2)

@@ -1,5 +1,0 @@
-setcpm(130/4)
-$: s("bd*4").bank("RolandTR909").gain(.7)
-$: s("hh*8").gain(.15)
-$: note("a3 g3 e3 c3").s("sawtooth").lpf(500).gain(.4)
-$: note("a5 g5 e5 c5").s("square").lpf(1500).gain(.3)

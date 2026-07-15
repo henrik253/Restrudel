@@ -382,49 +382,92 @@ re-splitting would just bake the leak in again.
       Synth Lead F1 0.82 in-domain → 0.02 on real recordings. Cautionary
       tale for us: few static timbres from one renderer ⇒ the same cliff, one
       renderer over — B2–B6 must maximize timbre/renderer diversity.
-- [ ] **B1 — Purge the existing generated data.** Remove the current synthetic
-      batches (`dataset/batches/` sketches+enhanced, their Drive renders, and
-      their entries in the YourMT3 file lists) from the training pool. They
-      were generated from distributions computed over the **full** corpus —
-      including what later became the test set — so they are leak-tainted and
-      will be **regenerated properly in B6**. Corpus (real) data stays.
-- [ ] **B2 — Grow the corpus: scrape strudel.cc.** Harvest shared pattern
-      links / featured & example patterns into new `corpus/` sources
-      (analysis-only licensing rules as before, one pluggable source list).
-      More sources and authors ⇒ better distributions *and* a cleaner
-      repo-held-out split in B5. Re-run `01_corpus_analysis` after ingest.
-- [ ] **B3 — Hunt for external labeled electronic music data.** Evaluate, in
-      order of expected yield: (a) Lakh electronic subset rendered through
-      **real synth engines** (Surge XT / Dexed / Vital, headless) — full
-      control, aligned labels, breaks the single-renderer confound
-      (`prepare_lakh.py` scaffolded); (b) re-render Slakh MIDI with a
-      synth-engine patch map (incl. the synth-bass classes Slakh dropped);
-      (c) NSynth single-note synth samples as auxiliary timbre data; (d) any
-      published AMT set with synth annotations. **Fallback if nothing pans
-      out:** scale up Strudel generation — it stays our renewable source of
-      perfectly-labeled synth data.
-- [ ] **B4 — Rethink the generation/augmentation strategy** (critical review,
-      written decision: improve or keep). Questions on the table:
-      - Distribution-sampling **reproduces corpus biases** — sawtooth
-        dominance means little timbre diversity, exactly Slakh's 26-patch
-        failure mode. Should generation *deliberately over-sample rare
-        synth/FX configurations* (coverage) instead of mirroring the corpus
-        (realism)?
-      - Token-level Markov chains produce locally-plausible but structurally
-        flat patterns (mini-notation structure was never synthesized);
-        does structure matter for a transcription model, or only timbre?
-      - The LLM-enhancement step changed the data distribution in unmeasured
-        ways — keep, drop, or measure it?
-      - Missing entirely today: **audio-domain augmentation** (mastering
-        chain: compression/limiter/EQ/reverb; drum-bank swaps; detune/unison
-        variation) — cheap and directly attacks the renderer confound.
-- [ ] **B5 — Split by SOURCE, then freeze it.** Leave-repositories-out
-      train/test split (test repos contribute *nothing*: no patterns, no
-      distributions, no generation seeds). Recompute the corpus analysis on
-      the train side only; pattern-similarity dedup audit across the boundary.
-- [ ] **B6 — Only then: generate/augment the TRAINING set.** Apply the B4
-      strategy to B2+B3 train-side sources only (incl. per-voice stems for
-      YourMT3's cross-stem augmentation). Test set stays untouched raw corpus.
+- [x] **B1 — Purge the existing generated data.** Done 2026-07-15: removed
+      `dataset/batches/` (2009 files), `enhanced_all.yaml`, `sketches_all.yaml`
+      from git; `preprocess_strudel.py:collect_inspired` now tolerates the
+      missing yaml (corpus-only path still runs); `scripts/dataset/purge_generated_drive.py`
+      (dry-run by default) removes the matching Drive renders + drops their
+      YourMT3 index entries. Generator *code* and the real corpus are untouched;
+      the set is **regenerated train-side only in B6**.
+- [x] **B2 — Grow the corpus: scrape strudel.cc.** Done 2026-07-15 —
+      **finding: the public supply is saturated.** strudel.cc's built-in
+      examples are *already* in-corpus (our `uzu-strudel` + `strudel-coding-music`
+      sources carry `website/src/repl/tunes.mjs`), the site has no scrapeable
+      public pattern gallery (SPA + Codeberg blocks scrapers), and the wider
+      GitHub ecosystem is tooling, not songs. The four new personal repos found
+      are each blocked on license (unlicensed) or format (patterns in
+      `.html`/`.ts`) — none clears clean-licensed **and** non-trivial **and**
+      ingestible, so none was auto-added. Built the durable output instead:
+      `corpus/sources.yaml` (pluggable manifest: 8 ingested + 4 candidates with
+      blockers), `scripts/corpus/add_sources.sh`, and `docs/corpus_growth_B2.md`.
+      **Consequence for B5:** plan the repo split around the existing 8 sources;
+      real growth comes from generation (B6) + the app's user uploads (A6), not
+      scraping.
+- [x] **B3 — Hunt for external labeled electronic music data.** Done
+      2026-07-15 → [external_electronic_data_B3.md](external_electronic_data_B3.md)
+      (evidence-based survey). Key results: the renderer is **DawDreamer**
+      (Python VST3 host, offline, Colab-supported) hosting **Surge XT / Dexed /
+      Vital** — *correction to the old plan:* those synths have no offline CLI;
+      host them as VST3 in DawDreamer instead. Real work = the **GM-program →
+      synth-patch map** (scaffolded in `scripts/dataset/render_synths.py`,
+      plugs into `prepare_lakh.py`'s staging→loader promotion). Feed it
+      **MetaMIDI/GigaMIDI** genre-tagged electronic MIDI (CC BY 4.0) over
+      GM-filtered LMD. Quick independent win: **NES-MDB** (MIT, headless WAV +
+      note/timbre labels — real 2A03 electronic). Deprioritized: NSynth
+      (auxiliary; static samples recreate the Slakh trap), fluidsynth/SF2
+      (sampled baseline), BitMIDI/VGMusic (unlicensed). Fallback stays: scale
+      Strudel generation (B6), widening its timbre range per B4.
+- [x] **B4 — Rethink the generation/augmentation strategy.** Done 2026-07-15 →
+      [augmentation_strategy_B4.md](augmentation_strategy_B4.md). Decision:
+      **change the axis we sample on.** For a transcription model the
+      generalization axis is **timbre + audio realism**, not symbolic musical
+      realism — so:
+      - **S1** keep corpus-distribution sampling for *notes/rhythm/functions*,
+        but **decouple timbre**: a coverage sampler spans waveform/filter/env/
+        FX and *over-samples rare configs* (mirroring the corpus here is exactly
+        Slakh's 26-patch trap);
+      - **S2** add the missing **audio-domain augmentation** stage (mastering
+        chain: gain/EQ/comp/limit/saturation/bitcrush/short-reverb/MP3
+        round-trip; strictly time-preserving so labels stay aligned) — cheapest
+        + biggest realism gain, also sidesteps the node-web-audio-api FX gap;
+      - **S3** drum-bank rotation (breaks 909/808 memorization);
+      - structure/mini-notation: **not worth investing** (vary *density* as a
+        knob instead); LLM-enhance **repurposed** from "improve music" to
+        "diversify timbre/FX" and **gated on an ablation** (optional, not
+        critical path). *(codex requested for the LLM step is not installed —
+        B6 makes it pluggable `--llm codex|anthropic|none`.)*
+- [x] **B5 — Split by SOURCE, then freeze it.** Done 2026-07-15 →
+      [repo_split_B5.md](repo_split_B5.md). Leave-repositories-out split, frozen:
+      **TEST = strudel-songs-collection (eefano) + strudel_trance (honcoops) =
+      124 patterns, real songs, held-out authors**; TRAIN = the other 6 (731
+      patterns). The two Strudel forks (strudel-coding-music 70% + uzu-strudel)
+      stay together in train so their shared official `tunes.mjs` can't leak.
+      Single source of truth: `TEST_REPOS` in `preprocess_strudel.py` +
+      notebook 01, mirrored by `split_role` in `corpus/sources.yaml` (replaces
+      the drift-prone duplicated hash formula). **Recomputed distributions
+      train-side only** (ran notebook 01 headlessly → 731/124, all 10
+      `analysis/results/*.json` refreshed, `corpus_test.json` v2). **Dedup
+      audit** (`dedup_audit.py`): 0 cross-boundary duplicates, max test→train
+      Jaccard 0.208 → provably leak-free (the old hash split couldn't guarantee
+      this).
+- [x] **B6 — Only then: generate/augment the TRAINING set.** Done 2026-07-15 →
+      [generation_B6.md](generation_B6.md). Tooling built + verified locally,
+      train-side only (reads the B5 train-side distributions; test repos never
+      enter generation):
+      - **S1** `generate.mjs --timbre-coverage` — decouples timbre from the
+        corpus dist: FX/filter/env params span their range (10% extremes),
+        synth voices get a uniformly-chosen waveform (breaks sawtooth
+        dominance). Verified: 7 waveforms spread, lpf spans 111–1859+.
+      - **S2** `scripts/dataset/augment_audio.py` — strictly time-preserving
+        mastering-chain augmentation (gain/EQ/sat/comp/bitcrush/decimate/short-
+        reverb/limit). Verified: length preserved, onsets within ±50 ms, variants
+        differ meaningfully — labels stay aligned.
+      - **S3** drum-bank rotation (8 machines) — breaks 909/808 memorization.
+      Deferred to the Colab run (needs the Strudel engine + render + Drive): the
+      validity gate at scale, render/index, augment; the LLM-enhance step is
+      gated/optional (codex not installed — pluggable hook noted). No unvalidated
+      batch committed (respects B1's purge). Full run recipe + B8 ablations in
+      the doc. Test set stays untouched raw corpus.
 - [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
       strudel50-style mix rebalanced toward the new electronic data (keep
       slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.

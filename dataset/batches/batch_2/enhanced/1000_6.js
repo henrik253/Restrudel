@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*8 cp").gain(.3)
-$: n("0 2 4 5 4 2 0 4").scale("b4:minor").s("sawtooth").gain(.4).release(.2)
-$: note("b4 f#5").s("sine").gain(.3).room(.3)

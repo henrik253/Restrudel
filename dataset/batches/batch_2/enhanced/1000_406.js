@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("drums ~ drums ~").gain(.8)
-$: s("hh*8").gain(.2)
-$: s("cowbell ~").slow(2).gain(.3)
-$: s("gm_baritone_sax linndrum_oh").slow(2).gain(.35)

@@ -1,6 +1,0 @@
-setcpm(100/4)
-$: s("kick ~ snare ~").struct("~ x*2").gain(.8)
-$: s("hh bd").gain("<0.3 0.3 .3 .6!3>/12").attack(.1).release(.05)
-$: note("12 g4@2 d#4@3").s("gm_oboe").gain(.3)
-$: note("a4 c5").s("sawtooth").gain(.35).release(.15)
-$: n(4).scale("d3:minor:pentatonic").s("gm_oboe").gain("[.5 0.4]*4")

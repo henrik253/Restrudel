@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: s("cowbell ~").slow(2).gain(.6)
-$: s("bd ~ sd ~").gain(.8)
-$: note("a2 ~ a2 ~").sound("sawtooth").lpf(2000).room(.5).gain(.4)
-$: s("cp ~ cp ~").gain(.3).slow(2)

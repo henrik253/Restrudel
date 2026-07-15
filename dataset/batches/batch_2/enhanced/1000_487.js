@@ -1,5 +1,0 @@
-setcpm(100/4)
-$: n("2 -1").scale("c:minor").s("sawtooth").gain(.4)
-$: s("bd*2 sd").bank("RolandTR909").slow(2).gain(.8)
-$: s("gm_tuba").note("c2 g2").gain(.4).release(.5)
-$: s("rd:3*4").speed(.95).velocity(.6).gain(.3)

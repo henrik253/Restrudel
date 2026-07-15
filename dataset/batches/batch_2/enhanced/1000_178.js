@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("hh*4 ~").gain(.2)
-$: s("amen").slow(2).gain(.5)
-$: note(20).s("supersaw").lpf(200).gain(.35)
-$: s("rim*4").gain(.25)

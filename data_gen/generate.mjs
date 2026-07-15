@@ -36,6 +36,46 @@ let MIN_LEN = 2;          // tokens per content sequence: floor (>1 kills the
 let MAX_LEN = 32;         // tokens per content sequence: cap
 const MAX_ORDER = 6;      // longest prefix context to condition on
 
+// --- S1 timbre coverage (Track B B6 / docs/augmentation_strategy_B4.md) ------
+// The generalization axis is TIMBRE, not symbolic realism. Sampling sounds/FX
+// from the corpus frequency reproduces its sawtooth dominance → exactly Slakh's
+// narrow-timbre trap. With --timbre-coverage on, timbre-shaping params are drawn
+// to SPAN their range (uniform / log-uniform) with 10% pushed to an extreme
+// (over-sample rare configs), and synth voices get a uniformly-chosen waveform.
+// Notes/rhythm/functions still come from the corpus distribution (realism).
+let TIMBRE_COVERAGE = false;
+const COVERAGE_WAVEFORMS = ['sawtooth', 'square', 'triangle', 'sine',
+  'supersaw', 'pulse', 'fm', 'triangle', 'square'];  // deliberately NOT saw-heavy
+const COVERAGE_RANGES = {  // [lo, hi, scale]
+  lpf: [100, 8000, 'log'], cutoff: [100, 8000, 'log'], hpf: [20, 2000, 'log'],
+  resonance: [0, 25, 'lin'], lpq: [0, 25, 'lin'],
+  attack: [0, 0.5, 'lin'], decay: [0, 0.5, 'lin'], sustain: [0, 1, 'lin'],
+  release: [0, 1.5, 'lin'], room: [0, 1, 'lin'], roomsize: [0, 1, 'lin'],
+  size: [0, 1, 'lin'], delay: [0, 0.8, 'lin'], delaytime: [0.05, 0.75, 'lin'],
+  delayfeedback: [0, 0.8, 'lin'], distort: [0, 1, 'lin'], shape: [0, 1, 'lin'],
+  crush: [1, 16, 'lin'], coarse: [1, 16, 'lin'], fm: [0, 8, 'lin'],
+  fmh: [0.5, 8, 'lin'], vib: [0, 8, 'lin'], vibmod: [0, 1, 'lin'],
+};
+const COVERAGE_INT = new Set(['crush', 'coarse', 'lpf', 'cutoff', 'hpf']);
+// S3: rotate drum banks so the model can't memorize one machine (the critique
+// flagged 909/808 memorization).
+const COVERAGE_BANKS = ['RolandTR909', 'RolandTR808', 'RolandTR707', 'LinnDrum',
+  'AkaiLinn', 'ViscoSpaceDrum', 'CasioRZ1', 'EmuDrumulator'];
+const DRUM_RE = /\b(bd|sd|hh|oh|ch|cp|rim|cr|rd|lt|mt|ht|perc|sn|kick|snare|hat)\b/;
+
+function coverageValue(rng, fn) {
+  const r = COVERAGE_RANGES[fn];
+  if (!r) return null;
+  const [lo, hi, scale] = r;
+  let v = scale === 'log'
+    ? Math.exp(Math.log(lo) + rng() * (Math.log(hi) - Math.log(lo)))
+    : lo + rng() * (hi - lo);
+  if (rng() < 0.10) {  // over-sample the extremes
+    v = rng() < 0.5 ? lo + rng() * (hi - lo) * 0.1 : hi - rng() * (hi - lo) * 0.1;
+  }
+  return fmtNum(COVERAGE_INT.has(fn) ? Math.round(v) : +v.toFixed(3));
+}
+
 // ---------- seeded RNG (mulberry32) ----------------------------------------
 function mulberry32(seed) {
   let a = seed >>> 0;
@@ -140,6 +180,12 @@ function synthSequence(rng, fn) {
 
 // ---------- content: P(content | function) ----------------------------------
 function sampleContent(rng, fn) {
+  // S1: for timbre params, override the corpus value with a coverage draw 85%
+  // of the time (keep 15% corpus-grounded).
+  if (TIMBRE_COVERAGE && COVERAGE_RANGES[fn] && rng() < 0.85) {
+    const cv = coverageValue(rng, fn);
+    if (cv !== null) return cv;
+  }
   const st = argStats[fn];
   if (!st) return null;
   const pNum = st.p_numeric ?? 0, pStr = st.p_string ?? 0;
@@ -223,6 +269,23 @@ export function generateSong(seed) {
     let chain = sampleChain(rng);
     for (let tries = 0; !chain.length && tries < 5; tries++) chain = sampleChain(rng);
     if (!chain.length) continue;
+    // S1: give a synth voice (pitched, no explicit sound) a uniformly-chosen
+    // waveform so timbre isn't sawtooth-dominated.
+    if (TIMBRE_COVERAGE) {
+      const fns = new Set(chain.map((c) => c.fn));
+      const hasPitch = [...fns].some((f) => PITCH_ASSIGN.has(f));
+      const hasSound = [...fns].some((f) => SAMPLE_ASSIGN.has(f));
+      if (hasPitch && !hasSound) {
+        const wf = COVERAGE_WAVEFORMS[Math.floor(rng() * COVERAGE_WAVEFORMS.length)];
+        chain.push({ fn: 's', content: JSON.stringify(wf) });
+      }
+      // S3: a drum voice with no bank → rotate the drum machine.
+      const soundVoice = chain.find((c) => SAMPLE_ASSIGN.has(c.fn));
+      if (soundVoice && !hasPitch && !fns.has('bank') && DRUM_RE.test(soundVoice.content)) {
+        const bank = COVERAGE_BANKS[Math.floor(rng() * COVERAGE_BANKS.length)];
+        chain.push({ fn: 'bank', content: JSON.stringify(bank) });
+      }
+    }
     lines.push('$: ' + chain.map(({ fn, content }) => `${fn}(${content})`).join('.'));
   }
   return { code: lines.join('\n\n') + '\n', voices: lines.length, seed };
@@ -261,6 +324,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   MAX_VOICES = parseInt(arg('max-voices', String(MAX_VOICES)), 10);
   MIN_LEN = parseInt(arg('min-len', String(MIN_LEN)), 10);
   MAX_LEN = parseInt(arg('max-len', String(MAX_LEN)), 10);
+  TIMBRE_COVERAGE = process.argv.includes('--timbre-coverage');  // S1 (B6)
 
   if (out) mkdirSync(out, { recursive: true });
   const collected = [];
@@ -277,7 +341,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(yamlPath, toYaml({
       generator: 'data_gen/generate.mjs',
       params: { n, seed, temp: TEMP, min_voices: MIN_VOICES, max_voices: MAX_VOICES,
-                min_len: MIN_LEN, max_len: MAX_LEN, max_order: MAX_ORDER },
+                min_len: MIN_LEN, max_len: MAX_LEN, max_order: MAX_ORDER,
+                timbre_coverage: TIMBRE_COVERAGE },
       count: collected.length, songs: collected,
     }));
     console.log(`wrote ${collected.length} songs to ${yamlPath}`);

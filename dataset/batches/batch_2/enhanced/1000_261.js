@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("EmuDrumulator_lt ~").velocity(.3).gain(.6)
-$: note("d2*4 a#4 ~").gain(.4).release(.2)
-$: note("e4 f2").sound("piano").lpf(1500).gain(.3).release(.1)
-$: s("gm_electric_guitar_clean:2 gm_choir_aahs").gain(.25)

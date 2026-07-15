@@ -1,5 +1,0 @@
-setcpm(130/4)
-$: s("hh*4 ~ sd bd").velocity(.65).gain(.6)
-$: s("hh*16").gain(.15)
-$: s("crow").struct("x*3").gain(.3)
-$: s("gm_harmonica gm_distortion_guitar:4").gain(.4)

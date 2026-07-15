@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("cowbell ~ cowbell ~").gain(.5)
-$: s("hh*8").gain(.2)
-$: note("g5 c6 g5 d5 g5 b5 g5 c5 e5 a5 e5 c5 f5 a5 f5 ~").s("sawtooth").lpf(3000).gain(.3)
-$: note("c3 f3").s("sawtooth").gain(.4)

@@ -1,5 +1,0 @@
-setcpm(95/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("gtr gm_acoustic_guitar_steel:1").gain(.5)
-$: s("triangle a").slow(2).gain(.3)
-$: s("gm_harmonica").gain(.25).room(.8).delay(.5)

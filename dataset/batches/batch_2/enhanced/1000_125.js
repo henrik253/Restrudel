@@ -1,6 +1,0 @@
-setcpm(90/4)
-$: s("lt ~").clip(1).release(.3).gain(.6)
-$: s("linndrum_bd ~").slow(2).gain(.7)
-$: s("bass flbass").slow(2).gain(.4)
-$: note("c5 g5 eb5 bb5").sound("hh").lpf(500).gain(.3)
-$: s("bd ~ ~ ~").gain(.6)

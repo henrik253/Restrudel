@@ -1,6 +1,0 @@
-setcpm(104/4)
-$: s("rd*3 sd").struct("1 ~ ~ ~").gain(.7)
-$: s("hh*16").distort("10:.17").room(.3).gain(.2)
-$: s("gm_drawbar_organ").note("c3 e3 g3 c4").room(.3).gain(.35)
-$: s("piano").note("c5 e5 g5 c6").bank("RolandMT32").gain(.3)
-$: s("square").note("c2 eb2 g2").gain(.4).pan(.5)

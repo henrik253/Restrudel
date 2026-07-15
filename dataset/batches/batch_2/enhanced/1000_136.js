@@ -1,5 +1,0 @@
-setcpm(118/4)
-$: s("bd*4 ~").fast(2).delay(".4:.15:.4").gain(.5)
-$: s("hh*8").bank("YamahaRY30").gain(.2).room(.3)
-$: s("gm_lead_6_voice ~ recorder_bass_sus ~ gm_synth_bass_1").bank("YamahaRY30").room(.3).gain(.4)
-$: s("psaltery_pluck ~").speed(1.5).bank("Linn9000").gain(.4).release(1).hpf(200).room(.5)

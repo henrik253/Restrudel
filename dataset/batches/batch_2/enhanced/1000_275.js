@@ -1,5 +1,0 @@
-setcpm(140/4)
-$: s("~ crash ~ ~").gain(.3).decay(.1).sustain(0).degradeBy(.5702).orbit(3)
-$: s("bd ~ bd ~").bank("RolandTR909").gain(.8)
-$: s("lead").lpf(3000).clip(1).sustain(0).release(.06).room(1).gain(.4)
-$: sound("sawtooth").lpf(4000).gain(.4)

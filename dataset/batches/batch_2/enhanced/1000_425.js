@@ -1,5 +1,0 @@
-setcpm(112/4)
-$: s("kick*4 ~").gain(.75)
-$: note("c2 g2 a2 f2").sound("sine").lpf(1500).room(.3).delay(.3).delaytime(.125).gain(.4)
-$: note("c4 d4 e4 f4").sound("supersaw").lpf(800).gain(.35)
-$: s("gm_piano gm_trumpet:2").slow(2).gain(.3)

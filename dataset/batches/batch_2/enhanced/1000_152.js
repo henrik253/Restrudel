@@ -1,5 +1,0 @@
-setcpm(128/4)
-$: s("rd*3 linn9000_cr").gain(.7)
-$: note("e3 a3 c4 e4 a4 e4 f2 a2 c3 f3").s("sawtooth").lpf(2000).gain(.4)
-$: note("c4 a4 ~").s("hh*8").gain(.2)
-$: note("e5 ~ g5").s("sawtooth").lpf(2282).room(.2).gain(.4)

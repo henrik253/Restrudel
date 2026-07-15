@@ -1,5 +1,0 @@
-setcpm(120/4)
-$: s("bd ~ sd ~").bank("RolandTR909").gain(.8)
-$: s("hh*16").gain(.25).lpf(4500).resonance(10)
-$: s("triangle ~ gm_trumpet:2 ~").gain(.4)
-$: s("gm_tuba gm_piccolo").slow(2).gain(.35)

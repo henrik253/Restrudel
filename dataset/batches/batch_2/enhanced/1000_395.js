@@ -1,5 +1,0 @@
-setcpm(96/4)
-$: s("cr bd sd bd").gain(.8).release(.08).attack(.02)
-$: s("gm_electric_guitar_clean:2 gm_clarinet").slow(4).gain(.3)
-$: note("c1 f1 g1 a1").s("sawtooth").hpf(300).room(.5).delay(.3).gain(.4)
-$: note("g4 g3 b3 d4").sound("sine").lpf(3000).pan(.4).gain(.3)
