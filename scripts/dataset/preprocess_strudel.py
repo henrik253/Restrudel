@@ -146,7 +146,7 @@ def collect_inspired(yaml_path: Path):
         return []
     doc = yaml.safe_load(open(yaml_path))
     return [{"id": s["id"], "hash": snippet_hash(s["code"]), "path": str(yaml_path.name),
-             "code": s["code"]} for s in doc["songs"]]
+             "code": s["code"]} for s in doc["songs"] or []]
 
 
 def collect_sketches(yaml_path: Path):
@@ -164,7 +164,7 @@ def collect_sketches(yaml_path: Path):
         return []
     doc = yaml.safe_load(open(yaml_path))
     return [{"id": f"sketch_{s['id']}", "hash": snippet_hash(s["code"]),
-             "path": str(yaml_path.name), "code": s["code"]} for s in doc["songs"]]
+             "path": str(yaml_path.name), "code": s["code"]} for s in doc["songs"] or []]
 
 
 # ------------------------------------------------------------ program map ---

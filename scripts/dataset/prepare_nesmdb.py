@@ -91,13 +91,18 @@ def download(data_home: Path) -> Path:
     return src
 
 
-def render_audio(vgm_dir: Path, stem: str, out_wav: Path, vgm2wav: str) -> bool:
+def render_audio(
+    vgm_dir: Path, stem: str, out_wav: Path, vgm2wav: str,
+    duration_sec: float | None = None,
+) -> bool:
     """Render one song's Raw-VGM to 16 kHz mono WAV via vgm2wav + downsample.
 
     NES-MDB's MIDI and VGM are both derived from the same assembly at 44.1 kHz
-    resolution, so they are alignment-compatible; verify first-onset alignment
-    across a sample of the batch before scaling (same probe as the Strudel
-    preprocessor).
+    resolution, so they are alignment-compatible (spike 2026-07-17: first-onset
+    deltas 0 to -30 ms over 12 songs). BUT many VGMs loop and vgm2wav renders
+    the loop passes, while the MIDI labels cover one pass only (+20-49 s of
+    unlabeled audio observed) — so the render is truncated to `duration_sec`,
+    the label duration.
     """
     vgm = next(iter(vgm_dir.rglob(f"{stem}.vgm")), None)
     if vgm is None:
@@ -107,13 +112,20 @@ def render_audio(vgm_dir: Path, stem: str, out_wav: Path, vgm2wav: str) -> bool:
                        capture_output=True, text=True)
     if r.returncode != 0 or not tmp44.exists():
         return False
-    from scipy.signal import resample_poly
-    with wave.open(str(tmp44)) as w:
-        sr, ch, n = w.getframerate(), w.getnchannels(), w.getnframes()
-        x = np.frombuffer(w.readframes(n), dtype="<i2").astype(np.float32) / 32768
-    if ch > 1:
-        x = x.reshape(-1, ch).mean(axis=1)
+    from scipy.io import wavfile  # vgm2wav writes WAVE_FORMAT_EXTENSIBLE;
+    from scipy.signal import resample_poly  # stdlib `wave` rejects it
+    sr, x = wavfile.read(tmp44)
+    if x.dtype == np.int16:
+        x = x.astype(np.float32) / 32768.0
+    elif x.dtype == np.int32:
+        x = x.astype(np.float32) / 2**31
+    else:
+        x = x.astype(np.float32)
+    if x.ndim > 1:
+        x = x.mean(axis=1)
     y = resample_poly(x, 16000, sr)
+    if duration_sec is not None:
+        y = y[: int(duration_sec * 16000)]
     with wave.open(str(out_wav), "w") as w:
         w.setnchannels(1)
         w.setsampwidth(2)
@@ -208,7 +220,8 @@ def main():
                      "midi_file": str(midi_path),
                      "program": program_list, "is_drum": is_drum_list}
             if not args.no_render:
-                if not render_audio(args.vgm_dir, nes_id, d / "mix.wav", args.vgm2wav):
+                if not render_audio(args.vgm_dir, nes_id, d / "mix.wav",
+                                    args.vgm2wav, duration_sec=dur):
                     no_vgm += 1
                     continue
                 with wave.open(str(d / "mix.wav")) as w:
