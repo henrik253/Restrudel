@@ -53,6 +53,66 @@
   margin: 0;
 }
 
+.examples {
+  margin-top: 24px;
+}
+
+.examplesLabel {
+  display: block;
+  color: var(--text-3);
+  font-size: 12.5px;
+  margin-bottom: 12px;
+}
+
+.exampleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.exampleChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--bg-3);
+  background: var(--bg-1);
+  color: var(--text-1);
+  font-size: 13.5px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.exampleChip:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--bg-2);
+}
+
+.exampleChip:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.play {
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.exampleTitle {
+  font-weight: 600;
+}
+
+.exampleArtist {
+  color: var(--text-3);
+}
+
+.loadError {
+  color: var(--danger);
+  font-size: 12.5px;
+  margin: 12px 0 0;
+}
+
 .footnote {
   color: var(--text-3);
   font-size: 13px;

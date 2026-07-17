@@ -93,7 +93,7 @@ export function WaveformEditor({ file, minLen, maxLen, active, onReady, onDecode
       setDuration(dur);
       cbRef.current.onReady(buffer, dur);
       if (dur < minLen) return; // App rejects the file; no region
-      const end = Math.min(Math.max(4, minLen), dur, maxLen);
+      const end = Math.min(maxLen, dur); // default to the full 10 s window
       const region = regions.addRegion({
         id: 'selection',
         start: 0,

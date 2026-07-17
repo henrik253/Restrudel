@@ -23,3 +23,6 @@ datasets/
 # web app (Phase 7)
 app/frontend/dist/
 app/backend/.env
+
+# TS incremental build info
+app/frontend/*.tsbuildinfo

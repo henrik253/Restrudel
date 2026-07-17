@@ -20,7 +20,7 @@ export default function App() {
   const { state: job, createJob, regenerate, cancel, reset } = useJob();
   const [file, setFile] = useState<File | null>(null);
   const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
-  const [selection, setSelection] = useState<Selection>({ start: 0, end: 4 });
+  const [selection, setSelection] = useState<Selection>({ start: 0, end: 10 });
   const [prompt, setPrompt] = useState('');
   const [localError, setLocalError] = useState<LocalError>(null);
   const [errorDismissed, setErrorDismissed] = useState(false);
