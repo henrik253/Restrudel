@@ -77,6 +77,24 @@ reframes B3 from "find labeled audio" to "pick a renderer + a MIDI source."
   may be easier to access. *(current access route UNVERIFIED — verify Zenodo vs.
   request-gate.)* **Effort: S** to adopt as input; it multiplies A's quality.
 
+## Execution status (2026-07-17, local macOS — no Colab needed)
+
+| set | state | size |
+|---|---|---|
+| **NES-MDB** | ✅ built + verified | 5,274 songs / **46.1 h** / 5.5 GB, official split 4500/402/372 |
+| **GigaMIDI** | ✅ 2,000 electronic MIDIs staged | feedstock only (no audio) |
+| **synth (Surge renders)** | ✅ renderer working + verified | run at scale pending |
+
+**NES-MDB carries synth bass in 4,670 of 5,274 songs (program 38)** — the class
+Slakh dropped entirely and where strudel50 scored only 0.169. It is also a
+second, independent renderer (2A03), so it directly attacks the renderer
+confound the Phase 6 critique raised.
+
+⚠️ **Licence correction: GigaMIDI is CC BY-NC 4.0 (NonCommercial)**, not CC BY
+4.0 as stated below. Fine for thesis/research use; it would constrain any
+commercial use of the Phase 7 app or of weights trained on it. MetaMIDI proper
+(Zenodo, CC BY 4.0) remains the permissive alternative if that ever matters.
+
 ## De-risk spikes (executed 2026-07-17, local macOS — no Colab needed)
 
 - **DawDreamer + Surge XT: PASSED.** `dawdreamer` pip-installs into the venv;
