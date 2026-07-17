@@ -41,11 +41,20 @@ reframes B3 from "find labeled audio" to "pick a renderer + a MIDI source."
   that renderer as `scripts/dataset/render_synths.py`.
 
 ### B. Existing labeled electronic datasets
-- **NES-MDB** ⭐ (MIT) — 5,278 songs / 397 NES games / >2M notes; the `nesmdb`
-  Python package **renders WAV headlessly** (VGMPlay) with per-voice note +
-  velocity + **timbre** labels. Timbre = pure 2A03 electronic (pulse/triangle/
+- **NES-MDB** ⭐ (MIT) — 5,278 songs / 397 NES games / >2M notes; per-voice note
+  + velocity + **timbre** labels. Timbre = pure 2A03 electronic (pulse/triangle/
   noise) — *real synthesized waveforms*, narrow palette. **Cheap, licensed, real
   electronic timbre. Effort: S** — the fastest win.
+  *Execution corrections (verified against the real release, 2026-07-16):*
+  distribution is **Google Drive** (the old GitHub-releases URL 404s;
+  sha256-verified in `prepare_nesmdb.py`); the MIDI tarball ships the
+  **official game-level train/valid/test split as directories** (4502/403/373 —
+  never re-split); tracks are named p1/p2/tr/no with programs **80/81 (Synth
+  Lead) / 38 (Synth Bass — the class Slakh dropped)** and the noise voice
+  already on **channel 9** (drums via `ch_9_as_drum=True`; its pitches are the
+  2A03's 16 noise periods, remapped to GM kick/snare/hat). The `nesmdb` pip
+  package is **Python-2-only** — audio comes from the **Raw VGM release +
+  `vgm2wav`** instead (see `prepare_nesmdb.py`).
 - **YM2413-MDB** — FM video-game dataset with instrument + emotion labels; *real
   FM* chiptune. Worth evaluating as a second chiptune source. *(label
   granularity / license UNVERIFIED.)*
