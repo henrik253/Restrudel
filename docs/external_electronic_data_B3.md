@@ -77,6 +77,26 @@ reframes B3 from "find labeled audio" to "pick a renderer + a MIDI source."
   may be easier to access. *(current access route UNVERIFIED — verify Zenodo vs.
   request-gate.)* **Effort: S** to adopt as input; it multiplies A's quality.
 
+## De-risk spikes (executed 2026-07-17, local macOS — no Colab needed)
+
+- **DawDreamer + Surge XT: PASSED.** `dawdreamer` pip-installs into the venv;
+  Surge XT 1.3.4 VST3 extracted from the official pkg into
+  `~/Library/Audio/Plug-Ins/VST3` (user dir, no sudo) + factory data into
+  `~/Library/Application Support/Surge XT`. Headless plugin load 1.6 s,
+  offline render of a real MIDI at **136× realtime**, non-silent — no xvfb.
+  Caveat confirming the plan's "patch map is the real work": `load_preset`
+  with Surge's `.fxp` returns False under VST3 (that API expects VST2 fxp) —
+  patch selection needs the VST3 state/parameter route in `render_synths.py`.
+- **NES-MDB VGM render: PASSED with one correction.** `vgm2wav` comes from
+  **ValleyBell/libvgm** (not vgmtools), builds with CMake; renders ~0.3 s per
+  song. First-onset alignment vs. the MIDI labels: 0 to −30 ms over the
+  spike sample (within mir_eval's ±50 ms). **VGMs loop** — the render must be
+  truncated to the label duration or up to ~49 s of unlabeled audio per song
+  poisons training (handled in `prepare_nesmdb.py`).
+- **GigaMIDI: BLOCKED on an operator step.** The HF dataset is gated;
+  fetching requires an authenticated account that accepted its terms
+  (`hf auth login` + accept at huggingface.co/datasets/Metacreation/GigaMIDI).
+
 ## Ranked plan
 
 1. **Build Avenue A** (`render_synths.py`, scaffolded here): DawDreamer + Surge
