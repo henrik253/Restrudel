@@ -1,0 +1,85 @@
+.wrap {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.header h2 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.meta {
+  color: var(--text-3);
+  font-size: 12.5px;
+}
+
+.playHint {
+  color: var(--text-3);
+  font-size: 13px;
+  margin: -6px 0 0 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.refine,
+.details {
+  margin-top: 4px;
+}
+
+.refineBody {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+}
+
+.refineRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bpm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  font-size: 13.5px;
+}
+
+.refineHint {
+  color: var(--text-3);
+  font-size: 12.5px;
+}
+
+.detailsBody {
+  margin-top: 12px;
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.detailsBody pre {
+  background: var(--bg-1);
+  border: 1px solid var(--bg-3);
+  border-radius: var(--radius-s);
+  padding: 14px;
+  overflow-x: auto;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-2);
+}
