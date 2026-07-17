@@ -176,10 +176,15 @@ SYNTH_PROGRAM = {
     "sawtooth": 81, "saw": 81, "supersaw": 81, "z_sawtooth": 81,
     "square": 80, "pulse": 80, "z_square": 80,
     "triangle": 80, "tri": 80, "z_triangle": 80, "sine": 80, "z_sine": 80,
+    # Strudel's own synth voices: real synthesis, so they belong in a synth
+    # class rather than falling through to DEFAULT_PROGRAM unflagged.
+    "fm": 81, "lead": 81,
 }
 OTHER_PROGRAM = {
     "piano": 0, "epiano": 2, "rhodes": 2, "organ": 16, "kalimba": 108,
     "guitar": 26, "gtr": 26, "bass": 38, "strings": 48, "pad": 88,
+    # GM-named sample voices (dirt-samples) -> their real class, not Synth Lead.
+    "gm_epiano1": 2, "gm_acoustic_bass": 38, "gm_electric_guitar_jazz": 26,
 }
 BASS_SPLIT_PITCH = 48  # below C3 -> synth bass
 DEFAULT_PROGRAM = 81   # unknown pitched sound -> Synth Lead (sawtooth)
@@ -193,6 +198,11 @@ DRUM_PITCH = {
     "bd": 36, "sd": 38, "cp": 40, "clap": 40, "rim": 37, "click": 37,
     "hh": 42, "sh": 42, "oh": 46, "cb": 56, "cr": 49, "rd": 51,
     "lt": 45, "mt": 48, "ht": 50, "tb": 54, "perc": 63,
+    # Spelled-out aliases of the rows above (must mirror DRUMS in
+    # data_gen/extract_labels.mjs, which decides drum-vs-pitched). Each reuses a
+    # pitch already listed here, so the drum-vocab guarantee still holds.
+    "kick": 36, "snare": 38, "sn": 38, "hat": 42, "cymbal": 49,
+    "cowbell": 56, "snare_rim": 37,
 }
 
 
