@@ -20,3 +20,6 @@ runs/
 # training datasets: built by scripts/dataset/*, synced to Google Drive via
 # scripts/dataset/sync_drive.sh — never committed
 datasets/
+# web app (Phase 7)
+app/frontend/dist/
+app/backend/.env
