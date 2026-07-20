@@ -472,6 +472,11 @@ re-splitting would just bake the leak in again.
 - [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
       strudel50-style mix rebalanced toward the new electronic data (keep
       slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.
+      **Full strategy deep-think (2026-07-17): [finetune_strategy_B7.md](finetune_strategy_B7.md)**
+      — iterated plan v0→v5 (eval-first, hygiene run, renderer/timbre diversity,
+      WiSE-FT retention frontier, pseudo-labeling) + the MIDI→Strudel codegen
+      ladder c0→c5 with the symbolic round-trip F1 metric; includes the concrete
+      run table R0–R5 and starting flags.
 - [ ] **B8 — Benchmark v2 + decision gate.** nb06 plus: external
       real-electronic eval set (hand-labeled clips; app opt-in uploads from
       A6 feed this), confusion matrix of predicted programs (settles the
