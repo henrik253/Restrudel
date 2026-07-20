@@ -489,6 +489,11 @@ re-splitting would just bake the leak in again.
 - [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
       strudel50-style mix rebalanced toward the new electronic data (keep
       slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.
+      **Full strategy deep-think (2026-07-17): [finetune_strategy_B7.md](finetune_strategy_B7.md)**
+      — iterated plan v0→v5 (eval-first, hygiene run, renderer/timbre diversity,
+      WiSE-FT retention frontier, pseudo-labeling) + the MIDI→Strudel codegen
+      ladder c0→c5 with the symbolic round-trip F1 metric; includes the concrete
+      run table R0–R5 and starting flags.
       *Config implemented 2026-07-16 (pipeline-fixes branch): nb05 now runs
       LR 3e-5 + cosine warmup, 10k steps, two seeds (42/1337) of ONE mix via
       `pl.seed_everything` (train.py has no seed flag), with nesmdb joining
