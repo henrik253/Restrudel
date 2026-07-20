@@ -31,9 +31,16 @@ const { values: args } = parseArgs({
 });
 
 // Drum sample names as used across the corpus (tidal-drum-machines / dirt-samples).
+// Second row: unambiguous spelled-out aliases of the same instruments. They must
+// be here, not just in the program map: `kind` is decided by this set, so a name
+// missing here becomes a *pitched* event the moment a voice carries a note()
+// (e.g. `note("d c eb").s("kick*4 bd")` split one voice into drums + Synth Lead).
+// Every alias maps to a pitch already used by DRUM_PITCH in
+// scripts/dataset/preprocess_strudel.py — keep the two in sync.
 const DRUMS = new Set([
   'bd', 'sd', 'hh', 'oh', 'cp', 'rim', 'cb', 'cr', 'rd', 'lt', 'mt', 'ht',
   'tb', 'sh', 'perc', 'click', 'clap',
+  'kick', 'snare', 'sn', 'hat', 'cymbal', 'cowbell', 'snare_rim',
 ]);
 
 function toMidiPitch(value) {

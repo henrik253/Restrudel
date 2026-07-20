@@ -472,6 +472,17 @@ re-splitting would just bake the leak in again.
 - [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
       strudel50-style mix rebalanced toward the new electronic data (keep
       slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.
+      *Config implemented 2026-07-16 (pipeline-fixes branch): nb05 now runs
+      LR 3e-5 + cosine warmup, 10k steps, two seeds (42/1337) of ONE mix via
+      `pl.seed_everything` (train.py has no seed flag), with nesmdb joining
+      the mix automatically once notebook 04 built+rendered it (else the mix
+      renormalizes to ~strudel50). Also fixed en route: raw S1 sketches now
+      ingest directly (`sketch_*`, LLM step truly optional), S2 aug variants
+      are indexed as train entries (train list only, test refused), preset
+      registration replaces stale sentinel blocks instead of skipping, and
+      NES-MDB was rebuilt against the verified release (official in-tarball
+      split, noise→GM drums, synth-bass labels, VGM+vgm2wav render path —
+      the py2-only `nesmdb` package is out).*
 - [ ] **B8 — Benchmark v2 + decision gate.** nb06 plus: external
       real-electronic eval set (hand-labeled clips; app opt-in uploads from
       A6 feed this), confusion matrix of predicted programs (settles the

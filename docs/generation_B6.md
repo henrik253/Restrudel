@@ -66,17 +66,37 @@ $: note("b4 eb4 g4 bb4").s("fm")
 # 1. generate train-side sketches with timbre coverage (S1+S3)
 node data_gen/generate.mjs --n 500 --seed 1 --temp 0.2 --timbre-coverage \
      --yaml dataset/batches/batch_1/sketches.yaml
-# 2. (optional, gated) LLM-diversify timbre/FX — needs codex or anthropic key
-#    python data_gen/enhance_samples.py --batch 1 --llm codex
-#    python data_gen/collate_enhanced.py --batch 1
-# 3. render + label + index (writes 16 kHz WAV to Drive, .npy labels, file lists)
+# 2. collate batches -> dataset/sketches_all.yaml (always) and, if the
+#    optional LLM step ran, dataset/enhanced_all.yaml
+#    python data_gen/enhance_samples.py --batch 1 --llm codex   # optional
+#    python data_gen/collate_enhanced.py --all
+# 3. render + label + index (writes 16 kHz WAV to Drive, .npy labels, file lists).
+#    Ingests corpus + enhanced (inspired_*) + RAW sketches (sketch_*) — the
+#    direct-S1 path exists, so the LLM step is genuinely optional.
 python scripts/dataset/preprocess_strudel.py --data-home $DATA_HOME
 #    -> corpus TRAIN only enters train/val; TEST_REPOS held out (B5)
-# 4. audio-domain augmentation (S2): N variants per rendered clip
+# 4. audio-domain augmentation (S2), TRAIN LIST ONLY: augments each listed song
+#    AND appends the variants as index entries (a bare *_aug.wav next to the
+#    original is invisible to the loader). Refuses *test* lists by design.
 python scripts/dataset/augment_audio.py \
-     --render-dir $DATA_HOME/strudel_yourmt3_16k --n 1
-#    -> add the *_aug*.wav as extra train entries (test set stays un-augmented)
+     --file-list $DATA_HOME/yourmt3_indexes/strudel_train_file_list.json --n 1
 ```
+
+## Executed 2026-07-17 (locally — the Colab dependency was unnecessary)
+
+- **batch_1 generated + rendered:** 500 coverage sketches -> 424 usable
+  (85% yield; 21 eval-fail, 12 render-fail, 43 empty). Ingested via the new
+  `sketches` source, no LLM step.
+- **Full strudel set rebuilt** with one consistent labeller: 1,022 songs
+  (929 train / 45 val / 48 test), onset alignment median **+0.4 ms** (p90 3.9).
+- **S2 applied to the train list only:** 929 base -> +929 aug entries (1,858
+  total); test/validation carry zero aug entries (verified).
+- **Split invariant re-verified:** 0 leak, test = 48 held-out corpus songs, all
+  from the B5 manifest, no synthetic in test.
+
+⚠️ **The test split is small: 48 songs** (of the 124 patterns B5 held out — the
+rest fail to render). B8 must read per-class numbers on it with wide error
+bars, and the renderer-transfer / external eval matters more because of it.
 
 Ablations for B8 to measure (per B4): coverage-on vs. corpus-sampled; S2 on vs.
 off; LLM-enhance on vs. off — each on the external electronic eval.

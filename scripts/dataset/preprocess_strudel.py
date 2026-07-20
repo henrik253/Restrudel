@@ -2,12 +2,14 @@
 """Build the Strudel training dataset in YourMT3's native format.
 
 Sources
-  corpus    50% of the pattern snippets extracted from corpus/github/* (the
-            other 50% is WITHHELD for evaluation — its ids are recorded in
-            strudel_holdout.json and never rendered here). The split is a
-            deterministic hash of the code, so it never changes between runs.
-  inspired  all songs from dataset/enhanced_all.yaml (the improved
-            recompositions across every batch — NOT the raw sampled sketches).
+  corpus    pattern snippets extracted from corpus/github/*. Split is
+            REPOSITORY-level (Track B B5, TEST_REPOS): held-out repos become
+            the Strudel test set; every other repo feeds train/validation.
+  inspired  songs from dataset/enhanced_all.yaml (LLM-enhanced recompositions,
+            ids inspired_*) — optional per B4; may be absent.
+  sketches  raw generate.mjs sketches from dataset/sketches_all.yaml
+            (ids sketch_<seed>_<i>) — the direct-S1 timbre-coverage path,
+            trainable without the LLM step.
 
 Per song (under <data-home>/strudel_yourmt3_16k/<id>/):
   song.js           the Strudel source
@@ -144,7 +146,25 @@ def collect_inspired(yaml_path: Path):
         return []
     doc = yaml.safe_load(open(yaml_path))
     return [{"id": s["id"], "hash": snippet_hash(s["code"]), "path": str(yaml_path.name),
-             "code": s["code"]} for s in doc["songs"]]
+             "code": s["code"]} for s in doc["songs"] or []]
+
+
+def collect_sketches(yaml_path: Path):
+    """Raw generate.mjs sketches (dataset/sketches_all.yaml) — the direct-S1 path.
+
+    B4/B6 made the LLM-enhance step optional, so the timbre-coverage sketches
+    must be trainable WITHOUT it: this ingests them directly. Ids get a
+    `sketch_` prefix (raw yaml ids are `<seed>_<i>`), keeping them separable
+    from their `inspired_<seed>_<i>` LLM-enhanced twins for the B8
+    coverage-vs-LLM ablation.
+    """
+    import yaml
+    if not yaml_path.exists():
+        print(f"sketches: {yaml_path.name} absent (generate in B6) -> 0 songs")
+        return []
+    doc = yaml.safe_load(open(yaml_path))
+    return [{"id": f"sketch_{s['id']}", "hash": snippet_hash(s["code"]),
+             "path": str(yaml_path.name), "code": s["code"]} for s in doc["songs"] or []]
 
 
 # ------------------------------------------------------------ program map ---
@@ -156,10 +176,15 @@ SYNTH_PROGRAM = {
     "sawtooth": 81, "saw": 81, "supersaw": 81, "z_sawtooth": 81,
     "square": 80, "pulse": 80, "z_square": 80,
     "triangle": 80, "tri": 80, "z_triangle": 80, "sine": 80, "z_sine": 80,
+    # Strudel's own synth voices: real synthesis, so they belong in a synth
+    # class rather than falling through to DEFAULT_PROGRAM unflagged.
+    "fm": 81, "lead": 81,
 }
 OTHER_PROGRAM = {
     "piano": 0, "epiano": 2, "rhodes": 2, "organ": 16, "kalimba": 108,
     "guitar": 26, "gtr": 26, "bass": 38, "strings": 48, "pad": 88,
+    # GM-named sample voices (dirt-samples) -> their real class, not Synth Lead.
+    "gm_epiano1": 2, "gm_acoustic_bass": 38, "gm_electric_guitar_jazz": 26,
 }
 BASS_SPLIT_PITCH = 48  # below C3 -> synth bass
 DEFAULT_PROGRAM = 81   # unknown pitched sound -> Synth Lead (sawtooth)
@@ -173,6 +198,11 @@ DRUM_PITCH = {
     "bd": 36, "sd": 38, "cp": 40, "clap": 40, "rim": 37, "click": 37,
     "hh": 42, "sh": 42, "oh": 46, "cb": 56, "cr": 49, "rd": 51,
     "lt": 45, "mt": 48, "ht": 50, "tb": 54, "perc": 63,
+    # Spelled-out aliases of the rows above (must mirror DRUMS in
+    # data_gen/extract_labels.mjs, which decides drum-vs-pitched). Each reuses a
+    # pitch already listed here, so the drum-vocab guarantee still holds.
+    "kick": 36, "snare": 38, "sn": 38, "hat": 42, "cymbal": 49,
+    "cowbell": 56, "snare_rim": 37,
 }
 
 
@@ -350,7 +380,7 @@ def main():
                          "(must match the analysis notebook's TEST_FRACTION)")
     ap.add_argument("--cycles", type=int, default=8)
     ap.add_argument("--limit", type=int, help="stop after N songs (smoke test)")
-    ap.add_argument("--sources", default="corpus,inspired")
+    ap.add_argument("--sources", default="corpus,inspired,sketches")
     ap.add_argument("--index-only", action="store_true",
                     help="rebuild file lists from already-built song folders")
     args = ap.parse_args()
@@ -388,6 +418,10 @@ def main():
         inspired = collect_inspired(REPO / "dataset" / "enhanced_all.yaml")
         print(f"inspired: {len(inspired)} songs")
         songs += inspired
+    if "sketches" in sources:
+        sketches = collect_sketches(REPO / "dataset" / "sketches_all.yaml")
+        print(f"sketches: {len(sketches)} songs")
+        songs += sketches
     if args.limit:
         songs = songs[: args.limit]
 

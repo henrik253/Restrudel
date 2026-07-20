@@ -21,6 +21,7 @@ present for higher-quality reverb/MP3, else a numpy fallback runs.
   python scripts/dataset/augment_audio.py --render-dir DATA/strudel_yourmt3_16k --n 1
 """
 import argparse
+import json
 import wave
 from pathlib import Path
 
@@ -128,30 +129,90 @@ def augment(x, sr, rng):
     return x.astype(np.float32)
 
 
+def _stable_hash(s: str) -> int:
+    """Deterministic across processes (python's hash() is salted per run)."""
+    import hashlib
+    return int(hashlib.md5(s.encode()).hexdigest()[:8], 16)
+
+
+def _rng_for(seed: int, stem: str, k: int):
+    return np.random.default_rng((seed * 1000 + _stable_hash(stem) + k) % 2**31)
+
+
+def _variant(clip: Path, k: int) -> Path:
+    return clip.with_name(f"{clip.stem}_aug{k}.wav")
+
+
+def augment_file_list(fl_path: Path, n: int, seed: int, allow_test: bool):
+    """S2 for training: augment every entry of a YourMT3 file list IN the list.
+
+    This is the split-safe path (Track B B6): it touches only the songs the
+    given list references — pass the TRAIN list, and the test set can never be
+    augmented by construction — and it APPENDS each variant as its own index
+    entry, so the loader actually trains on it (a bare *_aug.wav next to the
+    original is invisible to YourMT3). Aug entries share the base entry's
+    labels (the chain is strictly time-preserving) and carry:
+      aug_of:  the base song id     aug_wav: the variant's file name
+    Re-runs are idempotent: existing aug entries are dropped and rebuilt
+    (same seed -> byte-identical variants).
+    """
+    if "test" in fl_path.name and not allow_test:
+        raise SystemExit(f"refusing to augment a TEST list ({fl_path.name}); "
+                         f"the test set stays un-augmented (--allow-test to override)")
+    fl = json.load(open(fl_path))
+    base = [e for e in fl.values() if "aug_wav" not in e]
+    out_entries, made = [], 0
+    for e in base:
+        out_entries.append(e)
+        clip = Path(e["mix_audio_file"])
+        if not clip.exists():
+            continue
+        x, sr = read_wav(clip)
+        for k in range(n):
+            out = _variant(clip, k)
+            write_wav(out, augment(x, sr, _rng_for(seed, clip.parent.name, k)), sr)
+            aug = dict(e)
+            aug["mix_audio_file"] = str(out)
+            aug["aug_of"] = e.get("strudel_id") or e.get("nes_id") or clip.parent.name
+            aug["aug_wav"] = out.name
+            out_entries.append(aug)
+            made += 1
+    fl_path.write_text(json.dumps({str(i): e for i, e in enumerate(out_entries)},
+                                  indent=4) + "\n")
+    print(f"{fl_path.name}: {len(base)} base songs -> +{made} aug entries "
+          f"({len(out_entries)} total)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--in", dest="inp", type=Path)
     ap.add_argument("--render-dir", type=Path,
-                    help="augment every <id>/mix.wav below this dir")
+                    help="augment every <id>/mix.wav below this dir (no indexing)")
+    ap.add_argument("--file-list", type=Path,
+                    help="a yourmt3 *_file_list.json: augment its songs AND "
+                         "append the variants as index entries (split-safe; "
+                         "pass the train list)")
     ap.add_argument("--n", type=int, default=1, help="variants per clip")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--allow-test", action="store_true")
     args = ap.parse_args()
 
+    if args.file_list:
+        augment_file_list(args.file_list, args.n, args.seed, args.allow_test)
+        return
     if args.render_dir:
         clips = sorted(args.render_dir.glob("*/mix.wav"))
     elif args.inp:
         clips = [args.inp]
     else:
-        raise SystemExit("pass --in <wav> or --render-dir <dir>")
+        raise SystemExit("pass --file-list <json>, --render-dir <dir> or --in <wav>")
 
     made = 0
     for clip in clips:
         x, sr = read_wav(clip)
         for k in range(args.n):
-            rng = np.random.default_rng(args.seed * 1000 + hash(clip.stem) % 997 + k)
-            y = augment(x, sr, rng)
-            out = clip.with_name(f"{clip.stem}_aug{k}.wav")
-            write_wav(out, y, sr)
+            y = augment(x, sr, _rng_for(args.seed, clip.parent.name, k))
+            write_wav(_variant(clip, k), y, sr)
             made += 1
     print(f"augmented {len(clips)} clip(s) -> {made} variant(s)")
 
