@@ -1,0 +1,29 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--danger-soft);
+  border: 1px solid var(--danger);
+  color: var(--text-1);
+  border-radius: var(--radius-m);
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.detail {
+  color: var(--text-2);
+}
+
+.dismiss {
+  background: none;
+  border: none;
+  color: var(--text-2);
+  font-size: 13px;
+  padding: 4px;
+}
+
+.dismiss:hover {
+  color: var(--text-1);
+}

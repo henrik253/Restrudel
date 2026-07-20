@@ -1,0 +1,41 @@
+.shell {
+  border: 1px solid var(--bg-3);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  background: var(--bg-1);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-2);
+  font-size: 14px;
+  padding: 24px;
+  margin: 0;
+}
+
+.editor {
+  min-height: 220px;
+}
+
+.editor :global(.cm-editor) {
+  font-size: 14px;
+}
+
+.fallback {
+  border: 1px solid var(--bg-3);
+  border-radius: var(--radius-m);
+  padding: 20px;
+  background: var(--bg-1);
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.fallback pre {
+  background: var(--bg-0);
+  border-radius: var(--radius-s);
+  padding: 14px;
+  overflow-x: auto;
+  color: var(--text-1);
+}
