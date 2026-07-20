@@ -1,0 +1,120 @@
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 12vh 24px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.tagline {
+  color: var(--text-2);
+  margin: 0 0 36px;
+  font-size: 16px;
+}
+
+.zone {
+  border: 1.5px dashed var(--bg-3);
+  border-radius: var(--radius-l);
+  padding: 48px 32px;
+  background: var(--bg-1);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.zone:hover,
+.dragOver {
+  border-color: var(--accent);
+  background: var(--bg-2);
+}
+
+.icon {
+  width: 96px;
+  color: var(--text-3);
+}
+
+.dragOver .icon,
+.zone:hover .icon {
+  color: var(--accent);
+}
+
+.hint {
+  color: var(--text-3);
+  font-size: 13px;
+  margin: 0;
+}
+
+.examples {
+  margin-top: 24px;
+}
+
+.examplesLabel {
+  display: block;
+  color: var(--text-3);
+  font-size: 12.5px;
+  margin-bottom: 12px;
+}
+
+.exampleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.exampleChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--bg-3);
+  background: var(--bg-1);
+  color: var(--text-1);
+  font-size: 13.5px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.exampleChip:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--bg-2);
+}
+
+.exampleChip:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.play {
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.exampleTitle {
+  font-weight: 600;
+}
+
+.exampleArtist {
+  color: var(--text-3);
+}
+
+.loadError {
+  color: var(--danger);
+  font-size: 12.5px;
+  margin: 12px 0 0;
+}
+
+.footnote {
+  color: var(--text-3);
+  font-size: 13px;
+  margin-top: 28px;
+}

@@ -332,25 +332,42 @@ RunPod Serverless GPU worker (scale-to-zero VM, strudel50 checkpoint on a
 network volume) · repo layout `app/{frontend,backend,gpu-worker}`.
 
 Work packages, in dependency order:
-- [ ] **A0 — Contracts & skeleton:** JSON schemas for job / GPU-worker I/O
-      (see architecture doc), `app/` scaffolding, docker-compose for the server.
+- [x] **A0 — Contracts & skeleton:** done 2026-07-17 (adapted): the contracts
+      live as **code**, not schema files — `app/backend/src/protocol.mjs`
+      mirrored by `app/frontend/src/protocol.ts`, exercised end-to-end by the
+      backend's ws-smoke test. `app/{backend,frontend}` scaffolded
+      (`app/README.md`). docker-compose still open → folded into A6.
 - [ ] **A1 — GPU worker:** extract the proven inference path from
       `notebooks/06_benchmark.ipynb` into `app/gpu-worker/` (RunPod
       `handler.py` + Dockerfile); tempo/beat estimation (librosa) lives here
       too; upload strudel50 to a RunPod network volume; deploy; measure
-      cold/warm latency. *Main integration risk — do first.*
-- [ ] **A2 — Codegen (the core new engineering, pure Node):** note events →
-      Strudel code: `setcps` from tempo, grid quantization per voice, drums →
-      mini-notation on corpus banks, pitched voices → `note()` + sounds/effects
-      from `analysis/results/` priors, `stack()` assembly. **Developed offline
-      against the existing aligned triples** (ground-truth events in → render
-      emitted code via `data_gen/render_offline.mjs` → spectral similarity vs.
-      original) — no GPU needed, codegen quality isolated from model quality.
-- [ ] **A3 — Backend:** Fastify + SQLite job flow, ffmpeg interval cut →
-      16 kHz mono WAV, RunPod client, SSE/poll progress, size/rate limits.
-- [ ] **A4 — Frontend:** upload + wavesurfer.js region selection, staged
-      progress (cold starts must look intentional), result in `@strudel/repl`,
-      copy/edit/play; BPM/offset correction control (re-run codegen only).
+      cold/warm latency. The backend-side adapter interface + contract is
+      already stubbed (`app/backend/src/transcribe/runpod.mjs`).
+- [x] **A2 — Codegen:** done 2026-07-17, **decision changed (user): LLM-based,
+      not rule-based** — port of `scripts/midi_to_strudel.py` to Node in
+      `app/backend/src/llm/`: per-voice 16th-grid text description, system
+      prompt carrying the measured `analysis/results/` priors, the user's
+      guidance prompt spliced in (style-only), output validated in the real
+      Strudel engine (killable child process running
+      `data_gen/strudel_eval.mjs`) + event-density gate, ≤3 feedback retries.
+      Still open (→ A5): the offline golden-triple regression harness
+      (ground-truth events → codegen → render → spectral similarity).
+- [x] **A3 — Backend:** done 2026-07-17 (adapted): **WebSocket** instead of
+      SSE/poll (decided 2026-07-16), in-memory job store w/ TTL instead of
+      SQLite (single server, low traffic; JSONL persistence seam noted for
+      A6), and **no ffmpeg** — the browser cuts/downmixes/resamples the
+      3–10 s snippet to 16 kHz mono WAV client-side. Transcriber adapters
+      mock/local/runpod; size + snippet-length + prompt limits; regenerate
+      re-runs only the LLM stage against cached events. 15 tests green
+      (`app/backend`, `npm test`).
+- [x] **A4 — Frontend:** done 2026-07-17: dark studio UI; upload →
+      wavesurfer.js region selection (**3–10 s**, clamped, loop playback,
+      spacebar), staged progress with narration + cancel, result in an
+      embedded `@strudel/repl` editor with play/stop/copy, guidance-prompt
+      disclosure, BPM correction + regenerate (no re-transcription),
+      auto-reconnect with job resubscribe. Verified end-to-end in the browser
+      on the mock path; real-LLM path pending credentials (claude CLI login
+      expired on the dev machine / no API key).
 - [ ] **A5 — Round-trip similarity score:** render the generated code, compare
       log-mel spectrograms vs. the input interval → 0–1 score in the UI; same
       harness doubles as A2's regression metric.
