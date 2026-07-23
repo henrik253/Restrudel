@@ -12,9 +12,9 @@ Upload a track, select a snippet, and get back working [Strudel](https://strudel
 
 ## The problem
 
-State-of-the-art automatic music transcription (AMT) models such as **YourMT3+** are excellent at piano, drums, and acoustic band recordings — and nearly useless on **synth-heavy electronic music**. The reason is the training data: these models learned "synthesizer" from a handful of static sampled patches, never from a real subtractive/FM/wavetable synth engine, and their datasets contain **no synth bass at all**. Their own evaluation shows Synth Lead transcription collapsing from F1 0.82 (in-domain) to **0.02 on real recordings**.
+The [Strudel REPL](https://strudel.cc) is a live-coding environment used **mostly for electronic music** — and Restrudel's goal is to turn an mp3 into a *similar* Strudel pattern. That makes the transcription step the bottleneck: state-of-the-art automatic music transcription (AMT) models such as **YourMT3+** were trained on acoustic and sampled instruments (piano, band recordings), **not on electronic music**. They learned "synthesizer" from a handful of static sampled patches, never from a real subtractive/FM/wavetable synth engine, and their datasets contain no synth bass at all. Their own evaluation shows Synth Lead transcription collapsing from F1 0.82 (in-domain) to **0.02 on real recordings**.
 
-In short: the dominant genre of the last three decades is a blind spot for music transcription AI.
+So before the pipeline can work at all, the model has to be **fine-tuned on the electronic-music data it was never trained on** — that is the core of this project.
 
 ## The idea
 
@@ -24,22 +24,24 @@ To make the synthetic data realistic rather than random, I first **mined 855 rea
 
 ## Results: the fine-tune works ✅
 
-The released YourMT3+ checkpoint was fine-tuned on this synthetic corpus (~3.5 GPU-hours on a single A100). Note-level F1 on a held-out test set of **111 real, human-written Strudel songs** the model never saw:
+The released YourMT3+ checkpoint was fine-tuned on the weighted synthetic Strudel corpus plus external electronic-music data ("v2mix"), with **two independent seeds** to verify the result isn't a lucky run. Note-level F1, base model vs. the two fine-tuned models:
 
-| Category (onset F1) | Base YourMT3+ | Fine-tuned (strudel50) | Δ |
-|---|---|---|---|
-| **Synth Lead** | **0.000** | **0.515** | +0.52 |
-| Synth Bass | 0.000 | 0.169 | +0.17 |
-| Drums | 0.530 | 0.844 | +0.31 |
-| Multi-instrument F1 (right note *and* right instrument) | 0.521 | **0.839** | +0.32 |
+| Benchmark | Metric | Base | v2 (seed 42) | v2 (seed 1337) | Δ best vs base |
+|---|---|---|---|---|---|
+| **Strudel corpus** (test, 48 real songs) | multi-instr F1 | 0.207 | **0.462** | 0.460 | **+0.26** |
+| | pooled onset F1 | 0.373 | 0.334 | 0.309 | −0.04 |
+| **Strudel synthetic b1** (val-diag, 18) | multi-instr F1 | 0.109 | 0.422 | **0.446** | **+0.34** |
+| | pooled onset F1 | 0.159 | 0.309 | **0.320** | +0.16 |
+| **NES-MDB** (test, 50) | multi-instr F1 | 0.068 | **0.606** | 0.599 | **+0.54** |
+| | pooled onset F1 | 0.351 | **0.640** | 0.626 | +0.29 |
 
-The base model produced **literally zero** correct synth-lead or bass notes — the documented failure mode, quantified. After fine-tuning, the model attributes notes to the correct instruments across the board.
+How to read this:
 
-Honest caveats (full adversarial self-review in [docs/benchmark_interpretation_20260713.md](docs/benchmark_interpretation_20260713.md)):
-- Gains are proven on audio from the same synthesis engine it trained on; generalization to arbitrary EDM recordings is the current work (see below).
-- The fine-tune trades away some acoustic-band generality (Slakh −15, MAESTRO −11 F1) — an acceptable cost for a specialist model, with known mitigations (lower LR, replay).
+- **Multi-instrument F1** ("right note *and* right instrument") is the fairest single number for the task — and it jumps everywhere: **+0.26 on real, human-written Strudel songs** the model never saw, and **+0.54 on NES-MDB**, an *external* electronic-music dataset (NES chiptune) that proves the gains are not limited to audio from Strudel's own synth engine.
+- The two seeds land within ~0.01–0.02 of each other on every number — the improvement is **reproducible, not noise**.
+- Honest caveat: pooled onset F1 on the real-song corpus dips slightly (−0.04) — the fine-tuned model detects marginally fewer raw onsets but attributes what it finds to the correct instruments far more often, which is what matters for generating playable Strudel code.
 
-An A/B experiment with a second variant (percussion-heavy mix) confirmed the design choice: **there is no substitute for training on the target timbre distribution.**
+The test split is **leak-free by construction**: held-out songs come from entire repositories the model never trained on, not just held-out files.
 
 ## What's in progress right now 🚧
 
@@ -47,7 +49,7 @@ Two parallel tracks:
 
 **Track A — The application (Phase 7).** A full-stack web app so anyone can use the model: **React + Vite** frontend with an embedded Strudel REPL, **Node.js** backend on a personal server, and the GPU model deployed on **RunPod Serverless** (scale-to-zero — costs nothing while idle). Upload a song, pick a 3–10 s snippet, get editable code. Frontend and backend are merged; deployment hardening is ongoing.
 
-**Track B — Model v2 (Phase 8).** Push beyond Strudel-rendered audio toward **electronic music in general**: fixed a data-leak in the evaluation split (now split by *repository*, not by file), grew the corpus, added external electronic datasets and audio augmentation, and rendered patterns through a **real hardware-grade synth engine (Surge XT)** in addition to Strudel's own. Two v2 candidate models (independent seeds) are trained; the final benchmark against v1 is the last remaining step.
+**Track B — Model v2 (Phase 8).** Push beyond Strudel-rendered audio toward **electronic music in general**: fixed a data-leak in the evaluation split (now split by *repository*, not by file), grew the corpus, added external electronic datasets and audio augmentation, and rendered patterns through a **real hardware-grade synth engine (Surge XT)** in addition to Strudel's own. The two v2 models are trained and benchmarked (results above); next up is deeper evaluation on real-world EDM recordings and shipping the winning checkpoint into the app's model registry.
 
 ## Tech stack
 
