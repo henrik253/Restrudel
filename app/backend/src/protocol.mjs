@@ -6,7 +6,9 @@
 
 export const MSG = {
   // client -> server
-  JOB_CREATE: 'job.create', // binary frame
+  // Two forms: a binary frame carrying a client-cut WAV, or a text message
+  // referencing an uploaded track ({uploadId, snippet}) — see connection.mjs.
+  JOB_CREATE: 'job.create',
   JOB_REGENERATE: 'job.regenerate',
   JOB_CANCEL: 'job.cancel',
   JOB_SUBSCRIBE: 'job.subscribe',
@@ -35,6 +37,8 @@ export const ERR = {
   PROMPT_TOO_LONG: 'prompt_too_long',
   BAD_MESSAGE: 'bad_message',
   JOB_NOT_FOUND: 'job_not_found',
+  UPLOAD_NOT_FOUND: 'upload_not_found',
+  UNSUPPORTED_MEDIA: 'unsupported_media',
   JOB_BUSY: 'job_busy',
   TRANSCRIBER_FAILED: 'transcriber_failed',
   TRANSCRIBER_UNAVAILABLE: 'transcriber_unavailable',

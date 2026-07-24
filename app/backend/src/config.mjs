@@ -65,6 +65,15 @@ export function loadConfig(env = process.env) {
     repoRoot,
     dataGenDir: env.DATA_GEN_DIR ?? join(repoRoot, 'data_gen'),
     pythonBin: env.PYTHON_BIN ?? join(repoRoot, '.venv', 'bin', 'python'),
+    uploads: {
+      // A8: the full track is uploaded once and cut server-side per selection.
+      dir: env.UPLOAD_DIR, // default: <tmp>/restrudel-uploads
+      maxBytes: int(env.MAX_UPLOAD_BYTES, 60 * 1024 * 1024), // ~60 min of mp3
+      ttlMs: int(env.UPLOAD_TTL_MS, 60 * 60 * 1000),
+      maxDurationSec: int(env.MAX_UPLOAD_SECONDS, 30 * 60),
+      ffmpegBin: env.FFMPEG_BIN ?? 'ffmpeg',
+      ffprobeBin: env.FFPROBE_BIN ?? 'ffprobe',
+    },
     jobTtlMs: int(env.JOB_TTL_MS, 60 * 60 * 1000),
     validateTimeoutMs: int(env.VALIDATE_TIMEOUT_MS, 30_000),
     limits: {

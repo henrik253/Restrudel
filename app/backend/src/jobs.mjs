@@ -10,6 +10,7 @@
 import { EventEmitter } from 'node:events';
 import { randomUUID } from 'node:crypto';
 import { generateCode, normalizeMode } from './codegen/index.mjs';
+import { cutToWav } from './lib/audio.mjs';
 import { estimateBpm } from './lib/tempo.mjs';
 
 const TERMINAL = new Set(['done', 'error']);
@@ -17,11 +18,12 @@ const TERMINAL = new Set(['done', 'error']);
 export class JobManager extends EventEmitter {
   #queue = Promise.resolve();
 
-  constructor({ config, transcriber, llm, log }) {
+  constructor({ config, transcriber, llm, uploads, log }) {
     super();
     this.config = config;
     this.transcriber = transcriber;
     this.llm = llm;
+    this.uploads = uploads;
     this.log = log;
     this.jobs = new Map();
     this.sweeper = setInterval(() => this.#sweep(), 60_000);
@@ -36,7 +38,12 @@ export class JobManager extends EventEmitter {
     return this.jobs.get(jobId);
   }
 
-  createJob({ wavBuffer, prompt, bpmHint, snippet, codegen }) {
+  /**
+   * Either `wavBuffer` (already-cut 16 kHz mono WAV) or `source`
+   * ({uploadId, startSec, endSec}) — with a source, the snippet is cut here
+   * (A8), so re-selecting the same track costs no upload.
+   */
+  createJob({ wavBuffer, source, prompt, bpmHint, snippet, codegen }) {
     const job = {
       id: randomUUID(),
       revision: 1,
@@ -55,6 +62,7 @@ export class JobManager extends EventEmitter {
       error: null,
       abort: new AbortController(),
     };
+    job.source = source ?? null;
     this.jobs.set(job.id, job);
     // start on the next tick so the caller can subscribe before `queued` fires
     setImmediate(() => this.#run(job, wavBuffer).catch((e) => this.#fail(job, e)));
@@ -89,6 +97,7 @@ export class JobManager extends EventEmitter {
   }
 
   async #run(job, wavBuffer) {
+    if (!wavBuffer) wavBuffer = await this.#cutSnippet(job);
     this.#update(job, 'queued', 'waiting for a free slot …');
     await this.#enqueue(async () => {
       if (job.abort.signal.aborted) return;
@@ -148,6 +157,26 @@ export class JobManager extends EventEmitter {
       `job ${job.id} r${job.revision} done via ${g.mode} (${job.timings.generateMs} ms)`
       + (g.meta?.polishSkipped ? ` — polish skipped: ${g.meta.polishSkipped}` : ''),
     );
+  }
+
+  /** Cut the selected interval out of an uploaded track (A8). */
+  async #cutSnippet(job) {
+    const { uploadId, startSec, endSec } = job.source ?? {};
+    const upload = this.uploads?.get(uploadId);
+    if (!upload) {
+      throw Object.assign(
+        new Error('that upload has expired — pick the file again'),
+        { code: 'upload_not_found' },
+      );
+    }
+    this.#update(job, 'cutting', 'cutting the selected snippet …');
+    const t0 = Date.now();
+    const wav = await cutToWav(upload.path, startSec, endSec, {
+      ffmpegBin: this.config.uploads.ffmpegBin,
+      signal: job.abort.signal,
+    });
+    job.timings.cutMs = Date.now() - t0;
+    return wav;
   }
 
   #update(job, status, message, extra = {}) {

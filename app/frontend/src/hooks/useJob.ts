@@ -10,7 +10,7 @@ export interface JobState {
   hello: HelloMsg | null;
   jobId: string | null;
   revision: number;
-  status: 'idle' | 'queued' | 'transcribing' | 'generating' | 'done' | 'error';
+  status: 'idle' | 'queued' | 'cutting' | 'transcribing' | 'generating' | 'done' | 'error';
   message: string | null;
   progress: number | null;
   attempt: number | null;
@@ -94,6 +94,20 @@ export function useJob() {
     return () => socket.close();
   }, []);
 
+  /** A8: convert a range of an already-uploaded track — no audio on the wire. */
+  const createJobFromUpload = useCallback((msg: {
+    requestId: string; uploadId: string; prompt?: string; codegen?: CodegenMode;
+    snippet: { selStartSec: number; selEndSec: number };
+  }) => {
+    const socket = socketRef.current;
+    if (!socket?.isOpen) {
+      dispatch({ kind: 'localError', code: 'disconnected', message: 'not connected to the server — retrying …' });
+      return;
+    }
+    dispatch({ kind: 'reset' });
+    socket.send({ type: 'job.create', ...msg });
+  }, []);
+
   const createJob = useCallback((header: JobCreateHeader, wav: ArrayBuffer) => {
     const socket = socketRef.current;
     if (!socket?.isOpen) {
@@ -117,5 +131,5 @@ export function useJob() {
 
   const reset = useCallback(() => dispatch({ kind: 'reset' }), []);
 
-  return { state, createJob, regenerate, cancel, reset };
+  return { state, createJob, createJobFromUpload, regenerate, cancel, reset };
 }

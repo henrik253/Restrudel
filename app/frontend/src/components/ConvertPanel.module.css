@@ -71,3 +71,13 @@
   font-size: 12px;
   font-style: normal;
 }
+
+.uploadHint {
+  color: var(--text-3);
+  font-size: 12.5px;
+  margin: -4px 0 0;
+}
+
+.uploadHint span {
+  opacity: 0.75;
+}

@@ -1,7 +1,8 @@
 // protocol.ts — the WebSocket wire format. Mirror of app/backend/src/protocol.mjs;
 // keep the two in sync (the backend's ws_smoke test exercises the format).
 
-export type JobStatus = 'queued' | 'transcribing' | 'generating' | 'done' | 'error';
+// 'cutting' only occurs on the A8 upload path (the server slices the snippet).
+export type JobStatus = 'queued' | 'cutting' | 'transcribing' | 'generating' | 'done' | 'error';
 
 export interface NoteEvent {
   onset: number;

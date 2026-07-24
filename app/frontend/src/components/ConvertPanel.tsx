@@ -12,11 +12,14 @@ interface Props {
   onConvert: () => void;
   disabled: boolean;
   busy: boolean;
+  /** 0–1 while the track uploads, null when idle or done. */
+  uploadProgress: number | null;
   maxPromptChars: number;
 }
 
 export function ConvertPanel({
-  prompt, onPromptChange, codegen, onCodegenChange, onConvert, disabled, busy, maxPromptChars,
+  prompt, onPromptChange, codegen, onCodegenChange, onConvert, disabled, busy,
+  uploadProgress, maxPromptChars,
 }: Props) {
   return (
     <div className={styles.panel}>
@@ -29,6 +32,12 @@ export function ConvertPanel({
           'Convert selection'
         )}
       </button>
+      {uploadProgress !== null && (
+        <p className={styles.uploadHint}>
+          Uploading the track … {Math.round(uploadProgress * 100)}%
+          <span> — you can pick a selection meanwhile</span>
+        </p>
+      )}
       <details className="disclosure">
         <summary>Options (optional)</summary>
         <div className={styles.promptBox}>
