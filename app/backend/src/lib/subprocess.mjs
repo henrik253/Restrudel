@@ -7,13 +7,18 @@ import { spawn } from 'node:child_process';
  * @param {string} cmd
  * @param {string[]} args
  * @param {{cwd?: string, env?: object, input?: string|Buffer, timeoutMs?: number,
- *          signal?: AbortSignal, onStderrLine?: (line: string) => void}} [opts]
- * @returns {Promise<{stdout: string, stderr: string}>}
+ *          signal?: AbortSignal, onStderrLine?: (line: string) => void,
+ *          encoding?: 'utf8'|'buffer'}} [opts]
+ *   encoding 'buffer' keeps stdout as a Buffer — required for binary output
+ *   (e.g. ffmpeg writing a WAV to stdout), which string concatenation corrupts.
+ * @returns {Promise<{stdout: string|Buffer, stderr: string}>}
  */
 export function runCommand(cmd, args, opts = {}) {
-  const { cwd, env, input, timeoutMs = 120_000, signal, onStderrLine } = opts;
+  const { cwd, env, input, timeoutMs = 120_000, signal, onStderrLine, encoding = 'utf8' } = opts;
   return new Promise((resolve, reject) => {
     const child = spawn(cmd, args, { cwd, env, stdio: ['pipe', 'pipe', 'pipe'] });
+    const binary = encoding === 'buffer';
+    const chunks = [];
     let stdout = '';
     let stderr = '';
     let settled = false;
@@ -36,7 +41,7 @@ export function runCommand(cmd, args, opts = {}) {
     };
 
     child.on('error', (e) => fail(new Error(`failed to start ${cmd}: ${e.message}`)));
-    child.stdout.on('data', (d) => { stdout += d; });
+    child.stdout.on('data', (d) => { if (binary) chunks.push(d); else stdout += d; });
     let stderrBuf = '';
     child.stderr.on('data', (d) => {
       stderr += d;
@@ -57,7 +62,7 @@ export function runCommand(cmd, args, opts = {}) {
       if (code !== 0) {
         return reject(new Error(`${cmd} exited with code ${code}: ${stderr.trim().slice(-500)}`));
       }
-      resolve({ stdout, stderr });
+      resolve({ stdout: binary ? Buffer.concat(chunks) : stdout, stderr });
     });
 
     if (input !== undefined) child.stdin.end(input);

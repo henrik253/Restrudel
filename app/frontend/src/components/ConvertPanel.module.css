@@ -21,3 +21,63 @@
   font-size: 12.5px;
   margin: 6px 2px 0;
 }
+
+.modes {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px 12px;
+  margin: 16px 0 0;
+}
+
+.modes legend {
+  color: var(--text-3);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 6px;
+}
+
+.mode {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 6px 4px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.mode:hover {
+  background: var(--bg-2);
+}
+
+.mode input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.mode span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mode strong {
+  font-size: 13.5px;
+  font-weight: 550;
+}
+
+.mode em {
+  color: var(--text-3);
+  font-size: 12px;
+  font-style: normal;
+}
+
+.uploadHint {
+  color: var(--text-3);
+  font-size: 12.5px;
+  margin: -4px 0 0;
+}
+
+.uploadHint span {
+  opacity: 0.75;
+}

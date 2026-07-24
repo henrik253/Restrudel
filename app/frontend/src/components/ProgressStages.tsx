@@ -4,6 +4,9 @@ import type { JobState } from '../hooks/useJob';
 import styles from './ProgressStages.module.css';
 
 const STAGES = [
+  // 'cutting' is the server slicing the selection out of the uploaded track;
+  // it is fast, but showing it keeps the stage list honest about what runs.
+  { key: 'cutting', label: 'Cutting the snippet' },
   { key: 'transcribing', label: 'Transcribing audio' },
   { key: 'generating', label: 'Writing Strudel code' },
 ] as const;

@@ -4,6 +4,8 @@
 import { useCallback, useMemo, useState } from 'react';
 import styles from './App.module.css';
 import { ConvertPanel } from './components/ConvertPanel';
+import type { CodegenMode } from './protocol';
+import { uploadTrack, type UploadResult } from './lib/upload';
 import { DropZone } from './components/DropZone';
 import { ErrorBanner } from './components/ErrorBanner';
 import { ProgressStages } from './components/ProgressStages';
@@ -17,14 +19,19 @@ import { encodeWavPcm16Mono } from './lib/wav';
 type LocalError = { code: string; message: string } | null;
 
 export default function App() {
-  const { state: job, createJob, regenerate, cancel, reset } = useJob();
+  const { state: job, createJob, createJobFromUpload, regenerate, cancel, reset } = useJob();
   const [file, setFile] = useState<File | null>(null);
   const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
   const [selection, setSelection] = useState<Selection>({ start: 0, end: 10 });
   const [prompt, setPrompt] = useState('');
+  const [codegen, setCodegen] = useState<CodegenMode>('m2s+polish');
   const [localError, setLocalError] = useState<LocalError>(null);
   const [errorDismissed, setErrorDismissed] = useState(false);
   const [preparing, setPreparing] = useState(false);
+  // A8: the whole track goes to the backend as soon as it is picked, so every
+  // later selection is just a time range.
+  const [upload, setUpload] = useState<UploadResult | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<number | null>(null);
 
   const limits = job.hello?.limits ?? {
     minSnippetSec: 3,
@@ -49,8 +56,25 @@ export default function App() {
       setLocalError(null);
       setErrorDismissed(false);
       setAudioBuffer(null);
+      setUpload(null);
       reset();
       setFile(f);
+
+      // Upload while the user is still looking at the waveform: by the time
+      // they have chosen a range, the track is usually already on the server.
+      setUploadProgress(0);
+      uploadTrack(f, { onProgress: setUploadProgress })
+        .then((res) => {
+          setUpload(res);
+          setUploadProgress(null);
+        })
+        .catch((e) => {
+          setUploadProgress(null);
+          // Not fatal: convert() falls back to cutting in the browser.
+          if (e?.code !== 'cancelled') {
+            console.warn('upload failed, falling back to client-side cutting:', e);
+          }
+        });
     },
     [reset],
   );
@@ -79,6 +103,20 @@ export default function App() {
     if (!audioBuffer || !file) return;
     setLocalError(null);
     setErrorDismissed(false);
+
+    // Preferred path: the server already has the track — send just the range.
+    if (upload) {
+      createJobFromUpload({
+        requestId: crypto.randomUUID(),
+        uploadId: upload.uploadId,
+        prompt: prompt || undefined,
+        codegen,
+        snippet: { selStartSec: selection.start, selEndSec: selection.end },
+      });
+      return;
+    }
+
+    // Fallback (upload still running or failed): cut in the browser as before.
     setPreparing(true);
     try {
       const samples = await sliceAndResample(audioBuffer, selection.start, selection.end);
@@ -91,6 +129,7 @@ export default function App() {
         {
           requestId: crypto.randomUUID(),
           prompt: prompt || undefined,
+          codegen,
           snippet: {
             selStartSec: selection.start,
             selEndSec: selection.end,
@@ -105,7 +144,7 @@ export default function App() {
     } finally {
       setPreparing(false);
     }
-  }, [audioBuffer, file, selection, prompt, limits.maxWavBytes, createJob]);
+  }, [audioBuffer, file, selection, prompt, codegen, upload, limits.maxWavBytes, createJob, createJobFromUpload]);
 
   const newSelection = useCallback(() => {
     reset();
@@ -115,6 +154,7 @@ export default function App() {
   const replaceFile = useCallback(() => {
     setFile(null);
     setAudioBuffer(null);
+    setUpload(null);
     reset();
   }, [reset]);
 
@@ -178,9 +218,12 @@ export default function App() {
         <ConvertPanel
           prompt={prompt}
           onPromptChange={setPrompt}
+          codegen={codegen}
+          onCodegenChange={setCodegen}
           onConvert={convert}
           disabled={!audioBuffer || job.connection !== 'open'}
           busy={preparing}
+          uploadProgress={uploadProgress}
           maxPromptChars={limits.maxPromptChars}
         />
       )}

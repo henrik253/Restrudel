@@ -1,7 +1,7 @@
 // useJob.ts — owns the WebSocket and the lifecycle of the (single) active job.
 // Reducer over server messages; exposes createJob / regenerate / cancel.
 import { useCallback, useEffect, useReducer, useRef } from 'react';
-import type { HelloMsg, JobCreateHeader, JobResultMsg, ServerMsg } from '../protocol';
+import type { CodegenMode, HelloMsg, JobCreateHeader, JobResultMsg, ServerMsg } from '../protocol';
 import { encodeJobCreate } from '../protocol';
 import { ReconnectingSocket, wsUrl, type ConnectionState } from '../lib/ws';
 
@@ -10,7 +10,7 @@ export interface JobState {
   hello: HelloMsg | null;
   jobId: string | null;
   revision: number;
-  status: 'idle' | 'queued' | 'transcribing' | 'generating' | 'done' | 'error';
+  status: 'idle' | 'queued' | 'cutting' | 'transcribing' | 'generating' | 'done' | 'error';
   message: string | null;
   progress: number | null;
   attempt: number | null;
@@ -94,6 +94,20 @@ export function useJob() {
     return () => socket.close();
   }, []);
 
+  /** A8: convert a range of an already-uploaded track — no audio on the wire. */
+  const createJobFromUpload = useCallback((msg: {
+    requestId: string; uploadId: string; prompt?: string; codegen?: CodegenMode;
+    snippet: { selStartSec: number; selEndSec: number };
+  }) => {
+    const socket = socketRef.current;
+    if (!socket?.isOpen) {
+      dispatch({ kind: 'localError', code: 'disconnected', message: 'not connected to the server — retrying …' });
+      return;
+    }
+    dispatch({ kind: 'reset' });
+    socket.send({ type: 'job.create', ...msg });
+  }, []);
+
   const createJob = useCallback((header: JobCreateHeader, wav: ArrayBuffer) => {
     const socket = socketRef.current;
     if (!socket?.isOpen) {
@@ -105,7 +119,7 @@ export function useJob() {
     sessionStorage.setItem('restrudel.lastJobId', header.requestId);
   }, []);
 
-  const regenerate = useCallback((opts: { prompt?: string; bpmOverride?: number }) => {
+  const regenerate = useCallback((opts: { prompt?: string; bpmOverride?: number; codegen?: CodegenMode }) => {
     const socket = socketRef.current;
     if (!socket?.isOpen || !jobIdRef.current) return;
     socket.send({ type: 'job.regenerate', jobId: jobIdRef.current, requestId: crypto.randomUUID(), ...opts });
@@ -117,5 +131,5 @@ export function useJob() {
 
   const reset = useCallback(() => dispatch({ kind: 'reset' }), []);
 
-  return { state, createJob, regenerate, cancel, reset };
+  return { state, createJob, createJobFromUpload, regenerate, cancel, reset };
 }

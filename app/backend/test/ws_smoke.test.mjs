@@ -8,7 +8,7 @@ import { test } from 'node:test';
 import { once } from 'node:events';
 import WebSocket from 'ws';
 import { createApp } from '../src/server.mjs';
-import { encodeJobCreate, findDataGenDir, makeTestWav, testConfig } from './helpers.mjs';
+import { encodeJobCreate, findDataGenDir, findM2SDir, findPythonBin, makeTestWav, testConfig } from './helpers.mjs';
 
 const dataGenDir = findDataGenDir();
 const skip = dataGenDir ? false : 'data_gen node_modules not installed (run npm install in data_gen/)';
@@ -52,7 +52,16 @@ function attachInbox(ws) {
 }
 
 async function startApp(overrides = {}) {
-  const config = testConfig({ transcriber: 'mock', dataGenDir, llm: { provider: 'fake' }, ...overrides });
+  const config = testConfig({
+    transcriber: 'mock',
+    dataGenDir,
+    llm: { provider: 'fake' },
+    // Pinned to the LLM path so this stays hermetic: the default m2s path
+    // shells out to python + the vendored tool. The m2s path over the wire is
+    // covered separately below.
+    defaultCodegen: 'llm',
+    ...overrides,
+  });
   const app = createApp(config);
   await new Promise((r) => app.server.listen(0, r));
   return { app, port: app.server.address().port };
@@ -130,6 +139,49 @@ test('oversized and out-of-range snippets are rejected', { skip }, async () => {
     ws.send(encodeJobCreate({ requestId: 'rate' }, makeTestWav(4, 44100)));
     const err2 = await inbox.next((m) => m.type === 'job.error' && m.requestId === 'rate');
     assert.equal(err2.code, 'invalid_wav');
+  } finally {
+    ws.close();
+    app.close();
+  }
+});
+
+// The default path (m2s+polish) over the wire, including switching codegen
+// mode on regenerate without re-transcribing. Needs the vendored tool.
+test('codegen mode is selectable per job and per regenerate', {
+  skip: skip || (findM2SDir() ? false : 'MIDI-To-Strudel submodule not initialized'),
+}, async () => {
+  const { app, port } = await startApp({
+    defaultCodegen: 'm2s+polish',
+    pythonBin: findPythonBin(),
+    m2s: { dir: findM2SDir() },
+  });
+  const { ws, inbox } = await openSocket(port);
+
+  try {
+    await inbox.next((m) => m.type === 'hello');
+
+    // Explicitly ask for the deterministic tool, no LLM.
+    ws.send(encodeJobCreate({ requestId: 'm1', codegen: 'm2s' }, makeTestWav(4)));
+    const accepted = await inbox.next((m) => m.type === 'job.accepted');
+    const result = await inbox.next((m) => m.type === 'job.result' || m.type === 'job.error');
+
+    assert.equal(result.type, 'job.result', `unexpected error: ${JSON.stringify(result)}`);
+    assert.equal(result.codegen, 'm2s');
+    assert.match(result.code, /setcpm\(/);
+    assert.equal(result.meta.polished, false);
+
+    // Switch to the LLM path against the SAME cached events: a new revision
+    // and no second transcribe.
+    const before = inbox.all.length;
+    ws.send(JSON.stringify({ type: 'job.regenerate', jobId: accepted.jobId, codegen: 'llm' }));
+    const regenerated = await inbox.next((m) => m.type === 'job.result', { from: before });
+
+    assert.equal(regenerated.revision, 2);
+    assert.equal(regenerated.codegen, 'llm');
+    assert.ok(regenerated.code.includes('stack('), 'the fake LLM output came back');
+    const statusesAfter = inbox.all.slice(before).filter((m) => m.type === 'job.status');
+    assert.ok(!statusesAfter.some((m) => m.status === 'transcribing'),
+      'regenerate must not re-transcribe');
   } finally {
     ws.close();
     app.close();

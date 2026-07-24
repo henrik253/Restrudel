@@ -4,11 +4,18 @@
 import { useEffect, useRef, useState } from 'react';
 import type { JobState } from '../hooks/useJob';
 import { StrudelRepl, type StrudelReplHandle } from './StrudelRepl';
+import type { CodegenMode } from '../protocol';
 import styles from './ResultView.module.css';
+
+const MODE_LABELS: Record<CodegenMode, string> = {
+  'm2s+polish': 'converted + polished',
+  m2s: 'converted',
+  llm: 'written by AI',
+};
 
 interface Props {
   job: JobState;
-  onRegenerate: (opts: { prompt?: string; bpmOverride?: number }) => void;
+  onRegenerate: (opts: { prompt?: string; bpmOverride?: number; codegen?: CodegenMode }) => void;
   onNewSelection: () => void;
   maxPromptChars: number;
 }
@@ -49,9 +56,17 @@ export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }
       <header className={styles.header}>
         <h2>Strudel sketch</h2>
         <span className={`${styles.meta} mono`}>
-          {result.tempoBpm} bpm · attempt {result.attempts} · {result.llm.model}
+          {result.tempoBpm} bpm · {MODE_LABELS[result.codegen] ?? result.codegen}
+          {result.llm ? ` · ${result.llm.model}` : ''}
         </span>
       </header>
+
+      {result.meta?.polishSkipped && (
+        <p className={styles.notice}>
+          The AI polish step was skipped — you're seeing the direct conversion.{' '}
+          <span className="mono">{result.meta.polishSkipped}</span>
+        </p>
+      )}
 
       <StrudelRepl ref={replRef} code={result.code} onPlayingChange={setPlaying} />
       <p className={styles.playHint}>Edit the code live — it's yours now.</p>
@@ -121,9 +136,11 @@ export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }
           <p className="mono">
             {result.events.length} note events · transcribed in{' '}
             {((result.timings.transcribeMs ?? 0) / 1000).toFixed(1)} s · code written in{' '}
-            {((result.timings.generateMs ?? 0) / 1000).toFixed(1)} s ({result.llm.source})
+            {((result.timings.generateMs ?? 0) / 1000).toFixed(1)} s
+            {result.llm ? ` (${result.llm.source})` : ''}
+            {result.meta?.voiceCount ? ` · ${result.meta.voiceCount} voices` : ''}
           </p>
-          <pre className="mono">{result.describeText}</pre>
+          {result.describeText && <pre className="mono">{result.describeText}</pre>}
         </div>
       </details>
     </section>

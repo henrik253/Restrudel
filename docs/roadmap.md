@@ -342,7 +342,9 @@ Work packages, in dependency order:
       (`app/README.md`). docker-compose still open → folded into A6.
 - [ ] **A1 — GPU worker + RunPod integration** (plan agreed 2026-07-24; wire
       contract stays note-events JSON — the worker never returns raw MIDI):
-  - [ ] **A1a — worker package** `app/gpu-worker/`: extract the proven
+  - [x] **A1a — worker package** (done 2026-07-24, verified on CPU against the
+        released checkpoint: 8 s snippet → 45 events, load 8.3 s, infer 6.3 s;
+        19 unit checks). Original scope: `app/gpu-worker/`: extract the proven
         inference path from `notebooks/06_benchmark.ipynb` into a RunPod
         `handler.py` (model loaded at container start; checkpoint read from
         `/runpod-volume/checkpoints/<model_version>/`) + librosa
@@ -356,7 +358,9 @@ Work packages, in dependency order:
         endpoint (volume attached, min 0 / max 1 workers, FlashBoot on);
         endpoint ID + API key into the backend env (`RUNPOD_API_KEY` /
         `RUNPOD_ENDPOINT_ID`).
-  - [ ] **A1c — backend adapter:** implement the stub
+  - [x] **A1c — backend adapter** (done 2026-07-24; async run+poll, cancel,
+        timeout, worker-error vs transport-error, 10 tests against a fake
+        RunPod HTTP server). Original scope: implement the stub
         `app/backend/src/transcribe/runpod.mjs` — async `/run` + `/status`
         polling (a cold start can outlive the sync window), cancel/timeout
         handling, normalize to the canonical NoteEvent schema.
@@ -402,37 +406,44 @@ Work packages, in dependency order:
 - [ ] **A7 — Selectable MIDI→Strudel codegen + AI polish** (agreed
       2026-07-24; buildable offline against cached/mock events, parallel to
       A1):
-  - [ ] **A7a — events→MIDI module** `app/backend/src/midi/`: note events +
+  - [x] **A7a — events→MIDI module** (done 2026-07-24; hand-written type-1
+        MIDI so the tool's constraints hold, 11 tests) `app/backend/src/midi/`: note events +
         tempo → `.mid` buffer (one track per program, drums on channel 9);
         unit-tested against golden Phase-2 label events.
-  - [ ] **A7b — MIDI-To-Strudel adapter:** pin
+  - [x] **A7b — MIDI-To-Strudel adapter** (done 2026-07-24; submodule pinned,
+        subprocess per job in a scratch dir, engine-gated, 7 tests): pin
         `github.com/Emanuel-de-Jong/MIDI-To-Strudel` (GPL-3.0, Python, dep
         `mido`) as a shallow submodule, run as a **subprocess** per job
         (`Midi-to-Strudel.py -m job.mid --guess-instrument`, scratch dir);
         output gated by `strudel_eval.mjs`. Its 4/4-only limitation matches
         the pipeline's 4/4 assumption.
-  - [ ] **A7c — AI polish stage:** reuse `app/backend/src/llm/` — input =
+  - [x] **A7c — AI polish stage** (done 2026-07-24; carries the GM drum map the
+        tool lacks; falls back to raw tool output and says so): reuse `app/backend/src/llm/` — input =
         tool output + the user's optional guidance prompt; instruction:
         readable/idiomatic, apply the guidance, **do not change the notes**;
         engine-validation + density gate; on failure fall back to the
         unpolished tool output. On by default, toggleable in the UI.
-  - [ ] **A7d — selection plumbing:** `codegen` field in the WS job protocol
+  - [x] **A7d — selection plumbing** (done 2026-07-24; WS field, config
+        default, radio selector, mode-switch on regenerate): `codegen` field in the WS job protocol
         + frontend selector — **`m2s+polish` (default) | `m2s` (raw tool) |
         `llm` (the A2 path, kept)**; regenerate switches modes against cached
         events (no re-transcription, no GPU cost).
   - [ ] **A7e — end-to-end:** mock-path tests per adapter; one real snippet
         through upload → RunPod → MIDI → tool → polish → REPL; record
         latency + cost.
-- [ ] **A8 — Upload-flow rework: backend-side snippet cutting** (decided
+- [x] **A8 — Upload-flow rework: backend-side snippet cutting** (done
       2026-07-24; supersedes A3's client-side slicing):
-  - [ ] Full song uploads to the backend **immediately on file select**
-        (stored per session, TTL'd); a range selection then sends only
-        `{start_s, end_s}` — no audio re-upload per selection.
-  - [ ] Backend cuts + downmixes + resamples the selected snippet to 16 kHz
-        mono WAV (ffmpeg returns to the backend) and forwards it to the GPU
-        worker.
-  - [ ] Frontend keeps the wavesurfer selection UX; size/length limit checks
-        move server-side (snippet length limits unchanged).
+  - [x] Full song uploads to the backend **immediately on file select** via
+        `POST /api/upload` (disk-backed `UploadStore`, TTL-swept); a range
+        selection then sends only a text `job.create` with `{uploadId,
+        snippet}` — no audio re-upload per selection.
+  - [x] Backend cuts + downmixes + resamples to 16 kHz mono WAV (ffmpeg) in a
+        new `cutting` job stage, then forwards it to the transcriber.
+  - [x] Frontend keeps the wavesurfer UX, uploads in the background with
+        progress, and **falls back to client-side cutting** if the upload has
+        not finished or failed — so the binary path stays live.
+  - [x] Limits server-side: upload size + duration caps, snippet range
+        validated against the real track duration.
   - [ ] Why: snappier select→convert loop (re-select and re-transcribe
         without re-uploading), and the backend owns the canonical audio that
         A5 (similarity) and A6 (opt-in storage) need anyway.
