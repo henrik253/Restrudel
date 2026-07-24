@@ -1,17 +1,19 @@
 # Maximizing the YourMT3+ fine-tune for electronic music — and getting from MIDI to Strudel code
 
 *Deep-think for roadmap **B7/B8** (model v2) and **A2/A5** (codegen). Written 2026-07-17.*
+*Status 2026-07-24: R1 (the v2 hygiene run) is executed — v2mix seeds 42/1337
+trained + benchmarked (roadmap Phase 8 B7/B8). Still unexecuted here: R2–R5
+(renderer-diversity run, WiSE-FT retention frontier, decoder-freeze,
+pseudo-labeling) and the codegen ladder c1–c5.*
 *Method: start from what is proven, propose a version, attack it, fix what the attack
 exposes, repeat. Every fact is sourced to a repo doc; every imported technique is marked
 as literature-transfer (plausible here, not yet proven here).*
 
 Grounding documents:
 [benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md) (v1 results + adversarial critique),
-[base_model_training_data.md](base_model_training_data.md) (B0: what the base model actually saw),
-[external_electronic_data_B3.md](external_electronic_data_B3.md),
-[augmentation_strategy_B4.md](augmentation_strategy_B4.md),
-[repo_split_B5.md](repo_split_B5.md),
-[generation_B6.md](generation_B6.md),
+[roadmap.md](roadmap.md) Phase 8 B0–B6 (base-model ground truth, external data,
+generation strategy, repo split, train-side generation — the per-step docs were
+folded into the roadmap 2026-07-24),
 `notebooks/05_finetune.ipynb` (the exact training invocation).
 
 ---

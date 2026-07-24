@@ -36,7 +36,7 @@ let MIN_LEN = 2;          // tokens per content sequence: floor (>1 kills the
 let MAX_LEN = 32;         // tokens per content sequence: cap
 const MAX_ORDER = 6;      // longest prefix context to condition on
 
-// --- S1 timbre coverage (Track B B6 / docs/augmentation_strategy_B4.md) ------
+// --- S1 timbre coverage (Track B B6 / docs/roadmap.md Phase 8 B4) ------------
 // The generalization axis is TIMBRE, not symbolic realism. Sampling sounds/FX
 // from the corpus frequency reproduces its sawtooth dominance → exactly Slakh's
 // narrow-timbre trap. With --timbre-coverage on, timbre-shaping params are drawn

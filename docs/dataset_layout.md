@@ -5,14 +5,11 @@ writes. The `dataset/` directory is **created on demand** by
 `data_gen/generate.mjs` (`mkdirSync(..., {recursive:true})`) — it is not a
 tracked folder, so it may be absent in a fresh checkout until you generate.
 
-> **State (Track B B1, 2026-07-15): the generated set was purged and is not yet
-> regenerated.** The previous batches were sampled from distributions computed
-> over the **full** corpus — including files that later became the held-out test
-> set — so they were **leak-tainted**. They are regenerated **train-side only**
-> in Track B B6, *after* the repo-level split (B5). Generator code
-> (`data_gen/generate.mjs`, `enhance_samples.py`, `collate_enhanced.py`) is
-> unchanged; the real corpus under `corpus/github/*` was untouched. Drive-side
-> renders + YourMT3 index entries for the purged songs are cleaned up by
+> **State (Track B, 2026-07-17): the leak-tainted pre-B5 batches were purged
+> (B1) and the set was regenerated train-side only (B6):** batch_1 = 500
+> timbre-coverage sketches → 424 usable, ingested raw (`sketch_*`, no LLM
+> step). Generation samples only the B5 train-side distributions; Drive-side
+> leftovers of purged songs are cleaned by
 > `scripts/dataset/purge_generated_drive.py` (dry-run by default).
 
 ## Layout
@@ -50,7 +47,7 @@ dataset/
 ## Generating a batch (B6 — train-side sources only)
 
 ```bash
-# 1. sample sketches with timbre coverage (S1/S3) — see docs/generation_B6.md
+# 1. sample sketches with timbre coverage (S1/S3) — see roadmap Phase 8 B6
 node data_gen/generate.mjs --n 500 --seed 1 --temp 0.2 --timbre-coverage \
      --yaml dataset/batches/batch_1/sketches.yaml
 # 2. (optional, gated) LLM-diversify -> dataset/batches/batch_1/enhanced/<id>.js
@@ -60,7 +57,7 @@ python data_gen/collate_enhanced.py --batch 1     # collate + refresh *_all.yaml
 
 **B6 constraint:** generation samples only the **train-side** corpus
 distributions (recomputed in B5 after the repo-level split), never the full
-corpus. See [roadmap.md](roadmap.md) Phase 8 and [generation_B6.md](generation_B6.md).
+corpus. See [roadmap.md](roadmap.md) Phase 8 (B5/B6).
 
 ## Rendered artifacts (audio/MIDI/events)
 

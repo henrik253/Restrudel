@@ -21,7 +21,7 @@ sample playback** (~26 static lead/pad patches in Slakh) — no audio from a liv
 subtractive/FM/wavetable engine, and **no synth bass at all** (Slakh silently
 skipped GM 38–39). Result, from their own eval: Synth Lead F1 **0.82 in-domain
 collapses to 0.02 on real recordings** (verified 2026-07-15, see
-`docs/base_model_training_data.md`).
+`docs/roadmap.md` Phase 8 B0).
 
 **Our differentiator:** generate training data by **rendering MIDI through real
 synths and Strudel's own engine**, so the model finally sees synth timbres.

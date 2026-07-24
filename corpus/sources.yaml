@@ -27,7 +27,7 @@ ingested:
     kind: strudel-fork         # fork of the Strudel repo — carries the official
     note: >                    # example tunes (website/src/repl/tunes.mjs). This
       Contains the strudel.cc example tunes already, so the site's built-in
-      examples are ALREADY in-corpus — see docs/corpus_growth_B2.md.
+      examples are ALREADY in-corpus — see docs/roadmap.md (Phase 8 B2).
   - source: uzu-strudel
     url: https://codeberg.org/uzu/strudel.git
     author: uzu (Strudel maintainers)
@@ -99,7 +99,7 @@ candidates:
 # ------------------------------------------------------------------ rejected ---
 # Considered and dropped — no new Strudel MUSIC (tooling/engines/plugins), or
 # already represented above. The public Strudel-music ecosystem is thin; see
-# docs/corpus_growth_B2.md for the full sweep.
+# docs/roadmap.md (Phase 8 B2) for the full sweep.
 rejected_reason: >
   Exhaustive GitHub topic:strudel + keyword search returned overwhelmingly
   tooling (editors, MCP servers, converters, LSPs, visualizers) rather than

@@ -10,15 +10,14 @@ Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-inst
 > **🔥 Current priority: twin tracks (decided 2026-07-14).**
 > - **Track A — Application (Phase 7):** full-stack app — React+Vite frontend,
 >   Node backend on the personal server, model on **RunPod Serverless**
->   (scale-to-zero GPU VM). User uploads a song, selects an interval, gets
->   editable Strudel code in an embedded REPL. Design:
+>   (scale-to-zero GPU VM). Frontend + backend merged (PR #6); **A1 GPU
+>   worker, A5 similarity, A6 deploy remain.** Design:
 >   [application_architecture.md](application_architecture.md).
-> - **Track B — Model v2 (Phase 8):** shift the model **toward electronic music
->   broadly** (not just Strudel-rendered timbres), in strict order: base-model
->   ground truth (done) → purge leak-tainted synthetic data → grow the corpus
->   (strudel.cc scrape) → hunt external electronic data → rethink the
->   generation strategy → **split by repository** → only then generate → only
->   then fine-tune.
+> - **Track B — Model v2 (Phase 8):** B0–B8 core **done** — leak-free
+>   repo-level split, timbre-coverage generation, NES-MDB + Surge renderer,
+>   and **v2mix (seeds 42/1337) trained + benchmarked**: corpus multi_f
+>   0.207→0.46, NES-MDB 0.068→0.61. Remaining: external real-EDM eval + ship
+>   the winner into the app's model registry.
 >
 > The tracks run in parallel and meet at a versioned model registry: the app
 > ships v1 with strudel50 and swaps in Track B checkpoints as they win.
@@ -382,136 +381,105 @@ Work packages, in dependency order:
 ## Phase 8 — Model v2: shift to electronic music (Track B) 🔥
 **Outcome:** a checkpoint that beats strudel50 on **real electronic music**
 (not just Strudel-rendered audio), with forgetting no worse, measured on a
-trustworthy eval. The shift away from base YourMT3+ stays, but it must
-generalize to electronic music broadly. **Strict ordering (decided
-2026-07-15): ground truth → data reset → corpus growth → strategy rethink →
-split by repository → only then generate → only then train.** Rationale: the
-Phase 6 critique showed the split leaked and the synthetic data was generated
-from distributions that had seen the test files; regenerating before
-re-splitting would just bake the leak in again.
+trustworthy eval. **Strict ordering (decided 2026-07-15): ground truth → data
+reset → corpus growth → strategy rethink → split by repository → only then
+generate → only then train** (the Phase 6 split leaked; regenerating before
+re-splitting would bake the leak in again).
 
-- [x] **B0 — Ground truth: what did the base model train on?** Done
-      2026-07-15 → [base_model_training_data.md](base_model_training_data.md).
-      Verdict: base *has* Synth Lead/Pad labels (from Slakh, ≈2%/4.5% of
-      stems) but its only synth timbres are **~26 static Kontakt sample
-      patches** — nothing live-synthesized, and **synth bass was silently
-      skipped from Slakh entirely** (explains our Bass 0.000). Its own eval:
-      Synth Lead F1 0.82 in-domain → 0.02 on real recordings. Cautionary
-      tale for us: few static timbres from one renderer ⇒ the same cliff, one
-      renderer over — B2–B6 must maximize timbre/renderer diversity.
-- [x] **B1 — Purge the existing generated data.** Done 2026-07-15: removed
-      `dataset/batches/` (2009 files), `enhanced_all.yaml`, `sketches_all.yaml`
-      from git; `preprocess_strudel.py:collect_inspired` now tolerates the
-      missing yaml (corpus-only path still runs); `scripts/dataset/purge_generated_drive.py`
-      (dry-run by default) removes the matching Drive renders + drops their
-      YourMT3 index entries. Generator *code* and the real corpus are untouched;
-      the set is **regenerated train-side only in B6**.
-- [x] **B2 — Grow the corpus: scrape strudel.cc.** Done 2026-07-15 —
-      **finding: the public supply is saturated.** strudel.cc's built-in
-      examples are *already* in-corpus (our `uzu-strudel` + `strudel-coding-music`
-      sources carry `website/src/repl/tunes.mjs`), the site has no scrapeable
-      public pattern gallery (SPA + Codeberg blocks scrapers), and the wider
-      GitHub ecosystem is tooling, not songs. The four new personal repos found
-      are each blocked on license (unlicensed) or format (patterns in
-      `.html`/`.ts`) — none clears clean-licensed **and** non-trivial **and**
-      ingestible, so none was auto-added. Built the durable output instead:
-      `corpus/sources.yaml` (pluggable manifest: 8 ingested + 4 candidates with
-      blockers), `scripts/corpus/add_sources.sh`, and `docs/corpus_growth_B2.md`.
-      **Consequence for B5:** plan the repo split around the existing 8 sources;
-      real growth comes from generation (B6) + the app's user uploads (A6), not
-      scraping.
-- [x] **B3 — Hunt for external labeled electronic music data.** Done
-      2026-07-15 → [external_electronic_data_B3.md](external_electronic_data_B3.md)
-      (evidence-based survey). Key results: the renderer is **DawDreamer**
-      (Python VST3 host, offline, Colab-supported) hosting **Surge XT / Dexed /
-      Vital** — *correction to the old plan:* those synths have no offline CLI;
-      host them as VST3 in DawDreamer instead. Real work = the **GM-program →
-      synth-patch map** (scaffolded in `scripts/dataset/render_synths.py`,
-      plugs into `prepare_lakh.py`'s staging→loader promotion). Feed it
-      **MetaMIDI/GigaMIDI** genre-tagged electronic MIDI (CC BY 4.0) over
-      GM-filtered LMD. Quick independent win: **NES-MDB** (MIT, headless WAV +
-      note/timbre labels — real 2A03 electronic). Deprioritized: NSynth
-      (auxiliary; static samples recreate the Slakh trap), fluidsynth/SF2
-      (sampled baseline), BitMIDI/VGMusic (unlicensed). Fallback stays: scale
-      Strudel generation (B6), widening its timbre range per B4.
-- [x] **B4 — Rethink the generation/augmentation strategy.** Done 2026-07-15 →
-      [augmentation_strategy_B4.md](augmentation_strategy_B4.md). Decision:
-      **change the axis we sample on.** For a transcription model the
-      generalization axis is **timbre + audio realism**, not symbolic musical
-      realism — so:
-      - **S1** keep corpus-distribution sampling for *notes/rhythm/functions*,
-        but **decouple timbre**: a coverage sampler spans waveform/filter/env/
-        FX and *over-samples rare configs* (mirroring the corpus here is exactly
-        Slakh's 26-patch trap);
-      - **S2** add the missing **audio-domain augmentation** stage (mastering
-        chain: gain/EQ/comp/limit/saturation/bitcrush/short-reverb/MP3
-        round-trip; strictly time-preserving so labels stay aligned) — cheapest
-        + biggest realism gain, also sidesteps the node-web-audio-api FX gap;
-      - **S3** drum-bank rotation (breaks 909/808 memorization);
-      - structure/mini-notation: **not worth investing** (vary *density* as a
-        knob instead); LLM-enhance **repurposed** from "improve music" to
-        "diversify timbre/FX" and **gated on an ablation** (optional, not
-        critical path). *(codex requested for the LLM step is not installed —
-        B6 makes it pluggable `--llm codex|anthropic|none`.)*
-- [x] **B5 — Split by SOURCE, then freeze it.** Done 2026-07-15 →
-      [repo_split_B5.md](repo_split_B5.md). Leave-repositories-out split, frozen:
-      **TEST = strudel-songs-collection (eefano) + strudel_trance (honcoops) =
-      124 patterns, real songs, held-out authors**; TRAIN = the other 6 (731
-      patterns). The two Strudel forks (strudel-coding-music 70% + uzu-strudel)
-      stay together in train so their shared official `tunes.mjs` can't leak.
-      Single source of truth: `TEST_REPOS` in `preprocess_strudel.py` +
-      notebook 01, mirrored by `split_role` in `corpus/sources.yaml` (replaces
-      the drift-prone duplicated hash formula). **Recomputed distributions
-      train-side only** (ran notebook 01 headlessly → 731/124, all 10
-      `analysis/results/*.json` refreshed, `corpus_test.json` v2). **Dedup
-      audit** (`dedup_audit.py`): 0 cross-boundary duplicates, max test→train
-      Jaccard 0.208 → provably leak-free (the old hash split couldn't guarantee
-      this).
-- [x] **B6 — Only then: generate/augment the TRAINING set.** Done 2026-07-15 →
-      [generation_B6.md](generation_B6.md). Tooling built + verified locally,
-      train-side only (reads the B5 train-side distributions; test repos never
-      enter generation):
-      - **S1** `generate.mjs --timbre-coverage` — decouples timbre from the
-        corpus dist: FX/filter/env params span their range (10% extremes),
-        synth voices get a uniformly-chosen waveform (breaks sawtooth
-        dominance). Verified: 7 waveforms spread, lpf spans 111–1859+.
-      - **S2** `scripts/dataset/augment_audio.py` — strictly time-preserving
-        mastering-chain augmentation (gain/EQ/sat/comp/bitcrush/decimate/short-
-        reverb/limit). Verified: length preserved, onsets within ±50 ms, variants
-        differ meaningfully — labels stay aligned.
-      - **S3** drum-bank rotation (8 machines) — breaks 909/808 memorization.
-      Deferred to the Colab run (needs the Strudel engine + render + Drive): the
-      validity gate at scale, render/index, augment; the LLM-enhance step is
-      gated/optional and now **wired to codex** (`enhance_samples.py --model
-      codex`, demonstrated end-to-end). No unvalidated
-      batch committed (respects B1's purge). Full run recipe + B8 ablations in
-      the doc. Test set stays untouched raw corpus.
-- [ ] **B7 — Only then: fine-tune v2.** LR 3e-5 + warmup, 10–20k steps,
-      strudel50-style mix rebalanced toward the new electronic data (keep
-      slakh/maestro replay), **≥2 seeds**; nb05 driver as-is.
-      **Full strategy deep-think (2026-07-17): [finetune_strategy_B7.md](finetune_strategy_B7.md)**
-      — iterated plan v0→v5 (eval-first, hygiene run, renderer/timbre diversity,
-      WiSE-FT retention frontier, pseudo-labeling) + the MIDI→Strudel codegen
-      ladder c0→c5 with the symbolic round-trip F1 metric; includes the concrete
-      run table R0–R5 and starting flags.
-      *Config implemented 2026-07-16 (pipeline-fixes branch): nb05 now runs
-      LR 3e-5 + cosine warmup, 10k steps, two seeds (42/1337) of ONE mix via
-      `pl.seed_everything` (train.py has no seed flag), with nesmdb joining
-      the mix automatically once notebook 04 built+rendered it (else the mix
-      renormalizes to ~strudel50). Also fixed en route: raw S1 sketches now
-      ingest directly (`sketch_*`, LLM step truly optional), S2 aug variants
-      are indexed as train entries (train list only, test refused), preset
-      registration replaces stale sentinel blocks instead of skipping, and
-      NES-MDB was rebuilt against the verified release (official in-tarball
-      split, noise→GM drums, synth-bass labels, VGM+vgm2wav render path —
-      the py2-only `nesmdb` package is out).*
-- [ ] **B8 — Benchmark v2 + decision gate.** nb06 plus: external
-      real-electronic eval set (hand-labeled clips; app opt-in uploads from
-      A6 feed this), confusion matrix of predicted programs (settles the
-      exact-0.000 question for good), drums-excluded multi-instrument F1 +
-      per-class event counts. The new checkpoint replaces strudel50 in the
-      app (`model_version`) only if it wins on the external eval without
-      worse forgetting.
+- [x] **B0 — Ground truth: what did the base model train on?** Done 2026-07-15.
+      Base's entire synth-timbre experience = **~26 static Kontakt sample
+      patches** (Slakh; 14 lead + 12 pad) — nothing live-synthesized.
+      **Synth Bass (GM 38–39) was never seen at all** (Slakh skipped all 27
+      synth-bass stems; the class folds into Electric Bass) — explains our
+      Bass 0.000. Its own eval: Synth Lead F1 **0.820 in-domain → 0.023 on
+      RWC-Pop** (Pad 0.413 → 0.009). E-GMD contributed electronic *drum-module*
+      timbres only. Consequence: few static timbres from one renderer ⇒ the
+      same cliff one renderer over — B2–B6 maximize timbre/renderer diversity.
+- [x] **B1 — Purge the leak-tainted generated data.** Done 2026-07-15: removed
+      `dataset/batches/` (2009 files) + `enhanced_all.yaml`/`sketches_all.yaml`;
+      `scripts/dataset/purge_generated_drive.py` (dry-run by default) removes
+      the Drive renders + index entries. Generator code and the real corpus
+      untouched; regenerated train-side only in B6.
+- [x] **B2 — Grow the corpus: scrape strudel.cc.** Done 2026-07-15 — **public
+      supply is saturated**: strudel.cc's examples are already in-corpus (via
+      the two Strudel-repo sources' `tunes.mjs`), no scrapeable public gallery
+      exists, the GitHub ecosystem is tooling not songs, and the 4 candidate
+      repos found are blocked on license or format. Built `corpus/sources.yaml`
+      (pluggable manifest: 8 ingested + 4 candidates with blockers) +
+      `scripts/corpus/add_sources.sh`. Real growth = generation (B6) + app
+      uploads (A6).
+- [x] **B3 — External labeled electronic data.** Survey done 2026-07-15;
+      executed 2026-07-17 (locally — no Colab needed):
+      - **NES-MDB built: 5,274 songs / 46.1 h / 5.5 GB**, official in-tarball
+        split (4500/402/372); **synth bass (prog 38) in 4,670 songs** — the
+        class Slakh dropped; render via ValleyBell/libvgm `vgm2wav` (VGMs loop
+        → truncated to label duration); noise voice → GM drums on ch 9.
+      - **Surge XT + DawDreamer work headless** (136× realtime, no xvfb);
+        `scripts/dataset/render_synths.py` **implemented**: drives Surge's
+        2855 live params for timbre coverage (`.fxp` preset load is VST2-only
+        → parameter route instead); fixed stuck-voice tails, startup click,
+        phantom labels from inaudible voices, pitch-bend/CC leakage; verified
+        0/12 misaligned.
+      - **GigaMIDI: 2,000 electronic MIDIs staged** — license is **CC BY-NC
+        4.0** (thesis-OK, blocks commercial use); feedstock only, no audio.
+      - Rejected: NSynth (static samples = Slakh trap), fluidsynth/SF2
+        (sampled), BitMIDI/VGMusic (unlicensed).
+      - [ ] Surge render of the GigaMIDI feedstock: wired into nb04
+            (`DOWNLOAD['synth']`) but **never executed** at scale.
+- [x] **B4 — Generation/augmentation strategy.** Done 2026-07-15. Decisions:
+      **S1** timbre sampled for *coverage*, not corpus frequency (notes/rhythm
+      keep the corpus distribution); **S2** add time-preserving audio-domain
+      augmentation (mastering chain); **S3** drum-bank rotation; mini-notation
+      structure not worth investing (vary density instead); LLM-enhance
+      repurposed to timbre-diversification, optional + ablation-gated.
+- [x] **B5 — Split by SOURCE, frozen.** Done 2026-07-15: leave-repositories-out
+      — **TEST = strudel-songs-collection (eefano) + strudel_trance (honcoops)
+      = 124 patterns, held-out authors; TRAIN = the other 6 sources (731)**;
+      the two Strudel forks stay together in train (shared `tunes.mjs`).
+      Source of truth: `TEST_REPOS` in `preprocess_strudel.py` + notebook 01,
+      mirrored by `split_role` in `corpus/sources.yaml`. Distributions
+      recomputed **train-side only** (all 10 `analysis/results/*.json`,
+      `corpus_test.json` v2). Dedup audit (`dedup_audit.py`): 0 cross-boundary
+      duplicates, max test→train Jaccard 0.208 — provably leak-free.
+- [x] **B6 — Train-side generation + augmentation.** Tooling done 2026-07-15
+      (S1 `generate.mjs --timbre-coverage`, S2 `scripts/dataset/augment_audio.py`,
+      S3 bank rotation — all verified: 7 waveforms spread, onsets within
+      ±50 ms, banks rotate); codex backend wired in `enhance_samples.py`
+      (optional). Executed 2026-07-17 locally: batch_1 500 sketches → 424
+      usable; **full strudel set rebuilt = 1,022 songs (929 train / 45 val /
+      48 test) + 929 S2 aug train entries (1,858 train)**; onset alignment
+      median +0.4 ms; split checks PASS (0 leak); drum-alias label bug fixed
+      (`kick/sn/…` were labeled Synth Lead 81). ⚠️ test split = 48 songs —
+      wide error bars in B8.
+- [x] **B7 — Fine-tune v2.** Done 2026-07-22, run `*_20260722-050418`: mix
+      strudel .45 / nesmdb .15 / slakh .20 / maestro .10 / egmd .10, LR 3e-5 +
+      cosine warmup 1000, 10k steps, bf16, **two seeds 42 + 1337** (via
+      `pl.seed_everything`; ~7.5 h each on A100); checkpoints (759 MB
+      `last.ckpt` + `metadata.json`) in Drive under
+      `checkpoints/YourMT3+_fine_tuned_v2mix_s{42,1337}_20260722-050418/`.
+      Pipeline fixes merged en route (PR #4 + final 2026-07-22 merge):
+      raw-sketch ingestion, S2 aug indexing (train lists only), preset
+      sentinel replacement, NES-MDB rebuild. Strategy deep-think (still
+      partially unexecuted — WiSE-FT, codegen ladder):
+      [finetune_strategy_B7.md](finetune_strategy_B7.md).
+- [x] **B8 — Benchmark v2.** Done 2026-07-23 (also in README). Note-level F1,
+      base → v2mix_s42 / v2mix_s1337:
+
+      | benchmark | multi_f | pooled onset_f |
+      |---|---|---|
+      | corpus test (48 songs) | 0.207 → **0.462** / 0.460 | 0.373 → 0.334 / 0.309 |
+      | synthetic b1 (val-diag, 18) | 0.109 → 0.422 / **0.446** | 0.159 → 0.309 / 0.320 |
+      | NES-MDB test (50) | 0.068 → **0.606** / 0.599 | 0.351 → **0.640** / 0.626 |
+
+      Seeds agree within ~0.02 — reproducible. (Base corpus multi_f is 0.207
+      on the leak-free 48-song repo-level split, vs 0.521 on the old leaky
+      111-file Phase 6 eval.) **Remaining — the decision gate:**
+      - [ ] External real-EDM eval (hand-labeled clips; A6 opt-in uploads
+            feed this).
+      - [ ] Program confusion matrix, drums-excluded multi_f, per-class event
+            counts.
+      - [ ] Ship the winning checkpoint into the app (`model_version`) — only
+            if it wins on the external eval without worse forgetting.
 
 ---
 
@@ -528,14 +496,16 @@ re-splitting would just bake the leak in again.
    code in the deployed app (upload → RunPod → codegen → embedded REPL). (Ph 7)
 8. 🎯 **M8 — Model v2:** a checkpoint beats strudel50 on the *external* real-
    electronic eval without worse forgetting, and ships in the app. (Ph 8)
+   *Progress: v2mix (2 seeds) trained + benchmarked — corpus multi_f
+   0.207→0.46, NES-MDB 0.068→0.61; external eval + ship remain.*
 
 ## Open questions / risks
 - [x] SuperDough on `node-web-audio-api` — **resolved**: Phase 3 spike passed;
       `render_offline.mjs` renders synths + sample banks (AudioWorklet FX gap
       remains, see Phase 3).
-- [ ] Corpus size (~100s of songs) may be small for robust distributions — do we
-      also scrape strudel.cc shared links / forums? *(Also relevant to Phase 8
-      repo-held-out split: more repos = better splits.)*
+- [x] Corpus size — do we also scrape strudel.cc / forums? **Resolved by B2
+      (2026-07-15): the public supply is saturated; growth comes from
+      generation (B6) and app uploads (A6), not scraping.**
 - [x] Node-in-Colab ergonomics — **resolved in practice** across notebooks 00–06
       (apt/nvm Node install from Python cells, subprocess orchestration).
 - [ ] How much timbre/FX to encode as labels vs. notes-only (affects events JSON).
