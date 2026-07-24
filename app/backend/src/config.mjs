@@ -41,6 +41,14 @@ export function loadConfig(env = process.env) {
     runpod: {
       apiKey: env.RUNPOD_API_KEY,
       endpointId: env.RUNPOD_ENDPOINT_ID,
+      // Which checkpoint the GPU worker loads. A directory name on the RunPod
+      // network volume — swapping models is this env var, not a code change.
+      // Unset lets the worker use its own default.
+      modelVersion: env.RUNPOD_MODEL_VERSION,
+      baseUrl: env.RUNPOD_BASE_URL ?? 'https://api.runpod.ai/v2',
+      pollIntervalMs: int(env.RUNPOD_POLL_INTERVAL_MS, 1500),
+      // Generous: a cold start pulls the image and loads a 759 MB checkpoint.
+      maxWaitMs: int(env.RUNPOD_MAX_WAIT_MS, 5 * 60_000),
     },
     repoRoot,
     dataGenDir: env.DATA_GEN_DIR ?? join(repoRoot, 'data_gen'),

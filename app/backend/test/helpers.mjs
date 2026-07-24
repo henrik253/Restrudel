@@ -30,6 +30,7 @@ export function testConfig(overrides = {}) {
     ...overrides,
     llm: { ...config.llm, ...(overrides.llm ?? {}) },
     limits: { ...config.limits, ...(overrides.limits ?? {}) },
+    runpod: { ...config.runpod, ...(overrides.runpod ?? {}) },
   };
 }
 
