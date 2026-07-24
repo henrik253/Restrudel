@@ -50,6 +50,16 @@ export function loadConfig(env = process.env) {
       // Generous: a cold start pulls the image and loads a 759 MB checkpoint.
       maxWaitMs: int(env.RUNPOD_MAX_WAIT_MS, 5 * 60_000),
     },
+    m2s: {
+      // Pinned submodule (GPL-3.0) invoked as a subprocess — see codegen/m2s.mjs.
+      dir: env.M2S_DIR ?? join(repoRoot, 'vendor', 'MIDI-To-Strudel'),
+      // The tool defaults to 64 steps/bar, which is unreadable for a 3–10 s
+      // snippet; 16 keeps a bar on one line and still resolves 16th notes.
+      notesPerBar: int(env.M2S_NOTES_PER_BAR, 16),
+      tabSize: int(env.M2S_TAB_SIZE, 2),
+      guessInstrument: (env.M2S_GUESS_INSTRUMENT ?? '1') !== '0',
+      timeoutMs: int(env.M2S_TIMEOUT_MS, 60_000),
+    },
     repoRoot,
     dataGenDir: env.DATA_GEN_DIR ?? join(repoRoot, 'data_gen'),
     pythonBin: env.PYTHON_BIN ?? join(repoRoot, '.venv', 'bin', 'python'),

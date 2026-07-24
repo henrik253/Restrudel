@@ -23,6 +23,31 @@ export function findDataGenDir() {
   return null;
 }
 
+/**
+ * Locate the MIDI-To-Strudel submodule. Like data_gen, a worktree's own copy
+ * may be uninitialized — fall back to the main checkout.
+ */
+export function findM2SDir() {
+  const base = loadConfig({}).repoRoot;
+  const candidates = [
+    process.env.M2S_DIR,
+    join(base, 'vendor', 'MIDI-To-Strudel'),
+    resolve(base, '..', '..', '..', 'vendor', 'MIDI-To-Strudel'),
+  ].filter(Boolean);
+  return candidates.find((dir) => existsSync(join(dir, 'Midi-to-Strudel.py'))) ?? null;
+}
+
+/** Locate a python with the tool's deps; a worktree has no .venv of its own. */
+export function findPythonBin() {
+  const base = loadConfig({}).repoRoot;
+  const candidates = [
+    process.env.PYTHON_BIN,
+    join(base, '.venv', 'bin', 'python'),
+    resolve(base, '..', '..', '..', '.venv', 'bin', 'python'),
+  ].filter(Boolean);
+  return candidates.find((p) => existsSync(p)) ?? 'python3';
+}
+
 export function testConfig(overrides = {}) {
   const config = loadConfig({});
   return {
@@ -31,6 +56,7 @@ export function testConfig(overrides = {}) {
     llm: { ...config.llm, ...(overrides.llm ?? {}) },
     limits: { ...config.limits, ...(overrides.limits ?? {}) },
     runpod: { ...config.runpod, ...(overrides.runpod ?? {}) },
+    m2s: { ...config.m2s, ...(overrides.m2s ?? {}) },
   };
 }
 
