@@ -1,7 +1,7 @@
 // useJob.ts — owns the WebSocket and the lifecycle of the (single) active job.
 // Reducer over server messages; exposes createJob / regenerate / cancel.
 import { useCallback, useEffect, useReducer, useRef } from 'react';
-import type { HelloMsg, JobCreateHeader, JobResultMsg, ServerMsg } from '../protocol';
+import type { CodegenMode, HelloMsg, JobCreateHeader, JobResultMsg, ServerMsg } from '../protocol';
 import { encodeJobCreate } from '../protocol';
 import { ReconnectingSocket, wsUrl, type ConnectionState } from '../lib/ws';
 
@@ -105,7 +105,7 @@ export function useJob() {
     sessionStorage.setItem('restrudel.lastJobId', header.requestId);
   }, []);
 
-  const regenerate = useCallback((opts: { prompt?: string; bpmOverride?: number }) => {
+  const regenerate = useCallback((opts: { prompt?: string; bpmOverride?: number; codegen?: CodegenMode }) => {
     const socket = socketRef.current;
     if (!socket?.isOpen || !jobIdRef.current) return;
     socket.send({ type: 'job.regenerate', jobId: jobIdRef.current, requestId: crypto.randomUUID(), ...opts });

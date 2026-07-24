@@ -4,6 +4,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import styles from './App.module.css';
 import { ConvertPanel } from './components/ConvertPanel';
+import type { CodegenMode } from './protocol';
 import { DropZone } from './components/DropZone';
 import { ErrorBanner } from './components/ErrorBanner';
 import { ProgressStages } from './components/ProgressStages';
@@ -22,6 +23,7 @@ export default function App() {
   const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
   const [selection, setSelection] = useState<Selection>({ start: 0, end: 10 });
   const [prompt, setPrompt] = useState('');
+  const [codegen, setCodegen] = useState<CodegenMode>('m2s+polish');
   const [localError, setLocalError] = useState<LocalError>(null);
   const [errorDismissed, setErrorDismissed] = useState(false);
   const [preparing, setPreparing] = useState(false);
@@ -91,6 +93,7 @@ export default function App() {
         {
           requestId: crypto.randomUUID(),
           prompt: prompt || undefined,
+          codegen,
           snippet: {
             selStartSec: selection.start,
             selEndSec: selection.end,
@@ -105,7 +108,7 @@ export default function App() {
     } finally {
       setPreparing(false);
     }
-  }, [audioBuffer, file, selection, prompt, limits.maxWavBytes, createJob]);
+  }, [audioBuffer, file, selection, prompt, codegen, limits.maxWavBytes, createJob]);
 
   const newSelection = useCallback(() => {
     reset();
@@ -178,6 +181,8 @@ export default function App() {
         <ConvertPanel
           prompt={prompt}
           onPromptChange={setPrompt}
+          codegen={codegen}
+          onCodegenChange={setCodegen}
           onConvert={convert}
           disabled={!audioBuffer || job.connection !== 'open'}
           busy={preparing}

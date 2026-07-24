@@ -31,6 +31,8 @@ export function loadConfig(env = process.env) {
     logLevel: env.LOG_LEVEL ?? 'info',
     transcriber: env.TRANSCRIBER ?? 'mock',
     mockDelayMs: int(env.MOCK_DELAY_MS, 0),
+    // m2s+polish | m2s | llm — per-job overridable from the client.
+    defaultCodegen: env.CODEGEN ?? 'm2s+polish',
     llm: {
       provider: env.LLM_PROVIDER ?? 'auto', // auto | fake
       model: env.LLM_MODEL ?? 'claude-haiku-4-5',

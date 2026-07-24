@@ -115,6 +115,7 @@ export function createConnectionHandler({ config, jobManager, log }) {
     const job = jobManager.createJob({
       wavBuffer: Buffer.from(wav), // copy: detach from the ws frame buffer
       prompt: header.prompt,
+      codegen: header.codegen, // unknown values fall back to the default
       bpmHint: Number.isFinite(header.bpmHint) ? header.bpmHint : null,
       snippet: header.snippet ?? null,
     });
@@ -139,7 +140,9 @@ export function createConnectionHandler({ config, jobManager, log }) {
           return send(ws, { type: MSG.JOB_ERROR, requestId, jobId, code: ERR.PROMPT_TOO_LONG, message: `prompt exceeds ${config.limits.maxPromptChars} characters` });
         }
         try {
-          const job = jobManager.regenerate(jobId, { prompt: msg.prompt, bpmOverride: msg.bpmOverride });
+          const job = jobManager.regenerate(jobId, {
+            prompt: msg.prompt, bpmOverride: msg.bpmOverride, codegen: msg.codegen,
+          });
           state.activeJobId = job.id;
           subscribe(ws, job.id);
           send(ws, { type: MSG.JOB_ACCEPTED, requestId, jobId: job.id, revision: job.revision, status: job.status });

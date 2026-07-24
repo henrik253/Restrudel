@@ -18,6 +18,16 @@ export const MSG = {
   JOB_ERROR: 'job.error',
 };
 
+// How note events become Strudel code. Sent by the client in the job.create
+// header (and in job.regenerate to switch without re-transcribing); the server
+// falls back to its default for anything unrecognized. The result message
+// reports the mode that actually ran, which can differ when polish falls back.
+export const CODEGEN = {
+  M2S_POLISH: 'm2s+polish', // MIDI-To-Strudel, then LLM readability pass
+  M2S: 'm2s', // the tool alone, deterministic, no LLM
+  LLM: 'llm', // step-grid description -> LLM
+};
+
 export const ERR = {
   PAYLOAD_TOO_LARGE: 'payload_too_large',
   INVALID_WAV: 'invalid_wav',
@@ -30,6 +40,8 @@ export const ERR = {
   TRANSCRIBER_UNAVAILABLE: 'transcriber_unavailable',
   LLM_FAILED: 'llm_failed',
   VALIDATION_EXHAUSTED: 'validation_exhausted',
+  CODEGEN_FAILED: 'codegen_failed',
+  CODEGEN_UNAVAILABLE: 'codegen_unavailable',
   CANCELLED: 'cancelled',
   INTERNAL: 'internal',
 };

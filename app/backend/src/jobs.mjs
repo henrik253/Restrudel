@@ -9,7 +9,7 @@
 // re-transcribes) and bumps `revision`.
 import { EventEmitter } from 'node:events';
 import { randomUUID } from 'node:crypto';
-import { generateStrudel } from './llm/generate.mjs';
+import { generateCode, normalizeMode } from './codegen/index.mjs';
 import { estimateBpm } from './lib/tempo.mjs';
 
 const TERMINAL = new Set(['done', 'error']);
@@ -36,7 +36,7 @@ export class JobManager extends EventEmitter {
     return this.jobs.get(jobId);
   }
 
-  createJob({ wavBuffer, prompt, bpmHint, snippet }) {
+  createJob({ wavBuffer, prompt, bpmHint, snippet, codegen }) {
     const job = {
       id: randomUUID(),
       revision: 1,
@@ -45,6 +45,7 @@ export class JobManager extends EventEmitter {
       createdAt: Date.now(),
       finishedAt: null,
       prompt: prompt ?? '',
+      codegen: normalizeMode(codegen ?? this.config.defaultCodegen),
       bpmHint: bpmHint ?? null,
       snippet: snippet ?? null,
       events: null,
@@ -60,7 +61,7 @@ export class JobManager extends EventEmitter {
     return job;
   }
 
-  regenerate(jobId, { prompt, bpmOverride } = {}) {
+  regenerate(jobId, { prompt, bpmOverride, codegen } = {}) {
     const job = this.jobs.get(jobId);
     if (!job) throw Object.assign(new Error('job not found (it may have expired)'), { code: 'job_not_found' });
     if (!TERMINAL.has(job.status)) throw Object.assign(new Error('job is still running'), { code: 'job_busy' });
@@ -69,6 +70,9 @@ export class JobManager extends EventEmitter {
     }
     job.revision += 1;
     if (prompt !== undefined) job.prompt = prompt;
+    // Switching codegen mode re-runs only this stage against cached events —
+    // comparing the three paths costs no GPU time.
+    if (codegen !== undefined) job.codegen = normalizeMode(codegen);
     if (Number.isFinite(bpmOverride) && bpmOverride >= 40 && bpmOverride <= 260) job.tempoBpm = Math.round(bpmOverride);
     job.error = null;
     job.finishedAt = null;
@@ -113,9 +117,10 @@ export class JobManager extends EventEmitter {
   async #generate(job) {
     this.#update(job, 'generating', 'writing Strudel code …');
     const t0 = Date.now();
-    const g = await generateStrudel({
+    const g = await generateCode({
+      mode: job.codegen,
       events: job.events,
-      bpm: job.tempoBpm,
+      tempoBpm: job.tempoBpm,
       userPrompt: job.prompt,
       config: this.config,
       llm: this.llm,
@@ -125,18 +130,24 @@ export class JobManager extends EventEmitter {
     job.timings.generateMs = Date.now() - t0;
     job.result = {
       code: g.code,
-      tempoBpm: job.tempoBpm,
+      // What actually ran — may differ from job.codegen when polish fell back.
+      codegen: g.mode,
+      tempoBpm: g.tempoBpm ?? job.tempoBpm,
       events: job.events,
       describeText: g.describeText,
       attempts: g.attempts,
       llm: g.llm,
+      meta: g.meta,
       timings: { ...job.timings },
     };
     job.status = 'done';
     job.message = null;
     job.finishedAt = Date.now();
     this.emit('update', job, {});
-    this.log?.info(`job ${job.id} r${job.revision} done (${g.attempts} attempt(s), ${job.timings.generateMs} ms)`);
+    this.log?.info(
+      `job ${job.id} r${job.revision} done via ${g.mode} (${job.timings.generateMs} ms)`
+      + (g.meta?.polishSkipped ? ` — polish skipped: ${g.meta.polishSkipped}` : ''),
+    );
   }
 
   #update(job, status, message, extra = {}) {

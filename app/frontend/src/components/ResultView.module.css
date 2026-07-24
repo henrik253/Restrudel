@@ -83,3 +83,22 @@
   line-height: 1.7;
   color: var(--text-2);
 }
+
+/* Shown when the user asked for polish but got the raw conversion — a silent
+   downgrade would misrepresent what they are looking at. */
+.notice {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text-2);
+  font-size: 13px;
+  margin: 0 0 14px;
+  padding: 9px 12px;
+}
+
+.notice .mono {
+  color: var(--text-3);
+  display: block;
+  font-size: 12px;
+  margin-top: 3px;
+}
