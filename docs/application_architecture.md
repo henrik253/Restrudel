@@ -108,6 +108,11 @@ user-facing).
 ### Frontend (`app/frontend/`, React + Vite)
 - Upload → decoded waveform via **wavesurfer.js** with a draggable/resizable
   region (snap-to-beat once the tempo estimate exists is a nice v1.1).
+- **Upload flow (decided 2026-07-24, roadmap A8):** the full song is sent to
+  the backend **immediately on file select**; a range selection then sends
+  only `{start_s, end_s}` and the backend cuts/downmixes/resamples the
+  snippet server-side (ffmpeg) before forwarding it to the GPU worker —
+  re-selections never re-upload audio.
 - Staged progress (uploading → GPU starting → transcribing → generating code),
   driven by SSE or polling; cold starts must *look* intentional.
 - Result: **`@strudel/repl` web component** with the generated code loaded —

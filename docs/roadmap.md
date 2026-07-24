@@ -350,9 +350,11 @@ Work packages, in dependency order:
         test; slim CUDA-runtime Dockerfile built `--platform linux/amd64`,
         pushed to a registry.
   - [ ] **A1b — infra (operator steps):** RunPod network volume; upload
-        **v2mix_s42** from Drive (temp pod + rclone); serverless endpoint
-        (volume attached, min 0 / max 1 workers, FlashBoot on); endpoint ID +
-        API key into the backend env (`RUNPOD_API_KEY` /
+        **v2mix_s42** from Drive (verified 2026-07-24:
+        `gdrive:restrudel/checkpoints/YourMT3+_fine_tuned_v2mix_s42_20260722-050418/`
+        — `last.ckpt` 759 MB + `metadata.json`; temp pod + rclone); serverless
+        endpoint (volume attached, min 0 / max 1 workers, FlashBoot on);
+        endpoint ID + API key into the backend env (`RUNPOD_API_KEY` /
         `RUNPOD_ENDPOINT_ID`).
   - [ ] **A1c — backend adapter:** implement the stub
         `app/backend/src/transcribe/runpod.mjs` — async `/run` + `/status`
@@ -360,6 +362,12 @@ Work packages, in dependency order:
         handling, normalize to the canonical NoteEvent schema.
   - [ ] **A1d — measure** cold/warm latency + cost per conversion (feeds the
         decision gate below).
+  - [ ] **A1e — model swappability (requirement, not a step):**
+        `model_version` is config, not code — the backend env selects it, the
+        worker resolves `/runpod-volume/checkpoints/<model_version>/`.
+        Deploying a future model = upload a new checkpoint directory + flip
+        the env var, zero code changes; transcriber and codegen stay
+        pluggable adapters.
 - [x] **A2 — Codegen:** done 2026-07-17, **decision changed (user): LLM-based,
       not rule-based** — port of `scripts/midi_to_strudel.py` to Node in
       `app/backend/src/llm/`: per-voice 16th-grid text description, system
@@ -415,6 +423,19 @@ Work packages, in dependency order:
   - [ ] **A7e — end-to-end:** mock-path tests per adapter; one real snippet
         through upload → RunPod → MIDI → tool → polish → REPL; record
         latency + cost.
+- [ ] **A8 — Upload-flow rework: backend-side snippet cutting** (decided
+      2026-07-24; supersedes A3's client-side slicing):
+  - [ ] Full song uploads to the backend **immediately on file select**
+        (stored per session, TTL'd); a range selection then sends only
+        `{start_s, end_s}` — no audio re-upload per selection.
+  - [ ] Backend cuts + downmixes + resamples the selected snippet to 16 kHz
+        mono WAV (ffmpeg returns to the backend) and forwards it to the GPU
+        worker.
+  - [ ] Frontend keeps the wavesurfer selection UX; size/length limit checks
+        move server-side (snippet length limits unchanged).
+  - [ ] Why: snappier select→convert loop (re-select and re-transcribe
+        without re-uploading), and the backend owns the canonical audio that
+        A5 (similarity) and A6 (opt-in storage) need anyway.
 
 > **Decision gate (after A1):** if real-mp3 transcription quality is unusable
 > (domain gap), the app pivots to "Strudel-ish input first" demo scope while
