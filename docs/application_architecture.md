@@ -20,7 +20,7 @@ loop).
 | Frontend | **React + Vite** (SPA, static files) | No SSR needed; wavesurfer.js for interval selection; `@strudel/repl` web component embeds anywhere |
 | Backend | **Node.js** on the personal server | One runtime with the Strudel engine: codegen imports `@strudel/*` and reuses `data_gen/` directly (incl. round-trip rendering) |
 | GPU | **RunPod Serverless** (scale-to-zero) | Cheapest per-second GPU, plain Docker, network volume for the 759 MB checkpoint; VM spins up only per request |
-| Model | **strudel50** (`comparison_20260713-222456`) for v1 | Carry-forward winner from Phase 6; swappable via versioned checkpoints (Track B feeds new ones in) |
+| Model | **v2mix_s42** (run `20260722-050418`; decided 2026-07-24 — strudel50 retired) | Track B v2 winner (benchmarks in roadmap B8); swappable via versioned checkpoints |
 
 ## Topology
 
@@ -37,7 +37,7 @@ loop).
    ▼  HTTPS (RunPod API, async run + poll/webhook)
  RunPod Serverless worker (scale-to-zero GPU VM)
       Docker image: YourMT3+ code + deps
-      Network volume: strudel50 last.ckpt (759 MB, versioned)
+      Network volume: v2mix_s42 last.ckpt (759 MB, versioned)
       handler: WAV in → spectrogram → autoregressive decode → note events JSON
                (+ tempo/beat estimate via librosa — Python side owns audio analysis)
 ```
@@ -54,7 +54,7 @@ user-facing).
 **Backend → GPU worker** (RunPod run input):
 ```json
 { "audio_b64": "<16 kHz mono WAV, ≤ ~60 s>",
-  "model_version": "strudel50-20260713" }
+  "model_version": "v2mix_s42-20260722" }
 ```
 
 **GPU worker → backend** (run output):
@@ -62,7 +62,7 @@ user-facing).
 { "events": [ { "onset_s": 0.012, "offset_s": 0.25, "pitch": 57,
                 "velocity": 96, "program": 81, "is_drum": false } ],
   "tempo_bpm": 128.0, "beats_s": [0.0, 0.469, ...], "downbeats_s": [0.0, 1.875, ...],
-  "model_version": "strudel50-20260713", "timings": { "cold_start_s": 0, "infer_s": 0 } }
+  "model_version": "v2mix_s42-20260722", "timings": { "cold_start_s": 0, "infer_s": 0 } }
 ```
 
 **Backend → frontend** (job resource, polled or SSE):
@@ -129,8 +129,8 @@ user-facing).
   cents per conversion**, zero when idle.
 
 ## Known risks (carried from the Phase 6 critique)
-1. **Domain gap is the big one:** strudel50's numbers were measured on
-   Strudel-rendered audio; real mastered mp3s are out-of-domain and accuracy
+1. **Domain gap is the big one:** v2mix's numbers were measured on
+   Strudel-rendered + chiptune audio; real mastered mp3s are out-of-domain and accuracy
    will drop by an unknown amount. The app is therefore also the missing
    *external eval* — collect (with consent) failed/successful conversions as the
    hardest real-world test set for Track B.

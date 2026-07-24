@@ -2,7 +2,9 @@
 
 Phases 0–6 (build the data, fine-tune YourMT3+) are **done**: two fine-tuned
 variants were trained and fully benchmarked (run `comparison_20260713-222456`);
-**strudel50** is the carry-forward model. Results + adversarial critique:
+**strudel50** was the Phase 6 carry-forward model — since superseded by Phase
+8's **v2mix_s42**, the model the app deploys (decided 2026-07-24). v1 results +
+adversarial critique:
 [benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md).
 Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-instr
 0.52→0.84, at the cost of −15 slakh / −11 maestro forgetting.
@@ -20,7 +22,8 @@ Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-inst
 >   the winner into the app's model registry.
 >
 > The tracks run in parallel and meet at a versioned model registry: the app
-> ships v1 with strudel50 and swaps in Track B checkpoints as they win.
+> ships **v2mix_s42** (decided 2026-07-24; strudel50 retired) and swaps in
+> newer Track B checkpoints as they win.
 
 ## Guiding principles
 - **Data-driven, not random.** We do *not* generate uniform-random notes. We
@@ -295,7 +298,8 @@ two variants fine-tuned from the released checkpoint (3000 steps, bsz 8, LR 1e-4
 A100) — **strudel50** (55% eff. strudel draws) and **egmd50** — and benchmarked
 3 models × 8 categories via `notebooks/06_benchmark.ipynb` (training itself:
 `notebooks/05_finetune.ipynb`). strudel50 > egmd50 > base on **every** strudel
-category → strudel50 carries forward. Full interpretation + adversarial critique
+category → strudel50 carried forward (since superseded by Phase 8's
+v2mix_s42). Full interpretation + adversarial critique
 + accepted follow-up actions: [benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md);
 those accepted actions are now Phase 8's work list.
 
@@ -327,7 +331,7 @@ bars), get editable Strudel code in an embedded REPL, with an honest
 cost budget, risks): [application_architecture.md](application_architecture.md).
 
 **Stack (locked):** React+Vite frontend · Node backend on the personal server ·
-RunPod Serverless GPU worker (scale-to-zero VM, strudel50 checkpoint on a
+RunPod Serverless GPU worker (scale-to-zero VM, **v2mix_s42** checkpoint on a
 network volume) · repo layout `app/{frontend,backend,gpu-worker}`.
 
 Work packages, in dependency order:
@@ -336,12 +340,26 @@ Work packages, in dependency order:
       mirrored by `app/frontend/src/protocol.ts`, exercised end-to-end by the
       backend's ws-smoke test. `app/{backend,frontend}` scaffolded
       (`app/README.md`). docker-compose still open → folded into A6.
-- [ ] **A1 — GPU worker:** extract the proven inference path from
-      `notebooks/06_benchmark.ipynb` into `app/gpu-worker/` (RunPod
-      `handler.py` + Dockerfile); tempo/beat estimation (librosa) lives here
-      too; upload strudel50 to a RunPod network volume; deploy; measure
-      cold/warm latency. The backend-side adapter interface + contract is
-      already stubbed (`app/backend/src/transcribe/runpod.mjs`).
+- [ ] **A1 — GPU worker + RunPod integration** (plan agreed 2026-07-24; wire
+      contract stays note-events JSON — the worker never returns raw MIDI):
+  - [ ] **A1a — worker package** `app/gpu-worker/`: extract the proven
+        inference path from `notebooks/06_benchmark.ipynb` into a RunPod
+        `handler.py` (model loaded at container start; checkpoint read from
+        `/runpod-volume/checkpoints/<model_version>/`) + librosa
+        tempo/beat/downbeat estimation; `test_input.json` local CPU smoke
+        test; slim CUDA-runtime Dockerfile built `--platform linux/amd64`,
+        pushed to a registry.
+  - [ ] **A1b — infra (operator steps):** RunPod network volume; upload
+        **v2mix_s42** from Drive (temp pod + rclone); serverless endpoint
+        (volume attached, min 0 / max 1 workers, FlashBoot on); endpoint ID +
+        API key into the backend env (`RUNPOD_API_KEY` /
+        `RUNPOD_ENDPOINT_ID`).
+  - [ ] **A1c — backend adapter:** implement the stub
+        `app/backend/src/transcribe/runpod.mjs` — async `/run` + `/status`
+        polling (a cold start can outlive the sync window), cancel/timeout
+        handling, normalize to the canonical NoteEvent schema.
+  - [ ] **A1d — measure** cold/warm latency + cost per conversion (feeds the
+        decision gate below).
 - [x] **A2 — Codegen:** done 2026-07-17, **decision changed (user): LLM-based,
       not rule-based** — port of `scripts/midi_to_strudel.py` to Node in
       `app/backend/src/llm/`: per-voice 16th-grid text description, system
@@ -373,6 +391,30 @@ Work packages, in dependency order:
 - [ ] **A6 — Deploy + feedback loop:** personal server behind Caddy/HTTPS;
       opt-in storage of uploaded intervals + scores → they become Track B's
       hardest real-world eval set.
+- [ ] **A7 — Selectable MIDI→Strudel codegen + AI polish** (agreed
+      2026-07-24; buildable offline against cached/mock events, parallel to
+      A1):
+  - [ ] **A7a — events→MIDI module** `app/backend/src/midi/`: note events +
+        tempo → `.mid` buffer (one track per program, drums on channel 9);
+        unit-tested against golden Phase-2 label events.
+  - [ ] **A7b — MIDI-To-Strudel adapter:** pin
+        `github.com/Emanuel-de-Jong/MIDI-To-Strudel` (GPL-3.0, Python, dep
+        `mido`) as a shallow submodule, run as a **subprocess** per job
+        (`Midi-to-Strudel.py -m job.mid --guess-instrument`, scratch dir);
+        output gated by `strudel_eval.mjs`. Its 4/4-only limitation matches
+        the pipeline's 4/4 assumption.
+  - [ ] **A7c — AI polish stage:** reuse `app/backend/src/llm/` — input =
+        tool output + the user's optional guidance prompt; instruction:
+        readable/idiomatic, apply the guidance, **do not change the notes**;
+        engine-validation + density gate; on failure fall back to the
+        unpolished tool output. On by default, toggleable in the UI.
+  - [ ] **A7d — selection plumbing:** `codegen` field in the WS job protocol
+        + frontend selector — **`m2s+polish` (default) | `m2s` (raw tool) |
+        `llm` (the A2 path, kept)**; regenerate switches modes against cached
+        events (no re-transcription, no GPU cost).
+  - [ ] **A7e — end-to-end:** mock-path tests per adapter; one real snippet
+        through upload → RunPod → MIDI → tool → polish → REPL; record
+        latency + cost.
 
 > **Decision gate (after A1):** if real-mp3 transcription quality is unusable
 > (domain gap), the app pivots to "Strudel-ish input first" demo scope while
@@ -473,13 +515,13 @@ re-splitting would bake the leak in again).
 
       Seeds agree within ~0.02 — reproducible. (Base corpus multi_f is 0.207
       on the leak-free 48-song repo-level split, vs 0.521 on the old leaky
-      111-file Phase 6 eval.) **Remaining — the decision gate:**
+      111-file Phase 6 eval.) **Ship decision made 2026-07-24: v2mix_s42 is
+      the app's deployment model (strudel50 retired) — executed via Phase 7
+      A1b.** Remaining eval work:
       - [ ] External real-EDM eval (hand-labeled clips; A6 opt-in uploads
             feed this).
       - [ ] Program confusion matrix, drums-excluded multi_f, per-class event
             counts.
-      - [ ] Ship the winning checkpoint into the app (`model_version`) — only
-            if it wins on the external eval without worse forgetting.
 
 ---
 
