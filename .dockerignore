@@ -1,0 +1,32 @@
+# Build context for app/gpu-worker/Dockerfile is the repo root. Keep it small:
+# everything the worker image needs is app/gpu-worker/ + models/YourMT3/amt/src.
+.git
+.claude
+.venv
+__pycache__
+**/__pycache__
+**/*.pyc
+
+# Heavy / irrelevant to the worker
+corpus
+datasets
+dataset
+runs
+analysis/out
+notebooks
+docs
+separated
+midi_out
+**/node_modules
+**/*.wav
+**/*.mp3
+**/*.ckpt
+
+# The app's JS halves are not part of the GPU image
+app/frontend
+app/backend
+
+# YourMT3 checkout: ship only the source tree
+models/YourMT3/amt/logs
+models/YourMT3/model_output
+models/YourMT3/amt/src/tests

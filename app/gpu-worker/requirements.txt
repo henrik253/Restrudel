@@ -1,0 +1,19 @@
+# Restrudel GPU worker. torch/torchaudio come from the CUDA base image — do NOT
+# pin them here or pip will pull a CPU-only wheel over the image's CUDA build.
+runpod>=1.6.0
+
+# YourMT3+ runtime deps (same set notebooks 05/06 install).
+# transformers is PINNED: >=4.40 removed transformers.utils.model_parallel_utils,
+# which YourMT3's T5 wrapper imports.
+pytorch-lightning>=2.2.1
+transformers==4.39.3
+einops
+wandb
+mido
+deprecated
+smart-open
+
+# Audio analysis (tempo/beats live on this side of the wire).
+librosa>=0.10
+soundfile
+numpy
