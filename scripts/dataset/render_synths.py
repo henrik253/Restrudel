@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Track B B3 — render MIDI through a REAL software synth (Avenue A).
 
-Rationale + evaluation: docs/external_electronic_data_B3.md. This is the
+Rationale + evaluation: docs/roadmap.md (Phase 8 B3). This is the
 thesis-critical path: give the model subtractive/FM/wavetable timbres it has
 never seen, with perfectly-aligned labels (we render *from* the MIDI, so the
 notes ARE the ground truth).

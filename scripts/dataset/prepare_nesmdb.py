@@ -5,7 +5,7 @@ NES-MDB (Donahue et al., MIT) is 5,278 NES-soundtrack pieces with per-voice note
 labels (2 pulse + triangle + noise channels), yielding (audio, aligned note
 labels) with genuine 2A03 *synthesized* timbre — an independent-renderer
 complement to Strudel that needs no VST hosting (Track B B3,
-docs/external_electronic_data_B3.md).
+docs/roadmap.md Phase 8 B3).
 
 Facts verified against the real MIDI release (2026-07-16, 12 MB tarball,
 sha256-checked against the README):

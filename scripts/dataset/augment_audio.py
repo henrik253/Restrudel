@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Track B B6 / strategy S2 — audio-domain augmentation of rendered clips.
 
-Rationale: docs/augmentation_strategy_B4.md. Training audio today is pristine
+Rationale: docs/roadmap.md (Phase 8 B4). Training audio today is pristine
 Strudel renders; real uploads are mastered/compressed/EQ'd/lossy. This applies a
 randomized, **strictly time-preserving** effect chain so the SAME notes are
 heard through many processing chains — attacking the renderer confound — WITHOUT

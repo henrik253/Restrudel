@@ -3,7 +3,7 @@
 // user-facing; until then it reports transcriber_unavailable.
 //
 // Contract (docs/application_architecture.md):
-//   run input:  { audio_b64: "<16 kHz mono WAV>", model_version: "strudel50-20260713" }
+//   run input:  { audio_b64: "<16 kHz mono WAV>", model_version: "v2mix_s42-20260722" }
 //   run output: { events: [{onset_s, offset_s, pitch, velocity, program, is_drum}],
 //                 tempo_bpm, beats_s, downbeats_s, model_version, timings }
 // Normalization to the canonical NoteEvent schema:

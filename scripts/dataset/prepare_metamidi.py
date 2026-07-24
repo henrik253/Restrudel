@@ -3,7 +3,7 @@
 
 GigaMIDI (successor to MetaMIDI) carries genre metadata, so we can select
 electronic/EDM/techno/house tracks directly — a higher-hit-rate feedstock than
-filtering Lakh by GM program (Track B B3, docs/external_electronic_data_B3.md).
+filtering Lakh by GM program (Track B B3, docs/roadmap.md Phase 8 B3).
 This selects those MIDIs into a staging dir; audio comes later from
 scripts/dataset/render_synths.py (real synths) — this script does NOT render.
 
