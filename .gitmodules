@@ -30,3 +30,6 @@
 	path = corpus/github/uzu-strudel
 	url = https://codeberg.org/uzu/strudel.git
 	shallow = true
+[submodule "vendor/MIDI-To-Strudel"]
+	path = vendor/MIDI-To-Strudel
+	url = https://github.com/Emanuel-de-Jong/MIDI-To-Strudel.git

@@ -1,7 +1,8 @@
 // protocol.ts — the WebSocket wire format. Mirror of app/backend/src/protocol.mjs;
 // keep the two in sync (the backend's ws_smoke test exercises the format).
 
-export type JobStatus = 'queued' | 'transcribing' | 'generating' | 'done' | 'error';
+// 'cutting' only occurs on the A8 upload path (the server slices the snippet).
+export type JobStatus = 'queued' | 'cutting' | 'transcribing' | 'generating' | 'done' | 'error';
 
 export interface NoteEvent {
   onset: number;
@@ -9,7 +10,23 @@ export interface NoteEvent {
   pitch: number;
   velocity: number;
   channel: 'drums' | 'pitched';
+  /** GM program, when the transcriber knows it (the GPU worker does). */
+  program?: number;
 }
+
+/**
+ * How note events become Strudel code:
+ *   m2s+polish — MIDI-To-Strudel, then an LLM readability/style pass (default)
+ *   m2s        — the tool alone: deterministic, no LLM
+ *   llm        — step-grid description straight to the LLM
+ */
+export type CodegenMode = 'm2s+polish' | 'm2s' | 'llm';
+
+export const CODEGEN_MODES: { value: CodegenMode; label: string; hint: string }[] = [
+  { value: 'm2s+polish', label: 'Convert + polish', hint: 'Deterministic conversion, then AI cleanup and your guidance' },
+  { value: 'm2s', label: 'Convert only', hint: 'Faithful and fast, no AI — machine-flavoured code' },
+  { value: 'llm', label: 'AI from scratch', hint: 'The AI writes the pattern from the note grid' },
+];
 
 export interface HelloMsg {
   type: 'hello';
@@ -46,11 +63,23 @@ export interface JobResultMsg {
   jobId: string;
   revision: number;
   code: string;
+  /** The mode that ACTUALLY ran — differs from the request when polish fell back. */
+  codegen: CodegenMode;
   tempoBpm: number;
   events: NoteEvent[];
-  describeText: string;
-  attempts: number;
-  llm: { model: string; source: 'sdk' | 'cli' | 'fake' };
+  describeText?: string;
+  attempts?: number;
+  llm?: { model: string; source: 'sdk' | 'cli' | 'fake' | 'stub' };
+  meta?: {
+    codegen?: string;
+    requestedMode?: CodegenMode;
+    polished?: boolean;
+    /** Why polish was skipped, when it was. Worth surfacing: the user asked for it. */
+    polishSkipped?: string;
+    voiceCount?: number;
+    drumVoices?: number;
+    validated?: boolean;
+  };
   timings: { transcribeMs?: number; generateMs?: number };
 }
 
@@ -68,6 +97,7 @@ export type ServerMsg = HelloMsg | JobAcceptedMsg | JobStatusMsg | JobResultMsg 
 export interface JobCreateHeader {
   requestId: string;
   prompt?: string;
+  codegen?: CodegenMode;
   bpmHint?: number;
   snippet: {
     selStartSec: number;

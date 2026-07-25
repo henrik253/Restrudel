@@ -4,7 +4,7 @@
 // state resent.
 import { MSG, ERR, decodeBinaryJobFrame, parseWavHeader } from './protocol.mjs';
 
-export function createConnectionHandler({ config, jobManager, log }) {
+export function createConnectionHandler({ config, jobManager, uploads, log }) {
   /** @type {Map<string, Set<import('ws').WebSocket>>} jobId -> sockets */
   const subscribers = new Map();
 
@@ -41,6 +41,25 @@ export function createConnectionHandler({ config, jobManager, log }) {
   function subscribe(ws, jobId) {
     if (!subscribers.has(jobId)) subscribers.set(jobId, new Set());
     subscribers.get(jobId).add(ws);
+  }
+
+  /** Selection sanity — the same limits the client-cut path enforces on the WAV. */
+  function validateRange(startSec, endSec, sourceDurationSec) {
+    const { minSnippetSec, maxSnippetSec, snippetToleranceSec } = config.limits;
+    if (!Number.isFinite(startSec) || !Number.isFinite(endSec) || startSec < 0 || endSec <= startSec) {
+      return { code: ERR.BAD_MESSAGE, message: 'snippet needs a valid selStartSec/selEndSec' };
+    }
+    if (endSec > sourceDurationSec + snippetToleranceSec) {
+      return { code: ERR.SNIPPET_OUT_OF_RANGE, message: 'selection runs past the end of the track' };
+    }
+    const length = endSec - startSec;
+    if (length < minSnippetSec - snippetToleranceSec || length > maxSnippetSec + snippetToleranceSec) {
+      return {
+        code: ERR.SNIPPET_OUT_OF_RANGE,
+        message: `selection must be between ${minSnippetSec} and ${maxSnippetSec} seconds`,
+      };
+    }
+    return null;
   }
 
   function validateWav(wav) {
@@ -115,6 +134,7 @@ export function createConnectionHandler({ config, jobManager, log }) {
     const job = jobManager.createJob({
       wavBuffer: Buffer.from(wav), // copy: detach from the ws frame buffer
       prompt: header.prompt,
+      codegen: header.codegen, // unknown values fall back to the default
       bpmHint: Number.isFinite(header.bpmHint) ? header.bpmHint : null,
       snippet: header.snippet ?? null,
     });
@@ -134,12 +154,54 @@ export function createConnectionHandler({ config, jobManager, log }) {
     const { type, requestId, jobId } = msg;
 
     switch (type) {
+      // A8: create a job from an already-uploaded track plus a time range. The
+      // binary form (client-cut WAV) still works; this one avoids re-uploading
+      // audio for every selection.
+      case MSG.JOB_CREATE: {
+        if (typeof msg.prompt === 'string' && msg.prompt.length > config.limits.maxPromptChars) {
+          return send(ws, { type: MSG.JOB_ERROR, requestId, code: ERR.PROMPT_TOO_LONG, message: `prompt exceeds ${config.limits.maxPromptChars} characters` });
+        }
+        const upload = msg.uploadId ? uploads?.get(msg.uploadId) : null;
+        if (!upload) {
+          return send(ws, { type: MSG.JOB_ERROR, requestId, code: ERR.UPLOAD_NOT_FOUND, message: 'that upload has expired — pick the file again' });
+        }
+
+        const startSec = Number(msg.snippet?.selStartSec);
+        const endSec = Number(msg.snippet?.selEndSec);
+        const rangeProblem = validateRange(startSec, endSec, upload.durationSec);
+        if (rangeProblem) return send(ws, { type: MSG.JOB_ERROR, requestId, ...rangeProblem });
+
+        const active = state.activeJobId && jobManager.get(state.activeJobId);
+        if (active && active.status !== 'done' && active.status !== 'error') {
+          return send(ws, { type: MSG.JOB_ERROR, requestId, code: ERR.JOB_BUSY, message: 'a job is already running on this connection' });
+        }
+
+        const job = jobManager.createJob({
+          source: { uploadId: upload.id, startSec, endSec },
+          prompt: msg.prompt,
+          codegen: msg.codegen,
+          bpmHint: Number.isFinite(msg.bpmHint) ? msg.bpmHint : null,
+          snippet: {
+            selStartSec: startSec,
+            selEndSec: endSec,
+            sourceName: upload.filename,
+            sourceDurationSec: upload.durationSec,
+          },
+        });
+        state.activeJobId = job.id;
+        subscribe(ws, job.id);
+        send(ws, { type: MSG.JOB_ACCEPTED, requestId, jobId: job.id, revision: job.revision, status: job.status });
+        log.info(`job ${job.id} created from upload ${upload.id} (${startSec.toFixed(2)}–${endSec.toFixed(2)} s)`);
+        return;
+      }
       case MSG.JOB_REGENERATE: {
         if (typeof msg.prompt === 'string' && msg.prompt.length > config.limits.maxPromptChars) {
           return send(ws, { type: MSG.JOB_ERROR, requestId, jobId, code: ERR.PROMPT_TOO_LONG, message: `prompt exceeds ${config.limits.maxPromptChars} characters` });
         }
         try {
-          const job = jobManager.regenerate(jobId, { prompt: msg.prompt, bpmOverride: msg.bpmOverride });
+          const job = jobManager.regenerate(jobId, {
+            prompt: msg.prompt, bpmOverride: msg.bpmOverride, codegen: msg.codegen,
+          });
           state.activeJobId = job.id;
           subscribe(ws, job.id);
           send(ws, { type: MSG.JOB_ACCEPTED, requestId, jobId: job.id, revision: job.revision, status: job.status });

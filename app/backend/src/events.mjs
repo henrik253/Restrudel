@@ -10,6 +10,10 @@
  * @property {number} pitch     MIDI note number (GM drum number for drums)
  * @property {number} velocity  1-127
  * @property {'drums'|'pitched'} channel
+ * @property {number} [program] GM program (0-127), when the transcriber knows it.
+ *                              Optional: the mock and MIDI-parsing adapters omit
+ *                              it. Carried through so codegen can split voices by
+ *                              instrument rather than lumping all pitched notes.
  *
  * @typedef {Object} TranscriptionResult
  * @property {NoteEvent[]} events
@@ -41,11 +45,17 @@ export function fromToneMidi(midi) {
 export function sanitizeEvents(events) {
   return (events ?? [])
     .filter((e) => Number.isFinite(e.onset) && Number.isFinite(e.pitch) && e.onset >= 0)
-    .map((e) => ({
-      onset: e.onset,
-      duration: Number.isFinite(e.duration) && e.duration > 0 ? e.duration : 0.1,
-      pitch: Math.round(e.pitch),
-      velocity: Math.max(1, Math.min(127, Math.round(e.velocity ?? 96))),
-      channel: e.channel === 'drums' ? 'drums' : 'pitched',
-    }));
+    .map((e) => {
+      const out = {
+        onset: e.onset,
+        duration: Number.isFinite(e.duration) && e.duration > 0 ? e.duration : 0.1,
+        pitch: Math.round(e.pitch),
+        velocity: Math.max(1, Math.min(127, Math.round(e.velocity ?? 96))),
+        channel: e.channel === 'drums' ? 'drums' : 'pitched',
+      };
+      if (Number.isFinite(e.program)) {
+        out.program = Math.max(0, Math.min(127, Math.round(e.program)));
+      }
+      return out;
+    });
 }

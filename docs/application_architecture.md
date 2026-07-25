@@ -85,7 +85,11 @@ user-facing).
   load at container start (FlashBoot), and honest staged progress in the UI.
 
 ### Backend (`app/backend/`, Node)
-- Fastify (or Express) + SQLite for jobs; ffmpeg to cut/resample the interval.
+- **Codegen is selectable** (A7): `m2s+polish` (MIDI-To-Strudel then an LLM
+  readability/style pass — the default), `m2s` (the tool alone, no LLM), or
+  `llm` (the original step-grid path). Switching mode on regenerate re-runs
+  only that stage against cached events, so comparing paths costs no GPU.
+- Node HTTP + `ws`, in-memory jobs; ffmpeg cuts/resamples the interval (A8).
 - **Codegen module — the core new engineering** (`app/backend/src/codegen/`):
   1. `tempo_bpm` → `setcps`, downbeats → cycle boundaries;
   2. quantize onsets to a grid (16ths per cycle default, per-voice);
@@ -108,11 +112,13 @@ user-facing).
 ### Frontend (`app/frontend/`, React + Vite)
 - Upload → decoded waveform via **wavesurfer.js** with a draggable/resizable
   region (snap-to-beat once the tempo estimate exists is a nice v1.1).
-- **Upload flow (decided 2026-07-24, roadmap A8):** the full song is sent to
-  the backend **immediately on file select**; a range selection then sends
-  only `{start_s, end_s}` and the backend cuts/downmixes/resamples the
-  snippet server-side (ffmpeg) before forwarding it to the GPU worker —
-  re-selections never re-upload audio.
+- **Upload flow (implemented 2026-07-24, roadmap A8):** the full song is sent
+  to the backend **immediately on file select** (`POST /api/upload`, disk-backed
+  store with a TTL); a range selection then sends only a text `job.create`
+  with `{uploadId, snippet}` and the backend cuts/downmixes/resamples
+  server-side (ffmpeg, a `cutting` job stage) before forwarding it to the GPU
+  worker — re-selections never re-upload audio. The browser-cut binary frame
+  remains as a fallback while the upload is in flight.
 - Staged progress (uploading → GPU starting → transcribing → generating code),
   driven by SSE or polling; cold starts must *look* intentional.
 - Result: **`@strudel/repl` web component** with the generated code loaded —
