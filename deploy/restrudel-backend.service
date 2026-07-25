@@ -1,0 +1,28 @@
+# systemd unit for the Restrudel backend (template — setup_server.sh fills in
+# __APP_DIR__ / __RUN_USER__ and installs it to /etc/systemd/system/).
+#
+# The backend reads app/backend/.env itself at startup, so secrets are not
+# duplicated here. After changing .env: systemctl restart restrudel-backend.
+[Unit]
+Description=Restrudel backend (WebSocket + upload API)
+Documentation=https://github.com/henrik253/Restrudel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__RUN_USER__
+WorkingDirectory=__APP_DIR__/app/backend
+ExecStart=/usr/bin/node src/server.mjs
+Restart=on-failure
+RestartSec=3
+Environment=NODE_ENV=production
+
+# Hardening — nothing here needs privileges; uploads/scratch live in /tmp,
+# which PrivateTmp scopes to this service.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
