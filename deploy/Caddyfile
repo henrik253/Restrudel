@@ -1,0 +1,28 @@
+# Caddy vhost for Restrudel (template — setup_server.sh fills in __DOMAIN__ /
+# __APP_DIR__ and installs it to /etc/caddy/Caddyfile).
+#
+# Caddy provisions and renews the Let's Encrypt certificate automatically once
+# the domain's A record points at this server — no certbot, no cron.
+__DOMAIN__ {
+	encode zstd gzip
+
+	# Backend: WebSocket jobs, the A8 upload endpoint, health. reverse_proxy
+	# speaks WebSocket upgrade natively — no extra config needed for /ws.
+	handle /ws {
+		reverse_proxy 127.0.0.1:8787
+	}
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8787
+	}
+	handle /healthz {
+		reverse_proxy 127.0.0.1:8787
+	}
+
+	# Frontend: the built SPA. try_files sends unknown paths to index.html
+	# (client-side routing) while real assets are served directly.
+	handle {
+		root * __APP_DIR__/app/frontend/dist
+		try_files {path} /index.html
+		file_server
+	}
+}
