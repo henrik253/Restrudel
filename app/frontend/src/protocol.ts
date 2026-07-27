@@ -28,6 +28,20 @@ export const CODEGEN_MODES: { value: CodegenMode; label: string; hint: string }[
   { value: 'llm', label: 'AI from scratch', hint: 'The AI writes the pattern from the note grid' },
 ];
 
+/**
+ * Debug/beta: which transcription checkpoint the GPU worker loads.
+ *   auto      — server picks; reserved for the genre classifier (roadmap A9)
+ *   finetuned — the deployed fine-tuned checkpoint (v2mix)
+ *   base      — the released base YourMT3+ (acoustic specialist)
+ */
+export type ModelChoice = 'auto' | 'finetuned' | 'base';
+
+export const MODEL_CHOICES: { value: ModelChoice; label: string; hint: string }[] = [
+  { value: 'auto', label: 'Auto', hint: 'Server default — will use the genre classifier once it lands' },
+  { value: 'finetuned', label: 'Fine-tuned (v2mix)', hint: 'Trained on synth timbres — best for electronic music' },
+  { value: 'base', label: 'Base YourMT3+', hint: 'The stock model — best for acoustic/classical material' },
+];
+
 export interface HelloMsg {
   type: 'hello';
   version: string;
@@ -63,6 +77,8 @@ export interface JobResultMsg {
   jobId: string;
   revision: number;
   code: string;
+  /** Pre-polish tool output (absent for the pure-LLM path) — debug analytics. */
+  rawCode?: string;
   /** The mode that ACTUALLY ran — differs from the request when polish fell back. */
   codegen: CodegenMode;
   tempoBpm: number;
@@ -80,6 +96,8 @@ export interface JobResultMsg {
     drumVoices?: number;
     validated?: boolean;
   };
+  /** Which transcriber/checkpoint actually processed the snippet. */
+  transcriber?: { adapter?: string; modelVersion?: string | null; modelChoice?: ModelChoice };
   timings: { transcribeMs?: number; generateMs?: number };
 }
 
@@ -98,6 +116,8 @@ export interface JobCreateHeader {
   requestId: string;
   prompt?: string;
   codegen?: CodegenMode;
+  /** Debug/beta: transcription model override. */
+  model?: ModelChoice;
   bpmHint?: number;
   snippet: {
     selStartSec: number;

@@ -135,6 +135,7 @@ export function createConnectionHandler({ config, jobManager, uploads, log }) {
       wavBuffer: Buffer.from(wav), // copy: detach from the ws frame buffer
       prompt: header.prompt,
       codegen: header.codegen, // unknown values fall back to the default
+      model: header.model, // debug/beta: transcription model choice
       bpmHint: Number.isFinite(header.bpmHint) ? header.bpmHint : null,
       snippet: header.snippet ?? null,
     });
@@ -180,6 +181,7 @@ export function createConnectionHandler({ config, jobManager, uploads, log }) {
           source: { uploadId: upload.id, startSec, endSec },
           prompt: msg.prompt,
           codegen: msg.codegen,
+          model: msg.model, // debug/beta: transcription model choice
           bpmHint: Number.isFinite(msg.bpmHint) ? msg.bpmHint : null,
           snippet: {
             selStartSec: startSec,
