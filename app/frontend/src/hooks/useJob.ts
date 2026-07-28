@@ -1,7 +1,7 @@
 // useJob.ts — owns the WebSocket and the lifecycle of the (single) active job.
 // Reducer over server messages; exposes createJob / regenerate / cancel.
 import { useCallback, useEffect, useReducer, useRef } from 'react';
-import type { CodegenMode, HelloMsg, JobCreateHeader, JobResultMsg, ServerMsg } from '../protocol';
+import type { CodegenMode, HelloMsg, JobCreateHeader, JobResultMsg, ModelChoice, ServerMsg } from '../protocol';
 import { encodeJobCreate } from '../protocol';
 import { ReconnectingSocket, wsUrl, type ConnectionState } from '../lib/ws';
 
@@ -96,7 +96,7 @@ export function useJob() {
 
   /** A8: convert a range of an already-uploaded track — no audio on the wire. */
   const createJobFromUpload = useCallback((msg: {
-    requestId: string; uploadId: string; prompt?: string; codegen?: CodegenMode;
+    requestId: string; uploadId: string; prompt?: string; codegen?: CodegenMode; model?: ModelChoice;
     snippet: { selStartSec: number; selEndSec: number };
   }) => {
     const socket = socketRef.current;

@@ -16,11 +16,13 @@ const MODE_LABELS: Record<CodegenMode, string> = {
 interface Props {
   job: JobState;
   onRegenerate: (opts: { prompt?: string; bpmOverride?: number; codegen?: CodegenMode }) => void;
-  onNewSelection: () => void;
+  /** Convert the CURRENT waveform selection again (the selection stays live above). */
+  onTransform: () => void;
+  transformBusy: boolean;
   maxPromptChars: number;
 }
 
-export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }: Props) {
+export function ResultView({ job, onRegenerate, onTransform, transformBusy, maxPromptChars }: Props) {
   const result = job.result!;
   const regenerating = job.status === 'generating' || job.status === 'queued';
   const [prompt, setPrompt] = useState('');
@@ -28,6 +30,9 @@ export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }
   const [copied, setCopied] = useState(false);
   const [playing, setPlaying] = useState(false);
   const replRef = useRef<StrudelReplHandle>(null);
+  // Debug analytics: the unenhanced (pre-polish) code gets its own player.
+  const [rawPlaying, setRawPlaying] = useState(false);
+  const rawReplRef = useRef<StrudelReplHandle>(null);
 
   // a fresh result resets the local refine state
   useEffect(() => {
@@ -78,8 +83,16 @@ export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }
         <button className="btn btn-secondary" onClick={copy}>
           {copied ? '✓ Copied' : 'Copy code'}
         </button>
-        <button className="btn btn-ghost" onClick={onNewSelection} disabled={regenerating}>
-          New selection
+        {/* The waveform above stays live: adjust or replay the selection and
+            transform it again — replaces the old "New selection" reset. */}
+        <button className="btn btn-ghost" onClick={onTransform} disabled={regenerating || transformBusy}>
+          {transformBusy ? (
+            <>
+              <span className="spinner" /> Preparing …
+            </>
+          ) : (
+            '↻ Transform selection'
+          )}
         </button>
       </div>
 
@@ -139,8 +152,31 @@ export function ResultView({ job, onRegenerate, onNewSelection, maxPromptChars }
             {((result.timings.generateMs ?? 0) / 1000).toFixed(1)} s
             {result.llm ? ` (${result.llm.source})` : ''}
             {result.meta?.voiceCount ? ` · ${result.meta.voiceCount} voices` : ''}
+            {result.transcriber?.modelVersion ? ` · model ${result.transcriber.modelVersion}` : ''}
+            {result.transcriber?.modelChoice && result.transcriber.modelChoice !== 'auto'
+              ? ` (forced: ${result.transcriber.modelChoice})`
+              : ''}
           </p>
           {result.describeText && <pre className="mono">{result.describeText}</pre>}
+
+          {/* Debug/beta: the pre-polish tool output, playable — shows whether
+              the AI polish actually changed anything. */}
+          {result.rawCode && (
+            <details className="disclosure">
+              <summary>Advanced analytics — unenhanced code</summary>
+              <div className={styles.detailsBody}>
+                <p className={styles.notice}>
+                  {result.rawCode === result.code
+                    ? 'Identical to the final code — the AI made no changes.'
+                    : 'The AI changed this code — compare by playing both versions.'}
+                </p>
+                <StrudelRepl ref={rawReplRef} code={result.rawCode} onPlayingChange={setRawPlaying} />
+                <button className="btn btn-secondary" onClick={() => rawReplRef.current?.toggle()}>
+                  {rawPlaying ? '◼ Stop' : '▶ Play unenhanced version'}
+                </button>
+              </div>
+            </details>
+          )}
         </div>
       </details>
     </section>

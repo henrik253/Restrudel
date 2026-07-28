@@ -12,6 +12,9 @@ import { randomUUID } from 'node:crypto';
 import { generateCode, normalizeMode } from './codegen/index.mjs';
 import { cutToWav } from './lib/audio.mjs';
 import { estimateBpm } from './lib/tempo.mjs';
+import { DEFAULT_MODEL_CHOICE, MODEL_CHOICES } from './protocol.mjs';
+
+const normalizeModel = (m) => (MODEL_CHOICES.includes(m) ? m : DEFAULT_MODEL_CHOICE);
 
 const TERMINAL = new Set(['done', 'error']);
 
@@ -43,7 +46,7 @@ export class JobManager extends EventEmitter {
    * ({uploadId, startSec, endSec}) — with a source, the snippet is cut here
    * (A8), so re-selecting the same track costs no upload.
    */
-  createJob({ wavBuffer, source, prompt, bpmHint, snippet, codegen }) {
+  createJob({ wavBuffer, source, prompt, bpmHint, snippet, codegen, model }) {
     const job = {
       id: randomUUID(),
       revision: 1,
@@ -53,6 +56,9 @@ export class JobManager extends EventEmitter {
       finishedAt: null,
       prompt: prompt ?? '',
       codegen: normalizeMode(codegen ?? this.config.defaultCodegen),
+      // Debug/beta: which transcription checkpoint to use. 'auto' is reserved
+      // for the genre classifier (roadmap A9) and currently means the default.
+      model: normalizeModel(model),
       bpmHint: bpmHint ?? null,
       snippet: snippet ?? null,
       events: null,
@@ -105,6 +111,7 @@ export class JobManager extends EventEmitter {
       const t0 = Date.now();
       const res = await this.transcriber.transcribe(wavBuffer, {
         signal: job.abort.signal,
+        model: job.model,
         onProgress: (message, progress) => this.#update(job, 'transcribing', message, { progress }),
       });
       job.timings.transcribeMs = Date.now() - t0;
@@ -139,6 +146,8 @@ export class JobManager extends EventEmitter {
     job.timings.generateMs = Date.now() - t0;
     job.result = {
       code: g.code,
+      // Pre-polish tool output (absent for the pure-LLM path) — debug analytics.
+      rawCode: g.rawCode,
       // What actually ran — may differ from job.codegen when polish fell back.
       codegen: g.mode,
       tempoBpm: g.tempoBpm ?? job.tempoBpm,
@@ -147,6 +156,9 @@ export class JobManager extends EventEmitter {
       attempts: g.attempts,
       llm: g.llm,
       meta: g.meta,
+      transcriber: job.transcriberMeta
+        ? { adapter: job.transcriberMeta.adapter, modelVersion: job.transcriberMeta.modelVersion ?? null, modelChoice: job.model }
+        : { modelChoice: job.model },
       timings: { ...job.timings },
     };
     job.status = 'done';

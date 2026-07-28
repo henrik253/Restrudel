@@ -4,7 +4,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import styles from './App.module.css';
 import { ConvertPanel } from './components/ConvertPanel';
-import type { CodegenMode } from './protocol';
+import type { CodegenMode, ModelChoice } from './protocol';
 import { uploadTrack, type UploadResult } from './lib/upload';
 import { DropZone } from './components/DropZone';
 import { ErrorBanner } from './components/ErrorBanner';
@@ -25,6 +25,8 @@ export default function App() {
   const [selection, setSelection] = useState<Selection>({ start: 0, end: 10 });
   const [prompt, setPrompt] = useState('');
   const [codegen, setCodegen] = useState<CodegenMode>('m2s+polish');
+  // Debug/beta: transcription model override ('auto' = server default).
+  const [model, setModel] = useState<ModelChoice>('auto');
   const [localError, setLocalError] = useState<LocalError>(null);
   const [errorDismissed, setErrorDismissed] = useState(false);
   const [preparing, setPreparing] = useState(false);
@@ -111,6 +113,7 @@ export default function App() {
         uploadId: upload.uploadId,
         prompt: prompt || undefined,
         codegen,
+        model,
         snippet: { selStartSec: selection.start, selEndSec: selection.end },
       });
       return;
@@ -130,6 +133,7 @@ export default function App() {
           requestId: crypto.randomUUID(),
           prompt: prompt || undefined,
           codegen,
+          model,
           snippet: {
             selStartSec: selection.start,
             selEndSec: selection.end,
@@ -144,12 +148,7 @@ export default function App() {
     } finally {
       setPreparing(false);
     }
-  }, [audioBuffer, file, selection, prompt, codegen, upload, limits.maxWavBytes, createJob, createJobFromUpload]);
-
-  const newSelection = useCallback(() => {
-    reset();
-    setErrorDismissed(false);
-  }, [reset]);
+  }, [audioBuffer, file, selection, prompt, codegen, model, upload, limits.maxWavBytes, createJob, createJobFromUpload]);
 
   const replaceFile = useCallback(() => {
     setFile(null);
@@ -177,7 +176,9 @@ export default function App() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <span className={styles.wordmark}>Restrudel</span>
+        <span className={styles.wordmark}>
+          Restrudel <span className={styles.betaBadge}>beta</span>
+        </span>
         <div className={styles.fileInfo}>
           {job.connection !== 'open' && <span className={styles.reconnect}>reconnecting …</span>}
           <span className={styles.fileName}>{file!.name}</span>
@@ -202,7 +203,9 @@ export default function App() {
         file={file!}
         minLen={limits.minSnippetSec}
         maxLen={limits.maxSnippetSec}
-        active={mode === 'loaded'}
+        // Stays interactive while a result is shown: play the selection, move
+        // it, and hit "Transform selection" — no separate reset step.
+        active={mode === 'loaded' || mode === 'result'}
         onReady={onWaveReady}
         onDecodeError={onDecodeError}
         onSelectionChange={setSelection}
@@ -220,6 +223,8 @@ export default function App() {
           onPromptChange={setPrompt}
           codegen={codegen}
           onCodegenChange={setCodegen}
+          model={model}
+          onModelChange={setModel}
           onConvert={convert}
           disabled={!audioBuffer || job.connection !== 'open'}
           busy={preparing}
@@ -239,7 +244,8 @@ export default function App() {
             setErrorDismissed(false);
             regenerate(opts);
           }}
-          onNewSelection={newSelection}
+          onTransform={convert}
+          transformBusy={preparing}
           maxPromptChars={limits.maxPromptChars}
         />
       )}
