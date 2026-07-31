@@ -3,6 +3,7 @@
 // disclosure: most conversions need neither). Debug/beta switches live in a
 // SEPARATE "Developer" disclosure so they never mix with normal options.
 import { CODEGEN_MODES, MODEL_CHOICES, type CodegenMode, type ModelChoice } from '../protocol';
+import { DEFAULT_PEAK_DB, MAX_PEAK_DB, MIN_PEAK_DB } from '../lib/wav';
 import styles from './ConvertPanel.module.css';
 
 interface Props {
@@ -12,6 +13,8 @@ interface Props {
   onCodegenChange: (v: CodegenMode) => void;
   model: ModelChoice;
   onModelChange: (v: ModelChoice) => void;
+  peakDb: number;
+  onPeakDbChange: (v: number) => void;
   onConvert: () => void;
   disabled: boolean;
   busy: boolean;
@@ -21,8 +24,8 @@ interface Props {
 }
 
 export function ConvertPanel({
-  prompt, onPromptChange, codegen, onCodegenChange, model, onModelChange, onConvert, disabled, busy,
-  uploadProgress, maxPromptChars,
+  prompt, onPromptChange, codegen, onCodegenChange, model, onModelChange, peakDb, onPeakDbChange,
+  onConvert, disabled, busy, uploadProgress, maxPromptChars,
 }: Props) {
   return (
     <div className={styles.panel}>
@@ -98,6 +101,31 @@ export function ConvertPanel({
               </label>
             ))}
           </fieldset>
+
+          <fieldset className={styles.modes}>
+            <legend>Input level</legend>
+            <label className={styles.slider}>
+              <input
+                type="range"
+                min={MIN_PEAK_DB}
+                max={MAX_PEAK_DB}
+                step={1}
+                value={peakDb}
+                onChange={(e) => onPeakDbChange(Number(e.target.value))}
+              />
+              <span className="mono">{peakDb} dBFS</span>
+              {peakDb !== DEFAULT_PEAK_DB && (
+                <button type="button" className="btn btn-ghost" onClick={() => onPeakDbChange(DEFAULT_PEAK_DB)}>
+                  reset
+                </button>
+              )}
+            </label>
+            <p className={styles.promptHint}>
+              The snippet's peak is normalized to this level before transcription
+              ({DEFAULT_PEAK_DB} dBFS = default). Lower it to hear how input level changes the result.
+            </p>
+          </fieldset>
+
           <p className={styles.promptHint}>
             Debug options for the beta — they change how the pipeline runs, not the music.
           </p>

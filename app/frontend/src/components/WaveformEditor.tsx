@@ -17,12 +17,15 @@ interface Props {
   maxLen: number;
   /** interactive & playable; false while converting / showing the result */
   active: boolean;
+  /** Normalization target (dBFS) from the Developer slider — the waveform is
+   *  drawn (and the preview played) at this level, i.e. what the model hears. */
+  peakDb: number;
   onReady: (buffer: AudioBuffer, duration: number) => void;
   onDecodeError: () => void;
   onSelectionChange: (sel: Selection) => void;
 }
 
-export function WaveformEditor({ file, minLen, maxLen, active, onReady, onDecodeError, onSelectionChange }: Props) {
+export function WaveformEditor({ file, minLen, maxLen, active, peakDb, onReady, onDecodeError, onSelectionChange }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const wsRef = useRef<WaveSurfer | null>(null);
   const regionRef = useRef<Region | null>(null);
@@ -170,6 +173,17 @@ export function WaveformEditor({ file, minLen, maxLen, active, onReady, onDecode
   }, [stop]);
 
   useSpacebarPlay(toggle, active);
+
+  // The waveform is normalized to full height (normalize: true), so scaling
+  // bars + volume by the slider's linear factor shows/plays the level the
+  // backend will actually normalize the snippet to.
+  useEffect(() => {
+    const ws = wsRef.current;
+    if (!ws) return;
+    const amp = 10 ** (peakDb / 20);
+    ws.setOptions({ barHeight: amp });
+    ws.setVolume(amp);
+  }, [peakDb, duration]);
 
   // leaving the interactive state (convert clicked, result shown) stops playback
   useEffect(() => {

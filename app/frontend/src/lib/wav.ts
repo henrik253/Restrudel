@@ -1,6 +1,29 @@
 // wav.ts — minimal PCM16 mono WAV encoder for the job payload.
 
-export function encodeWavPcm16Mono(samples: Float32Array, sampleRate: number): ArrayBuffer {
+// Same gain-staging rule as the backend cut (lib/audio.mjs): decodeAudioData
+// yields floats beyond ±1 on hot masters, and the old hard clamp flattened
+// them into distortion. One linear gain to the target peak instead; quiet
+// audio is boosted at most +20 dB so silence never becomes loud noise floor.
+export const DEFAULT_PEAK_DB = -1;
+export const MIN_PEAK_DB = -24;
+export const MAX_PEAK_DB = 0;
+const MAX_BOOST = 10;
+
+export function encodeWavPcm16Mono(
+  samples: Float32Array,
+  sampleRate: number,
+  targetPeakDb: number = DEFAULT_PEAK_DB,
+): ArrayBuffer {
+  const db = Number.isFinite(targetPeakDb)
+    ? Math.min(MAX_PEAK_DB, Math.max(MIN_PEAK_DB, targetPeakDb))
+    : DEFAULT_PEAK_DB;
+  let peak = 0;
+  for (let i = 0; i < samples.length; i++) {
+    const a = Math.abs(samples[i]);
+    if (a > peak) peak = a;
+  }
+  const gain = peak > 0 ? Math.min(10 ** (db / 20) / peak, MAX_BOOST) : 1;
+
   const buf = new ArrayBuffer(44 + samples.length * 2);
   const view = new DataView(buf);
   const writeAscii = (offset: number, s: string) => {
@@ -20,8 +43,8 @@ export function encodeWavPcm16Mono(samples: Float32Array, sampleRate: number): A
   writeAscii(36, 'data');
   view.setUint32(40, samples.length * 2, true);
   for (let i = 0; i < samples.length; i++) {
-    const s = Math.max(-1, Math.min(1, samples[i]));
-    view.setInt16(44 + i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+    const s = Math.max(-1, Math.min(1, samples[i] * gain));
+    view.setInt16(44 + i * 2, Math.round(s < 0 ? s * 0x8000 : s * 0x7fff), true);
   }
   return buf;
 }

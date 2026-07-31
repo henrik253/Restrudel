@@ -141,6 +141,8 @@ export interface JobCreateHeader {
   codegen?: CodegenMode;
   /** Debug/beta: transcription model override. */
   model?: ModelChoice;
+  /** Debug/beta: target peak (dBFS, −24…0) for snippet normalization; default −1. */
+  peakDb?: number;
   bpmHint?: number;
   snippet: {
     selStartSec: number;
