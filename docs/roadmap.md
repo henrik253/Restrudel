@@ -3,11 +3,11 @@
 Phases 0–6 (build the data, fine-tune YourMT3+) are **done**: two fine-tuned
 variants were trained and fully benchmarked (run `comparison_20260713-222456`);
 **strudel50** was the Phase 6 carry-forward model — since superseded by Phase
-8's **v2mix_s42**, the model the app deploys (decided 2026-07-24). v1 results +
-adversarial critique:
-[benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md).
-Headline: corpus-test Synth Lead F1 0.000→0.515, drums 0.53→0.84, multi-instr
-0.52→0.84, at the cost of −15 slakh / −11 maestro forgetting.
+8's **v2mix_s42**, the model the app deploys (decided 2026-07-24). v1 headline
+(old leaky split, later superseded by the leak-free B8 eval): corpus-test Synth
+Lead F1 0.000→0.515, drums 0.53→0.84, multi-instr 0.52→0.84, at the cost of
+−15 slakh / −11 maestro forgetting. The final v2mix numbers live in the README
+chart and Drive (`comparison_20260722-050418/benchmark_results.json`).
 
 > **🔥 Current priority: twin tracks (decided 2026-07-14).**
 > - **Track A — Application (Phase 7):** full-stack app — React+Vite frontend,
@@ -299,9 +299,9 @@ A100) — **strudel50** (55% eff. strudel draws) and **egmd50** — and benchmar
 3 models × 8 categories via `notebooks/06_benchmark.ipynb` (training itself:
 `notebooks/05_finetune.ipynb`). strudel50 > egmd50 > base on **every** strudel
 category → strudel50 carried forward (since superseded by Phase 8's
-v2mix_s42). Full interpretation + adversarial critique
-+ accepted follow-up actions: [benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md);
-those accepted actions are now Phase 8's work list.
+v2mix_s42). The v1 interpretation doc's adversarial critique produced the
+accepted follow-up actions that became Phase 8's work list (the doc itself was
+retired 2026-07-26; its accepted actions are fully absorbed below).
 
 **Outcome:** a YourMT3+ checkpoint that beats the released baseline on synth/
 electronic timbres.
@@ -431,6 +431,34 @@ Work packages, in dependency order:
   - [ ] **A7e — end-to-end:** mock-path tests per adapter; one real snippet
         through upload → RunPod → MIDI → tool → polish → REPL; record
         latency + cost.
+- [x] **A9 — Beta polish pass** (done 2026-07-26 — the app is officially
+      **v0.9.0-beta**, labeled in the UI header and README):
+  - [x] README: mermaid diagrams replaced with pre-rendered static SVGs
+        (light+dark, `docs/assets/`) — no more oversized zoom control panels;
+        beta status + release called out; retired both benchmark
+        interpretation docs (v1 was leak-tainted; the final numbers live in
+        the README chart + Drive `benchmark_results.json`).
+  - [x] Selection stays live in the result view: the waveform is playable and
+        adjustable while a result is shown; "New selection" replaced by a
+        **"Transform selection"** button that converts the current selection
+        directly.
+  - [x] Debug features, separated from normal Options into their own
+        **Developer (beta)** disclosure: transcription-model override
+        (`auto | finetuned | base`, wired through the WS protocol to the
+        RunPod worker's `model_version`; `RUNPOD_BASE_MODEL_VERSION` names
+        the base checkpoint dir on the network volume) — and **advanced
+        analytics** under the result's Details: the unenhanced (pre-polish)
+        Strudel code, playable in its own REPL, so the LLM's contribution is
+        verifiable.
+- [ ] **A10 — Genre classifier routing** (deferred 2026-07-26): classify the
+      snippet electronic vs. classical/acoustic and route it to the right
+      checkpoint (v2mix vs. base) automatically — the `auto` model choice in
+      the protocol is reserved for exactly this. Plan: small feature-based
+      classifier (librosa mel/spectral stats + logistic regression) trained
+      offline on maestro (classical) vs. nesmdb+strudel (electronic) samples
+      from Drive, coefficients shipped as JSON, executed in the GPU worker
+      before model load. Prerequisite either way: upload the base checkpoint
+      to the RunPod network volume (dir `base-2024`).
 - [x] **A8 — Upload-flow rework: backend-side snippet cutting** (done
       2026-07-24; supersedes A3's client-side slicing):
   - [x] Full song uploads to the backend **immediately on file select** via

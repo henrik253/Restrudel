@@ -10,7 +10,8 @@ exposes, repeat. Every fact is sourced to a repo doc; every imported technique i
 as literature-transfer (plausible here, not yet proven here).*
 
 Grounding documents:
-[benchmark_interpretation_20260713.md](benchmark_interpretation_20260713.md) (v1 results + adversarial critique),
+the v1 benchmark interpretation (retired 2026-07-26; its critique is absorbed
+into roadmap Phase 8 B0–B6),
 [roadmap.md](roadmap.md) Phase 8 B0–B6 (base-model ground truth, external data,
 generation strategy, repo split, train-side generation — the per-step docs were
 folded into the roadmap 2026-07-24),

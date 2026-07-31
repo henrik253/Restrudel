@@ -32,7 +32,7 @@ transcription needed to get labels.
 ## Current state (what exists)
 - **Phases 0–6 done** (data pipeline, dataset, fine-tune + benchmark). The
   fine-tuned **strudel50** checkpoint beats base YourMT3+ on every Strudel
-  category (details: `docs/benchmark_interpretation_20260713.md`). **Current
+  category (numbers in the README + `docs/roadmap.md` Phase 6/8). **Current
   work is twin tracks:** Phase 7 (full-stack app: React frontend, Node backend
   on the personal server, RunPod Serverless GPU — see
   `docs/application_architecture.md`) and Phase 8 (model v2: eval fixes, then

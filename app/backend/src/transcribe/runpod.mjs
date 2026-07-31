@@ -36,6 +36,7 @@ export function createRunpodTranscriber(config) {
     apiKey,
     endpointId,
     modelVersion,
+    baseModelVersion,
     baseUrl = 'https://api.runpod.ai/v2',
     pollIntervalMs = 1500,
     maxWaitMs = 5 * 60_000,
@@ -76,11 +77,16 @@ export function createRunpodTranscriber(config) {
   return {
     name: 'runpod',
 
-    async transcribe(wavBuffer, { onProgress, signal } = {}) {
+    async transcribe(wavBuffer, { onProgress, signal, model } = {}) {
       if (!apiKey || !endpointId) {
         throw unavailable('RunPod transcriber is not configured (RUNPOD_API_KEY / RUNPOD_ENDPOINT_ID)');
       }
       if (signal?.aborted) throw abortError();
+
+      // Debug/beta model override: 'base' routes to the released checkpoint;
+      // 'finetuned' and 'auto' use the configured default ('auto' is reserved
+      // for the genre classifier, roadmap A9).
+      const chosenVersion = model === 'base' ? baseModelVersion : modelVersion;
 
       onProgress?.('sending the snippet to the GPU …');
       const submitted = await call('/run', {
@@ -89,7 +95,7 @@ export function createRunpodTranscriber(config) {
         body: {
           input: {
             audio_b64: Buffer.from(wavBuffer).toString('base64'),
-            ...(modelVersion ? { model_version: modelVersion } : {}),
+            ...(chosenVersion ? { model_version: chosenVersion } : {}),
           },
         },
       });
@@ -147,7 +153,7 @@ export function createRunpodTranscriber(config) {
         meta: {
           adapter: 'runpod',
           jobId,
-          modelVersion: output.model_version ?? modelVersion ?? null,
+          modelVersion: output.model_version ?? chosenVersion ?? null,
           beatsS: output.beats_s ?? [],
           downbeatsS: output.downbeats_s ?? [],
           meterAssumed: output.meter_assumed ?? null,

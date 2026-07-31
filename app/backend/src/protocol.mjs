@@ -30,6 +30,14 @@ export const CODEGEN = {
   LLM: 'llm', // step-grid description -> LLM
 };
 
+// Which transcription model the job should use (debug/beta feature).
+//   auto      — server picks; reserved for the genre classifier (roadmap A9),
+//               currently identical to `finetuned`
+//   finetuned — the deployed fine-tuned checkpoint (v2mix)
+//   base      — the released base YourMT3+ checkpoint
+export const MODEL_CHOICES = ['auto', 'finetuned', 'base'];
+export const DEFAULT_MODEL_CHOICE = 'auto';
+
 export const ERR = {
   PAYLOAD_TOO_LARGE: 'payload_too_large',
   INVALID_WAV: 'invalid_wav',

@@ -26,7 +26,7 @@ export function loadConfig(env = process.env) {
   if (env === process.env) loadDotEnv(join(BACKEND_ROOT, '.env'));
   const repoRoot = env.REPO_ROOT ?? resolve(BACKEND_ROOT, '..', '..');
   return {
-    version: '0.1.0',
+    version: '0.9.0-beta',
     port: int(env.PORT, 8787),
     logLevel: env.LOG_LEVEL ?? 'info',
     transcriber: env.TRANSCRIBER ?? 'mock',
@@ -47,6 +47,9 @@ export function loadConfig(env = process.env) {
       // network volume — swapping models is this env var, not a code change.
       // Unset lets the worker use its own default.
       modelVersion: env.RUNPOD_MODEL_VERSION,
+      // The released base YourMT3+ checkpoint, for the debug model override
+      // (model: 'base'). Must exist as a directory on the network volume.
+      baseModelVersion: env.RUNPOD_BASE_MODEL_VERSION ?? 'base-2024',
       baseUrl: env.RUNPOD_BASE_URL ?? 'https://api.runpod.ai/v2',
       pollIntervalMs: int(env.RUNPOD_POLL_INTERVAL_MS, 1500),
       // Generous: a cold start pulls the image and loads a 759 MB checkpoint.

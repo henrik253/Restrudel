@@ -47,6 +47,7 @@ export async function generateCode({
   if (chosen === 'm2s') {
     return {
       code: tool.code,
+      rawCode: tool.code,
       mode: 'm2s',
       tempoBpm: tool.tempoBpm,
       meta: { ...tool.meta, polished: false, validated: tool.validation.ok },
@@ -66,6 +67,9 @@ export async function generateCode({
 
   return {
     code: polish.code,
+    // The pre-polish tool output — the debug analytics panel shows it next to
+    // the final code so the LLM's contribution is inspectable.
+    rawCode: tool.code,
     // Report what actually happened, not what was asked for: a fallback to the
     // raw tool output must be visible rather than silently labelled "polished".
     mode: polish.polished ? 'm2s+polish' : 'm2s',
