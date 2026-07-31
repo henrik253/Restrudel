@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { after, describe, it } from 'node:test';
 
-import { createRunpodTranscriber, normalizeWorkerEvents } from '../src/transcribe/runpod.mjs';
+import { createRunpodTranscriber, normalizeClassifier, normalizeWorkerEvents } from '../src/transcribe/runpod.mjs';
 import { makeTestWav, testConfig } from './helpers.mjs';
 
 const WAV = makeTestWav(4);
@@ -93,6 +93,16 @@ describe('runpod adapter — event normalization', () => {
     const [e] = normalizeWorkerEvents([{ onset_s: 1, offset_s: 1, pitch: 60, velocity: 90 }]);
     assert.ok(e.duration > 0);
   });
+
+  it('normalizes the classifier block defensively', () => {
+    assert.equal(normalizeClassifier(undefined), null);
+    assert.equal(normalizeClassifier('garbage'), null);
+    // Router fallback (e.g. base checkpoint missing): route + reason survive.
+    assert.deepEqual(normalizeClassifier({ route: 'finetuned', error: 'base-2024 not found' }),
+      { route: 'finetuned', error: 'base-2024 not found' });
+    // Anything that is not exactly 'base' routes to finetuned.
+    assert.equal(normalizeClassifier({ route: 'v2mix' }).route, 'finetuned');
+  });
 });
 
 describe('runpod adapter — job lifecycle', () => {
@@ -120,15 +130,64 @@ describe('runpod adapter — job lifecycle', () => {
     assert.deepEqual(result.meta.downbeatsS, [0.5]);
     assert.equal(result.meta.timings.device, 'cuda');
 
-    // The request carried base64 audio + the configured model version.
+    // The default request engages the genre router: 'auto' + both targets.
     const [runBody] = result.seen.runBodies;
-    assert.equal(runBody.input.model_version, 'v2mix_s42-20260722');
+    assert.equal(runBody.input.model_version, 'auto');
+    assert.deepEqual(runBody.input.model_versions,
+      { finetuned: 'v2mix_s42-20260722', base: 'base-2024' });
     assert.ok(Buffer.from(runBody.input.audio_b64, 'base64').subarray(0, 4).toString() === 'RIFF');
     assert.equal(result.seen.auth[0], 'Bearer test-key');
 
     // Cold start and inference are narrated differently.
     assert.ok(progress.some((m) => m.includes('cold start')));
     assert.ok(progress.some((m) => m.includes('transcribing')));
+  });
+
+  it('pins the checkpoint (and skips the router) on a manual override', async () => {
+    for (const [model, version] of [['base', 'base-2024'], ['finetuned', 'v2mix_s42-20260722']]) {
+      const { seen } = await withFakeRunpod({
+        run: (send) => send(200, { id: 'job-pin', status: 'IN_QUEUE' }),
+        status: (send) => send(200, { status: 'COMPLETED', output: WORKER_OUTPUT }),
+      }, ({ baseUrl, seen: s }) => transcriberFor(baseUrl)
+        .transcribe(WAV, { model })
+        .then(() => ({ seen: s })));
+      const [runBody] = seen.runBodies;
+      assert.equal(runBody.input.model_version, version, `model=${model}`);
+      assert.equal(runBody.input.model_versions, undefined, `model=${model} sends no targets`);
+    }
+  });
+
+  it('surfaces the worker classifier decision in meta (auto mode)', async () => {
+    const output = {
+      ...WORKER_OUTPUT,
+      model_version: 'base-2024',
+      classifier: {
+        predicted_class: 'classic', route: 'base', p_base: 0.88, tau: 0.3, crops: 3,
+        probs: { electronic: 0.06, classic: 0.85, acoustic_band: 0.03, electronic_drums: 0.06 },
+      },
+    };
+    const result = await withFakeRunpod({
+      run: (send) => send(200, { id: 'job-clf', status: 'IN_QUEUE' }),
+      status: (send) => send(200, { status: 'COMPLETED', output }),
+    }, ({ baseUrl }) => transcriberFor(baseUrl).transcribe(WAV, { model: 'auto' }));
+
+    assert.equal(result.meta.modelVersion, 'base-2024'); // what actually ran
+    assert.deepEqual(result.meta.classifier, {
+      route: 'base', predictedClass: 'classic', pBase: 0.88, tau: 0.3, crops: 3,
+      probs: { electronic: 0.06, classic: 0.85, acoustic_band: 0.03, electronic_drums: 0.06 },
+    });
+  });
+
+  it('RUNPOD_CLASSIFIER=0 keeps the legacy pin-to-finetuned behavior', async () => {
+    const { seen } = await withFakeRunpod({
+      run: (send) => send(200, { id: 'job-legacy', status: 'IN_QUEUE' }),
+      status: (send) => send(200, { status: 'COMPLETED', output: WORKER_OUTPUT }),
+    }, ({ baseUrl, seen: s }) => transcriberFor(baseUrl, { classifierEnabled: false })
+      .transcribe(WAV, { model: 'auto' })
+      .then(() => ({ seen: s })));
+    const [runBody] = seen.runBodies;
+    assert.equal(runBody.input.model_version, 'v2mix_s42-20260722');
+    assert.equal(runBody.input.model_versions, undefined);
   });
 
   it('surfaces a worker-reported error instead of returning empty events', async () => {

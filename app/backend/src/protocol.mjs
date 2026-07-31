@@ -31,8 +31,9 @@ export const CODEGEN = {
 };
 
 // Which transcription model the job should use (debug/beta feature).
-//   auto      — server picks; reserved for the genre classifier (roadmap A9),
-//               currently identical to `finetuned`
+//   auto      — the GPU worker's genre classifier routes the snippet to base
+//               or fine-tuned (A10); the result reports the decision in
+//               transcriber.classifier {route, predictedClass, probs, …}
 //   finetuned — the deployed fine-tuned checkpoint (v2mix)
 //   base      — the released base YourMT3+ checkpoint
 export const MODEL_CHOICES = ['auto', 'finetuned', 'base'];

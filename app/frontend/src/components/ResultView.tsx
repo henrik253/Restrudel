@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { JobState } from '../hooks/useJob';
 import { StrudelRepl, type StrudelReplHandle } from './StrudelRepl';
-import type { CodegenMode } from '../protocol';
+import type { CodegenMode, JobResultMsg } from '../protocol';
 import styles from './ResultView.module.css';
 
 const MODE_LABELS: Record<CodegenMode, string> = {
@@ -12,6 +12,27 @@ const MODE_LABELS: Record<CodegenMode, string> = {
   m2s: 'converted',
   llm: 'written by AI',
 };
+
+/** One honest sentence about which checkpoint transcribed the snippet —
+ *  and whether the genre classifier or a manual override picked it. */
+function modelLine(t: NonNullable<JobResultMsg['transcriber']>): string | null {
+  const version = t.modelVersion ? ` (${t.modelVersion})` : '';
+  if (t.modelChoice === 'base' || t.modelChoice === 'finetuned') {
+    return `model: ${t.modelChoice === 'base' ? 'base' : 'fine-tuned'}${version} — manual override`;
+  }
+  const c = t.classifier;
+  if (c?.error) {
+    return `model: fine-tuned${version} — classifier unavailable, fell back (${c.error.slice(0, 80)})`;
+  }
+  if (c) {
+    const pct = c.predictedClass && c.probs?.[c.predictedClass] !== undefined
+      ? ` ${Math.round(c.probs[c.predictedClass] * 100)} %`
+      : '';
+    const heard = c.predictedClass ? ` — heard ${c.predictedClass.replace(/_/g, ' ')}${pct}` : '';
+    return `model: ${c.route === 'base' ? 'base' : 'fine-tuned'}${version} — picked by the genre classifier${heard}`;
+  }
+  return t.modelVersion ? `model: ${t.modelVersion} (server default)` : null;
+}
 
 interface Props {
   job: JobState;
@@ -152,11 +173,10 @@ export function ResultView({ job, onRegenerate, onTransform, transformBusy, maxP
             {((result.timings.generateMs ?? 0) / 1000).toFixed(1)} s
             {result.llm ? ` (${result.llm.source})` : ''}
             {result.meta?.voiceCount ? ` · ${result.meta.voiceCount} voices` : ''}
-            {result.transcriber?.modelVersion ? ` · model ${result.transcriber.modelVersion}` : ''}
-            {result.transcriber?.modelChoice && result.transcriber.modelChoice !== 'auto'
-              ? ` (forced: ${result.transcriber.modelChoice})`
-              : ''}
           </p>
+          {result.transcriber && modelLine(result.transcriber) && (
+            <p className="mono">{modelLine(result.transcriber)}</p>
+          )}
           {result.describeText && <pre className="mono">{result.describeText}</pre>}
 
           {/* Debug/beta: the pre-polish tool output, playable — shows whether

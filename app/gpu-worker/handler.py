@@ -2,12 +2,17 @@
 
 Contract (docs/application_architecture.md, roadmap A1):
 
-  input   {"audio_b64": "<16 kHz mono WAV>", "model_version": "v2mix_s42-20260722"}
+  input   {"audio_b64": "<16 kHz mono WAV>", "model_version": "v2mix_s42-20260722",
+           "model_versions": {"finetuned": "...", "base": "..."}}   # auto mode only
   output  {"events": [{onset_s, offset_s, pitch, velocity, program, is_drum}],
-           "tempo_bpm", "beats_s", "downbeats_s", "model_version", "timings"}
+           "tempo_bpm", "beats_s", "downbeats_s", "model_version", "classifier?",
+           "timings"}
 
 `model_version` is optional; it selects a directory under the checkpoint root
 (see model_registry.py). Swapping models is a volume upload + an env change.
+The special value "auto" lets the genre classifier (genre_classifier.py,
+roadmap A10) pick between the fine-tuned and base checkpoints per snippet;
+the output then carries a `classifier` block with the decision.
 
 Local smoke test (no GPU, no RunPod account):
 
@@ -57,11 +62,15 @@ def run(payload: dict) -> dict:
     """Pure function over the input dict — the unit the tests exercise."""
     audio = _decode_audio(payload)
     model_version = payload.get("model_version") or DEFAULT_MODEL_VERSION
+    model_versions = payload.get("model_versions")
+    if not isinstance(model_versions, dict):
+        model_versions = None
 
     with tempfile.TemporaryDirectory(prefix="restrudel-") as tmp:
         wav_path = Path(tmp) / "snippet.wav"
         wav_path.write_bytes(audio)
-        result = inference.transcribe(wav_path, model_version=model_version)
+        result = inference.transcribe(wav_path, model_version=model_version,
+                                      model_versions=model_versions)
 
     result["timings"]["audio_bytes"] = len(audio)
     return result

@@ -31,12 +31,27 @@ export function normalizeWorkerEvents(workerEvents) {
 const abortError = () => Object.assign(new Error('cancelled'), { code: 'cancelled' });
 const unavailable = (m) => Object.assign(new Error(m), { code: 'transcriber_unavailable' });
 
+/** Worker classifier block (snake_case) -> the wire shape (camelCase). */
+export function normalizeClassifier(c) {
+  if (!c || typeof c !== 'object') return null;
+  return {
+    route: c.route === 'base' ? 'base' : 'finetuned',
+    ...(c.predicted_class ? { predictedClass: c.predicted_class } : {}),
+    ...(c.probs && typeof c.probs === 'object' ? { probs: c.probs } : {}),
+    ...(Number.isFinite(c.p_base) ? { pBase: c.p_base } : {}),
+    ...(Number.isFinite(c.tau) ? { tau: c.tau } : {}),
+    ...(Number.isFinite(c.crops) ? { crops: c.crops } : {}),
+    ...(c.error ? { error: String(c.error) } : {}),
+  };
+}
+
 export function createRunpodTranscriber(config) {
   const {
     apiKey,
     endpointId,
     modelVersion,
     baseModelVersion,
+    classifierEnabled = true,
     baseUrl = 'https://api.runpod.ai/v2',
     pollIntervalMs = 1500,
     maxWaitMs = 5 * 60_000,
@@ -83,22 +98,26 @@ export function createRunpodTranscriber(config) {
       }
       if (signal?.aborted) throw abortError();
 
-      // Debug/beta model override: 'base' routes to the released checkpoint;
-      // 'finetuned' and 'auto' use the configured default ('auto' is reserved
-      // for the genre classifier, roadmap A9).
+      // Model choice -> worker payload. 'base'/'finetuned' pin a checkpoint;
+      // 'auto' (the default) asks the worker's genre classifier to route the
+      // snippet (A10). RUNPOD_CLASSIFIER=0 keeps the old pin-to-finetuned
+      // behavior for a deployed worker image that predates the router.
+      const auto = model !== 'base' && model !== 'finetuned' && classifierEnabled;
       const chosenVersion = model === 'base' ? baseModelVersion : modelVersion;
+      const input = { audio_b64: Buffer.from(wavBuffer).toString('base64') };
+      if (auto) {
+        input.model_version = 'auto';
+        const versions = {
+          ...(modelVersion ? { finetuned: modelVersion } : {}),
+          ...(baseModelVersion ? { base: baseModelVersion } : {}),
+        };
+        if (Object.keys(versions).length) input.model_versions = versions;
+      } else if (chosenVersion) {
+        input.model_version = chosenVersion;
+      }
 
       onProgress?.('sending the snippet to the GPU …');
-      const submitted = await call('/run', {
-        method: 'POST',
-        signal,
-        body: {
-          input: {
-            audio_b64: Buffer.from(wavBuffer).toString('base64'),
-            ...(chosenVersion ? { model_version: chosenVersion } : {}),
-          },
-        },
-      });
+      const submitted = await call('/run', { method: 'POST', signal, body: { input } });
 
       const jobId = submitted.id;
       if (!jobId) {
@@ -153,7 +172,8 @@ export function createRunpodTranscriber(config) {
         meta: {
           adapter: 'runpod',
           jobId,
-          modelVersion: output.model_version ?? chosenVersion ?? null,
+          modelVersion: output.model_version ?? (auto ? null : chosenVersion) ?? null,
+          classifier: normalizeClassifier(output.classifier),
           beatsS: output.beats_s ?? [],
           downbeatsS: output.downbeats_s ?? [],
           meterAssumed: output.meter_assumed ?? null,

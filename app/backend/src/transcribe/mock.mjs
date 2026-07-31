@@ -31,7 +31,7 @@ function mockEvents() {
 export function createMockTranscriber({ delayMs = 0 } = {}) {
   return {
     name: 'mock',
-    async transcribe(_wavBuffer, { onProgress, signal } = {}) {
+    async transcribe(_wavBuffer, { onProgress, signal, model } = {}) {
       if (delayMs > 0) {
         const steps = Math.max(1, Math.ceil(delayMs / 500));
         for (let i = 0; i < steps; i++) {
@@ -39,7 +39,23 @@ export function createMockTranscriber({ delayMs = 0 } = {}) {
           await sleep(delayMs / steps, signal);
         }
       }
-      return { events: mockEvents(), tempoBpm: 120, meta: { adapter: 'mock' } };
+      // Mirror the GPU worker's auto mode with a fixed decision, so the
+      // classifier line in Details is exercisable without a GPU.
+      const classifier = model === 'base' || model === 'finetuned'
+        ? null
+        : {
+            route: 'finetuned',
+            predictedClass: 'electronic',
+            probs: { electronic: 0.87, classic: 0.04, acoustic_band: 0.03, electronic_drums: 0.06 },
+            pBase: 0.07,
+            tau: 0.3,
+            crops: 3,
+          };
+      return {
+        events: mockEvents(),
+        tempoBpm: 120,
+        meta: { adapter: 'mock', ...(classifier ? { classifier } : {}) },
+      };
     },
   };
 }
