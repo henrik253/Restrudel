@@ -6,7 +6,11 @@ import { describe, it } from 'node:test';
 
 import WebSocket from 'ws';
 
-import { cutToWav, probeAudio, TARGET_SAMPLE_RATE } from '../src/lib/audio.mjs';
+import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+import { cutToWav, normalizeFloatWavToPcm16, probeAudio, TARGET_SAMPLE_RATE } from '../src/lib/audio.mjs';
 import { parseWavHeader } from '../src/protocol.mjs';
 import { createApp } from '../src/server.mjs';
 import { findDataGenDir, makeTestWav, testConfig } from './helpers.mjs';
@@ -33,6 +37,13 @@ async function startApp(overrides = {}) {
     defaultCodegen: 'llm', // hermetic: no python/submodule needed
     ...overrides,
   });
+  // Each app gets its own uploads dir: UploadStore.close() removes its
+  // directory recursively, and on the shared tmp default, concurrently
+  // running test files delete each other's uploads mid-job.
+  config.uploads = {
+    ...config.uploads,
+    dir: config.uploads.dir ?? await mkdtemp(join(tmpdir(), 'restrudel-uploads-')),
+  };
   const app = createApp(config);
   await new Promise((r) => app.server.listen(0, r));
   return { app, port: app.server.address().port, config };
@@ -40,6 +51,42 @@ async function startApp(overrides = {}) {
 
 /** A 30 s WAV standing in for an uploaded track. */
 const longTrack = () => makeTestWav(30, 44100);
+
+/** Float32 mono WAV of a 440 Hz sine at `amp` — floats may exceed ±1, like a
+ * decoded brickwalled master. */
+function makeFloatWav(seconds, amp, sampleRate = 44100) {
+  const n = Math.round(seconds * sampleRate);
+  const buf = Buffer.alloc(44 + n * 4);
+  buf.write('RIFF', 0, 'ascii');
+  buf.writeUInt32LE(36 + n * 4, 4);
+  buf.write('WAVE', 8, 'ascii');
+  buf.write('fmt ', 12, 'ascii');
+  buf.writeUInt32LE(16, 16);
+  buf.writeUInt16LE(3, 20); // IEEE float
+  buf.writeUInt16LE(1, 22);
+  buf.writeUInt32LE(sampleRate, 24);
+  buf.writeUInt32LE(sampleRate * 4, 28);
+  buf.writeUInt16LE(4, 32);
+  buf.writeUInt16LE(32, 34);
+  buf.write('data', 36, 'ascii');
+  buf.writeUInt32LE(n * 4, 40);
+  for (let i = 0; i < n; i++) {
+    buf.writeFloatLE(amp * Math.sin((2 * Math.PI * 440 * i) / sampleRate), 44 + i * 4);
+  }
+  return buf;
+}
+
+/** Max |sample| of a PCM16 WAV, as int16 magnitude. */
+function pcm16Peak(wav) {
+  const header = parseWavHeader(wav);
+  const dataOffset = wav.length - header.dataBytes;
+  let peak = 0;
+  for (let o = dataOffset; o + 2 <= wav.length; o += 2) {
+    const a = Math.abs(wav.readInt16LE(o));
+    if (a > peak) peak = a;
+  }
+  return peak;
+}
 
 async function upload(port, body, filename = 'track.wav') {
   const res = await fetch(`http://127.0.0.1:${port}/api/upload`, {
@@ -71,6 +118,39 @@ describe('audio helpers', { skip }, () => {
     }
   });
 
+  it('normalizes a hot source to −1 dBFS instead of clipping it', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'restrudel-test-'));
+    try {
+      // 1.4 peak: what a decoded 0 dBFS master with intersample overs looks like.
+      const src = join(dir, 'hot.wav');
+      await writeFile(src, makeFloatWav(6, 1.4));
+      const wav = await cutToWav(src, 0, 5);
+
+      const peak = pcm16Peak(wav);
+      assert.ok(peak <= Math.round(0.9 * 32767), `peak ${peak} must sit at the −1 dBFS target`);
+      assert.ok(peak >= Math.round(0.85 * 32767), `peak ${peak} should be normalized up to the target`);
+      assert.ok(peak < 32767, 'no sample may touch full scale (that is a flattened top)');
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('boosts a quiet source by at most 20 dB', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'restrudel-test-'));
+    try {
+      const src = join(dir, 'quiet.wav');
+      await writeFile(src, makeFloatWav(6, 0.005));
+      const wav = await cutToWav(src, 0, 5);
+
+      const peak = pcm16Peak(wav);
+      // 0.005 × the +20 dB cap = 0.05 full scale — NOT all the way to −1 dBFS.
+      assert.ok(peak > 0.03 * 32767 && peak < 0.08 * 32767,
+        `peak ${peak} should reflect the capped boost, got ${(peak / 32767).toFixed(3)} of full scale`);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
   it('rejects a file with no decodable audio', async () => {
     const { app, port } = await startApp();
     try {
@@ -92,6 +172,26 @@ describe('audio helpers', { skip }, () => {
     } finally {
       app.close();
     }
+  });
+});
+
+// No ffmpeg needed — the normalizer is pure Node.
+describe('float→PCM16 normalization', () => {
+  it('applies one linear gain and preserves the waveform shape', () => {
+    const floatWav = makeFloatWav(1, 1.4, 16000);
+    const wav = normalizeFloatWavToPcm16(floatWav);
+
+    const header = parseWavHeader(wav);
+    assert.equal(header.sampleRate, 16000);
+    assert.equal(header.bitsPerSample, 16);
+    // gain = 0.891/1.4 exactly: the 1.4 peak lands at −1 dBFS, nothing clamps.
+    const peak = pcm16Peak(wav);
+    assert.ok(Math.abs(peak - Math.round(10 ** (-1 / 20) * 32767)) <= 2, `peak ${peak}`);
+  });
+
+  it('leaves digital silence alone', () => {
+    const wav = normalizeFloatWavToPcm16(makeFloatWav(1, 0, 16000));
+    assert.equal(pcm16Peak(wav), 0);
   });
 });
 

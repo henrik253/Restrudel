@@ -6,6 +6,9 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { once } from 'node:events';
+import { mkdtemp } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import WebSocket from 'ws';
 import { createApp } from '../src/server.mjs';
 import { encodeJobCreate, findDataGenDir, findM2SDir, findPythonBin, makeTestWav, testConfig } from './helpers.mjs';
@@ -62,6 +65,12 @@ async function startApp(overrides = {}) {
     defaultCodegen: 'llm',
     ...overrides,
   });
+  // Own uploads dir per app — UploadStore.close() removes the dir recursively,
+  // which on the shared tmp default races concurrently running test files.
+  config.uploads = {
+    ...config.uploads,
+    dir: config.uploads.dir ?? await mkdtemp(join(tmpdir(), 'restrudel-uploads-')),
+  };
   const app = createApp(config);
   await new Promise((r) => app.server.listen(0, r));
   return { app, port: app.server.address().port };
