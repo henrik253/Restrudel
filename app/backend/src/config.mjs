@@ -48,8 +48,13 @@ export function loadConfig(env = process.env) {
       // Unset lets the worker use its own default.
       modelVersion: env.RUNPOD_MODEL_VERSION,
       // The released base YourMT3+ checkpoint, for the debug model override
-      // (model: 'base'). Must exist as a directory on the network volume.
+      // (model: 'base') and the genre classifier's classical/acoustic route.
+      // Must exist as a directory on the network volume.
       baseModelVersion: env.RUNPOD_BASE_MODEL_VERSION ?? 'base-2024',
+      // 'auto' engages the worker's genre classifier (A10). Set 0 only while
+      // the deployed worker image predates the router — 'auto' then means the
+      // fine-tuned default, as before.
+      classifierEnabled: (env.RUNPOD_CLASSIFIER ?? '1') !== '0',
       baseUrl: env.RUNPOD_BASE_URL ?? 'https://api.runpod.ai/v2',
       pollIntervalMs: int(env.RUNPOD_POLL_INTERVAL_MS, 1500),
       // Generous: a cold start pulls the image and loads a 759 MB checkpoint.

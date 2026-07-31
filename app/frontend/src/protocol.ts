@@ -30,17 +30,34 @@ export const CODEGEN_MODES: { value: CodegenMode; label: string; hint: string }[
 
 /**
  * Debug/beta: which transcription checkpoint the GPU worker loads.
- *   auto      — server picks; reserved for the genre classifier (roadmap A9)
+ *   auto      — the worker's genre classifier routes the snippet (A10)
  *   finetuned — the deployed fine-tuned checkpoint (v2mix)
  *   base      — the released base YourMT3+ (acoustic specialist)
  */
 export type ModelChoice = 'auto' | 'finetuned' | 'base';
 
 export const MODEL_CHOICES: { value: ModelChoice; label: string; hint: string }[] = [
-  { value: 'auto', label: 'Auto', hint: 'Server default — will use the genre classifier once it lands' },
+  { value: 'auto', label: 'Auto', hint: 'A genre classifier picks base or fine-tuned per snippet' },
   { value: 'finetuned', label: 'Fine-tuned (v2mix)', hint: 'Trained on synth timbres — best for electronic music' },
   { value: 'base', label: 'Base YourMT3+', hint: 'The stock model — best for acoustic/classical material' },
 ];
+
+/**
+ * The genre router's verdict for an 'auto' job. Routing is a tau rule, not
+ * argmax: base wins only when P(classic) + P(acoustic_band) > tau.
+ */
+export interface ClassifierDecision {
+  route: 'finetuned' | 'base';
+  /** argmax class, e.g. 'electronic' — what the router heard. */
+  predictedClass?: string;
+  probs?: Record<string, number>;
+  /** P(classic) + P(acoustic_band), compared against tau. */
+  pBase?: number;
+  tau?: number;
+  crops?: number;
+  /** Present when the router could not run (e.g. base checkpoint missing). */
+  error?: string;
+}
 
 export interface HelloMsg {
   type: 'hello';
@@ -97,7 +114,13 @@ export interface JobResultMsg {
     validated?: boolean;
   };
   /** Which transcriber/checkpoint actually processed the snippet. */
-  transcriber?: { adapter?: string; modelVersion?: string | null; modelChoice?: ModelChoice };
+  transcriber?: {
+    adapter?: string;
+    modelVersion?: string | null;
+    modelChoice?: ModelChoice;
+    /** Present on 'auto' jobs when the transcriber ran the genre router. */
+    classifier?: ClassifierDecision;
+  };
   timings: { transcribeMs?: number; generateMs?: number };
 }
 

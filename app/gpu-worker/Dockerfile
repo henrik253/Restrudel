@@ -35,9 +35,12 @@ COPY models/YourMT3/amt/src /opt/yourmt3/amt/src
 COPY models/YourMT3/model_helper.py /opt/yourmt3/model_helper.py
 
 COPY app/gpu-worker/*.py /app/
+# Genre-router head (4 KB) + its metadata — baked in, not on the volume.
+COPY app/gpu-worker/classifier /app/classifier
 
-# Fail the build rather than a cold start if an import regressed.
+# Fail the build rather than a cold start if an import or asset regressed.
 RUN python -c "import runpod, librosa, torch, pytorch_lightning, transformers; \
-import model_registry, handler; print('worker imports OK')"
+import model_registry, handler, genre_classifier; \
+assert genre_classifier.load_meta()['classes']; print('worker imports OK')"
 
 CMD ["python", "-u", "handler.py"]

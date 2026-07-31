@@ -99,6 +99,42 @@ def test_model_resolution() -> None:
             check("missing last.ckpt raises", "last.ckpt" in str(exc))
 
 
+def test_genre_classifier() -> None:
+    print("genre classifier routing")
+    import genre_classifier
+
+    meta = genre_classifier.load_meta()
+    check("meta lists 4 classes", len(meta["classes"]) == 4)
+    check("every class has a routing target",
+          set(meta["class_to_model"]) == set(meta["classes"])
+          and set(meta["class_to_model"].values()) <= {"v2mix", "base"})
+    tau = meta["tau_route_to_base"]
+    check("tau is a sane threshold", 0 < tau < 1, f"got {tau}")
+
+    # The router is a tau rule over base-class mass, not argmax.
+    route, p = genre_classifier.decide(
+        {"electronic": 0.8, "classic": 0.1, "acoustic_band": 0.1,
+         "electronic_drums": 0.0}, meta)
+    check("electronic mass routes to finetuned", route == "finetuned" and p == 0.2)
+    route, _ = genre_classifier.decide(
+        {"electronic": 0.05, "classic": 0.9, "acoustic_band": 0.03,
+         "electronic_drums": 0.02}, meta)
+    check("classical mass routes to base", route == "base")
+    route, _ = genre_classifier.decide(
+        {"electronic": 1 - tau, "classic": tau, "acoustic_band": 0.0,
+         "electronic_drums": 0.0}, meta)
+    check("exactly tau stays on finetuned (strict >)", route == "finetuned")
+
+    try:
+        import torch  # noqa: F401
+    except ImportError:
+        print("  skip head load (torch not installed)")
+        return
+    head = genre_classifier._load_head("cpu")
+    n_params = sum(p.numel() for p in head.parameters())
+    check("head is the 516-param probe", n_params == 516, f"got {n_params}")
+
+
 def test_tempo_estimation() -> None:
     print("tempo estimation")
     try:
@@ -127,5 +163,6 @@ def test_tempo_estimation() -> None:
 if __name__ == "__main__":
     test_input_validation()
     test_model_resolution()
+    test_genre_classifier()
     test_tempo_estimation()
     print(f"\n{len(PASS)} checks passed")

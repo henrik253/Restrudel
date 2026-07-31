@@ -17,7 +17,10 @@ import time
 from pathlib import Path
 from typing import Any
 
-from model_registry import ModelSpec, resolve
+from model_registry import BASE_MODEL_VERSION, ModelSpec, resolve
+
+# Sentinel model_version: let the genre classifier pick base vs fine-tuned.
+AUTO_MODEL_VERSION = "auto"
 
 # Where the YourMT3 source tree lives inside the image (see Dockerfile). Locally
 # this points at the repo's models/YourMT3 checkout.
@@ -178,9 +181,42 @@ def estimate_tempo(wav_path: Path) -> dict:
     }
 
 
+def route_model_version(wav_path: Path, model_versions: dict | None = None,
+                        checkpoint_root: Path | None = None) -> tuple[str | None, dict]:
+    """Genre-classifier routing (roadmap A10): pick base vs fine-tuned for this
+    snippet. Returns (model_version, classifier_info).
+
+    The head reads the BASE model's encoder, so the base checkpoint loads here
+    regardless of the outcome; a warm container keeps both models cached. Any
+    failure (base checkpoint not on the volume yet, head assets missing) falls
+    back to the fine-tuned default — a broken router must never fail the job.
+    """
+    versions = model_versions or {}
+    finetuned = versions.get("finetuned") or None  # None -> registry default
+    base = versions.get("base") or BASE_MODEL_VERSION
+    try:
+        import genre_classifier
+
+        base_model, _ = load_model(base, checkpoint_root)
+        t0 = time.perf_counter()
+        info = genre_classifier.classify(base_model, wav_path)
+        info["classify_s"] = round(time.perf_counter() - t0, 3)
+    except Exception as exc:  # noqa: BLE001 — fall back, report the reason
+        print(f"[inference] classifier unavailable, using fine-tuned: "
+              f"{type(exc).__name__}: {exc}", flush=True)
+        return finetuned, {"route": "finetuned", "error": f"{type(exc).__name__}: {exc}"}
+    return (base if info["route"] == "base" else finetuned), info
+
+
 def transcribe(wav_path: Path, model_version: str | None = None,
-               checkpoint_root: Path | None = None) -> dict:
+               checkpoint_root: Path | None = None,
+               model_versions: dict | None = None) -> dict:
     """Full worker payload for one WAV — the shape the backend consumes."""
+    classifier_info = None
+    if model_version == AUTO_MODEL_VERSION:
+        model_version, classifier_info = route_model_version(
+            wav_path, model_versions, checkpoint_root)
+
     t_load = time.perf_counter()
     model, spec = load_model(model_version, checkpoint_root)
     load_s = time.perf_counter() - t_load
@@ -200,11 +236,16 @@ def transcribe(wav_path: Path, model_version: str | None = None,
         "downbeats_s": tempo["downbeats_s"],
         "meter_assumed": tempo["meter_assumed"],
         "model_version": spec.version,
+        # Present only for auto requests: the routing decision (or the reason
+        # it fell back), so the app can show which model was picked and why.
+        **({"classifier": classifier_info} if classifier_info else {}),
         "decode_errors": decode_errors,
         "timings": {
             "model_load_s": round(load_s, 3),
             "infer_s": round(infer_s, 3),
             "tempo_s": round(tempo_s, 3),
+            **({"classify_s": classifier_info["classify_s"]}
+               if classifier_info and "classify_s" in classifier_info else {}),
             "device": _torch_device(),
         },
     }

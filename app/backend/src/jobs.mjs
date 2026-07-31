@@ -157,7 +157,13 @@ export class JobManager extends EventEmitter {
       llm: g.llm,
       meta: g.meta,
       transcriber: job.transcriberMeta
-        ? { adapter: job.transcriberMeta.adapter, modelVersion: job.transcriberMeta.modelVersion ?? null, modelChoice: job.model }
+        ? {
+            adapter: job.transcriberMeta.adapter,
+            modelVersion: job.transcriberMeta.modelVersion ?? null,
+            modelChoice: job.model,
+            // The genre router's verdict (auto mode only) — Details shows it.
+            ...(job.transcriberMeta.classifier ? { classifier: job.transcriberMeta.classifier } : {}),
+          }
         : { modelChoice: job.model },
       timings: { ...job.timings },
     };

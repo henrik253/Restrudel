@@ -1,0 +1,60 @@
+{
+  "classes": [
+    "electronic",
+    "classic",
+    "acoustic_band",
+    "electronic_drums"
+  ],
+  "class_to_model": {
+    "electronic": "v2mix",
+    "classic": "base",
+    "acoustic_band": "base",
+    "electronic_drums": "v2mix"
+  },
+  "tau_route_to_base": 0.3,
+  "crop": {
+    "seconds": 5.0,
+    "sample_rate": 16000
+  },
+  "backbone": {
+    "exp_id": "mc13_256_g4_all_v7_mt3f_sqr_rms_moe_wf4_n8k2_silu_rope_rp_b36_nops",
+    "project": "2024",
+    "arch": [
+      "-tk",
+      "mc13_full_plus_256",
+      "-dec",
+      "multi-t5",
+      "-nl",
+      "26",
+      "-enc",
+      "perceiver-tf",
+      "-sqr",
+      "1",
+      "-ff",
+      "moe",
+      "-wf",
+      "4",
+      "-nmoe",
+      "8",
+      "-kmoe",
+      "2",
+      "-act",
+      "silu",
+      "-epe",
+      "rope",
+      "-rp",
+      "1",
+      "-ac",
+      "spec",
+      "-hop",
+      "300",
+      "-atc",
+      "1"
+    ],
+    "pooling": "mean over segments and latent positions"
+  },
+  "val_macro_f1": 0.7837332555438709,
+  "best_epoch": 10,
+  "seed": 42,
+  "created": "20260730-234704"
+}

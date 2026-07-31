@@ -40,6 +40,10 @@ DEFAULT_ARCH: list[str] = [
 
 DEFAULT_PROJECT = "ymt3"
 DEFAULT_MODEL_VERSION = os.environ.get("MODEL_VERSION", "v2mix_s42-20260722")
+# The released base checkpoint — the genre classifier's routing target for
+# classical/acoustic material. Its model.json must set the released exp_id and
+# project "2024" (see app/gpu-worker/README.md).
+BASE_MODEL_VERSION = os.environ.get("MODEL_VERSION_BASE", "base-2024")
 
 # On RunPod a network volume mounts at /runpod-volume; locally, point
 # CHECKPOINT_ROOT at any directory with the same layout.

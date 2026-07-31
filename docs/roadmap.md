@@ -450,15 +450,33 @@ Work packages, in dependency order:
         analytics** under the result's Details: the unenhanced (pre-polish)
         Strudel code, playable in its own REPL, so the LLM's contribution is
         verifiable.
-- [ ] **A10 — Genre classifier routing** (deferred 2026-07-26): classify the
-      snippet electronic vs. classical/acoustic and route it to the right
-      checkpoint (v2mix vs. base) automatically — the `auto` model choice in
-      the protocol is reserved for exactly this. Plan: small feature-based
-      classifier (librosa mel/spectral stats + logistic regression) trained
-      offline on maestro (classical) vs. nesmdb+strudel (electronic) samples
-      from Drive, coefficients shipped as JSON, executed in the GPU worker
-      before model load. Prerequisite either way: upload the base checkpoint
-      to the RunPod network volume (dir `base-2024`).
+- [x] **A10 — Genre classifier routing** (trained + integrated 2026-07-30):
+      the `auto` model choice now routes each snippet to the right checkpoint.
+      (The original librosa+logistic-regression plan was dropped for a head on
+      the model we already run — no second feature pipeline in the worker.)
+  - [x] Classifier: a **516-param head over the frozen base YourMT3+ encoder**
+        (`notebooks/07_genre_classifier.ipynb`), trained on the exact
+        fine-tuning splits; 4 classes (electronic, classic, acoustic_band,
+        electronic_drums), 5 s crops. Test: acc 0.902 / macro-F1 0.852;
+        **routed F1 0.770** vs 0.781 perfect router / 0.754 always-v2mix;
+        electronic misrouted to base only 2.1 %. Export
+        `models/classifier/genre_head_20260730-234704/` (Drive), committed
+        into `app/gpu-worker/classifier/`.
+  - [x] Worker (`genre_classifier.py`): `model_version: "auto"` scores up to
+        three 5 s crops on the base encoder and routes to base iff
+        P(classic)+P(acoustic_band) > τ = 0.30 (asymmetric misroute costs —
+        not argmax); missing base checkpoint or head falls back to the
+        fine-tuned model with the reason in the `classifier` payload block.
+  - [x] App: backend sends `auto` + both version names to the worker
+        (`RUNPOD_CLASSIFIER=0` restores the legacy pin-to-finetuned while an
+        old worker image is deployed); the mock adapter fakes a decision so
+        the flow demos without a GPU; the result's **Details** line shows
+        which model ran and whether the genre classifier (with the class it
+        heard) or a manual override picked it.
+  - [ ] Deploy: upload the base checkpoint to the RunPod network volume as
+        `base-2024/` **with its `model.json`** (released exp_id + project
+        "2024" — see `app/gpu-worker/README.md`) and push the rebuilt worker
+        image.
 - [x] **A8 — Upload-flow rework: backend-side snippet cutting** (done
       2026-07-24; supersedes A3's client-side slicing):
   - [x] Full song uploads to the backend **immediately on file select** via

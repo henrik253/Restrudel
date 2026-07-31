@@ -7,8 +7,9 @@ note events + tempo out. Runs the fine-tuned YourMT3+ checkpoint
 ```
 backend  ──{audio_b64, model_version}──▶  handler.py
                                             ├─ inference.py   model load + decode → notes
+                                            ├─ genre_classifier.py  "auto": base vs fine-tuned (A10)
                                             └─ model_registry.py  which checkpoint, which arch
-         ◀──{events, tempo_bpm, beats_s, downbeats_s, timings}──┘
+         ◀──{events, tempo_bpm, beats_s, downbeats_s, classifier?, timings}──┘
 ```
 
 ## Contract
@@ -20,6 +21,31 @@ backend  ──{audio_b64, model_version}──▶  handler.py
 ```
 
 `model_version` is optional and falls back to the `MODEL_VERSION` env var.
+
+The special value `"auto"` engages the genre router: a 516-parameter head over
+the frozen **base** encoder (trained in `notebooks/07_genre_classifier.ipynb`,
+weights in `classifier/`) scores up to three 5 s crops and routes to the base
+checkpoint only when P(classic) + P(acoustic_band) exceeds τ = 0.30 — not
+argmax, because misrouting electronic audio to the base model costs ~0.3 F1
+while the reverse costs ~0.1. Auto requests may name the two targets:
+
+```json
+{"audio_b64": "...", "model_version": "auto",
+ "model_versions": {"finetuned": "v2mix_s42-20260722", "base": "base-2024"}}
+```
+
+(omitted names fall back to `MODEL_VERSION` / `MODEL_VERSION_BASE`). The output
+then carries the decision — or the reason it fell back to the fine-tuned model
+(e.g. the base checkpoint is not on the volume yet); a broken router never
+fails the job:
+
+```json
+"classifier": {"predicted_class": "electronic",
+               "probs": {"electronic": 0.91, "classic": 0.03,
+                         "acoustic_band": 0.02, "electronic_drums": 0.04},
+               "p_base": 0.05, "tau": 0.3, "route": "finetuned",
+               "crops": 3, "classify_s": 0.4}
+```
 
 **Out**:
 
@@ -68,6 +94,18 @@ Omitted fields fall back to the mc13_256 defaults in `model_registry.py`. The
 checkpoint is symlinked (not copied) into the `amt/logs/<project>/<exp_id>/`
 layout YourMT3 expects — copying 759 MB per container start would dominate the
 cold start.
+
+**The base checkpoint** (`base-2024/`, the router's classical/acoustic target)
+is the released YourMT3+ — same architecture, but its exp_id and project differ
+from our fine-tunes, so its `model.json` is required:
+
+```json
+{"exp_id": "mc13_256_g4_all_v7_mt3f_sqr_rms_moe_wf4_n8k2_silu_rope_rp_b36_nops",
+ "project": "2024"}
+```
+
+Until that directory exists on the volume, `auto` requests log the miss and
+fall back to the fine-tuned model (reported in the `classifier` block).
 
 ## Local test — no GPU, no RunPod account
 
@@ -118,6 +156,7 @@ loads the checkpoint at container start so warm requests skip it.
 | var | default | meaning |
 |---|---|---|
 | `MODEL_VERSION` | `v2mix_s42-20260722` | default checkpoint directory |
+| `MODEL_VERSION_BASE` | `base-2024` | base checkpoint (genre-router target) |
 | `CHECKPOINT_ROOT` | `/runpod-volume/checkpoints` | where model directories live |
 | `YOURMT3_ROOT` | `/opt/yourmt3` | YourMT3 source tree |
 | `PRELOAD_MODEL` | `1` | load the model at container start |
