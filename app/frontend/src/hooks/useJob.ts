@@ -97,6 +97,7 @@ export function useJob() {
   /** A8: convert a range of an already-uploaded track — no audio on the wire. */
   const createJobFromUpload = useCallback((msg: {
     requestId: string; uploadId: string; prompt?: string; codegen?: CodegenMode; model?: ModelChoice;
+    peakDb?: number;
     snippet: { selStartSec: number; selEndSec: number };
   }) => {
     const socket = socketRef.current;

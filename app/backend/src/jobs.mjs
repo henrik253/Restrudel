@@ -46,7 +46,7 @@ export class JobManager extends EventEmitter {
    * ({uploadId, startSec, endSec}) — with a source, the snippet is cut here
    * (A8), so re-selecting the same track costs no upload.
    */
-  createJob({ wavBuffer, source, prompt, bpmHint, snippet, codegen, model }) {
+  createJob({ wavBuffer, source, prompt, bpmHint, snippet, codegen, model, peakDb }) {
     const job = {
       id: randomUUID(),
       revision: 1,
@@ -59,6 +59,9 @@ export class JobManager extends EventEmitter {
       // Debug/beta: which transcription checkpoint to use. 'auto' is reserved
       // for the genre classifier (roadmap A9) and currently means the default.
       model: normalizeModel(model),
+      // Debug/beta: target peak (dBFS) for the snippet normalization; the
+      // cut clamps it to a safe range, null means the default (−1 dBFS).
+      peakDb: Number.isFinite(peakDb) ? peakDb : null,
       bpmHint: bpmHint ?? null,
       snippet: snippet ?? null,
       events: null,
@@ -186,6 +189,7 @@ export class JobManager extends EventEmitter {
     const wav = await cutToWav(upload.path, startSec, endSec, {
       ffmpegBin: this.config.uploads.ffmpegBin,
       signal: job.abort.signal,
+      targetPeakDb: job.peakDb ?? undefined,
     });
     job.timings.cutMs = Date.now() - t0;
     return wav;

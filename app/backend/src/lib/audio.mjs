@@ -12,10 +12,21 @@ export const TARGET_SAMPLE_RATE = 16_000;
 // harmonic distortion across the whole spectrum — the transcriber then reads
 // the distortion as notes. So the cut stays float32 through ffmpeg and ONE
 // linear gain brings the peak to −1 dBFS before quantization here.
-const TARGET_PEAK = 10 ** (-1 / 20); // −1 dBFS ≈ 0.891
+// The target is adjustable per job (Developer slider) within [−24, 0] dBFS.
+export const DEFAULT_PEAK_DB = -1;
+export const MIN_PEAK_DB = -24;
+export const MAX_PEAK_DB = 0;
 // Quiet snippets are boosted too (consistent model input level), but capped:
 // unbounded up-gain would turn a near-silent selection into loud noise floor.
 const MAX_BOOST = 10; // +20 dB
+
+/** Requested target peak (dBFS) -> a safe linear amplitude. */
+function targetPeakFor(targetPeakDb) {
+  const db = Number.isFinite(targetPeakDb)
+    ? Math.min(MAX_PEAK_DB, Math.max(MIN_PEAK_DB, targetPeakDb))
+    : DEFAULT_PEAK_DB;
+  return 10 ** (db / 20);
+}
 
 const unsupported = (m) => Object.assign(new Error(m), { code: 'unsupported_media' });
 
@@ -62,7 +73,7 @@ export async function probeAudio(path, { ffprobeBin = 'ffprobe', timeoutMs = 30_
  * `-ss` before `-i` seeks by keyframe (fast); for the accuracy a few seconds of
  * audio needs, it is placed AFTER `-i` so ffmpeg decodes and cuts precisely.
  */
-export async function cutToWav(path, startSec, endSec, { ffmpegBin = 'ffmpeg', timeoutMs = 60_000, signal } = {}) {
+export async function cutToWav(path, startSec, endSec, { ffmpegBin = 'ffmpeg', timeoutMs = 60_000, signal, targetPeakDb } = {}) {
   const duration = endSec - startSec;
   if (!(duration > 0)) throw new Error('snippet end must be after its start');
 
@@ -79,7 +90,7 @@ export async function cutToWav(path, startSec, endSec, { ffmpegBin = 'ffmpeg', t
   ], { timeoutMs, signal, encoding: 'buffer' });
 
   if (!stdout?.length) throw new Error('ffmpeg produced no audio for this selection');
-  return normalizeFloatWavToPcm16(stdout);
+  return normalizeFloatWavToPcm16(stdout, targetPeakDb);
 }
 
 /** Locate the fmt/data chunks of a float32 WAV. ffmpeg writes placeholder RIFF
@@ -113,8 +124,8 @@ function parseFloatWav(buf) {
   return { sampleRate: fmt.sampleRate, ...data };
 }
 
-/** Float32 mono WAV -> PCM16 mono WAV with the peak scaled to TARGET_PEAK. */
-export function normalizeFloatWavToPcm16(floatWav) {
+/** Float32 mono WAV -> PCM16 mono WAV with the peak scaled to the target. */
+export function normalizeFloatWavToPcm16(floatWav, targetPeakDb = DEFAULT_PEAK_DB) {
   const { sampleRate, offset, bytes } = parseFloatWav(floatWav);
   const n = Math.floor(bytes / 4);
 
@@ -123,7 +134,7 @@ export function normalizeFloatWavToPcm16(floatWav) {
     const a = Math.abs(floatWav.readFloatLE(offset + i * 4));
     if (a > peak) peak = a;
   }
-  const gain = peak > 0 ? Math.min(TARGET_PEAK / peak, MAX_BOOST) : 1;
+  const gain = peak > 0 ? Math.min(targetPeakFor(targetPeakDb) / peak, MAX_BOOST) : 1;
 
   const out = Buffer.alloc(44 + n * 2);
   out.write('RIFF', 0, 'ascii');

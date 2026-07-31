@@ -136,6 +136,7 @@ export function createConnectionHandler({ config, jobManager, uploads, log }) {
       prompt: header.prompt,
       codegen: header.codegen, // unknown values fall back to the default
       model: header.model, // debug/beta: transcription model choice
+      peakDb: header.peakDb, // debug/beta: normalization target (client-cut WAVs already applied it)
       bpmHint: Number.isFinite(header.bpmHint) ? header.bpmHint : null,
       snippet: header.snippet ?? null,
     });
@@ -182,6 +183,7 @@ export function createConnectionHandler({ config, jobManager, uploads, log }) {
           prompt: msg.prompt,
           codegen: msg.codegen,
           model: msg.model, // debug/beta: transcription model choice
+          peakDb: msg.peakDb, // debug/beta: normalization target for the server-side cut
           bpmHint: Number.isFinite(msg.bpmHint) ? msg.bpmHint : null,
           snippet: {
             selStartSec: startSec,

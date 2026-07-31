@@ -135,6 +135,21 @@ describe('audio helpers', { skip }, () => {
     }
   });
 
+  it('honors a custom normalization target (Developer slider)', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'restrudel-test-'));
+    try {
+      const src = join(dir, 'hot.wav');
+      await writeFile(src, makeFloatWav(6, 1.4));
+      const wav = await cutToWav(src, 0, 5, { targetPeakDb: -12 });
+
+      const peak = pcm16Peak(wav);
+      const want = Math.round(10 ** (-12 / 20) * 32767); // ≈ 0.251 full scale
+      assert.ok(Math.abs(peak - want) < 450, `peak ${peak}, wanted ~${want}`);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
   it('boosts a quiet source by at most 20 dB', async () => {
     const dir = await mkdtemp(join(tmpdir(), 'restrudel-test-'));
     try {
@@ -192,6 +207,14 @@ describe('float→PCM16 normalization', () => {
   it('leaves digital silence alone', () => {
     const wav = normalizeFloatWavToPcm16(makeFloatWav(1, 0, 16000));
     assert.equal(pcm16Peak(wav), 0);
+  });
+
+  it('clamps out-of-range targets to the slider bounds', () => {
+    // −40 dB request clamps to −24; +6 clamps to 0.
+    const low = pcm16Peak(normalizeFloatWavToPcm16(makeFloatWav(1, 1.4, 16000), -40));
+    assert.ok(Math.abs(low - Math.round(10 ** (-24 / 20) * 32767)) <= 4, `got ${low}`);
+    const high = pcm16Peak(normalizeFloatWavToPcm16(makeFloatWav(1, 1.4, 16000), 6));
+    assert.ok(Math.abs(high - 32767) <= 4, `got ${high}`);
   });
 });
 

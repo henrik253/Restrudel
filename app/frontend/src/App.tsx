@@ -14,7 +14,7 @@ import { TimeLabels } from './components/TimeLabels';
 import { WaveformEditor, type Selection } from './components/WaveformEditor';
 import { useJob } from './hooks/useJob';
 import { sliceAndResample, TARGET_SAMPLE_RATE } from './lib/audio';
-import { encodeWavPcm16Mono } from './lib/wav';
+import { DEFAULT_PEAK_DB, encodeWavPcm16Mono } from './lib/wav';
 
 type LocalError = { code: string; message: string } | null;
 
@@ -27,6 +27,8 @@ export default function App() {
   const [codegen, setCodegen] = useState<CodegenMode>('m2s+polish');
   // Debug/beta: transcription model override ('auto' = server default).
   const [model, setModel] = useState<ModelChoice>('auto');
+  // Debug/beta: target peak (dBFS) for the snippet normalization.
+  const [peakDb, setPeakDb] = useState<number>(DEFAULT_PEAK_DB);
   const [localError, setLocalError] = useState<LocalError>(null);
   const [errorDismissed, setErrorDismissed] = useState(false);
   const [preparing, setPreparing] = useState(false);
@@ -114,6 +116,7 @@ export default function App() {
         prompt: prompt || undefined,
         codegen,
         model,
+        peakDb,
         snippet: { selStartSec: selection.start, selEndSec: selection.end },
       });
       return;
@@ -123,7 +126,7 @@ export default function App() {
     setPreparing(true);
     try {
       const samples = await sliceAndResample(audioBuffer, selection.start, selection.end);
-      const wav = encodeWavPcm16Mono(samples, TARGET_SAMPLE_RATE);
+      const wav = encodeWavPcm16Mono(samples, TARGET_SAMPLE_RATE, peakDb);
       if (wav.byteLength > limits.maxWavBytes) {
         setLocalError({ code: 'payload_too_large', message: '' });
         return;
@@ -134,6 +137,7 @@ export default function App() {
           prompt: prompt || undefined,
           codegen,
           model,
+          peakDb,
           snippet: {
             selStartSec: selection.start,
             selEndSec: selection.end,
@@ -148,7 +152,7 @@ export default function App() {
     } finally {
       setPreparing(false);
     }
-  }, [audioBuffer, file, selection, prompt, codegen, model, upload, limits.maxWavBytes, createJob, createJobFromUpload]);
+  }, [audioBuffer, file, selection, prompt, codegen, model, peakDb, upload, limits.maxWavBytes, createJob, createJobFromUpload]);
 
   const replaceFile = useCallback(() => {
     setFile(null);
@@ -224,6 +228,8 @@ export default function App() {
           codegen={codegen}
           onCodegenChange={setCodegen}
           model={model}
+          peakDb={peakDb}
+          onPeakDbChange={setPeakDb}
           onModelChange={setModel}
           onConvert={convert}
           disabled={!audioBuffer || job.connection !== 'open'}

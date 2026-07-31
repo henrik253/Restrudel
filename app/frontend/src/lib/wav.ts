@@ -2,18 +2,27 @@
 
 // Same gain-staging rule as the backend cut (lib/audio.mjs): decodeAudioData
 // yields floats beyond ±1 on hot masters, and the old hard clamp flattened
-// them into distortion. One linear gain to a −1 dBFS peak instead; quiet
+// them into distortion. One linear gain to the target peak instead; quiet
 // audio is boosted at most +20 dB so silence never becomes loud noise floor.
-const TARGET_PEAK = 10 ** (-1 / 20); // ≈ 0.891
+export const DEFAULT_PEAK_DB = -1;
+export const MIN_PEAK_DB = -24;
+export const MAX_PEAK_DB = 0;
 const MAX_BOOST = 10;
 
-export function encodeWavPcm16Mono(samples: Float32Array, sampleRate: number): ArrayBuffer {
+export function encodeWavPcm16Mono(
+  samples: Float32Array,
+  sampleRate: number,
+  targetPeakDb: number = DEFAULT_PEAK_DB,
+): ArrayBuffer {
+  const db = Number.isFinite(targetPeakDb)
+    ? Math.min(MAX_PEAK_DB, Math.max(MIN_PEAK_DB, targetPeakDb))
+    : DEFAULT_PEAK_DB;
   let peak = 0;
   for (let i = 0; i < samples.length; i++) {
     const a = Math.abs(samples[i]);
     if (a > peak) peak = a;
   }
-  const gain = peak > 0 ? Math.min(TARGET_PEAK / peak, MAX_BOOST) : 1;
+  const gain = peak > 0 ? Math.min(10 ** (db / 20) / peak, MAX_BOOST) : 1;
 
   const buf = new ArrayBuffer(44 + samples.length * 2);
   const view = new DataView(buf);
