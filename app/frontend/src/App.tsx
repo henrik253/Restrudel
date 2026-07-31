@@ -210,6 +210,7 @@ export default function App() {
         // Stays interactive while a result is shown: play the selection, move
         // it, and hit "Transform selection" — no separate reset step.
         active={mode === 'loaded' || mode === 'result'}
+        peakDb={peakDb}
         onReady={onWaveReady}
         onDecodeError={onDecodeError}
         onSelectionChange={setSelection}
