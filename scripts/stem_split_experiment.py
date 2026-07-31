@@ -162,7 +162,7 @@ def main() -> None:
     print(f"[model] {spec.version} loaded")
 
     rows = []
-    merged: list[dict] = []
+    by_stem: dict[str, list[dict]] = {}
     for name, wav in variants.items():
         t0 = time.time()
         events, errs = inference.transcribe_to_notes(model, wav)
@@ -171,13 +171,20 @@ def main() -> None:
         (out / f"{name}.events.json").write_text(json.dumps(events, indent=1))
         write_midi(events, out / f"{name}.mid")
         rows.append(summarize(name, events))
-        if name != "mix":
-            merged += events
+        by_stem[name] = events
 
+    # Naive concat over-counts badly: bleed makes every stem re-detect the
+    # kick pattern (seen: 149 events vs 36 in the mix). The routed merge takes
+    # each event type only from the stem that owns it: drums from the drum
+    # stem, pitched notes from bass + other. Vocals are dropped (techno focus;
+    # flip here if melodic vocals matter).
+    merged = [e for e in by_stem["drums"] if e["is_drum"]]
+    for s in ("bass", "other"):
+        merged += [e for e in by_stem[s] if not e["is_drum"]]
     merged.sort(key=lambda e: (e["onset_s"], e["pitch"]))
     (out / "merged.events.json").write_text(json.dumps(merged, indent=1))
     write_midi(merged, out / "merged.mid")
-    rows.append(summarize("merged (stems)", merged))
+    rows.append(summarize("merged (routed)", merged))
 
     print(f"\n{'variant':<16}{'events':>8}{'drums':>8}{'pitched':>9}  programs / top drum pitches")
     for r in rows:
